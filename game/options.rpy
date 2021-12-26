@@ -60,7 +60,7 @@ define config.has_voice = False
 ## game, until it is stopped or another file is played.
 
 #define config.main_menu_music = audio.t1
-define config.main_menu_music = "<loop 6.57>mod_assets/ost/heavyweight_intro.ogg"
+define config.main_menu_music = "<loop 0.7666>mod_assets/music/fm_mainmenu.ogg"
 
 ## Transitions #################################################################
 ##

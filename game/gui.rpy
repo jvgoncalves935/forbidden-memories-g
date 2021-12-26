@@ -9,13 +9,19 @@ init offset = -2
 ## Calling gui.init resets the styles to sensible default values, and sets the
 ## width and height of the game.
 init python:
-    gui.init(1280, 720)
+    gui.init(960, 720)
     #config.gl_resize = False
 
 
 ################################################################################
 # GUI Configuration Variables
 ################################################################################
+
+#Audio de clique (sempre ira tocar ao clique)
+#init python:
+#    play_click_sound_autorized = True
+    #config.underlay.append( renpy.Keymap( mousedown_1 = lambda: renpy.run( renpy.play("audio/auto/default/completion_7_meghan.ogg") ) # rename the file as needed ) )
+#    config.underlay.append( renpy.Keymap( mousedown_1 = lambda : renpy.run( renpy.play("gui/sfx/select.ogg")) if (play_click_sound_autorized == True) else None ) ) 
 
 define gui.hover_sound = "gui/sfx/hover.ogg"
 define gui.activate_sound = "gui/sfx/select.ogg"
@@ -101,11 +107,11 @@ define gui.show_name = False
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 182
+define gui.textbox_height = 300
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = 0.99
+define gui.textbox_yalign = 1.0
 
 
 ## The placement of the speaking character's name, relative to the textbox.
@@ -134,11 +140,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.text_xpos = 268
-define gui.text_ypos = 62
+define gui.text_xpos = 48
+define gui.text_ypos = 105
 
 ## The maximum width of dialogue text, in pixels.
-define gui.text_width = 744
+define gui.text_width = 730
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -424,10 +430,10 @@ init python:
         gui.label_text_size = 36
 
         ## Adjust the location of the textbox.
-        gui.textbox_height = 240
-        gui.name_xpos = 80
-        gui.text_xpos = 90
-        gui.text_width = 1100
+        gui.textbox_height = 155
+        gui.name_xpos = 0
+        gui.text_xpos = 0
+        gui.text_width = 700
 
         ## Change the size and spacing of items in the game menu.
         gui.choice_button_width = 1240

@@ -4,6 +4,17 @@
 
 init offset = -1
 
+#Forbidden Memories G
+transform change_transform(old,new):
+    contains:
+        old
+        alpha 1.0
+        linear 0.5 alpha 0.0
+    contains:
+        new
+        alpha 0.0
+        linear 0.5 alpha 1.0
+
 
 ################################################################################
 ## Styles
@@ -13,7 +24,7 @@ style default:
     font gui.default_font
     size gui.text_size
     color gui.text_color
-    outlines [(2, "#000000aa", 0, 0)]
+    outlines [(3, "#000000aa", 0, 0)]
     line_overlap_split 1
     line_spacing 1
 
@@ -195,7 +206,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("mod_assets/gui/textbox2.png", xalign=0.5, yalign=1.0)
 
 style window_monika is window:
     background Image("gui/textbox_monika.png", xalign=0.5, yalign=1.0)
@@ -228,11 +239,14 @@ style say_dialogue:
     layout ("subtitle" if gui.text_xalign else "tex")
 
 image ctc:
-    xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
-    "gui/ctc.png"
+    xalign 0.96 yalign 0.94 xoffset -5 alpha 1.0 subpixel True
     block:
-        easeout 0.75 alpha 1.0 xoffset 0
-        easein 0.75 alpha 0.5 xoffset -5
+        "mod_assets/gui/ctc/ctc1.png"
+        linear 0.2 alpha 1.0
+        "mod_assets/gui/ctc/ctc2.png"
+        linear 0.2 alpha 1.0
+        "mod_assets/gui/ctc/ctc3.png"
+        linear 0.2 alpha 1.0
         repeat
 
 ## Input screen ################################################################
@@ -470,8 +484,8 @@ style quick_button_text:
 init python:
     def FinishEnterName():
         if not player: return
-        persistent.playername = player
-        renpy.hide_screen("name_input")
+        #persistent.playername = player
+        #renpy.hide_screen("name_input")
         renpy.jump_out_of_context("start")
 
 screen navigation():
@@ -596,8 +610,8 @@ screen main_menu():
 #            add "menu_art_s"
 #    add "menu_particles"
 #        if persistent.playthrough != 4:
-    add "menu_art_m"
-    add "menu_fade"
+    #add "menu_art_m"
+    #add "menu_fade"
 
     key "K_ESCAPE" action Quit(confirm=False)
 
@@ -1646,34 +1660,34 @@ screen name_input(message, ok_action):
 
     zorder 200
 
-    style_prefix "confirm"
+    #style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
-    key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
+    #add "gui/overlay/confirm.png"
+    #key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
 
-    frame:
+    #frame:
 
-        vbox:
-            xalign .5
-            yalign .5
-            spacing 30
+    #    vbox:
+    #        xalign .5
+    #        yalign .5
+    #        spacing 30
 
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
+    #        label _(message):
+    #            style "confirm_prompt"
+    #            xalign 0.5
 
-            input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    #        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
             #hbox:
             #    xalign 0.5
             #    style_prefix "radio_pref"
             #    textbutton "Male" action NullAction()
             #    textbutton "Female" action NullAction()
-            hbox:
-                xalign 0.5
-                spacing 100
+    #        hbox:
+    #            xalign 0.5
+    #            spacing 100
 
-                textbutton _("OK") action ok_action
+    #            textbutton _("OK") action ok_action
 
 screen dialog(message, ok_action):
 

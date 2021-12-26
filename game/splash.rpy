@@ -7,7 +7,7 @@ init -100 python:
     for archive in ['audio','images','scripts','fonts']:
         if not archive in config.archives:
             #If one is missing, throw an error and chlose
-            renpy.error("Os arquivos de DDLC não foram encontrados na pasta /game. Confira a instalação e tente novamente.")
+            renpy.error("Os arquivos de Doki Doki Literature Club não foram encontrados na pasta /game. Confira a instalação e tente novamente.")
 
 ## First, a disclaimer declaring this is a mod is shown, then there is a
 ## check for the original DDLC assets in the install folder. If those are
@@ -17,33 +17,14 @@ default d27roll = 0
 default proll = 0.05
 default prollint = 0.05
 
+
 init python:
     menu_trans_time = 1
     #The default splash message, originally shown in Act 1 and Act 4
     splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
-    splash_messages = [
-    "'Ideias são mais poderosas do que armas. Não permitimos que inimigos tenham armas, porque permitiríamos ter ideias?' -Joseph Stalin"
-    "'Nossos inimigos acham que podem ditar o curso da história sozinhos, mas tudo que é preciso é apenas a vontade de um homem só.' -Vladimir Makarov"
-    "'(...) o ego parece trazer a influência do mundo externo para dar suporte ao id e suas tendências, e se esforça para substituir o princípio da realidade pelo princípio do prazer que reina irrestritamente no id.' -'The Ego And The ID' (1923), Sigmund Freud"
-    "'O amor pode viver de recordações; o ódio requer realidades presentes.' -Miguel Unamuno"
-    "'Destino não é uma questão de sorte, mas uma questão de escolha; não é uma coisa que se espera, mas que se busca.' -William Jennings Bryan"
-    "'Não desconfie. O medo, a dúvida e a suspeita, convidam à traição. Cuidado com quem te aconselha a tomar cuidado.' -Carlos Fuentes"
-    "'Entregou-se tanto ao vício da luxúria / que em sua lei tornou lícito aquilo que desse prazer, / para cancelar a censura que merecia.' -Dante Alighieri"
-    "'Você está no PAREDÃO.' -Pedro Bial"
-    "'DO AMOROSO ESQUECIMENTO\n\nEu, agora - que desfecho!\nJá nem penso mais em ti...\nMas será que nunca deixo\nDe lembrar que te esqueci?'\n-Mario Quintana"
-    ]
-    #1)The Gestapo Propaganda (The Mild Manipulator)
-    #2)The Crimson Sunset
-    #3)The Violation
-    #4)Visions (The Vivacious Visions)
-    #5)The Disastrous Decision
-    #6)Wrong End: The Heavyweight Honey
-    #7)Wrong End: Recursive Nightmare
-    #8)Wrong End: O Programa Problemático
-    #9)Wrong End: Reality Distortion
-    #[...] the ego seems to bring the influence of the external world to bear upon the id and its tendencies, and endeavours to substitute the reality principle for the pleasure principle which reigns unrestrictedly in the id.
-    #aaa
+
+    
     def diceroll(trans, st, at):
         global d27roll
         d27roll = renpy.random.randint(1, 27)
@@ -67,16 +48,14 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 
 ##Here's where you can change the logo file to whatever you want
 image menu_logo:
-    "/mod_assets/MelancholyLogo.png"
     subpixel True
-    xcenter 340
-    ycenter 120
-    zoom 0.60
-    basicfade
     
 image menu_bg:
     topleft
-    "black"
+    alpha 0.0
+    "/mod_assets/images/MainMenu.png"
+    easeout 1.0 alpha 1
+    
 
 image game_menu_bg:
     topleft
@@ -199,24 +178,28 @@ image tos2 = "bg/warning2.png"
 
 label splashscreen:
     $ quick_menu = False
-    scene white
-    pause 0.5
-    scene tos
-    with Dissolve(1.0)
-    pause 1.0
+    scene black
+    show black
+    with dissolve
+    show splash_image at top
+    with dissolve
+    "{p=1.5}{nw}"
+    play music fm_nameinput
     "[config.name] é um jogo feito em Ren'Py a partir de um template de um mod de Doki Doki Literature Club. Este jogo não é afiliado à Team Salvato."
+    play sound ctc
+    "Este jogo é um CLONE sem fins lucrativos de \"Yu-Gi-Oh: Forbidden Memories\", desenvolvido pela Konami Entertaiment Japan e publicado pela Konami em 1999. Todos os direitos reservados."
+    play sound ctc
     "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18 anos."
+    play sound ctc
     "Este jogo não possui intenção de ofender ou difamar os atores da vida real, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a respeitarem os atores da vida real."
-    scene tos2
+    play sound ctc
+    scene black
     with Dissolve(1.5)
     pause 1.0
+    stop music
 
     #Optional, load a copy of DDLC save data
     #call import_ddlc_persistent
-
-    scene white
-    with Dissolve(1.5)
-
 
 
     $ basedir = config.basedir.replace('\\', '/')
@@ -228,21 +211,22 @@ label splashscreen:
 
     # Start splash logic
     $ config.allow_skipping = False
+    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 
     # Splash screen
     show white
-    $ persistent.ghost_menu = False #Handling for easter egg from DDLC
-    $ splash_message = splash_message_default #Default splash message
+    #$ persistent.ghost_menu = False #Handling for easter egg from DDLC
+    #$ splash_message = splash_message_default #Default splash message
     $ renpy.music.play(config.main_menu_music)
-    show intro with Dissolve(0.5, alpha=True)
-    pause 2.5
-    hide intro with Dissolve(0.5, alpha=True)
+    #show intro with Dissolve(0.5, alpha=True)
+    #pause 2.5
+    #hide intro with Dissolve(0.5, alpha=True)
     #You can use random splash messages, as well. By default, they are only shown during certain acts.
-    if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
-        $ splash_message = renpy.random.choice(splash_messages)
-    show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
-    pause 2.0
-    hide splash_warning with Dissolve(0.5, alpha=True)
+    #if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
+    #    $ splash_message = renpy.random.choice(splash_messages)
+    #show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
+    #pause 2.0
+    #hide splash_warning with Dissolve(0.5, alpha=True)
     $ config.allow_skipping = True
     return
 
