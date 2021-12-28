@@ -22,7 +22,7 @@ label cap01_01_intro:
     show intro_003 at top
     with dissolve
     "{p=1.0}{nw}"
-    "{outlinecolor=#000000}Finalmente eu encontrei!{/outlinecolor}\nFinalmente eu encontrei!"
+    "Finalmente eu encontrei!"
     play sound ctc
     "O Códex G, a História do Alexandre Senna!"
     play sound ctc
@@ -36,7 +36,16 @@ label cap01_01_intro:
     "Hahahahaha!"
     play sound ctc
     "Hahahahaha...\nHahahahaha!!!"
+    show testeee at top
+    "É como Seto Kaiba sempre diz: \"Se não der certo na primeira vez, ATAQUE COM O OLHOS AZUIS DE NOVO!\""
     play sound ctc
+    show seto_s at side_image_in zorder 3
+    "{p=0.6}{nw}"
+    "HAHAHAHAHAHAHAHAHAHAHA!"
+    play sound ctc
+    show seto_s at side_image_out
+    "{p=0.6}{nw}"
+    hide seto_s
     return
 
 

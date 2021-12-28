@@ -57,7 +57,25 @@ init python:
 ############################################################################################################
 #######Assets Forbidden Memories G
 
+#Transform
+transform side_image_in:
+    subpixel True
+    alpha 0.0
+    align (0.92, 0.9)
+    size (0,218)
+    linear 0.6 ypos 0.60 size (200,145) xanchor 0.70 alpha 1.0
+    
+transform side_image_out:
+    subpixel True
+    alpha 1.0
+    #align (0.92, 0.9)
+    linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
+
 #Imagens
+image testeee = "mod_assets/images/teste.png"
+
+image seto_s = "mod_assets/images/side/seto_s.png"
+
 image splash_image = "mod_assets/images/splash_image.png"
 image intro_001 = "mod_assets/images/intro/intro_001.png"
 image intro_002 = "mod_assets/images/intro/intro_002.png"

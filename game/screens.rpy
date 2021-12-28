@@ -21,10 +21,10 @@ transform change_transform(old,new):
 ################################################################################
 
 style default:
-    font gui.default_font
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
     size gui.text_size
     color gui.text_color
-    outlines [(3, "#000000aa", 0, 0)]
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     line_overlap_split 1
     line_spacing 1
 
