@@ -45,7 +45,9 @@ define build.name = "FMemoriesG"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = False
+define config.has_voice = True
+
+define config.default_voice_volume = 1.0
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
@@ -120,7 +122,7 @@ default preferences.text_cps = 50
 
 default preferences.afm_time = 15
 
-default preferences.music_volume = 0.75
+default preferences.music_volume = 0.65
 default preferences.sfx_volume = 0.75
 
 ## Save directory ##############################################################

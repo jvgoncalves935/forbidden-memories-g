@@ -43,6 +43,7 @@ init python:
             return None
         else:
             return 0
+    #persistent._character_volume['narrator'] = 1.0
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
 
@@ -178,6 +179,10 @@ image tos2 = "bg/warning2.png"
 
 label splashscreen:
     $ quick_menu = False
+
+
+    #jump capXX
+
     scene black
     show black
     with dissolve
@@ -197,6 +202,9 @@ label splashscreen:
     with Dissolve(1.5)
     pause 1.0
     stop music
+
+    python:
+        print "fim splash"
 
     #Optional, load a copy of DDLC save data
     #call import_ddlc_persistent

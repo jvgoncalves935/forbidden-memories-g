@@ -58,6 +58,20 @@ init python:
 #######Assets Forbidden Memories G
 
 #Transform
+transform rightin(x=640, z=0.80,time=0.25):
+    xcenter 1300 yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.00 alpha 1.00 subpixel True
+    easein time xcenter x
+
+transform rhide(time=0.25,position=1300):
+    subpixel True
+    on hide:
+        easeout time xcenter position
+
+transform lhide2(time=0.25,position=-300):
+    subpixel True
+    on hide:
+        easeout time xcenter position
+
 transform side_image_in:
     subpixel True
     alpha 0.0
@@ -71,10 +85,29 @@ transform side_image_out:
     #align (0.92, 0.9)
     linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
 
+#Personagens
+define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+
+image seto 1a = "mod_assets/characters/seto/1a.png"
+image seto 1b = "mod_assets/characters/seto/1b.png"
+
+image senna 1a = "mod_assets/characters/senna/1a.png"
+
+image guina 1a = "mod_assets/characters/guina/1a.png"
+
+image yuri 3xd = im.Composite((960, 960), (0, 0), "yuri/2l.png", (0, 0), "yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xd.png")
+image yuri 3xe = im.Composite((960, 960), (0, 0), "yuri/2l.png", (0, 0), "yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xe.png")
+
+
 #Imagens
 image testeee = "mod_assets/images/teste.png"
+image logo01 = "mod_assets/images/logo01.png"
 
-image seto_s = "mod_assets/images/side/seto_s.png"
+image seto_s = "mod_assets/characters/side/seto_s.png"
+image yuri_s1 = "mod_assets/characters/side/yuri_s1.png"
+image yuri_s2 = "mod_assets/characters/side/yuri_s2.png"
+image guina_s = "mod_assets/characters/side/guina_s.png"
+image senna_s1 = "mod_assets/characters/side/senna_s1.png"
 
 image splash_image = "mod_assets/images/splash_image.png"
 image intro_001 = "mod_assets/images/intro/intro_001.png"
@@ -82,8 +115,35 @@ image intro_002 = "mod_assets/images/intro/intro_002.png"
 image intro_003 = "mod_assets/images/intro/intro_003.png"
 image intro_004 = "mod_assets/images/intro/intro_004.png"
 
+image corredor_ddlc = "mod_assets/images/capXX/corridor.png"
+image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
+
 #Musicas 
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
+define audio.fm_intro = "mod_assets/music/fm_intro.ogg"
+define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_preliminary_faceoff.ogg"
+define audio.fm_plazatown = "<loop 26.033>mod_assets/music/fm_plazatown.ogg"
+
+#Vozes
+define voz_teste = "mod_assets/voices/teste.ogg"
+
+define voz_capXX_001 = "mod_assets/voices/capXX/capxx_001.ogg"
+define voz_capXX_002 = "mod_assets/voices/capXX/capxx_002.ogg"
+define voz_capXX_003 = "mod_assets/voices/capXX/capxx_003.ogg"
+define voz_capXX_004 = "mod_assets/voices/capXX/capxx_004.ogg"
+define voz_capXX_005 = "mod_assets/voices/capXX/capxx_005.ogg"
+define voz_capXX_006 = "mod_assets/voices/capXX/capxx_006.ogg"
+define voz_capXX_007 = "mod_assets/voices/capXX/capxx_007.ogg"
+define voz_capXX_008 = "mod_assets/voices/capXX/capxx_008.ogg"
+define voz_capXX_009 = "mod_assets/voices/capXX/capxx_009.ogg"
+define voz_capXX_010 = "mod_assets/voices/capXX/capxx_010.ogg"
+define voz_capXX_011 = "mod_assets/voices/capXX/capxx_011.ogg"
+define voz_capXX_012 = "mod_assets/voices/capXX/capxx_012.ogg"
+define voz_capXX_013 = "mod_assets/voices/capXX/capxx_013.ogg"
+define voz_capXX_014 = "mod_assets/voices/capXX/capxx_014.ogg"
+define voz_capXX_015 = "mod_assets/voices/capXX/capxx_015.ogg"
+define voz_capXX_016 = "mod_assets/voices/capXX/capxx_016.ogg"
+define voz_capXX_017 = "mod_assets/voices/capXX/capxx_017.ogg"
 
 #Audios
 define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
@@ -2449,7 +2509,7 @@ image main_c 1k = "mod_assets/characters/main_c/2k.png"
 
 ###### Character Variables ######
 # These configure the shortcuts for writing dialog for each character.
-define narrator = Character(ctc="ctc", ctc_position="fixed")
+define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator")
 define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")

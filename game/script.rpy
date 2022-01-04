@@ -2,7 +2,6 @@
 # Should not include any actual events or scripting; only logic and calling other labels.
 
 label start:
-
     # Set the ID of this playthrough
     $ anticheat = persistent.anticheat
 
@@ -31,6 +30,7 @@ label start:
     if(cap_choosed <= 2):
         call cap02
 
+    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
     #if persistent.playthrough == 1:
         #Stuff here will only play after you increased the playthrough count
         #call tutorial_selection from _call_tutorial_selection

@@ -483,7 +483,7 @@ style quick_button_text:
 
 init python:
     def FinishEnterName():
-        if not player: return
+        #if not player: return
         #persistent.playername = player
         #renpy.hide_screen("name_input")
         renpy.jump_out_of_context("start")
@@ -499,11 +499,10 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
             if persistent.playthrough == 1:
                 textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Por favor digite seu nome", ok_action=Function(FinishEnterName)))
             else:
-                textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Por favor digite seu nome", ok_action=Function(FinishEnterName)))
+                textbutton _("New Game") action Function(FinishEnterName)
 
         else:
 

@@ -35,17 +35,23 @@ label cap01_01_intro:
     "{p=1.0}{nw}"
     "Hahahahaha!"
     play sound ctc
-    "Hahahahaha...\nHahahahaha!!!"
-    show testeee at top
-    "É como Seto Kaiba sempre diz: \"Se não der certo na primeira vez, ATAQUE COM O OLHOS AZUIS DE NOVO!\""
-    play sound ctc
-    show seto_s at side_image_in zorder 3
-    "{p=0.6}{nw}"
-    "HAHAHAHAHAHAHAHAHAHAHA!"
-    play sound ctc
-    show seto_s at side_image_out
-    "{p=0.6}{nw}"
-    hide seto_s
+    "Hahahahaha...\nHahahahaha!!!{p=2.5}{nw}"
+    $ renpy.music.play(audio.fm_intro)
+    $ renpy.music.queue(None,clear_queue=True)
+    #play music fm_intro
+    window hide(None)
+    hide intro_004
+    show black
+    with Dissolve(2.0)
+    pause 0.5
+    hide black
+    show logo01
+    with Dissolve(3.0)
+    pause 3.0
+    hide logo01
+    show black
+    with Dissolve(3.0)
+    pause 3.0
     return
 
 
