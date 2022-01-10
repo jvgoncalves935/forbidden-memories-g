@@ -28,6 +28,15 @@ style default:
     line_overlap_split 1
     line_spacing 1
 
+style escolha:
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    size gui.text_size
+    color gui.text_color
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    line_overlap_split 1
+    line_spacing 1
+    background "#000000"
+
 style default_monika is normal:
     slow_cps 30
 
@@ -365,10 +374,10 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    ypos 570
     yanchor 0.5
 
-    spacing gui.choice_spacing
+    spacing 0
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
@@ -377,7 +386,11 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
-    outlines []
+    #font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    #size 22
+    color gui.text_color
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    #xalign -2.0
 
 ## Simple choice grid ###############################################################
 ##
@@ -393,7 +406,7 @@ screen choicegrid(items):
         xsize 500
 
         for i in items:
-            textbutton i.caption action i.action text_size 40
+            textbutton i.caption action i.action text_size 22
 
 ## Text Timer  #######################################################################
 ##

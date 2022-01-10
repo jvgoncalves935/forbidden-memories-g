@@ -23,8 +23,8 @@ init python:
     #config.underlay.append( renpy.Keymap( mousedown_1 = lambda: renpy.run( renpy.play("audio/auto/default/completion_7_meghan.ogg") ) # rename the file as needed ) )
 #    config.underlay.append( renpy.Keymap( mousedown_1 = lambda : renpy.run( renpy.play("gui/sfx/select.ogg")) if (play_click_sound_autorized == True) else None ) ) 
 
-define gui.hover_sound = "gui/sfx/hover.ogg"
-define gui.activate_sound = "gui/sfx/select.ogg"
+define gui.hover_sound = "mod_assets/sounds/hover_select.ogg"
+define gui.activate_sound = "mod_assets/sounds/confirm.ogg"
 define gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg"
 
 ## Colors ######################################################################
@@ -216,15 +216,16 @@ define gui.quick_button_text_insensitive_color = "#a66"
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 420
+define gui.choice_button_width = 880
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 5, 100, 5)
-define gui.choice_button_text_font = gui.default_font
-define gui.choice_button_text_size = gui.text_size
-define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#000"
-define gui.choice_button_text_hover_color = "#fa9"
+#define gui.choice_button_xalign = 0.1
+define gui.choice_button_borders = Borders(1, 1, 1, 1)
+define gui.choice_button_text_font = "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+define gui.choice_button_text_size = 22
+define gui.choice_button_text_xalign = 0.00
+define gui.choice_button_text_idle_color = "#fff"
+define gui.choice_button_text_hover_color = "#fff"
 
 
 ## File Slot Buttons ###########################################################

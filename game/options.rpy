@@ -251,6 +251,9 @@ init python:
     build.classify('/game/10', None)
     build.classify('/game/cache/*.*', None)
     build.classify('**.rpa',None)
+    build.classify('/tests/*.*',None)
+    build.classify('/psd/*.*',None)
+    build.classify('/original_scripts/*.*',None)
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

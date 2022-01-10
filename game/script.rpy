@@ -29,6 +29,10 @@ label start:
         call cap01
     if(cap_choosed <= 2):
         call cap02
+    if(cap_choosed <= 3):
+        call cap03
+    call creditos
+    call capXX
 
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
     #if persistent.playthrough == 1:

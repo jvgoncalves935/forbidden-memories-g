@@ -13,8 +13,9 @@ python early:
     me = singleton.SingleInstance()
 
 init python:
-    config.keymap['game_menu'].remove('mouseup_3')
-    config.keymap['hide_windows'].append('mouseup_3')
+    #config.keymap['game_menu'].remove('mouseup_3')
+    #config.keymap['hide_windows'].append('mouseup_3')
+    #config.rollback_enabled = False
     config.keymap['self_voicing'] = []
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
@@ -86,6 +87,7 @@ transform side_image_out:
     linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
 
 #Personagens
+define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='{fi=33-0.16-33}',what_suffix='{/fi}')
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 image seto 1a = "mod_assets/characters/seto/1a.png"
@@ -102,6 +104,11 @@ image yuri 3xe = im.Composite((960, 960), (0, 0), "yuri/2l.png", (0, 0), "yuri/2
 #Imagens
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
+
+image textbox_aux:
+    "mod_assets/gui/textbox2.png"
+    xalign 0.5
+    yalign 1.0
 
 image seto_s = "mod_assets/characters/side/seto_s.png"
 image yuri_s1 = "mod_assets/characters/side/yuri_s1.png"
@@ -149,6 +156,7 @@ define voz_capXX_017 = "mod_assets/voices/capXX/capxx_017.ogg"
 define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
 define audio.ctc = "mod_assets/sounds/ctc.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
+#define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
 ############################################################################################################
 ############################################################################################################
@@ -2509,7 +2517,7 @@ image main_c 1k = "mod_assets/characters/main_c/2k.png"
 
 ###### Character Variables ######
 # These configure the shortcuts for writing dialog for each character.
-define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator")
+#define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='{fi=50-0.3-50}',what_suffix='{/fi}')
 define mc = DynamicCharacter('player', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")

@@ -14,29 +14,29 @@ label capXX:
     "Ora, as garotas ainda não chegaram no clube..."
     play sound ctc
     show yuri 2h
-    "Tenho que estudar muito ainda para a prova de amanhã, não estou entendendo a matéria direito."
+    "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo a matéria direito."
     play sound ctc
     stop music
     play music fm_plazatown
     show seto_s at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_001
-    "O que eu sempre digo: \"Se não consegue da primeira vez, ATAQUE COM O OLHOS AZUIS DE NOVO!\""
+    "O que eu sempre digo: \"Se não\nconsegue da primeira vez, ATAQUE COM O OLHOS AZUIS DE NOVO!\""
     play sound ctc
     show seto_s at side_image_out
     "{p=0.6}{nw}"
     hide seto_s
     show yuri 2p
-    "AHH! Desculpe-me, quem é você? Posso lhe ajudar?"
+    "AHH! Desculpe-me, quem é você? Posso\nlhe ajudar?"
     play sound ctc
     show seto 1a at l32
     "{p=0.3}{nw}"
     voice voz_capXX_002
-    "Se você não puder, isso não vai me surpreender..."
+    "Se você não puder, isso não vai me\nsurpreender..."
     play sound ctc
     show yuri 2o at t31
     "{p=0.3}{nw}"
-    "(Parece que ele surgiu de outra era...! Antigo Egito?)"
+    "(Parece que ele surgiu de outra\nera...! Antigo Egito?)"
     show yuri 2n at t31
     "{p=0.3}{nw}"
     "O-o que você está fazendo aqui? "
@@ -47,7 +47,7 @@ label capXX:
     show seto_s at side_image_in
     "{p=0.6}{nw}"
     voice voz_capXX_003
-    "Nada que seja do seu interesse, eu vim ver uma carta..."
+    "Nada que seja do seu interesse, eu\nvim ver uma carta..."
     play sound ctc
     show seto_s at side_image_out
     "{p=0.6}{nw}"
@@ -72,7 +72,7 @@ label capXX:
     play sound ctc
     show yuri_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
-    "Socorro! Tem um homem estranho vindo atrás de mim!"
+    "Socorro! Tem um homem estranho vindo\natrás de mim!"
     play sound ctc
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
@@ -80,10 +80,10 @@ label capXX:
     show seto 1a at t32
     "{p=0.3}{nw}"
     voice voz_capXX_005
-    "Muito bem, esse desvio foi uma total perda de tempo e energia..."
+    "Muito bem, esse desvio foi uma total\nperda de tempo e energia..."
     play sound ctc
     voice voz_capXX_006
-    "Então vamos em frente e fingir que essa loucura nunca aconteceu."
+    "Então vamos em frente e fingir que\nessa loucura nunca aconteceu."
     play sound ctc
     show seto at rhide(time=0.25,position=-400)
     hide seto
@@ -125,7 +125,7 @@ label capXX:
     show senna 1a at rightin(755,time=0.25)
     "{p=1.0}{nw}"
     voice voz_capXX_008
-    "Cadê o arrombamento? Foi aqui, foi aonde?"
+    "Cadê o arrombamento? Foi aqui, foi\naonde?"
     play sound ctc
     show yuri 3r
     "Mas que DROGA você está falando? Quem é você!?"
@@ -160,7 +160,7 @@ label capXX:
     "{p=0.6}{nw}"
     hide yuri_s1
     voice voz_capXX_011
-    "Oh rapaz, você tá maluco?"
+    "Pô rapaz, você tá maluco?"
     play sound ctc
     voice voz_capXX_012
     "Você me deixou nervoso..."
@@ -209,7 +209,7 @@ label capXX:
     show guina 1a at l31
     "{p=0.6}{nw}"
     voice voz_capXX_015
-    "Achou meu pau grande? Você é bem curiosinho, né cara?"
+    "Achou meu pau grande? Você é bem\ncuriosinho, né cara?"
     play sound ctc
     show yuri 3xd
     "NÃÃÃÃO! AAAAHHHRRRGGHH!"
@@ -227,10 +227,10 @@ label capXX:
     "{p=0.6}{nw}"
     hide yuri_s2
     voice voz_capXX_016
-    "A profissão de professor é uma coisa muito SÉRIA, que tem que ser levada a SÉRIO..."
+    "A profissão de professor é uma coisa\nmuito SÉRIA, que tem que ser levada a SÉRIO..."
     play sound ctc
     voice voz_capXX_017
-    "Se tiver algum aluno fazendo coisa errada... A gente COME JÁ."
+    "Se tiver algum aluno fazendo coisa\nerrada... A gente COME JÁ."
     play sound ctc
     hide escadas_ddlc
     show black at top

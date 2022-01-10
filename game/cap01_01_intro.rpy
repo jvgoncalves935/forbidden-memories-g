@@ -24,7 +24,7 @@ label cap01_01_intro:
     "{p=1.0}{nw}"
     "Finalmente eu encontrei!"
     play sound ctc
-    "O Códex G, a História do Alexandre Senna!"
+    "O Códex G, a História do Alexandre\nSenna!"
     play sound ctc
     hide intro_003
     show black

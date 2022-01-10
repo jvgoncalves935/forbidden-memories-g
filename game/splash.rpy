@@ -179,10 +179,7 @@ image tos2 = "bg/warning2.png"
 
 label splashscreen:
     $ quick_menu = False
-
-
     #jump capXX
-
     scene black
     show black
     with dissolve
@@ -190,13 +187,20 @@ label splashscreen:
     with dissolve
     "{p=1.5}{nw}"
     play music fm_nameinput
-    "[config.name] é um jogo feito em Ren'Py a partir de um template de um mod de Doki Doki Literature Club. Este jogo não é afiliado à Team Salvato."
+    "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
     play sound ctc
-    "Este jogo é um CLONE sem fins lucrativos de \"Yu-Gi-Oh: Forbidden Memories\", desenvolvido pela Konami Entertaiment Japan e publicado pela Konami em 1999. Todos os direitos reservados."
+    show textbox_aux
+    menu:
+        "<Escapar o mais rápido possível>":
+            "então chuopa"
+        "<\"No problem.\">":
+            "então cuome"
+    hide textbox_aux
+    "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
     play sound ctc
-    "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18 anos."
+    "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18\nanos."
     play sound ctc
-    "Este jogo não possui intenção de ofender ou difamar os atores da vida real, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a respeitarem os atores da vida real."
+    "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
     play sound ctc
     scene black
     with Dissolve(1.5)
