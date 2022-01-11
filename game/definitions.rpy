@@ -20,6 +20,7 @@ init python:
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
+
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
         if pos: return pos
@@ -104,6 +105,17 @@ image yuri 3xe = im.Composite((960, 960), (0, 0), "yuri/2l.png", (0, 0), "yuri/2
 #Imagens
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
+image game_over_bg = "mod_assets/images/GameOver.png"
+
+image operation_senna:
+    "mod_assets/images/operation_senna.png"
+    xalign 0.5
+    yalign 0.25
+
+image converting_minds:
+    "mod_assets/images/converting_minds.png"
+    xalign 0.5
+    yalign 0.9
 
 image textbox_aux:
     "mod_assets/gui/textbox2.png"
@@ -130,6 +142,8 @@ define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
 define audio.fm_intro = "mod_assets/music/fm_intro.ogg"
 define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_preliminary_faceoff.ogg"
 define audio.fm_plazatown = "<loop 26.033>mod_assets/music/fm_plazatown.ogg"
+define audio.fm_gameover = "mod_assets/music/fm_gameover.ogg"
+define audio.m_converting_minds = "mod_assets/music/m_converting_minds.ogg"
 
 #Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -156,6 +170,7 @@ define voz_capXX_017 = "mod_assets/voices/capXX/capxx_017.ogg"
 define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
 define audio.ctc = "mod_assets/sounds/ctc.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
+define audio.celular = "<loop 0.00>mod_assets/sounds/celular.ogg"
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
 ############################################################################################################

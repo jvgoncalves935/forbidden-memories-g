@@ -60,7 +60,7 @@ image menu_bg:
 
 image game_menu_bg:
     topleft
-    "black"
+    "white"
 
 image menu_fade:
     "white"
@@ -71,11 +71,11 @@ image menu_art:
 
 image menu_art_y:
     subpixel True
-    "mod_assets/bg/mainmenu/yuri0.png"
-    xcenter 805
-    ycenter 360
-    function sleeprollint
-    glitche
+    #"mod_assets/bg/mainmenu/yuri0.png"
+    #xcenter 805
+    #ycenter 360
+    #function sleeprollint
+    #glitche
 
 image menu_nav:
     "gui/overlay/main_menu.png"
@@ -94,14 +94,14 @@ transform basicfade:
 
 transform glitche:
     subpixel True
-    function sleeprollint
-    parallel:
-        function diceroll
-        "mod_assets/bg/mainmenu/yuri[d27roll].png"
-        function sleeproll
-        repeat 27
-    "mod_assets/bg/mainmenu/yuri0.png"
-    repeat
+    #function sleeprollint
+    #parallel:
+    #    function diceroll
+    #    "mod_assets/bg/mainmenu/yuri[d27roll].png"
+    #    function sleeproll
+    #    repeat 27
+    #"mod_assets/bg/mainmenu/yuri0.png"
+    #repeat
 
 transform particle_fadeout:
     easeout 1.5 alpha 0
@@ -189,13 +189,16 @@ label splashscreen:
     play music fm_nameinput
     "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
     play sound ctc
+    play music celular
     show textbox_aux
     menu:
         "<Escapar o mais rápido possível>":
             "então chuopa"
+            jump game_over
         "<\"No problem.\">":
             "então cuome"
     hide textbox_aux
+    stop music
     "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
     play sound ctc
     "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18\nanos."

@@ -471,7 +471,7 @@ screen quick_menu():
 #init python:
 #    config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 #style quick_button is default
 #style quick_button_text is button_text
@@ -506,10 +506,10 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.8
+        xalign 0.5
+        yalign 0.5
 
-        spacing gui.navigation_spacing
+        spacing 20
 
         if main_menu:
             if persistent.playthrough == 1:
@@ -523,7 +523,7 @@ screen navigation():
 
             textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-        textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+        textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu")]
 
         if _in_replay:
 
@@ -535,17 +535,19 @@ screen navigation():
             else:
                 textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+        textbutton _("Opções") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+
+        #textbutton _("Créditos") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
         if main_menu:
-            textbutton _("Endings") action [ShowMenu("endings"), SensitiveIf(renpy.get_screen("endings") == None), Show("side_menuart")]
-
+            textbutton _("Créditos") action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.m_converting_minds)]
+        
         #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action Help("README.html")
+            #textbutton _("Help") action Help("README.html")
 
             ## The quit button is banned on iOS and unnecessary on Android.
             textbutton _("Quit") action Quit(confirm=not main_menu)
@@ -558,6 +560,8 @@ style navigation_button:
     properties gui.button_properties("navigation_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    xalign 0.5
+    yalign 0.5
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
@@ -566,6 +570,8 @@ style navigation_button_text:
     outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
     hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
     insensitive_outlines [(4, "#fce", 0, 0), (2, "#fce", 2, 2)]
+    xalign 0.5
+    yalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -588,7 +594,7 @@ screen main_menu():
     #     add "menu_art_y_ghost"
     #    add "menu_art_n_ghost"
     #    else:
-    add "menu_bg"
+    add "menu_bg" alpha 0.5
         #add "menu_art_y"
         #add "menu_art_n"
     frame:
@@ -598,14 +604,14 @@ screen main_menu():
 ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    #if gui.show_name:
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+    #    vbox:
+    #        text "[config.name!t]":
+    #            style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+    #        text "[config.version]":
+    #            style "main_menu_version"
 
 #    if not persistent.ghost_menu:
 #    add "menu_particles"
@@ -812,9 +818,9 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    #use game_menu(_("About"), scroll="viewport"):
 
-        style_prefix "about"
+    style_prefix "about"
 
         vbox:
 
@@ -826,6 +832,7 @@ screen about():
                 text "[gui.about!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        
 
 
 ## This is redefined in options.rpy to add text to the about screen.
@@ -850,234 +857,36 @@ screen side_img(img):
     #on "show" action Play("sound", "audio/se/SE_シスてム_タイとル_ルーぷ.wav")
     #on "hide" action Stop("sound", fadeout=1.0)
 
-screen endings():
+screen default_menu_aux():
 
     tag menu
 
-    style_prefix "endings"
+    style_prefix "default_menu_aux"
 
-    ######
-    imagebutton:
-        xpos 221
-        ypos 13
-        idle "Maiden_Vertice_s"
-        hover "Maiden_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="amburgueti.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-    ######
-    
-    ######
-    imagebutton:
-        xpos 231
-        ypos 71
-        idle "Prologue_Vertice_s"
-        hover "Prologue_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="cabo.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Prologue_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 216
-        ypos 155
-        idle "Awake_Vertice_s"
-        hover "Awake_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="cenora.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Awake_Aresta"
-    ######
-    
-    ######
-    imagebutton:
-        xpos 260
-        ypos 244
-        idle "World_Vertice_s"
-        hover "World_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="light.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "World_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 113
-        ypos 229
-        idle "X1_Vertice_s"
-        hover "X1_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="margarina.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "X1_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 48
-        ypos 111
-        idle "X2_Vertice_s"
-        hover "X2_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="observer.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "X2_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 508
-        ypos 91
-        idle "X3_Vertice_s"
-        hover "X3_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="fly.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "X3_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 508
-        ypos 213
-        idle "X4_Vertice_s"
-        hover "X4_Vertice_a"
-        #hover_sound "mod_assets/ost/yuri's melancholy/x4.ogg"
-        hovered [ShowTransient("side_img", img="trigg.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "X4_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 588
-        ypos 22
-        idle "X5_Vertice_s"
-        hover "X5_Vertice_a"
-        #hover_sound "mod_assets/ost/yuri's melancholy/x5?.ogg"
-        hovered [ShowTransient("side_img", img="dilmae.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "X5_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 435
-        ypos 315
-        idle "Violation_Vertice_s"
-        hover "Violation_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="polvo.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Violation_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 9
-        ypos 313
-        idle "Visions_Vertice_s"
-        hover "Visions_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="rapper.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Visions_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 248
-        ypos 394
-        idle "Gordian_Vertice_s"
-        hover "Gordian_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="rato.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Gordian_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 399
-        ypos 461
-        idle "Decision_Vertice_s"
-        hover "Decision_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="rato2.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Decision_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 370
-        ypos 558
-        idle "Sunset_Vertice_s"
-        hover "Sunset_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="shaman.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Sunset_Aresta_Gordian"
-    add "Sunset_Aresta_X4"
-    ######
-
-    ######
-    imagebutton:
-        xpos 91
-        ypos 551
-        idle "Manipulator_Vertice_s"
-        hover "Manipulator_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="zoio.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Manipulator_Aresta"
-    ######
-
-    ######
-    imagebutton:
-        xpos 231
-        ypos 666
-        idle "Guardian_Vertice_s"
-        hover "Guardian_Vertice_a"
-        #hover_sound "audio/se/SE_日常_照明点灯.wav"
-        hovered [ShowTransient("side_img", img="trigg2.png"), Hide("side_menuart")] unhovered [Hide("side_img"), Show("side_menuart")]
-        action [Return(), Hide("side_img")]
-
-    add "Guardian_Aresta_Decision"
-    add "Guardian_Aresta_Manipulator"
-    add "Guardian_Aresta_Sunset"
-    add "Guardian_Aresta_Violation"
-    add "Guardian_Aresta_Visions"
-
-    add "Guardian_X1"
-    add "Guardian_X2"
-    add "Guardian_X3"
-    add "Guardian_X4"
-    add "Guardian_X5"
-    ######
+    add "menu_bg"
 
     textbutton _("Return"):
-        xpos 21
-        ypos 736
+        xalign 0.05
+        ypos 0.95
         style "return_button"
         action [Return(), Hide("side_menuart")]
+
+screen creditos():
+
+    tag menu
+
+    style_prefix "creditos"
+
+    add "black"
+
+    add "operation_senna"
+    add "converting_minds"
+
+    textbutton _("Return"):
+        xalign 0.05
+        ypos 0.95
+        style "return_button"
+        action [Return(), Hide("side_menuart"), Play("music", config.main_menu_music)]
 
 
 
@@ -1119,75 +928,82 @@ screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue()
 
-    use game_menu(title):
+    #use game_menu(title):
+    add "menu_bg" alpha 0.5
 
-        fixed:
+    textbutton _("Return"):
+        xalign 0.05
+        ypos 0.95
+        style "return_button"
+        action [Return(), Hide("side_menuart")]
 
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
+    fixed:
 
-            # The page name, which can be edited by clicking on a button.
+        ## This ensures the input will get the enter event before any of the
+        ## buttons do.
+        order_reverse True
 
-            button:
-                style "page_label"
+        # The page name, which can be edited by clicking on a button.
 
-                #key_events True
-                xalign 0.5
-                #action page_name_value.Toggle()
+        button:
+            style "page_label"
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #key_events True
+            xalign 0.5
+            #action page_name_value.Toggle()
 
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
+            input:
+                style "page_label_text"
+                value page_name_value
 
-                xalign 0.5
-                yalign 0.5
+        ## The grid of file slots.
+        grid gui.file_slot_cols gui.file_slot_rows:
+            style_prefix "slot"
 
-                spacing gui.slot_spacing
+            xalign 0.5
+            yalign 0.5
 
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+            spacing gui.slot_spacing
 
-                    $ slot = i + 1
+            for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
-                    button:
-                        action FileActionMod(slot)
+                $ slot = i + 1
 
-                        has vbox
+                button:
+                    action FileActionMod(slot)
 
-                        add FileScreenshot(slot) xalign 0.5
+                    has vbox
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
+                    add FileScreenshot(slot) xalign 0.5
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("slot vazio")):
+                        style "slot_time_text"
 
-                        key "save_delete" action FileDelete(slot)
+                    text FileSaveName(slot):
+                        style "slot_name_text"
 
-            ## Buttons to access other pages.
-            hbox:
-                style_prefix "page"
+                    key "save_delete" action FileDelete(slot)
 
-                xalign 0.5
-                yalign 1.0
+        ## Buttons to access other pages.
+        hbox:
+            style_prefix "page"
 
-                spacing gui.page_spacing
+            xalign 0.5
+            yalign 1.0
 
-                #textbutton _("<") action FilePagePrevious(max=9, wrap=True)
+            spacing gui.page_spacing
 
-                #textbutton _("{#auto_page}A") action FilePage("auto")
+            #textbutton _("<") action FilePagePrevious(max=9, wrap=True)
 
-                #textbutton _("{#quick_page}Q") action FilePage("quick")
+            #textbutton _("{#auto_page}A") action FilePage("auto")
 
-                # range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
+            #textbutton _("{#quick_page}Q") action FilePage("quick")
 
-                #textbutton _(">") action FilePageNext(max=9, wrap=True)
+            # range(1, 10) gives the numbers from 1 to 9.
+            for page in range(1, 10):
+                textbutton "[page]" action FilePage(page)
+
+            #textbutton _(">") action FilePageNext(max=9, wrap=True)
 
 
 style page_label is gui_label
@@ -1205,10 +1021,11 @@ style page_label:
     ypadding 3
 
 style page_label_text:
-    color "#000"
-    outlines []
+    color "#fff"
     text_align 0.5
     layout "subtitle"
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     hover_color gui.hover_color
 
 style page_button:
@@ -1223,8 +1040,9 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
-    color "#666"
-    outlines []
+    color "#fff"
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
 
 
 ## Preferences screen ##########################################################

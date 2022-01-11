@@ -25,6 +25,7 @@ label start:
     
     $ cap_choosed = 1
     play sound menu_start
+
     if(cap_choosed <= 1):
         call cap01
     if(cap_choosed <= 2):
