@@ -74,6 +74,7 @@ init python:
         
         renpy.hide_screen("name_input")
         renpy.show_screen("creditos")
+        renpy.music.play(audio.fm_freeduel)
 
         
 
@@ -156,6 +157,7 @@ image yuri 3xe = im.Composite((960, 960), (0, 0), "yuri/2l.png", (0, 0), "yuri/2
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
 image game_over_bg = "mod_assets/images/GameOver.png"
+image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 
 image textbox_aux:
     "mod_assets/gui/textbox2.png"
@@ -184,7 +186,9 @@ define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_prelimina
 define audio.fm_plazatown = "<loop 26.033>mod_assets/music/fm_plazatown.ogg"
 define audio.fm_gameover = "mod_assets/music/fm_gameover.ogg"
 define audio.m_converting_minds = "mod_assets/music/m_converting_minds.ogg"
-define audio.fm_freeduel = "mod_assets/music/fm_freeduel.ogg"
+define audio.fm_freeduel = "<loop 0.933>mod_assets/music/fm_freeduel.ogg"
+define audio.fm_deck = "<loop 0.60>mod_assets/music/fm_deck.ogg"
+define audio.fm_password = "<loop 1.833>mod_assets/music/fm_password.ogg"
 
 #Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"

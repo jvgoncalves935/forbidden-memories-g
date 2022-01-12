@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1640548207
-ModificationTime: 1640635056
+ModificationTime: 1642016081
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
@@ -36,6 +36,7 @@ HheadAscent: 0
 HheadAOffset: 1
 HheadDescent: 0
 HheadDOffset: 1
+OS2Vendor: 'PfEd'
 MarkAttachClasses: 1
 DEI: 91125
 Encoding: ISO8859-1
@@ -47,7 +48,7 @@ FitToEm: 0
 WinInfo: 0 38 13
 BeginPrivate: 0
 EndPrivate
-BeginChars: 256 128
+BeginChars: 256 130
 
 StartChar: A
 Encoding: 65 65 0
@@ -4187,7 +4188,7 @@ SplineSet
  630 569 l 5
  566 569 l 5
 EndSplineSet
-Validated: 524297
+Validated: 9
 EndChar
 
 StartChar: oacute
@@ -4245,7 +4246,7 @@ SplineSet
  566 -71 l 5
  566 -135 l 5
 EndSplineSet
-Validated: 524297
+Validated: 9
 EndChar
 
 StartChar: ocircumflex
@@ -5636,6 +5637,148 @@ Flags: HW
 LayerCount: 2
 Fore
 Validated: 1
+EndChar
+
+StartChar: Otilde
+Encoding: 213 213 128
+Width: 1024
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+192 569 m 1
+ 192 505 l 1
+ 320 505 l 1
+ 320 569 l 1
+ 448 569 l 1
+ 448 505 l 1
+ 576 505 l 1
+ 576 441 l 1
+ 640 441 l 1
+ 640 505 l 1
+ 704 505 l 1
+ 704 569 l 1
+ 768 569 l 1
+ 768 633 l 1
+ 640 633 l 1
+ 640 569 l 1
+ 512 569 l 1
+ 512 633 l 1
+ 384 633 l 1
+ 384 697 l 1
+ 320 697 l 1
+ 320 633 l 1
+ 256 633 l 1
+ 256 569 l 1
+ 192 569 l 1
+640 -135 m 1
+ 704 -135 l 1
+ 704 -71 l 1
+ 768 -71 l 1
+ 768 249 l 1
+ 704 249 l 1
+ 704 313 l 1
+ 640 313 l 1
+ 640 377 l 1
+ 448 377 l 1
+ 448 313 l 1
+ 320 313 l 1
+ 320 249 l 1
+ 256 249 l 1
+ 256 -71 l 1
+ 320 -71 l 1
+ 320 -135 l 1
+ 448 -135 l 1
+ 448 -199 l 1
+ 640 -199 l 1
+ 640 -135 l 1
+640 -71 m 1
+ 384 -71 l 2
+ 384 -28.3330078125 384 14.3330078125 384 57 c 2
+ 320 57 l 2
+ 320 99.6669921875 320 142.333007812 320 185 c 1
+ 384 185 l 1
+ 384 249 l 1
+ 640 249 l 1
+ 640 185 l 1
+ 704 185 l 1
+ 704 -7 l 1
+ 640 -7 l 1
+ 640 -71 l 1
+EndSplineSet
+EndChar
+
+StartChar: otilde
+Encoding: 245 245 129
+Width: 1024
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+192 569 m 5
+ 192 505 l 5
+ 320 505 l 5
+ 320 569 l 5
+ 448 569 l 5
+ 448 505 l 5
+ 576 505 l 5
+ 576 441 l 5
+ 640 441 l 5
+ 640 505 l 5
+ 704 505 l 5
+ 704 569 l 5
+ 768 569 l 5
+ 768 633 l 5
+ 640 633 l 5
+ 640 569 l 5
+ 512 569 l 5
+ 512 633 l 5
+ 384 633 l 5
+ 384 697 l 5
+ 320 697 l 5
+ 320 633 l 5
+ 256 633 l 5
+ 256 569 l 5
+ 192 569 l 5
+704 -135 m 5
+ 768 -135 l 5
+ 768 -92.3330078125 768 -49.6669921875 768 -7 c 5
+ 832 -7 l 5
+ 832 185 l 5
+ 768 185 l 5
+ 768 249 l 5
+ 704 249 l 5
+ 704 313 l 5
+ 640 313 l 5
+ 640 377 l 5
+ 384 377 l 5
+ 384 313 l 5
+ 256 313 l 5
+ 256 270.333007812 256 227.666992188 256 185 c 5
+ 192 185 l 5
+ 192 -7 l 5
+ 256 -7 l 6
+ 256 -49.6669921875 256 -92.3330078125 256 -135 c 6
+ 320 -135 l 5
+ 320 -199 l 5
+ 704 -199 l 5
+ 704 -135 l 5
+576 -135 m 5
+ 448 -135 l 5
+ 448 -71 l 5
+ 384 -71 l 5
+ 384 -7 l 5
+ 320 -7 l 5
+ 320 185 l 5
+ 384 185 l 5
+ 384 249 l 5
+ 640 249 l 5
+ 640 185 l 5
+ 704 185 l 5
+ 704 99.6669921875 704 14.3330078125 704 -71 c 5
+ 576 -71 l 5
+ 576 -135 l 5
+EndSplineSet
 EndChar
 EndChars
 EndSplineFont

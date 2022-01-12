@@ -538,7 +538,7 @@ screen navigation():
 
             textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-        textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu")]
+        textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music", audio.fm_deck)]
 
         if _in_replay:
 
@@ -550,12 +550,12 @@ screen navigation():
             else:
                 textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("Opções") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+        textbutton _("Opções") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None),Play("music", audio.fm_password)]
 
         #textbutton _("Créditos") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
         if main_menu:
-            textbutton _("Créditos") action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.m_converting_minds)]
+            textbutton _("Créditos") action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
         
         #textbutton _("About") action ShowMenu("about")
 
@@ -954,22 +954,22 @@ screen creditos():
     add "black"
 
     vbox:
-        xalign 0.45
-        yalign 0.2
+        xalign 0.475
+        yalign 0.165
         imagebutton:
             idle "mod_assets/images/operation_senna.png"
             hover "mod_assets/images/operation_senna_hover.png"
-            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), init_input_operation_senna()]
+            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), init_input_operation_senna(),Play("music", audio.m_converting_minds)]
             hover_sound gui.hover_sound
             activate_sound audio.fm_back
 
     vbox:
-        xalign 0.45
-        yalign 0.8
+        xalign 0.475
+        yalign 0.9
         imagebutton:
             idle "mod_assets/images/converting_minds.png"
             hover "mod_assets/images/converting_minds_hover.png"
-            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None)]
+            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),Play("music", audio.m_converting_minds)]
             hover_sound gui.hover_sound
             activate_sound audio.fm_back
 
@@ -1116,7 +1116,7 @@ screen file_slots(title):
         xalign 0.05
         ypos 0.95
         style "return_button"
-        action [Return(), Hide("side_menuart")]
+        action [Return(), Play("music", config.main_menu_music)]
 
     fixed:
 
@@ -1242,94 +1242,118 @@ screen preferences():
     else:
         $ cols = 4
 
-    use game_menu(_("Settings"), scroll="viewport"):
+    #use game_menu(_("Settings"), scroll="viewport"):
+    add "options_menu_bg" alpha 0.6
+
+    vbox:
+        xalign 1.0
+        yalign 0.7
+        xmaximum 900
+        hbox:
+            box_wrap True
+            xmaximum 900
+            if renpy.variant("pc"):
+
+                vbox:
+                    xmaximum 500
+                    style_prefix "radio"
+                    label _("Modo de Exibicão   ")
+                    textbutton _("Modo Janela") action Preference("display", "window")
+                    textbutton _("Tela Cheia") action Preference("display", "fullscreen")
+            #if config.developer:
+            #    vbox:
+            #        style_prefix "radio"
+            #        label _("Rollback Side")
+            #        textbutton _("Disable") action Preference("rollback side", "disable")
+            #        textbutton _("Left") action Preference("rollback side", "left")
+            #        textbutton _("Right") action Preference("rollback side", "right")
+
+            vbox:
+                xmaximum 400
+                style_prefix "check"
+                label _("Pular")
+                textbutton _("Texto Não Visualizado") action Preference("skip", "toggle")
+                textbutton _("Depois de Escolhas") action Preference("after choices", "toggle")
+                #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+            ## Additional vboxes of type "radio_pref" or "check_pref" can be
+            ## added here, to add additional creator-defined preferences.
+
+        null height (7 * gui.pref_spacing)
+
+        hbox:
+            style_prefix "slider"
+            box_wrap True
+
+            vbox:
+
+                label _("Velocidade do Texto")
+
+                #bar value Preference("text speed")
+                bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20)
+
+                label _("Tempo do Auto-Avançar")
+
+                bar value Preference("auto-forward time")
+
+            vbox:
+
+                if config.has_music:
+                    label _("Volume de Música")
+
+                    hbox:
+                        bar value Preference("music volume")
+
+                if config.has_sound:
+
+                    label _("Volume de Som")
+
+                    hbox:
+                        bar value Preference("sound volume")
+
+                        if config.sample_sound:
+                            textbutton _("Test") action Play("sound", config.sample_sound)
+
+
+                if config.has_voice:
+                    label _("Volume de Voz")
+
+                    hbox:
+                        bar value Preference("voice volume")
+
+                        if config.sample_voice:
+                            textbutton _("Test") action Play("voice", config.sample_voice)
+
+                if config.has_music or config.has_sound or config.has_voice:
+                    null height gui.pref_spacing
+
+                    textbutton _("Mutar Tudo"):
+                        action Preference("all mute", "toggle")
+                        style "mute_all_button"
+        
+        null height (1 * gui.pref_spacing)
 
         vbox:
-            xoffset 50
-
+            box_wrap True
+            xmaximum 900
             hbox:
-                box_wrap True
-
-                if renpy.variant("pc"):
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                if config.developer:
-                    vbox:
-                        style_prefix "radio"
-                        label _("Rollback Side")
-                        textbutton _("Disable") action Preference("rollback side", "disable")
-                        textbutton _("Left") action Preference("rollback side", "left")
-                        textbutton _("Right") action Preference("rollback side", "right")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
+                style_prefix "radio"
+                label _("Ativar/Desativar Efeito Texto")
             hbox:
-                style_prefix "slider"
-                box_wrap True
+                style_prefix "radio"
+                textbutton _("Ativar") action Preference("display", "window")
+                textbutton _("Desativar") action Preference("display", "fullscreen")
+    
+    textbutton _("Voltar"):
+        xalign 0.95
+        ypos 0.95
+        style "return_button"
+        action [Return(), Play("music", config.main_menu_music)]
 
-                vbox:
-
-                    label _("Text Speed")
-
-                    #bar value Preference("text speed")
-                    bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20)
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Sound Volume")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-    text "v[config.version]":
-                xalign 1.0 yalign 1.0
-                xoffset -10 yoffset -10
-                style "main_menu_version"
+    #text "v[config.version]":
+    #            xalign 1.0 yalign 1.0
+    #            xoffset -10 yoffset -10
+    #            style "main_menu_version"
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1362,10 +1386,10 @@ style pref_label:
     bottom_margin 2
 
 style pref_label_text:
-    font "gui/font/RifficFree-Bold.ttf"
-    size 24
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    size 20
     color "#fff"
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     yalign 1.0
 
 style pref_vbox:
@@ -1380,8 +1404,11 @@ style radio_button:
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
-    font "gui/font/Halogen.ttf"
-    outlines []
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    size 14
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -1392,11 +1419,15 @@ style check_button:
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
-    font "gui/font/Halogen.ttf"
-    outlines []
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    size 14
 
 style slider_slider:
     xsize 350
+    color "#fff"
 
 style slider_button:
     properties gui.button_properties("slider_button")
