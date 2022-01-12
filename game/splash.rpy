@@ -210,9 +210,6 @@ label splashscreen:
     pause 1.0
     stop music
 
-    python:
-        print "fim splash"
-
     #Optional, load a copy of DDLC save data
     #call import_ddlc_persistent
 

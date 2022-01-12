@@ -15,7 +15,6 @@ transform change_transform(old,new):
         alpha 0.0
         linear 0.5 alpha 1.0
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -25,6 +24,22 @@ style default:
     size gui.text_size
     color gui.text_color
     outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    line_overlap_split 1
+    line_spacing 1
+
+style font_creditos_menu:
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    size 14
+    color gui.text_color
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    line_overlap_split 1
+    line_spacing 1
+
+style font_creditos_menu_2:
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    size 20
+    color "#020202"
+    outlines [(2, "#000101", 2, 2),(1, "#010101", 2, 2)]
     line_overlap_split 1
     line_spacing 1
 
@@ -553,6 +568,7 @@ screen navigation():
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
+style navigation_button_2 is gui_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
@@ -563,15 +579,24 @@ style navigation_button:
     xalign 0.5
     yalign 0.5
 
-style navigation_button_text:
-    properties gui.button_text_properties("navigation_button")
-    font "gui/font/RifficFree-Bold.ttf"
-    color "#fff"
-    outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
-    hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
-    insensitive_outlines [(4, "#fce", 0, 0), (2, "#fce", 2, 2)]
+style navigation_button_2:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound gui.hover_sound
+    activate_sound audio.fm_error
     xalign 0.5
     yalign 0.5
+
+style navigation_button_text:
+    properties gui.button_text_properties("navigation_button")
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(2, "#070e5c", 5, 5), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+    xalign 0.5
+    yalign 0.5
+    
 
 
 ## Main Menu screen ############################################################
@@ -761,6 +786,7 @@ style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
 style return_button is navigation_button
+style return_button_2 is navigation_button_2
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
@@ -799,6 +825,11 @@ style game_menu_label_text:
     yalign 0.5
 
 style return_button:
+    xpos gui.navigation_xpos
+    yalign 1.0
+    yoffset -30
+
+style return_button_2:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -30
@@ -871,6 +902,49 @@ screen default_menu_aux():
         style "return_button"
         action [Return(), Hide("side_menuart")]
 
+screen operation_senna_scr():
+
+    tag menu
+
+    style_prefix "operation_senna_scr"
+
+    add "black"
+    
+    textbutton _(glitchtext(renpy.random.randint(8,16))):
+        xalign 0.5
+        yalign 0.5
+        style "return_button"
+        action [Show(screen="name_input", message=glitchtext(renpy.random.randint(8,16)), ok_action=Function(set_input_operation_senna))]
+
+    textbutton _("Voltar?"):
+        xalign 0.05
+        yalign 0.975
+        style "return_button_2"
+        text_style "navigation_button_text"
+        action [NullAction()]
+
+screen converting_minds_scr():
+
+    tag menu
+
+    style_prefix "converting_minds_scr"
+
+    add "black"
+
+    textbutton _("comi o cu de quem tá lendo"):
+        xalign 0.5
+        yalign 0.5
+        
+        action [NullAction()]
+        text_style "font_creditos_menu_2"
+
+    textbutton _("Voltar?"):
+        xalign 0.05
+        ypos 0.975
+        style "return_button_2"
+        text_style "navigation_button_text"
+        action [NullAction()]
+
 screen creditos():
 
     tag menu
@@ -879,14 +953,121 @@ screen creditos():
 
     add "black"
 
-    add "operation_senna"
-    add "converting_minds"
+    vbox:
+        xalign 0.45
+        yalign 0.2
+        imagebutton:
+            idle "mod_assets/images/operation_senna.png"
+            hover "mod_assets/images/operation_senna_hover.png"
+            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), init_input_operation_senna()]
+            hover_sound gui.hover_sound
+            activate_sound audio.fm_back
 
-    textbutton _("Return"):
+    vbox:
+        xalign 0.45
+        yalign 0.8
+        imagebutton:
+            idle "mod_assets/images/converting_minds.png"
+            hover "mod_assets/images/converting_minds_hover.png"
+            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None)]
+            hover_sound gui.hover_sound
+            activate_sound audio.fm_back
+
+    vbox:
+        xalign 0.5
+        yalign 0.0
+        
+        text "Forbidden Memories G"
+        style "font_creditos_menu"
+    
+    vbox:
+        xalign 0.5
+        yalign 0.04
+        
+        text "Desenvolvido por:"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.08
+        
+        text "Converting Minds: Operation Senna"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.27
+        
+        text "Programação, Game Design, Fonte, Roteiro,"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.31
+        
+        text "Scripts, Edição de Imagens e Música:"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.35
+        
+        text "Master Exploder (Converting Minds)"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.45
+        
+        text "Scripts e Edição de Imagens:"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.49
+        
+        text "HtenekBR"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.60
+        
+        text "\"Converting Minds: Operation Senna\" é a"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.64
+        
+        text "equipe criada para o desenvolvimento de"
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.68
+        
+        text "Forbidden Memories G."
+        style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 1.0
+        
+        text "Converting Minds, 2022"
+        style "font_creditos_menu"
+            
+
+    #        text "[config.version]":
+    #            style "main_menu_version"
+
+    #1996 Kazuki Takahashi
+
+    textbutton _("Voltar"):
         xalign 0.05
-        ypos 0.95
+        ypos 0.975
         style "return_button"
-        action [Return(), Hide("side_menuart"), Play("music", config.main_menu_music)]
+        action [Return(), Play("music", config.main_menu_music)]
 
 
 
@@ -1490,34 +1671,29 @@ screen name_input(message, ok_action):
 
     zorder 200
 
-    #style_prefix "confirm"
+    style_prefix "confirm"
 
-    #add "gui/overlay/confirm.png"
-    #key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
+    add "gui/overlay/confirm.png"
+    key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action,set_flag_input_operation_senna(False)]
 
-    #frame:
+    frame:
 
-    #    vbox:
-    #        xalign .5
-    #        yalign .5
-    #        spacing 30
+        vbox:
+            xalign .5
+            yalign .5
+            spacing 30
 
-    #        label _(message):
-    #            style "confirm_prompt"
-    #            xalign 0.5
+            label _(message):
+                style "confirm_prompt"
+                xalign 0.5
 
-    #        input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-            #hbox:
-            #    xalign 0.5
-            #    style_prefix "radio_pref"
-            #    textbutton "Male" action NullAction()
-            #    textbutton "Female" action NullAction()
-    #        hbox:
-    #            xalign 0.5
-    #            spacing 100
+            hbox:
+                xalign 0.5
+                spacing 100
 
-    #            textbutton _("OK") action ok_action
+                textbutton _("OK") action ok_action
 
 screen dialog(message, ok_action):
 
@@ -1595,6 +1771,7 @@ style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
+style confirm_button_2 is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
@@ -1613,6 +1790,20 @@ style confirm_button:
     properties gui.button_properties("confirm_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+
+style confirm_button_2:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound gui.hover_sound
+    activate_sound audio.fm_error
+    xalign 0.5
+    yalign 0.5
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
 
 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")

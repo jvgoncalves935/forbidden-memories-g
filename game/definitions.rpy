@@ -13,6 +13,7 @@ python early:
     me = singleton.SingleInstance()
 
 init python:
+    import hashlib
     #config.keymap['game_menu'].remove('mouseup_3')
     #config.keymap['hide_windows'].append('mouseup_3')
     #config.rollback_enabled = False
@@ -55,9 +56,58 @@ init python:
         return Text(tformat.format(**parts_dict), 
                      style = ok_style if remaining > style_swap else near_style), .1
 
+
+    def init_input_operation_senna():
+        global flag_input_operation_senna
+        flag_input_operation_senna =False
+    
+    def set_input_operation_senna():
+        #print(player)
+        set_flag_input_operation_senna(True)
+        hash_aux = hashlib.sha512(str(player).upper().encode("utf-8")).hexdigest().upper()
+        
+        #print(hash_aux)
+        global hash_operation_senna
+        if(hash_aux == hash_operation_senna):
+            renpy.quit()
+            return
+        
+        renpy.hide_screen("name_input")
+        renpy.show_screen("creditos")
+
+        
+
+    
+    #def is_input_operation_senna():
+    #    global flag_input_operation_senna
+    #    (player,"aaaaa")
+    #    if(player == "" or not flag_input_operation_senna):
+    #        print("input_op")
+    #        renpy.show_screen("operation_senna_scr")
+    #        ShowMenu("operation_senna_scr")
+    #        SensitiveIf(renpy.get_screen("operation_senna_scr") == None)
+    #    else:
+    #        print("return")
+            
+    
+    def set_flag_input_operation_senna(flag):
+        #print("set",flag)
+        global flag_input_operation_senna
+        if(flag_input_operation_senna):
+            return
+        flag_input_operation_senna = flag
+    
+    
+
 ############################################################################################################
 ############################################################################################################
 #######Assets Forbidden Memories G
+
+#Variaveis
+define input_operation_senna = ""
+define flag_input_operation_senna = False
+define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885B6A7FD44BC3E43DE825B8F6D7C20F812C2E43E3D0B1C5B6B119BC1691E3287F737F195868B9DBB0"
+#define flag_input_operation_senna_concluido = False
 
 #Transform
 transform rightin(x=640, z=0.80,time=0.25):
@@ -107,16 +157,6 @@ image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
 image game_over_bg = "mod_assets/images/GameOver.png"
 
-image operation_senna:
-    "mod_assets/images/operation_senna.png"
-    xalign 0.5
-    yalign 0.25
-
-image converting_minds:
-    "mod_assets/images/converting_minds.png"
-    xalign 0.5
-    yalign 0.9
-
 image textbox_aux:
     "mod_assets/gui/textbox2.png"
     xalign 0.5
@@ -144,6 +184,7 @@ define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_prelimina
 define audio.fm_plazatown = "<loop 26.033>mod_assets/music/fm_plazatown.ogg"
 define audio.fm_gameover = "mod_assets/music/fm_gameover.ogg"
 define audio.m_converting_minds = "mod_assets/music/m_converting_minds.ogg"
+define audio.fm_freeduel = "mod_assets/music/fm_freeduel.ogg"
 
 #Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -171,6 +212,9 @@ define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
 define audio.ctc = "mod_assets/sounds/ctc.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
 define audio.celular = "<loop 0.00>mod_assets/sounds/celular.ogg"
+define audio.fm_back = "mod_assets/sounds/back.ogg"
+define audio.fm_error = "mod_assets/sounds/error.ogg"
+define audio.fm_arrow_select = "mod_assets/sounds/arrow_select.ogg"
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
 ############################################################################################################
