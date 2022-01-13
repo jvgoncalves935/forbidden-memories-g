@@ -206,6 +206,8 @@ screen say(who, what):
             window:
                 style "namebox"
                 text who id "who"
+        vbox:
+            key "K_ESCAPE" action [ShowMenu("load")]
 
     # If there's a side image, display it above the text. Do not display
     # on the phone variant - there's no room.
@@ -516,6 +518,8 @@ init python:
         #renpy.hide_screen("name_input")
         renpy.jump_out_of_context("start")
 
+    
+
 screen navigation():
 
     vbox:
@@ -530,7 +534,7 @@ screen navigation():
             if persistent.playthrough == 1:
                 textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Por favor digite seu nome", ok_action=Function(FinishEnterName)))
             else:
-                textbutton _("New Game") action Function(FinishEnterName)
+                textbutton _("New Game") action [Function(FinishEnterName)]
 
         else:
 
@@ -539,7 +543,7 @@ screen navigation():
             textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
         if main_menu:
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),change_current_music(current_music=config.main_menu_music,next_music=audio.fm_deck)]
+            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
 
         if _in_replay:
 
@@ -1111,13 +1115,16 @@ screen file_slots(title,current_song=None):
     default page_name_value = FilePageNameInputValue(pattern="Página {}")
 
     #use game_menu(title):
+    
+    #on 'show' action toggle_current_music_player(True)
+    
     add "menu_bg" alpha 0.5
 
     textbutton _("Voltar"):
         xalign 0.05
         ypos 0.95
         style "return_button"
-        action [Return(),change_current_music(play_next=True)]
+        action [Return(),Play("music",config.main_menu_music)]
 
     fixed:
 

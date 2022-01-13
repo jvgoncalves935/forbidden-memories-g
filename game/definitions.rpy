@@ -20,6 +20,7 @@ init python:
     config.keymap['self_voicing'] = []
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
+    config.keymap['game_menu'] = ['K_ESCAPE']
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
 
     #config.preferences['prefs_left'].append(
@@ -128,7 +129,12 @@ init python:
         config_fadein_texto = flag
 
     def change_current_music(current_music=None,next_music=None,play_next=False):
-        
+        global main_menu
+        global music_player_active
+        print("main menu",main_menu,"music_player",music_player_active,"current_screen",renpy.current_screen().screen_name[0])
+
+        if not music_player_active:
+            return
         if(next_music is not None):
             persistent.next_music = next_music
 
@@ -144,8 +150,15 @@ init python:
                 music = current_music 
             
         persistent.current_music = music
-        #print(current_music,next_music,play_next,music)
-        renpy.music.play(filenames=music,channel="music",loop="True")
+        print(current_music,next_music,play_next,music)
+        renpy.music.play(music)
+        toggle_current_music_player(False)
+
+    def toggle_current_music_player(flag):
+        print("toggle_current_music_player",flag)
+        global music_player_active
+        music_player_active = flag
+
         
 
     
@@ -163,6 +176,8 @@ define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885
 define config_fadein_texto = True
 define narrator_what_prefix = "{fi=33-0.16-33}"
 define narrator_what_suffix = "{/fi}"
+
+define music_player_active = False
 #define flag_input_operation_senna_concluido = False
 
 #Transform
