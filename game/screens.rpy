@@ -538,7 +538,8 @@ screen navigation():
 
             textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-        textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music", audio.fm_deck)]
+        if main_menu:
+            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),change_current_music(current_music=config.main_menu_music,next_music=audio.fm_deck)]
 
         if _in_replay:
 
@@ -1105,18 +1106,18 @@ init python:
             return FileAction(name)
 
 
-screen file_slots(title):
+screen file_slots(title,current_song=None):
 
-    default page_name_value = FilePageNameInputValue()
+    default page_name_value = FilePageNameInputValue(pattern="Página {}")
 
     #use game_menu(title):
     add "menu_bg" alpha 0.5
 
-    textbutton _("Return"):
+    textbutton _("Voltar"):
         xalign 0.05
         ypos 0.95
         style "return_button"
-        action [Return(), Play("music", config.main_menu_music)]
+        action [Return(),change_current_music(play_next=True)]
 
     fixed:
 
@@ -1214,7 +1215,10 @@ style page_button:
 
 style page_button_text:
     properties gui.button_text_properties("page_button")
-    outlines []
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_color "#070e5c"
+    color "#fff"
 
 style slot_button:
     properties gui.button_properties("slot_button")
@@ -1341,14 +1345,14 @@ screen preferences():
                 label _("Ativar/Desativar Efeito Texto")
             hbox:
                 style_prefix "radio"
-                textbutton _("Ativar") action Preference("display", "window")
-                textbutton _("Desativar") action Preference("display", "fullscreen")
+                textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
+                textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
     
     textbutton _("Voltar"):
         xalign 0.95
         ypos 0.95
         style "return_button"
-        action [Return(), Play("music", config.main_menu_music)]
+        action [Return(), Play("music", config.main_menu_music),toggle_fadein_texto()]
 
     #text "v[config.version]":
     #            xalign 1.0 yalign 1.0
@@ -1783,7 +1787,8 @@ screen confirm(message, yes_action, no_action):
                 add "confirm_glitch" xalign 0.5
 
             else:
-                label _(message):
+                #label _(message):
+                label _("Tem certeza de que deseja sair do jogo?"):
                     style "confirm_prompt"
                     xalign 0.5
 
@@ -1791,8 +1796,8 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 100
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Sim") action yes_action
+                textbutton _("Não") action no_action
 
     ## Right-click and escape answer "no".
     #key "game_menu" action no_action
@@ -1812,8 +1817,9 @@ style confirm_frame:
     yalign .5
 
 style confirm_prompt_text:
-    color "#000"
-    outlines []
+    color "#fff"
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     text_align 0.5
     layout "subtitle"
 

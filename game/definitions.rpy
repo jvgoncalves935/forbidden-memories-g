@@ -22,6 +22,14 @@ init python:
     config.keymap['toggle_skip'] = []
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
 
+    #config.preferences['prefs_left'].append(
+    #            _Preference(
+    #                "FadeIn",
+    #                "fadein",
+    #                [ ("Ativado", True, "True"),
+    #                ("Desativado", False, "True") ],
+    #                base=persistent))
+
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
         if pos: return pos
@@ -97,6 +105,49 @@ init python:
         if(flag_input_operation_senna):
             return
         flag_input_operation_senna = flag
+
+    def toggle_fadein_texto(init=False):
+        global config_fadein_texto
+        global narrator_what_prefix
+        global narrator_what_suffix
+        global narrator
+        
+        flag = persistent.config_fadein_texto
+        
+        if(flag is None):
+            persistent.config_fadein_texto = True
+            flag = True
+
+        if(flag):
+            narrator.what_prefix = narrator_what_prefix
+            narrator.what_suffix = narrator_what_suffix
+        else:
+            narrator.what_prefix = ""
+            narrator.what_suffix = ""
+        
+        config_fadein_texto = flag
+
+    def change_current_music(current_music=None,next_music=None,play_next=False):
+        
+        if(next_music is not None):
+            persistent.next_music = next_music
+
+        if(play_next):
+            if(persistent.next_music is None):
+                music = config.main_menu_music
+            else:
+                music = persistent.next_music
+        else:
+            if(current_music is None):
+                music = config.main_menu_music
+            else:
+                music = current_music 
+            
+        persistent.current_music = music
+        #print(current_music,next_music,play_next,music)
+        renpy.music.play(filenames=music,channel="music",loop="True")
+        
+
     
     
 
@@ -108,6 +159,10 @@ init python:
 define input_operation_senna = ""
 define flag_input_operation_senna = False
 define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885B6A7FD44BC3E43DE825B8F6D7C20F812C2E43E3D0B1C5B6B119BC1691E3287F737F195868B9DBB0"
+
+define config_fadein_texto = True
+define narrator_what_prefix = "{fi=33-0.16-33}"
+define narrator_what_suffix = "{/fi}"
 #define flag_input_operation_senna_concluido = False
 
 #Transform
@@ -139,7 +194,7 @@ transform side_image_out:
     linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
 
 #Personagens
-define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='{fi=33-0.16-33}',what_suffix='{/fi}')
+define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 image seto 1a = "mod_assets/characters/seto/1a.png"

@@ -178,37 +178,35 @@ image tos2 = "bg/warning2.png"
 
 
 label splashscreen:
+    python:
+        toggle_fadein_texto(init=True)
+
     $ quick_menu = False
-    #jump capXX
-    scene black
-    show black
-    with dissolve
-    show splash_image at top
-    with dissolve
-    "{p=1.5}{nw}"
-    play music fm_nameinput
-    "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
-    play sound ctc
-    play music celular
-    show textbox_aux
-    menu:
-        "<Escapar o mais rápido possível>":
-            "então chuopa"
-            jump game_over
-        "<\"No problem.\">":
-            "então cuome"
-    hide textbox_aux
-    stop music
-    "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
-    play sound ctc
-    "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18\nanos."
-    play sound ctc
-    "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
-    play sound ctc
-    scene black
-    with Dissolve(1.5)
-    pause 1.0
-    stop music
+
+    if(persistent.splash_complete is None or not persistent.splash_complete):
+        #jump capXX
+        scene black
+        show black
+        with dissolve
+        show splash_image at top
+        with dissolve
+        "{p=1.5}{nw}"
+        play music fm_nameinput
+        "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
+        play sound ctc
+        "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
+        play sound ctc
+        "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18\nanos."
+        play sound ctc
+        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        play sound ctc
+        "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
+        play sound ctc
+        scene black
+        with Dissolve(1.5)
+        $ persistent.splash_complete = True
+        pause 1.0
+        stop music
 
     #Optional, load a copy of DDLC save data
     #call import_ddlc_persistent
@@ -223,6 +221,8 @@ label splashscreen:
 
     # Start splash logic
     $ config.allow_skipping = False
+
+    $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 
     # Splash screen
