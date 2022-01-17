@@ -196,7 +196,9 @@ label splashscreen:
         play sound ctc
         "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
         play sound ctc
-        "Este jogo envolve temas adultos porém NÃO possui nenhum conteúdo explícito. Não é recomendado para menores de 18\nanos."
+        "Este é um jogo de humor, porém\nenvolve temas adultos. Mesmo assim,\nele NÃO possui nenhum conteúdo\nexplícito. Não é recomendado para\nmenores de 18 anos."
+        play sound ctc
+        "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de \"Universo G\"."
         play sound ctc
         "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
         play sound ctc

@@ -159,6 +159,9 @@ init python:
         global music_player_active
         music_player_active = flag
 
+    def current_screen():
+        print("current screen: ",renpy.current_screen().screen_name[0])
+
         
 
     
@@ -181,6 +184,9 @@ define music_player_active = False
 #define flag_input_operation_senna_concluido = False
 
 #Transform
+transform select_slot_pos(x=0.5,y=0.5):
+    align (x,y) alpha 1.0
+
 transform rightin(x=640, z=0.80,time=0.25):
     xcenter 1300 yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.00 alpha 1.00 subpixel True
     easein time xcenter x
@@ -228,6 +234,7 @@ image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
 image game_over_bg = "mod_assets/images/GameOver.png"
 image options_menu_bg = "mod_assets/images/OptionsMenu.png"
+image textbox_black = "mod_assets/gui/textbox_black.png"
 
 image textbox_aux:
     "mod_assets/gui/textbox2.png"

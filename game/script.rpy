@@ -24,16 +24,21 @@ label start:
         #Call example script
     
     $ cap_choosed = 1
+    $ game_over = False
     play sound menu_start
 
-    if(cap_choosed <= 1):
+    if(not game_over):
         call cap01
-    if(cap_choosed <= 2):
+    if(not game_over):
         call cap02
-    if(cap_choosed <= 3):
+    if(not game_over):
         call cap03
-    call creditos
-    call capXX
+    if(not game_over):
+        call creditos
+    if(not game_over):
+        call capXX
+
+    $ game_over = False
 
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
     #if persistent.playthrough == 1:

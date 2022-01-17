@@ -207,7 +207,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
         vbox:
-            key "K_ESCAPE" action [ShowMenu("load")]
+            key "K_ESCAPE" action [ShowMenu("save")]
 
     # If there's a side image, display it above the text. Do not display
     # on the phone variant - there's no room.
@@ -286,7 +286,7 @@ image ctc:
 ## http://www.renpy.org/doc/html/screen_special.html#input
 
 image input_caret:
-    Solid("#b59")
+    Solid("#070e5c")
     size (2,25) subpixel True
     block:
         linear 0.35 alpha 0
@@ -518,59 +518,99 @@ init python:
         #renpy.hide_screen("name_input")
         renpy.jump_out_of_context("start")
 
-    
+
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    #vbox:
+    #    style_prefix "navigation"
 
-        xalign 0.5
-        yalign 0.5
+    #    xalign 0.5
+    #    yalign 0.5
 
-        spacing 20
+    #    spacing 20
 
-        if main_menu:
-            if persistent.playthrough == 1:
-                textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Por favor digite seu nome", ok_action=Function(FinishEnterName)))
-            else:
-                textbutton _("New Game") action [Function(FinishEnterName)]
-
+    if main_menu:
+        if persistent.playthrough == 1:
+            textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Por favor digite seu nome", ok_action=Function(FinishEnterName)))
         else:
+            vbox:
+                xalign 0.5
+                yalign 0.18
+                imagebutton:
+                    idle "mod_assets/gui/menu/menu_new_game_idle.png"
+                    hover "mod_assets/gui/menu/menu_new_game_selected.png"
+                    action [Function(FinishEnterName)]
+                    hover_sound gui.hover_sound
+                    activate_sound gui.activate_sound
 
-            textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+    else:
 
-            textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+        textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
 
-        if main_menu:
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
+        textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-        if _in_replay:
+    if main_menu:
+        vbox:
+            xalign 0.5
+            yalign 0.37
+            imagebutton:
+                idle "mod_assets/gui/menu/menu_load_game_idle.png"
+                hover "mod_assets/gui/menu/menu_load_game_selected.png"
+                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
+                hover_sound gui.hover_sound
+                activate_sound gui.activate_sound
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+    if _in_replay:
 
-        elif not main_menu:
-            if persistent.is_yuri_self_aware == True:
-                textbutton _("Main Menu") action Show(screen="dialog", message="Isso não é necessário!\nEstou cuidando de tudo!", ok_action=Hide("dialog"))
-            else:
-                textbutton _("Main Menu") action MainMenu()
+        textbutton _("End Replay") action EndReplay(confirm=True)
 
-        textbutton _("Opções") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None),Play("music", audio.fm_password)]
+    elif not main_menu:
+        if persistent.is_yuri_self_aware == True:
+            textbutton _("Main Menu") action Show(screen="dialog", message="Isso não é necessário!\nEstou cuidando de tudo!", ok_action=Hide("dialog"))
+        else:
+            textbutton _("Main Menu") action MainMenu()
+    vbox:
+        xalign 0.5
+        yalign 0.54
+        imagebutton: 
+            idle "mod_assets/gui/menu/menu_options_idle.png"
+            hover "mod_assets/gui/menu/menu_options_selected.png"
+            action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None),Play("music", audio.fm_password)]
+            hover_sound gui.hover_sound
+            activate_sound gui.activate_sound
 
-        #textbutton _("Créditos") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+    #textbutton _("Créditos") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
-        if main_menu:
-            textbutton _("Créditos") action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
-        
-        #textbutton _("About") action ShowMenu("about")
+    if main_menu:
+        vbox:
+            xalign 0.5
+            yalign 0.71
+            imagebutton:
+                idle "mod_assets/gui/menu/menu_credits_idle.png"
+                hover "mod_assets/gui/menu/menu_credits_selected.png"
+                action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
+                hover_sound gui.hover_sound
+                activate_sound gui.activate_sound
+            
+    
+    #textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc"):
+    if renpy.variant("pc"):
 
-            ## Help isn't necessary or relevant to mobile devices.
-            #textbutton _("Help") action Help("README.html")
+        ## Help isn't necessary or relevant to mobile devices.
+        #textbutton _("Help") action Help("README.html")
 
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        ## The quit button is banned on iOS and unnecessary on Android.
+        vbox:
+            xalign 0.5
+            yalign 0.88
+            imagebutton:
+                idle "mod_assets/gui/menu/menu_quit_idle.png"
+                hover "mod_assets/gui/menu/menu_quit_selected.png"
+                action Quit(confirm=not main_menu)
+                hover_sound gui.hover_sound
+                activate_sound gui.activate_sound
 
 style navigation_button is gui_button
 style navigation_button_2 is gui_button
@@ -965,7 +1005,7 @@ screen creditos():
             idle "mod_assets/images/operation_senna.png"
             hover "mod_assets/images/operation_senna_hover.png"
             action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), init_input_operation_senna(),Play("music", audio.m_converting_minds)]
-            hover_sound gui.hover_sound
+            hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
     vbox:
@@ -975,7 +1015,7 @@ screen creditos():
             idle "mod_assets/images/converting_minds.png"
             hover "mod_assets/images/converting_minds_hover.png"
             action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),Play("music", audio.m_converting_minds)]
-            hover_sound gui.hover_sound
+            hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
     vbox:
@@ -1031,7 +1071,7 @@ screen creditos():
         xalign 0.5
         yalign 0.49
         
-        text "HtenekBR"
+        text "Taeyeon115, HtenekBR"
         style "font_creditos_menu"
 
     vbox:
@@ -1090,14 +1130,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_("Salvar"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_("Carregar"))
 
 init python:
     def FileActionMod(name, page=None, **kwargs):
@@ -1118,13 +1158,40 @@ screen file_slots(title,current_song=None):
     
     #on 'show' action toggle_current_music_player(True)
     
-    add "menu_bg" alpha 0.5
+    add "menu_bg" #alpha 0.5
 
-    textbutton _("Voltar"):
-        xalign 0.05
-        ypos 0.95
-        style "return_button"
-        action [Return(),Play("music",config.main_menu_music)]
+    textbutton _(title):
+        xalign 0.5
+        yalign 0.025
+        style "page_label_text"
+        text_size 28
+
+    hbox:
+        box_wrap True
+        xalign 0.5
+        yalign 0.9
+        if(not main_menu and renpy.current_screen().screen_name[0] == "save"):
+            textbutton _("Carregar"):
+                #xalign 0.05
+                
+                style "return_button"
+                action [Show("load")]
+
+        if(not main_menu and renpy.current_screen().screen_name[0] == "load"):
+            textbutton _("Salvar"):
+                #xalign 0.05
+                style "return_button"
+                action [Show("save")]
+
+        if(not main_menu):
+            textbutton _("Menu"):
+                style "return_button"
+                action [MainMenu()]
+
+        textbutton _("Voltar"):
+            yalign 0.975
+            style "return_button"
+            action [Return(),If(main_menu,Play("music",config.main_menu_music),NullAction())]
 
     fixed:
 
@@ -1139,6 +1206,7 @@ screen file_slots(title,current_song=None):
 
             #key_events True
             xalign 0.5
+            yalign 0.1
             #action page_name_value.Toggle()
 
             input:
@@ -1160,7 +1228,7 @@ screen file_slots(title,current_song=None):
 
                 button:
                     action FileActionMod(slot)
-
+                    hover_sound audio.fm_arrow_select
                     has vbox
 
                     add FileScreenshot(slot) xalign 0.5
@@ -1170,6 +1238,8 @@ screen file_slots(title,current_song=None):
 
                     text FileSaveName(slot):
                         style "slot_name_text"
+                    
+                    
 
                     key "save_delete" action FileDelete(slot)
 
@@ -1729,7 +1799,7 @@ screen name_input(message, ok_action):
                 style "confirm_prompt"
                 xalign 0.5
 
-            input default "" value VariableInputValue("player") length 12 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            input default "" value VariableInputValue("player") length 1000 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
             hbox:
                 xalign 0.5

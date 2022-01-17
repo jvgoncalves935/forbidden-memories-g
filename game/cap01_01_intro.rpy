@@ -1,10 +1,12 @@
 label cap01_01_intro:
     scene black
     stop music
+    show textbox_black at center
     "{p=4.0}{nw}"
     hide black
     play sound footsteps
     show intro_001 at top
+    
     with dissolve
     #scene bg intro_001 at top
     "{p=1.0}{nw}"

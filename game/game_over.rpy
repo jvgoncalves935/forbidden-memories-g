@@ -1,4 +1,5 @@
 label game_over:
+    $ game_over = True
     scene black
     with Dissolve(2.0)
     pause 1.0
@@ -13,7 +14,6 @@ label game_over:
     hide game_over_bg
     with Dissolve(2.0)
 
-    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
     return
 
 
