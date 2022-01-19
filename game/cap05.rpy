@@ -1,0 +1,9 @@
+label cap05:
+    if(not game_over):
+        call cap05_01_casa01
+    if(not game_over):
+        call cap05_02_testeporno
+    return
+
+
+

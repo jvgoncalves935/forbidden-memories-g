@@ -73,6 +73,7 @@ init python:
     def set_input_operation_senna():
         #print(player)
         set_flag_input_operation_senna(True)
+        register_ending("Z")
         hash_aux = hashlib.sha512(str(player).upper().encode("utf-8")).hexdigest().upper()
         
         #print(hash_aux)
@@ -176,6 +177,65 @@ define input_operation_senna = ""
 define flag_input_operation_senna = False
 define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885B6A7FD44BC3E43DE825B8F6D7C20F812C2E43E3D0B1C5B6B119BC1691E3287F737F195868B9DBB0"
 
+
+define endings_names = {
+    "A":"As Crônicas de Alexandre Senna",
+    "B":"Teste",
+    "C":"Teste",
+    "D":"Teste",
+    "E":"Teste",
+    "F":"Teste",
+    "G":"Teste",
+    "H":"Teste",
+    "I":"Teste",
+    "J":"Teste",
+    "K":"Teste",
+    "L":"Teste",
+    "M":"Teste",
+    "N":"Teste",
+    "O":"Teste",
+    "P":"Teste",
+    "Q":"Teste",
+    "R":"Teste",
+    "S":"Teste",
+    "T":"Teste",
+    "U":"Teste",
+    "V":"Teste",
+    "W":"Teste",
+    "X":"Teste",
+    "Y":"Teste",
+    "Z":"Teste"
+}
+
+define endings_descriptions = {
+    "A":"Teste Aaaaaa",
+    "B":"Teste aaaaaaaaa",
+    "C":"Teste aaasasa",
+    "D":"Teste asdasdasdasd",
+    "E":"Teste",
+    "F":"Teste",
+    "G":"Teste",
+    "H":"Teste",
+    "I":"Teste",
+    "J":"Teste",
+    "K":"Teste",
+    "L":"Teste",
+    "M":"Teste",
+    "N":"Teste",
+    "O":"Teste",
+    "P":"Teste",
+    "Q":"Teste",
+    "R":"Teste",
+    "S":"Teste",
+    "T":"Teste",
+    "U":"Teste",
+    "V":"Teste",
+    "W":"Teste",
+    "X":"Teste",
+    "Y":"Teste",
+    "Z":"Teste"
+}
+
 define config_fadein_texto = True
 define narrator_what_prefix = "{fi=33-0.16-33}"
 define narrator_what_suffix = "{/fi}"
@@ -266,6 +326,7 @@ define audio.m_converting_minds = "mod_assets/music/m_converting_minds.ogg"
 define audio.fm_freeduel = "<loop 0.933>mod_assets/music/fm_freeduel.ogg"
 define audio.fm_deck = "<loop 0.60>mod_assets/music/fm_deck.ogg"
 define audio.fm_password = "<loop 1.833>mod_assets/music/fm_password.ogg"
+define audio.fm_library = "<loop 0.70>mod_assets/music/fm_library.ogg"
 
 #Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"

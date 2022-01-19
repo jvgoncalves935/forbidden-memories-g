@@ -24,6 +24,45 @@ init python:
     splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
 
+    global endings_labels
+    endings_labels = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+    if(persistent.endings is None):
+        array_aux = [("A",False),
+                     ("B",False),
+                     ("C",False),
+                     ("D",False),
+                     ("E",False),
+                     ("F",False),
+                     ("G",False),
+                     ("H",False),
+                     ("I",False),
+                     ("J",False),
+                     ("K",False),
+                     ("L",False),
+                     ("M",False),
+                     ("N",False),
+                     ("O",False),
+                     ("P",False),
+                     ("Q",False),
+                     ("R",False),
+                     ("S",False),
+                     ("T",False),
+                     ("U",False),
+                     ("V",False),
+                     ("W",False),
+                     ("X",False),
+                     ("Y",False),
+                     ("Z",False)]
+                     
+        persistent.endings = dict(array_aux)
+
+    #teste
+    #for key, value in persistent.endings.items():
+    #    persistent.endings[key] = True
+    
+    #print(persistent.endings)
+
     
     def diceroll(trans, st, at):
         global d27roll
@@ -43,6 +82,17 @@ init python:
             return None
         else:
             return 0
+
+    def register_ending(ending):
+        persistent.endings[ending] = True
+        
+
+    def is_all_endings_unlocked():
+        for key, value in persistent.endings.items():
+            if(not value):
+                return False
+        return True
+
     #persistent._character_volume['narrator'] = 1.0
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
@@ -194,7 +244,7 @@ label splashscreen:
         play music fm_nameinput
         "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
         play sound ctc
-        "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan e publicado pela\nKonami em 1999. Todos os direitos\nreservados."
+        "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
         play sound ctc
         "Este é um jogo de humor, porém\nenvolve temas adultos. Mesmo assim,\nele NÃO possui nenhum conteúdo\nexplícito. Não é recomendado para\nmenores de 18 anos."
         play sound ctc

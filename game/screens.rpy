@@ -39,7 +39,7 @@ style font_creditos_menu_2:
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
     size 20
     color "#020202"
-    outlines [(2, "#000101", 2, 2),(1, "#010101", 2, 2)]
+    outlines [(2, "#0F0F0F", 2, 2),(1, "#1A1A1A", 2, 2)]
     line_overlap_split 1
     line_spacing 1
 
@@ -592,6 +592,16 @@ screen navigation():
                 action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
+
+        vbox:
+            xalign 0.5
+            yalign 0.85
+            imagebutton:
+                idle "mod_assets/gui/menu/menu_endings_idle.png"
+                hover "mod_assets/gui/menu/menu_endings_selected.png"
+                action [ShowMenu("endings"), SensitiveIf(renpy.get_screen("endings") == None), Play("music", audio.fm_library)]
+                hover_sound gui.hover_sound
+                activate_sound gui.activate_sound
             
     
     #textbutton _("About") action ShowMenu("about")
@@ -636,6 +646,17 @@ style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
     color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(2, "#070e5c", 5, 5), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+    xalign 0.5
+    yalign 0.5
+
+style navigation_button_text_endings:
+    properties gui.button_text_properties("navigation_button")
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    size 18
     outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     hover_outlines [(2, "#070e5c", 5, 5), (1, "#9e9e9eaa", 0, 0)]
     insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
@@ -928,8 +949,24 @@ style about_label_text:
 screen side_menuart:
     add "menu_art"
 
-screen side_img(img):
-    add "mod_assets/bg/endings/Side_image/" + img
+screen side_img(img,ending):
+    vbox:
+        xalign 0.95
+        yalign 0.75
+        add "mod_assets/images/endings/" + img
+
+    vbox:
+        xalign 0.95
+        yalign 0.95
+
+        textbutton _("\""+endings_names[ending]+"\""):
+            style "page_label_text"
+            text_size 20
+
+        textbutton _(endings_descriptions[ending]):
+            style "page_label_text"
+            text_size 16
+
     #on "show" action Play("sound", "audio/se/SE_シスてム_タイとル_ルーぷ.wav")
     #on "hide" action Stop("sound", fadeout=1.0)
 
@@ -976,12 +1013,13 @@ screen converting_minds_scr():
 
     add "black"
 
-    textbutton _("comi o cu de quem tá lendo"):
-        xalign 0.5
-        yalign 0.5
-        
-        action [NullAction()]
-        text_style "font_creditos_menu_2"
+    if(is_all_endings_unlocked()):
+        textbutton _("comi o cu de quem tá lendo"):
+            xalign 0.5
+            yalign 0.5
+            
+            action [NullAction()]
+            text_style "font_creditos_menu_2"
 
     textbutton _("Voltar?"):
         xalign 0.05
@@ -989,6 +1027,213 @@ screen converting_minds_scr():
         style "return_button_2"
         text_style "navigation_button_text"
         action [NullAction()]
+
+screen endings():
+
+    tag menu
+
+    add "black"
+    
+    textbutton _("Finais"):
+        xalign 0.5
+        yalign 0.025
+        style "page_label_text"
+        text_size 28
+
+    vbox:
+        xalign 0.05
+        yalign 0.5
+
+        if(persistent.endings["A"]):
+            textbutton _("Final A"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="A.png",ending="A")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["B"]):
+            textbutton _("Final B"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="B.png",ending="B")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["C"]):
+            textbutton _("Final C"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="C.png",ending="C")] unhovered [Hide("side_img")]
+                action [NullAction()]
+        
+        if(persistent.endings["D"]):
+            textbutton _("Final D"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="D.png",ending="D")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["E"]):
+            textbutton _("Final E"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="E.png",ending="E")] unhovered [Hide("side_img")]
+                action [NullAction()]
+        
+        if(persistent.endings["F"]):
+            textbutton _("Final F"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="F.png",ending="F")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["G"]):
+            textbutton _("Final G"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="G.png",ending="G")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["H"]):
+            textbutton _("Final H"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="H.png",ending="H")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["I"]):
+            textbutton _("Final I"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="I.png",ending="I")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["J"]):
+            textbutton _("Final J"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="J.png",ending="J")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["K"]):
+            textbutton _("Final K"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="K.png",ending="K")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["L"]):
+            textbutton _("Final L"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="L.png",ending="L")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["M"]):
+            textbutton _("Final M"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="M.png",ending="M")] unhovered [Hide("side_img")]
+                action [NullAction()]
+    vbox:
+        xalign 0.25
+        yalign 0.5
+
+        if(persistent.endings["N"]):
+            textbutton _("Final N"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="N.png",ending="N")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["O"]):
+            textbutton _("Final O"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="O.png",ending="O")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["P"]):
+            textbutton _("Final P"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="P.png",ending="P")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["Q"]):
+            textbutton _("Final Q"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="Q.png",ending="Q")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["R"]):
+            textbutton _("Final R"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="R.png",ending="R")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["S"]):
+            textbutton _("Final S"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="S.png",ending="S")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["T"]):
+            textbutton _("Final T"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="T.png",ending="T")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["U"]):
+            textbutton _("Final U"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="U.png",ending="U")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["V"]):
+            textbutton _("Final V"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="V.png",ending="V")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["W"]):
+            textbutton _("Final W"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="W.png",ending="W")] unhovered [Hide("side_img")]
+                action [NullAction()]
+        
+        if(persistent.endings["X"]):
+            textbutton _("Final X"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="X.png",ending="X")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["Y"]):
+            textbutton _("Final Y"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="Y.png",ending="Y")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+        if(persistent.endings["Z"]):
+            textbutton _("Final Z"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings"
+                hovered [ShowTransient("side_img", img="Z.png",ending="Z")] unhovered [Hide("side_img")]
+                action [NullAction()]
+
+    textbutton _("Voltar"):
+        xalign 0.05
+        ypos 0.975
+        style "return_button"
+        action [Return(), Play("music", config.main_menu_music)]
 
 screen creditos():
 
@@ -1064,14 +1309,14 @@ screen creditos():
         xalign 0.5
         yalign 0.45
         
-        text "Scripts e Edição de Imagens:"
+        text "Transcripts:"
         style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.49
         
-        text "Taeyeon115, HtenekBR"
+        text "Taeyeon115, Mark_77Souls"
         style "font_creditos_menu"
 
     vbox:
@@ -1885,6 +2130,7 @@ style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_2 is gui_medium_button
+style confirm_button_3 is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
@@ -1909,6 +2155,20 @@ style confirm_button_2:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
     hover_sound gui.hover_sound
+    activate_sound audio.fm_error
+    xalign 0.5
+    yalign 0.5
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+
+style confirm_button_3:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound audio.fm_arrow_select
     activate_sound audio.fm_error
     xalign 0.5
     yalign 0.5

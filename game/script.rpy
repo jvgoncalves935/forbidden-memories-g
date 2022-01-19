@@ -34,6 +34,12 @@ label start:
     if(not game_over):
         call cap03
     if(not game_over):
+        call cap04
+    if(not game_over):
+        call cap05
+    if(not game_over):
+        call epilogo
+    if(not game_over):
         call creditos
     if(not game_over):
         call capXX

@@ -1,5 +1,6 @@
 label cap03_03_doutora02:
     #(0:07 - 0:11 Senna)
+    $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
     play music audio.fm_plazatown
     "...Toque, eu quero saber o que\ntá acontecendo com meu cu...\nsó isso..."
     play sound ctc
@@ -28,7 +29,7 @@ label cap03_03_doutora02:
     show textbox_aux
     menu:
         "<Pular da janela do consultório>":
-            jump wrong_end_03_03
+            jump wrong_end_03_03_1
         "<Deitar na mesa>":
             pass
     hide textbox_aux
@@ -67,7 +68,7 @@ label cap03_03_doutora02:
     show textbox_aux
     menu:
         "<Pular da janela do consultório>":
-            jump wrong_end_03_03
+            jump wrong_end_03_03_2
         "<Continuar o exame>":
             pass
     hide textbox_aux
@@ -122,7 +123,7 @@ label cap03_03_doutora02:
     stop music
     return
 
-label wrong_end_03_03:
+label wrong_end_03_03_1:
     stop music
     "(Você se levanta rapidamente da mesa\ncomo se não houvesse amanhã e pula\npela janela do segundo andar.)"
     play sound ctc
@@ -136,6 +137,11 @@ label wrong_end_03_03:
     play sound ctc
     "(Você se sente seguro, volta para a\ncasa e marca uma nova consulta.)"
     play sound ctc
+    $ register_ending("O")
+    jump game_over
+
+label wrong_end_03_03_2:
+    $ register_ending("P")
     jump game_over
 
 
