@@ -305,6 +305,8 @@ screen input(prompt):
 
             text prompt style "input_prompt"
             input id "input"
+        
+            
 
 
 style input_prompt is default
@@ -335,6 +337,9 @@ screen choice(items):
     vbox:
         for i in items:
             textbutton i.caption action i.action
+
+    vbox:
+        key "K_ESCAPE" action [ShowMenu("save")]
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -553,11 +558,11 @@ screen navigation():
     if main_menu:
         vbox:
             xalign 0.5
-            yalign 0.37
+            yalign 0.31
             imagebutton:
                 idle "mod_assets/gui/menu/menu_load_game_idle.png"
                 hover "mod_assets/gui/menu/menu_load_game_selected.png"
-                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
+                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck),init_confirm_strings()]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
 
@@ -572,7 +577,7 @@ screen navigation():
             textbutton _("Main Menu") action MainMenu()
     vbox:
         xalign 0.5
-        yalign 0.54
+        yalign 0.44
         imagebutton: 
             idle "mod_assets/gui/menu/menu_options_idle.png"
             hover "mod_assets/gui/menu/menu_options_selected.png"
@@ -585,21 +590,22 @@ screen navigation():
     if main_menu:
         vbox:
             xalign 0.5
-            yalign 0.71
+            yalign 0.57
             imagebutton:
-                idle "mod_assets/gui/menu/menu_credits_idle.png"
-                hover "mod_assets/gui/menu/menu_credits_selected.png"
-                action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
+                idle "mod_assets/gui/menu/menu_endings_idle.png"
+                hover "mod_assets/gui/menu/menu_endings_selected.png"
+                action [ShowMenu("endings"), SensitiveIf(renpy.get_screen("endings") == None), Play("music", audio.fm_library)]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
 
         vbox:
             xalign 0.5
-            yalign 0.85
+            yalign 0.70
+            
             imagebutton:
-                idle "mod_assets/gui/menu/menu_endings_idle.png"
-                hover "mod_assets/gui/menu/menu_endings_selected.png"
-                action [ShowMenu("endings"), SensitiveIf(renpy.get_screen("endings") == None), Play("music", audio.fm_library)]
+                idle "mod_assets/gui/menu/menu_credits_idle.png"
+                hover "mod_assets/gui/menu/menu_credits_selected.png"
+                action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("creditos") == None), Play("music", audio.fm_freeduel)]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
             
@@ -614,7 +620,7 @@ screen navigation():
         ## The quit button is banned on iOS and unnecessary on Android.
         vbox:
             xalign 0.5
-            yalign 0.88
+            yalign 0.83
             imagebutton:
                 idle "mod_assets/gui/menu/menu_quit_idle.png"
                 hover "mod_assets/gui/menu/menu_quit_selected.png"
@@ -951,21 +957,21 @@ screen side_menuart:
 
 screen side_img(img,ending):
     vbox:
-        xalign 0.95
-        yalign 0.75
+        xalign 0.92
+        yalign 0.3
         add "mod_assets/images/endings/" + img
 
     vbox:
-        xalign 0.95
-        yalign 0.95
+        xalign 0.94
+        yalign 0.96
 
         textbutton _("\""+endings_names[ending]+"\""):
             style "page_label_text"
-            text_size 20
+            text_size 18
 
         textbutton _(endings_descriptions[ending]):
             style "page_label_text"
-            text_size 16
+            text_size 10
 
     #on "show" action Play("sound", "audio/se/SE_シスてム_タイとル_ルーぷ.wav")
     #on "hide" action Stop("sound", fadeout=1.0)
@@ -1032,17 +1038,17 @@ screen endings():
 
     tag menu
 
-    add "black"
+    add "mod_assets/images/EndingsMenu.png"
     
     textbutton _("Finais"):
         xalign 0.5
-        yalign 0.025
+        yalign 0.0
         style "page_label_text"
         text_size 28
 
     vbox:
         xalign 0.05
-        yalign 0.5
+        yalign 0.3
 
         if(persistent.endings["A"]):
             textbutton _("Final A"):
@@ -1136,7 +1142,7 @@ screen endings():
                 action [NullAction()]
     vbox:
         xalign 0.25
-        yalign 0.5
+        yalign 0.3
 
         if(persistent.endings["N"]):
             textbutton _("Final N"):
@@ -2110,7 +2116,7 @@ screen confirm(message, yes_action, no_action):
 
             else:
                 #label _(message):
-                label _("Tem certeza de que deseja sair do jogo?"):
+                label _(message):
                     style "confirm_prompt"
                     xalign 0.5
 

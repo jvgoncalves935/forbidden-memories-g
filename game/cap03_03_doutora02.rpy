@@ -1,4 +1,8 @@
 label cap03_03_doutora02:
+    scene black
+    stop music
+    show textbox_black at center
+    #show intro_001 at top
     #(0:07 - 0:11 Senna)
     $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
     play music audio.fm_plazatown

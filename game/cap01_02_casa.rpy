@@ -1,5 +1,8 @@
 label cap01_02_casa:
+    scene black
     stop music
+    show textbox_black at center
+    #show intro_001 at top
     "Nossa, hoje é o dia da pelada com o\nJames..."
     play sound ctc
     "Cadê a galera aí pra gente matar a\nsaudade?"
@@ -53,5 +56,5 @@ label wrong_end_01_02_1:
     play sound ctc
     "(Você volta pra casa e decide jogar\npalavras-cruzadas.)"
     play sound ctc
-    $ register_ending("B")
+    $ register_ending("A")
     jump game_over

@@ -1,5 +1,5 @@
 label creditos:
-    $ register_ending("A")
+    $ register_ending("G")
     return
 
 

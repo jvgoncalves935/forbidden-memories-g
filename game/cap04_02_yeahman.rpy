@@ -1,4 +1,8 @@
 label cap04_02_yeahman:
+    scene black
+    stop music
+    show textbox_black at center
+    #show intro_001 at top
     $ renpy.movie_cutscene("mod_assets/videos/yeahman.webm")
     return
 

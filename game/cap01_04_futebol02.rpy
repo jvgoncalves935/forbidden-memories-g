@@ -1,4 +1,8 @@
 label cap01_04_futebol02:
+    scene black
+    stop music
+    show textbox_black at center
+    #show intro_001 at top
     #(Índio 01:25 - 1:27)
     "Que putaria é essa aí de pau duro aí, olha aí!"
     play sound ctc
@@ -56,7 +60,7 @@ label cap01_04_futebol02:
     play music audio.fm_password
     menu:
         "<Defender para cima>":
-            call wrong_end_01_04_1
+            jump wrong_end_01_04_1
         "<Defender para direita>":
             "Que se dane."
     hide textbox_aux
@@ -76,7 +80,7 @@ label cap01_04_futebol02:
     play music audio.fm_password
     menu:
         "<Defender para cima>":
-            call wrong_end_01_04_2
+            jump wrong_end_01_04_2
         "<Defender para direita>":
             "Que se dane."
     hide textbox_aux
@@ -88,7 +92,7 @@ label cap01_04_futebol02:
     play music audio.fm_password
     menu:
         "<Defender para cima>":
-            call wrong_end_01_04_3
+            jump wrong_end_01_04_3
         "<Defender para direita>":
             "Que se dane."
     hide textbox_aux
@@ -173,7 +177,7 @@ label wrong_end_01_04_1:
     play sound ctc
     "Isso tudo é real mesmo?"
     play sound ctc
-    $ register_ending("D")
+    $ register_ending("C")
     jump game_over
 
 label wrong_end_01_04_2:
@@ -198,10 +202,10 @@ label wrong_end_01_04_2:
     play sound ctc
     "ÍNDIO É BEM A TUA MÃE, SEU FILHO DA PUTA!"
     play sound ctc
-    $ register_ending("E")
+    $ register_ending("D")
     jump game_over
 
 label wrong_end_01_04_3:
     call wrong_end_01_04_common
-    $ register_ending("F")
+    $ register_ending("E")
     jump game_over

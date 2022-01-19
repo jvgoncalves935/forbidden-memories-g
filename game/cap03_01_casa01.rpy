@@ -1,4 +1,8 @@
 label cap03_01_casa01:
+    scene black
+    stop music
+    show textbox_black at center
+    #show intro_001 at top
     play music celular
     "(celular tocando)"
     play sound ctc

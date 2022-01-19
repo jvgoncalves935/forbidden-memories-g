@@ -19,51 +19,6 @@ default prollint = 0.05
 
 
 init python:
-    menu_trans_time = 1
-    #The default splash message, originally shown in Act 1 and Act 4
-    splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
-    #Optional splash messages, originally chosen at random in Act 2 and Act 3
-
-    global endings_labels
-    endings_labels = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-
-    if(persistent.endings is None):
-        array_aux = [("A",False),
-                     ("B",False),
-                     ("C",False),
-                     ("D",False),
-                     ("E",False),
-                     ("F",False),
-                     ("G",False),
-                     ("H",False),
-                     ("I",False),
-                     ("J",False),
-                     ("K",False),
-                     ("L",False),
-                     ("M",False),
-                     ("N",False),
-                     ("O",False),
-                     ("P",False),
-                     ("Q",False),
-                     ("R",False),
-                     ("S",False),
-                     ("T",False),
-                     ("U",False),
-                     ("V",False),
-                     ("W",False),
-                     ("X",False),
-                     ("Y",False),
-                     ("Z",False)]
-                     
-        persistent.endings = dict(array_aux)
-
-    #teste
-    #for key, value in persistent.endings.items():
-    #    persistent.endings[key] = True
-    
-    #print(persistent.endings)
-
-    
     def diceroll(trans, st, at):
         global d27roll
         d27roll = renpy.random.randint(1, 27)
@@ -93,6 +48,55 @@ init python:
                 return False
         return True
 
+    def init_endings():
+        if(persistent.endings is None):
+            array_aux = [("A",False),
+                        ("B",False),
+                        ("C",False),
+                        ("D",False),
+                        ("E",False),
+                        ("F",False),
+                        ("G",False),
+                        ("H",False),
+                        ("I",False),
+                        ("J",False),
+                        ("K",False),
+                        ("L",False),
+                        ("M",False),
+                        ("N",False),
+                        ("O",False),
+                        ("P",False),
+                        ("Q",False),
+                        ("R",False),
+                        ("S",False),
+                        ("T",False),
+                        ("U",False),
+                        ("V",False),
+                        ("W",False),
+                        ("X",False),
+                        ("Y",False),
+                        ("Z",False)]
+                        
+            persistent.endings = dict(array_aux)
+
+        #teste
+        #for key, value in persistent.endings.items():
+        #    persistent.endings[key] = True
+        
+        #print(persistent.endings)
+
+
+    menu_trans_time = 1
+    #The default splash message, originally shown in Act 1 and Act 4
+    splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
+    #Optional splash messages, originally chosen at random in Act 2 and Act 3
+
+    global endings_labels
+    endings_labels = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+    init_endings()
+    
+    
     #persistent._character_volume['narrator'] = 1.0
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
@@ -229,7 +233,29 @@ image tos2 = "bg/warning2.png"
 
 label splashscreen:
     python:
+        def init_confirm_strings():
+            #global gui.ARE_YOU_SURE
+            #global DELETE_SAVE
+            #global OVERWRITE_SAVE
+            #global LOADING
+            #global QUIT
+            #global MAIN_MENU
+
+            print(gui.QUIT)
+
+            gui.ARE_YOU_SURE = _("Tem certeza?")
+            gui.DELETE_SAVE = _("Tem certeza de que deseja deletar este Save?")
+            gui.OVERWRITE_SAVE = _("Tem certeza de que deseja sobrescrever seu Save?")
+            gui.LOADING = _("Carregar o Save não irá salvar nenhum progresso não salvo.\nTem certeza disso?")
+            gui.QUIT = _("Tem certeza de que deseja fechar o jogo?")
+            gui.MAIN_MENU = _("Tem certeza de que deseja voltar ao Menu Principal? Todo progresso não salvo será perdido.")
+
+            print(gui.QUIT)
+
         toggle_fadein_texto(init=True)
+        init_confirm_strings()
+
+
 
     $ quick_menu = False
 

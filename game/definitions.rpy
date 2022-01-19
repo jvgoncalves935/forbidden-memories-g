@@ -179,13 +179,13 @@ define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885
 
 
 define endings_names = {
-    "A":"As Crônicas de Alexandre Senna",
+    "A":"Melancolia do Toque de Celular Irritante",
     "B":"Teste",
     "C":"Teste",
     "D":"Teste",
     "E":"Teste",
     "F":"Teste",
-    "G":"Teste",
+    "G":"As Crônicas de Alexandre Senna",
     "H":"Teste",
     "I":"Teste",
     "J":"Teste",
@@ -208,13 +208,13 @@ define endings_names = {
 }
 
 define endings_descriptions = {
-    "A":"Teste Aaaaaa",
+    "A":"Perdeu seu jogo de futebol e o celular para ir jogar Palavras-Cruzadas.",
     "B":"Teste aaaaaaaaa",
     "C":"Teste aaasasa",
     "D":"Teste asdasdasdasd",
     "E":"Teste",
     "F":"Teste",
-    "G":"Teste",
+    "G":"Desvendou todo o Códex G.",
     "H":"Teste",
     "I":"Teste",
     "J":"Teste",

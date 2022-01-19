@@ -1,4 +1,8 @@
 label cap01_03_futebol01:
+    scene black
+    stop music
+    show textbox_black at center
+    #show intro_001 at top
     #(Goleiro 00:00 - 00:02)
     "Ô meu, chega aê..."
     play sound ctc
@@ -34,7 +38,18 @@ label cap01_03_futebol01:
     play sound ctc
     #(Goleiro 00:29 - 00:29)
     "Vixe..."
-    play sound ctc 
+    play sound ctc
+
+    show textbox_aux
+    play music audio.fm_password
+    menu:
+        "<Treinar pênaltis com seu time>":
+            jump wrong_end_01_03_1
+        "<Propor uma brincadeira>":
+            "Que se dane."
+    hide textbox_aux
+    stop music
+
     #(Senna 00:30 - 00:31)
     "Da pra gente fazer uma brincadeira aí! Jogar uma bola.."
     play sound ctc
@@ -80,7 +95,7 @@ label cap01_03_futebol01:
     return
 
 label wrong_end_01_03_1:
-    $ register_ending("C")
+    $ register_ending("B")
     jump game_over
 
 
