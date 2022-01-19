@@ -207,7 +207,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
         vbox:
-            key "K_ESCAPE" action [ShowMenu("save")]
+            key "K_ESCAPE" action [If(current_label != "game_over",ShowMenu("save"),NullAction())]
 
     # If there's a side image, display it above the text. Do not display
     # on the phone variant - there's no room.
@@ -339,7 +339,7 @@ screen choice(items):
             textbutton i.caption action i.action
 
     vbox:
-        key "K_ESCAPE" action [ShowMenu("save")]
+        key "K_ESCAPE" action [If(current_label != "game_over",ShowMenu("save"),NullAction())]
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -562,7 +562,7 @@ screen navigation():
             imagebutton:
                 idle "mod_assets/gui/menu/menu_load_game_idle.png"
                 hover "mod_assets/gui/menu/menu_load_game_selected.png"
-                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck),init_confirm_strings()]
+                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
 
