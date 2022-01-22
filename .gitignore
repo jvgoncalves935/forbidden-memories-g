@@ -16,5 +16,5 @@ game/firstrun
 game/saves/navigation.json
 files.txt
 .vscode/settings.json
-tests/BF-it-master
-tests/c2bf-master
+tests/BF-it-master/
+tests/c2bf-master/
