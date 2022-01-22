@@ -4,10 +4,14 @@
 ## If not, display an error message and quit.
 init -100 python:
     #Check for each archive needed
-    for archive in ['audio','images','scripts','fonts']:
+    for archive in ['audio','images','fonts']:
         if not archive in config.archives:
             #If one is missing, throw an error and chlose
             renpy.error("Os arquivos de Doki Doki Literature Club não foram encontrados na pasta /game. Confira a instalação e tente novamente.")
+
+        if 'scripts' in config.archives:
+            #If one is missing, throw an error and chlose
+            renpy.error("O arquivo 'scripts.rpa' de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
 
 ## First, a disclaimer declaring this is a mod is shown, then there is a
 ## check for the original DDLC assets in the install folder. If those are
@@ -80,8 +84,8 @@ init python:
             persistent.endings = dict(array_aux)
 
         #teste
-        #for key, value in persistent.endings.items():
-        #    persistent.endings[key] = True
+        for key, value in persistent.endings.items():
+            persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
@@ -235,6 +239,7 @@ image tos2 = "bg/warning2.png"
 label splashscreen:
     python:
         toggle_fadein_texto(init=True)
+        toggle_arabe()
 
     $ quick_menu = False
 

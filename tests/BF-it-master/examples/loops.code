@@ -1,0 +1,70 @@
+int main() {
+	int i;
+
+	// for loop can be minimal (no initialization and no incrementation)
+	for (; i < 6; ) {
+		printint(i++);
+		print(" ");
+	}
+
+	print("\n");
+	int j = 5;
+
+	// can modify variables inside for definition
+	for ( ; j++ < 10; ) {
+		printint(j);
+		print(" ");
+	}
+
+	print("\n");
+
+	// same for while
+	int x = 3;
+
+	while (x++ < 8) {
+		printint(x);
+		print(" ");
+	}
+
+    print("\n\n");
+
+    // can define an array inside for definition
+    print("Let's calculate some squares!\n");
+    i = 0;
+    for (int arr[10]; i < 10; i++) {
+        arr[i] = i*i;
+        printint(i);
+        print(" - ");
+        printint(arr[i]);
+        print("\n");
+    }
+
+    // while can be without scope - then it will execute only the first statement after it
+    x = 0;
+    while (x++ < 10)
+        print("x");
+    print("\n");
+
+    // for can be without scope - then it will execute only the first statement after it
+    for (int i = 0; i < 10; i++)
+        printint(i);
+    print("\n");
+
+
+    // for and if combination - always execute the first statement
+    for (int i = 0; i < 10; i++)
+        if (i % 2 == 0)
+            printint(i);
+    print("\n");
+
+
+    // for inside for
+    int arr[3][3];
+    for (int i = 0; i < 9; i++)
+        arr[i] = i;
+    for (int x = 0; x < 3; x++)
+        for (int y = 0; y < 3; y++)
+            printint(arr[x][y]);
+    print("\n");
+
+}

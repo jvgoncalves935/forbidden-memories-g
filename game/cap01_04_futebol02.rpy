@@ -62,7 +62,7 @@ label cap01_04_futebol02:
         "<Defender para cima>":
             jump wrong_end_01_04_1
         "<Defender para direita>":
-            "Que se dane."
+            pass
     hide textbox_aux
     stop music
     #(John 02:54 - 02:58)
@@ -82,7 +82,7 @@ label cap01_04_futebol02:
         "<Defender para cima>":
             jump wrong_end_01_04_2
         "<Defender para direita>":
-            "Que se dane."
+            pass
     hide textbox_aux
     stop music
 
@@ -94,7 +94,7 @@ label cap01_04_futebol02:
         "<Defender para cima>":
             jump wrong_end_01_04_3
         "<Defender para direita>":
-            "Que se dane."
+            pass
     hide textbox_aux
     stop music
     "Isso meu goleiro, isso meu goleiro, isso, isso, isso!"
@@ -166,7 +166,7 @@ label wrong_end_01_04_common:
     play sound ctc
 
 label wrong_end_01_04_1:
-    call wrong_end_01_04_common
+    call wrong_end_01_04_common from _call_wrong_end_01_04_common
     "(Enquanto seu time não para de te xingar, você questiona sua própria existência.)"
     play sound ctc
     "Eu não consigo nem defender uma bola no gol."
@@ -181,7 +181,7 @@ label wrong_end_01_04_1:
     jump game_over
 
 label wrong_end_01_04_2:
-    call wrong_end_01_04_common
+    call wrong_end_01_04_common from _call_wrong_end_01_04_common_1
     "(Você começa a discutir com Índio e botar a culpa nele por não ter ajudado a defender o ataque da bola na zaga.)"
     play sound ctc
     "(Revoltadíssimo, ele saca uma faca e te apunhala na barriga.)"
@@ -206,6 +206,54 @@ label wrong_end_01_04_2:
     jump game_over
 
 label wrong_end_01_04_3:
-    call wrong_end_01_04_common
+    call wrong_end_01_04_common from _call_wrong_end_01_04_common_2
+    "(Completamente frustrado, você joga suas luvas de goleiro no chão e sai correndo do campo.)"
+    play sound ctc
+    "(Você perdeu o campeonato e foi banido da Série G.)"
+    play sound ctc
+    "(Seus dias como goleiro acabaram.)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(dois anos depois)"
+    play sound ctc
+    "\"O Asteroide Guinárnia está em rota de colisão da Terra!\""
+    play sound ctc
+    "\"O tempo aproximado para impacto contra a superfície é de exatamente 32 horas!\""
+    play sound ctc
+    "\"Está previsto que o estrago causado pela colisão resultará na extinção de toda a vida humana!\""
+    play sound ctc
+    "\"O caos preenche as ruas de Cupiqueno e de todo o mundo. Assaltos, estupros e assassinatos tomam conta do cenário pré-apocaliptico.\""
+    play sound ctc
+    "\"Este é o nosso fim. Protejam-se em suas casas ou em abrigos mais próximos!\""
+    play sound ctc
+    "(Você desliga o rádio após ouvir este delírio coletivo.)"
+    play sound ctc
+    "RAPAZ, CÊ TÁ MALUCO?"
+    play sound ctc
+    "Coisa mais esquisita."
+    play sound ctc
+    "(É possível ouvir sirenes e pessoas gritando nas ruas como se não houvesse amanhã.)"
+    play sound ctc
+    "(Será que as notícias no rádio eram verdade?)"
+    play sound ctc
+    "(O que você faria se elas fossem?)"
+    play sound ctc
+    "(Pensando em uma resposta, você decide voltar a dormir. Amanhã será uma noite difícil no seu turno como segurança.)"
+    play sound ctc
+    "\"Onde foi que eu deixei minhas luvas de goleiro?\", você pensa consigo."
+    play sound ctc
+    "(Você sente uma sensação sinistra ao pensar que perdeu elas.)"
+    play sound ctc
+    "(Inexplicavelmente, um sentimento de culpa bate em você lá no estômago, porra.)"
+    play sound ctc
+    "(Algo que você nunca sentiu em toda a sua vida.)"
+    play sound ctc
+    "(Logo após, você se lembra de uma teoria que leu em uma revista de ficção científica:)"
+    play sound ctc
+    "\"O Efeito Borboleta\""
+    play sound ctc
     $ register_ending("E")
     jump game_over

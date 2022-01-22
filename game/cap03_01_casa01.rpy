@@ -9,7 +9,7 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
-            call telefone_03_01_01
+            call telefone_03_01_01 from _call_telefone_03_01_01
         "<Recusar a chamada>":
             "Que se dane."
     hide textbox_aux
@@ -23,7 +23,7 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
-            call telefone_03_01_02
+            call telefone_03_01_02 from _call_telefone_03_01_02
         "<Recusar a chamada>":
             "Que se dane."
     hide textbox_aux
@@ -38,7 +38,7 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
-            call telefone_03_01_03
+            call telefone_03_01_03 from _call_telefone_03_01_03
         "<Recusar a chamada>":
             "Que se dane."
     hide textbox_aux

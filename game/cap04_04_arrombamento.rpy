@@ -4,7 +4,8 @@ label cap04_04_arrombamento:
     show textbox_black at center
     #show intro_001 at top
     #(Senna 00:00 - 00:07)
-    "Onde, onde, onde?" 
+    "Onde, onde, onde?"
+    play sound ctc
     "Cadê o arromabento? Foi aqui, foi aonde?"
     play sound ctc
     #(Morador 00:07 - 00:00)
@@ -12,10 +13,11 @@ label cap04_04_arrombamento:
     play sound ctc
     #(Senna 00:08  - 00:15)
     "Porra, se ta me tirando mermão?"
-    "Aonde tá tendo arrombamento aqui, seu viado!"
+    play sound ctc
+    "Aonde tá tendo arrombamento aqui, seu viado?!"
     play sound ctc
     #(Morador 00:16 - 00:16)
-    "Pode parar de bater na minha cara?"
+    "Posso falar a verdade?"
     #(Senna 00:16 - 00:16)
     play sound ctc
     "Você tá louco?"
@@ -37,19 +39,17 @@ label cap04_04_arrombamento:
     #(Senna 00:25 - 00:25)
     play sound ctc
     "PORRA!"
-    #(Morador 00:26 - 00:27)
+   #(Senna 00:26 - 00:27)
     play sound ctc
-    "Dexa eu te explicar..."
-    #(Senna 00:27 - 00:28)
-    play sound ctc
-    "Eu tô nervoso!"
+    "Eu tô nervoso!, se me deixou nervoso!"
     #(Morador 00:30 - 00:33)
     play sound ctc
-    "Deixa eu te explicar, calma, calma!"
+    "Fica calmo, calma!"
+    play sound ctc
     "O arrombamento mesmo é esse aqui que eu queria!"
     #(Senna 00:34 - 00:36)
     play sound ctc
-    "OW, RAPAZ CÊ TÁ MALUCO, MERMÃO?"
+    "OU, RAPAZ CÊ TÁ MALUCO, MERMÃO?"
     #(Morador 00:36 - 00:39)
     play sound ctc
     "Eu tô de olho nesse teu cuzinho a tempo cara, eu queria arrombar teu CU!"
@@ -84,6 +84,7 @@ label cap04_04_arrombamento:
     #(Senna 00:49 - 00:56)
     play sound ctc
     "AAAGRH! PISA NA MINHA CABEÇA VAI! PISA!"
+    play sound ctc
     "JUDIA DE MIM, FILHA DA PUTA!, AAAAGHH!"
     #(Morador 00:56 - 00:57)
     play sound ctc
@@ -91,7 +92,8 @@ label cap04_04_arrombamento:
     #(Senna 01:01 - 01:03)
     play sound ctc
     "VAI, ENFIA A CARA NESSE CU VAIN!"
-    "SÓ QUER JUDIAR? FAZ CARINHO TAMBÉM! VAI, METE NO MEU CU? METE?"
+    play sound ctc
+    "SÓ QUER JUDIAR? FAZ CARINHO TAMBÉM! VAI?, METE NO MEU CU? METE?"
     #(Senna 01:08 - 01:16)
     play sound ctc
     "VEM CÁ FILHO DA PUTA, FODE! ISSO, METE NO MEU CU, VAI! METE NO MEU CU! METE NO CU!"
@@ -113,5 +115,3 @@ label cap04_04_arrombamento:
 label wrong_end_04_04_1:
     $ register_ending("U")
     jump game_over
-
-

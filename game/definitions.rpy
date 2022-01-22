@@ -108,6 +108,25 @@ init python:
             return
         flag_input_operation_senna = flag
 
+    def texto_arabe():
+        string_arabe = ""
+        for i in range (0,10):
+            string_arabe += arabe_wordlist[renpy.random.randint(0,len(arabe_wordlist)-1)]
+            string_arabe += "  "
+        return string_arabe
+
+    def toggle_arabe():
+        global config_arabe
+
+        flag = persistent.config_arabe
+
+        if(flag is None):
+            persistent.config_arabe = False
+            flag = False
+
+        config_arabe = flag
+
+    
     def toggle_fadein_texto(init=False):
         global config_fadein_texto
         global narrator_what_prefix
@@ -180,11 +199,11 @@ define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885
 
 define endings_names = {
     "A":"Melancolia do Toque de Celular Irritante",
-    "B":"Teste",
-    "C":"Teste",
-    "D":"Teste",
-    "E":"Teste",
-    "F":"Teste",
+    "B":"Sem Tempo Para Brincadeiras",
+    "C":"Você É Real Mesmo?",
+    "D":"Assassino G",
+    "E":"Extinção Humana",
+    "F":"Policial de Família",
     "G":"As Crônicas de Alexandre Senna",
     "H":"Teste",
     "I":"Teste",
@@ -203,17 +222,17 @@ define endings_names = {
     "V":"Teste",
     "W":"Teste",
     "X":"Teste",
-    "Y":"Teste",
-    "Z":"Teste"
+    "Y":"Árabe de Família",
+    "Z":"As Aparências Enganam"
 }
 
 define endings_descriptions = {
     "A":"Perdeu seu jogo de futebol e o celular para ir jogar Palavras-Cruzadas.",
-    "B":"Teste aaaaaaaaa",
-    "C":"Teste aaasasa",
-    "D":"Teste asdasdasdasd",
-    "E":"Teste",
-    "F":"Teste",
+    "B":"Virou o melhor goleiro de Cupiqueno e foi escalado para a Seleção.",
+    "C":"Questionou sua existência na Metrix e perdeu o Campeonato G.",
+    "D":"Transformou Índio em um monstro e perdeu o Campeonato G.",
+    "E":"Causou a destruição da Terra e perdeu o Campeonato G.",
+    "F":"Foi aprovado na Polícia Militar de Cupiqueno.",
     "G":"Desvendou todo o Códex G.",
     "H":"Teste",
     "I":"Teste",
@@ -232,9 +251,62 @@ define endings_descriptions = {
     "V":"Teste",
     "W":"Teste",
     "X":"Teste",
-    "Y":"Teste",
-    "Z":"Teste"
+    "Y":"Aprendeu um novo idioma.",
+    "Z":"¡¢£¤¥¦§¨©ª&«¬ÂÃíÄÅ+ÆÇÈâěçĜĝĞğĠġĢģôĤĥ#ĦħĨĩĪīĬĭĮÍįİıĲĳĴĵĶķÂĸĹĺĻļĽľž"
 }
+
+define arabe_wordlist = [
+    "البرتقالي",
+    "عصير",
+    "قطعة",
+    "ميكانيكي",
+    "كرة القدم",
+    "حمام السباحة",
+    "الأسرة",
+    "بابا",
+    "ارتياح",
+    "طبيبة",
+    "بطولة",
+    "قدم",
+    "بهجة",
+    "لذيذ",
+    "السيارات",
+    "للعمل",
+    "شاويش",
+    "امتحان",
+    "ملاكمة",
+    "يقتحم",
+    "للراحة",
+    "جوامع",
+    "السجن",
+    "القليل",
+    "مضمون",
+    "حارس مرمى",
+    "الممثل",
+    "اختبار",
+    "عيادة",
+    "شلال",
+    "مدرب رياضي",
+    "الأكاديمية",
+    "رجل الاطفاء",
+    "خرطوم",
+    "موقد",
+    "مشكلة",
+    "غاز",
+    "بنت",
+    "قارب",
+    "القرصان",
+    "قاطع طريق",
+    "الشرطي",
+    "مصور فوتوغرافي",
+    "جندي",
+    "صديق قديم",
+    "ابنة كبيرة",
+    "السنوكر",
+    "زواج",
+    "أنا لم أفهم",
+    "كذاب"
+]
 
 define config_fadein_texto = True
 define narrator_what_prefix = "{fi=33-0.16-33}"
@@ -276,6 +348,7 @@ transform side_image_out:
 
 #Personagens
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
+define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
 image seto 1a = "mod_assets/characters/seto/1a.png"
@@ -313,6 +386,9 @@ image intro_002 = "mod_assets/images/intro/intro_002.png"
 image intro_003 = "mod_assets/images/intro/intro_003.png"
 image intro_004 = "mod_assets/images/intro/intro_004.png"
 
+image cap_arabe_img = "mod_assets/images/cap_arabe.png"
+image cap_arabe_img2 = "mod_assets/images/cap_arabe2.png"
+
 image corredor_ddlc = "mod_assets/images/capXX/corridor.png"
 image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 
@@ -330,6 +406,8 @@ define audio.fm_library = "<loop 0.70>mod_assets/music/fm_library.ogg"
 
 #Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
+define voz_jailson_arabe = "mod_assets/voices/jailson_arabe.ogg"
+define voz_guina_arabe = "mod_assets/voices/guina_arabe.ogg"
 
 define voz_capXX_001 = "mod_assets/voices/capXX/capxx_001.ogg"
 define voz_capXX_002 = "mod_assets/voices/capXX/capxx_002.ogg"

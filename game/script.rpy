@@ -28,21 +28,21 @@ label start:
     play sound menu_start
 
     if(not game_over):
-        call cap01
+        call cap01 from _call_cap01
     if(not game_over):
-        call cap02
+        call cap02 from _call_cap02
     if(not game_over):
-        call cap03
+        call cap03 from _call_cap03
     if(not game_over):
-        call cap04
+        call cap04 from _call_cap04
     if(not game_over):
-        call cap05
+        call cap05 from _call_cap05
     if(not game_over):
-        call epilogo
+        call epilogo from _call_epilogo
     if(not game_over):
-        call creditos
+        call creditos from _call_creditos
     if(not game_over):
-        call capXX
+        call capXX from _call_capXX
 
     $ game_over = False
 

@@ -27,6 +27,17 @@ style default:
     line_overlap_split 1
     line_spacing 1
 
+style arabe_style:
+    font "mod_assets/gui/fonts/calibri.ttf"
+    size 22
+    color gui.text_color
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    line_overlap_split 1
+    line_spacing 1
+    padding gui.frame_borders.padding
+    ypos 120
+    xpos 50
+
 style font_creditos_menu:
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
     size 14
@@ -207,7 +218,7 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
         vbox:
-            key "K_ESCAPE" action [If(current_label != "game_over",ShowMenu("save"),NullAction())]
+            key "K_ESCAPE" action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
 
     # If there's a side image, display it above the text. Do not display
     # on the phone variant - there's no room.
@@ -339,7 +350,7 @@ screen choice(items):
             textbutton i.caption action i.action
 
     vbox:
-        key "K_ESCAPE" action [If(current_label != "game_over",ShowMenu("save"),NullAction())]
+        key "K_ESCAPE" action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -521,7 +532,10 @@ init python:
         #if not player: return
         #persistent.playername = player
         #renpy.hide_screen("name_input")
-        renpy.jump_out_of_context("start")
+        if(not config_arabe):
+            renpy.jump_out_of_context("start")
+        else:
+            renpy.jump_out_of_context("cap_arabe")
 
 
 
@@ -562,7 +576,10 @@ screen navigation():
             imagebutton:
                 idle "mod_assets/gui/menu/menu_load_game_idle.png"
                 hover "mod_assets/gui/menu/menu_load_game_selected.png"
-                action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None), Hide("game_menu"),Play("music",audio.fm_deck)]
+                action [If(not persistent.config_arabe,ShowMenu("load"),NullAction()),
+                        SensitiveIf(renpy.get_screen("load") == None and not persistent.config_arabe),
+                        If(not persistent.config_arabe,Hide("game_menu"),NullAction()),
+                        If(not persistent.config_arabe,Play("music",audio.fm_deck),NullAction())]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
 
@@ -967,7 +984,7 @@ screen side_img(img,ending):
 
         textbutton _("\""+endings_names[ending]+"\""):
             style "page_label_text"
-            text_size 18
+            text_size 16
 
         textbutton _(endings_descriptions[ending]):
             style "page_label_text"
@@ -1665,22 +1682,32 @@ screen preferences():
         
         null height (1 * gui.pref_spacing)
 
-        vbox:
+        hbox:
             box_wrap True
             xmaximum 900
-            hbox:
-                style_prefix "radio"
-                label _("Ativar/Desativar Efeito Texto")
-            hbox:
-                style_prefix "radio"
-                textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
-                textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
+            vbox:
+                hbox:
+                    style_prefix "radio"
+                    label _("Efeito Texto")
+                hbox:
+                    style_prefix "radio"
+                    textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
+                    textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
+            null width (3 * gui.pref_spacing)
+            vbox:
+                hbox:
+                    style_prefix "radio"
+                    label _("Idioma")
+                hbox:
+                    style_prefix "radio"
+                    textbutton _("Português") action [SetField(persistent, "config_arabe", False)] #, toggle_fadein_texto(flag=True)
+                    textbutton _("Árabe") action [SetField(persistent, "config_arabe", True)] #, toggle_fadein_texto(flag=False)
     
     textbutton _("Voltar"):
         xalign 0.95
         ypos 0.95
         style "return_button"
-        action [Return(), Play("music", config.main_menu_music),toggle_fadein_texto()]
+        action [Return(), Play("music", config.main_menu_music),toggle_fadein_texto(),toggle_arabe()]
 
     #text "v[config.version]":
     #            xalign 1.0 yalign 1.0

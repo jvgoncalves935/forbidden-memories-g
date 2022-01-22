@@ -13,7 +13,7 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = "Forbidden Memories G"
-define config.developer = True
+define config.developer = False
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -36,7 +36,7 @@ define gui.about = _("")
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "FMemoriesG"
+define build.name = "ForbiddenMemoriesG"
 
 ## Sounds and music ############################################################
 
@@ -218,7 +218,7 @@ init python:
     ## Classify files as None to exclude them from the built distributions.
 
     ## This is the archive of data for your mod
-    #build.archive(build.name, "all")
+    build.archive(build.name, "all")
 
 
     ## These files get put into your data file
@@ -254,6 +254,8 @@ init python:
     build.classify('/tests/*.*',None)
     build.classify('/psd/*.*',None)
     build.classify('/original_scripts/*.*',None)
+    build.classify('/advanced_scripts/*.*',None)
+    build.classify('/comunity_assets/*.*',None)
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

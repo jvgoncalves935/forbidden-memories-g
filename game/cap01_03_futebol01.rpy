@@ -46,7 +46,7 @@ label cap01_03_futebol01:
         "<Treinar pênaltis com seu time>":
             jump wrong_end_01_03_1
         "<Propor uma brincadeira>":
-            "Que se dane."
+            pass
     hide textbox_aux
     stop music
 
@@ -95,6 +95,30 @@ label cap01_03_futebol01:
     return
 
 label wrong_end_01_03_1:
+    "(Igual qualquer pessoa normal em um campo de futebol, você propõe para os colegas de time a treinarem pênaltis.)"
+    play sound ctc
+    "(Ambos concordam e vocês começam a treinar para o jogo que irá acontecer assim que o outro time chegar.)"
+    play sound ctc
+    "(Índio não consegue acertar nenhum gol em você, parece que você virou o próprio Rogério Senna em pessoa!)"
+    play sound ctc
+    "(Você nunca defendeu tão bem no gol em toda a sua vida!)"
+    play sound ctc
+    "\"Caramba, você defenderia certas bolas que jamais - teria a capacidade de defender!\", diz Índio."
+    play sound ctc
+    "(Você está completamente preparado para ganhar o Campeonato G contra o time de James Matarazzo!)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(Parece que eles chegaram.)"
+    play sound ctc
+    "\"PODEM VIR, SEUS FILHOS DA PUTA!\", você berra com toda a sua força."
+    play sound ctc
+    "(Os adversários tremem de medo de sua eminente derrota...)"
+    play sound ctc
+    "(Sua vingança contra James será absoluta e implacável!)"
+    play sound ctc
+    "(O Campeonato irá começar em instantes.)"
+    play sound ctc
     $ register_ending("B")
     jump game_over
 
