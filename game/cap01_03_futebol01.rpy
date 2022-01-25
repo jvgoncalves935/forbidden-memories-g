@@ -34,7 +34,7 @@ label cap01_03_futebol01:
     "Beleza. Demoraram, hein?"
     play sound ctc
     #(Senna 00:24 - 00:28)
-    "Ow, o pessoal tá... vai chegar mais tarde, o pessoal!"
+    "Ow, o pessoal tá... vai chegar mais\ntarde, o pessoal!"
     play sound ctc
     #(Goleiro 00:29 - 00:29)
     "Vixe..."
@@ -51,10 +51,10 @@ label cap01_03_futebol01:
     stop music
 
     #(Senna 00:30 - 00:31)
-    "Da pra gente fazer uma brincadeira aí! Jogar uma bola.."
+    "Da pra gente fazer uma brincadeira\naí! Jogar uma bola.."
     play sound ctc
     #(Senna 00:40 - 00:46)
-    "Então... mas já que o pessoal vai chegar mais tarde, quê que vocês acham da gente fazer uma brincadeirinha?"
+    "Então... mas já que o pessoal vai\nchegar mais tarde, quê que vocês\nacham da gente fazer uma\nbrincadeirinha?"
     play sound ctc
     #(John 00:46 - 00:47)
     "Hmmm... bem que seria bom, né?"
@@ -95,29 +95,32 @@ label cap01_03_futebol01:
     return
 
 label wrong_end_01_03_1:
-    "(Igual qualquer pessoa normal em um campo de futebol, você propõe para os colegas de time a treinarem pênaltis.)"
+    stop music
+    "(Igual qualquer pessoa normal em um\ncampo de futebol, você propõe para os colegas de time a treinarem pênaltis.)"
     play sound ctc
-    "(Ambos concordam e vocês começam a treinar para o jogo que irá acontecer assim que o outro time chegar.)"
+    "(Ambos concordam e vocês começam a\ntreinar para o jogo que irá acontecer assim que o outro time chegar.)"
     play sound ctc
-    "(Índio não consegue acertar nenhum gol em você, parece que você virou o próprio Rogério Senna em pessoa!)"
+    "(Índio não consegue acertar nenhum\ngol em você, parece que você virou o\npróprio Rogério Senna em pessoa!)"
     play sound ctc
-    "(Você nunca defendeu tão bem no gol em toda a sua vida!)"
+    "(Você nunca defendeu tão bem no gol\nem toda a sua vida!)"
     play sound ctc
-    "\"Caramba, você defenderia certas bolas que jamais - teria a capacidade de defender!\", diz Índio."
+    "\"Caramba, você não defenderia\nbolas que jamais - teria a capacidade de defender!\", diz Índio."
     play sound ctc
-    "(Você está completamente preparado para ganhar o Campeonato G contra o time de James Matarazzo!)"
+    "(Você está completamente preparado\npara ganhar o Campeonato G contra o\ntime adversário!)"
     play sound ctc
     "(...)"
     play sound ctc
     "(Parece que eles chegaram.)"
     play sound ctc
-    "\"PODEM VIR, SEUS FILHOS DA PUTA!\", você berra com toda a sua força."
+    "\"PODEM VIR, SEUS FILHOS DA PUTA!\",\nvocê berra com toda a sua força."
     play sound ctc
     "(Os adversários tremem de medo de sua eminente derrota...)"
     play sound ctc
-    "(Sua vingança contra James será absoluta e implacável!)"
+    "(Sua vingança contra James será\nabsoluta e implacável!)"
     play sound ctc
-    "(O Campeonato irá começar em instantes.)"
+    "(Você será a nova estrela do time!)"
+    play sound ctc
+    "(O Campeonato irá começar em\ninstantes.)"
     play sound ctc
     $ register_ending("B")
     jump game_over

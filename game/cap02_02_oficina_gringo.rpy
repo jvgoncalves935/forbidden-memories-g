@@ -7,9 +7,11 @@ label cap02_02_oficina_gringo:
 
 
 label wrong_end_02_02_1:
+    stop music
     $ register_ending("H")
     jump game_over
 
 label wrong_end_02_02_2:
+    stop music
     $ register_ending("I")
     jump game_over

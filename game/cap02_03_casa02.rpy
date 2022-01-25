@@ -6,10 +6,12 @@ label cap02_03_casa02:
     return
 
 label wrong_end_02_03_1:
+    stop music
     $ register_ending("J")
     jump game_over
 
 label wrong_end_02_03_2:
+    stop music
     $ register_ending("K")
     jump game_over
 

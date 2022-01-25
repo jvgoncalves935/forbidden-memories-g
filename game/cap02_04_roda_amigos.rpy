@@ -95,5 +95,6 @@ label cap02_04_roda_amigos:
 
 
 label wrong_end_02_04_1:
+    stop music
     $ register_ending("L")
     jump game_over

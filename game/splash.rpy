@@ -4,14 +4,10 @@
 ## If not, display an error message and quit.
 init -100 python:
     #Check for each archive needed
-    for archive in ['audio','images','fonts']:
-        if not archive in config.archives:
+    for archive in ['audio','scripts','images','fonts']:
+        if archive in config.archives:
             #If one is missing, throw an error and chlose
-            renpy.error("Os arquivos de Doki Doki Literature Club não foram encontrados na pasta /game. Confira a instalação e tente novamente.")
-
-        if 'scripts' in config.archives:
-            #If one is missing, throw an error and chlose
-            renpy.error("O arquivo 'scripts.rpa' de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
+            renpy.error("O arquivo "+arquive+" de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
 
 ## First, a disclaimer declaring this is a mod is shown, then there is a
 ## check for the original DDLC assets in the install folder. If those are
@@ -257,6 +253,8 @@ label splashscreen:
         "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
         play sound ctc
         "Este é um jogo de humor, porém\nenvolve temas adultos. Mesmo assim,\nele NÃO possui nenhum conteúdo\nexplícito. Não é recomendado para\nmenores de 18 anos."
+        play sound ctc
+        "Projeto inspirado na série do\nYoutube \"Alexandre Senna rpG\"\nde Cena do Senna."
         play sound ctc
         "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de \"Universo G\"."
         play sound ctc

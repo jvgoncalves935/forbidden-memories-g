@@ -131,5 +131,6 @@ label cap03_02_doutora01:
 
 
 label wrong_end_03_02_1:
+    stop music
     $ register_ending("N")
     jump game_over

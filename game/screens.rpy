@@ -1528,7 +1528,10 @@ screen file_slots(title,current_song=None):
 
             # range(1, 10) gives the numbers from 1 to 9.
             for page in range(1, 10):
-                textbutton "[page]" action FilePage(page)
+                textbutton _("[page]"):
+                    action FilePage(page)
+                    hover_sound audio.fm_arrow_select
+                    activate_sound gui.activate_sound
 
             #textbutton _(">") action FilePageNext(max=9, wrap=True)
 

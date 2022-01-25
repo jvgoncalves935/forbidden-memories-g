@@ -17,7 +17,7 @@ label capXX:
     "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo a matéria direito."
     play sound ctc
     stop music
-    play music fm_plazatown
+    
     show seto_s at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_001
@@ -29,22 +29,32 @@ label capXX:
     show yuri 2p
     "AHH! Desculpe-me, quem é você? Posso\nlhe ajudar?"
     play sound ctc
+    
+    play music nao_venha_me_dizer
+    $ half_volume = set_half_volume()
+
     show seto 1a at l32
     "{p=0.3}{nw}"
     voice voz_capXX_002
     "Se você não puder, isso não vai me\nsurpreender..."
     play sound ctc
     show yuri 2o at t31
+
+    $ set_double_volume(half_volume)
+
     "{p=0.3}{nw}"
     "(Parece que ele surgiu de outra\nera...! Antigo Egito?)"
     show yuri 2n at t31
     "{p=0.3}{nw}"
-    "O-o que você está fazendo aqui? "
+    "O-o que você está fazendo aqui?"
     play sound ctc
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s1
     show seto_s at side_image_in
+    
+    $ half_volume = set_half_volume()
+
     "{p=0.6}{nw}"
     voice voz_capXX_003
     "Nada que seja do seu interesse, eu\nvim ver uma carta..."
@@ -52,9 +62,12 @@ label capXX:
     show seto_s at side_image_out
     "{p=0.6}{nw}"
     hide seto_s
-    stop music
-    play music fm_preliminary_faceoff
+    #stop music
+    #play music fm_preliminary_faceoff
     show yuri 2r at t31
+    
+    $ set_double_volume(half_volume)
+
     "{p=0.3}{nw}"
     "V-Você é louco! Estou indo embora!"
     play sound ctc
@@ -66,11 +79,17 @@ label capXX:
     hide yuri
     "{p=0.3}{nw}"
     show seto 1b at t32
+    
+    $ half_volume = set_half_volume()
+
     "{p=0.3}{nw}"
     voice voz_capXX_004
     "HA! HAHAHAHAHAAAA!"
     play sound ctc
     show yuri_s1 at side_image_in zorder 3
+
+    $ set_double_volume(half_volume)
+
     "{p=0.6}{nw}"
     "Socorro! Tem um homem estranho vindo\natrás de mim!"
     play sound ctc
@@ -78,6 +97,9 @@ label capXX:
     "{p=0.6}{nw}"
     hide yuri_s1
     show seto 1a at t32
+
+    $ half_volume = set_half_volume()
+
     "{p=0.3}{nw}"
     voice voz_capXX_005
     "Muito bem, esse desvio foi uma total\nperda de tempo e energia..."
@@ -98,6 +120,9 @@ label capXX:
     #Yuri encontra Senna
     show corredor_ddlc
     with dissolve
+    
+    $ set_double_volume(half_volume)
+
     "{p=0.3}{nw}"
     show yuri 1p at leftin(-300)
     show yuri 1p at rhide(time=0.6)
@@ -106,12 +131,19 @@ label capXX:
     play sound ctc
     show yuri 1o at rightin(300,time=0.6)
     "{p=1.0}{nw}"
+    
+    $ set_double_volume(half_volume)
+
+    stop music fadeout 3.0
     "De onde aquele louco saiu?!"
     play sound ctc
     show yuri 2o
     "Com certeza ele não estava usando uma fantasia...!"
     play sound ctc
     show senna_s1 at side_image_in zorder 3
+    
+    play music senna_theme
+
     "{p=0.6}{nw}"
     voice voz_capXX_007
     "Onde, onde, onde...?"
@@ -123,6 +155,8 @@ label capXX:
     "Hã...?!"
     play sound ctc
     show senna 1a at rightin(755,time=0.25)
+
+
     "{p=1.0}{nw}"
     voice voz_capXX_008
     "Cadê o arrombamento? Foi aqui, foi\naonde?"
@@ -131,6 +165,9 @@ label capXX:
     "Mas que DROGA você está falando? Quem é você!?"
     play sound ctc
     show senna_s1 at side_image_in zorder 3
+
+    
+
     "{p=0.6}{nw}"
     voice voz_capXX_009
     "Porra cara, você tá me tirando mermão?"
@@ -186,6 +223,9 @@ label capXX:
     "{p=1.0}"
     play sound ctc
     show yuri 3p at l32
+
+    stop music fadeout 3.0
+
     "{p=1.0}{nw}"
     "DE ONDE ESTAS PESSOAS ESTÃO VINDO?!"
     play sound ctc
@@ -196,6 +236,7 @@ label capXX:
     "Professor...! Me ajude!"
     play sound ctc
     show guina_s at side_image_in zorder 3
+    play music guina_piscineiro
     "{p=0.6}{nw}"
     voice voz_capXX_014
     "Que isso menino, qual foi?"

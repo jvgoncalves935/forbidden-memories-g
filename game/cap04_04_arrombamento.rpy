@@ -113,5 +113,6 @@ label cap04_04_arrombamento:
     return
 
 label wrong_end_04_04_1:
+    stop music
     $ register_ending("U")
     jump game_over

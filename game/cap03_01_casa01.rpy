@@ -95,9 +95,7 @@ label telefone_03_01_03:
 
 label wrong_end_03_01:
     "OH SEU FILHO DA PUTA, PARA DE ME LIGAR"
-    jump game_over
-
-label wrong_end_03_01_1:
+    stop music
     $ register_ending("M")
     jump game_over
 

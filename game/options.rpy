@@ -218,24 +218,26 @@ init python:
     ## Classify files as None to exclude them from the built distributions.
 
     ## This is the archive of data for your mod
-    build.archive(build.name, "all")
+    build.archive("data01", "all")
 
 
     ## These files get put into your data file
-    build.classify("game/mod_assets/**",build.name)
-    #build.classify("game/**.rpy",build.name) #Optional line to include plaintext scripts
-    build.classify("game/**.rpyc",build.name) #Serialized scripts must be included
-    build.classify("README.html",build.name) #Included help file for mod installation
+    build.classify("game/mod_assets/**","data01")
+    build.classify("game/gui/**","data01")
+    build.classify("game/tl/**","data01")
+    #build.classify("game/**.rpy","data01") #Optional line to include plaintext scripts
+    build.classify("game/**.rpyc","data01") #Serialized scripts must be included
+    build.classify("README.html","data01") #Included help file for mod installation
 
     #Add the pictures necessary for the tutorial selection menu
-    build.classify("game/gui/button/tutorial_hover_background.png",build.name)
-    build.classify("game/gui/button/tutorial_idle_background.png",build.name)
+    build.classify("game/gui/button/tutorial_hover_background.png","data01")
+    build.classify("game/gui/button/tutorial_idle_background.png","data01")
 
     ##Optionally include a zip file with all source code
     build.classify('**.rpy','source')
     build.package(build.directory_name + "source",'zip','source',description='Source Code Archive')
 
-    build.package(build.directory_name + "Mod",'zip',build.name,description='DDLC Compatible Mod')
+    build.package(build.directory_name + "Mod",'zip',"data01",description='DDLC Compatible Mod')
 
     build.classify('**~', None)
     build.classify('**.bak', None)
@@ -248,14 +250,16 @@ init python:
     build.classify('**.sublime-workspace', None)
     build.classify('/music/*.*', None)
     build.classify('script-regex.txt', None)
-    build.classify('/game/10', None)
-    build.classify('/game/cache/*.*', None)
+    build.classify('game/10', None)
+    build.classify('game/cache/*.*', None)
     build.classify('**.rpa',None)
-    build.classify('/tests/*.*',None)
-    build.classify('/psd/*.*',None)
-    build.classify('/original_scripts/*.*',None)
-    build.classify('/advanced_scripts/*.*',None)
-    build.classify('/comunity_assets/*.*',None)
+    build.classify('tests/**.**',None)
+    build.classify('tests/**',None)
+    build.classify('psd/**.**',None)
+    build.classify('original_scripts/**.**',None)
+    build.classify('advanced_scripts/**.**',None)
+    build.classify('community_assets/**.**',None)
+    build.classify('README.md', None)
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

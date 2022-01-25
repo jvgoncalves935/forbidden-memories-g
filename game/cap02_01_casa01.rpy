@@ -6,6 +6,7 @@ label cap02_01_casa01:
     return
 
 label wrong_end_02_01_1:
+    stop music
     "(Você desliga o telefone o mais rápido que pode.)"
     play sound ctc
     "(\"Eu odeio esse toque!\", você pensa.)"
