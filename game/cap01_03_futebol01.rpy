@@ -96,15 +96,15 @@ label cap01_03_futebol01:
 
 label wrong_end_01_03_1:
     stop music
-    "(Igual qualquer pessoa normal em um\ncampo de futebol, você propõe para os colegas de time a treinarem pênaltis.)"
+    "(Igual qualquer pessoa normal em um\ncampo de futebol, você propõe para os\ncolegas de time a treinarem pênaltis.)"
     play sound ctc
-    "(Ambos concordam e vocês começam a\ntreinar para o jogo que irá acontecer assim que o outro time chegar.)"
+    "(Ambos concordam e vocês começam a\ntreinar para o jogo que irá acontecer\nassim que o outro time chegar.)"
     play sound ctc
     "(Índio não consegue acertar nenhum\ngol em você, parece que você virou o\npróprio Rogério Senna em pessoa!)"
     play sound ctc
     "(Você nunca defendeu tão bem no gol\nem toda a sua vida!)"
     play sound ctc
-    "\"Caramba, você não defenderia\nbolas que jamais - teria a capacidade de defender!\", diz Índio."
+    "\"Caramba, você não defenderia\nbolas que jamais - teria a capacidade\nde defender!\", diz Índio."
     play sound ctc
     "(Você está completamente preparado\npara ganhar o Campeonato G contra o\ntime adversário!)"
     play sound ctc
@@ -114,7 +114,7 @@ label wrong_end_01_03_1:
     play sound ctc
     "\"PODEM VIR, SEUS FILHOS DA PUTA!\",\nvocê berra com toda a sua força."
     play sound ctc
-    "(Os adversários tremem de medo de sua eminente derrota...)"
+    "(Os adversários tremem de medo de sua\neminente derrota...)"
     play sound ctc
     "(Sua vingança contra James será\nabsoluta e implacável!)"
     play sound ctc

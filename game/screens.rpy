@@ -942,16 +942,16 @@ screen about():
 
     style_prefix "about"
 
-        vbox:
+    vbox:
 
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+        label "[config.name!t]"
+        text _("Version [config.version!t]\n")
 
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+        ## gui.about is usually set in options.rpy.
+        if gui.about:
+            text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
         
 
 

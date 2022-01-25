@@ -7,7 +7,7 @@ label cap01_02_casa:
     play sound ctc
     "Cadê a galera aí pra gente matar a\nsaudade?"
     play sound ctc
-    "Bora esperar a ligação de alguém aí e eu já vou lá pro futebol."
+    "Bora esperar a ligação de alguém\naí e eu já vou lá pro futebol."
     play sound ctc
     play music celular
     "(celular tocando)"
@@ -42,11 +42,11 @@ label wrong_end_01_02_1:
     play sound ctc
     "(Você decide tacar o telefone pela\njanela da rua e um carro passa em\ncima dele.)"
     play sound ctc
-    "(Mas o telefone simplesmente não para de tocar.)"
+    "(Mas o telefone simplesmente não para\nde tocar.)"
     play sound ctc
     "CAMBADA DE DEMÔNIO!"
     play sound ctc
-    "(O barulho de seu toque ainda ecoa em sua mente, te levando à insanidade...)"
+    "(O barulho de seu toque ainda ecoa em\nsua mente, te levando à insanidade...)"
     play sound ctc
     "VOCÊS NÃO ME DEIXAM EM PAZ!"
     play sound ctc
