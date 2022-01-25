@@ -4,7 +4,7 @@ label cap01_04_futebol02:
     show textbox_black at center
     #show intro_001 at top
     #(Índio 01:25 - 1:27)
-    "Que putaria é essa aí de pau duro aí, olha aí!"
+    "Que putaria é essa aí de pau duro aí,\nolha aí!"
     play sound ctc
     #(Índio 01:26 - 1:31)
     "Porra, vamo lá jogar esse futebol...\nBora galera!"
@@ -142,22 +142,24 @@ label cap01_04_futebol02:
     "Ow senta ai ow, senta ai!"
     #(índio 04:14 - 04:26)
     play sound ctc
-    "Que que foi? que que foi?,.... bom jogo mano!, bom jogo!, ta todo mundo jogando junto aqui uai!"
+    "Quê que foi? Quê que foi? Bom\njogo, mano! Bom jogo! Tá todo\nmundo jogando junto aqui, uai!"
     #(índio 04:30 - 04:38)
     play sound ctc
-    "Aqui o tomei uma aqui também ta roxo aqui vei!, olha aqui o maluco, é olha aqui, TIME DA FRESCURA!"
+    "Aqui o tomei uma aqui também ta roxo\naqui vei!, olha aqui o maluco,\né olha aqui, TIME DA FRESCURA!"
     #(Goleiro2 04:49 - 04:47)
     play sound ctc
-    "Caralho eim, já se passaram horas e os cara nada,puta merda ta quase anoitecendo já!.... foda"
+    "Caralho hein, já se passaram horas e\nos cara nada. Puta merda, tá\nquase anoitecendo já! Foda..."
     #(John 04:48 - 04:55)
     play sound ctc
-    "Eu não te falei maluco?, eles tão é trepando maluco,eles tão é trepando gostoso!, o galera eu vo dar o fora falow?"
+    "Eu não te falei maluco? Eles tão é\ntrepando maluco, eles tão é trepando\ngostoso!"
+    play sound ctc
+    "Ow galera, eu vo dar o fora, falou?"
     #Senna(05:00 0 05:01)
     play sound ctc
-    "Falou falou!"
+    "Falou, falou!"
     #(índio 05:16 - 05:18)
     play sound ctc
-    "Que tesão eim?. gostosão!"
+    "Que tesão, hein? Gostosão..."
     play sound ctc
     return
 

@@ -11,17 +11,17 @@ label capXX:
     play sound ctc
     show yuri 1a at l31
     "{p=0.3}{nw}"
-    "Ora, as garotas ainda não chegaram no clube..."
+    "Ora, as garotas ainda não chegaram\nno clube..."
     play sound ctc
     show yuri 2h
-    "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo a matéria direito."
+    "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo\na matéria direito."
     play sound ctc
     stop music
     
     show seto_s at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_001
-    "O que eu sempre digo: \"Se não\nconsegue da primeira vez, ATAQUE COM O OLHOS AZUIS DE NOVO!\""
+    "O que eu sempre digo: \"Se não\nconsegue da primeira vez, ATAQUE COM O\nOLHOS AZUIS DE NOVO!\""
     play sound ctc
     show seto_s at side_image_out
     "{p=0.6}{nw}"
@@ -138,7 +138,7 @@ label capXX:
     "De onde aquele louco saiu?!"
     play sound ctc
     show yuri 2o
-    "Com certeza ele não estava usando uma fantasia...!"
+    "Com certeza ele não estava usando uma\nfantasia...!"
     play sound ctc
     show senna_s1 at side_image_in zorder 3
     
@@ -162,7 +162,7 @@ label capXX:
     "Cadê o arrombamento? Foi aqui, foi\naonde?"
     play sound ctc
     show yuri 3r
-    "Mas que DROGA você está falando? Quem é você!?"
+    "Mas que DROGA você está falando? Quem\né você!?"
     play sound ctc
     show senna_s1 at side_image_in zorder 3
 
@@ -181,7 +181,7 @@ label capXX:
     show senna_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_010
-    "AONDE TÁ TENDO ARROMBAMENTO AQUI, SEU VIADO?"
+    "AONDE TÁ TENDO ARROMBAMENTO AQUI,\nSEU VIADO?"
     play sound ctc
     show senna_s1 at side_image_out
     "{p=0.6}{nw}"
@@ -268,7 +268,7 @@ label capXX:
     "{p=0.6}{nw}"
     hide yuri_s2
     voice voz_capXX_016
-    "A profissão de professor é uma coisa\nmuito SÉRIA, que tem que ser levada a SÉRIO..."
+    "A profissão de professor é uma coisa\nmuito SÉRIA, que tem que ser levada a\nSÉRIO..."
     play sound ctc
     voice voz_capXX_017
     "Se tiver algum aluno fazendo coisa\nerrada... A gente COME JÁ."

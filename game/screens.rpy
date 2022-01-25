@@ -220,6 +220,26 @@ screen say(who, what):
         vbox:
             key "K_ESCAPE" action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
 
+        vbox:
+            xalign 0.96
+            yalign 0.96
+            
+            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+                style "page_label_text"
+                text_size 12
+    
+    if renpy.variant("touch"):
+        vbox:
+            xalign 0.0
+            yalign 0.0
+            
+            imagebutton:
+                idle "gui/button/android_exit_button.png"
+                action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
+                activate_sound gui.activate_sound
+                
+
+
     # If there's a side image, display it above the text. Do not display
     # on the phone variant - there's no room.
     if not renpy.variant("small"):
@@ -351,6 +371,24 @@ screen choice(items):
 
     vbox:
         key "K_ESCAPE" action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
+
+    vbox:
+        xalign 0.96
+        yalign 0.96
+        
+        textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+            style "page_label_text"
+            text_size 12
+    
+    if renpy.variant("touch"):
+        vbox:
+            xalign 0.0
+            yalign 0.0
+            
+            imagebutton:
+                idle "gui/button/android_exit_button.png"
+                action [If(current_label != "game_over" and not config_arabe,ShowMenu("save"),NullAction())]
+                activate_sound gui.activate_sound
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -582,6 +620,14 @@ screen navigation():
                         If(not persistent.config_arabe,Play("music",audio.fm_deck),NullAction())]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
+
+        vbox:
+            xalign 0.96
+            yalign 0.96
+            
+            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+                style "page_label_text"
+                text_size 12
 
     if _in_replay:
 

@@ -256,9 +256,9 @@ label splashscreen:
         play sound ctc
         "Projeto inspirado na série do\nYoutube \"Alexandre Senna rpG\"\nde Cena do Senna."
         play sound ctc
-        "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de \"Universo G\"."
+        "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de\n\"Universo G\"."
         play sound ctc
-        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito por fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npor fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
         play sound ctc
         "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
         play sound ctc
@@ -276,8 +276,8 @@ label splashscreen:
 
     #autoload handling
     #Use persistent.autoload if you want to bypass the splashscreen on startup for some reason
-    if persistent.autoload and not _restart:
-        jump autoload
+    #if persistent.autoload and not _restart:
+    #    jump autoload
 
     # Start splash logic
     $ config.allow_skipping = False
