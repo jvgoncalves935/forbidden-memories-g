@@ -151,9 +151,16 @@ define config.window_icon = "gui/64x64.png"
 
 ## Custom configs ##############################################################
 
-define config.allow_skipping = True
+define config.allow_skipping = False
 define config.has_autosave = False
 define config.autosave_on_quit = False
+
+define config.autosave_on_quit = False
+define config.autosave_frequency = None
+define config.autoreload = False
+define config.auto_load = None
+define config.save_on_mobile_background = False
+
 define config.autosave_slots = 0
 define config.layers = [ 'master', 'transient', 'screens', 'overlay', 'front' ]
 define config.image_cache_size = 64

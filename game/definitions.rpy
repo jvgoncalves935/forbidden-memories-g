@@ -197,7 +197,6 @@ init python:
             half_volume = half_volume / 2
 
         change_channel_volume(half_volume,'music')
-        
 
         return half_volume
 
@@ -210,10 +209,13 @@ init python:
             double_volume = 1
 
         change_channel_volume(double_volume,'music')
-        return 
+        return
 
-
-        
+    def play_video(video,alt_label=None):
+        if(not renpy.emscripten):
+            renpy.movie_cutscene(video)
+        else:
+            renpy.call_in_new_context(alt_label)
 
     
     
@@ -240,7 +242,7 @@ define endings_names = {
     "I":"Teste",
     "J":"Teste",
     "K":"Teste",
-    "L":"Teste",
+    "L":"Hétero com G",
     "M":"Teste",
     "N":"Teste",
     "O":"Teste",
@@ -269,7 +271,7 @@ define endings_descriptions = {
     "I":"Teste",
     "J":"Teste",
     "K":"Teste",
-    "L":"Teste",
+    "L":"Foi confundido com um bandido. Mesmo assim, você é hétero.",
     "M":"Teste",
     "N":"Teste",
     "O":"Teste",
@@ -479,39 +481,39 @@ define audio.fm_arrow_select = "mod_assets/sounds/arrow_select.ogg"
 
 #Discord Rich Presence
 #ALTERAR FORBIDDEN MEMORIES G
-init python:
-    import time
-    import drpc
-    global drpc_details
-    global drpc_state
-    client_id = '466702541732839462' 
-    start_time = int(time.time())
-    large_text = 'Você acredita em tudo o que vê?'
-    large_image = 'ymel_large'
-    try: drpc = drpc.DiscordIpcClient.for_platform(client_id)
-    except:
-        # Discord's IPC wasn't found
-        pass
+#init python:
+#    import time
+#    import drpc
+#    global drpc_details
+#    global drpc_state
+#    client_id = '466702541732839462' 
+#    start_time = int(time.time())
+#    large_text = 'Você acredita em tudo o que vê?'
+#    large_image = 'ymel_large'
+#    try: drpc = drpc.DiscordIpcClient.for_platform(client_id)
+#    except:
+         #Discord's IPC wasn't found
+#        pass
 
-    def drpc_update():
-        drpc_details = persistent.current_chapter_head
-        drpc_state = persistent.current_chapter_title
-        try: drpc.set_activity({
-            "state": drpc_state,
-            "details": drpc_details,
-            "timestamps": {
-                "start": start_time
-            },
-            "assets": {
-                #"small_text": small_text,
-                #"small_image": small_text,
-                "large_text": large_text,
-                "large_image": large_image }
-            })
-        except:
+#    def drpc_update():
+#        drpc_details = persistent.current_chapter_head
+#        drpc_state = persistent.current_chapter_title
+#        try: drpc.set_activity({
+#            "state": drpc_state,
+#            "details": drpc_details,
+#            "timestamps": {
+#                "start": start_time
+#            },
+#            "assets": {
+#                #"small_text": small_text,
+#                #"small_image": small_text,
+#                "large_text": large_text,
+#                "large_image": large_image }
+#            })
+#        except:
             # rip
-            pass
-        return
+#            pass
+#        return
 
 # Hashwatch
 

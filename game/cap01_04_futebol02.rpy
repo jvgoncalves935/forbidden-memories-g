@@ -127,7 +127,7 @@ label cap01_04_futebol02:
     "O cara machucou mesmo?"
     #(Goleiro 03:53 - 03:55)
     play sound ctc
-    "Ah meu o cara machucou o cara!"
+    "Ah meu, o cara machucou o cara!"
     #(índio 03:57 - 03:59)
     play sound ctc
     "Tu fez na maldade!"
@@ -145,13 +145,13 @@ label cap01_04_futebol02:
     "Quê que foi? Quê que foi? Bom\njogo, mano! Bom jogo! Tá todo\nmundo jogando junto aqui, uai!"
     #(índio 04:30 - 04:38)
     play sound ctc
-    "Aqui o tomei uma aqui também ta roxo\naqui vei!, olha aqui o maluco,\né olha aqui, TIME DA FRESCURA!"
+    "Aqui oh, tomei uma aqui também ta roxo\naqui, vei! Olha aqui o maluco,\né olha aqui, TIME DA FRESCURA!"
     #(Goleiro2 04:49 - 04:47)
     play sound ctc
     "Caralho hein, já se passaram horas e\nos cara nada. Puta merda, tá\nquase anoitecendo já! Foda..."
     #(John 04:48 - 04:55)
     play sound ctc
-    "Eu não te falei maluco? Eles tão é\ntrepando maluco, eles tão é trepando\ngostoso!"
+    "Eu não te falei maluco? Eles tão é\ntrepando, maluco! Eles tão é trepando\ngostoso!"
     play sound ctc
     "Ow galera, eu vo dar o fora, falou?"
     #Senna(05:00 0 05:01)

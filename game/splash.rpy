@@ -282,8 +282,10 @@ label splashscreen:
     # Start splash logic
     $ config.allow_skipping = False
 
-    $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
-    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
+    #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
+    #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
+    $ play_video("mod_assets/videos/operation_senna.webm","operation_senna_intro_web")
+    $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
 
     # Splash screen
     show white
@@ -342,8 +344,14 @@ label autoload:
 
     # Pop the _splashscreen label which has _confirm_quit as False and other stuff
     $ renpy.pop_call()
-    $ drpc_update()
+    #$ drpc_update()
     jump expression persistent.autoload
 
 label quit:
+    return
+
+label operation_senna_intro_web:
+    return
+
+label forbidden_memories_intro_web:
     return

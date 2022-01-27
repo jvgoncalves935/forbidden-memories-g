@@ -420,53 +420,53 @@ init python:
 
     ## This changes the size and spacing of various GUI elements to ensure they
     ## are easily visible on phones.
-    if renpy.variant("small"):
+    #if renpy.variant("small"):
 
         ## Font sizes.
-        gui.text_size = 30
-        gui.name_text_size = 36
-        gui.notify_text_size = 25
-        gui.interface_text_size = 36
-        gui.button_text_size = 34
-        gui.label_text_size = 36
+    #    gui.text_size = 30
+    #    gui.name_text_size = 36
+    #    gui.notify_text_size = 25
+    #    gui.interface_text_size = 36
+    #    gui.button_text_size = 34
+    #    gui.label_text_size = 36
 
         ## Adjust the location of the textbox.
-        gui.textbox_height = 155
-        gui.name_xpos = 0
-        gui.text_xpos = 0
-        gui.text_width = 700
+    #    gui.textbox_height = 155
+    #    gui.name_xpos = 0
+    #    gui.text_xpos = 0
+    #    gui.text_width = 700
 
         ## Change the size and spacing of items in the game menu.
-        gui.choice_button_width = 1240
+    #    gui.choice_button_width = 1240
 
-        gui.navigation_spacing = 20
-        gui.pref_button_spacing = 10
+    #    gui.navigation_spacing = 20
+    #   gui.pref_button_spacing = 10
 
-        gui.history_height = 190
-        gui.history_text_width = 690
+    #    gui.history_height = 190
+    #    gui.history_text_width = 690
 
         ## File button layout.
-        gui.file_slot_cols = 2
-        gui.file_slot_rows = 2
+    #    gui.file_slot_cols = 2
+    #    gui.file_slot_rows = 2
 
         ## NVL-mode.
-        gui.nvl_height = 170
+    #    gui.nvl_height = 170
 
-        gui.nvl_name_width = 305
-        gui.nvl_name_xpos = 325
+    #    gui.nvl_name_width = 305
+    #    gui.nvl_name_xpos = 325
 
-        gui.nvl_text_width = 915
-        gui.nvl_text_xpos = 345
-        gui.nvl_text_ypos = 5
+    #    gui.nvl_text_width = 915
+    #    gui.nvl_text_xpos = 345
+    #    gui.nvl_text_ypos = 5
 
-        gui.nvl_thought_width = 1240
-        gui.nvl_thought_xpos = 20
+    #    gui.nvl_thought_width = 1240
+    #    gui.nvl_thought_xpos = 20
 
-        gui.nvl_button_width = 1240
-        gui.nvl_button_xpos = 20
+    #    gui.nvl_button_width = 1240
+    #    gui.nvl_button_xpos = 20
 
         ## Quick buttons.
-        gui.quick_button_text_size = 20
+    #    gui.quick_button_text_size = 20
 
 
 

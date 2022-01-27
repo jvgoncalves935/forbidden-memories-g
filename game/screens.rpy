@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
                 style "page_label_text"
                 text_size 12
     
@@ -374,9 +374,9 @@ screen choice(items):
 
     vbox:
         xalign 0.96
-        yalign 0.96
+        yalign 0.98
         
-        textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+        textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
             style "page_label_text"
             text_size 12
     
@@ -625,7 +625,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.0"):
+            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
                 style "page_label_text"
                 text_size 12
 
@@ -1472,7 +1472,7 @@ screen file_slots(title,current_song=None):
     
     #on 'show' action toggle_current_music_player(True)
     
-    add "menu_bg" #alpha 0.5
+    add "mod_assets/images/logo01.png" #alpha 0.5
 
     textbutton _(title):
         xalign 0.5
@@ -1483,7 +1483,7 @@ screen file_slots(title,current_song=None):
     hbox:
         box_wrap True
         xalign 0.5
-        yalign 0.9
+        yalign 0.92
         if(not main_menu and renpy.current_screen().screen_name[0] == "save"):
             textbutton _("Carregar"):
                 #xalign 0.05
