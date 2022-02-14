@@ -48,6 +48,12 @@ init python:
                 return False
         return True
 
+    def is_all_endings_locked():
+        for key, value in persistent.endings.items():
+            if(value):
+                return False
+        return True
+
     def init_endings():
         if(persistent.endings is None):
             array_aux = [("A",False),
@@ -236,6 +242,7 @@ label splashscreen:
     python:
         toggle_fadein_texto(init=True)
         toggle_arabe()
+        persistent.guinodia_active = False
 
     $ quick_menu = False
 

@@ -25,28 +25,32 @@ label start:
     
     $ cap_choosed = 1
     $ game_over = False
+    $ game_over_musica = True
     play sound menu_start
 
     if(not game_over):
         call cap01 from _call_cap01
-    #if(not game_over):
-    #    call cap02 from _call_cap02
-    #if(not game_over):
-    #    call cap03 from _call_cap03
-    #if(not game_over):
-    #    call cap04 from _call_cap04
-    #if(not game_over):
-    #    call cap05 from _call_cap05
-    #if(not game_over):
-    #    call epilogo from _call_epilogo
-    #if(not game_over):
-    #    call creditos from _call_creditos
-    #if(not game_over):
-    #    call capXX from _call_capXX
+    if(not game_over):
+        call cap02 from _call_cap02
+    if(not game_over):
+        call cap03 from _call_cap03
+    if(not game_over):
+        call cap04 from _call_cap04
+    if(not game_over):
+        call cap05 from _call_cap05
+    if(not game_over):
+        call epilogo from _call_epilogo
+    if(not game_over):
+        call creditos from _call_creditos
+    if(not game_over):
+        call capXX from _call_capXX
 
+    
+
+    if(not game_over):
+        $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
+    
     $ game_over = False
-
-    $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
     #if persistent.playthrough == 1:
         #Stuff here will only play after you increased the playthrough count
         #call tutorial_selection from _call_tutorial_selection

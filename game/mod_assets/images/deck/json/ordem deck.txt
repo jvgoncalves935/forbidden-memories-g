@@ -1,0 +1,69 @@
+01		noku_tijolao
+02		goleiro_de_familia
+03		alexandre_senna
+04		indio
+05		manto_azul
+06		alexandre_senna_policial
+07		revista_g
+08		os_carros
+09		tele_senna
+10		guinass_book
+11		yeah_man_bandido
+12		alexandre_senna_carrasco
+13		mangueira_boy
+14		doutoras_hospital
+15		pedra_g
+16		doutora
+17		james_matarazzo
+18		yeah_man
+19		mangueira_evil
+20		felipe_dylon
+21		poder_da_velha_amizade
+22		anita
+23		bob
+24		alemao
+25		jailson_mendes
+26		darkilson
+27		pote_da_delicia
+28		kawan
+29		guinodia_braco_direito
+30		jo_abdul
+31		minha_mulher
+32		guinodia_braco_esquerdo
+33		cabacao
+34		filhona
+35		lily_santos
+36		guinodia_perna_direita
+37		paulo_guina_piscineiro
+38		paulo_guina_bombeiro
+39		paulo_guina_professor
+40		paulo_guina_arabe
+41		paulo_guina_matrix
+42		paulo_guina
+43		monstro_que_relaxa
+44		guinodia_perna_esquerda
+45		kid_bengala
+46		cj_de_familia
+47		demacol
+48		guinodia_terceira_perna
+49		fome
+50		princesa_demacol
+51		coringa_dano
+52		sandro_lima
+53		guinodia_o_proibido
+54		mark
+55		taeyeon
+56		master_exploder
+
+
+
+
+
+
+
+
+
+
+
+
+

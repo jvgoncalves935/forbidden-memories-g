@@ -3,6 +3,7 @@ label cap05_01_casa01:
     stop music
     show textbox_black at center
     #show intro_001 at top
+    
     return
 
 label wrong_end_05_01_1:

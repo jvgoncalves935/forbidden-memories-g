@@ -14,14 +14,19 @@ python early:
 
 init python:
     import hashlib
+    def print_debug(var):
+        print("teste",var)
+
     #config.keymap['game_menu'].remove('mouseup_3')
     #config.keymap['hide_windows'].append('mouseup_3')
     #config.rollback_enabled = False
+
     config.keymap['self_voicing'] = []
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     config.keymap['game_menu'] = ['K_ESCAPE']
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
+
 
     #config.preferences['prefs_left'].append(
     #            _Preference(
@@ -217,6 +222,34 @@ init python:
         else:
             renpy.call_in_new_context(alt_label)
 
+    def guinodia_init():
+        global guinodia_array
+        guinodia_array = [False,False,False,False,False,False]
+        #print(guinodia_array)
+
+    def guinodia(toggle,pos):
+        global guinodia_array
+
+        if(not toggle or guinodia_array[pos]):
+            guinodia_init()
+            return
+        
+        guinodia_array[pos] = True
+        renpy.music.play(audio.oco,"sound")
+        #print(guinodia_array)
+
+        if(is_guinodia_available()):
+            renpy.jump_out_of_context("guinodia_label")
+        
+    def is_guinodia_available():
+        global guinodia_array
+        for pos in guinodia_array:
+            if(not pos):
+                return False
+        return True
+    
+
+
     
     
 
@@ -228,7 +261,7 @@ init python:
 define input_operation_senna = ""
 define flag_input_operation_senna = False
 define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885B6A7FD44BC3E43DE825B8F6D7C20F812C2E43E3D0B1C5B6B119BC1691E3287F737F195868B9DBB0"
-
+define guinarnia_null = [False,False,False,False,False,False]
 
 define endings_names = {
     "A":"Melancolia do Toque de Celular Irritante",
@@ -238,26 +271,59 @@ define endings_names = {
     "E":"Extinção Humana",
     "F":"Policial de Família",
     "G":"As Crônicas de Alexandre Senna",
-    "H":"Teste",
-    "I":"Teste",
-    "J":"Teste",
-    "K":"Teste",
+    "H":"Os Carros São Como As Lanchas",
+    "I":"Tele Senna",
+    "J":"Recordista do Guinnass Book",
+    "K":"Nunca Abra A Porta Para Estranhos",
     "L":"Hétero com G",
-    "M":"Teste",
-    "N":"Teste",
-    "O":"Teste",
-    "P":"Teste",
-    "Q":"Teste",
-    "R":"Teste",
-    "S":"Teste",
-    "T":"Teste",
-    "U":"Teste",
-    "V":"Teste",
-    "W":"Teste",
-    "X":"Teste",
+    "M":"Contra-Trote Mortal",
+    "N":"Tratamento de Choque",
+    "O":"O Acidente de Cupiqueno",
+    "P":"Dois Dias Na Fila, Um Ano Na Rua",
+    "Q":"Só os Skates Sabem",
+    "R":"Sádico e Calculista",
+    "S":"Gosto Buocólico",
+    "T":"Viagem para Pau Grande",
+    "U":"Teoria do Kenoverso",
+    "V":"Watashi wa Arekusando desu",
+    "W":"El Gángster de Familia",
+    "X":"Casamento Internacional",
     "Y":"Árabe de Família",
     "Z":"As Aparências Enganam"
 }
+
+define deck_g_names = [
+    "Pote da Delícia",
+    "Kawan Desu, O Mecânico",
+    "Braço Direito do Proibido",
+    "Jô Abdul",
+    "Minha Mu;lher",
+    "Braço Esquerdo do Proibido",
+    "Cabação",
+    "Filhona",
+    "Grito Ensurdecedor de Lily Santos",
+    "Perna Direita do Proibido",
+    "Paulo Guina Piscineiro",
+    "Paulo Guina Bombeiro",
+    "Paulo Guina Professor",
+    "Paulo Guina Árabe",
+    "Paulo Guina Matrix",
+    "Paulo Guina, O Deixador de Ocos",
+    "Monstro Que Relaxa",
+    "Perna Esquerda do Proibido",
+    "Kid Bengala, O Grande",
+    "CJ de Família",
+    "Demacol (Morpheus Form)",
+    "Terceira Perna do Proibido",
+    "FOME.",
+    "Princesa Demacol",
+    "Coringa Dano",
+    "Sandro Lima, O Arquiteto do Universo G",
+    "Guinodia, O Proibido",
+    "Mark_77Souls, O Esquizofrêncio",
+    "Taeyeon115, Oberfuhrer do COD Mobile",
+    "Master Exploder, O Calvo Supremo"
+]
 
 define endings_descriptions = {
     "A":"Perdeu seu jogo de futebol e o celular para ir jogar Palavras-Cruzadas.",
@@ -267,23 +333,23 @@ define endings_descriptions = {
     "E":"Causou a destruição da Terra e perdeu o Campeonato G.",
     "F":"Foi aprovado na Polícia Militar de Cupiqueno.",
     "G":"Desvendou todo o Códex G.",
-    "H":"Teste",
-    "I":"Teste",
-    "J":"Teste",
-    "K":"Teste",
-    "L":"Foi confundido com um bandido. Mesmo assim, você é hétero.",
-    "M":"Teste",
-    "N":"Teste",
-    "O":"Teste",
-    "P":"Teste",
-    "Q":"Teste",
-    "R":"Teste",
-    "S":"Teste",
-    "T":"Teste",
-    "U":"Teste",
-    "V":"Teste",
-    "W":"Teste",
-    "X":"Teste",
+    "H":"As motos são como os Jet-Skis.",
+    "I":"Visitou a Cachoeira Talargo com sua nova Blazer preta.",
+    "J":"Bateu o recorde mundial no Jogo da Cobrinha.",
+    "K":"Teve a casa assaltada por um vigarista e perdeu tudo.",
+    "L":"Confundido com um bandido e levado ao Ary Fontoura. Mas você é hétero.",
+    "M":"Não mexe com quem tá quieto.",
+    "N":"Foi confundido com um louco e foi internado no Sanatório de Cupiqueno.",
+    "O":"Ganhou super poderes.",
+    "P":"Foi processado pelo Consultório Santa Mônica e entrou em falência.",
+    "Q":"Virou o skatista profissional de Cupiqueno.",
+    "R":"Deixou Yeah Man agonizar até a morte.",
+    "S":"Foi viver uma vida no campo.",
+    "T":"Foi visitar a Praia de Pau Grande.",
+    "U":"Foi procurar o arrombamento em outro Kenoverso.",
+    "V":"Aprendeu mais sobre as coisas exóticas da cultura japonesa.",
+    "W":"Se mudou para Madrid e virou gangster.",
+    "X":"Se casou com uma estrangeira avantajada.",
     "Y":"Aprendeu um novo idioma.",
     "Z":"¡¢£¤¥¦§¨©ª&«¬ÂÃíÄÅ+ÆÇÈâěçĜĝĞğĠġĢģôĤĥ#ĦħĨĩĪīĬĭĮÍįİıĲĳĴĵĶķÂĸĹĺĻļĽľž"
 }
@@ -348,7 +414,7 @@ define narrator_what_suffix = "{/fi}"
 define music_player_active = False
 #define flag_input_operation_senna_concluido = False
 
-#Transform
+###################Transform
 transform select_slot_pos(x=0.5,y=0.5):
     align (x,y) alpha 1.0
 
@@ -379,7 +445,7 @@ transform side_image_out:
     #align (0.92, 0.9)
     linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
 
-#Personagens
+###################Personagens
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
@@ -395,12 +461,15 @@ image yuri 3xd = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l
 image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xe.png")
 
 
-#Imagens
+###################Imagens
+image guinodia_movie = Movie(play="mod_assets/videos/guinodia.webm",size=(960,720))
+
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
 image game_over_bg = "mod_assets/images/GameOver.png"
 image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 image textbox_black = "mod_assets/gui/textbox_black.png"
+image white_bg = "mod_assets/images/white.png"
 
 image textbox_aux:
     "mod_assets/gui/textbox2.png"
@@ -426,7 +495,7 @@ image club = "mod_assets/images/capXX/club.png"
 image corredor_ddlc = "mod_assets/images/capXX/corridor.png"
 image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 
-#Musicas 
+###################Musicas 
 define audio.nao_venha_me_dizer = "<loop 0.0>mod_assets/music/nao_venha_me_dizer.ogg"
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
@@ -437,17 +506,187 @@ define audio.fm_intro = "mod_assets/music/fm_intro.ogg"
 define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_preliminary_faceoff.ogg"
 define audio.fm_plazatown = "<loop 26.033>mod_assets/music/fm_plazatown.ogg"
 define audio.fm_gameover = "mod_assets/music/fm_gameover.ogg"
+define audio.fm_gameover2 = "mod_assets/music/fm_gameover2.ogg"
 define audio.m_converting_minds = "mod_assets/music/m_converting_minds.ogg"
 define audio.fm_freeduel = "<loop 0.933>mod_assets/music/fm_freeduel.ogg"
 define audio.fm_deck = "<loop 0.60>mod_assets/music/fm_deck.ogg"
 define audio.fm_password = "<loop 1.833>mod_assets/music/fm_password.ogg"
 define audio.fm_library = "<loop 0.70>mod_assets/music/fm_library.ogg"
 
-#Vozes
+###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
 define voz_jailson_arabe = "mod_assets/voices/jailson_arabe.ogg"
 define voz_guina_arabe = "mod_assets/voices/guina_arabe.ogg"
 
+#01_01
+define voz_cap01_01_01 = "mod_assets/voices/01_01/01_01_01.ogg"
+
+
+#01_02
+define voz_cap01_02_01 = "mod_assets/voices/01_02/01_02_01.ogg"
+
+
+#01_03
+define voz_cap01_03_01 = "mod_assets/voices/01_03/01_03_01.ogg"
+
+
+#01_04
+define voz_cap01_04_01 = "mod_assets/voices/01_04/01_04_01.ogg"
+
+
+#02_01
+define voz_cap02_01_01 = "mod_assets/voices/02_01/02_01_01.ogg"
+
+
+#02_02
+define voz_cap02_02_01 = "mod_assets/voices/02_02/02_02_01.ogg"
+
+
+#02_03
+define voz_cap02_03_01 = "mod_assets/voices/02_03/02_03_01.ogg"
+
+
+#02_04
+define voz_cap02_04_01 = "mod_assets/voices/02_04/02_04_01.ogg"
+
+
+#03_01
+define voz_cap03_01_01 = "mod_assets/voices/03_01/03_01_01.ogg"
+
+
+#03_02
+define voz_cap03_02_01 = "mod_assets/voices/03_02/03_02_01.ogg"
+define voz_cap03_02_02 = "mod_assets/voices/03_02/03_02_02.ogg"
+define voz_cap03_02_03 = "mod_assets/voices/03_02/03_02_03.ogg"
+define voz_cap03_02_04 = "mod_assets/voices/03_02/03_02_04.ogg"
+define voz_cap03_02_05 = "mod_assets/voices/03_02/03_02_05.ogg"
+define voz_cap03_02_06 = "mod_assets/voices/03_02/03_02_06.ogg"
+define voz_cap03_02_07 = "mod_assets/voices/03_02/03_02_07.ogg"
+define voz_cap03_02_08 = "mod_assets/voices/03_02/03_02_08.ogg"
+define voz_cap03_02_09 = "mod_assets/voices/03_02/03_02_09.ogg"
+define voz_cap03_02_10 = "mod_assets/voices/03_02/03_02_10.ogg"
+define voz_cap03_02_11 = "mod_assets/voices/03_02/03_02_11.ogg"
+define voz_cap03_02_12 = "mod_assets/voices/03_02/03_02_12.ogg"
+define voz_cap03_02_13 = "mod_assets/voices/03_02/03_02_13.ogg"
+define voz_cap03_02_14 = "mod_assets/voices/03_02/03_02_14.ogg"
+define voz_cap03_02_15 = "mod_assets/voices/03_02/03_02_15.ogg"
+define voz_cap03_02_16 = "mod_assets/voices/03_02/03_02_16.ogg"
+define voz_cap03_02_17 = "mod_assets/voices/03_02/03_02_17.ogg"
+define voz_cap03_02_18 = "mod_assets/voices/03_02/03_02_18.ogg"
+define voz_cap03_02_19 = "mod_assets/voices/03_02/03_02_19.ogg"
+define voz_cap03_02_20 = "mod_assets/voices/03_02/03_02_20.ogg"
+define voz_cap03_02_21 = "mod_assets/voices/03_02/03_02_21.ogg"
+define voz_cap03_02_22 = "mod_assets/voices/03_02/03_02_22.ogg"
+define voz_cap03_02_23 = "mod_assets/voices/03_02/03_02_23.ogg"
+define voz_cap03_02_24 = "mod_assets/voices/03_02/03_02_24.ogg"
+define voz_cap03_02_25 = "mod_assets/voices/03_02/03_02_25.ogg"
+define voz_cap03_02_26 = "mod_assets/voices/03_02/03_02_26.ogg"
+define voz_cap03_02_27 = "mod_assets/voices/03_02/03_02_27.ogg"
+define voz_cap03_02_28 = "mod_assets/voices/03_02/03_02_28.ogg"
+define voz_cap03_02_29 = "mod_assets/voices/03_02/03_02_29.ogg"
+define voz_cap03_02_30 = "mod_assets/voices/03_02/03_02_30.ogg"
+define voz_cap03_02_31 = "mod_assets/voices/03_02/03_02_31.ogg"
+define voz_cap03_02_32 = "mod_assets/voices/03_02/03_02_32.ogg"
+define voz_cap03_02_33 = "mod_assets/voices/03_02/03_02_33.ogg"
+define voz_cap03_02_34 = "mod_assets/voices/03_02/03_02_34.ogg"
+define voz_cap03_02_35 = "mod_assets/voices/03_02/03_02_35.ogg"
+define voz_cap03_02_36 = "mod_assets/voices/03_02/03_02_36.ogg"
+
+
+#03_03
+define voz_cap03_03_01 = "mod_assets/voices/03_02/03_03_01.ogg"
+define voz_cap03_03_02 = "mod_assets/voices/03_02/03_03_02.ogg"
+define voz_cap03_03_03 = "mod_assets/voices/03_02/03_03_03.ogg"
+define voz_cap03_03_04 = "mod_assets/voices/03_02/03_03_04.ogg"
+define voz_cap03_03_05 = "mod_assets/voices/03_02/03_03_05.ogg"
+define voz_cap03_03_06 = "mod_assets/voices/03_02/03_03_06.ogg"
+define voz_cap03_03_07 = "mod_assets/voices/03_02/03_03_07.ogg"
+define voz_cap03_03_08 = "mod_assets/voices/03_02/03_03_08.ogg"
+define voz_cap03_03_09 = "mod_assets/voices/03_02/03_03_09.ogg"
+define voz_cap03_03_10 = "mod_assets/voices/03_02/03_03_10.ogg"
+define voz_cap03_03_11 = "mod_assets/voices/03_02/03_03_11.ogg"
+define voz_cap03_03_12 = "mod_assets/voices/03_02/03_03_12.ogg"
+define voz_cap03_03_13 = "mod_assets/voices/03_02/03_03_13.ogg"
+define voz_cap03_03_14 = "mod_assets/voices/03_02/03_03_14.ogg"
+define voz_cap03_03_15 = "mod_assets/voices/03_02/03_03_15.ogg"
+define voz_cap03_03_16 = "mod_assets/voices/03_02/03_03_16.ogg"
+define voz_cap03_03_17 = "mod_assets/voices/03_02/03_03_17.ogg"
+define voz_cap03_03_18 = "mod_assets/voices/03_02/03_03_18.ogg"
+define voz_cap03_03_19 = "mod_assets/voices/03_02/03_03_19.ogg"
+define voz_cap03_03_20 = "mod_assets/voices/03_02/03_03_20.ogg"
+define voz_cap03_03_21 = "mod_assets/voices/03_02/03_03_21.ogg"
+define voz_cap03_03_22 = "mod_assets/voices/03_02/03_03_22.ogg"
+define voz_cap03_03_23 = "mod_assets/voices/03_02/03_03_23.ogg"
+define voz_cap03_03_24 = "mod_assets/voices/03_02/03_03_24.ogg"
+define voz_cap03_03_25 = "mod_assets/voices/03_02/03_03_25.ogg"
+define voz_cap03_03_26 = "mod_assets/voices/03_02/03_03_26.ogg"
+define voz_cap03_03_27 = "mod_assets/voices/03_02/03_03_27.ogg"
+define voz_cap03_03_28 = "mod_assets/voices/03_02/03_03_28.ogg"
+define voz_cap03_03_29 = "mod_assets/voices/03_02/03_03_29.ogg"
+define voz_cap03_03_30 = "mod_assets/voices/03_02/03_03_30.ogg"
+define voz_cap03_03_31 = "mod_assets/voices/03_02/03_03_31.ogg"
+define voz_cap03_03_32 = "mod_assets/voices/03_02/03_03_32.ogg"
+define voz_cap03_03_33 = "mod_assets/voices/03_02/03_03_33.ogg"
+
+
+#04_01
+define voz_cap04_01_01 = "mod_assets/voices/04_01/04_01_01.ogg"
+
+
+#04_02
+define voz_cap04_02_01 = "mod_assets/voices/04_02/04_02_01.ogg"
+
+
+#04_03
+define voz_cap04_03_01 = "mod_assets/voices/04_03/04_03_01.ogg"
+
+
+#04_04
+define voz_cap04_04_01 = "mod_assets/voices/04_04/04_04_01.ogg"
+define voz_cap04_04_02 = "mod_assets/voices/04_04/04_04_02.ogg"
+define voz_cap04_04_03 = "mod_assets/voices/04_04/04_04_03.ogg"
+define voz_cap04_04_04 = "mod_assets/voices/04_04/04_04_04.ogg"
+define voz_cap04_04_05 = "mod_assets/voices/04_04/04_04_05.ogg"
+define voz_cap04_04_06 = "mod_assets/voices/04_04/04_04_06.ogg"
+define voz_cap04_04_07 = "mod_assets/voices/04_04/04_04_07.ogg"
+define voz_cap04_04_08 = "mod_assets/voices/04_04/04_04_08.ogg"
+define voz_cap04_04_09 = "mod_assets/voices/04_04/04_04_09.ogg"
+define voz_cap04_04_10 = "mod_assets/voices/04_04/04_04_10.ogg"
+define voz_cap04_04_11 = "mod_assets/voices/04_04/04_04_11.ogg"
+define voz_cap04_04_12 = "mod_assets/voices/04_04/04_04_12.ogg"
+define voz_cap04_04_13 = "mod_assets/voices/04_04/04_04_13.ogg"
+define voz_cap04_04_14 = "mod_assets/voices/04_04/04_04_14.ogg"
+define voz_cap04_04_15 = "mod_assets/voices/04_04/04_04_15.ogg"
+define voz_cap04_04_16 = "mod_assets/voices/04_04/04_04_16.ogg"
+define voz_cap04_04_17 = "mod_assets/voices/04_04/04_04_17.ogg"
+define voz_cap04_04_18 = "mod_assets/voices/04_04/04_04_18.ogg"
+define voz_cap04_04_19 = "mod_assets/voices/04_04/04_04_19.ogg"
+define voz_cap04_04_20 = "mod_assets/voices/04_04/04_04_20.ogg"
+define voz_cap04_04_21 = "mod_assets/voices/04_04/04_04_21.ogg"
+define voz_cap04_04_22 = "mod_assets/voices/04_04/04_04_22.ogg"
+define voz_cap04_04_23 = "mod_assets/voices/04_04/04_04_23.ogg"
+define voz_cap04_04_24 = "mod_assets/voices/04_04/04_04_24.ogg"
+define voz_cap04_04_25 = "mod_assets/voices/04_04/04_04_25.ogg"
+define voz_cap04_04_26 = "mod_assets/voices/04_04/04_04_26.ogg"
+define voz_cap04_04_27 = "mod_assets/voices/04_04/04_04_27.ogg"
+define voz_cap04_04_28 = "mod_assets/voices/04_04/04_04_28.ogg"
+define voz_cap04_04_29 = "mod_assets/voices/04_04/04_04_29.ogg"
+ 
+
+
+#05_01
+define voz_cap05_01_01 = "mod_assets/voices/05_01/05_01_01.ogg"
+
+
+#05_02
+define voz_cap05_02_01 = "mod_assets/voices/05_02/05_02_01.ogg"
+
+
+#Epilogo
+define voz_epilogo_01 = "mod_assets/voices/epilogo/epilogo_01.ogg"
+
+
+#Capitulo XX
 define voz_capXX_001 = "mod_assets/voices/capXX/capxx_001.ogg"
 define voz_capXX_002 = "mod_assets/voices/capXX/capxx_002.ogg"
 define voz_capXX_003 = "mod_assets/voices/capXX/capxx_003.ogg"
@@ -466,7 +705,8 @@ define voz_capXX_015 = "mod_assets/voices/capXX/capxx_015.ogg"
 define voz_capXX_016 = "mod_assets/voices/capXX/capxx_016.ogg"
 define voz_capXX_017 = "mod_assets/voices/capXX/capxx_017.ogg"
 
-#Audios
+
+###################Audios
 define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
 define audio.ctc = "mod_assets/sounds/ctc.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
@@ -474,6 +714,7 @@ define audio.celular = "<loop 0.00>mod_assets/sounds/celular.ogg"
 define audio.fm_back = "mod_assets/sounds/back.ogg"
 define audio.fm_error = "mod_assets/sounds/error.ogg"
 define audio.fm_arrow_select = "mod_assets/sounds/arrow_select.ogg"
+define audio.oco = "mod_assets/sounds/oco.ogg"
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
 ############################################################################################################
@@ -682,6 +923,7 @@ default persistent.special_poems = None
 default persistent.clearall = None
 default persistent.menu_bg_m = None
 default persistent.first_load = None
+default persistent.guinodia_active = False
 
 ###### Other global variables ######
 # It's good practice to define global variables here, just so you know what you can call later

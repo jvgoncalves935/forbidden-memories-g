@@ -34,9 +34,9 @@ label cap02_01_casa01:
     play sound ctc
     "No problem."
     play sound ctc
-    "(Você desliga o telefone e vai em direção\nà oficina.)"
+    "(Você desliga o telefone e vai em\ndireção à oficina.)"
     play sound ctc
-    "(Você ainda fica curioso sobre onde estava\no problema no carro.)"
+    "(Você ainda fica curioso sobre onde\nestava o problema no carro.)"
     play sound ctc
     return
 

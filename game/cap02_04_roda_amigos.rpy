@@ -151,6 +151,8 @@ label wrong_end_02_04_1:
     play sound ctc
     "\"Parece que ele está sob efeito de\nnarcóticos, será necessário uma análise\ndetalhada na delegacia.\""
     play sound ctc
+    "\"Esse aí tá mais pro Presídio\nAry Fontoura!\""
+    play sound ctc
     "EU SOU HÉTERO!"
     play sound ctc
     "EU SOU HÉTERO...!"

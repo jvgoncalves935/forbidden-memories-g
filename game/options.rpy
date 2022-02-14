@@ -267,6 +267,7 @@ init python:
     build.classify('advanced_scripts/**.**',None)
     build.classify('community_assets/**.**',None)
     build.classify('README.md', None)
+    build.classify('game/mod_assets/images/deck/json/**.**', None)
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

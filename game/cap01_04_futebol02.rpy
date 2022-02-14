@@ -66,7 +66,7 @@ label cap01_04_futebol02:
     hide textbox_aux
     stop music
     #(John 02:54 - 02:58)
-    "Isso meu goleiro, isso meu\ngoleiro, isso, isso, isso!"
+    "ISSO MEU GOLEIRO, ISSO MEU\nGOLEIRO, ISSO, ISSO, ISSO!"
     #(Senna 02:58 - 02:59)
     play sound ctc
     "Valeu!"
@@ -86,7 +86,7 @@ label cap01_04_futebol02:
     hide textbox_aux
     stop music
 
-    "Isso meu goleiro, isso meu\ngoleiro, isso, isso, isso!"
+    "ISSO MEU GOLEIRO, ISSO MEU\nGOLEIRO, ISSO, ISSO, ISSO!"
     play sound ctc
     show textbox_aux
     play music audio.fm_password
@@ -97,7 +97,7 @@ label cap01_04_futebol02:
             pass
     hide textbox_aux
     stop music
-    "Isso meu goleiro, isso meu\ngoleiro, isso, isso, isso!"
+    "ISSO MEU GOLEIRO, ISSO MEU\nGOLEIRO, ISSO, ISSO, ISSO!"
     #(figurante6 03:00 - 03:02)
     play sound ctc
     "Marca porra, não deixa o\ncara vim!"
