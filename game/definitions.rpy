@@ -334,7 +334,7 @@ define endings_descriptions = {
     "F":"Foi aprovado na Polícia Militar de Cupiqueno.",
     "G":"Desvendou todo o Códex G.",
     "H":"As motos são como os Jet-Skis.",
-    "I":"Visitou a Cachoeira Talargo com sua nova Blazer preta.",
+    "I":"Visitou a Cachoeira de Pau Grande com sua nova Blazer preta.",
     "J":"Bateu o recorde mundial no Jogo da Cobrinha.",
     "K":"Teve a casa assaltada por um vigarista e perdeu tudo.",
     "L":"Confundido com um bandido e levado ao Ary Fontoura. Mas você é hétero.",
@@ -445,6 +445,9 @@ transform side_image_out:
     #align (0.92, 0.9)
     linear 0.6 ypos 0.92 size (0,218) xanchor 0.70 alpha 0.0
 
+transform credits_11():
+    align (0.5,0.5) alpha 1.0
+
 ###################Personagens
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
@@ -512,6 +515,8 @@ define audio.fm_freeduel = "<loop 0.933>mod_assets/music/fm_freeduel.ogg"
 define audio.fm_deck = "<loop 0.60>mod_assets/music/fm_deck.ogg"
 define audio.fm_password = "<loop 1.833>mod_assets/music/fm_password.ogg"
 define audio.fm_library = "<loop 0.70>mod_assets/music/fm_library.ogg"
+define audio.fm_credits = "<loop 0.00>mod_assets/music/fm_credits.ogg"
+define audio.fm_sebek_neku = "<loop 0.00>mod_assets/music/fm_sebek_neku.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -540,6 +545,55 @@ define voz_cap02_01_01 = "mod_assets/voices/02_01/02_01_01.ogg"
 
 #02_02
 define voz_cap02_02_01 = "mod_assets/voices/02_02/02_02_01.ogg"
+define voz_cap02_02_02 = "mod_assets/voices/02_02/02_02_02.ogg"
+define voz_cap02_02_03 = "mod_assets/voices/02_02/02_02_03.ogg"
+define voz_cap02_02_04 = "mod_assets/voices/02_02/02_02_04.ogg"
+define voz_cap02_02_05 = "mod_assets/voices/02_02/02_02_05.ogg"
+define voz_cap02_02_06 = "mod_assets/voices/02_02/02_02_06.ogg"
+define voz_cap02_02_07 = "mod_assets/voices/02_02/02_02_07.ogg"
+define voz_cap02_02_08 = "mod_assets/voices/02_02/02_02_08.ogg"
+define voz_cap02_02_09 = "mod_assets/voices/02_02/02_02_09.ogg"
+define voz_cap02_02_10 = "mod_assets/voices/02_02/02_02_10.ogg"
+define voz_cap02_02_11 = "mod_assets/voices/02_02/02_02_11.ogg"
+define voz_cap02_02_12 = "mod_assets/voices/02_02/02_02_12.ogg"
+define voz_cap02_02_13 = "mod_assets/voices/02_02/02_02_13.ogg"
+define voz_cap02_02_14 = "mod_assets/voices/02_02/02_02_14.ogg"
+define voz_cap02_02_15 = "mod_assets/voices/02_02/02_02_15.ogg"
+define voz_cap02_02_16 = "mod_assets/voices/02_02/02_02_16.ogg"
+define voz_cap02_02_17 = "mod_assets/voices/02_02/02_02_17.ogg"
+define voz_cap02_02_18 = "mod_assets/voices/02_02/02_02_18.ogg"
+define voz_cap02_02_19 = "mod_assets/voices/02_02/02_02_19.ogg"
+define voz_cap02_02_20 = "mod_assets/voices/02_02/02_02_20.ogg"
+define voz_cap02_02_21 = "mod_assets/voices/02_02/02_02_21.ogg"
+define voz_cap02_02_22 = "mod_assets/voices/02_02/02_02_22.ogg"
+define voz_cap02_02_23 = "mod_assets/voices/02_02/02_02_23.ogg"
+define voz_cap02_02_24 = "mod_assets/voices/02_02/02_02_24.ogg"
+define voz_cap02_02_25 = "mod_assets/voices/02_02/02_02_25.ogg"
+define voz_cap02_02_26 = "mod_assets/voices/02_02/02_02_26.ogg"
+define voz_cap02_02_27 = "mod_assets/voices/02_02/02_02_27.ogg"
+define voz_cap02_02_28 = "mod_assets/voices/02_02/02_02_28.ogg"
+define voz_cap02_02_29 = "mod_assets/voices/02_02/02_02_29.ogg"
+define voz_cap02_02_30 = "mod_assets/voices/02_02/02_02_30.ogg"
+define voz_cap02_02_31 = "mod_assets/voices/02_02/02_02_31.ogg"
+define voz_cap02_02_32 = "mod_assets/voices/02_02/02_02_32.ogg"
+define voz_cap02_02_33 = "mod_assets/voices/02_02/02_02_33.ogg"
+define voz_cap02_02_34 = "mod_assets/voices/02_02/02_02_34.ogg"
+define voz_cap02_02_35 = "mod_assets/voices/02_02/02_02_35.ogg"
+define voz_cap02_02_36 = "mod_assets/voices/02_02/02_02_36.ogg"
+define voz_cap02_02_37 = "mod_assets/voices/02_02/02_02_37.ogg"
+define voz_cap02_02_38 = "mod_assets/voices/02_02/02_02_38.ogg"
+define voz_cap02_02_39 = "mod_assets/voices/02_02/02_02_39.ogg"
+define voz_cap02_02_40 = "mod_assets/voices/02_02/02_02_40.ogg"
+define voz_cap02_02_41 = "mod_assets/voices/02_02/02_02_41.ogg"
+define voz_cap02_02_42 = "mod_assets/voices/02_02/02_02_42.ogg"
+define voz_cap02_02_43 = "mod_assets/voices/02_02/02_02_43.ogg"
+define voz_cap02_02_44 = "mod_assets/voices/02_02/02_02_44.ogg"
+define voz_cap02_02_45 = "mod_assets/voices/02_02/02_02_45.ogg"
+define voz_cap02_02_46 = "mod_assets/voices/02_02/02_02_46.ogg"
+define voz_cap02_02_47 = "mod_assets/voices/02_02/02_02_47.ogg"
+define voz_cap02_02_48 = "mod_assets/voices/02_02/02_02_48.ogg"
+define voz_cap02_02_49 = "mod_assets/voices/02_02/02_02_49.ogg"
+define voz_cap02_02_50 = "mod_assets/voices/02_02/02_02_50.ogg"
 
 
 #02_03
@@ -548,6 +602,34 @@ define voz_cap02_03_01 = "mod_assets/voices/02_03/02_03_01.ogg"
 
 #02_04
 define voz_cap02_04_01 = "mod_assets/voices/02_04/02_04_01.ogg"
+define voz_cap02_04_02 = "mod_assets/voices/02_04/02_04_02.ogg"
+define voz_cap02_04_03 = "mod_assets/voices/02_04/02_04_03.ogg"
+define voz_cap02_04_04 = "mod_assets/voices/02_04/02_04_04.ogg"
+define voz_cap02_04_05 = "mod_assets/voices/02_04/02_04_05.ogg"
+define voz_cap02_04_06 = "mod_assets/voices/02_04/02_04_06.ogg"
+define voz_cap02_04_07 = "mod_assets/voices/02_04/02_04_07.ogg"
+define voz_cap02_04_08 = "mod_assets/voices/02_04/02_04_08.ogg"
+define voz_cap02_04_09 = "mod_assets/voices/02_04/02_04_09.ogg"
+define voz_cap02_04_10 = "mod_assets/voices/02_04/02_04_10.ogg"
+define voz_cap02_04_11 = "mod_assets/voices/02_04/02_04_11.ogg"
+define voz_cap02_04_12 = "mod_assets/voices/02_04/02_04_12.ogg"
+define voz_cap02_04_13 = "mod_assets/voices/02_04/02_04_13.ogg"
+define voz_cap02_04_14 = "mod_assets/voices/02_04/02_04_14.ogg"
+define voz_cap02_04_15 = "mod_assets/voices/02_04/02_04_15.ogg"
+define voz_cap02_04_16 = "mod_assets/voices/02_04/02_04_16.ogg"
+define voz_cap02_04_17 = "mod_assets/voices/02_04/02_04_17.ogg"
+define voz_cap02_04_18 = "mod_assets/voices/02_04/02_04_18.ogg"
+define voz_cap02_04_19 = "mod_assets/voices/02_04/02_04_19.ogg"
+define voz_cap02_04_20 = "mod_assets/voices/02_04/02_04_20.ogg"
+define voz_cap02_04_21 = "mod_assets/voices/02_04/02_04_21.ogg"
+define voz_cap02_04_22 = "mod_assets/voices/02_04/02_04_22.ogg"
+define voz_cap02_04_23 = "mod_assets/voices/02_04/02_04_23.ogg"
+define voz_cap02_04_24 = "mod_assets/voices/02_04/02_04_24.ogg"
+define voz_cap02_04_25 = "mod_assets/voices/02_04/02_04_25.ogg"
+define voz_cap02_04_26 = "mod_assets/voices/02_04/02_04_26.ogg"
+define voz_cap02_04_27 = "mod_assets/voices/02_04/02_04_27.ogg"
+define voz_cap02_04_28 = "mod_assets/voices/02_04/02_04_28.ogg"
+define voz_cap02_04_29 = "mod_assets/voices/02_04/02_04_29.ogg"
 
 
 #03_01
@@ -682,8 +764,24 @@ define voz_cap05_01_01 = "mod_assets/voices/05_01/05_01_01.ogg"
 define voz_cap05_02_01 = "mod_assets/voices/05_02/05_02_01.ogg"
 
 
+#05_03
+define voz_cap05_03_01 = "mod_assets/voices/05_03/05_03_01.ogg"
+define voz_cap05_03_02 = "mod_assets/voices/05_03/05_03_02.ogg"
+define voz_cap05_03_03 = "mod_assets/voices/05_03/05_03_03.ogg"
+define voz_cap05_03_04 = "mod_assets/voices/05_03/05_03_04.ogg"
+define voz_cap05_03_05 = "mod_assets/voices/05_03/05_03_05.ogg"
+define voz_cap05_03_06 = "mod_assets/voices/05_03/05_03_06.ogg"
+define voz_cap05_03_07 = "mod_assets/voices/05_03/05_03_07.ogg"
+
 #Epilogo
 define voz_epilogo_01 = "mod_assets/voices/epilogo/epilogo_01.ogg"
+define voz_epilogo_02 = "mod_assets/voices/epilogo/epilogo_02.ogg"
+define voz_epilogo_03 = "mod_assets/voices/epilogo/epilogo_03.ogg"
+define voz_epilogo_04 = "mod_assets/voices/epilogo/epilogo_04.ogg"
+define voz_epilogo_05 = "mod_assets/voices/epilogo/epilogo_05.ogg"
+define voz_epilogo_06 = "mod_assets/voices/epilogo/epilogo_06.ogg"
+define voz_epilogo_07 = "mod_assets/voices/epilogo/epilogo_07.ogg"
+define voz_epilogo_08 = "mod_assets/voices/epilogo/epilogo_08.ogg"
 
 
 #Capitulo XX

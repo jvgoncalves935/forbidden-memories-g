@@ -85,9 +85,9 @@ init python:
                         
             persistent.endings = dict(array_aux)
 
-        #teste
-        for key, value in persistent.endings.items():
-            persistent.endings[key] = True
+        #Liberar todos os finais (debug)
+        #for key, value in persistent.endings.items():
+        #    persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
@@ -291,8 +291,8 @@ label splashscreen:
 
     #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
-    $ play_video("mod_assets/videos/operation_senna.webm","operation_senna_intro_web")
-    $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
+    $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
+    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 
     # Splash screen
     show white

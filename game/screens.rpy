@@ -2756,6 +2756,18 @@ style confirm_button_3:
     hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
     insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
 
+style credits_text:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound audio.fm_arrow_select
+    activate_sound audio.fm_error
+    xalign 0.5
+    yalign 0.5
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0),(5, "#070e5c", 2, 2)]
+
 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")
 

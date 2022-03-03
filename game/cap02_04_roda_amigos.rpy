@@ -20,7 +20,7 @@ label cap02_04_roda_amigos:
     "Nossa senhora... vocês perderam! Ixi,\ntinha muita gente, muita mina... foi\nmuito louco... muito louco mesmo!"
     play sound ctc
     #(0:19 - 0:22 Senna)
-    "Essas balada dele aí acho que é meio\nfurada, né..."
+    "Essas balada dele aí acho que é meio\nfurada!..."
     play sound ctc
     #(0:22 - 0:22 magrelo)
     "Que furada?"
@@ -54,7 +54,7 @@ label cap02_04_roda_amigos:
     "E como é que é?"
     play sound ctc
     #(1:06 - 1:09 mangueira evil)
-    "Ah, a brincadeira mesmo é:\n\"O Que Você Faria Se?\"."
+    "Ah... tipo... a brincadeira mesmo\né: \"O Que Você Faria Se?\"."
     play sound ctc
     #(1:10 - 1:10 Senna)
     "Faria o quê?"
@@ -103,7 +103,7 @@ label cap02_04_roda_amigos:
     "Então tá..."
     play sound ctc
     #(2:06 - 2:07 mangueira evil)
-    "Fala sua imaginação pra gente..."
+    "Pode, claro... Fala sua imaginação\npra gente..."
     play sound ctc
     #(2:08 - 2:35 Senna)
     "Então... pô, essa piscina aqui\nsozinho... e eu queria o homem\ndos meus sonhos... Poxa..."

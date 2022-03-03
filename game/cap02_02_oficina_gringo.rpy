@@ -3,8 +3,13 @@ label cap02_02_oficina_gringo:
     stop music
     show textbox_black at center
     #show intro_001 at top
-    
+    "(...)"
     play sound ctc
+    "(20 minutos depois)"
+    play sound ctc
+    "(Você acabou de chegar em frente à Oficina do gringo.)"
+    play sound ctc
+
     play music audio.fm_password
     show textbox_aux
     menu:
@@ -14,6 +19,121 @@ label cap02_02_oficina_gringo:
             jump wrong_end_02_02_1
     hide textbox_aux
     stop music
+    voice voz_cap02_02_01
+    "Excuse me?"
+    play sound ctc
+    voice voz_cap02_02_02
+    "Excuse me... hi."
+    play sound ctc
+    voice voz_cap02_02_03
+    "Uhh... What's your name?"
+    play sound ctc
+    voice voz_cap02_02_04
+    "Mai neime is... Alexandre."
+    play sound ctc
+    voice voz_cap02_02_05
+    "Alexandre..."
+    play sound ctc
+    voice voz_cap02_02_06
+    "Uhh... Alexandre. Are you busy... or... you can talk a few minutes, yeah?"
+    play sound ctc
+    voice voz_cap02_02_07
+    "Yeah."
+    play sound ctc
+    voice voz_cap02_02_08
+    "Okay..."
+    play sound ctc
+    voice voz_cap02_02_09
+    "I have a small problem and maybe you can help me out..."
+    play sound ctc
+    voice voz_cap02_02_10
+    "Uhh, this is my girlfriend, Anita..."
+    play sound ctc
+    voice voz_cap02_02_11
+    "She loves... fucking, you understand?"
+    play sound ctc
+    voice voz_cap02_02_12
+    "And... I have been fucking her for two days now and I cannot fuck her anymore."
+    play sound ctc
+    voice voz_cap02_02_13
+    "And she's getting a little 'cause I cannot fuck her, you think you can help me out here?"
+    play sound ctc
+    voice voz_cap02_02_14
+    "Ies, okei..."
+    play sound ctc
+    voice voz_cap02_02_15
+    "You think you can fuck her for me?"
+    play sound ctc
+    voice voz_cap02_02_16
+    "Just... you know, maybe half an hour... she suck your dick, you fuck her in the ass..."
+    play sound ctc
+    voice voz_cap02_02_17
+    "And you can go home, grab and have it. So you can do it, yeah?"
+    play sound ctc
+    voice voz_cap02_02_18
+    "Ié, ié, ooouuu ié...!"
+    play sound ctc
+    voice voz_cap02_02_19
+    "He's okay for you, Anita? You liked him, yes?"
+    play sound ctc
+    voice voz_cap02_02_20
+    "Yas..."
+    play sound ctc
+    voice voz_cap02_02_21
+    "Ok, you know... I'll leave you alone..."
+    play sound ctc
+    voice voz_cap02_02_22
+    "I need you two guys come around the car..."
+    play sound ctc
+    voice voz_cap02_02_23
+    "Now close the gate, that no one can see us, okay?"
+    play sound ctc
+    voice voz_cap02_02_24
+    "Oukei, oukei..."
+    play sound ctc
+    voice voz_cap02_02_25
+    "Okay now, here is the thing, Alexandre, we have a little surprise for you..."
+    play sound ctc
+    voice voz_cap02_02_26
+    "Surprise...?"
+    play sound ctc
+    voice voz_cap02_02_27
+    "A surprise for you, yeah..."
+    play sound ctc
+    voice voz_cap02_02_28
+    "So we have... woman? Stand up for a second... Huh?"
+    play sound ctc
+    voice voz_cap02_02_29
+    "And maybe you can show him... your surprise..."
+    play sound ctc
+    voice voz_cap02_02_30
+    "Here my friend, here is a extra for you today."
+    play sound ctc
+    voice voz_cap02_02_31
+    "Ouuuu mai góóó...!"
+    play sound ctc
+    voice voz_cap02_02_32
+    "Huh? It is not incredible?"
+    play sound ctc
+    voice voz_cap02_02_33
+    "Does not look fantastic with those big fucking tits, get home with it!"
+    play sound ctc
+    "(dois minutos depois)"
+    play sound ctc
+    "(Anita te deu uma chuopadinha muito boa.)"
+    play sound ctc
+    "(Foi muito bom, mas e agora? O que será que vai acontecer? Você pensa inquieto sobre isso...)"
+    play sound ctc
+    voice voz_cap02_02_34
+    "In fact... she sucked your dick good, yeah?"
+    play sound ctc
+    voice voz_cap02_02_35
+    "Ié, ié."
+    play sound ctc
+    voice voz_cap02_02_36
+    "You wanna give her a little, huh..."
+    play sound ctc
+    
 
     play sound ctc
     play music audio.fm_password
@@ -25,6 +145,50 @@ label cap02_02_oficina_gringo:
             pass
     hide textbox_aux
     stop music
+
+    voice voz_cap02_02_37
+    "No problem."
+    play sound ctc
+    voice voz_cap02_02_38
+    "You do it? That's my boy!"
+    play sound ctc
+    voice voz_cap02_02_39
+    "Okay... alright..."
+    play sound ctc
+    voice voz_cap02_02_40
+    "God, you beautiful in here... You're SO fucking beautiful!"
+    play sound ctc
+    voice voz_cap02_02_41
+    "Plis... plis fuck mai és..."
+    play sound ctc
+    voice voz_cap02_02_42
+    "Plis fuck me..."
+    play sound ctc
+    voice voz_cap02_02_43
+    "Ó IÉ!"
+    play sound ctc
+    voice voz_cap02_02_44
+    "OU VERI, VERI, VERI... VERI GOOD!"
+    play sound ctc
+    voice voz_cap02_02_45
+    "OU FOCK ME, IÉ FOCK ME!"
+    play sound ctc
+    voice voz_cap02_02_46
+    "(palmada na bunda) FOCK ME!"
+    play sound ctc
+    voice voz_cap02_02_47
+    "Ó IÉ... OU FOCK ME..."
+    play sound ctc
+    voice voz_cap02_02_48
+    "FOCK ME PLIS...!"
+    play sound ctc
+    voice voz_cap02_02_49
+    "OU...!"
+    play sound ctc
+    voice voz_cap02_02_50
+    "FOCK ME! FOCK ME..."
+    play sound ctc
+
     return
 
 
@@ -77,6 +241,10 @@ label wrong_end_02_02_2:
     play sound ctc
     "(Anita, ainda com o pezão pra fora,\nfica chocada.)"
     play sound ctc
+    "(Ela acabou de te dar uma chuopadinha, mas você decide não retribuir o favor.)"
+    play sound ctc
+    "(\"Eu tenho cara de comunista pra compartilhar as coisas?\", você pensa.)"
+    play sound ctc
     "(Revoltado com a humilhação que passou,\nvocê decide tacar o foda-se e\ncompra um bilhete na Tele Senna.)"
     play sound ctc
     "(Você preenche o bilhete puto e entrega\npara a atendente, ainda puto.)"
@@ -97,7 +265,7 @@ label wrong_end_02_02_2:
     play sound ctc
     "(...)"
     play sound ctc
-    "(Não mais puto, você curte a viagem\ncom o carro novo na\nCachoeira Talargo.)"
+    "(Não mais puto, você curte a viagem\ncom o carro novo na\nCachoeira de Pau Grande.)"
     play sound ctc
     "(A sensação de aventura e liberdade\né muito gostosa...)"
     play sound ctc
