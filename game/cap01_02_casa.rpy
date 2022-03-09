@@ -54,7 +54,7 @@ label wrong_end_01_02_1:
     play sound ctc
     "(Ele ainda não para de tocar, mas\nisso não importa mais.)"
     play sound ctc
-    "(Você volta pra casa e decide jogar\npalavras-cruzadas.)"
+    "(Você volta para casa e decide jogar\npalavras-cruzadas.)"
     play sound ctc
     $ register_ending("A")
     jump game_over

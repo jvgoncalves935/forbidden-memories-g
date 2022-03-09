@@ -286,8 +286,8 @@ define endings_names = {
     "T":"Viagem para Pau Grande",
     "U":"Teoria do Kenoverso",
     "V":"Watashi wa Arekusando desu",
-    "W":"El Gángster de Familia",
-    "X":"Casamento Internacional",
+    "W":"Casamento-Surpresa",
+    "X":"El Gángster de Familia",
     "Y":"Árabe de Família",
     "Z":"As Aparências Enganam"
 }
@@ -348,8 +348,8 @@ define endings_descriptions = {
     "T":"Foi visitar a Praia de Pau Grande.",
     "U":"Foi procurar o arrombamento em outro Kenoverso.",
     "V":"Aprendeu mais sobre as coisas exóticas da cultura japonesa.",
-    "W":"Se mudou para Madrid e virou gangster.",
-    "X":"Se casou com uma estrangeira avantajada.",
+    "W":"Se casou com uma estrangeira avantajada.",
+    "X":"Fugiu para Madrid e virou gangster.",
     "Y":"Aprendeu um novo idioma.",
     "Z":"¡¢£¤¥¦§¨©ª&«¬ÂÃíÄÅ+ÆÇÈâěçĜĝĞğĠġĢģôĤĥ#ĦħĨĩĪīĬĭĮÍįİıĲĳĴĵĶķÂĸĹĺĻļĽľž"
 }

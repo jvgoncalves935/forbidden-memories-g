@@ -173,6 +173,8 @@ label wrong_end_01_04_common:
     play sound ctc
     "(Era sua única oportunidade de\nbrilhar na vida e você\ndesperdiçou ela!)"
     play sound ctc
+    "(...)"
+    play sound ctc
     return
 
 label wrong_end_01_04_1:

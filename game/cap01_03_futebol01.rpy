@@ -51,7 +51,7 @@ label cap01_03_futebol01:
     stop music
 
     #(Senna 00:30 - 00:31)
-    "Da pra gente fazer uma brincadeira\naí! Jogar uma bola.."
+    "Da pra gente fazer uma brincadeira\naí! Jogar uma bola..."
     play sound ctc
     #(Senna 00:40 - 00:46)
     "Então... mas já que o pessoal vai\nchegar mais tarde, quê que vocês\nacham da gente fazer uma\nbrincadeirinha?"

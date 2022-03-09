@@ -28,11 +28,11 @@ label cap04_01_casa01:
     show textbox_aux
     menu:
         "<Atende essa porra>":
+            hide textbox_aux
             pass
         "<Não>":
             hide textbox_aux
             jump wrong_end_04_01_1
-    hide textbox_aux
     "Fala meu querido, tudo bem?"
     play sound ctc
     "(YEAH MAN!)"

@@ -20,10 +20,11 @@ label cap04_03_casa02:
     menu:
         "<Atender o telefone>":
             pass
+            hide textbox_aux
         "<Desligar o telefone com ignorância>":
             hide textbox_aux
             jump wrong_end_04_03_1
-    hide textbox_aux
+    
     "Alexandre aqui."
     play sound ctc
     "Olá, Alexandre. Desculpa te ligar tão cedo!"
@@ -48,8 +49,8 @@ label cap04_03_casa02:
             hide textbox_aux
             jump wrong_end_04_03_2
         "<\"Tá bom, eu já tô indo.\">":
+            hide textbox_aux
             pass
-    hide textbox_aux
     "Tá bom, eu já tô indo."
     play sound ctc
     "Tudo certo então, desculpa de novo aí te incomodar..."

@@ -168,7 +168,7 @@ label cap02_02_oficina_gringo:
     "Ó IÉ!"
     play sound ctc
     voice voz_cap02_02_44
-    "OU VERI, VERI, VERI... VERI GOOD!"
+    "OU VERI, VERI, VERI... VERI GUD!"
     play sound ctc
     voice voz_cap02_02_45
     "OU FOCK ME, IÉ FOCK ME!"

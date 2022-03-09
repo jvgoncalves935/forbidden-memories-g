@@ -6,6 +6,9 @@ label cap05_03_doutor:
     "(Senna conseguiu o Milzão!)"
     play sound ctc
     "(Dá pra fazer muita coisa com esse dinheiro, especialmente nos anos 2000.)"
+    play sound ctc
+    "(Recusando a proposta de Alemão, você nunca mais volta a falar com eles.)"
+    play sound ctc
     "(...)"
     play sound ctc
     "(...)"
@@ -36,10 +39,10 @@ label cap05_03_doutor:
     play sound ctc
     "(...)"
     #(0:06 - 0:15 Senna Richtofen)
-    "Vai ser muito séria hoje...hoje... a nossa aula vai ser sobre SEXO."
+    "Vai ser muito séria hoje... hoje... a nossa aula vai ser sobre SEXO."
     play sound ctc
     #(0:15 - 0:20 multidão)
-    "UUUHUUUUUUUUUUUUUUULLLLL"
+    "UUUHUUUUUUUUUUUUUUULLLLL!!!"
     play sound ctc
     "Vai tirar a roupa?"
     play sound ctc
@@ -47,10 +50,10 @@ label cap05_03_doutor:
     "Não não... e a gente... e hoje vocês vão aprender a como se utiliza... o preservativo..."
     play sound ctc
     #(0:29 - 0:31 multidão)
-    "Você sabe muito bem"
+    "Você sabe muito bem!"
     play sound ctc
     #(0:34 - 0;42 Senna Richtofen)
-    "Coloca o pal pra fora aí... só tira aqui só... aí colocou na linguinha assim ó... viu?"
+    "Coloca o pau pra fora aí... só tira aqui, só... aí colocou na linguinha assim ó... viu?"
     play sound ctc
     #(0:53 - 0:54 Senna Richtofen)
     "Tem que ser com a boca, não pode utilizar a mão!"

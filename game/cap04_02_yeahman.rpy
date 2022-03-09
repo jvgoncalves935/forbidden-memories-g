@@ -12,10 +12,11 @@ label cap04_02_yeahman:
     show textbox_aux
     menu:
         "<Socorrer Yeah Man>":
+            hide textbox_aux
             pass
         "<Deixar ele agonizando no chão>":
+            hide textbox_aux
             jump wrong_end_04_02_1
-    hide textbox_aux
     "(Como que esse louco conseguiu machucar a perna no saco de pancada...?)"
     play sound ctc
     "(...)"
@@ -32,8 +33,7 @@ label cap04_02_yeahman:
     play sound ctc
     "Fica tranquilo aí..."
     play sound ctc
-    $ play_video("mod_assets/videos/yeahman2.webm","yeahman_01_web")
-    #$ renpy.movie_cutscene("mod_assets/videos/yeahman.webm")
+    $ renpy.movie_cutscene("mod_assets/videos/yeahman2.webm")
     return
 
 label wrong_end_04_02_1:
@@ -84,7 +84,4 @@ label wrong_end_04_02_1:
     play sound ctc
     $ register_ending("R")
     jump game_over
-
-label yeahman_01_web:
-    return
 

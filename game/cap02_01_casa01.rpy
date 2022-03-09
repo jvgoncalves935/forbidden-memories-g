@@ -70,16 +70,17 @@ label wrong_end_02_01_1:
     play sound ctc
     "(três meses depois)"
     play sound ctc
-    "(É o seu primeiro dia no treinamento\nda Polícia Militar de Cupiqueno!)"
+    "(É o seu primeiro dia de ronda\nna Polícia Militar de Cupiqueno!)"
     play sound ctc
     play music celular
     "(Sua mãe te liga, emocionada com sua\nconquista.)"
     play sound ctc
     stop music
-    "(Muito ocupado com seu treinamento,\nvocê apenas responde antes\nde desligar:)"
+    "(Você acaba de receber um chamado de,\noutra viatura, você apenas\nresponde antes de desligar:)"
     play sound ctc
     "TÁ ATRAPALHANDO MEU TRABALHO, SEU...!"
     play sound ctc
+    $ renpy.movie_cutscene("mod_assets/videos/policial.webm")
     $ register_ending("F")
     jump game_over
 

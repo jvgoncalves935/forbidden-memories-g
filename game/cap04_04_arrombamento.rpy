@@ -76,10 +76,14 @@ label cap04_04_arrombamento:
     play music audio.fm_password
     menu:
         "<Empurrar o cabação e fugir do local do arrombamento>":
+            hide textbox_aux
             jump wrong_end_04_04_1
         "<Não fazer nada>":
+            hide textbox_aux
+            "(...)"
+            play sound ctc
             pass
-    hide textbox_aux
+    
     stop music
     #(Senna 00:49 - 00:56)
     play sound ctc
@@ -114,5 +118,56 @@ label cap04_04_arrombamento:
 
 label wrong_end_04_04_1:
     stop music
+    "(Você empurra o morador e se liberta dos braços dele.)"
+    play sound ctc
+    "(Ele te agarra de novo pelo braço mas você joga ele com toda a força contra a parede.)"
+    play sound ctc
+    "(Ele bate forte com a cabeça na parede, parece que ele ficou inconsciente.)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "CADÊ O ARROMBAMENTO?"
+    play sound ctc
+    "(Você fica frenético enquanto procura o arrombamento.)"
+    play sound ctc
+    "CADÊ O ARROMBAMENTO?"
+    play sound ctc
+    "(Onde está o arrombamento? Será que foi do lado de fora do prédio?)"
+    play sound ctc
+    "CADE O ARROMBAMENTO?"
+    play sound ctc
+    "(CADÊ O ARROMBAMENTO?)"
+    play sound ctc
+    "CADÊ O ARROMBAMENTO?"
+    play sound ctc
+    "(Você corre para o beco do lado de fora do prédio na rua, esperando encontrar o arrombamento.)"
+    play sound ctc
+    "...?"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(Tem... alguma coisa no meio do beco.)"
+    play sound ctc
+    "(Parece ser um portal... mágico?)"
+    play sound ctc
+    "CADÊ O ARROMBAMENTO?"
+    play sound ctc
+    "(Parece que essa porta mágica pode te levar para o local do ARROMBAMENTO!)"
+    play sound ctc
+    "(Você fica com medo, mas acaba chegando perto do círculo mágico.)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "ARROMBAMENTO"
+    play sound ctc
+    "(Você corre com tudo, pula e se joga dentro do círculo mágico.)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
     $ register_ending("U")
     jump game_over

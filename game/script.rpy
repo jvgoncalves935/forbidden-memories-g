@@ -28,12 +28,12 @@ label start:
     $ game_over_musica = True
     play sound menu_start
 
-    #if(not game_over):
-    #    call cap01 from _call_cap01
-    #if(not game_over):
-    #    call cap02 from _call_cap02
-    #if(not game_over):
-    #    call cap03 from _call_cap03
+    if(not game_over):
+        call cap01 from _call_cap01
+    if(not game_over):
+        call cap02 from _call_cap02
+    if(not game_over):
+        call cap03 from _call_cap03
     if(not game_over):
         call cap04 from _call_cap04
     if(not game_over):
