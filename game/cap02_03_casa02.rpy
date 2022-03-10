@@ -30,7 +30,7 @@ label cap02_03_casa02:
             play sound ctc
             "Quem que vai chegar aí também?"
             play sound ctc
-            "\"O Índio e o goleiro de família.\""
+            "\"O Índio e o Goleiro de Família.\""
             play sound ctc
             "Show, então de noite eu apareço aí,\naté mais."
             play sound ctc
@@ -54,7 +54,7 @@ label cap02_03_casa02:
     play sound ctc
     "VOCÊS (telefone vibrando) NÃO ME DEIXAM\nEM PAZ, SEUS PERTUBADO!"
     play sound ctc
-    #play music audio.fm_password
+    play music audio.fm_password
     show textbox_aux
     $ wrong_end = False
     menu:
@@ -78,6 +78,8 @@ label cap02_03_casa02:
             "(...)"
             play sound ctc
             "VOCÊ NÃO TEM O QUE FAZER NÃO?"
+            play sound ctc
+            "(...)"
             play sound ctc
             "(...)"
             play sound ctc
@@ -116,6 +118,14 @@ label cap02_03_casa02_campainha:
     "\"Eu posso limpar a frente da sua\ncasa, é só pra me dar uma\najuda mesmo...\""
     play sound ctc
     "(Realmente, o passeio da sua casa\ntem que tirar os matos e\nas plantas da calçada. Você não\nfaz isso tem dois anos.)"
+    play sound ctc
+    "(Mas tem algo estranho nisso tudo...)"
+    play sound ctc
+    "(A voz do mendigo é bem familiar.)"
+    play sound ctc
+    "(Uma voz meio esquisita, parecendo\nque ele fala bocejando\nque nem um retardado.)"
+    play sound ctc
+    "(Será que é apenas impressão?)"
     play sound ctc
     play music audio.fm_password
     show textbox_aux

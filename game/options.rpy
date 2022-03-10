@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.1.0"
+define config.version = "0.1.3"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line
@@ -122,8 +122,8 @@ default preferences.text_cps = 50
 
 default preferences.afm_time = 15
 
-default preferences.music_volume = 0.65
-default preferences.sfx_volume = 0.75
+default preferences.music_volume = 0.75
+default preferences.sfx_volume = 0.85
 
 ## Save directory ##############################################################
 ##

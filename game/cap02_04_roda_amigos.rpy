@@ -20,7 +20,7 @@ label cap02_04_roda_amigos:
     "Nossa senhora... vocês perderam! Ixi,\ntinha muita gente, muita mina... foi\nmuito louco... muito louco mesmo!"
     play sound ctc
     #(0:19 - 0:22 Senna)
-    "Essas balada dele aí acho que é meio\nfurada!..."
+    "Essas balada dele aí acho que é meio\nfurada...!"
     play sound ctc
     #(0:22 - 0:22 magrelo)
     "Que furada?"

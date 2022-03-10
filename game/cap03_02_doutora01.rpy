@@ -3,9 +3,11 @@ label cap03_02_doutora01:
     stop music
     show textbox_black at center
     #show intro_001 at top
-    "Toc! toc! toc! toc! toc! toc!"
+    voice voz_cap03_02_01
+    "(Toc toc toc toc toc toc)"
     play sound ctc
     #(0:09 - 0:10 doutora rosa)
+    voice voz_cap03_02_02
     "Pode entrar..."
     play sound ctc
     show textbox_aux
@@ -18,105 +20,139 @@ label cap03_02_doutora01:
     hide textbox_aux
     stop music
     #(0:14 - 0:29 Senna)
-    "É o seguinte..."
     play sound ctc
-    "Fiquei sabendo... Através de um amigo que a clínica de vocês é especializada em reto e eu tô com um com um problema no meu reto..."
+    voice voz_cap03_02_03
+    "É o seguinte... Fiquei sabendo...\nAtravés de um amigo que a\nclínica de vocês é especializada\nem reto e eu tô com um\nproblema no meu reto..."
     play sound ctc
     #(0:29 - 0:37 Senna)
-    "Eu tô tendo algumas dores assim, tô tendo algumas sensações diferentes no meu CU..."
+    voice voz_cap03_02_04
+    "Eu tô tendo algumas dores assim, tô\ntendo algumas sensações diferentes\nno meu CU..."
     play sound ctc
     #(0:38 - 0:52 Senna)
-    "Então essa sensação ela vai e volta, vai e volta..."
+    voice voz_cap03_02_05
+    "Então essa sensação ela vai e volta,\nvai e volta..."
     play sound ctc
-    "E como tem uma doutora especialista em CU aqui, eu queria passar com ela pra ver, pra ela resolver o problema do meu CU, entendeu?!"
+    voice voz_cap03_02_06
+    "E como tem uma doutora especialista em\nCU aqui, eu queria passar com\nela pra ver, pra resolver o\nproblema do meu CU, entendeu?!"
     #(0:52 - 0:57 Senna)
     play sound ctc
-    "Entendeu? As vezes eu sinto calor, as vezes ele coça, não sei, entendeu..."
+    voice voz_cap03_02_07
+    "Entendeu? As vezes eu sinto calor, as\nvezes ele coça, não sei,\nentendeu..."
     #(0:57 - 0:59 doutora rosa)
     play sound ctc
-    "Quanto tempo tu vem sentindo isso dai?"
+    voice voz_cap03_02_08
+    "Quanto tempo tu vem sentindo essas-"
     #(1:00 - 1:01 Senna)
     play sound ctc
+    voice voz_cap03_02_09
     "Ah, tem uns 6 meses já..."
+    play sound ctc
     #(1:15 - 1:15 doutora preto)
+    voice voz_cap03_02_10
     "Pode entrar..."
     play sound ctc
     #(1:22 - 1:29 doutora rosa)
-    "Chegou seu paciente, ele tá com problema, aí ele veio ver se consegue alguma coisa pra ajudar ele.."
+    voice voz_cap03_02_11
+    "Chegou seu paciente, ele tá com\nproblema, aí ele veio ver se\nconsegue alguma coisa pra\najudar ele..."
     play sound ctc
     #(1:30 - 1:32 doutora preto)
+    voice voz_cap03_02_12
     "Ah, fazer uns exames né, seu nome?"
     play sound ctc
     #(1:32 - 1:33 Senna)
+    voice voz_cap03_02_13
     "Alexandre!"
     play sound ctc
     #(1:33 - 1:35 doutora preto)
-    "Cê vem comigo Alexandre. Obrigada hein"
+    voice voz_cap03_02_14
+    "Cê vem comigo Alexandre.\nObrigada, hein."
     play sound ctc
     #(1:36 - 1:37 Senna)
-    "Você quer que eu explique mais ou menos ou não?"
+    voice voz_cap03_02_15
+    "Você quer que eu explique\nmais ou menos ou não?"
     play sound ctc
     #(1:38 - 1:38 doutora preto)
+    voice voz_cap03_02_16
     "Pode explicar."
     play sound ctc
     #(1:38 - 1:48 Senna)
-    " Então tem uns 6 meses aí que... tô com o CU coçando, aí não sei o motivo e tal.."
+    voice voz_cap03_02_17
+    "Então tem uns 6 meses aí que... tô\ncom o CU coçando, aí\nnão sei o motivo e tal.."
     play sound ctc
     #(1:48 - 1:49 doutora preto)
+    voice voz_cap03_02_18
     "Tá sentindo alguma dor?"
     play sound ctc
     #(1:49 - 1:52 Senna)
-    "Não!, Não!... só uma coceirinha mesmo..."
+    voice voz_cap03_02_19
+    "Não!, Não!... só uma coceirinha\nmesmo, assim..."
     play sound ctc
     #(1:59 - 2:01 Senna)
-    "Tem mais um pouquinho daquele gel lá? Tem? Coloca um pouquinho dele pra mim."
+    voice voz_cap03_02_20
+    "Tem mais um pouquinho daquele gel lá?\nTem? Dá um pouquinho\ndele pra mim, dá..."
     play sound ctc
     #(2:02 - 2:04 Senna)
+    voice voz_cap03_02_21
     "AAAAAAAAAAI DOUTORA..."
     play sound ctc
     #(2:05 - 2:05 doutora preto)
+    voice voz_cap03_02_22
     "Isso, tá gostando, tá?"
     play sound ctc
     #(2:07 - 2:12 Senna)
-    "AAAAI... AAAAI QUE SENSAÇÃO... DIFERENTE... AAAI..."
+    voice voz_cap03_02_23
+    "AAAAI... AAAAI QUE SENSAÇÃO...\nDIFERENTE... AAAI..."
     play sound ctc
     #(2:11 - 2:11 doutora preto)
+    voice voz_cap03_02_24
     "Tô pondo o dedinho..."
     play sound ctc
     #(2:15 - 2:15
+    voice voz_cap03_02_25
     "PODE...."
     play sound ctc
     #(2:18 - 2:19 doutora preto)
+    voice voz_cap03_02_26
     "Isso, isso tá gostoso?"
     play sound ctc
     #(2:19 -2:26 Senna)
-    "AAAAAAAAI... AAI VOU TRAZER MEU AMIGO AQUI... TÁ COM MESMO PROBLEMA QUE EU..."
+    voice voz_cap03_02_27
+    "AAAAAAAAI... AAI VOU TRAZER MEU\nAMIGO AQUI... TÁ COM MESMO\nPROBLEMA QUE EU..."
     play sound ctc
     #(2:28 - 2:36 Senna)
-    "VAI... É O MÁRCIO, MARCINHO MEU PARCEIRO ELE... ELE TEVE CHEGOU A FALAR COMIGO..."
+    voice voz_cap03_02_28
+    "VAI... É O MÁRCIO, MARCINHO MEU\nPARCEIRO ELE... ELE TEVE\nCHEGOU A FALAR COMIGO..."
     play sound ctc
     #(2:36 - 2:36 doutora preto)
+    voice voz_cap03_02_29
     "Mas ele é gay?"
     play sound ctc
     #(2:37 - 2:41 Senna)
-    "NÃO ELE É CASADO, ELE É NOIVO, ELE NAMORA..."
+    voice voz_cap03_02_30
+    "NÃO ELE É CASADO, ELE É NOIVO,\nELE NAMORA..."
     play sound ctc
     #(2:41 - 2:42 doutora preto)
-    "Trás ele aqui que eu cuido dele também!"
+    voice voz_cap03_02_31
+    "Trás ele aqui que eu cuido\ndele também!"
     play sound ctc
     #(2:51 - 3:03 Senna)
-    "AAI... AAAAI... AAIIIII... AAAAAAII... AAAII... AAAI..."
+    voice voz_cap03_02_32
+    "AAI... AAAAI... AAIIIII...\nAAAAAAII... AAAII... AAAI..."
     play sound ctc
     #(3:04 - 3:16 Senna)
-    "TÁ QUENTE MEU CU, TÁ... TÁ SUA PUTA... UUGH... AI TA ME SOCANDO... TO ME SENTINDO A BICHA LOKA... AAAGH... AAGH..."
+    voice voz_cap03_02_33
+    "TÁ QUENTE MEU CU, TÁ...? TÁ SUA PUTA!\nUUGH... AI TA ME SOCANDO...\nTO ME SENTINDO A BICHA\nLOKA... AAAGH... AAGH..."
     play sound ctc
     #(3:23 - 3:32 Senna)
-    "AAGH... AAA... AAA... QUERIA... QUERIA... AAA..."
+    voice voz_cap03_02_34
+    "AAGH... AAA... AAA... QUERIA...\nQUERIA... AAA..."
     play sound ctc
     #(3:42 - 3:43 doutora preto)
+    voice voz_cap03_02_35
     "Queria, né viadinho?"
     play sound ctc
     #(3:43 - 3:44 Senna)
+    voice voz_cap03_02_36
     "Queria..."
     play sound ctc
     return

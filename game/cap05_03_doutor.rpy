@@ -5,29 +5,28 @@ label cap05_03_doutor:
     #show intro_001 at top
     "(Senna conseguiu o Milzão!)"
     play sound ctc
-    "(Dá pra fazer muita coisa com esse dinheiro, especialmente nos anos 2000.)"
+    "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"
     play sound ctc
-    "(Recusando a proposta de Alemão, você nunca mais volta a falar com eles.)"
-    play sound ctc
-    "(...)"
+    "(Recusando a proposta de Alemão,\nvocê nunca mais volta a\nfalar com eles.)"
     play sound ctc
     "(...)"
     play sound ctc
-    "(no dia seguinte depois do Filme G)"
+    "(...)"
+    play sound ctc
+    "(no dia seguinte depois\ndo Filme G)"
     play sound ctc
 
     $ renpy.movie_cutscene("mod_assets/videos/bob_alemao.webm")
 
+    "(Com o dinheiro que ganhou de Bob\ne Alemão, Senna conseguiu financiar\nseus estudos para realizar\nseu mais novo sonho:)"
     play sound ctc
-    "(Com o dinheiro que ganhou de Bob e Alemão, Senna conseguiu financiar seus estudos para realizar seu mais novo sonho:)"
+    "(Se tornar um médico renomado e\nrespeitado.)"
     play sound ctc
-    "(Se tornar um médico renomado e respeitado.)"
+    "\"Vou ser um médico mil vezes\nmelhor que a doutora!\""
     play sound ctc
-    "\"Vou ser um médico mil vezes melhor que a doutora!\""
+    "(Senna estudou nas horas vagas de\nseu serviço como segurança\ncom os novos livros que\nhavia comprado.)"
     play sound ctc
-    "(Senna estudou nas horas vagas de seu serviço como segurança com os novos livros que havia comprado.)"
-    play sound ctc
-    "(Com muito esforço e dedicação, Senna foi aprovado no vestibular de Medicina da UFCP!)"
+    "(Com muito esforço e dedicação,\nSenna foi aprovado no\nvestibular de Medicina\nda UFCP!)"
     play sound ctc
     "(...)"
     play sound ctc
@@ -39,7 +38,7 @@ label cap05_03_doutor:
     play sound ctc
     "(...)"
     #(0:06 - 0:15 Senna Richtofen)
-    "Vai ser muito séria hoje... hoje... a nossa aula vai ser sobre SEXO."
+    "Vai ser muito séria hoje... hoje...\na nossa aula vai ser\nsobre SEXO."
     play sound ctc
     #(0:15 - 0:20 multidão)
     "UUUHUUUUUUUUUUUUUUULLLLL!!!"
@@ -47,22 +46,22 @@ label cap05_03_doutor:
     "Vai tirar a roupa?"
     play sound ctc
     #(0:20 - 0:29 Senna Richtofen)
-    "Não não... e a gente... e hoje vocês vão aprender a como se utiliza... o preservativo..."
+    "Não não... e a gente... e hoje\nvocês vão aprender a como\nse utiliza... o preservativo..."
     play sound ctc
     #(0:29 - 0:31 multidão)
     "Você sabe muito bem!"
     play sound ctc
     #(0:34 - 0;42 Senna Richtofen)
-    "Coloca o pau pra fora aí... só tira aqui, só... aí colocou na linguinha assim ó... viu?"
+    "Coloca o pau pra fora aí... só\ntira aqui, só... aí colocou\nna linguinha assim ó...\nviu?"
     play sound ctc
     #(0:53 - 0:54 Senna Richtofen)
-    "Tem que ser com a boca, não pode utilizar a mão!"
+    "Tem que ser com a boca, não\npode utilizar a mão!"
     play sound ctc
-    "(Alexandre Senna começou sua carreira acadêmica como médico e pesquisador da UFCP.)"
+    "(Alexandre Senna começou sua carreira\nacadêmica como médico e\npesquisador da UFCP.)"
     play sound ctc
-    "\"Não vai ter nenhum médico com o CUrrículo à minha altura.\""
+    "\"Não vai ter nenhum médico com o\nCUrrículo à minha altura.\""
     play sound ctc
-    "(No futuro, teve uma carreira grande e gostosa com um futuro brilhante.)"
+    "(No futuro, teve uma carreira grande\ne gostosa com um futuro\nbrilhante.)"
     play sound ctc
     "(...)"
     play sound ctc

@@ -26,6 +26,7 @@ label start:
     $ cap_choosed = 1
     $ game_over = False
     $ game_over_musica = True
+    $ game_over_pos_cutscene = False
     play sound menu_start
 
     if(not game_over):

@@ -11,11 +11,11 @@ label cap04_03_casa02:
     play sound ctc
     "Porra meu, hoje é o dia do trampo."
     play sound ctc
-    "Que droga de emprego de segurança, pagam mal pra caramba e eu aqui que nem burro de carga-"
+    "Que droga de emprego de segurança,\npagam mal pra caramba e eu\naqui que nem burro de carga-"
     play sound ctc
     "(telefone tocando)"
     play sound ctc
-    "Eu nem acordei direito, seus filha da puta!"
+    "Eu nem acordei direito, seus\nfilha da puta!"
     show textbox_aux
     menu:
         "<Atender o telefone>":
@@ -27,19 +27,19 @@ label cap04_03_casa02:
     
     "Alexandre aqui."
     play sound ctc
-    "Olá, Alexandre. Desculpa te ligar tão cedo!"
+    "Olá, Alexandre. Desculpa te\nligar tão cedo!"
     play sound ctc
-    "(É o filho da puta do morador do prédio.)"
+    "(É o filho da puta do morador\ndo prédio.)"
     play sound ctc
-    "Parece que teve um arrombamento aqui no prédio!"
+    "Parece que teve um arrombamento\naqui no prédio!"
     play sound ctc
-    "Não sei quem fez isso mas parece que roubaram um monte de coisa aqui!"
+    "Não sei quem fez isso mas parece\nque roubaram um monte de\ncoisa aqui!"
     play sound ctc
-    "Eu acordei de manhã e as trancas da porta da entrada tinham sido quebradas!"
+    "Eu acordei de manhã e as trancas\nda porta da entrada tinham\nsido quebradas!"
     play sound ctc
-    "Você pode vir aqui pra verificar a situação?"
+    "Você pode vir aqui pra verificar\na situação?"
     play sound ctc
-    "(Já pensou em me PAGAR o que vocês tão me DEVENDO primeiro?)"
+    "(Já pensou em me PAGAR o que vocês\ntão me DEVENDO primeiro?)"
     play sound ctc
     "(Mano, que vontade de...)"
     play sound ctc
@@ -53,19 +53,19 @@ label cap04_03_casa02:
             pass
     "Tá bom, eu já tô indo."
     play sound ctc
-    "Tudo certo então, desculpa de novo aí te incomodar..."
+    "Tudo certo então, desculpa de novo\naí te incomodar..."
     play sound ctc
-    "Valeu mesmo cara... tô te esperando, tchau."
+    "Valeu mesmo cara... tô te esperando,\ntchau."
     play sound ctc
     "(desligou o telefone)"
     play sound ctc
-    "Mas esse desgraçado é um folgado mesmo!"
+    "Mas esse desgraçado é um folgado\nmesmo!"
     play sound ctc
-    "Você gosta de um garoto de programa que eu sei, seu infeliz!"
+    "Você gosta de um garoto de programa\nque eu sei, seu infeliz!"
     play sound ctc
-    "Já não bastava a preguiça de ter que ir fazer o meu turno de manhã..."
+    "Já não bastava a preguiça de ter que\nir fazer o meu turno de manhã..."
     play sound ctc
-    "E agora ainda vem um ladrão do cu da mãe e VEM ROUBAR A PORCARIA DO PRÉDIO!"
+    "E agora ainda vem um ladrão do cu da\nmãe e VEM ROUBAR A PORCARIA DO PRÉDIO!"
     play sound ctc
     "Quer me fuder me beija, caralho...!"
     play sound ctc
@@ -81,41 +81,41 @@ label cap04_03_casa02:
             play sound ctc
             "Alor, é do corpo de bombeiro?"
             play sound ctc
-            "MEU IRMÃO, VOCÊ É DEFICIENTE COGNITIVO, FUGIU DO MATERNAL OU O QUÊ, SEU DESGRAÇADO?"
+            "MEU IRMÃO, VOCÊ É DEFICIENTE COGNITIVO,\nFUGIU DO MATERNAL OU O\nQUÊ, SEU DESGRAÇADO?"
             play sound ctc
             "VOCÊ ACHA GRAÇA NISSO, NÉ?"
             play sound ctc
-            "VOCÊ GASTA O TEMPO DO SEU PRECIOSO DIA DE FRACASSADO PASSANDO TROTE PROS OUTROS?"
+            "VOCÊ GASTA O TEMPO DO SEU PRECIOSO DIA\nDE FRACASSADO PASSANDO TROTE\nPROS OUTROS?"
             play sound ctc
-            "VOCÊ SABE PRA ONDE A SUA MÃE VAI QUANDO SAI DE CASA, CUZÃO?"
+            "VOCÊ SABE PRA ONDE A SUA MÃE VAI QUANDO\nSAI DE CASA, CUZÃO?"
             play sound ctc
-            "ELA VEM SENTAR NA MINHA PICA AQUI TODO DIA!"
+            "ELA VEM SENTAR NA MINHA PICA AQUI TODO\nDIA!"
             play sound ctc
-            "AI MARLENE, SENTA NA PICA GOSTOSO, ISSO, ISSO!"
+            "AI MARLENE, SENTA NA PICA GOSTOSO,\nISSO, ISSO!"
             play sound ctc
-            "(Você começa a dar tapas na sua perna e bota o telefone bem perto pra ele ouvir.)"
+            "(Você começa a dar tapas na sua perna\ne bota o telefone bem\nperto pra ele ouvir.)"
             play sound ctc
-            "AAAAH CARALHO, EU VOU GOZAR LÁ NO SEU ÚTERO MARLENE!"
+            "AAAAH CARALHO, EU VOU GOZAR LÁ NO SEU\nÚTERO MARLENE!"
             play sound ctc
             "(desligou o fone do outro lado)"
             play sound ctc
-            "Haha, ficou putinho ow seu engraçadinho? Vai chorar pra mamãe?"
+            "Haha, ficou putinho ow seu\nengraçadinho? Vai chorar\npra mamãe?"
             play sound ctc
-            "Já tava na pilha pra fazer isso tem um tempão, cara otário demais."
+            "Já tava na pilha pra fazer isso tem\num tempão, cara otário\ndemais."
             play sound ctc
             "(...)"
             play sound ctc
         "<Desligar e ir pro trampo>":
             hide textbox_aux
-            "LIGA PRA SUA MÃE, PRA SUA VÓ, AQUELA PUTA VEIA ESPÍRITO DO EXU POMBA GIRA!"
+            "LIGA PRA SUA MÃE, PRA SUA VÓ, AQUELA\nPUTA VEIA ESPÍRITO DO\nEXU POMBA GIRA!"
             play sound ctc
             "(desligou o telefone)"
             play sound ctc
-    "Tô atrasado pra carai, tô quase perdendo o ônibus já...!"
+    "Tô atrasado pra carai, tô quase\nperdendo o ônibus já...!"
     play sound ctc
     "(...)"
     play sound ctc
-    "(Você veste sua roupa de segurança e vai correndo pro ponto de ônibus na esquina.)"
+    "(Você veste sua roupa de segurança\ne vai correndo pro ponto\nde ônibus na esquina.)"
     play sound ctc
     return
 
@@ -123,13 +123,13 @@ label wrong_end_04_03_1:
     stop music
     "AAARRRGHH PORRA!"
     play sound ctc
-    "(Você segura o botão de desligar do celular com toda sua força.)"
+    "(Você segura o botão de desligar do\ncelular com toda sua força.)"
     play sound ctc
-    "(Ele fica na parte de cima do celular e é pequeno pra caralho.)"
+    "(Ele fica na parte de cima do\ncelular e é pequeno pra caralho.)"
     play sound ctc
-    "(Depois de machucar seu dedo você consegue desligar o celular.)"
+    "(Depois de machucar seu dedo você\nconsegue desligar o celular.)"
     play sound ctc
-    "(Você joga o celular no chão, com toda a raiva acumulada pela dor na sua alma.)"
+    "(Você joga o celular no chão, com\ntoda a raiva acumulada pela\ndor na sua alma.)"
     play sound ctc
     "(...)"
     play sound ctc
@@ -137,13 +137,13 @@ label wrong_end_04_03_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "Essa vida da cidade é uma DROGA mesmo!"
+    "Essa vida da cidade é uma\nDROGA mesmo!"
     play sound ctc
     "Quer saber mermão?"
     play sound ctc
-    "Eu vou tirar uma semana de férias na fazenda do meu tio e é isso aí!"
+    "Eu vou tirar uma semana de férias\nna fazenda do meu tio\ne é isso aí!"
     play sound ctc
-    "Aquele pessoal do condomínio pode ir enfiar o dedo no cu, foda-se, tá ligado?"
+    "Aquele pessoal do condomínio pode\nir enfiar o dedo no cu,\nfoda-se, tá ligado?"
     play sound ctc
     "Já tô indo fazer as malas agora."
     play sound ctc
@@ -153,13 +153,13 @@ label wrong_end_04_03_1:
     play sound ctc
     "(dois dias depois)"
     play sound ctc
-    "Ah, a vida no campo tem as suas vantagens, sabia?"
+    "Ah, a vida no campo tem as suas\nvantagens, sabia?"
     play sound ctc
-    "Não tem gente te ligando, atendente de telemarketing nem nada do tipo."
+    "Não tem gente te ligando,\natendente de telemarketing\nnem nada do tipo."
     play sound ctc
-    "O pasto é tão bonito, é algo tão maravilhoso..."
+    "O pasto é tão bonito, é algo\ntão maravilhoso..."
     play sound ctc
-    "Dar uma cavalgada é tão relaxante..."
+    "Dar uma cavalgada é tão\nrelaxante..."
     play sound ctc
     "Tirar leitinho da vaquinha..."
     play sound ctc
@@ -172,27 +172,27 @@ label wrong_end_04_03_1:
 
 label wrong_end_04_03_2:
     stop music
-    "OW SEU FILHO DA PUTA, JÁ PENSOU EM ME PAGAR O QUE VOCÊ TÁ ME DEVENDO?"
+    "OW SEU FILHO DA PUTA, JÁ PENSOU\nEM ME PAGAR O QUE\nVOCÊ TÁ ME DEVENDO?"
     play sound ctc
-    "MANDA O VIADO ENRUSTIDO DO PAI IR AÍ VER O ARROMBAMENTO NO OLHO DO SEU CU!"
+    "MANDA O VIADO ENRUSTIDO DO PAI\nIR AÍ VER O ARROMBAMENTO\nNO OLHO DO SEU CU!"
     play sound ctc
-    "VOCÊ ACHA QUE EU SOU SEU ESCRAVO PRA TRABALHAR DE GRAÇA?"
+    "VOCÊ ACHA QUE EU SOU SEU ESCRAVO\nPRA TRABALHAR DE GRAÇA?"
     play sound ctc
-    "PARA DE DAR DINHEIRO PRA SUA MÃE FAZER PROGRAMA, SEU DESGRAÇADO!"
+    "PARA DE DAR DINHEIRO PRA SUA MÃE\nFAZER PROGRAMA, SEU DESGRAÇADO!"
     play sound ctc
-    "ROUBARAM SEU PRÉDIO? EU QUE QUERIA TER ROUBADO SE PUDESSE!"
+    "ROUBARAM SEU PRÉDIO? EU QUE QUERIA\nTER ROUBADO SE PUDESSE!"
     play sound ctc
-    "TOMARA QUE VOCÊ FIQUE SEM DINHEIRO E MORRA DE FOME PAU NO-"
+    "TOMARA QUE VOCÊ FIQUE SEM DINHEIRO\nE MORRA DE FOME PAU NO-"
     play sound ctc
     "(desligou o telefone do outro lado)"
     play sound ctc
     "É isso que você merece, desgraçado!"
     play sound ctc
-    "Agora tô fudido, com certeza ele vai chamar a polícia..."
+    "Agora tô fudido, com certeza ele\nvai chamar a polícia..."
     play sound ctc
-    "Acho melhor abaixar a poeira e fazer uma viagem pra qualquer lugar aqui..."
+    "Acho melhor abaixar a poeira e\nfazer uma viagem pra\nqualquer lugar fora daqui..."
     play sound ctc
-    "Hmm... será que tem ônibus pra Pau Grande?"
+    "Hmm... será que tem ônibus\npara Pau Grande?"
     play sound ctc
     "(...)"
     play sound ctc
@@ -202,6 +202,9 @@ label wrong_end_04_03_2:
     play sound ctc
     "(...)"
     play sound ctc
+
+    window hide(None)
+    $ game_over_pos_cutscene = True
     $ renpy.movie_cutscene("mod_assets/videos/praia.webm")
     $ register_ending("T")
     jump game_over

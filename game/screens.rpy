@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
+            textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
                 style "page_label_text"
                 text_size 12
     
@@ -376,7 +376,7 @@ screen choice(items):
         xalign 0.96
         yalign 0.98
         
-        textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
+        textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
             style "page_label_text"
             text_size 12
     
@@ -625,7 +625,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("VERSÃO PROTÓTIPO (WIP) 0.1.1"):
+            textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
                 style "page_label_text"
                 text_size 12
 
@@ -2136,7 +2136,7 @@ screen preferences():
         $ cols = 4
 
     #use game_menu(_("Settings"), scroll="viewport"):
-    add "options_menu_bg" alpha 0.6
+    add "options_menu_bg" alpha 0.3
 
     vbox:
         xalign 1.0

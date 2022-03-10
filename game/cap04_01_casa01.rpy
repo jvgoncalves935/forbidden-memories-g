@@ -5,11 +5,11 @@ label cap04_01_casa01:
     #show intro_001 at top
     "Nossa, coisa mais esquisita..."
     play sound ctc
-    "Tô sentindo uma dor lá no estômago, porra..."
+    "Tô sentindo uma dor lá no estômago,\nporra..."
     play sound ctc
-    "Será que foi alguma coisa que eu comi antes de dormir?"
+    "Será que foi alguma coisa que eu\ncomi antes de dormir?"
     play sound ctc
-    "Não lembro de ter comido nada tão pesado-"
+    "Não lembro de ter comido nada\ntão pesado-"
     play sound ctc
     "(celular tocando)"
     play sound ctc
@@ -19,9 +19,9 @@ label cap04_01_casa01:
     play sound ctc
     "Hoje é o dia do judô, né?"
     play sound ctc
-    "Tô com uma preguiça do caralho pra ir pro treino, que droga."
+    "Tô com uma preguiça do caralho pra\nir pro treino, que droga."
     play sound ctc
-    "Aí, sabia que era o Yeah Man me ligando pra ir pro treino."
+    "Aí, sabia que era o Yeah Man me\nligando pra ir pro treino."
     play sound ctc
     "Atende essa porra ou não?"
     play sound ctc
@@ -35,27 +35,27 @@ label cap04_01_casa01:
             jump wrong_end_04_01_1
     "Fala meu querido, tudo bem?"
     play sound ctc
-    "(YEAH MAN!)"
+    "YEAH MAN!"
     play sound ctc
-    "Eu já tô indo aí pra academia, só tô arrumando umas coisas aqui em casa primeiro..."
+    "Eu já tô indo aí pra academia, só tô\narrumando umas coisas aqui\nem casa primeiro..."
     play sound ctc
     "Você já chegou na esquina aqui já?"
     play sound ctc
-    "(YEAH MAN!)"
+    "YEAH MAN!"
     play sound ctc
-    "Beleza, querido. Espera só dois minutinhos."
+    "Beleza, querido. Espera só dois\nminutinhos."
     play sound ctc
-    "(YEAH MAN!)"
+    "YEAH MAN!"
     play sound ctc
     "Tudo bem, falou."
     play sound ctc
-    "(OH CARALHO, OH!)"
+    "OH CARALHO, OH!"
     play sound ctc
     "(desligou o telefone)"     
     play sound ctc
-    "Esse cara é louco, puta que pariu..."
+    "Esse cara é louco, puta que\npariu... Só me meto\ncom louco cretino!"
     play sound ctc
-    "Ok, vou botar o kimono e já to vazando..."
+    "Ok, vou botar o kimono e já\nto vazando..."
     play sound ctc
     "(...)"
     play sound ctc
@@ -66,22 +66,25 @@ label cap04_01_casa01:
 
 label wrong_end_04_01_1:
     stop music
-    "Que se foda aquele esquizofrênico do caralho."
+    "Que se foda aquele esquizofrênico\ndo caralho."
     play sound ctc
     "Vai ver se eu tô lá na esquina!"
     play sound ctc
-    "Pior que o retardado deve estar me esperando lá mesmo..."
+    "Pior que o retardado deve estar me\nesperando lá mesmo..."
     play sound ctc
-    "Foda-se, pode ficar o dia inteiro aí, otário."
-    play sound ctc
-    "(...)"
-    play sound ctc
-    "Porra meu, tô querendo fazer uma parada... diferente, saca..."
-    play sound ctc
-    "Tô achando que eu vou dar uma volta no parque e é isso aí."
+    "Foda-se, pode ficar o dia inteiro\naí, otário."
     play sound ctc
     "(...)"
     play sound ctc
+    "Porra meu, tô querendo fazer uma\nparada... diferente, saca..."
+    play sound ctc
+    "Tô achando que eu vou dar uma\nvolta no parque e é isso aí."
+    play sound ctc
+    "(...)"
+    play sound ctc
+
+    window hide(None)
+    $ game_over_pos_cutscene = True
     $ renpy.movie_cutscene("mod_assets/videos/skate.webm")
     $ register_ending("Q")
     jump game_over

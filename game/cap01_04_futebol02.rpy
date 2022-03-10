@@ -117,9 +117,9 @@ label cap01_04_futebol02:
     "Calma, calma, calma,\ncalma...!"
     #(Índio 03:40 - 03:49)
     play sound ctc
-    "Pode deixar que agente leva ele lá!"
+    "Pode deixar que a gente leva ele lá!"
     play sound ctc
-    "Pode deixar, agente toma conta dele!"
+    "Pode deixar, a gente toma conta dele!"
     play sound ctc
     "Ok, vamo lá!"
     #(Senna 03:51 - 03:52)
@@ -200,7 +200,7 @@ label wrong_end_01_04_2:
     play sound ctc
     "(Você consegue sentir a faca lá no\nestômago, porra, que facona...)"
     play sound ctc
-    "(Você cai no chão sem conseguir se\nmover, vendo sua própria vida\nse esvaindo.)"
+    "(Você cai no chão sem conseguir se\nmover, vendo sua própria vida\nse esVAINdo.)"
     play sound ctc
     "(Todos apavorados começam a fugir do\nÍndio, saindo do campo de\nfutebol o mais rápido possível.)"
     play sound ctc
@@ -229,7 +229,7 @@ label wrong_end_01_04_3:
     play sound ctc
     "(...)"
     play sound ctc
-    "(dois anos depois)"
+    "(três dias depois)"
     play sound ctc
     "\"O Asteroide Guinárnia está em\nrota de colisão da Terra!\""
     play sound ctc

@@ -7,50 +7,50 @@ label cap05_01_casa01:
     "Onde, onde, onde? Cadê o arrombamento?"
     play sound ctc
     #(Padeiro G)
-    "Bem na verdade não tem arrombamento nenhum, só queria que você desse uma olhada em minha cozinha para ver se ela segue os padrões de segurança..."
+    "Bem na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
     play sound ctc
     #(Senna)
-    "Oh se tá maluko meu, seu viado! Você me deixou nervoso!"
+    "Oh se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
     #(Padeiro G)
-    "Calma, calma mais não se irrite... tome um suco de laranja e que eu vou buscar o cacetinho que acabei de fazer."
+    "Calma, calma mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
     play sound ctc
-    "(Alguns momentos se passam e você escuta murmúrios vindo da área do forno.)"
+    "(Alguns momentos se passam e você\nescuta murmúrios vindo da\nárea do forno.)"
     play sound ctc
-    "(Você decide ir conferir)."
+    "(Você decide ir conferir.)"
     play sound ctc
     #(Senna)
     "Está tudo bem?"
     play sound ctc
     #(Padeiro G)
-    "O meu cacetinho ficou preso no fundo do forno e eu não consigo pegar... você pode pegar ele para mim?"
+    "O meu cacetinho ficou preso no\nfundo do forno e eu não consigo\npegar... você pode pegar\nele para mim?"
     play sound ctc
     #(Senna)
     "Mas é claro! Sempre adoro ajudar..."
     play sound ctc
-    "(Você se aproxima do forno e fica de quatro para pegar o pão com maior facilidade.)"
+    "(Você se aproxima do forno e fica\nde quatro para pegar o pão\ncom maior facilidade.)"
     play sound ctc
-    "(Um pouco depois que você entrou, você sente algo GRANDE E GOSTOSO LÁ NO ESTÔMAGO PORRA)"
+    "(Um pouco depois que você entrou,\nvocê sente algo GRANDE E\nGOSTOSO LÁ NO ESTÔMAGO PORRA)"
     play sound ctc
-    "(É o Padeiro G, demonstrando todo o amor por você.)"
-    play sound ctc
-    #(Senna)
-    "AAAAAAAAAAAAAHHHHH OOOOOOOOOOOOOOOOOO AAAAAAAAAAAAIIIII MEU CUR UGH!"
+    "(É o Padeiro G, demonstrando todo\no amor por você.)"
     play sound ctc
     #(Senna)
-    "QUE DELICIA COME MEU CU VAIN, JUDIA DE MIN FILHA DA PUTA ME ESTRUPA CARALHO!"
+    "AAAAAAAAAAAAAHHHHH OOOOOOOOOOOOOOOOOO\nAAAAAAAAAAAAIIIII MEU CUR UGH!"
     play sound ctc
     #(Senna)
-    "AAAAAAAAAAAAHHHH QUE DELICIA DE CACETINHO DO CARAIO AAAAAAAAAAA"
+    "QUE DELICIA COME MEU CU VAIN, JUDIA\nDE MIM FILHA DA PUTA\nME ESTRUPA CARALHO!"
     play sound ctc
     #(Senna)
-    "VAI SE QUE CUME COMEEEE, COME MEU CUUUUUURRRRRR UUUUGH!"
+    "AAAAAAAAAAAAHHHH QUE DELICIA DE\nCACETINHO DO CARAIO AAAAAAAAAAA"
+    play sound ctc
+    #(Senna)
+    "VAI SE QUE CUME COMEEEE, COME MEU\nCUUUUUURRRRRR UUUUGH!"
     play sound ctc
     #(Padeiro G)
     "E aí achou meu cacetinho grande?"
     play sound ctc
     #(Senna)
-    "Amei seu cacetinho, quero mais e mais!"
+    "Amei seu cacetinho, quero mais\ne mais!"
     play sound ctc
     "(...)"
     play sound ctc
@@ -64,9 +64,9 @@ label cap05_01_casa01:
     play sound ctc
     "Que delícia..."
     play sound ctc
-    "Acho que o arrombamento me deixou um pouco traumatizado."
+    "Acho que o arrombamento me\ndeixou um pouco traumatizado."
     play sound ctc
-    "Aquele morador me enganou, maldito mentiroso do caralho."
+    "Aquele morador me enganou,\nmaldito mentiroso do caralho."
     play sound ctc
     "(telefone tocando)"
     play sound ctc
@@ -90,57 +90,57 @@ label cap05_01_casa01:
     play sound ctc
     "Sim, sou eu mesmo."
     play sound ctc
-    "Nós temos uma proposta para você que pode ser do seu interesse."
+    "Nós temos uma proposta para\nvocê que pode ser\ndo seu interesse."
     play sound ctc
-    "Nosso recrutador te viu andando perto da academia e achou seu porte físico muito interessante."
+    "Nosso recrutador te viu andando\nperto da academia e achou\nseu porte físico muito\ninteressante."
     play sound ctc
-    "Descobrimos seu número e agora estamos te ligando para fazer uma proposta muito boa."
+    "Descobrimos seu número e agora\nestamos te ligando para\nfazer uma proposta\nmuito boa."
     play sound ctc
     "E o que seria?"
     play sound ctc
-    "Atuar em um filme pornográfico com a nossa atriz. Filme hétero, padrão."
+    "Atuar em um filme pornográfico\ncom a nossa atriz.\nFilme hétero, padrão."
     play sound ctc
-    "O nosso cachê é de 300 reais por cena. Se a gente gostar da primeira a gente pode fazer cenas de outros filmes."
+    "O nosso cachê é de 300 reais\npor cena. Se a gente gostar da\nprimeira a gente pode fazer\ncenas de outros filmes."
     play sound ctc
     "O que você acha da nossa proposta?"
     play sound ctc
-    "Adorei. Dá pra ganhar um dinheirinho e ainda pegar uma mulher, não é?"
+    "Adorei. Dá pra ganhar um\ndinheirinho e ainda pegar\numa mulher, não é?"
     play sound ctc
-    "Com certeza meu caro, e a nossa atriz é linda, você vai gostar muito dela."
+    "Com certeza meu caro, e a\nnossa atriz é linda, você\nvai gostar muito dela."
     play sound ctc
-    "Então tudo certo, meu querido. Local, data e hora?"
+    "Então tudo certo, meu querido.\nLocal, data e hora?"
     play sound ctc
-    "Vai passar um cara nosso pra ir te buscar em frente a academia. Amanhã, 05:00h da madrugada."
+    "Vai passar um cara nosso pra ir\nte buscar em frente a academia.\nAmanhã, 05:00h da madrugada."
     play sound ctc
-    "A gente é de São Paulo capital. A viagem é por nossa conta."
+    "A gente é de São Paulo capital.\nA viagem é por nossa conta."
     play sound ctc
-    "Caramba, bem rápido hein? Vocês levam isso a sério mesmo, hein?"
+    "Caramba, bem rápido hein? Vocês\nlevam isso a sério mesmo,\nhein?"
     play sound ctc
-    "Tudo bem, eu vou ir aí amanhã. Dá pra fazer a viagem depois do meu trabalho de noite."
+    "Tudo bem, eu vou ir aí amanhã.\nDá pra fazer a viagem depois\ndo meu trabalho de noite."
     play sound ctc
-    "Certo, Alexandre. Primeiro vamos fazer um teste com você só para confirmar que não vai dar problema no filme, certo?"
+    "Certo, Alexandre. Primeiro vamos\nfazer um teste com você só\npara confirmar que não vai\ndar problema no filme, certo?"
     play sound ctc
     "Sem problemas."
     play sound ctc
-    "Se você quiser a gente deixou mais informações lá no nosso anúncio que a gente colocou em frente a sua academia."
+    "Se você quiser a gente deixou mais\ninformações lá no nosso anúncio que\na gente colocou em frente a\nsua academia."
     play sound ctc
-    "Tudo certo, mas tarde vou dar uma olhada nele."
+    "Tudo certo, mas tarde vou dar uma\nolhada nele."
     play sound ctc
-    "Então até amanhã, Alexandre. Foi bom fazer negócio com você! Tchau tchau."
+    "Então até amanhã, Alexandre. Foi\nbom fazer negócio com você!\nTchau tchau."
     play sound ctc
     "(desligou o telefone)"
     play sound ctc
     "Nossa, que maravilha. Ator pornô..."
     play sound ctc
-    "Ganhar dinheiro fácil, viajar pra São Paulo e ainda poder degustar várias mulheres... que incrível."
+    "Ganhar dinheiro fácil, viajar pra\nSão Paulo e ainda poder degustar\nvárias mulheres... que incrível."
     play sound ctc
-    "Nossa, já tô atrasado pro trabalho. Amanhã eu penso nisso."
-    play sound ctc
-    "(...)"
+    "Nossa, já tô atrasado pro\ntrabalho. Amanhã eu penso\nnisso."
     play sound ctc
     "(...)"
     play sound ctc
-    "(dia seguinte, São Paulo, 10:00 na Avenida Serra Paulista número 60)"
+    "(...)"
+    play sound ctc
+    "(dia seguinte, São Paulo, 10:00,\nAvenida Serra Paulista,\nnúmero 60)"
     play sound ctc
 
     return
@@ -149,9 +149,9 @@ label wrong_end_05_01_1:
     stop music
     "(desligou o telefone)"
     play sound ctc
-    "Com certeza era aquele filho da puta que faz trote todo santo dia."
+    "Com certeza era aquele filho da\nputa que faz trote todo\nsanto dia."
     play sound ctc
-    "Eu vou pegar o número dele depois e chamar a polícia, que se dane."
+    "Eu vou pegar o número dele\ndepois e chamar a polícia,\nque se dane."
     play sound ctc
     "Quer dizer... depois."
     play sound ctc
@@ -159,39 +159,39 @@ label wrong_end_05_01_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "(Você sai de casa para dar um passeio no parque, sem camisa.)"
+    "(Você sai de casa para dar\num passeio no parque,\nsem camisa.)"
     play sound ctc
-    "Nossa, mas que parque lindo. Coisa linda de se ver."
+    "Nossa, mas que parque lindo.\nCoisa linda de se ver."
     play sound ctc
-    "(O cheiro das flores e a brisa aconchegante te acalmam.)"
+    "(O cheiro das flores e a\nbrisa aconchegante te\nacalmam.)"
     play sound ctc
     "Que sensação maravilhosa-"
     play sound ctc
     "(...!)"
     play sound ctc
-    "(Você vê uma linda garota no banco do parque, parece ser japonesa.)"
+    "(Você vê uma linda garota\nno banco do parque,\nparece ser japonesa.)"
     play sound ctc
-    "(Ela está usando um roupão tradicional japonês também.)"
+    "(Ela está usando um roupão\ntradicional japonês\ntambém.)"
     play sound ctc
     "(Como que chama mesmo?)"
     play sound ctc
     "(Guinomo?)"
     play sound ctc
-    "(A garota te chama para sentar ao lado dela com o dedo indicador de forma bem erótica.)"
+    "(A garota te chama para\nsentar ao lado dela com\no dedo indicador de forma\nbem erótica.)"
     play sound ctc
     "(Eu não resisto, vain.)"
     play sound ctc
-    "(Você senta ao lado dela e começa a conversar.)"
+    "(Você senta ao lado dela\ne começa a conversar.)"
     play sound ctc
-    "Olá, moça. Você é japonesa? Que roupa linda a sua!"
+    "Olá, moça. Você é japonesa?\nQue roupa linda a sua!"
     play sound ctc
-    "Gostou? A cultura japonesa é realmente encantadora mesmo."
+    "Gostou? A cultura japonesa é\nrealmente encantadora mesmo."
     play sound ctc
     "Encantadora e bem peculiar..."
     play sound ctc
     "(cof cof)"
     play sound ctc
-    "(Você sente um cheiro estranho e começa a ficar extremamente tonto!)"
+    "(Você sente um cheiro estranho\ne começa a ficar extremamente\ntonto!)"
     play sound ctc
     "(Mooooooççççaaaaa...!)"
     play sound ctc
@@ -203,27 +203,28 @@ label wrong_end_05_01_1:
     play sound ctc
     "AAAHHH!"
     play sound ctc
-    "(Você acorda em um tatame, vestido com uma roupa igual a que você usa no judô e uma bandana do Japão.)"
+    "(Você acorda em um tatame,\nvestido com uma roupa igual\na que você usa no judô\ne uma bandana do Japão.)"
     play sound ctc
     "Que porra é essa?"
     play sound ctc
-    "(Você vira pra trás e vê a mesma garota linda do parque.)"
+    "(Você vira pra trás e vê a\nmesma garota linda do parque.)"
     play sound ctc
-    "(Ela joga a roupa toda dela no chão de uma vez, ficando nua.)"
+    "(Ela joga a roupa toda dela\nno chão de uma vez,\nficando nua.)"
     play sound ctc
-    "(\"Japonesas tem três pernas?\", é a primeira coisa que você pensa.)"
+    "(\"Japonesas tem três pernas?\",\né a primeira coisa que você pensa.)"
     play sound ctc
     "(Não, espera aí...!)"
     play sound ctc
-    "Vou te ensinar muita coisa nova hoje, gostosão."
+    "Vou te ensinar muita coisa nova\nhoje, gostosão."
     play sound ctc
-    "(Antes que você pudesse pensar em alguma coisa, você começa a ter uma aula de cultura japonesa.)"
+    "(Antes que você pudesse pensar em\nalguma coisa, você começa a ter\numa aula de cultura japonesa.)"
     play sound ctc
-    "(\"Que cultura esquisita!\", você pensa novamente.)"
+    "(\"Que cultura esquisita!\",\nvocê pensa novamente.)"
     play sound ctc
     "(...)"
     play sound ctc
-    "WAKARANAI... WAKARANAI!"
+    voice voz_cap05_01_01
+    "UUUHHH... WAKARANAI... WAKARANAI!\nAAAHHHH!!"
     play sound ctc
     $ register_ending("V")
     jump game_over

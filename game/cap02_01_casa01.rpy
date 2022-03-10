@@ -68,7 +68,7 @@ label wrong_end_02_01_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "(três meses depois)"
+    "(seis meses depois)"
     play sound ctc
     "(É o seu primeiro dia de ronda\nna Polícia Militar de Cupiqueno!)"
     play sound ctc
@@ -76,10 +76,19 @@ label wrong_end_02_01_1:
     "(Sua mãe te liga, emocionada com sua\nconquista.)"
     play sound ctc
     stop music
-    "(Você acaba de receber um chamado de,\noutra viatura, você apenas\nresponde antes de desligar:)"
+    "(Você acaba de receber um chamado de\noutra viatura, você apenas\nresponde antes de desligar:)"
     play sound ctc
     "TÁ ATRAPALHANDO MEU TRABALHO, SEU...!"
     play sound ctc
+    "(desligou o telefone)"
+    play sound ctc
+    "Tenho que atender o chamado\nda viatura...!"
+    play sound ctc
+    "(...)"
+    play sound ctc
+
+    window hide(None)
+    $ game_over_pos_cutscene = True
     $ renpy.movie_cutscene("mod_assets/videos/policial.webm")
     $ register_ending("F")
     jump game_over

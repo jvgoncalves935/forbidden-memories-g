@@ -69,32 +69,32 @@ label cap03_03_doutora02:
     play sound ctc
     $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
     play music audio.fm_plazatown
-    voice voz_cap03_02_01
+    voice voz_cap03_03_01
     "...Toque, eu quero saber o que\ntá acontecendo com meu cu...\nsó isso..."
     play sound ctc
     #(0:11 - 0:14 doutora)
-    voice voz_cap03_02_02
+    voice voz_cap03_03_02
     "Só isso, e nada mais?"
     play sound ctc
     #(0:14 -0:25 Senna)
-    voice voz_cap03_02_03
+    voice voz_cap03_03_03
     "Coceira... sinto um calor, sabe aquele\ncalor que sai de dentro, eu não sei o\nque é, tô sentindo umas coisas\nesquisitas..."
     play sound ctc
     #(0:25 - 0:32 Senna)
-    voice voz_cap03_02_04
+    voice voz_cap03_03_04
     "Né? E eu sou casado e tudo... e pra mim \né estranho isso daí... Né...\ntem como a senhora dar um\ndiagnóstico e tudo?"
     play sound ctc
     #(0:32 - 0:34 doutora)
-    voice voz_cap03_02_05
+    voice voz_cap03_03_05
     "Ah, primeiro eu tenho que dar uma\nolhadinha..."
     play sound ctc
     #(0:34 - 0:34 Senna)
     #(0:34 - 0:35 doutora)
-    voice voz_cap03_02_06
+    voice voz_cap03_03_06
     "Então vamo lá?"
     play sound ctc
     #(0:37 - 0:37 doutora)
-    voice voz_cap03_02_07
+    voice voz_cap03_03_07
     "Deita na mesa!"
     play sound ctc
     play music audio.fm_password
@@ -108,40 +108,40 @@ label cap03_03_doutora02:
     stop music
     play music audio.fm_plazatown
     #(0:37 - 0:44 Senna)
-    voice voz_cap03_02_08
+    voice voz_cap03_03_08
     "Já tô há dias aqui meu... Pô...\nÉ... Roupa de hospital e tudo, né..."
     play sound ctc
     #(0:49 - 0:49 doutora)
-    voice voz_cap03_02_09
+    voice voz_cap03_03_09
     "Relaxa e fica à vontade!"
     play sound ctc
     #(0:50 - 0:51 Senna)
-    voice voz_cap03_02_10
+    voice voz_cap03_03_10
     "O que a senhora vai fazer...?"
     play sound ctc
     "(Você sente uma aura malígna vindo\nda doutora, ela é indiscritivelmente\nsombria.)"
     play sound ctc
     #(0:52 - 0:53 doutora)
-    voice voz_cap03_02_11
+    voice voz_cap03_03_11
     "Um exame de toque..."
     play sound ctc
     #(0:55 - 0:55 Senna)
-    voice voz_cap03_02_12
+    voice voz_cap03_03_12
     "...Toque?"
     play sound ctc
     #(0:56 - 1:00 Senna)
     "(Você levou uma dedada da doutora!)"
-    voice voz_cap03_02_13
+    voice voz_cap03_03_13
     "Ai doutora... coisa mais esquisita..."
     play sound ctc
     #(1:00 - 1:02 doutora)
     "(Seu instinto de sobrevivência te\ndeixa inquieto, o perigo é\niminente...)"
     play sound ctc
-    voice voz_cap03_02_14
+    voice voz_cap03_03_14
     "Cuzinho quentinho também..."
     play sound ctc
     #(1:03 - 1:07 doutora)
-    voice voz_cap03_02_15
+    voice voz_cap03_03_15
     "Por enquanto vamos ver... a gente\ntem que dar uma olhadinha\nmais profundamente... O que\nvocê acha?"
     play sound ctc
     #(1:08 - 1:12 Senna)
@@ -155,72 +155,72 @@ label cap03_03_doutora02:
     hide textbox_aux
     stop music
     play music fm_preliminary_faceoff
-    voice voz_cap03_02_16
+    voice voz_cap03_03_16
     "Ah, eu acho que... Você é muito\ngostosa..."
     play sound ctc
     #(1:13 - 1:15 doutora)
-    voice voz_cap03_02_17
+    voice voz_cap03_03_17
     "Teria que examinar mais profundamente\nseu reto."
     play sound ctc
     #(1:16 - 1:20 Senna)
-    voice voz_cap03_02_18
+    voice voz_cap03_03_18
     "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
     play sound ctc
     #(1:22 - 1:33 Senna)
-    voice voz_cap03_02_19
+    voice voz_cap03_03_19
     "METE... METE NO MEU CU PUTA... VAI\nPUTA... FODE MEU CU..."
     play sound ctc
-    voice voz_cap03_02_20
+    voice voz_cap03_03_20
     "VAI TA CANSADINHA TÁ...? NÃO\nGOSTA DE CU NÃO, PORRA?"
     play sound ctc
     #(1:33 - 1:41 Senna)
-    voice voz_cap03_02_21
+    voice voz_cap03_03_21
     "AAHH... AAAAHHH... AAAAAHHHH! FODE!\nFODE...! FODE MEU CU...\nFODE PORRA!"
     play sound ctc
     #(1:42 - 1:55 Senna)
-    voice voz_cap03_02_22
+    voice voz_cap03_03_22
     "ISSO...VAI CARALHOOO! METE COM FORÇA\nPORRA... METE..."
     play sound ctc
-    voice voz_cap03_02_23
+    voice voz_cap03_03_23
     "METE COM FORÇA... METE COM\nFORÇA... METE NO MEU CU\nCOM FORÇA... METE COM FORÇA...\nMETE..."
     play sound ctc
     #(1:55 - 2:05 Senna)
-    voice voz_cap03_02_24
+    voice voz_cap03_03_24
     "VAI ESPANCA MEU CU... VAI ME ESTUPRA\nCARALHO... METE COM FORÇA...\nMETE COM FORÇA... ISSOOO!\nAAAH...!"
     play sound ctc
     #(2:05 - 2:11 Senna)
     #(2:11 - 2:22 Senna)
-    voice voz_cap03_02_25
+    voice voz_cap03_03_25
     "ISSO, AAAAAHHHH, AAAAHHHHH,\nAAAAIIIIII!!! FODE... FODE RÁPIDO...\nFODE... FODE...!"
     play sound ctc
-    voice voz_cap03_02_26
+    voice voz_cap03_03_26
     "FODE RÁPIDO, BEM RÁPIDO\nVAI... VAI VOCÊ NÃO\nTÁ CANSADA..."
     play sound ctc
     #(2:22 - 2:33 Senna)
-    voice voz_cap03_02_27
+    voice voz_cap03_03_27
     "VAI... VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
     play sound ctc
     #(2:34 - 2:42 Senna /pré liminar AÍ DOUTORA)
-    voice voz_cap03_02_28
+    voice voz_cap03_03_28
     "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII AI MEU CU! UUGH..."
     play sound ctc
     #(2:42 - 2:55 Senna doutora scene)
-    voice voz_cap03_02_29
+    voice voz_cap03_03_29
     "AI QUE DELÍCIA DOUTORA... AI\nDOUTORA, AI DOUTORA,\nAI DOUTORA..."
     play sound ctc
-    voice voz_cap03_02_30
+    voice voz_cap03_03_30
     "CARALHO... TO SENTINDO LÁ NO\nESTÔMAGO PORRA, QUE PAUZÃO...\nQUE PAUZÃO GAROTA..."
     play sound ctc
     #(2:57 - 3:05 Senna)
-    voice voz_cap03_02_31
+    voice voz_cap03_03_31
     "Doutora... Agora eu estou me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
     play sound ctc
     #(3:05 - 3:07 doutora)
-    voice voz_cap03_02_32
+    voice voz_cap03_03_32
     "Sempre que precisar de uma\nconsulta pode vir!"
     play sound ctc
     #(3:07 - 3:08 Senna)
-    voice voz_cap03_02_33
+    voice voz_cap03_03_33
     "Tá bom!"
     play sound ctc
     stop music

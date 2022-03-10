@@ -30,7 +30,7 @@ label epilogo:
     "Não..."
     play sound ctc
     #(0:09 - 0:11 guina)
-    "Porque você tá com medo...?  Tá fazendo o quê?"
+    "Porque você tá com medo...? Tá fazendo\no quê?"
     play sound ctc
     #(0:11 - 0:11aluno)
     "Tô fazendo nada não...!"
@@ -48,7 +48,7 @@ label epilogo:
     "Tem nada não..."
     play sound ctc
     #(0:18 - 0;23 guina)
-    "Isso aqui é o quê...? Tá vendo revista de homem pelado, tá vendo pau é?"
+    "Isso aqui é o quê...? Tá vendo\nrevista de homem pelado,\ntá vendo pau é?"
     play sound ctc
     #(0:24 - 0:24 aluno)
     "Tava não..."
@@ -56,7 +56,7 @@ label epilogo:
     #(0:25 - 0:44 guina)
     "E isso aqui é o que?..."
     play sound ctc
-    "Tá vendo pau em revista...? PEGA NUM ORIGINAL, NUM DE VERDADE!"
+    "Tá vendo pau em revista...? PEGA NUM\nORIGINAL, NUM DE VERDADE!"
     play sound ctc
     "Vem aqui, você não quer ver um pau...?"
     play sound ctc
