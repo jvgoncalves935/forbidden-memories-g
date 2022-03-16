@@ -3,6 +3,7 @@ label cap05_03_doutor:
     stop music
     show textbox_black at center
     #show intro_001 at top
+    play sound audio.millenniumitem
     "(Senna conseguiu o Milzão!)"
     play sound ctc
     "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"

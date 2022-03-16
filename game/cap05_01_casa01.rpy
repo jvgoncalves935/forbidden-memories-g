@@ -7,10 +7,10 @@ label cap05_01_casa01:
     "Onde, onde, onde? Cadê o arrombamento?"
     play sound ctc
     #(Padeiro G)
-    "Bem na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
+    "Bem... na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
     play sound ctc
     #(Senna)
-    "Oh se tá maluco meu, seu viado! Você\nme deixou nervoso!"
+    "Oh, se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
     #(Padeiro G)
     "Calma, calma mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
@@ -140,7 +140,7 @@ label cap05_01_casa01:
     play sound ctc
     "(...)"
     play sound ctc
-    "(dia seguinte, São Paulo, 10:00,\nAvenida Serra Paulista,\nnúmero 60)"
+    "(dia seguinte, São Paulo, 10:00,\nRua Serra Paulista,\nnúmero 60)"
     play sound ctc
 
     return

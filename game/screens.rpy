@@ -48,7 +48,7 @@ style font_creditos_menu:
 
 style font_creditos_menu_2:
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
-    size 20
+    size 30
     color "#020202"
     outlines [(2, "#0F0F0F", 2, 2),(1, "#1A1A1A", 2, 2)]
     line_overlap_split 1
@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
+            textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
                 style "page_label_text"
                 text_size 12
     
@@ -376,7 +376,7 @@ screen choice(items):
         xalign 0.96
         yalign 0.98
         
-        textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
+        textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
             style "page_label_text"
             text_size 12
     
@@ -625,7 +625,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("CLOSED PRE-ALPHA 0.1.3 (WIP)"):
+            textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
                 style "page_label_text"
                 text_size 12
 
@@ -1117,7 +1117,7 @@ screen converting_minds_scr():
     add "black"
 
     if(is_all_endings_unlocked()):
-        textbutton _("comi o cu de quem tá lendo"):
+        textbutton _("?v=pXFuqH4AXTU"):
             xalign 0.5
             yalign 0.5
             
@@ -1763,11 +1763,33 @@ screen endings():
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.66
-            yalign 0.71
+            yalign 0.66
             textbutton _("Carta 54"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="mark.png",card=27),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=27),Function(guinodia,False,0)]
+                unhovered [Hide("side_img_left")]
+                action [NullAction()]
+
+    if(is_all_endings_unlocked()):
+        vbox:
+            xalign 0.795
+            yalign 0.66
+            textbutton _("Carta 55"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="sarcofago.png",card=28),Function(guinodia,False,0)]
+                unhovered [Hide("side_img_left")]
+                action [NullAction()]
+
+    if(is_all_endings_unlocked()):
+        vbox:
+            xalign 0.66
+            yalign 0.71
+            textbutton _("Carta 56"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="mark.png",card=29),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1775,10 +1797,10 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.71
-            textbutton _("Carta 55"):
+            textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="taeyeon.png",card=28),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="taeyeon.png",card=30),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1786,10 +1808,10 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.71
-            textbutton _("Carta 56"):
+            textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=29),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=31),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1959,7 +1981,7 @@ init python:
             return FileAction(name)
 
 
-screen file_slots(title,current_song=None):
+screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern="Página {}")
 
@@ -1973,7 +1995,12 @@ screen file_slots(title,current_song=None):
         xalign 0.5
         yalign 0.025
         style "page_label_text"
-        text_size 28
+        
+        if(title == "Salvar"):
+            text_style "font_menu_save"
+        else:
+            text_style "font_menu_load"
+            
 
     hbox:
         box_wrap True
@@ -2741,6 +2768,28 @@ style confirm_button_2:
     outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
     insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+
+style font_menu_save:
+    #size_group "navigation"
+    xalign 0.5
+    yalign 0.5
+    size 28
+
+    outlines [(6, "#5c0707", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+
+style font_menu_load:
+    #size_group "navigation"
+    xalign 0.5
+    yalign 0.5
+    size 28
+
+    outlines [(6, "#070e5c", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
 
 style confirm_button_3:
     size_group "navigation"

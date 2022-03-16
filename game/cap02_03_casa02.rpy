@@ -60,7 +60,7 @@ label cap02_03_casa02:
     menu:
         "<Atender a campainha>":
             hide textbox_aux
-            call cap02_03_casa02_campainha
+            call cap02_03_casa02_campainha from _call_cap02_03_casa02_campainha
         "<Fingir que não está em casa>":
             hide textbox_aux
             "(Você ignora a campainha, fingindo que\nnão tem ninguém em casa)."

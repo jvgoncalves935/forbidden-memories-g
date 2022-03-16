@@ -320,6 +320,8 @@ define deck_g_names = [
     "Coringa Dano",
     "Sandro Lima, O Arquiteto do Universo G",
     "Guinodia, O Proibido",
+    "Danger?! Gilson?",
+    "Sarcófago da Ícaro Studios",
     "Mark_77Souls, O Esquizofrêncio",
     "Taeyeon115, Oberfuhrer do COD Mobile",
     "Master Exploder, O Calvo Supremo"
@@ -466,6 +468,12 @@ image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l
 
 ###################Imagens
 image guinodia_movie = Movie(play="mod_assets/videos/guinodia.webm",size=(960,720))
+image pelada_james_02 = Movie(play="mod_assets/videos/pelada_james_02.webm",size=(960,720))
+image pelada_james_03 = Movie(play="mod_assets/videos/pelada_james_03.webm",size=(960,720))
+image pelada_james_04 = Movie(play="mod_assets/videos/pelada_james_04.webm",size=(960,720))
+image pelada_james_05 = Movie(play="mod_assets/videos/pelada_james_05.webm",size=(960,720))
+image pelada_james_06 = Movie(play="mod_assets/videos/pelada_james_06.webm",size=(960,720))
+image pelada_james_07 = Movie(play="mod_assets/videos/pelada_james_07.webm",size=(960,720))
 
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
@@ -499,7 +507,6 @@ image corredor_ddlc = "mod_assets/images/capXX/corridor.png"
 image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 
 ###################Musicas 
-define audio.nao_venha_me_dizer = "<loop 0.0>mod_assets/music/nao_venha_me_dizer.ogg"
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
 
@@ -517,6 +524,10 @@ define audio.fm_password = "<loop 1.833>mod_assets/music/fm_password.ogg"
 define audio.fm_library = "<loop 0.70>mod_assets/music/fm_library.ogg"
 define audio.fm_credits = "<loop 0.00>mod_assets/music/fm_credits.ogg"
 define audio.fm_sebek_neku = "<loop 0.00>mod_assets/music/fm_sebek_neku.ogg"
+define audio.fm_finals = "<loop 21.066>mod_assets/music/fm_finals.ogg"
+define audio.fm_finals_faceoff = "<loop 2.233>mod_assets/music/fm_finals_faceoff.ogg"
+define audio.fm_youlose = "mod_assets/music/fm_youlose.ogg"
+define audio.fm_youwin = "<loop 9.2>mod_assets/music/fm_youwin.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -533,10 +544,92 @@ define voz_cap01_02_01 = "mod_assets/voices/01_02/01_02_01.ogg"
 
 #01_03
 define voz_cap01_03_01 = "mod_assets/voices/01_03/01_03_01.ogg"
+define voz_cap01_03_02 = "mod_assets/voices/01_03/01_03_02.ogg"
+define voz_cap01_03_03 = "mod_assets/voices/01_03/01_03_03.ogg"
+define voz_cap01_03_04 = "mod_assets/voices/01_03/01_03_04.ogg"
+define voz_cap01_03_05 = "mod_assets/voices/01_03/01_03_05.ogg"
+define voz_cap01_03_06 = "mod_assets/voices/01_03/01_03_06.ogg"
+define voz_cap01_03_07 = "mod_assets/voices/01_03/01_03_07.ogg"
+define voz_cap01_03_08 = "mod_assets/voices/01_03/01_03_08.ogg"
+define voz_cap01_03_09 = "mod_assets/voices/01_03/01_03_09.ogg"
+define voz_cap01_03_10 = "mod_assets/voices/01_03/01_03_10.ogg"
+define voz_cap01_03_11 = "mod_assets/voices/01_03/01_03_11.ogg"
+define voz_cap01_03_12 = "mod_assets/voices/01_03/01_03_12.ogg"
+define voz_cap01_03_13 = "mod_assets/voices/01_03/01_03_13.ogg"
+define voz_cap01_03_14 = "mod_assets/voices/01_03/01_03_14.ogg"
+define voz_cap01_03_15 = "mod_assets/voices/01_03/01_03_15.ogg"
+define voz_cap01_03_16 = "mod_assets/voices/01_03/01_03_16.ogg"
+define voz_cap01_03_17 = "mod_assets/voices/01_03/01_03_17.ogg"
+define voz_cap01_03_18 = "mod_assets/voices/01_03/01_03_18.ogg"
+define voz_cap01_03_19 = "mod_assets/voices/01_03/01_03_19.ogg"
+define voz_cap01_03_20 = "mod_assets/voices/01_03/01_03_20.ogg"
+define voz_cap01_03_21 = "mod_assets/voices/01_03/01_03_21.ogg"
+define voz_cap01_03_22 = "mod_assets/voices/01_03/01_03_22.ogg"
+define voz_cap01_03_23 = "mod_assets/voices/01_03/01_03_23.ogg"
+define voz_cap01_03_24 = "mod_assets/voices/01_03/01_03_24.ogg"
+define voz_cap01_03_25 = "mod_assets/voices/01_03/01_03_25.ogg"
+define voz_cap01_03_26 = "mod_assets/voices/01_03/01_03_26.ogg"
+define voz_cap01_03_27 = "mod_assets/voices/01_03/01_03_27.ogg"
+define voz_cap01_03_28 = "mod_assets/voices/01_03/01_03_28.ogg"
+define voz_cap01_03_29 = "mod_assets/voices/01_03/01_03_29.ogg"
+define voz_cap01_03_30 = "mod_assets/voices/01_03/01_03_30.ogg"
 
 
 #01_04
 define voz_cap01_04_01 = "mod_assets/voices/01_04/01_04_01.ogg"
+define voz_cap01_04_02 = "mod_assets/voices/01_04/01_04_02.ogg"
+define voz_cap01_04_03 = "mod_assets/voices/01_04/01_04_03.ogg"
+define voz_cap01_04_04 = "mod_assets/voices/01_04/01_04_04.ogg"
+define voz_cap01_04_05 = "mod_assets/voices/01_04/01_04_05.ogg"
+define voz_cap01_04_06 = "mod_assets/voices/01_04/01_04_06.ogg"
+define voz_cap01_04_07 = "mod_assets/voices/01_04/01_04_07.ogg"
+define voz_cap01_04_08 = "mod_assets/voices/01_04/01_04_08.ogg"
+define voz_cap01_04_09 = "mod_assets/voices/01_04/01_04_09.ogg"
+define voz_cap01_04_10 = "mod_assets/voices/01_04/01_04_10.ogg"
+define voz_cap01_04_11 = "mod_assets/voices/01_04/01_04_11.ogg"
+define voz_cap01_04_12 = "mod_assets/voices/01_04/01_04_12.ogg"
+define voz_cap01_04_13 = "mod_assets/voices/01_04/01_04_13.ogg"
+define voz_cap01_04_14 = "mod_assets/voices/01_04/01_04_14.ogg"
+define voz_cap01_04_15 = "mod_assets/voices/01_04/01_04_15.ogg"
+define voz_cap01_04_16 = "mod_assets/voices/01_04/01_04_16.ogg"
+define voz_cap01_04_17 = "mod_assets/voices/01_04/01_04_17.ogg"
+define voz_cap01_04_18 = "mod_assets/voices/01_04/01_04_18.ogg"
+define voz_cap01_04_19 = "mod_assets/voices/01_04/01_04_19.ogg"
+define voz_cap01_04_20 = "mod_assets/voices/01_04/01_04_20.ogg"
+define voz_cap01_04_21 = "mod_assets/voices/01_04/01_04_21.ogg"
+define voz_cap01_04_22 = "mod_assets/voices/01_04/01_04_22.ogg"
+define voz_cap01_04_23 = "mod_assets/voices/01_04/01_04_23.ogg"
+define voz_cap01_04_24 = "mod_assets/voices/01_04/01_04_24.ogg"
+define voz_cap01_04_25 = "mod_assets/voices/01_04/01_04_25.ogg"
+define voz_cap01_04_26 = "mod_assets/voices/01_04/01_04_26.ogg"
+define voz_cap01_04_27 = "mod_assets/voices/01_04/01_04_27.ogg"
+define voz_cap01_04_28 = "mod_assets/voices/01_04/01_04_28.ogg"
+define voz_cap01_04_29 = "mod_assets/voices/01_04/01_04_29.ogg"
+define voz_cap01_04_30 = "mod_assets/voices/01_04/01_04_30.ogg"
+define voz_cap01_04_31 = "mod_assets/voices/01_04/01_04_31.ogg"
+define voz_cap01_04_32 = "mod_assets/voices/01_04/01_04_32.ogg"
+define voz_cap01_04_33 = "mod_assets/voices/01_04/01_04_33.ogg"
+define voz_cap01_04_34 = "mod_assets/voices/01_04/01_04_34.ogg"
+define voz_cap01_04_35 = "mod_assets/voices/01_04/01_04_35.ogg"
+define voz_cap01_04_36 = "mod_assets/voices/01_04/01_04_36.ogg"
+define voz_cap01_04_37 = "mod_assets/voices/01_04/01_04_37.ogg"
+define voz_cap01_04_38 = "mod_assets/voices/01_04/01_04_38.ogg"
+define voz_cap01_04_39 = "mod_assets/voices/01_04/01_04_39.ogg"
+define voz_cap01_04_40 = "mod_assets/voices/01_04/01_04_40.ogg"
+define voz_cap01_04_41 = "mod_assets/voices/01_04/01_04_41.ogg"
+define voz_cap01_04_42 = "mod_assets/voices/01_04/01_04_42.ogg"
+define voz_cap01_04_43 = "mod_assets/voices/01_04/01_04_43.ogg"
+define voz_cap01_04_44 = "mod_assets/voices/01_04/01_04_44.ogg"
+define voz_cap01_04_45 = "mod_assets/voices/01_04/01_04_45.ogg"
+define voz_cap01_04_46 = "mod_assets/voices/01_04/01_04_46.ogg"
+define voz_cap01_04_47 = "mod_assets/voices/01_04/01_04_47.ogg"
+define voz_cap01_04_48 = "mod_assets/voices/01_04/01_04_48.ogg"
+define voz_cap01_04_49 = "mod_assets/voices/01_04/01_04_49.ogg"
+define voz_cap01_04_50 = "mod_assets/voices/01_04/01_04_50.ogg"
+define voz_cap01_04_51 = "mod_assets/voices/01_04/01_04_51.ogg"
+define voz_cap01_04_52 = "mod_assets/voices/01_04/01_04_52.ogg"
+define voz_cap01_04_53 = "mod_assets/voices/01_04/01_04_53.ogg"
+define voz_cap01_04_54 = "mod_assets/voices/01_04/01_04_54.ogg"
 
 
 #02_01
@@ -818,6 +911,8 @@ define audio.fm_back = "mod_assets/sounds/back.ogg"
 define audio.fm_error = "mod_assets/sounds/error.ogg"
 define audio.fm_arrow_select = "mod_assets/sounds/arrow_select.ogg"
 define audio.oco = "mod_assets/sounds/oco.ogg"
+define audio.millenniumitem = "mod_assets/sounds/millenniumitem.ogg"
+
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
 ############################################################################################################

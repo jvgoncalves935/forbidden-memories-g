@@ -77,7 +77,7 @@ label cap02_02_oficina_gringo:
     "He's okay for you, Anita? You\nliked him, yes?"
     play sound ctc
     voice voz_cap02_02_20
-    "Yas..."
+    "YAS."
     play sound ctc
     voice voz_cap02_02_21
     "Ok, you know... I'll leave you alone..."
