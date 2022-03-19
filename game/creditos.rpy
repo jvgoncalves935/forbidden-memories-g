@@ -676,7 +676,7 @@ image cred_19_02:
     align (0.85,0.5)
     zoom 0.75
     alpha 0.0
-    Text("???????????", style="credits_text")
+    "mod_assets/images/deck/sarcofago.png"
     linear 0.8 alpha 1.0
     time 2.5
     linear 1.5 alpha 0.0
@@ -1114,6 +1114,24 @@ image cred_44_02:
     time 2.5
     linear 1.5 alpha 0.0
 
+image cred_442_01:
+    align (0.15,0.5)
+    zoom 0.75
+    alpha 0.0
+    "mod_assets/images/deck/danger_gilson.png"
+    linear 0.8 alpha 1.0
+    time 2.5
+    linear 1.5 alpha 0.0
+
+image cred_442_02:
+    align (0.85,0.5)
+    zoom 0.75
+    alpha 0.0
+    "mod_assets/images/deck/pegasus.png"
+    linear 0.8 alpha 1.0
+    time 2.5
+    linear 1.5 alpha 0.0
+
 image cred_45_01:
     align (0.5,0.15)
     alpha 0.0
@@ -1545,6 +1563,11 @@ label creditos:
 
     show cred_44_01
     show cred_44_02
+    pause 4
+    scene black
+
+    show cred_442_01
+    show cred_442_02
     pause 4
     scene black
 

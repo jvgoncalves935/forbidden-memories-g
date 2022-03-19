@@ -241,7 +241,7 @@ label capXX:
     "{p=0.6}{nw}"
     show yuri_s2 at side_image_in zorder 3
     "{p=0.6}{nw}"
-    "SOCORRO! UM ESTUPRADOR!"
+    "SOCORRO! UM PERVERTIDO!"
     play sound ctc
     "SOCORROOOOO!!!"
     play sound ctc

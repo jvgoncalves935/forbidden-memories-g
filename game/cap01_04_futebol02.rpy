@@ -3,46 +3,36 @@ label cap01_04_futebol02:
     stop music
     show textbox_black at center
     #show intro_001 at top
-    #(Índio 01:25 - 1:27)
     play music audio.fm_finals_faceoff
     voice voz_cap01_04_01
     "Que putaria é essa aí de pau duro aí,\nolha aí!"
     play sound ctc
-    #(Índio 01:26 - 1:31)
     voice voz_cap01_04_02
     "Porra, vamo lá jogar esse futebol,\nvamo lá... Bora galera!"
     play sound ctc
     voice voz_cap01_04_03
     "Chega aê, chega aê!"
     play sound ctc
-    #(Figurante2 01:37 - 1:39)
     voice voz_cap01_04_04
     "Demoraram, hein?"
     play sound ctc
-    #(Figurante3 01:39 - 01:40)
     voice voz_cap01_04_05
     "Eita, quê que rolou aí, porra?"
-    #(Senna 01:41 - 01:42)
     play sound ctc
     voice voz_cap01_04_06
     "A gente tava aquecendo!"
-    #(Figurante4 01:46 - 01:48)
     play sound ctc
     voice voz_cap01_04_07
     "Aquecimento, aquecimento, cara!"
     play sound ctc
     voice voz_cap01_04_08
     "ÊÊÊÊ, esse aquecimento aí, hein!"
-    #(Figurante4 01:50 - 01:51)
     play sound ctc
     voice voz_cap01_04_09
     "Ow beleza, como é que vai?"
-    #(Goleiro 01:50 - 01:51)
-    #(Senna 01:53 - 01:54)
     play sound ctc
     voice voz_cap01_04_10
     "É, e esse pintão aí?"
-    #(Figurante5 01:59 - 2:00)
     play sound ctc
     voice voz_cap01_04_11
     "Eeeeeeee, aí teve, hein?!"
@@ -52,7 +42,6 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_13
     "Quem foi que deu pra quem aí?\n(multidão)"
-    #(Índio 02:06 - 02:10)
     play sound ctc
     voice voz_cap01_04_14
     "TROCA-TROCA? (ihhh ihhh)"
@@ -62,11 +51,9 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_16
     "AAAAAAAAAAHHH! AAAAHHH,\ntu deu pra ele, né?"
-    #(Senna 02:11 - 02:19)
     play sound ctc
     voice voz_cap01_04_17
     "Tsc tsc tsc, dei nada! A gente só\ntava aquecendo aê, ow Davis... só tava\naquecendo aí ó, os cara...\nNada a ver...!"
-    #(Figurante5 02:22 - 02:23)
     play sound ctc
     voice voz_cap01_04_18
     "Vamo aê, vamo aê!"
@@ -108,19 +95,16 @@ label cap01_04_futebol02:
     "OLHA A BOMBAAA! AÍ, MEU GOLEIRO!{p=2.5}{nw}"
     hide pelada_james_03
 
-    #(John 02:54 - 02:58)
     voice voz_cap01_04_21
     "ISSO MEU GOLEIRO!! ISSO, ISSO, ISSO!"
     play sound ctc
     voice voz_cap01_04_22
     "ISSO, ISSO, ISSO, FALOU\nMEU GOLEIRO!"
-    #(Senna 02:58 - 02:59)
     play sound ctc
     voice voz_cap01_04_23
     "Valeu!"
     play sound ctc
     "(Você levou uma dedada de James\nMatarazzo!)"
-    #(John 02:59 - 03:00)
     play sound ctc
     voice voz_cap01_04_24
     "Simbora, simbora, simbora!"
@@ -162,7 +146,6 @@ label cap01_04_futebol02:
 
     voice voz_cap01_04_22
     "ISSO, ISSO, ISSO, FALOU\nMEU GOLEIRO!"
-    #(Senna 02:58 - 02:59)
     play sound ctc
 
     show pelada_james_05
@@ -204,7 +187,6 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_25
     "Marca porra, não deixa o\ncara vim!"
-    #(figurante6 03:07 - 03:08)
     play sound ctc
 
     stop music
@@ -214,25 +196,21 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_27
     "Não foi nada, não foi\nnada!"
-    #(Senna 03:10 - 03:13)
     play sound ctc
     voice voz_cap01_04_28
     "O cara machucou, o cara\nmachucou! Você é animal?"
     play sound ctc
     voice voz_cap01_04_29
     "Tira o tênis dele ae oh,\ntira o tênis dele ae oh!"
-    #(Machucado 03:02 - 03:33)
     play sound ctc
     voice voz_cap01_04_30
     "Pô, pera aí, pera, pera..."
     play sound ctc
     voice voz_cap01_04_31
     "Leva ele lá embaixo, meu!\nLeva ele lá embaixo!"
-    #(Figurante7 0:35 - 03:36)
     play sound ctc
     voice voz_cap01_04_32
     "Calma, calma, calma,\ncalma, calma...!"
-    #(Índio 03:40 - 03:49)
     play sound ctc
     voice voz_cap01_04_33
     "Pode deixar que a gente leva ele lá!"
@@ -242,46 +220,37 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_35
     "Ok, vamo lá!"
-    #(Senna 03:51 - 03:52)
     play sound ctc
     voice voz_cap01_04_36
     "O cara machucou mesmo?"
-    #(Goleiro 03:53 - 03:55)
     play sound ctc
     voice voz_cap01_04_37
     "Ah meu, o cara machucou o cara!\n(discussão entre os jogadores)"
-    #(índio 03:57 - 03:59)
     play sound ctc
     voice voz_cap01_04_38
     "E agora, a gente vai fazer o\nquê, cara? Falta três agora,\nfalta três agora!"
-    #(índio 04:00 - 04:05)
     play sound ctc
     voice voz_cap01_04_39
     "Vai vim junto? Vai cair dentro?\nNão vai cair dentro, então\nvamo sentar e e vamo esperar, pô!"
-    #(Senna 04:10 - 04:00)
     voice voz_cap01_04_40
     "Vai cair dentro? Não vai, né.\nEntão vamo esperar!"
     play sound ctc
     voice voz_cap01_04_41
     "Ow senta ai ow, senta ai!"
-    #(índio 04:14 - 04:26)
     play sound ctc
     voice voz_cap01_04_42
     "Que que é, mano? Que que é?\nQue que é? Que que é?"
     play sound ctc
     voice voz_cap01_04_43
     "Quê que é? Bom jogo, mano!\nBom jogo! Tá todo mundo\njogando junto aqui, mano!"
-    #(índio 04:30 - 04:38)
     play sound ctc
     voice voz_cap01_04_44
     "Aqui oh, tomei uma aqui também, e aí?\nNão, tomei uma aqui também, olha aqui, \ntá roxo aqui, vei! Olha aqui o\nmaluco! Olha aqui! É, TIME\nDA FRESCURA!"
-    #(Goleiro2 04:49 - 04:47)
     play sound ctc
     "(uma hora e meia depois)"
     play sound ctc
     voice voz_cap01_04_45
     "Caralho hein, já se passaram horas e\nos cara nada. Puta merda, tá\nquase anoitecendo já! Foda..."
-    #(John 04:48 - 04:55)
     play sound ctc
     voice voz_cap01_04_46
     "Eu não te falei, velho? Eles tão é\ntrepando, maluco! Eles tão é trepando\ngostoso!"
@@ -290,7 +259,6 @@ label cap01_04_futebol02:
     "Aí, oh galera, eu vo dar\no fora, falou?"
     play sound ctc
     voice voz_cap01_04_48
-    #Senna(05:00 0 05:01)
     "E AIIIII, CARAAAALHO...? Ah, tô indo\nembora mano, tá escurescendo o\nbagulho..."
     play sound ctc
     voice voz_cap01_04_49
@@ -315,7 +283,6 @@ label cap01_04_futebol02:
     "(Agora todos estão indo embora\npara casa comemorar...)"
     voice voz_cap01_04_53
     "Falou, falou!"
-    #(índio 05:16 - 05:18)
     play sound ctc
     voice voz_cap01_04_54
     "Que tesão, hein? Gostosão..."

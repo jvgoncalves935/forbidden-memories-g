@@ -3,29 +3,22 @@ label cap05_01_casa01:
     stop music
     show textbox_black at center
 
-    #(Senna)
     "Onde, onde, onde? Cadê o arrombamento?"
     play sound ctc
-    #(Padeiro G)
     "Bem... na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
     play sound ctc
-    #(Senna)
     "Oh, se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
-    #(Padeiro G)
     "Calma, calma mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
     play sound ctc
     "(Alguns momentos se passam e você\nescuta murmúrios vindo da\nárea do forno.)"
     play sound ctc
     "(Você decide ir conferir.)"
     play sound ctc
-    #(Senna)
     "Está tudo bem?"
     play sound ctc
-    #(Padeiro G)
     "O meu cacetinho ficou preso no\nfundo do forno e eu não consigo\npegar... você pode pegar\nele para mim?"
     play sound ctc
-    #(Senna)
     "Mas é claro! Sempre adoro ajudar..."
     play sound ctc
     "(Você se aproxima do forno e fica\nde quatro para pegar o pão\ncom maior facilidade.)"
@@ -34,22 +27,16 @@ label cap05_01_casa01:
     play sound ctc
     "(É o Padeiro G, demonstrando todo\no amor por você.)"
     play sound ctc
-    #(Senna)
     "AAAAAAAAAAAAAHHHHH OOOOOOOOOOOOOOOOOO\nAAAAAAAAAAAAIIIII MEU CUR UGH!"
     play sound ctc
-    #(Senna)
     "QUE DELICIA COME MEU CU VAIN, JUDIA\nDE MIM FILHA DA PUTA\nME ESTRUPA CARALHO!"
     play sound ctc
-    #(Senna)
     "AAAAAAAAAAAAHHHH QUE DELICIA DE\nCACETINHO DO CARAIO AAAAAAAAAAA"
     play sound ctc
-    #(Senna)
     "VAI SE QUE CUME COMEEEE, COME MEU\nCUUUUUURRRRRR UUUUGH!"
     play sound ctc
-    #(Padeiro G)
     "E aí achou meu cacetinho grande?"
     play sound ctc
-    #(Senna)
     "Amei seu cacetinho, quero mais\ne mais!"
     play sound ctc
     "(...)"

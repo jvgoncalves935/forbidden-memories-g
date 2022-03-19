@@ -1784,12 +1784,23 @@ screen endings():
 
     if(is_all_endings_unlocked()):
         vbox:
-            xalign 0.66
-            yalign 0.71
+            xalign 0.93
+            yalign 0.66
             textbutton _("Carta 56"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="mark.png",card=29),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="pegasus.png",card=29),Function(guinodia,False,0)]
+                unhovered [Hide("side_img_left")]
+                action [NullAction()]
+
+    if(is_all_endings_unlocked()):
+        vbox:
+            xalign 0.66
+            yalign 0.71
+            textbutton _("Carta 57"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="mark.png",card=30),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1797,10 +1808,10 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.71
-            textbutton _("Carta 57"):
+            textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="taeyeon.png",card=30),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="taeyeon.png",card=31),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1808,10 +1819,10 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.71
-            textbutton _("Carta 58"):
+            textbutton _("Carta 59"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=31),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=32),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 

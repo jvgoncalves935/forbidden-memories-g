@@ -38,24 +38,18 @@ label cap05_03_doutor:
     "(6 anos depois)"
     play sound ctc
     "(...)"
-    #(0:06 - 0:15 Senna Richtofen)
     "Vai ser muito séria hoje... hoje...\na nossa aula vai ser\nsobre SEXO."
     play sound ctc
-    #(0:15 - 0:20 multidão)
     "UUUHUUUUUUUUUUUUUUULLLLL!!!"
     play sound ctc
     "Vai tirar a roupa?"
     play sound ctc
-    #(0:20 - 0:29 Senna Richtofen)
     "Não não... e a gente... e hoje\nvocês vão aprender a como\nse utiliza... o preservativo..."
     play sound ctc
-    #(0:29 - 0:31 multidão)
     "Você sabe muito bem!"
     play sound ctc
-    #(0:34 - 0;42 Senna Richtofen)
     "Coloca o pau pra fora aí... só\ntira aqui, só... aí colocou\nna linguinha assim ó...\nviu?"
     play sound ctc
-    #(0:53 - 0:54 Senna Richtofen)
     "Tem que ser com a boca, não\npode utilizar a mão!"
     play sound ctc
     "(Alexandre Senna começou sua carreira\nacadêmica como médico e\npesquisador da UFCP.)"

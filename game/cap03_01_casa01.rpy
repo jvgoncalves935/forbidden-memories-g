@@ -3,8 +3,31 @@ label cap03_01_casa01:
     stop music
     show textbox_black at center
     #show intro_001 at top
-    $ wrong_end = False
-    "A brincadeira de ontem foi\nmaravilhosa..."
+
+    "Hmm..."
+    play sound ctc
+    "..."
+    play sound ctc
+    "Hmm..."
+    play sound ctc
+    $ renpy.movie_cutscene("mod_assets/videos/recruta.webm")
+    "Ahh!"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "Foi só um sonho..."
+    play sound ctc
+    "Será que é a minha mente\ndizendo que eu esqueci de\nfazer alguma coisa?"
+    play sound ctc
+    "Eu acho que realmente esqueci\n de alguma coisa."
+    play sound ctc
+    "..."
+    play sound ctc
+    "Então que se foda."
+    play sound ctc
+    "Enfim, a brincadeira de ontem\nfoi maravilhosa..."
     play sound ctc
     "Acho que a gente deveria fazer\nisso mais vezes..."
     play sound ctc
