@@ -5,7 +5,7 @@ label cap01_04_futebol02:
     #show intro_001 at top
     play music audio.fm_finals_faceoff
     voice voz_cap01_04_01
-    "Que putaria é essa aí de pau duro aí,\nolha aí!"
+    "Que putaria é essa de pau duro aí,\nolha aí!"
     play sound ctc
     voice voz_cap01_04_02
     "Porra, vamo lá jogar esse futebol,\nvamo lá... Bora galera!"
@@ -333,22 +333,28 @@ label wrong_end_01_04_2:
     call wrong_end_01_04_common from _call_wrong_end_01_04_common_1
     "(Você começa a discutir com Índio e\nbotar a culpa nele por não ter\najudado a defender o ataque da\nbola na zaga.)"
     play sound ctc
+    voice voz_cap01_04_55
     "(Revoltadíssimo, ele saca uma faca\ne te apunhala na barriga.)"
     play sound ctc
+    voice voz_cap01_04_56
     "(Você consegue sentir a faca lá no\nestômago, porra, que facona...)"
     play sound ctc
+    play music audio.indio_policia loop
     "(Você cai no chão sem conseguir se\nmover, vendo sua própria vida\nse esVAINdo.)"
     play sound ctc
     "(Todos apavorados começam a fugir do\nÍndio, saindo do campo de\nfutebol o mais rápido possível.)"
     play sound ctc
+    stop music fadeout 5.0
     "(Índio começa a se aproximar cada vez\nmais perto de você, ainda com a\nfaca na mão e um olhar psicótico.)"
     play sound ctc
     "(Você dá o seu último respiro de\nagonia e desmaia, sem possuir\nmais forças para viver.)"
     play sound ctc
     "(Índio coloca o rosto extremamente\nperto de seu ouvido e\nsussurra algo...)"
     play sound ctc
+    voice voz_cap01_04_57
     "...É BEM A TUA MÃE, SEU FILHO\nDUMA ÉGUA!"
     play sound ctc
+    voice voz_cap01_04_58
     "ÍNDIO É BEM A TUA MÃE, SEU\nFILHO DA PUTA!"
     play sound ctc
     $ register_ending("D")
@@ -367,6 +373,32 @@ label wrong_end_01_04_3:
     "(...)"
     play sound ctc
     "(três dias depois)"
+    play sound ctc
+    play music audio.tv_001 noloop
+    "(Você assiste a TV antes de ir\npro trabalho.)"
+    play sound ctc
+    "Muito interessante isso daí."
+    play sound ctc
+    "O problema é que eu estou sem\ndinheiro."
+    play sound ctc
+    play music audio.tv_002 noloop
+    "(...)"
+    play sound ctc
+    "Tá na hora do almoço."
+    play sound ctc
+    "Melhor eu deixar a TV ligada e\nouvir da cozinha."
+    play sound ctc
+    play music audio.tv_003 noloop
+    "(...)"
+    play sound ctc
+    "Esse desenho é DO DEMÔNIO.\nEsse é o baralho DO CAPETA!"
+    play sound ctc
+    "Eu não assisto isso não!"
+    play sound ctc
+    play music audio.tv_004 noloop
+    "(...)"
+    play sound ctc
+    "Eita, o que que tá\nacontecendo, hã?"
     play sound ctc
     "\"O Asteroide Guinárnia está em\nrota de colisão da Terra!\""
     play sound ctc

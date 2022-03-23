@@ -2,18 +2,19 @@ label cap05_01_casa01:
     scene black
     stop music
     show textbox_black at center
-
+    "(Alexandre Senna estava em uma\npadaria, procurando onde estava\no arrombamento...)"
+    play sound ctc
     "Onde, onde, onde? Cadê o arrombamento?"
     play sound ctc
     "Bem... na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
     play sound ctc
     "Oh, se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
-    "Calma, calma mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
+    "Calma, calma, mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
     play sound ctc
-    "(Alguns momentos se passam e você\nescuta murmúrios vindo da\nárea do forno.)"
+    "(Alguns momentos se passam e é\npossível escutar murmúrios\nvindo da área do forno.)"
     play sound ctc
-    "(Você decide ir conferir.)"
+    "(Senna decide ir conferir.)"
     play sound ctc
     "Está tudo bem?"
     play sound ctc
@@ -21,21 +22,21 @@ label cap05_01_casa01:
     play sound ctc
     "Mas é claro! Sempre adoro ajudar..."
     play sound ctc
-    "(Você se aproxima do forno e fica\nde quatro para pegar o pão\ncom maior facilidade.)"
+    "(Senna se aproxima do forno e fica\nde quatro para pegar o pão\ncom maior facilidade.)"
     play sound ctc
-    "(Um pouco depois que você entrou,\nvocê sente algo GRANDE E\nGOSTOSO LÁ NO ESTÔMAGO PORRA)"
+    "(Um pouco depois que ele entra,\nele sente algo GRANDE E\nGOSTOSO LÁ NO ESTÔMAGO PORRA)"
     play sound ctc
-    "(É o Padeiro G, demonstrando todo\no amor por você.)"
+    "(É o Padeiro G, demonstrando todo\nseu amor por Senna.)"
     play sound ctc
-    "AAAAAAAAAAAAAHHHHH OOOOOOOOOOOOOOOOOO\nAAAAAAAAAAAAIIIII MEU CUR UGH!"
+    "(Senna começa a relaxar com o\nPadeiro G, tentando pegar o\ncacetinho no forno e levando\no outro cacetão atrás.)"
     play sound ctc
-    "QUE DELICIA COME MEU CU VAIN, JUDIA\nDE MIM FILHA DA PUTA\nME ESTRUPA CARALHO!"
+    "(\"É possível um homem engravidar?\",\npensou Senna profundamente\nenquanto sentia todo o\namor em sua alma vazia.)"
     play sound ctc
-    "AAAAAAAAAAAAHHHH QUE DELICIA DE\nCACETINHO DO CARAIO AAAAAAAAAAA"
+    "(\"Eu vou te encher de recheio\",\ndisse o Padeiro G momentos\nantes de explodir todo o\nseu amor dentro de Senna.)"
     play sound ctc
-    "VAI SE QUE CUME COMEEEE, COME MEU\nCUUUUUURRRRRR UUUUGH!"
+    "(O Padeiro G solta todo seu líquido\nde amor grudento e viscoso\ndentro de Senna, escorrendo e\nborbulhando sem parar no chão.)"
     play sound ctc
-    "E aí achou meu cacetinho grande?"
+    "E aí, achou meu cacetinho grande?"
     play sound ctc
     "Amei seu cacetinho, quero mais\ne mais!"
     play sound ctc
@@ -100,6 +101,8 @@ label cap05_01_casa01:
     "Vai passar um cara nosso pra ir\nte buscar em frente a academia.\nAmanhã, 05:00h da madrugada."
     play sound ctc
     "A gente é de São Paulo capital.\nA viagem é por nossa conta."
+    play sound ctc
+    "Qualquer dúvida só olhar no\nnosso anúncio no jornal."
     play sound ctc
     "Caramba, bem rápido hein? Vocês\nlevam isso a sério mesmo,\nhein?"
     play sound ctc

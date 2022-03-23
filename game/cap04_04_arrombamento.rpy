@@ -34,7 +34,7 @@ label cap04_04_arrombamento:
     "TÁ MALUCO, RAPAZ? TÁ ATRAPALHANDO\nMEU TRABALHO, SEU...!"
     play sound ctc
     voice voz_cap04_04_11
-    "N-não é isso!, deixa eu te explicar!"
+    "N-não é isso, deixa eu te explicar!"
     play sound ctc
     voice voz_cap04_04_12
     "Porra, eu tô nervoso.\nVocê me deixou nervoso..."

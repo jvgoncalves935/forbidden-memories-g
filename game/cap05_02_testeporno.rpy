@@ -29,7 +29,7 @@ label cap05_02_testeporno:
     "Opa, tudo bem? Boa tarde."
     play sound ctc
     voice voz_cap05_02_009
-    "Boa tarde... eu vi o anúncio de\nvocês aí no jornal, inclusive não\ndeu nem tempo de trocar de roupa,\ntô vindo do meu trabalho..."
+    "Eu vi o anúncio de vocês aí no\njornal, inclusive não deu nem\ntempo de trocar de roupa,\ntô vindo do meu trabalho..."
     play sound ctc
     voice voz_cap05_02_010
     "Achei muito interessante, né? E decidi\nsaber mais a respeito, do teste,\nqual que é o procedimento, o\nque que tem q ser feito, né..."
@@ -41,7 +41,7 @@ label cap05_02_testeporno:
     "Dá licença..."
     play sound ctc
     voice voz_cap05_02_013
-    "Aí você preenche seu dados aí..."
+    "Aí você preenche seus dados aí..."
     play sound ctc
     voice voz_cap05_02_014
     "Preencher os dados e tudo...?"
@@ -62,10 +62,10 @@ label cap05_02_testeporno:
     "Meu corpo...? Sim cara, só dá uma..."
     play sound ctc
     voice voz_cap05_02_020
-    "Porra, legal hein...? Fortão,\nbonito... eu vou pedir para você\ntirar a roupa só pra gente\navaliar o corpo, entendeu?"
+    "Porra, legal hein...? Fortão,\nbonito... queria pedir para você\ntirar a roupa só pra gente\navaliar o corpo, entendeu?"
     play sound ctc
     voice voz_cap05_02_021
-    "Eu sou... trabalho na área de\nsegurança..."
+    "Eu sou... trabalho na área de...\nsegurança..."
     play sound ctc
     voice voz_cap05_02_022
     "Você, você parece que tem o\nsotaque nordestino, como que é?"
@@ -86,10 +86,10 @@ label cap05_02_testeporno:
     "Tá certo, vou trocar a roupa aqui."
     play sound ctc
     voice voz_cap05_02_028
-    "Vocês são divertidos, você é bacana\n cara, eu gostei daqui, são\ndivertidos pra caramba... são\ndivertidos, são gente fina."
+    "Vocês são divertidos, você é bacana\ncara, eu gostei daqui, são\ndivertidos pra caramba... são\ndivertidos, são gente fina."
     play sound ctc
     voice voz_cap05_02_029
-    "Boniiiito... vira de costa aí. Tira a sunguinha só porque, você sabe, né."
+    "Boniiiito... vira de costa aí. Tira\na sunguinha só porque,\nvocê sabe, né."
     play sound ctc
     voice voz_cap05_02_030
     "Tem que mostrar o pau... tem que\nmostrar o pau, e duro!"
@@ -127,22 +127,22 @@ label cap05_02_testeporno:
     "Eu não resisti, cara. Desculpa, mas\nvocê tem uma boa bunda, viu?"
     play sound ctc
     voice voz_cap05_02_041
-    "Caralho, eu vou... Sabe o que eu vou\nfazer? Eu vou arrumar minhas\ncoisas e eu sair fora.\nNão, nao, dá licença aí."
+    "Caralho, eu vou... Sabe o que eu vou\nfazer? Eu vou arrumar minhas\ncoisas e eu sair fora.\nNão, não, dá licença aí."
     play sound ctc
-    voice voz_cap05_02_036
-    ""
+    voice voz_cap05_02_042
+    "Não, na boa, deixa eu falar contigo.\nÉ seguinte, senta aí,\nsenta aí rapidinho..."
     play sound ctc
-    voice voz_cap05_02_036
-    "Eu tenho que fazer um teste\ndiferente com você para\num Filme G."
+    voice voz_cap05_02_043
+    "Eu tenho um teste com você\ndiferente... para um Filme G."
     play sound ctc
-    voice voz_cap05_02_037
+    voice voz_cap05_02_044
     "Filme gay eu não faço não."
     play sound ctc
-    voice voz_cap05_02_038
-    "Escuta escuta, eu te dou\ncemzinho, 100 reais mesmo só pra\nfazer o teste, cara..."
+    voice voz_cap05_02_045
+    "Escuta escuta, eu te dou\ncemzinho, 100 reais mesmo só\npra... fazer o teste, cara..."
     play sound ctc
-    voice voz_cap05_02_039
-    "Porra, pensa bem no que você ganha\ncara, você disse que ganha 300\npau por mês cara... cemzinho\nsabe quanta brincadeirinha..."
+    voice voz_cap05_02_046
+    "Porra, pensa bem no que você ganha\ncara, você disse que ganha 300\npau por mês... cemzinho\nsó com uma brincadeirinha, caralho..."
     play sound ctc
 
     show textbox_aux
@@ -151,135 +151,144 @@ label cap05_02_testeporno:
         "<Iniciar manobras evasivas>":
             hide textbox_aux
             jump wrong_end_05_02_a
-        "<Continuar escutando>":
+        "<Continuar ouvindo>":
             hide textbox_aux
             pass      
     stop music
-    voice voz_cap05_02_040
-    "Eu vou dobrar, eu vou dobrar,\neu vou entrar nessa também, eu\nvou botar mais 100... 100 pau."
-    play sound ctc
-    voice voz_cap05_02_041
-    "Porra meu, mas vocês falaram\nque ia ter mulher aqui..."
-    play sound ctc
-    voice voz_cap05_02_042
-    "Vai ter cara, mas nosso teste\nagora vai ser para isso aí\nagora cara..."
-    play sound ctc
-    voice voz_cap05_02_043
-    "Ei, escuta. Relaxa. Você não\nquer ganhar 300 pau por mês?"
-    play sound ctc
-    voice voz_cap05_02_044
-    "Te dou os 300 conto, pronto.\n300 pau, filhão. Você trabalha\n30 dias para ganhar isso, vai\nganhar 300 em menos de uma\nhora..."
-    play sound ctc
-    voice voz_cap05_02_045
-    "Passou o dia cara-crachá,\ncara-crachá e só pagam 400\nconto de salário mínimo."
-    play sound ctc
-    voice voz_cap05_02_046
-    "Pra dar o cu? Tá louco..."
-    play sound ctc
     voice voz_cap05_02_047
-    "Então vamos fazer o seguinte...\nmais 100, mais 100...\n400 pau."
+    "Cem... cem eu não faço não."
     play sound ctc
     voice voz_cap05_02_048
-    "Escuta... a gente vai devagarinho\ncara..."
+    "Eu vou dobrar, eu vou dobrar,\neu vou entrar nessa também, eu\nvou botar mais 100... 100 pau."
     play sound ctc
     voice voz_cap05_02_049
-    "Ah não, não curto não cara,\nnunca fiz essas coisas aí..."
+    "Porra, mas vocês falaram\nque ia ter mulher aqui..."
     play sound ctc
     voice voz_cap05_02_050
-    "500 pau. 500 reais aí nessa\nbunda."
+    "Não... vai ter, tudo bem, mas o nosso\nteste agora seria exatamente\npra isso aí, cara..."
     play sound ctc
     voice voz_cap05_02_051
-    "Pensa também cara: são quase\ndois meses de trampo, cara."
+    "Ei, escuta. Relaxa. Você não\nquer ganhar 300 pau por mês?"
     play sound ctc
     voice voz_cap05_02_052
-    "E isso é só o teste, tá..."
+    "Te dou os 300 conto, pronto.\n300 pau, filhão. Você trabalha\n30 dias para 300, vai\nganhar 300 em menos de uma\nhora..."
     play sound ctc
     voice voz_cap05_02_053
-    "Ele vai aceitar. Vamo lá, eu\nvou botar mais 100..."
+    "Passar o dia cara-crachá,\ncara-crachá, cara-crachá e\npagar só 400 conto de\nsalário mínimo."
     play sound ctc
     voice voz_cap05_02_054
-    "Oh, você é um cara de presença,\npor isso a gente tá\ncolocando esse dinheiro."
+    "Pra dar o cu? Tá louco..."
     play sound ctc
     voice voz_cap05_02_055
-    "Porque a gente da 50 conto aí\npra fazer um teste e a\nnegada aceita."
+    "Vamo fazer o seguinte... eu vou\nbotar mais 100, mais 100.\nMais 100. 400 pau, filhão."
     play sound ctc
     voice voz_cap05_02_056
-    "Tsc tsc tsc, porra meu, olha pra\nminha cara rapaz! Porra, cara\nde homem, barbudo, vou dar\no cu por 600 pau?"
+    "Vamo ou não vamo? Escuta...\nA gente vai devagarzinho\ncara..."
     play sound ctc
     voice voz_cap05_02_057
-    "700 pau."
+    "Ah não, não curto não cara,\nnunca fiz essas coisas aí..."
     play sound ctc
     voice voz_cap05_02_058
-    "Eu não falei, eu não falei pra\nvocê que eu vim do interior,\nlá de Cupiqueno, lá de..."
+    "500 pau. 500 reais aí nessa\nbunda."
     play sound ctc
     voice voz_cap05_02_059
-    "Vocês dão risada...? Vocês dão...\nolha... Um exemplo:"
+    "Pensa também cara: são quase\ndois meses de trampo, rapaz."
     play sound ctc
     voice voz_cap05_02_060
-    "Tinha até uns caras lá da cidade\nlá de Pau Grande que a gente\nnem passa perto!"
+    "Isso é só o teste, tá..."
     play sound ctc
     voice voz_cap05_02_061
-    "Pô, eu vou falar a verdade, eu\ngostei do seu pau. Tô doidinho\npra chupar, mano..."
+    "Imagina se os cara te\nseleciona pro filme,\nporra..."
     play sound ctc
     voice voz_cap05_02_062
-    "Mas eu vou botar mais um\ndinheirinho. Vou botar mais\n100 conto."
+    "Ele não vai, ele... ele\nvai, vai aceitar. Vamo\nlá, eu vou botar\nmais 100..."
     play sound ctc
     voice voz_cap05_02_063
-    "Eu vou fazer o seguinte, eu vou\nficar liso de uma vez, óia!"
+    "Oh, eu vou ficar liso, olha."
     play sound ctc
     voice voz_cap05_02_064
-    "100... 200... mais 200..."
+    "Oh, você é um cara de presença,\npor isso a gente tá\ncolocando esse dinheiro."
     play sound ctc
-    voice voz_cap05_02_65
-    "Põe mais 100 nessa porra!"
+    voice voz_cap05_02_065
+    "Porque a gente da 50 conto aí\npra fazer um teste e a\nnegada aceita, sabia?"
     play sound ctc
     voice voz_cap05_02_066
-    "1000 reais aí, oh! 1000...\n1000 reais, cara."
+    "Tsc tsc tsc, porra meu, olha,\nolha pra minha cara rapaz!\nPorra, cara de homem, barbudo,\nvou dar o cu por 600 pau?"
     play sound ctc
     voice voz_cap05_02_067
-    "Filhão, agora é seu teste final:\nou você pega, ou outro vai catar."
+    "700 pau, olha, tô liso!"
     play sound ctc
     voice voz_cap05_02_068
-    "Duvido que outro vai levar 1000\nporque 50 tá cheinho aí, oh."
+    "Eu não falei, eu não falei pra\nvocê que eu vim do interior,\nlá de Cupiqueno, lá de..."
     play sound ctc
     voice voz_cap05_02_069
-    "Aí filhão, oh. 100..."
+    "Vocês dão risada...? Vocês dão...\nOlha, um exemplo:"
     play sound ctc
     voice voz_cap05_02_070
-    "Segura aí, filhão, pelo menos\npra sentir..."
+    "Tinha até uns caras lá da cidade\nlá de Pau Grande que dá até\nmedo de entrar na cidade lá!"
     play sound ctc
     voice voz_cap05_02_071
-    "200..."
+    "Vou falar a verdade, eu gostei\ndo seu pau. Eu sou... tô\ndoidinho pra chupar, mano..."
     play sound ctc
     voice voz_cap05_02_072
-    "300..."
+    "Eu vou botar mais um\ndinheirinho. Vou botar mais\n100 conto."
     play sound ctc
     voice voz_cap05_02_073
-    "400..."
+    "Eu vou fazer o seguinte, eu vou\nficar liso de uma vez, óia!"
     play sound ctc
     voice voz_cap05_02_074
-    "500..."
+    "100... 200..."
     play sound ctc
     voice voz_cap05_02_075
-    "600..."
+    "OH, EU PONHO MAIS 100 NESSA PORRA!"
     play sound ctc
     voice voz_cap05_02_076
-    "700..."
+    "1000 reais aí, oh! 1000...\n1000 reais, carai."
     play sound ctc
     voice voz_cap05_02_077
-    "800..."
+    "Filhão, agora é seu teste\nfinal: ou você pega, ou\nentão o outro vai catar."
     play sound ctc
     voice voz_cap05_02_078
-    "900..."
+    "Duvido que outro vai levar 1000\nporque 50 tá cheinho aí, oh."
     play sound ctc
     voice voz_cap05_02_079
-    "1000. tá nas suas mãos."
+    "Aí filhão, oh. 100..."
     play sound ctc
     voice voz_cap05_02_080
-    "São 3 meses de trabalho\nmais uma semana."
+    "Segura aí, filhão, pelo menos\npra sentir..."
     play sound ctc
     voice voz_cap05_02_081
-    "Pensa: são 100 dias que você\nvai deixar de trabalhar..."
+    "200..."
+    play sound ctc
+    voice voz_cap05_02_082
+    "300..."
+    play sound ctc
+    voice voz_cap05_02_083
+    "400..."
+    play sound ctc
+    voice voz_cap05_02_084
+    "500..."
+    play sound ctc
+    voice voz_cap05_02_085
+    "600..."
+    play sound ctc
+    voice voz_cap05_02_086
+    "700..."
+    play sound ctc
+    voice voz_cap05_02_087
+    "800..."
+    play sound ctc
+    voice voz_cap05_02_088
+    "900..."
+    play sound ctc
+    voice voz_cap05_02_089
+    "1000. Tá nas suas mãos."
+    play sound ctc
+    voice voz_cap05_02_090
+    "São 3 meses de trabalho\nmais alguma, uma semana."
+    play sound ctc
+    voice voz_cap05_02_091
+    "Pensa: são 100 dias que você,\nvocê vai deixar de\ntrabalhar..."
     play sound ctc
     
     show textbox_aux
@@ -297,109 +306,109 @@ label cap05_02_testeporno:
     play sound ctc
     "(...)"
     play sound ctc
-    voice voz_cap05_02_082
+    voice voz_cap05_02_092
     "Você é lá de Pau Grande,\nnão é não, cara?"
     play sound ctc
-    voice voz_cap05_02_083
+    voice voz_cap05_02_093
     "Sou lá de Pau Grande, cara..."
     play sound ctc
-    voice voz_cap05_02_084
+    voice voz_cap05_02_094
     "Por que você nao falou\npra mim?"
     play sound ctc
-    voice voz_cap05_02_085
+    voice voz_cap05_02_095
     "Você poderia ficar com medo...\npensar que é pequenininho..."
     play sound ctc
-    voice voz_cap05_02_086
+    voice voz_cap05_02_096
     "Você é um filha duma puta memo..."
     play sound ctc
-    voice voz_cap05_02_087
-    "Mas cê tá gostando, né? Eu\nsaquei logo que você gostava."
-    play sound ctc
-    voice voz_cap05_02_088
-    "Ele gosta de chupar uma rola,\nnossa!"
-    play sound ctc
-    voice voz_cap05_02_089
-    "Chupa melhor do que você?"
-    play sound ctc
-    voice voz_cap05_02_090
-    "Melhor do que eu..."
-    play sound ctc
-    voice voz_cap05_02_091
-    "AI CARALHO!"
-    play sound ctc
-    voice voz_cap05_02_092
-    "Tá gostando do teste?"
-    play sound ctc
-    voice voz_cap05_02_093
-    "Uhum!"
-    play sound ctc
-    voice voz_cap05_02_094
-    "(Engasgard)"
-    play sound ctc
-    voice voz_cap05_02_095
-    "Filha da puta..."
-    play sound ctc
-    voice voz_cap05_02_096
-    "AI CARALHO... PUTA QUE PARIU!"
-    play sound ctc
     voice voz_cap05_02_097
-    "CARAAALHO!!! AAAAHH...!!\nOOOHH!!"
+    "Mas você tá gostando, né? Eu\nsaquei logo que você gostava."
     play sound ctc
     voice voz_cap05_02_098
-    "IIIISSO caralho, olha que\ncu arrombado que eu\ntô deixando!"
+    "Ele gosta de chupar uma rola,\nnossa!"
     play sound ctc
     voice voz_cap05_02_099
-    "AI CARALHO VELHO...\nPUTA QUE PARIU!"
+    "Chupa melhor do que você?"
     play sound ctc
     voice voz_cap05_02_100
-    "Chupa a rola dele aqui aí\nvocê cala a boca! Isso..."
+    "Melhor do que eu..."
     play sound ctc
     voice voz_cap05_02_101
-    "Tá gostando de dar o cu,\ncara?"
+    "AI CARALHO!"
     play sound ctc
     voice voz_cap05_02_102
-    "ARGH TÔ, CARA..."
+    "Tá gostando do teste?"
     play sound ctc
     voice voz_cap05_02_103
-    "É QUE TEU PAU É MUITO GRANDE,\nMEU! PUUTA..."
+    "Uhum!"
     play sound ctc
     voice voz_cap05_02_104
-    "AI CARALHO, AI... AAAII AII...\nPUTA, QUE TESÃO CARA!"
+    "(Engasgard)"
     play sound ctc
     voice voz_cap05_02_105
-    "oooOOOOHHHHH OOHHHH!"
+    "Filha da puta..."
     play sound ctc
     voice voz_cap05_02_106
-    "Pooorra, pra quem tá fazendo\npela primeira vez tá se dando\nbem, hein?"
+    "AI CARALHO... PUTA QUE PARIU!"
     play sound ctc
     voice voz_cap05_02_107
-    "Sua primeira vez...? Hoje?"
+    "CARAAALHO!!! AAAAHH...!!\nOOOHH!!"
     play sound ctc
     voice voz_cap05_02_108
-    "AI CARALHO...! OOOOHHH!"
+    "IIIISSO caralho, olha que\ncu arrombado que eu\ntô deixando!"
     play sound ctc
     voice voz_cap05_02_109
-    "Já dá pra meter duas rola\nno seu cu, sabia?"
+    "AI CARALHO VELHO...\nPUTA QUE PARIU!"
     play sound ctc
     voice voz_cap05_02_110
-    "OOHHH... AAAAHHH...\nOOOOHHH... AHHHH..."
+    "Chupa a rola dele aqui aí\nvocê cala a boca! Isso..."
     play sound ctc
     voice voz_cap05_02_111
-    "Caralho, esse filho da puta\naí, meu..."
+    "Tá gostando de dar o cu?"
     play sound ctc
     voice voz_cap05_02_112
-    "Gostou do teste?"
+    "ARGH TÔ, CARA..."
     play sound ctc
     voice voz_cap05_02_113
-    "Foi ótimo." 
+    "É QUE TEU PAU É MUITO GRANDE,\nMEU! PUUTA..."
     play sound ctc
     voice voz_cap05_02_114
-    "Deu o cu... ganhou milzão..."
+    "AI CARALHO, AI... AAAII AII...\nPUTA, QUE TESÃO CARA!"
     play sound ctc
     voice voz_cap05_02_115
-    "Foi 3 meses de trabalho..."
+    "oooOOOOHHHHH OOHHHH!"
     play sound ctc
     voice voz_cap05_02_116
+    "Pooorra, pra quem tá fazendo\npela primeira vez tá se dando\nbem, hein?"
+    play sound ctc
+    voice voz_cap05_02_117
+    "Sua primeira vez...? Hoje?"
+    play sound ctc
+    voice voz_cap05_02_118
+    "AI CARALHO...! OOOOHHH!"
+    play sound ctc
+    voice voz_cap05_02_119
+    "Já dá pra meter duas rola\nno seu cu, sabia?"
+    play sound ctc
+    voice voz_cap05_02_120
+    "OOHHH... AAAAHHH...\nOOOOHHH... AHHHH..."
+    play sound ctc
+    voice voz_cap05_02_121
+    "Caralho, você é filho da\nputa aí, meu..."
+    play sound ctc
+    voice voz_cap05_02_122
+    "Gostou do teste?"
+    play sound ctc
+    voice voz_cap05_02_123
+    "Foi ótimo." 
+    play sound ctc
+    voice voz_cap05_02_124
+    "Levou no cu... ganhou milzão..."
+    play sound ctc
+    voice voz_cap05_02_125
+    "3 meses de trabalho, tá ótimo..."
+    play sound ctc
+    voice voz_cap05_02_126
     "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
     play sound ctc
     return
@@ -427,7 +436,19 @@ label wrong_end_05_02_a:
     play sound ctc
     "(no dia seguinte)"
     play sound ctc
-    "(Você levou a mulher no hospital\ne cuidou dela. Parece não ter\nsido nada grave.)"
+    "\"Acidente doméstico acontece em\nSão Paulo.\""
+    play sound ctc
+    "\"Incêndio acontece devido a uma\nexplosão, peritos acreditam\nque houve um vazamento\nde gás do fogão da residência.\""
+    play sound ctc
+    "\"O acidente ocorreu na Rua Serra\nPaulista número 7.\""
+    play sound ctc
+    "Isso não foi na mesma rua onde eu\nfui ontem? Coisa mais\nesquisita."
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(Você está agora em um hospital.)"
+    play sound ctc
+    "(Você levou a mulher para os médicos\ne cuidou dela. Parece não ter\nsido nada grave.)"
     play sound ctc
     "(...)"
     play sound ctc

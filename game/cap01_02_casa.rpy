@@ -22,7 +22,7 @@ label cap01_02_casa:
     stop music
     "Alô?"
     play sound ctc
-    "Fala aí Senna, bora lá pro futebol\nagora, eu já tô indo mano..."
+    "Fala aí Senna, aqui é o Índio,\nbora lá pro futebol\nagora, eu já tô indo mano..."
     play sound ctc
     "Beleza meu querido, já tô saindo\nde casa agora."
     play sound ctc
@@ -44,11 +44,13 @@ label wrong_end_01_02_1:
     play sound ctc
     "(Mas o telefone simplesmente não para\nde tocar.)"
     play sound ctc
+    voice voz_cap01_02_01
     "CAMBADA DE DEMÔNIO!"
     play sound ctc
     "(O barulho de seu toque ainda ecoa em\nsua mente, te levando à insanidade...)"
     play sound ctc
-    "VOCÊS NÃO ME DEIXAM EM PAZ!"
+    voice voz_cap01_02_02
+    "VOCÊS NÃO ME DEIXAM EM PAZ!\n(telefone vibrando)"
     play sound ctc
     "(Você decide ir até o aterro\nsanitário mais próximo e enterra o\ntelefone satânico no meio da\npilha de lixo.)"
     play sound ctc

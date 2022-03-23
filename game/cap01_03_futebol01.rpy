@@ -69,7 +69,7 @@ label cap01_03_futebol01:
     "É, jogar uma bola, lógico né?"
     play sound ctc
     voice voz_cap01_03_18
-    "Então... mas já que o pessoal vai\nchegar mais tarde, pô, quê que\n vocêsacham da gente fazer\numa brincadeira?"
+    "Então... mas já que o pessoal vai\nchegar mais tarde, pô, quê que\nvocês acham de fazer\numa brincadeira?"
     play sound ctc
     voice voz_cap01_03_19
     "Ahhh... bem que seria bom, né?"
@@ -134,7 +134,7 @@ label wrong_end_01_03_1:
     play sound ctc
     "(Sua vingança contra James será\nabsoluta e implacável!)"
     play sound ctc
-    "(Você será a nova estrela do time!)"
+    "(Você será a nova estrela do time\ne ele apenas um verme\ninsignificante!)"
     play sound ctc
     "(O Campeonato irá começar em\ninstantes.)"
     play sound ctc

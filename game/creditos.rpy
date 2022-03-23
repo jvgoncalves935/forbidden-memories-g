@@ -220,7 +220,7 @@ image cred_06_01:
     time 1.0
     Text("\"Forbidden Memories G\"", style="credits_text")
     linear 1.0 alpha 1.0
-    time 3.5
+    time 4.5
     linear 1.5 alpha 0.0
 
 image cred_06_02:
@@ -229,7 +229,7 @@ image cred_06_02:
     time 1.0
     Text("é um Fangame sem fins lucrativos", style="credits_text")
     linear 1.0 alpha 1.0
-    time 3.5
+    time 4.5
     linear 1.5 alpha 0.0
 
 image cred_06_03:
@@ -238,16 +238,34 @@ image cred_06_03:
     time 1.0
     Text("inspirado no jogo", style="credits_text")
     linear 1.0 alpha 1.0
-    time 3.5
+    time 4.5
     linear 1.5 alpha 0.0
 
 image cred_06_04:
     align (0.5,0.55)
     alpha 0.0
     time 1.0
-    Text("\"Yu-Gi-Oh: Forbidden Memories\".", style="credits_text")
+    Text("\"Yu-Gi-Oh: Forbidden Memories\"", style="credits_text")
     linear 1.0 alpha 1.0
-    time 3.5
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_06_05:
+    align (0.5,0.60)
+    alpha 0.0
+    time 1.0
+    Text("e na série \"Alexandre Senna rpG\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_06_06:
+    align (0.5,0.65)
+    alpha 0.0
+    time 1.0
+    Text("criada por \"Cena do Senna\".", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
     linear 1.5 alpha 0.0
 
 image cred_07_01:
@@ -1132,6 +1150,24 @@ image cred_442_02:
     time 2.5
     linear 1.5 alpha 0.0
 
+image cred_443_01:
+    align (0.15,0.5)
+    zoom 0.75
+    alpha 0.0
+    "mod_assets/images/deck/chessus.png"
+    linear 0.8 alpha 1.0
+    time 2.5
+    linear 1.5 alpha 0.0
+
+image cred_443_02:
+    align (0.85,0.5)
+    zoom 0.75
+    alpha 0.0
+    "mod_assets/images/deck/pica_pau.png"
+    linear 0.8 alpha 1.0
+    time 2.5
+    linear 1.5 alpha 0.0
+
 image cred_45_01:
     align (0.5,0.15)
     alpha 0.0
@@ -1348,8 +1384,8 @@ label creditos:
 
     $ config.keymap['game_menu'] = []
     $ config.keymap['hide_windows'] = []
-    $ renpy.display.behavior.clear_keymap_cache()
 
+    $ renpy.display.behavior.clear_keymap_cache()    
 
     stop music
     
@@ -1571,11 +1607,18 @@ label creditos:
     pause 4
     scene black
 
+    show cred_443_01
+    show cred_443_02
+    pause 4
+    scene black
+
     show cred_06_01
     show cred_06_02
     show cred_06_03
     show cred_06_04
-    pause 5
+    show cred_06_05
+    show cred_06_06
+    pause 6
     scene black
 
     show cred_07_01

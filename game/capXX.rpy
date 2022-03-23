@@ -16,6 +16,7 @@ label capXX:
     show yuri 2h
     "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo\na matéria direito."
     play sound ctc
+    "Não estou conseguindo..."
     stop music
     play music fm_plazatown
     show seto_s at side_image_in zorder 3
@@ -39,6 +40,7 @@ label capXX:
 
     "{p=0.3}{nw}"
     "(Parece que ele surgiu de outra\nera...! Antigo Egito?)"
+
     show yuri 2n at t31
     "{p=0.3}{nw}"
     "O-o que você está fazendo aqui?"
@@ -57,12 +59,27 @@ label capXX:
     hide seto_s
     #stop music
     #play music fm_preliminary_faceoff
+
+    show yuri 2p at t31
+    "C-carta? Do que você está falando?"
+    play sound ctc
+
+    show seto_s at side_image_in
+    "{p=0.6}{nw}"
+    voice voz_capXX_018
+    "Você e eu vamos ter um duelo\nFINAL... Você vai PERDER\ne EU vou VENCER!"
+    play sound ctc
+    show seto_s at side_image_out
+    "{p=0.6}{nw}"
+    hide seto_s
+
     show yuri 2r at t31
     stop music
     play music fm_preliminary_faceoff
     "{p=0.3}{nw}"
     "V-Você é louco! Estou indo embora!"
     play sound ctc
+
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s1
@@ -104,7 +121,7 @@ label capXX:
 
 
     #Yuri encontra Senna
-    show corredor_ddlc
+    show corredor_ddlc at top
     with dissolve
 
     "{p=0.3}{nw}"
@@ -195,7 +212,7 @@ label capXX:
     hide black
 
     #Yuri encontra Professor Guina
-    show escadas_ddlc
+    show escadas_ddlc at top
     with dissolve
     "{p=0.3}{nw}"
     show yuri 3p at rightin(1300)

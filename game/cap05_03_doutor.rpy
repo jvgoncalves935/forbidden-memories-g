@@ -38,29 +38,71 @@ label cap05_03_doutor:
     "(6 anos depois)"
     play sound ctc
     "(...)"
-    "Vai ser muito séria hoje... hoje...\na nossa aula vai ser\nsobre SEXO."
+    voice voz_cap05_03_01
+    "A coisa vai ser... vai ser muito\nséria hoje... tá certo?\nHoje... a nossa aula... vai ser\nsobre SEXO..."
     play sound ctc
+    voice voz_cap05_03_02
     "UUUHUUUUUUUUUUUUUUULLLLL!!!"
     play sound ctc
-    "Vai tirar a roupa?"
+    voice voz_cap05_03_03
+    "Vai tirar a roupa?\nQuero ver nu!"
     play sound ctc
-    "Não não... e a gente... e hoje\nvocês vão aprender a como\nse utiliza... o preservativo..."
+    voice voz_cap05_03_04
+    "E a gente... e hoje\nvocês vão aprender como\nque se utiliza... o preservativo..."
     play sound ctc
+    voice voz_cap05_03_05
     "Você sabe muito bem!"
     play sound ctc
-    "Coloca o pau pra fora aí... só\ntira aqui, só... aí colocou\nna linguinha assim ó...\nviu?"
+    voice voz_cap05_03_06
+    "Coloca o pau pra fora aí..."
     play sound ctc
+    voice voz_cap05_03_07
     "Tem que ser com a boca, não\npode utilizar a mão!"
     play sound ctc
     "(Alexandre Senna começou sua carreira\nacadêmica como médico e\npesquisador da UFCP.)"
     play sound ctc
     "\"Não vai ter nenhum médico com o\nCUrrículo à minha altura.\""
     play sound ctc
-    "(No futuro, teve uma carreira grande\ne gostosa com um futuro\nbrilhante.)"
+    "(...)"
+    play sound ctc
+    "(Certo dia, Doutor Senna encontra\ncom um rosto familiar na\nacademia...)"
+    play sound ctc
+    "James...?"
+    play sound ctc
+
+    voice voz_cap05_03_08
+    "E aí, tudo bemmmm??"
+    play sound ctc
+    "Fala aí, meu camarada!\nQuanto tempo!"
+    voice voz_cap05_03_09
+    "Meu nome é James Matarazzo..."
+    play sound ctc
+    "Eu sei, mermão. Nossa, que saudade\ndos velhos tempos..."
+    play sound ctc
+    
+    voice voz_cap05_03_10
+    "Meu nome é James, James Matarazzo...\nsou cirurgião plástico..."
+    play sound ctc
+    voice voz_cap05_03_11
+    "Nas horas vagas eu gosto de fazer\nuns esportes sexuais..."
+    play sound ctc
+    voice voz_cap05_03_12
+    "Esse aqui é meu amigo..."
+    play sound ctc
+    voice voz_cap05_03_13
+    "Tudo bom? Meu nome é\nAlexandre Senna..."
+    play sound ctc
+    voice voz_cap05_03_14
+    "E... tô aí, com meu amigo, meu\ncamarada aqui que a gente\nse conheceu no parque aí\nfazendo exercício, não é,\nJames?"
+    play sound ctc
+
+    "(No futuro, Senna teve uma carreira\ngrande e gostosa com um\nfuturo brilhante.)"
     play sound ctc
     "(...)"
     play sound ctc
-    "(FIM)"
+    "(Estas são as Memórias Proibídas\nde Alexandre Senna.)"
+    play sound ctc
+    "FIM"
     play sound ctc
     return
 
