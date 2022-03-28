@@ -13,10 +13,11 @@ label cap03_02_doutora01:
     play music audio.fm_password
     menu:
         "<Entrar na secretaria>":
+            hide textbox_aux
             pass
         "<Sair correndo igual um louco>":
+            hide textbox_aux
             jump wrong_end_03_02_1
-    hide textbox_aux
     stop music
     play sound ctc
     voice voz_cap03_02_03

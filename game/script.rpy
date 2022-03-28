@@ -27,6 +27,9 @@ label start:
     $ game_over = False
     $ game_over_musica = True
     $ game_over_pos_cutscene = False
+    $ game_over_delay_musica = 0.0
+    $ game_over_fadeout_musica = 0.0
+    
     play sound menu_start
 
     if(not game_over):

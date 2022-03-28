@@ -93,10 +93,11 @@ label cap02_04_roda_amigos:
     play music audio.fm_password
     menu:
         "<Repreender esse espírito maligno>":
+            hide textbox_aux
             jump wrong_end_02_04_1
         "<Entrar no Mundo dos Sonhos>":
+            hide textbox_aux
             pass
-    hide textbox_aux
     stop music
 
     voice voz_cap02_04_29

@@ -15,17 +15,23 @@ label cap01_02_casa:
     show textbox_aux
     menu:
         "<Atender o telefone>":
+            hide textbox_aux
             pass
         "<Ignorar>":
+            hide textbox_aux
             jump wrong_end_01_02_1
-    hide textbox_aux
+    
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alô?"
     play sound ctc
     "Fala aí Senna, aqui é o Índio,\nbora lá pro futebol\nagora, eu já tô indo mano..."
     play sound ctc
     "Beleza meu querido, já tô saindo\nde casa agora."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(desliga o telefone)"
     play sound ctc
     "Tava esperando a semana inteira\npra jogar essa bola..."

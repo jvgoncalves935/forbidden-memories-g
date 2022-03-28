@@ -195,7 +195,7 @@ label cap01_04_futebol02:
     "AHHHHHH, ARGH!\nAAAAAAAAARRRRRGH!"
     play sound ctc
     voice voz_cap01_04_27
-    "Não foi nada, não foi\nnada!"
+    "Não foi nada, não foi nada!"
     play sound ctc
     voice voz_cap01_04_28
     "O cara machucou, o cara\nmachucou! Você é animal?"
@@ -204,7 +204,7 @@ label cap01_04_futebol02:
     "Tira o tênis dele ae oh,\ntira o tênis dele ae oh!"
     play sound ctc
     voice voz_cap01_04_30
-    "Pô, pera aí, pera, pera..."
+    "Pô, pera aí, pera aí,\npera aí..."
     play sound ctc
     voice voz_cap01_04_31
     "Leva ele lá embaixo, meu!\nLeva ele lá embaixo!"
@@ -222,7 +222,7 @@ label cap01_04_futebol02:
     "Ok, vamo lá!"
     play sound ctc
     voice voz_cap01_04_36
-    "O cara machucou mesmo?"
+    "O cara machucou memo?"
     play sound ctc
     voice voz_cap01_04_37
     "Ah meu, o cara machucou o cara!\n(discussão entre os jogadores)"
@@ -232,6 +232,7 @@ label cap01_04_futebol02:
     play sound ctc
     voice voz_cap01_04_39
     "Vai vim junto? Vai cair dentro?\nNão vai cair dentro, então\nvamo sentar e e vamo esperar, pô!"
+    play sound ctc
     voice voz_cap01_04_40
     "Vai cair dentro? Não vai, né.\nEntão vamo esperar!"
     play sound ctc
@@ -253,7 +254,7 @@ label cap01_04_futebol02:
     "Caralho hein, já se passaram horas e\nos cara nada. Puta merda, tá\nquase anoitecendo já! Foda..."
     play sound ctc
     voice voz_cap01_04_46
-    "Eu não te falei, velho? Eles tão é\ntrepando, maluco! Eles tão é trepando\ngostoso!"
+    "Eu não te falei, velho? Eles tão é\nTREPANDO, maluco! Eles tão é trepando\ngostoso!"
     play sound ctc
     voice voz_cap01_04_47
     "Aí, oh galera, eu vo dar\no fora, falou?"
@@ -281,6 +282,7 @@ label cap01_04_futebol02:
     "(O jogo se encerra com a\nvitória do seu time!)"
     play sound ctc
     "(Agora todos estão indo embora\npara casa comemorar...)"
+    play sound ctc
     voice voz_cap01_04_53
     "Falou, falou!"
     play sound ctc
@@ -324,7 +326,8 @@ label wrong_end_01_04_1:
     play sound ctc
     "Eu sou real mesmo?"
     play sound ctc
-    "Isso tudo é real mesmo?"
+    voice voz_cap01_04_59
+    "Isso é real mesmo? Eu não acredito..."
     play sound ctc
     $ register_ending("C")
     jump game_over
@@ -379,10 +382,14 @@ label wrong_end_01_04_3:
     play sound ctc
     "Muito interessante isso daí."
     play sound ctc
-    "O problema é que eu estou sem\ndinheiro."
+    "O problema é que eu estou sem\ndinheiro..."
+    play sound ctc
+    "Então eu quero mais é que essa\nlavadeira se exploda."
     play sound ctc
     play music audio.tv_002 noloop
     "(...)"
+    play sound ctc
+    "Porra meu, bateu até uma\nfome agora..."
     play sound ctc
     "Tá na hora do almoço."
     play sound ctc
@@ -390,6 +397,8 @@ label wrong_end_01_04_3:
     play sound ctc
     play music audio.tv_003 noloop
     "(...)"
+    play sound ctc
+    "Espera aí, esse não é aquele\ndesenho lá que é do..."
     play sound ctc
     "Esse desenho é DO DEMÔNIO.\nEsse é o baralho DO CAPETA!"
     play sound ctc
@@ -404,25 +413,32 @@ label wrong_end_01_04_3:
     play sound ctc
     "\"O tempo aproximado para impacto\ncontra a superfície é de\nexatamente 32 horas!\""
     play sound ctc
-    "\"Está previsto que o estrago\ncausado pela colisão resultará\nna extinção de toda a vida humana!\""
+    "\"Está previsto que a destruição\ncausada pela colisão resultará\nna extinção de toda a vida humana!\""
     play sound ctc
+    play music audio.siren fadein 1.0
     "\"O caos preenche as ruas de\nCupiqueno e de todo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""
+    play sound ctc
+    voice voz_cap01_04_60
+    "PUTA QUE PARIU MEU, QUE PORRA\nÉ ESSA?"
     play sound ctc
     "\"Este é o nosso fim. Protejam-se\nem suas casas ou em abrigos\nmais próximos!\""
     play sound ctc
     "(Você desliga o rádio após ouvir\neste delírio coletivo.)"
     play sound ctc
+    voice voz_cap01_04_61
     "RAPAZ, CÊ TÁ MALUCO?"
     play sound ctc
-    "Coisa mais esquisita."
+    voice voz_cap01_04_62
+    "Coisa mais esquisita..."
     play sound ctc
     "(É possível ouvir sirenes e\npessoas gritando nas ruas como\nse não houvesse amanhã.)"
     play sound ctc
     "(Será que as notícias no\nrádio eram verdade?)"
     play sound ctc
-    "(O que você faria se elas\nfossem?)"
+    voice voz_cap01_04_63
+    "(Que que você faria se elas\nfossem?)"
     play sound ctc
-    "(Pensando em uma resposta, você\ndecide voltar a dormir. Amanhã será\numa noite difícil no seu turno\ncomo segurança.)"
+    "(Pensando em uma resposta, você\ndecide ir para o trabalho. Hoje vai\nser um dia difícil no seu turno\ncomo segurança.)"
     play sound ctc
     "\"Onde foi que eu deixei minhas\nluvas de goleiro?\", você pensa\nconsigo."
     play sound ctc
@@ -436,5 +452,10 @@ label wrong_end_01_04_3:
     play sound ctc
     "\"O Efeito Borboleta\""
     play sound ctc
+    
+            
+    $ game_over_musica = False
+    $ game_over_fadeout_musica = 2.0
+    $ game_over_delay_musica = 8.0
     $ register_ending("E")
     jump game_over

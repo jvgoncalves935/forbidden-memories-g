@@ -10,7 +10,7 @@ label cap05_01_casa01:
     play sound ctc
     "Oh, se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
-    "Calma, calma, mas não se irrite...\ntome um suco de laranja e que\neu vou buscar o cacetinho\nque acabei de fazer."
+    "Calma, calma, mas não se irrite...\ntome um suco de laranja que eu\njá vou buscar o cacetinho\nque acabei de fazer."
     play sound ctc
     "(Alguns momentos se passam e é\npossível escutar murmúrios\nvindo da área do forno.)"
     play sound ctc
@@ -56,6 +56,7 @@ label cap05_01_casa01:
     play sound ctc
     "Aquele morador me enganou,\nmaldito mentiroso do caralho."
     play sound ctc
+    play music celular
     "(telefone tocando)"
     play sound ctc
     "NENHUM. DIA DE SOSSEGO!"
@@ -71,7 +72,8 @@ label cap05_01_casa01:
             hide textbox_aux
             jump wrong_end_05_01_1
     stop music
-
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alô?"
     play sound ctc
     "Olá, é do número do Alexandre?"
@@ -118,6 +120,8 @@ label cap05_01_casa01:
     play sound ctc
     "Então até amanhã, Alexandre. Foi\nbom fazer negócio com você!\nTchau tchau."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(desligou o telefone)"
     play sound ctc
     "Nossa, que maravilha. Ator pornô..."
@@ -137,6 +141,8 @@ label cap05_01_casa01:
 
 label wrong_end_05_01_1:
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(desligou o telefone)"
     play sound ctc
     "Com certeza era aquele filho da\nputa que faz trote todo\nsanto dia."

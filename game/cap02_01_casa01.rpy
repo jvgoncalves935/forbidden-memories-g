@@ -21,11 +21,14 @@ label cap02_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
+            hide textbox_aux
             pass
         "<Desligar>":
+            hide textbox_aux
             jump wrong_end_02_01_1
-    hide textbox_aux
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alô?"
     play sound ctc
     "Hello, Alexandrêh!"
@@ -42,6 +45,8 @@ label cap02_01_casa01:
 
 label wrong_end_02_01_1:
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(Você desliga o telefone o mais rápido\nque pode.)"
     play sound ctc
     "(\"Eu odeio esse toque!\", você pensa.)"
@@ -70,22 +75,30 @@ label wrong_end_02_01_1:
     play sound ctc
     "(seis meses depois)"
     play sound ctc
+    play music audio.radio_chatter
     "(É o seu primeiro dia de ronda\nna Polícia Militar de Cupiqueno!)"
     play sound ctc
+    $ pos_music = renpy.music.get_pos("music")
+
+    stop music
     play music celular
     "(Sua mãe te liga, emocionada com sua\nconquista.)"
     play sound ctc
-    stop music
+    $ renpy.music.play("<loop 44.7 from {}>mod_assets/sounds/radio_chatter.ogg".format(pos_music))
     "(Você acaba de receber um chamado de\noutra viatura, você apenas\nresponde antes de desligar:)"
     play sound ctc
+    voice voz_cap02_01_01
     "TÁ ATRAPALHANDO MEU TRABALHO, SEU...!"
     play sound ctc
+    "{p=0.3}{nw}"
+    play sound phone_click
     "(desligou o telefone)"
     play sound ctc
     "Tenho que atender o chamado\nda viatura...!"
     play sound ctc
     "(...)"
     play sound ctc
+    stop music
 
     window hide(None)
     $ game_over_pos_cutscene = True

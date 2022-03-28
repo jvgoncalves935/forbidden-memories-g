@@ -9,6 +9,7 @@ label cap02_03_casa02:
     play sound ctc
     "A Anita era muito gostosa..."
     play sound ctc
+    play music celular
     "(telefone tocando)"
     play sound ctc
     "Que droga, ainda não troquei esse toque\nde telefone!"
@@ -20,6 +21,9 @@ label cap02_03_casa02:
         "<Atender o telefone>":
             $ telefone_02_03 = True
             hide textbox_aux
+            stop music
+            "{p=0.2}{nw}"
+            play sound phone_click
             "Alô?"
             play sound ctc
             "\"Fala aí Senna, a gente vai reunir a\ngalera pra tomar uma gelada na\nminha casa, topa vir?\""
@@ -34,6 +38,9 @@ label cap02_03_casa02:
             play sound ctc
             "Show, então de noite eu apareço aí,\naté mais."
             play sound ctc
+            stop music
+            "{p=0.2}{nw}"
+            play sound phone_click
             "(desligou o telefone)"
             play sound ctc
             "Tem que tomar cuidado com esses\nrolês do Mangueira Evil..."
@@ -41,6 +48,9 @@ label cap02_03_casa02:
         "<Desligar>":
             $ telefone_02_03 = False
             hide textbox_aux
+            stop music
+            "{p=0.2}{nw}"
+            play sound phone_click
             "(desligou o telefone)"
             play sound ctc
             "Vai tomar no cu, deve ser trote\nessa merda."

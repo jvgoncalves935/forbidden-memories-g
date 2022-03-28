@@ -11,6 +11,7 @@ label cap04_01_casa01:
     play sound ctc
     "Não lembro de ter comido nada\ntão pesado-"
     play sound ctc
+    play music celular
     "(celular tocando)"
     play sound ctc
     "NÃO TEM UM DIA DE SOSSÊGO, NÉ?"
@@ -33,6 +34,9 @@ label cap04_01_casa01:
         "<Não>":
             hide textbox_aux
             jump wrong_end_04_01_1
+    stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Fala meu querido, tudo bem?"
     play sound ctc
     "YEAH MAN!"
@@ -66,6 +70,8 @@ label cap04_01_casa01:
 
 label wrong_end_04_01_1:
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Que se foda aquele esquizofrênico\ndo caralho."
     play sound ctc
     "Vai ver se eu tô lá na esquina!"

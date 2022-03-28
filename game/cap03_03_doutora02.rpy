@@ -93,10 +93,11 @@ label cap03_03_doutora02:
     show textbox_aux
     menu:
         "<Deitar na mesa>":
+            hide textbox_aux
             pass
         "<Chutar a porta e sair correndo>":
+            hide textbox_aux
             jump wrong_end_03_03_1
-    hide textbox_aux
     stop music
     play music audio.fm_plazatown
     voice voz_cap03_03_08
@@ -132,10 +133,11 @@ label cap03_03_doutora02:
     show textbox_aux
     menu:
         "<Pular da janela do consultório>":
+            hide textbox_aux
             jump wrong_end_03_03_2
         "<Elogiar a Doutora>":
+            hide textbox_aux
             pass
-    hide textbox_aux
     stop music
     play music fm_preliminary_faceoff
     voice voz_cap03_03_16
@@ -321,6 +323,8 @@ label wrong_end_03_03_2:
     "(Cobertor, não existe\n- Deus, não existe.)"
     play sound ctc
     $ game_over_musica = False
+    $ game_over_delay_musica = 5.0
+    $ game_over_fadeout_musica = 5.0
     $ register_ending("P")
     jump game_over
 

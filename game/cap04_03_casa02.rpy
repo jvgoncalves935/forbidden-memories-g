@@ -13,18 +13,21 @@ label cap04_03_casa02:
     play sound ctc
     "Que droga de emprego de segurança,\npagam mal pra caramba e eu\naqui que nem burro de carga-"
     play sound ctc
+    play music celular
     "(telefone tocando)"
     play sound ctc
     "Eu nem acordei direito, seus\nfilha da puta!"
     show textbox_aux
     menu:
         "<Atender o telefone>":
-            pass
             hide textbox_aux
+            pass
         "<Desligar o telefone com ignorância>":
             hide textbox_aux
             jump wrong_end_04_03_1
-    
+    stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alexandre aqui."
     play sound ctc
     "Olá, Alexandre. Desculpa te\nligar tão cedo!"
@@ -57,6 +60,8 @@ label cap04_03_casa02:
     play sound ctc
     "Valeu mesmo cara... tô te esperando,\ntchau."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(desligou o telefone)"
     play sound ctc
     "Mas esse desgraçado é um folgado\nmesmo!"
@@ -69,6 +74,7 @@ label cap04_03_casa02:
     play sound ctc
     "Quer me fuder me beija, caralho...!"
     play sound ctc
+    play music celular
     "(telefone tocando)"
     play sound ctc
     "AH NÃO CARALHO!"
@@ -77,8 +83,12 @@ label cap04_03_casa02:
     menu:
         "<Atender o telefone>":
             hide textbox_aux
+            stop music
+            "{p=0.2}{nw}"
+            play sound phone_click
             "(atendeu o telefone)"
             play sound ctc
+            voice voz_cap03_01_01
             "Alor, é do corpo de bombeiro?"
             play sound ctc
             "MEU IRMÃO, VOCÊ É DEFICIENTE COGNITIVO,\nFUGIU DO MATERNAL OU O\nQUÊ, SEU DESGRAÇADO?"
@@ -109,6 +119,8 @@ label cap04_03_casa02:
             hide textbox_aux
             "LIGA PRA SUA MÃE, PRA SUA VÓ, AQUELA\nPUTA VEIA ESPÍRITO DO\nEXU POMBA GIRA!"
             play sound ctc
+            "{p=0.2}{nw}"
+            play sound phone_click
             "(desligou o telefone)"
             play sound ctc
     "Tô atrasado pra carai, tô quase\nperdendo o ônibus já...!"
@@ -127,6 +139,8 @@ label wrong_end_04_03_1:
     play sound ctc
     "(Ele fica na parte de cima do\ncelular e é pequeno pra caralho.)"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(Depois de machucar seu dedo você\nconsegue desligar o celular.)"
     play sound ctc
     "(Você joga o celular no chão, com\ntoda a raiva acumulada pela\ndor na sua alma.)"
@@ -167,6 +181,14 @@ label wrong_end_04_03_1:
     play sound ctc
     "(...)"
     play sound ctc
+    "Só o barulho dessas cigarras\nque já encheram o saco."
+    play sound ctc
+    "Não tem como fazer elas\npararem não?"
+    play sound ctc
+    "NA VIDA DE VOCÊS VAI\nCAIR MALDIÇÃO!"
+    play sound ctc
+    "(...)"
+    play sound ctc
     $ register_ending("S")
     jump game_over
 
@@ -184,6 +206,9 @@ label wrong_end_04_03_2:
     play sound ctc
     "TOMARA QUE VOCÊ FIQUE SEM DINHEIRO\nE MORRA DE FOME PAU NO-"
     play sound ctc
+    stop music
+    "{p=0.2}{nw}"
+    play sound phone_end_call
     "(desligou o telefone do outro lado)"
     play sound ctc
     "É isso que você merece, desgraçado!"

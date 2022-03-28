@@ -320,13 +320,17 @@ define deck_g_names = [
     "Coringa Dano",
     "Sandro Lima, O Arquiteto do Universo G",
     "Guinodia, O Proibido",
+    "Dragão BAIANO",
+    "Polimerização G",
+    "Polimerização G",
     "É JESUUUUIIIISSSSSSSSSS",
+    "Pica-Pau Biruta",
     "Pica-Pau Biruta",
     "Danger?! Gilson?",
     "Sarcófago da Ícaro Studios",
     "Pegasus do PAU BRILHANTE",
     "Mark_77Souls, O Esquizofrêncio",
-    "Taeyeon115, Oberfuhrer do COD Mobile",
+    "Taeyeon115, O Amigo de Sangue",
     "Master Exploder, O Calvo Supremo"
 ]
 
@@ -518,6 +522,11 @@ define audio.tv_001 = "mod_assets/music/tv_001.ogg"
 define audio.tv_002 = "mod_assets/music/tv_002.ogg"
 define audio.tv_003 = "mod_assets/music/tv_003.ogg"
 define audio.tv_004 = "mod_assets/music/tv_004.ogg"
+define audio.siren = "mod_assets/music/siren.ogg"
+
+define audio.ambulance_01 = "<loop 0.00>mod_assets/music/ambulance_01.ogg"
+define audio.ambulance_02 = "<loop 0.00>mod_assets/music/ambulance_02.ogg"
+define audio.city_01 = "<loop 0.00>mod_assets/music/city_01.ogg"
 
 
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
@@ -644,6 +653,11 @@ define voz_cap01_04_55 = "mod_assets/voices/01_04/01_04_55.ogg"
 define voz_cap01_04_56 = "mod_assets/voices/01_04/01_04_56.ogg"
 define voz_cap01_04_57 = "mod_assets/voices/01_04/01_04_57.ogg"
 define voz_cap01_04_58 = "mod_assets/voices/01_04/01_04_58.ogg"
+define voz_cap01_04_59 = "mod_assets/voices/01_04/01_04_59.ogg"
+define voz_cap01_04_60 = "mod_assets/voices/01_04/01_04_60.ogg"
+define voz_cap01_04_61 = "mod_assets/voices/01_04/01_04_61.ogg"
+define voz_cap01_04_62 = "mod_assets/voices/01_04/01_04_62.ogg"
+define voz_cap01_04_63 = "mod_assets/voices/01_04/01_04_63.ogg"
 
 
 #02_01
@@ -701,6 +715,10 @@ define voz_cap02_02_47 = "mod_assets/voices/02_02/02_02_47.ogg"
 define voz_cap02_02_48 = "mod_assets/voices/02_02/02_02_48.ogg"
 define voz_cap02_02_49 = "mod_assets/voices/02_02/02_02_49.ogg"
 define voz_cap02_02_50 = "mod_assets/voices/02_02/02_02_50.ogg"
+define voz_cap02_02_51 = "mod_assets/voices/02_02/02_02_51.ogg"
+define voz_cap02_02_52 = "mod_assets/voices/02_02/02_02_52.ogg"
+define voz_cap02_02_53 = "mod_assets/voices/02_02/02_02_53.ogg"
+define voz_cap02_02_54 = "mod_assets/voices/02_02/02_02_54.ogg"
 
 
 #02_03
@@ -1080,6 +1098,10 @@ define audio.fm_error = "mod_assets/sounds/error.ogg"
 define audio.fm_arrow_select = "mod_assets/sounds/arrow_select.ogg"
 define audio.oco = "mod_assets/sounds/oco.ogg"
 define audio.millenniumitem = "mod_assets/sounds/millenniumitem.ogg"
+define audio.phone_click = "mod_assets/sounds/phone_click.ogg"
+define audio.phone_end_call = "mod_assets/sounds/phone_end_call.ogg"
+define audio.radio_chatter = "<loop 0.00>mod_assets/sounds/radio_chatter.ogg"
+define audio.car_crash = "<loop 0.00>mod_assets/sounds/car_crash.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

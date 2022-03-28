@@ -9,15 +9,18 @@ label cap02_02_oficina_gringo:
     play sound ctc
     "(Você acabou de chegar em frente à\nOficina do Gringo.)"
     play sound ctc
+    "(A oficina é bem fudida mas\nesse é o lugar.)"
+    play sound ctc
 
     play music audio.fm_password
     show textbox_aux
     menu:
         "<Entrar na oficina>":
+            hide textbox_aux
             pass
-        "<Dar meia volta e sair berrando>":
+        "<Dar meia volta e sair gritando>":
+            hide textbox_aux
             jump wrong_end_02_02_1
-    hide textbox_aux
     stop music
     voice voz_cap02_02_01
     "Excuse me?"
@@ -106,6 +109,8 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_29
     "And maybe you can show him...\nyour surprise..."
     play sound ctc
+    "(Do que esse filho da\nputa tá falando?)"
+    play sound ctc
     voice voz_cap02_02_30
     "Here my friend, here is a\nextra for you today."
     play sound ctc
@@ -140,10 +145,11 @@ label cap02_02_oficina_gringo:
     show textbox_aux
     menu:
         "<Sair do local o mais rápido possível>":
+            hide textbox_aux
             jump wrong_end_02_02_2
         "<\"No problem.\">":
+            hide textbox_aux
             pass
-    hide textbox_aux
     stop music
 
     voice voz_cap02_02_37
@@ -198,34 +204,53 @@ label wrong_end_02_02_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "OH, OH, OH, OH, OH, OH, OH!"
+    play music audio.city_01 fadein 2.0
+    "(...)"
     play sound ctc
     "(Você decide sair correndo na rua\nimitando o Quico.)"
+    play sound ctc
+    voice voz_cap02_02_51
+    "OH, OH, OH, OH, OH, OH!"
     play sound ctc
     "(Por algum motivo, parece ser\nengraçado...)"
     play sound ctc
     "(Você está bem no centro da rua\nda Avenida PrinciPAL...)"
     play sound ctc
-    "OH, OH, OH, OH, OH, OH, OH!"
+    voice voz_cap02_02_52
+    "OH, OH, OH, OH, OH, OH!"
     play sound ctc
-    "(carro freando bruscamente)"
+    "(Uma criança com a mãe que estavam\natravessando a rua decidem\nvoltar e fugir correndo\nde você.)"
     play sound ctc
-    "(Você é atingido por um carro e\nacaba sendo arremessado\npara longe!)"
+    voice voz_cap02_02_51
+    "OH, OH, OH, OH, OH, OH!"
     play sound ctc
-    "OOOOOOHHHH, OOOOOOHHHH, AAAAHHHH,\nAIIIII...!"
+    "(Você está bem no meio da rua e...)"
     play sound ctc
+    stop music
+    play sound audio.car_crash
+    "{p=1.5}{nw}"
+    voice voz_cap02_02_53
+    "OOOOOOIIIIHHHH, OOOOOOHHHH!!!"
+    play sound ctc
+    play music audio.ambulance_01 noloop
     "(Todos na rua ficam assustados com o\nacidente, algumas pessoas vêm\nte ajudar.)"
     play sound ctc
+    play music audio.ambulance_02
     "(Sua perna doi muito, ela está\njorrando muito sangue!)"
+    play sound ctc
+    voice voz_cap02_02_54
+    "AAAAIIIIHHHH, AIIIII...! UUGHH!!"
     play sound ctc
     "(A ambulância chega 5 minutos depois\ne te socorre.)"
     play sound ctc
+    
     "(Você começa a ficar fraco devido a\nperda excessiva de sangue\ne desmaia...)"
     play sound ctc
-    "(A última coisa que você ouve\nsocorrista dizer é:)"
+    "(A última coisa que você ouve\nsOCOrrista dizer é:)"
     play sound ctc
     "\"Vamos ter que levá-lo para\na Doutora de Plantão!\""
     play sound ctc
+    stop music fadeout 3.0
     $ register_ending("H")
     jump game_over
 

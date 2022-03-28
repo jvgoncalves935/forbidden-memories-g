@@ -41,11 +41,15 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
+            hide textbox_aux
             call telefone_03_01_01 from _call_telefone_03_01_01
         "<Desligar>":
+            hide textbox_aux
             stop music
             "Que se dane."
-    hide textbox_aux
+            play sound ctc
+            "(desliga o telefone)"
+            play sound ctc
     stop music
     "Mas que droga, o pessoal do\nconsultório não me liga..."
     play sound ctc
@@ -63,8 +67,10 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
+            hide textbox_aux
             call telefone_03_01_02 from _call_telefone_03_01_02
         "<Desligar>":
+            hide textbox_aux
             stop music
             "Ah, vai tomar no seu cu."
             play sound ctc
@@ -82,6 +88,7 @@ label cap03_01_casa01:
     show textbox_aux
     menu:
         "<Atender o telefone>":
+            hide textbox_aux
             stop music
             "Alô?"
             play sound ctc
@@ -103,6 +110,7 @@ label cap03_01_casa01:
             play sound ctc
         "<Desligar>":
             $ wrong_end = True
+            hide textbox_aux
             stop music
             "FODA-SE ESSE TELEFONE MALDITO!"
             play sound ctc
@@ -138,8 +146,11 @@ label cap03_01_casa01:
 
 label telefone_03_01_01:
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alô?"
     play sound ctc
+    voice voz_cap03_01_01
     "Alôr? É do corpo de bombeiro?"
     play sound ctc
     "Não parceiro. Até mais."
@@ -150,6 +161,8 @@ label telefone_03_01_01:
 
 label telefone_03_01_02:
     stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "ALÔ!!!"
     play sound ctc
     "Alô, boa noite? Eu falo do setor\nde promoções, eu falo com\no Vinícius?"
@@ -183,6 +196,9 @@ label wrong_end_03_01:
     stop music
     "(atendeu o telefone)"
     play sound ctc
+    stop music
+    "{p=0.2}{nw}"
+    play sound phone_click
     "Alou, Jefferson?"
     play sound ctc
     "AQUI NÃO TEM JEFFERSON NENHUM NÃO,\nQUEBRADA. TÁ QUERENDO ALGUMA\nCOISA, PALHAÇO?"
@@ -201,6 +217,8 @@ label wrong_end_03_01:
     play sound ctc
     "QUE VAI O QUÊ, SEU BOSTINHA? AMANHÃ\nQUEM VAI TOMAR PIPOCO DE AK\nVAI SER VOCÊ! AQUI É DE\nGUARULHOS, ARY FONTOURA!"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_end_call
     "(desligou o telefone na outra linha)"
     play sound ctc
     "Grande bosta."

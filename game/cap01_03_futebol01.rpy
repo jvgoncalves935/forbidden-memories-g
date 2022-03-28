@@ -55,10 +55,11 @@ label cap01_03_futebol01:
     play music audio.fm_password
     menu:
         "<Treinar pênaltis com seu time>":
+            hide textbox_aux
             jump wrong_end_01_03_1
         "<Propor uma brincadeira>":
+            hide textbox_aux
             pass
-    hide textbox_aux
     stop music
 
     voice voz_cap01_03_16
