@@ -1,7 +1,16 @@
 label cap05_01_casa01:
     scene black
     stop music
+
+    show header_cap_05
+    pause 1.5
+    hide header_cap_05 
+
     show textbox_black at center
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
     "(Alexandre Senna estava em uma\npadaria, procurando onde estava\no arrombamento...)"
     play sound ctc
     "Onde, onde, onde? Cadê o arrombamento?"
@@ -44,11 +53,12 @@ label cap05_01_casa01:
     play sound ctc
     "(...)"
     play sound ctc
-    "AAAII...!!!"
+    voice voz_cap05_01_02
+    "AAAAAAIIIII!!!"
     play sound ctc
     "(...)"
     play sound ctc
-    "Foi um sonho..."
+    "Foi um sonho, de novo..."
     play sound ctc
     "Que delícia..."
     play sound ctc
@@ -56,14 +66,13 @@ label cap05_01_casa01:
     play sound ctc
     "Aquele morador me enganou,\nmaldito mentiroso do caralho."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(telefone tocando)"
     play sound ctc
     "NENHUM. DIA DE SOSSEGO!"
     play sound ctc
     
     show textbox_aux
-    play music audio.fm_password
     menu:
         "<Atender o telefone>":
             hide textbox_aux
@@ -71,7 +80,7 @@ label cap05_01_casa01:
         "<Desligar e dar um passeio na rua>":
             hide textbox_aux
             jump wrong_end_05_01_1
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alô?"
@@ -140,7 +149,7 @@ label cap05_01_casa01:
     return
 
 label wrong_end_05_01_1:
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "(desligou o telefone)"

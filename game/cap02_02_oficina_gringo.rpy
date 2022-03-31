@@ -37,6 +37,8 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_05
     "Alexandre..."
     play sound ctc
+    "(Você tem amnésia, porra?\nOs gringo são bundão mesmo.)"
+    play sound ctc
     voice voz_cap02_02_06
     "Uhh... Alexandre. Are you busy...\nor... you can talk a few\nminutes, yeah?"
     play sound ctc
@@ -49,11 +51,15 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_09
     "I have a small problem and maybe\nyou can help me out..."
     play sound ctc
+    "(Foda-se o seu problema\nCADÊ MEU CARRO CARALHO)"
+    play sound ctc
     voice voz_cap02_02_10
     "Uhh, this is my girlfriend, Anita..."
     play sound ctc
+    "(Nuoooossa, minha filhona,\neu não acrediiito...)"
+    play sound ctc
     voice voz_cap02_02_11
-    "She loves... fucking, you understand?"
+    "She loves... FUCKING, you understand?"
     play sound ctc
     voice voz_cap02_02_12
     "And... I have been fucking her for\ntwo days now and I cannot\nfuck her anymore."
@@ -64,6 +70,7 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_14
     "Ies, okei..."
     play sound ctc
+    "(Esse gringo é broxa ou o quê?\nSerá que ele tem algum\nestranho? Devo me preocupar?)"
     voice voz_cap02_02_15
     "You think you can fuck her for me?"
     play sound ctc
@@ -75,6 +82,8 @@ label cap02_02_oficina_gringo:
     play sound ctc
     voice voz_cap02_02_18
     "Ié, ié, ooouuu ié...!"
+    play sound ctc
+    "(Caralho vei, deu MUITO\nMUITO bom...)"
     play sound ctc
     voice voz_cap02_02_19
     "He's okay for you, Anita? You\nliked him, yes?"
@@ -116,6 +125,10 @@ label cap02_02_oficina_gringo:
     play sound ctc
     voice voz_cap02_02_31
     "Ouuuu mai góóó...!"
+    play sound ctc
+    "(É isso que eles chamam de\nMulher do Futuro?)"
+    play sound ctc
+    "(Talvez seja um fenômeno da\nnatureza, olha o tamanho\ndo fenômeno...)"
     play sound ctc
     voice voz_cap02_02_32
     "Huh? It is not incredible?"
@@ -204,7 +217,7 @@ label wrong_end_02_02_1:
     play sound ctc
     "(...)"
     play sound ctc
-    play music audio.city_01 fadein 2.0
+    play sound_bg audio.city_01 fadein 2.0
     "(...)"
     play sound ctc
     "(Você decide sair correndo na rua\nimitando o Quico.)"
@@ -227,15 +240,15 @@ label wrong_end_02_02_1:
     "(Você está bem no meio da rua e...)"
     play sound ctc
     stop music
-    play sound audio.car_crash
+    play sound_bg audio.car_crash noloop
     "{p=1.5}{nw}"
     voice voz_cap02_02_53
     "OOOOOOIIIIHHHH, OOOOOOHHHH!!!"
     play sound ctc
-    play music audio.ambulance_01 noloop
+    play sound_bg audio.ambulance_01 noloop
     "(Todos na rua ficam assustados com o\nacidente, algumas pessoas vêm\nte ajudar.)"
     play sound ctc
-    play music audio.ambulance_02
+    play sound_bg audio.ambulance_02
     "(Sua perna doi muito, ela está\njorrando muito sangue!)"
     play sound ctc
     voice voz_cap02_02_54
@@ -250,7 +263,7 @@ label wrong_end_02_02_1:
     play sound ctc
     "\"Vamos ter que levá-lo para\na Doutora de Plantão!\""
     play sound ctc
-    stop music fadeout 3.0
+    stop sound_bg fadeout 3.0
     $ register_ending("H")
     jump game_over
 
@@ -262,6 +275,8 @@ label wrong_end_02_02_2:
     play sound ctc
     "OW SEU FILHO DA PUTA!"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound punch01
     "(Indignado com a armadilha que o Gringo\narmou, você dá um soco na\ncara dele e sai tranquilamente\nda oficina.)"
     play sound ctc
     "FALA PORTUGUÊS, CARALHO!"
@@ -272,15 +287,22 @@ label wrong_end_02_02_2:
     play sound ctc
     "(\"Eu tenho cara de comunista pra\ncompartilhar as coisas?\",\nvocê pensa.)"
     play sound ctc
-    "(Revoltado com a humilhação que passou,\nvocê decide tacar o foda-se e\ncompra um bilhete na Tele Senna.)"
+    "(Revoltado com a humilhação que passou,\nvocê decide tacar o foda-se e\nvai para a casa lotérica\nmais próxima.)"
+    play sound ctc
+    play sound_bg audio.tele_sena
+    "(Você decide tentar a sorte\nna Tele Senna.)"
     play sound ctc
     "(Você preenche o bilhete puto e entrega\npara a atendente, ainda puto.)"
     play sound ctc
     "(Você vai para a casa puto, com a\nsensação de que se esqueceu de\nalguma coisa... mas continua puto.)"
     play sound ctc
+    stop sound_bg fadeout 2.0
     "(cinco dias depois)"
     play sound ctc
-    "\"E o ganhador do Chevromete Blazer\npreto é... Alexandre Senna de\nCupiqueno!\", você ouve na TV."
+    "\"E o ganhador do Chevromete Blazer\npreto é...\""
+    play sound ctc
+    play sound_bg audio.tele_sena_metaleiro
+    "\"...Alexandre Senna de Cupiqueno!\",\nvocê ouve na TV."
     play sound ctc
     "(Ainda puto, você vai para a casa\nlotérica resgatar seu prêmio.)"
     play sound ctc
@@ -288,6 +310,7 @@ label wrong_end_02_02_2:
     play sound ctc
     "(Puto.)"
     play sound ctc
+    stop sound_bg fadeout 2.0
     "(uma semana depois)"
     play sound ctc
     "(...)"

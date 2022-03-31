@@ -47,7 +47,7 @@ label cap02_04_roda_amigos:
     "É furada essa brincadeira dele!"
     play sound ctc
     voice voz_cap02_04_15
-    "Não, essa brincadeira não é furada não,\nessa brincadeira é... BATATA, muito boa..."
+    "Não, essa brincadeira não é furada não,\nessa brincadeira é...\nBATATA, muito boa..."
     play sound ctc
     voice voz_cap02_04_16
     "Aqui a gente não dá pra fazer essa\nbrincadeira porque a gente é amigo,\nmas dá pra usar a imaginação..."
@@ -123,7 +123,7 @@ label cap02_04_roda_amigos:
     play sound ctc
     "(Um homem misterioso emerge da\nsauna!)"
     play sound ctc
-    "(Ele é extremamente forte e musculoso...)"
+    "(Ele é extremamente forte e\nmusculoso...)"
     play sound ctc
     voice voz_cap02_04_34
     "Você não pediu o homem dos seus\nsonhos...? Aqui estou!"
@@ -134,46 +134,73 @@ label cap02_04_roda_amigos:
     voice voz_cap02_04_36
     "Tudo isso só pra mim..."
     play sound ctc
+    voice voz_cap02_04_40
+    "{p=14.0}{nw}"
     return
 
 
 label wrong_end_02_04_1:
     stop music
+    voice voz_cap02_04_37
     "EU AMALDIÇOO TODO MUNDO QUE FAZ PARTE\nDESSE GRUPO!"
     play sound ctc
+    voice voz_cap02_03_02
     "NA VIDA DE VOCÊS VAI CAIR MALDIÇÃO!"
     play sound ctc
+    voice voz_cap02_03_04
     "NÃO TEM O QUE FAZER NÃO, RAPAZ?"
     play sound ctc
-    "VAI SE FUDER, CAMBADA DE VIADO\nDESGRAÇADO!"
+    voice voz_cap02_04_38
+    "VAI SE FODER, CAMBADA DE VIADO\nDESGRAÇADO!"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound plates_dropping
     "(Furioso, você vira a mesa no chão,\nderrubando tudo com muita\nignorância.)"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound door_kick
     "(Logo em seguida, você dá um chute com\ntoda a força na porta e sai\ncorrendo daquela casa.)"
     play sound ctc
     "(É inadmissível para você ser\nconsiderado como homossexual.)"
     play sound ctc
     "(Você é hétero!)"
+    voice voz_cap02_04_41
+    "EU SOU HÉTERO!"
     play sound ctc
+    "(...)"
+    play sound ctc
+    "(Você começa a fugir da casa\ndo Mangueira Boy.)"
+    play sound ctc
+    "(Você continua correndo na rua.)"
+    play sound ctc
+    voice voz_cap02_04_41
+    "EU SOU HÉTERO!"
+    play sound ctc
+    play sound_bg siren2 fadein 3.0
     "(Ainda correndo na rua, você nota que\nestá sendo seguido...)"
     play sound ctc
     "É a polícia...!"
     play sound ctc
     "(De repente, um policial surge\nrepentinamente da sua frente e pula\nem cima de você, te imobilizando.)"
     play sound ctc
+    voice voz_cap02_04_39
     "AHHHHHH!"
     play sound ctc
     "\"Você que é o ladrão de residências\nde Cupiqueno?\", diz o policial."
     play sound ctc
+    voice voz_cap02_04_42
     "EU SOU HÉTERO! EU SOU HÉTERO!"
     play sound ctc
     "\"Parece que ele está sob efeito de\nnarcóticos, será necessário uma análise\ndetalhada na delegacia.\""
     play sound ctc
     "\"Esse aí tá mais pro Presídio\nAry Fontoura!\""
     play sound ctc
+    voice voz_cap02_04_41
     "EU SOU HÉTERO!"
     play sound ctc
+    voice voz_cap02_04_43
     "EU SOU HÉTERO...!"
     play sound ctc
+    stop sound_bg fadeout 3.0
     $ register_ending("L")
     jump game_over

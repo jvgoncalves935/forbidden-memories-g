@@ -117,6 +117,8 @@ label cap03_03_doutora02:
     voice voz_cap03_03_12
     "...Toque?"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound chaves_punch
     "(Você levou uma dedada da doutora!)"
     voice voz_cap03_03_13
     "Ai doutora... coisa mais esquisita..."

@@ -9,7 +9,7 @@ label cap02_03_casa02:
     play sound ctc
     "A Anita era muito gostosa..."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(telefone tocando)"
     play sound ctc
     "Que droga, ainda não troquei esse toque\nde telefone!"
@@ -21,7 +21,7 @@ label cap02_03_casa02:
         "<Atender o telefone>":
             $ telefone_02_03 = True
             hide textbox_aux
-            stop music
+            stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
             "Alô?"
@@ -48,7 +48,7 @@ label cap02_03_casa02:
         "<Desligar>":
             $ telefone_02_03 = False
             hide textbox_aux
-            stop music
+            stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
             "(desligou o telefone)"
@@ -59,9 +59,11 @@ label cap02_03_casa02:
             play sound ctc
             "Acho que eu vou fazer um toddynho\nali pra mim..."
             play sound ctc
-    stop music
+    "{p=0.2}{nw}"
+    play sound door_bell
     "(campainha tocando)"
     play sound ctc
+    voice voz_cap02_03_01
     "VOCÊS (telefone vibrando) NÃO ME DEIXAM\nEM PAZ, SEUS PERTUBADO!"
     play sound ctc
     play music audio.fm_password
@@ -73,21 +75,29 @@ label cap02_03_casa02:
             call cap02_03_casa02_campainha from _call_cap02_03_casa02_campainha
         "<Fingir que não está em casa>":
             hide textbox_aux
+            stop music
             "(Você ignora a campainha, fingindo que\nnão tem ninguém em casa)."
             play sound ctc
             "(...Ou fingindo que você é surdo e não\nouviu, sei lá.)"
             play sound ctc
+            "{p=0.2}{nw}"
+            play sound door_bell
             "Foda-se esse filho da puta."
             play sound ctc
             "(...)"
             play sound ctc
             "(meia hora depois)"
             play sound ctc
+            "{p=0.2}{nw}"
+            play sound door_bell
             "(Seja lá quem está tocando a campainha,\né uma pessoa muito persistente.)"
             play sound ctc
+            "{p=0.2}{nw}"
+            play sound door_bell
             "(...)"
             play sound ctc
-            "VOCÊ NÃO TEM O QUE FAZER NÃO?"
+            voice voz_cap02_03_04
+            "VOCÊ NÃO TEM O QUE FAZER NÃO, RAPAZ?"
             play sound ctc
             "(...)"
             play sound ctc
@@ -98,6 +108,12 @@ label cap02_03_casa02:
             if(telefone_02_03):
                 "(Você espera mais uma hora dentro\nde casa, só pra ter certeza\nde que ele foi embora.)"
                 play sound ctc
+                "(...)"
+                play sound ctc
+                "(...)"
+                play sound ctc
+            "(...Então é isso.)"
+            play sound ctc
     if(wrong_end):
         return
     stop music
@@ -146,11 +162,15 @@ label cap02_03_casa02_campainha:
         "<Fechar a porta com muita ignorância>":
             hide textbox_aux
             stop music
-            "(porta fechando com muita ignorância)"
+            voice voz_cap02_03_03
+            "OW SEU FILHA DA PUTA,\nSEU VAGABUNDO...!"
             play sound ctc
-            "FILHO DA PUTA!"
-            play sound ctc
+            voice voz_cap02_03_02
             "NA VIDA DE VOCÊS VAI CAIR MALDIÇÃO!"
+            play sound ctc
+            "{p=0.2}{nw}"
+            play sound door_slam
+            "(porta fechando com muita ignorância)"
             play sound ctc
             "(Você pensa que deve ser apenas um\npilantra que iria fazer algo\nde ruim com você.)"
             play sound ctc
@@ -158,7 +178,9 @@ label cap02_03_casa02_campainha:
             play sound ctc
             "Vou ir lá fazer meu toddynho com\nmisto quente."
             play sound ctc
-            "(47 minutos depois)"
+            "{p=0.2}{nw}"
+            play sound toaster_ding
+            "(12 minutos depois)"
             play sound ctc
             "Esse misto tava MUITO gostoso..."
             play sound ctc
@@ -171,6 +193,9 @@ label wrong_end_02_03_1:
     play sound ctc
     "(Você sempre foi bom nele...)"
     play sound ctc
+    play sound_bg audio.despacito_nokia
+    "(...)"
+    play sound ctc
     "(O som da cobrinha andando na tela\ne comendo os asteriscos faz você\nse esquecer dos problemas da\nvida adulta.)"
     play sound ctc
     "(Não tem contas para pagar, apenas\nfazer a cobra comer os asteriscos\nsem encostar nas beiradas.)"
@@ -181,14 +206,33 @@ label wrong_end_02_03_1:
     play sound ctc
     "Esse jogo é muito realista, bem a\nfrente do seu tempo!"
     play sound ctc
+    "E junto com essa música envolvente,\na imersão é garantida!"
+    play sound ctc
+    "Imersão GRANDE E GOSTOSA!"
+    play sound ctc
+    stop sound_bg fadeout 1.0
+    "(...)"
+    play sound ctc
+    play sound_bg audio.despacito_nokia
     "(30 minutos depois)"
     play sound ctc
     "Eu realmente sou bom nesse jogo!"
     play sound ctc
+    "Não morri até agora!"
+    play sound ctc
+    "Isso aqui é diversão garantida..."
+    play sound ctc
+    stop sound_bg fadeout 1.0
+    "(...)"
+    play sound ctc
+    play sound_bg audio.despacito_nokia
     "(64 minutos depois)"
     play sound ctc
     "Não é possível, eu acho que devo\nser profissional ou alguma coisa\ndo tipo."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
+    stop sound_bg
     "(Você liga para o pessoal do Guinnass\nBook para tentar registrar um\nnovo recorde.)"
     play sound ctc
     "(A ligação por interurbano fica em\nmais de 100 reais, você agora tem\numa nova dívida a pagar!)"
@@ -199,8 +243,10 @@ label wrong_end_02_03_1:
     play sound ctc
     "(Você ganha 6.000 dólares como\nrecompensa!)"
     play sound ctc
-    "(O que você faria com um dinheiro\ndesses?)"
+    voice voz_cap01_04_63
+    "(O que que você faria com um\ndinheiro desses?)"
     play sound ctc
+    voice voz_cap02_03_05
     "(Faria certas coisas que você nunca\nimaginaria que eu tinha que eu,\nTERIA coragem de fazer!)"
     play sound ctc
     $ register_ending("J")
@@ -224,6 +270,8 @@ label wrong_end_02_03_2:
     play sound ctc
     "(Quando você se vira para dentro\nde casa pra pegar a faca\npra ele tirar o mato...)"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound chaves_punch
     "(Você sente algo batendo na sua\ncabeça com muita força...!)"
     play sound ctc
     "(Você desmaia no chão.)"
@@ -234,7 +282,8 @@ label wrong_end_02_03_2:
     play sound ctc
     "(...!)"
     play sound ctc
-    "AI CARA! Puta que pariu, que\nporra é essa?!"
+    voice voz_cap05_02_038
+    "AI CARA! Puta que pariu meu,\nque porra é essa?!"
     play sound ctc
     "(Você sente uma dor de cabeça\nabsurda!)"
     play sound ctc

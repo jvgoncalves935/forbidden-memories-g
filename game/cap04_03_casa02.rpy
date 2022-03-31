@@ -13,7 +13,7 @@ label cap04_03_casa02:
     play sound ctc
     "Que droga de emprego de segurança,\npagam mal pra caramba e eu\naqui que nem burro de carga-"
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(telefone tocando)"
     play sound ctc
     "Eu nem acordei direito, seus\nfilha da puta!"
@@ -25,7 +25,7 @@ label cap04_03_casa02:
         "<Desligar o telefone com ignorância>":
             hide textbox_aux
             jump wrong_end_04_03_1
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alexandre aqui."
@@ -74,7 +74,7 @@ label cap04_03_casa02:
     play sound ctc
     "Quer me fuder me beija, caralho...!"
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(telefone tocando)"
     play sound ctc
     "AH NÃO CARALHO!"
@@ -83,7 +83,7 @@ label cap04_03_casa02:
     menu:
         "<Atender o telefone>":
             hide textbox_aux
-            stop music
+            stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
             "(atendeu o telefone)"
@@ -132,7 +132,7 @@ label cap04_03_casa02:
     return
 
 label wrong_end_04_03_1:
-    stop music
+    stop sound_bg
     "AAARRRGHH PORRA!"
     play sound ctc
     "(Você segura o botão de desligar do\ncelular com toda sua força.)"
@@ -206,7 +206,6 @@ label wrong_end_04_03_2:
     play sound ctc
     "TOMARA QUE VOCÊ FIQUE SEM DINHEIRO\nE MORRA DE FOME PAU NO-"
     play sound ctc
-    stop music
     "{p=0.2}{nw}"
     play sound phone_end_call
     "(desligou o telefone do outro lado)"

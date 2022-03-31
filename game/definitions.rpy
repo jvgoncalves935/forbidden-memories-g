@@ -25,7 +25,7 @@ init python:
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     config.keymap['game_menu'] = ['K_ESCAPE']
-    renpy.music.register_channel("music_poem", mixer="music", tight=True)
+    renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
 
 
     #config.preferences['prefs_left'].append(
@@ -247,6 +247,11 @@ init python:
             if(not pos):
                 return False
         return True
+
+    def check_overwrite_menu(message):
+        if(message == "Tem certeza de que deseja sobrescrever seu Save?"):
+            return True
+        return False
     
 
 
@@ -472,6 +477,8 @@ image guina 1a = "mod_assets/characters/guina/1a.png"
 image yuri 3xd = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xd.png")
 image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xe.png")
 
+image gilson 1a = "mod_assets/characters/gilson/1a.png"
+
 
 ###################Imagens
 image guinodia_movie = Movie(play="mod_assets/videos/guinodia.webm",size=(960,720))
@@ -488,6 +495,13 @@ image game_over_bg = "mod_assets/images/GameOver.png"
 image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 image textbox_black = "mod_assets/gui/textbox_black.png"
 image white_bg = "mod_assets/images/white.png"
+
+image header_cap_01 = "mod_assets/images/cap01.png"
+image header_cap_02 = "mod_assets/images/cap02.png"
+image header_cap_03 = "mod_assets/images/cap03.png"
+image header_cap_04 = "mod_assets/images/cap04.png"
+image header_cap_05 = "mod_assets/images/cap05.png"
+image header_cap_XX = "mod_assets/images/capXX.png"
 
 image textbox_aux:
     "mod_assets/gui/textbox2.png"
@@ -523,10 +537,14 @@ define audio.tv_002 = "mod_assets/music/tv_002.ogg"
 define audio.tv_003 = "mod_assets/music/tv_003.ogg"
 define audio.tv_004 = "mod_assets/music/tv_004.ogg"
 define audio.siren = "mod_assets/music/siren.ogg"
-
+define audio.siren2 = "<loop 0.433>mod_assets/music/siren2.ogg"
 define audio.ambulance_01 = "<loop 0.00>mod_assets/music/ambulance_01.ogg"
 define audio.ambulance_02 = "<loop 0.00>mod_assets/music/ambulance_02.ogg"
 define audio.city_01 = "<loop 0.00>mod_assets/music/city_01.ogg"
+define audio.cicadas = "<loop 0.00>mod_assets/music/cicadas.ogg"
+define audio.tele_sena = "<loop 0.00>mod_assets/music/tele_sena.ogg"
+define audio.tele_sena_metaleiro = "<loop 0.00>mod_assets/music/tele_sena_metaleiro.ogg"
+define audio.despacito_nokia = "<loop 0.00>mod_assets/music/despacito_nokia.ogg"
 
 
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
@@ -723,6 +741,10 @@ define voz_cap02_02_54 = "mod_assets/voices/02_02/02_02_54.ogg"
 
 #02_03
 define voz_cap02_03_01 = "mod_assets/voices/02_03/02_03_01.ogg"
+define voz_cap02_03_02 = "mod_assets/voices/02_03/02_03_02.ogg"
+define voz_cap02_03_03 = "mod_assets/voices/02_03/02_03_03.ogg"
+define voz_cap02_03_04 = "mod_assets/voices/02_03/02_03_04.ogg"
+define voz_cap02_03_05 = "mod_assets/voices/02_03/02_03_05.ogg"
 
 
 #02_04
@@ -762,6 +784,13 @@ define voz_cap02_04_33 = "mod_assets/voices/02_04/02_04_33.ogg"
 define voz_cap02_04_34 = "mod_assets/voices/02_04/02_04_34.ogg"
 define voz_cap02_04_35 = "mod_assets/voices/02_04/02_04_35.ogg"
 define voz_cap02_04_36 = "mod_assets/voices/02_04/02_04_36.ogg"
+define voz_cap02_04_37 = "mod_assets/voices/02_04/02_04_37.ogg"
+define voz_cap02_04_38 = "mod_assets/voices/02_04/02_04_38.ogg"
+define voz_cap02_04_39 = "mod_assets/voices/02_04/02_04_39.ogg"
+define voz_cap02_04_40 = "mod_assets/voices/02_04/02_04_40.ogg"
+define voz_cap02_04_41 = "mod_assets/voices/02_04/02_04_41.ogg"
+define voz_cap02_04_42 = "mod_assets/voices/02_04/02_04_42.ogg"
+define voz_cap02_04_43 = "mod_assets/voices/02_04/02_04_43.ogg"
 
 
 #03_01
@@ -845,6 +874,9 @@ define voz_cap03_03_33 = "mod_assets/voices/03_03/03_03_33.ogg"
 
 #04_01
 define voz_cap04_01_01 = "mod_assets/voices/04_01/04_01_01.ogg"
+define voz_cap04_01_02 = "mod_assets/voices/04_01/04_01_02.ogg"
+define voz_cap04_01_03 = "mod_assets/voices/04_01/04_01_03.ogg"
+define voz_cap04_01_04 = "mod_assets/voices/04_01/04_01_04.ogg"
 
 
 #04_02
@@ -895,6 +927,7 @@ define voz_cap04_04_34 = "mod_assets/voices/04_04/04_04_34.ogg"
 
 #05_01
 define voz_cap05_01_01 = "mod_assets/voices/05_01/05_01_01.ogg"
+define voz_cap05_01_02 = "mod_assets/voices/05_01/05_01_02.ogg"
 
 
 #05_02
@@ -1085,6 +1118,9 @@ define voz_capXX_015 = "mod_assets/voices/capXX/capxx_015.ogg"
 define voz_capXX_016 = "mod_assets/voices/capXX/capxx_016.ogg"
 define voz_capXX_017 = "mod_assets/voices/capXX/capxx_017.ogg"
 define voz_capXX_018 = "mod_assets/voices/capXX/capxx_018.ogg"
+define voz_capXX_019 = "mod_assets/voices/capXX/capxx_019.ogg"
+define voz_capXX_020 = "mod_assets/voices/capXX/capxx_020.ogg"
+define voz_capXX_021 = "mod_assets/voices/capXX/capxx_021.ogg"
 
 
 ###################Audios
@@ -1102,6 +1138,13 @@ define audio.phone_click = "mod_assets/sounds/phone_click.ogg"
 define audio.phone_end_call = "mod_assets/sounds/phone_end_call.ogg"
 define audio.radio_chatter = "<loop 0.00>mod_assets/sounds/radio_chatter.ogg"
 define audio.car_crash = "<loop 0.00>mod_assets/sounds/car_crash.ogg"
+define audio.door_bell = "<loop 0.00>mod_assets/sounds/door_bell.ogg"
+define audio.chaves_punch = "<loop 0.00>mod_assets/sounds/chaves_punch.ogg"
+define audio.punch01 = "<loop 0.00>mod_assets/sounds/punch01.ogg"
+define audio.door_slam = "<loop 0.00>mod_assets/sounds/door_slam.ogg"
+define audio.toaster_ding = "<loop 0.00>mod_assets/sounds/toaster_ding.ogg"
+define audio.plates_dropping = "<loop 0.00>mod_assets/sounds/plates_dropping.ogg"
+define audio.door_kick = "<loop 0.00>mod_assets/sounds/door_kick.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

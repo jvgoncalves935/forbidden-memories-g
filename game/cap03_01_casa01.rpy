@@ -1,6 +1,11 @@
 label cap03_01_casa01:
     scene black
     stop music
+
+    show header_cap_03
+    pause 1.5
+    hide header_cap_03 
+
     show textbox_black at center
     #show intro_001 at top
 
@@ -11,7 +16,8 @@ label cap03_01_casa01:
     "Hmm..."
     play sound ctc
     $ renpy.movie_cutscene("mod_assets/videos/recruta.webm")
-    "Ahh!"
+    voice voz_cap02_04_39
+    "AHHHHHH!"
     play sound ctc
     "(...)"
     play sound ctc
@@ -33,7 +39,7 @@ label cap03_01_casa01:
     play sound ctc
     "Mas aquela dor estranha ainda\ntá me atacando, é foda..."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "Lá vem essa porcaria de novo..."
@@ -45,12 +51,12 @@ label cap03_01_casa01:
             call telefone_03_01_01 from _call_telefone_03_01_01
         "<Desligar>":
             hide textbox_aux
-            stop music
+            stop sound_bg
             "Que se dane."
             play sound ctc
             "(desliga o telefone)"
             play sound ctc
-    stop music
+    stop sound_bg
     "Mas que droga, o pessoal do\nconsultório não me liga..."
     play sound ctc
     "Eles ficam atrasando a minha\nconsulta, que droga!"
@@ -59,7 +65,7 @@ label cap03_01_casa01:
     play sound ctc
     "Eu preciso resolver logo essa\nsituação mas eles ficam de\nenrolação comigo!"
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "Mas que porra, hein?!"
@@ -71,7 +77,7 @@ label cap03_01_casa01:
             call telefone_03_01_02 from _call_telefone_03_01_02
         "<Desligar>":
             hide textbox_aux
-            stop music
+            stop sound_bg
             "Ah, vai tomar no seu cu."
             play sound ctc
             "Vai ver se eu tô lá na esquina!"
@@ -79,8 +85,8 @@ label cap03_01_casa01:
             "O pessoal não tem mais o que fazer não?"
             play sound ctc
     hide textbox_aux
-    stop music
-    play music celular
+    stop sound_bg
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "CARALHO, DE NOVO?"
@@ -89,7 +95,7 @@ label cap03_01_casa01:
     menu:
         "<Atender o telefone>":
             hide textbox_aux
-            stop music
+            stop sound_bg
             "Alô?"
             play sound ctc
             "Bom dia, eu falo com o\nAlexandre?"
@@ -111,7 +117,7 @@ label cap03_01_casa01:
         "<Desligar>":
             $ wrong_end = True
             hide textbox_aux
-            stop music
+            stop sound_bg
             "FODA-SE ESSE TELEFONE MALDITO!"
             play sound ctc
             "MAIS ALGUÉM VAI ME LIGAR?"
@@ -122,7 +128,7 @@ label cap03_01_casa01:
             play sound ctc
             "Parece que não..."
     hide textbox_aux
-    stop music 
+    stop sound_bg 
     
     if(wrong_end):
         jump wrong_end_03_01
@@ -131,11 +137,11 @@ label cap03_01_casa01:
     
     "Até que enfim, esse telefone já\ntava me dando nos nervos..."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "Ah, foda-se quem tá ligando, já\nme ligaram do consultório\nmesmo..."
-    stop music
+    stop sound_bg
     "(desligou o telefone)"
     play sound ctc
     "AI! AI... Que dor horrível...!"
@@ -145,7 +151,7 @@ label cap03_01_casa01:
     return
 
 label telefone_03_01_01:
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alô?"
@@ -160,7 +166,7 @@ label telefone_03_01_01:
     return
 
 label telefone_03_01_02:
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "ALÔ!!!"
@@ -184,7 +190,7 @@ label telefone_03_01_02:
 label wrong_end_03_01:
     "Esse telefone não para de tocar,\nmas que porcaria!"
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "AHHHHHHH...!!!"
@@ -193,10 +199,10 @@ label wrong_end_03_01:
     play sound ctc
     "Quer saber? Eu vou SACANEAR ESSE\nPALHAÇO!"
     play sound ctc
-    stop music
+    stop sound_bg
     "(atendeu o telefone)"
     play sound ctc
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alou, Jefferson?"

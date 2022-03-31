@@ -1,6 +1,11 @@
 label cap01_02_casa:
     scene black
     stop music
+
+    show header_cap_01
+    pause 1.5
+    hide header_cap_01 
+
     show textbox_black at center
     #show intro_001 at top
     "Nossa, hoje é o dia da pelada com o\nJames..."
@@ -9,7 +14,7 @@ label cap01_02_casa:
     play sound ctc
     "Bora esperar a ligação de alguém\naí e eu já vou lá pro futebol."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     show textbox_aux
@@ -21,7 +26,7 @@ label cap01_02_casa:
             hide textbox_aux
             jump wrong_end_01_02_1
     
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alô?"
@@ -64,5 +69,6 @@ label wrong_end_01_02_1:
     play sound ctc
     "(Você volta para casa e decide jogar\npalavras-cruzadas.)"
     play sound ctc
+    stop sound_bg fadeout 3.0
     $ register_ending("A")
     jump game_over

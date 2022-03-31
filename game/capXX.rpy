@@ -1,5 +1,10 @@
 label capXX:
     #Yuri encontra Seto
+
+    show header_cap_XX
+    pause 1.5
+    hide header_cap_XX 
+
     show black at top
     "{p=0.5}{nw}"
     hide black
@@ -17,6 +22,7 @@ label capXX:
     "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo\na matéria direito."
     play sound ctc
     "Não estou conseguindo..."
+    play sound ctc
     stop music
     play music fm_plazatown
     show seto_s at side_image_in zorder 3
@@ -40,7 +46,7 @@ label capXX:
 
     "{p=0.3}{nw}"
     "(Parece que ele surgiu de outra\nera...! Antigo Egito?)"
-
+    play sound ctc
     show yuri 2n at t31
     "{p=0.3}{nw}"
     "O-o que você está fazendo aqui?"
@@ -271,6 +277,25 @@ label capXX:
     voice voz_capXX_017
     "Se tiver algum aluno fazendo coisa\nerrada... A gente COME JÁ."
     play sound ctc
+    stop music
+
+    show gilson 1a at rightin(755,time=0.25)
+    "{p=0.6}{nw}"
+    voice voz_capXX_019
+    "Gilson?"
+    play sound ctc
+    show guina_s at side_image_in zorder 3
+    "{p=0.6}{nw}"
+    voice voz_capXX_020
+    "Salve salve, Gilson..."
+    play sound ctc
+    show guina_s at side_image_out
+    "{p=0.6}{nw}"
+    hide guina_s
+    voice voz_capXX_021
+    "Gilson?"
+    play sound ctc
+
     hide escadas_ddlc
     show black at top
     with dissolve

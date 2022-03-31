@@ -342,12 +342,12 @@ label wrong_end_01_04_2:
     voice voz_cap01_04_56
     "(Você consegue sentir a faca lá no\nestômago, porra, que facona...)"
     play sound ctc
-    play music audio.indio_policia loop
+    play sound_bg audio.indio_policia
     "(Você cai no chão sem conseguir se\nmover, vendo sua própria vida\nse esVAINdo.)"
     play sound ctc
     "(Todos apavorados começam a fugir do\nÍndio, saindo do campo de\nfutebol o mais rápido possível.)"
     play sound ctc
-    stop music fadeout 5.0
+    stop sound_bg fadeout 5.0
     "(Índio começa a se aproximar cada vez\nmais perto de você, ainda com a\nfaca na mão e um olhar psicótico.)"
     play sound ctc
     "(Você dá o seu último respiro de\nagonia e desmaia, sem possuir\nmais forças para viver.)"
@@ -377,7 +377,7 @@ label wrong_end_01_04_3:
     play sound ctc
     "(três dias depois)"
     play sound ctc
-    play music audio.tv_001 noloop
+    play sound_bg audio.tv_001 noloop
     "(Você assiste a TV antes de ir\npro trabalho.)"
     play sound ctc
     "Muito interessante isso daí."
@@ -386,7 +386,7 @@ label wrong_end_01_04_3:
     play sound ctc
     "Então eu quero mais é que essa\nlavadeira se exploda."
     play sound ctc
-    play music audio.tv_002 noloop
+    play sound_bg audio.tv_002 noloop
     "(...)"
     play sound ctc
     "Porra meu, bateu até uma\nfome agora..."
@@ -395,7 +395,7 @@ label wrong_end_01_04_3:
     play sound ctc
     "Melhor eu deixar a TV ligada e\nouvir da cozinha."
     play sound ctc
-    play music audio.tv_003 noloop
+    play sound_bg audio.tv_003 noloop
     "(...)"
     play sound ctc
     "Espera aí, esse não é aquele\ndesenho lá que é do..."
@@ -404,7 +404,7 @@ label wrong_end_01_04_3:
     play sound ctc
     "Eu não assisto isso não!"
     play sound ctc
-    play music audio.tv_004 noloop
+    play sound_bg audio.tv_004 noloop
     "(...)"
     play sound ctc
     "Eita, o que que tá\nacontecendo, hã?"

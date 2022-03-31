@@ -1,6 +1,11 @@
 label cap02_01_casa01:
     scene black
     stop music
+
+    show header_cap_02
+    pause 1.5
+    hide header_cap_02 
+
     show textbox_black at center
     #show intro_001 at top
     "Nossa, a pelada ontem foi muito top..."
@@ -13,7 +18,7 @@ label cap02_01_casa01:
     play sound ctc
     "Eu tenho certeza que é na mangueira."
     play sound ctc
-    play music celular
+    play sound_bg celular
     "(celular tocando)"
     play sound ctc
     "Mas que toque irritante esse aí, eu vou\ntrocar essa porcaria!"
@@ -26,7 +31,7 @@ label cap02_01_casa01:
         "<Desligar>":
             hide textbox_aux
             jump wrong_end_02_01_1
-    stop music
+    stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
     "Alô?"
@@ -35,6 +40,7 @@ label cap02_01_casa01:
     play sound ctc
     "Seul charroh estáh quaseh prohtho!\nGostharhia de passahr na oficihnah?"
     play sound ctc
+    voice voz_cap02_02_37
     "No problem."
     play sound ctc
     "(Você desliga o telefone e vai em\ndireção à oficina.)"
@@ -75,16 +81,16 @@ label wrong_end_02_01_1:
     play sound ctc
     "(seis meses depois)"
     play sound ctc
-    play music audio.radio_chatter
+    play sound_bg audio.radio_chatter
     "(É o seu primeiro dia de ronda\nna Polícia Militar de Cupiqueno!)"
     play sound ctc
-    $ pos_music = renpy.music.get_pos("music")
+    $ pos_music = renpy.music.get_pos("sound_bg")
 
-    stop music
-    play music celular
+    stop sound_bg
+    play sound_bg celular
     "(Sua mãe te liga, emocionada com sua\nconquista.)"
     play sound ctc
-    $ renpy.music.play("<loop 44.7 from {}>mod_assets/sounds/radio_chatter.ogg".format(pos_music))
+    $ renpy.music.play("<loop 44.7 from {}>mod_assets/sounds/radio_chatter.ogg".format(pos_music),channel="sound_bg")
     "(Você acaba de receber um chamado de\noutra viatura, você apenas\nresponde antes de desligar:)"
     play sound ctc
     voice voz_cap02_01_01
@@ -98,7 +104,7 @@ label wrong_end_02_01_1:
     play sound ctc
     "(...)"
     play sound ctc
-    stop music
+    stop sound_bg
 
     window hide(None)
     $ game_over_pos_cutscene = True

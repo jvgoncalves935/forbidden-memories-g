@@ -115,6 +115,8 @@ label cap05_02_testeporno:
     voice voz_cap05_02_037
     "Tá."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound chaves_punch
     "(Você levou uma dedada!)"
     play sound ctc
     voice voz_cap05_02_038
