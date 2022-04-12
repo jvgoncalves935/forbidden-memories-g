@@ -263,6 +263,7 @@ init python:
     build.classify('tests/**.**',None)
     build.classify('tests/**',None)
     build.classify('psd/**.**',None)
+    build.classify('veg/**.**',None)
     build.classify('original_scripts/**.**',None)
     build.classify('advanced_scripts/**.**',None)
     build.classify('community_assets/**.**',None)

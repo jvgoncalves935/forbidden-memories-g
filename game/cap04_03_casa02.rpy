@@ -1,4 +1,6 @@
 label cap04_03_casa02:
+    $ drpc_update("cap04-2")
+
     scene black
     stop music
     show textbox_black at center
@@ -14,15 +16,15 @@ label cap04_03_casa02:
     "Que droga de emprego de segurança,\npagam mal pra caramba e eu\naqui que nem burro de carga-"
     play sound ctc
     play sound_bg celular
-    "(telefone tocando)"
+    "(celular tocando)"
     play sound ctc
     "Eu nem acordei direito, seus\nfilha da puta!"
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             hide textbox_aux
             pass
-        "<Desligar o telefone com ignorância>":
+        "<Desligar o celular com ignorância>":
             hide textbox_aux
             jump wrong_end_04_03_1
     stop sound_bg
@@ -62,7 +64,7 @@ label cap04_03_casa02:
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click
-    "(desligou o telefone)"
+    "(desligou o celular)"
     play sound ctc
     "Mas esse desgraçado é um folgado\nmesmo!"
     play sound ctc
@@ -75,18 +77,18 @@ label cap04_03_casa02:
     "Quer me fuder me beija, caralho...!"
     play sound ctc
     play sound_bg celular
-    "(telefone tocando)"
+    "(celular tocando)"
     play sound ctc
     "AH NÃO CARALHO!"
     play sound ctc
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             hide textbox_aux
             stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
-            "(atendeu o telefone)"
+            "(atendeu o celular)"
             play sound ctc
             voice voz_cap03_01_01
             "Alor, é do corpo de bombeiro?"
@@ -103,7 +105,7 @@ label cap04_03_casa02:
             play sound ctc
             "AI MARLENE, SENTA NA PICA GOSTOSO,\nISSO, ISSO!"
             play sound ctc
-            "(Você começa a dar tapas na sua perna\ne bota o telefone bem\nperto pra ele ouvir.)"
+            "(Você começa a dar tapas na sua perna\ne bota o celular bem\nperto pra ele ouvir.)"
             play sound ctc
             "AAAAH CARALHO, EU VOU GOZAR LÁ NO SEU\nÚTERO MARLENE!"
             play sound ctc
@@ -121,7 +123,7 @@ label cap04_03_casa02:
             play sound ctc
             "{p=0.2}{nw}"
             play sound phone_click
-            "(desligou o telefone)"
+            "(desligou o celular)"
             play sound ctc
     "Tô atrasado pra carai, tô quase\nperdendo o ônibus já...!"
     play sound ctc
@@ -132,6 +134,7 @@ label cap04_03_casa02:
     return
 
 label wrong_end_04_03_1:
+    $ drpc_update("finalS")
     stop sound_bg
     "AAARRRGHH PORRA!"
     play sound ctc
@@ -193,6 +196,7 @@ label wrong_end_04_03_1:
     jump game_over
 
 label wrong_end_04_03_2:
+    $ drpc_update("finalT")
     stop music
     "OW SEU FILHO DA PUTA, JÁ PENSOU\nEM ME PAGAR O QUE\nVOCÊ TÁ ME DEVENDO?"
     play sound ctc
@@ -208,7 +212,7 @@ label wrong_end_04_03_2:
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_end_call
-    "(desligou o telefone do outro lado)"
+    "(desligou o celular do outro lado)"
     play sound ctc
     "É isso que você merece, desgraçado!"
     play sound ctc
@@ -226,6 +230,7 @@ label wrong_end_04_03_2:
     play sound ctc
     "(...)"
     play sound ctc
+    stop voice
 
     window hide(None)
     $ game_over_pos_cutscene = True

@@ -1,4 +1,6 @@
 label cap02_03_casa02:
+    $ drpc_update("cap02-2")
+
     scene black
     stop music
     show textbox_black at center
@@ -10,15 +12,15 @@ label cap02_03_casa02:
     "A Anita era muito gostosa..."
     play sound ctc
     play sound_bg celular
-    "(telefone tocando)"
+    "(celular tocando)"
     play sound ctc
-    "Que droga, ainda não troquei esse toque\nde telefone!"
+    "Que droga, ainda não troquei esse toque\nde celular!"
     $ telefone_02_03 = False
     play sound ctc
     #play music audio.fm_password
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             $ telefone_02_03 = True
             hide textbox_aux
             stop sound_bg
@@ -41,7 +43,7 @@ label cap02_03_casa02:
             stop music
             "{p=0.2}{nw}"
             play sound phone_click
-            "(desligou o telefone)"
+            "(desligou o celular)"
             play sound ctc
             "Tem que tomar cuidado com esses\nrolês do Mangueira Evil..."
             play sound ctc
@@ -51,7 +53,7 @@ label cap02_03_casa02:
             stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
-            "(desligou o telefone)"
+            "(desligou o celular)"
             play sound ctc
             "Vai tomar no cu, deve ser trote\nessa merda."
             play sound ctc
@@ -64,7 +66,7 @@ label cap02_03_casa02:
     "(campainha tocando)"
     play sound ctc
     voice voz_cap02_03_01
-    "VOCÊS (telefone vibrando) NÃO ME DEIXAM\nEM PAZ, SEUS PERTUBADO!"
+    "VOCÊS (celular vibrando) NÃO ME DEIXAM\nEM PAZ, SEUS PERTUBADO!"
     play sound ctc
     play music audio.fm_password
     show textbox_aux
@@ -187,6 +189,7 @@ label cap02_03_casa02_campainha:
     return
 
 label wrong_end_02_03_1:
+    $ drpc_update("finalJ")
     stop music
     $ wrong_end = True
     "(Como você não tem nada para fazer,\nvocê decide jogar o jogo da\ncobrinha.)"
@@ -254,6 +257,7 @@ label wrong_end_02_03_1:
     return
 
 label wrong_end_02_03_2:
+    $ drpc_update("finalK")
     stop music
     $ wrong_end = True
     "Tá bom então, quanto que você vai\ncobrar?"

@@ -1,8 +1,11 @@
 label cap04_02_yeahman:
+    $ drpc_update("cap04-1")
     scene black
     stop music
     show textbox_black at center
     #show intro_001 at top
+    stop voice
+
     $ renpy.movie_cutscene("mod_assets/videos/yeahman.webm")
     "(...!)"
     play sound ctc
@@ -39,10 +42,13 @@ label cap04_02_yeahman:
     play sound ctc
     "(...)"
     play sound ctc
+    stop voice
+    
     $ renpy.movie_cutscene("mod_assets/videos/yeahman2.webm")
     return
 
 label wrong_end_04_02_1:
+    $ drpc_update("finalR")
     stop music
     "(Você vê a dor e agonia na expressão\naflita de Yeah Man...)"
     play sound ctc

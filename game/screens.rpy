@@ -852,7 +852,6 @@ screen game_menu_m():
     timer 0.3 action Hide("game_menu_m")
 
 screen game_menu(title, scroll=None):
-
     # Add the backgrounds.
     if main_menu:
         add gui.main_menu_background
@@ -1088,7 +1087,6 @@ screen default_menu_aux():
         action [Return(), Hide("side_menuart")]
 
 screen operation_senna_scr():
-
     tag menu
 
     style_prefix "operation_senna_scr"
@@ -1109,7 +1107,6 @@ screen operation_senna_scr():
         action [NullAction()]
 
 screen converting_minds_scr():
-
     tag menu
 
     style_prefix "converting_minds_scr"
@@ -1465,7 +1462,7 @@ screen endings():
     if(persistent.endings["A"]):
         vbox:
             xalign 0.66
-            yalign 0.11
+            yalign 0.09
             textbutton _("Carta 27"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1476,7 +1473,7 @@ screen endings():
     if(persistent.endings["B"]):
         vbox:
             xalign 0.66
-            yalign 0.16
+            yalign 0.14
             textbutton _("Carta 28"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1487,7 +1484,7 @@ screen endings():
     if(persistent.endings["C"]):
         vbox:
             xalign 0.66
-            yalign 0.21
+            yalign 0.19
             textbutton _("Carta 29"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1498,7 +1495,7 @@ screen endings():
     if(persistent.endings["D"]):
         vbox:
             xalign 0.66
-            yalign 0.26
+            yalign 0.24
             textbutton _("Carta 30"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1509,7 +1506,7 @@ screen endings():
     if(persistent.endings["E"]):
         vbox:
             xalign 0.66
-            yalign 0.31
+            yalign 0.29
             textbutton _("Carta 31"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1520,7 +1517,7 @@ screen endings():
     if(persistent.endings["F"]):
         vbox:
             xalign 0.66
-            yalign 0.36
+            yalign 0.34
             textbutton _("Carta 32"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1531,7 +1528,7 @@ screen endings():
     if(persistent.endings["G"]):
         vbox:
             xalign 0.66
-            yalign 0.41
+            yalign 0.39
             textbutton _("Carta 33"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1542,18 +1539,18 @@ screen endings():
     if(persistent.endings["H"]):
         vbox:
             xalign 0.66
-            yalign 0.46
+            yalign 0.44
             textbutton _("Carta 34"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="filhona.png",card=7),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="pegasus.png",card=7),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(persistent.endings["I"]):
         vbox:
             xalign 0.66
-            yalign 0.51
+            yalign 0.49
             textbutton _("Carta 35"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1564,7 +1561,7 @@ screen endings():
     if(persistent.endings["J"]):
         vbox:
             xalign 0.795
-            yalign 0.11
+            yalign 0.09
             textbutton _("Carta 36"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1575,7 +1572,7 @@ screen endings():
     if(persistent.endings["K"]):
         vbox:
             xalign 0.795
-            yalign 0.16
+            yalign 0.14
             textbutton _("Carta 37"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1586,7 +1583,7 @@ screen endings():
     if(persistent.endings["L"]):
         vbox:
             xalign 0.795
-            yalign 0.21
+            yalign 0.19
             textbutton _("Carta 38"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1597,7 +1594,7 @@ screen endings():
     if(persistent.endings["M"]):
         vbox:
             xalign 0.795
-            yalign 0.26
+            yalign 0.24
             textbutton _("Carta 39"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1609,7 +1606,7 @@ screen endings():
     if(persistent.endings["N"]):
         vbox:
             xalign 0.795
-            yalign 0.31
+            yalign 0.29
             textbutton _("Carta 40"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1620,7 +1617,7 @@ screen endings():
     if(persistent.endings["O"]):
         vbox:
             xalign 0.795
-            yalign 0.36
+            yalign 0.34
             textbutton _("Carta 41"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1631,7 +1628,7 @@ screen endings():
     if(persistent.endings["P"]):
         vbox:
             xalign 0.795
-            yalign 0.41
+            yalign 0.39
             textbutton _("Carta 42"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1642,18 +1639,18 @@ screen endings():
     if(persistent.endings["Q"]):
         vbox:
             xalign 0.795
-            yalign 0.46
+            yalign 0.44
             textbutton _("Carta 43"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=16),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="pica_pau.png",card=16),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(persistent.endings["R"]):
         vbox:
             xalign 0.795
-            yalign 0.51
+            yalign 0.49
             textbutton _("Carta 44"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1664,7 +1661,7 @@ screen endings():
     if(persistent.endings["S"]):
         vbox:
             xalign 0.93
-            yalign 0.11
+            yalign 0.09
             textbutton _("Carta 45"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1675,7 +1672,7 @@ screen endings():
     if(persistent.endings["T"]):
         vbox:
             xalign 0.93
-            yalign 0.16
+            yalign 0.14
             textbutton _("Carta 46"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1686,7 +1683,7 @@ screen endings():
     if(persistent.endings["U"]):
         vbox:
             xalign 0.93
-            yalign 0.21
+            yalign 0.19
             textbutton _("Carta 47"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1697,7 +1694,7 @@ screen endings():
     if(persistent.endings["V"]):
         vbox:
             xalign 0.93
-            yalign 0.26
+            yalign 0.24
             textbutton _("Carta 48"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1708,7 +1705,7 @@ screen endings():
     if(persistent.endings["W"]):
         vbox:
             xalign 0.93
-            yalign 0.31
+            yalign 0.29
             textbutton _("Carta 49"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1719,7 +1716,7 @@ screen endings():
     if(persistent.endings["X"]):
         vbox:
             xalign 0.93
-            yalign 0.36
+            yalign 0.34
             textbutton _("Carta 50"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1730,29 +1727,29 @@ screen endings():
     if(persistent.endings["Y"]):
         vbox:
             xalign 0.93
-            yalign 0.41
+            yalign 0.39
             textbutton _("Carta 51"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=24),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="chessus.png",card=24),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(persistent.endings["Z"]):
         vbox:
             xalign 0.93
-            yalign 0.46
+            yalign 0.44
             textbutton _("Carta 52"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="sandro_lima.png",card=25),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="sarcofago.png",card=25),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.93
-            yalign 0.51
+            yalign 0.49
             textbutton _("Carta 53"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1760,109 +1757,127 @@ screen endings():
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+
+
+
+
+
+
+
+
+
+    if(persistent.endings["C1"]):
         vbox:
             xalign 0.66
-            yalign 0.56
+            yalign 0.59
             textbutton _("Carta 54"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=27),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["C2"]):
         vbox:
             xalign 0.795
-            yalign 0.56
+            yalign 0.59
             textbutton _("Carta 55"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=28),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["C3"]):
         vbox:
             xalign 0.93
-            yalign 0.56
+            yalign 0.59
             textbutton _("Carta 56"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=29),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["C4"]):
         vbox:
             xalign 0.66
-            yalign 0.61
+            yalign 0.64
             textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="chessus.png",card=30),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["C5"]):
         vbox:
             xalign 0.795
-            yalign 0.61
+            yalign 0.64
             textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="pica_pau.png",card=31),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=31),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["CXX"]):
         vbox:
             xalign 0.93
-            yalign 0.61
+            yalign 0.64
             textbutton _("Carta 59"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="pica_pau.png",card=32),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="sandro_lima.png",card=32),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
+
+
+
+
+
+
+
+
+
 
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.66
-            yalign 0.66
+            yalign 0.69
             textbutton _("Carta 60"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=33),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.795
-            yalign 0.66
+            yalign 0.69
             textbutton _("Carta 61"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="sarcofago.png",card=34),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=34),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.93
-            yalign 0.66
+            yalign 0.69
             textbutton _("Carta 62"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="pegasus.png",card=35),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.66
-            yalign 0.71
+            yalign 0.74
             textbutton _("Carta 63"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1873,7 +1888,7 @@ screen endings():
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.795
-            yalign 0.71
+            yalign 0.74
             textbutton _("Carta 64"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1884,7 +1899,7 @@ screen endings():
     if(is_all_endings_unlocked()):
         vbox:
             xalign 0.93
-            yalign 0.71
+            yalign 0.74
             textbutton _("Carta 65"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
@@ -1912,7 +1927,7 @@ screen creditos():
         imagebutton:
             idle "mod_assets/images/operation_senna.png"
             hover "mod_assets/images/operation_senna_hover.png"
-            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), init_input_operation_senna(),Play("music", audio.m_converting_minds)]
+            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), [init_input_operation_senna(),Function(drpc_update,"finalZ")],Play("music", audio.m_converting_minds)]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
@@ -1922,7 +1937,7 @@ screen creditos():
         imagebutton:
             idle "mod_assets/images/converting_minds.png"
             hover "mod_assets/images/converting_minds_hover.png"
-            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),Play("music", audio.m_converting_minds)]
+            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias")]]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
@@ -1958,7 +1973,7 @@ screen creditos():
         xalign 0.5
         yalign 0.31
         
-        text "Scripts, Edição de Imagens e Música:"
+        text "Scripts, Sound Design, Design Gráfico:"
         style "font_creditos_menu"
 
     vbox:
@@ -2099,7 +2114,7 @@ screen file_slots(title):
         if(not main_menu):
             textbutton _("Menu"):
                 style "return_button"
-                action [MainMenu()]
+                action [MainMenu(),Function(drpc_update,"menu")]
 
         textbutton _("Voltar"):
             yalign 0.975

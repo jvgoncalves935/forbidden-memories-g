@@ -1,4 +1,5 @@
 label cap03_02_doutora01:
+    $ drpc_update("cap03-1")
     scene black
     stop music
     show textbox_black at center
@@ -21,7 +22,7 @@ label cap03_02_doutora01:
     stop music
     play sound ctc
     voice voz_cap03_02_03
-    "É o seguinte... Fiquei sabendo...\nAtravés de um amigo que a\nclínica de vocês é especializada\nno reto e eu tô com um\nproblema no meu reto..."
+    "É o seguinte... Fiquei sabendo...\nAtravés de um amigo que a\nclínica de vocês é especializada\nno... no reto e eu tô com\num problema no meu reto..."
     play sound ctc
     voice voz_cap03_02_04
     "Eu tô tendo algumas dores assim, tô\ntendo algumas sensações diferentes\nno meu CU..."
@@ -45,7 +46,7 @@ label cap03_02_doutora01:
     "Pode entrar..."
     play sound ctc
     voice voz_cap03_02_11
-    "Chegou seu paciente, ele tá com\nproblema, aí ele veio ver se\nconsegue alguma coisa pra\najudar ele..."
+    "Chegou seu paciente, ele tá com\nproblema, aí ele veio ver se\nconsegue fazer alguma coisa\npra ajudar ele..."
     play sound ctc
     voice voz_cap03_02_12
     "Ah, fazer uns exames né, seu nome?"
@@ -54,7 +55,7 @@ label cap03_02_doutora01:
     "Alexandre!"
     play sound ctc
     voice voz_cap03_02_14
-    "Cê vem comigo Alexandre.\nObrigada, hein."
+    "Vem comigo Alexandre.\nObrigada, hein."
     play sound ctc
     voice voz_cap03_02_15
     "Você quer que eu explique\nmais ou menos ou não?"
@@ -70,6 +71,10 @@ label cap03_02_doutora01:
     play sound ctc
     voice voz_cap03_02_19
     "Não, não... Só uma coceirinha\nmesmo, assim..."
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
     play sound ctc
     voice voz_cap03_02_20
     "Tem mais um pouquinho daquele gel lá?\nTem? Dá um pouquinho\ndele pra mim, dá..."
@@ -93,10 +98,10 @@ label cap03_02_doutora01:
     "Isso, isso tá gostoso?"
     play sound ctc
     voice voz_cap03_02_27
-    "AAI VOU TRAZER MEU\nAMIGO AQUI... TÁ COM MESMO\nPROBLEMA QUE EU..."
+    "AAI VOU TRAZER MEU\nAMIGO AQUI... VOU... TÁ COM MESMO\nPROBLEMA QUE EU..."
     play sound ctc
     voice voz_cap03_02_28
-    "É O MÁRCIO, MARCINHO MEU\nPARCEIRO ELE... ELE TEVE\nCHEGOU A FALAR COMIGO..."
+    "É O MÁRCIO, MARCINHO NÉ? MEU\nPARCEIRO ELE... ELE TEVE...\nCHEGOU A FALAR COMIGO..."
     play sound ctc
     voice voz_cap03_02_29
     "Mas ele é gay?"
@@ -108,10 +113,10 @@ label cap03_02_doutora01:
     "Trás ele aqui que eu cuido\ndele também!"
     play sound ctc
     voice voz_cap03_02_32
-    "AAI... AAAAI... AAIIIII...\nAAAAAAII... AAAII..."
+    "AAHH... AAAAI... AAIIIII...\nAAAAAAII... AAAII..."
     play sound ctc
     voice voz_cap03_02_33
-    "TÁ QUENTE MEU CU, TÁ...? TÁ SUA PUTA!\nUUGH... AI TA ME SOCANDO...\nTO ME SENTINDO A BICHA\nLOKA... AAAGH... AAGH..."
+    "AI TÁ QUENTE MEU CU, TÁ? TÁ SUA PUTA!\nUUGH... AI TA ME SOCANDO...\nTO ME SENTINDO A BICHA\nLOKA, SABIA...? AAAGH... AAGH..."
     play sound ctc
     voice voz_cap03_02_34
     "AAGH... AAA... AAA... QUERIA...\nQUERIA... AAA..."
@@ -122,12 +127,16 @@ label cap03_02_doutora01:
     voice voz_cap03_02_36
     "Queria..."
     play sound ctc
+    "(...)"
+    play sound ctc
     return
 
 label wrong_end_03_02_1:
+    $ drpc_update("finalN")
     stop music
     "(Você escuta vozes na sua cabeça\ndizendo para sair dali\ncorrendo!)"
     play sound ctc
+    play sound_bg running_footsteps fadein 3.0
     "(Você sai correndo como se não\nhouvesse amanhã.)"
     play sound ctc
     "(...)"
@@ -142,21 +151,29 @@ label wrong_end_03_02_1:
     play sound ctc
     "(Você luta para correr do homem,\nmas você está ficando sem\nforças para correr.)"
     play sound ctc
+    play sound_bg siren2 fadein 3.0
     "Esse paciente fugiu do hospital,\nalguém pare ele!"
     play sound ctc
     "(O quê...?)"
     play sound ctc
     "(Depois de correr um total de três\nminutos, você cai no chão\nde exaustão.)"
     play sound ctc
+    voice voz_cap02_04_39
     "(O enfermeiro te imobiliza e chama\na ambulância para vir\nte buscar.)"
     play sound ctc
+    voice voz_cap05_01_02
+    stop sound_bg fadeout 4.0
     "(Ele aplica uma injeção no seu\npescoço e você desmaia.)"
     play sound ctc
     "(...)"
     play sound ctc
+    play sound_bg voices fadein 5.0
     "(...)"
     play sound ctc
-    "Que porra é essa?"
+    "Hein...?"
+    play sound ctc
+    voice voz_cap03_02_37
+    "Porra é essa?"
     play sound ctc
     "(Você acorda amarrado em uma\nmaca de hospital.)"
     play sound ctc
@@ -174,7 +191,18 @@ label wrong_end_03_02_1:
     play sound ctc
     "ALGUÉM ME SOLTA, POR FAVOR!"
     play sound ctc
-    "EU QUERO SAIR!"
+    "EU QUERO SAIR...!"
     play sound ctc
+    "ME SOLTA!"
+    play sound ctc
+    "ALGUÉM ME AJUDA!"
+    play sound ctc
+    "POR FAVOR!"
+    play sound ctc
+
+    $ game_over_musica = False
+    $ game_over_fadeout_sound = 2.0
+    $ game_over_delay_musica = 8.0
+    
     $ register_ending("N")
     jump game_over

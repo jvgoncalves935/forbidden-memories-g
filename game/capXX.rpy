@@ -1,8 +1,8 @@
 label capXX:
     #Yuri encontra Seto
-
-    show header_cap_XX
-    pause 1.5
+    $ drpc_update("capXX")
+    show header_cap_XX at intro_cap
+    pause 7.0
     hide header_cap_XX 
 
     show black at top
@@ -300,6 +300,47 @@ label capXX:
     show black at top
     with dissolve
     "{p=2.0}{nw}"
+
+    $ backup_game_menu_keymap = config.keymap['game_menu']
+    $ backup_game_hide_windows = config.keymap['hide_windows']
+    $ config.keymap['game_menu'] = []
+    $ config.keymap['hide_windows'] = []
+    $ renpy.display.behavior.clear_keymap_cache()  
+
+
+    $ register_ending("CXX")
+    play music fm_youwin
+    scene black
+
+    show capitulo_concluido
+    pause 1.0
+    play sound voz_cap01_04_21
+    pause 3.7
+    play sound voz_cap01_04_65
+    pause 4.26
+    hide capitulo_concluido
+    
+    show voce_desbloqueou
+    show carta_img_cap_06
+    show carta_desc_cap_06
+    pause 1.5
+    play sound voz_cap01_04_64
+    pause 5.0
+
+    stop music fadeout 3.0
+    stop sound fadeout 3.0
+    pause 4.0
+
+    hide voce_desbloqueou
+    hide carta_img_cap_06
+    hide carta_desc_cap_06
+
+    $ config.keymap['game_menu'] = backup_game_menu_keymap
+    $ config.keymap['hide_windows'] = backup_game_hide_windows
+    $ renpy.display.behavior.clear_keymap_cache()
+    
+
+
     return
 
 

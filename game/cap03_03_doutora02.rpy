@@ -1,4 +1,6 @@
 label cap03_03_doutora02:
+    $ drpc_update("cap03-2")
+
     scene black
     stop music
     show textbox_black at center
@@ -66,13 +68,16 @@ label cap03_03_doutora02:
     play sound ctc
     "(...)"
     play sound ctc
+    stop voice
+
     $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
+    
     play music audio.fm_plazatown
     voice voz_cap03_03_01
-    "...Toque, eu quero saber o que\ntá acontecendo com meu cu...\nsó isso..."
+    "...Muito boa em toque, eu quero saber\no que tá acontecendo com\nmeu cu... só isso..."
     play sound ctc
     voice voz_cap03_03_02
-    "Só isso, e nada mais?"
+    "Só coceira, e nada mais?"
     play sound ctc
     voice voz_cap03_03_03
     "Coceira... sinto um calor, sabe aquele\ncalor que sai de dentro, eu não sei o\nque é, tô sentindo umas coisas\nesquisitas..."
@@ -197,21 +202,67 @@ label cap03_03_doutora02:
     "Tá bom!"
     play sound ctc
     stop music
+    stop voice
+
+    $ backup_game_menu_keymap = config.keymap['game_menu']
+    $ backup_game_hide_windows = config.keymap['hide_windows']
+    $ config.keymap['game_menu'] = []
+    $ config.keymap['hide_windows'] = []
+    $ renpy.display.behavior.clear_keymap_cache()  
+
+
+    $ register_ending("C3")
+    play music fm_youwin
+    scene black
+
+    show capitulo_concluido
+    pause 1.0
+    play sound voz_cap01_04_21
+    pause 3.7
+    play sound voz_cap01_04_65
+    pause 4.26
+    hide capitulo_concluido
+    
+    show voce_desbloqueou
+    show carta_img_cap_03
+    show carta_desc_cap_03
+    pause 1.5
+    play sound voz_cap01_04_64
+    pause 5.0
+
+    stop music fadeout 3.0
+    stop sound fadeout 3.0
+    pause 4.0
+
+    hide voce_desbloqueou
+    hide carta_img_cap_03
+    hide carta_desc_cap_03
+
+    $ config.keymap['game_menu'] = backup_game_menu_keymap
+    $ config.keymap['hide_windows'] = backup_game_hide_windows
+    $ renpy.display.behavior.clear_keymap_cache()
+    
+
     return
 
 label wrong_end_03_03_1:
+    $ drpc_update("finalO")
     stop music
+    play sound door_kick
     "(Sem dar satisfação nenhuma para a\ndoutora, você chuta a\nporta com muita ignorância\ne sai correndo.)"
     play sound ctc
+    play sound_bg running_footsteps
     "(Você ignora os gritos da\nsecretária e corre o\nmais rápido possível.)"
     play sound ctc
     "(...)"
     play sound ctc
     "{p=1.0}{nw}"
     "(Faz dez minutos que você está\ncorrendo, parece finalmente ser\numa boa hora para descansar.)"
+    stop sound_bg
     play sound ctc
     "Vão tomar no cu, hospital\nmaldito."
     play sound ctc
+    play sound_bg energy_source fadein 7.0
     "(Você se encontra na frente do\nFerro-Velho de Cupiqueno, um\nlugar completamente sem\ninteresse para você.)"
     play sound ctc
     "(Bem, não deveria ter interesse\nnenhum... entretanto, você vê\nde longe um objeto\nbrilhante.)"
@@ -229,25 +280,26 @@ label wrong_end_03_03_1:
     "Que se foda."
     play sound ctc
     "(Você pega a pedra mágica, coloca\nno bolso e volta para sua\ncasa como se nada tivesse\nacontecido.)"
+    stop sound_bg fadeout 2.0
     play sound ctc
     "(...)"
     play sound ctc
+    play sound_bg energy_source fadein 2.0
     "(Você chega em casa, ansioso para\nguardar seu novo enfeite\npara casa.)"
     play sound ctc
     "Essa pedra ficaria linda na\nminha sala!"
     play sound ctc
     "(Não deu outra. Você coloca a\npedra laranja na estante\nda sala.)"
     play sound ctc
-    "(Pelo menos agora você não\nprecisa mais de gastar energia\ncom a luz da sala,\nvocê pensa.)"
+    "(Pelo menos agora você não\nprecisa mais gastar energia\ncom a luz da sala,\nvocê pensa.)"
     play sound ctc
     "Essa pedra é tão linda..."
     play sound ctc
+    stop sound_bg fadeout 2.0
     "(...)"
     play sound ctc
     "{p=1.0}{nw}"
     "(no dia seguinte)"
-    play sound ctc
-    "AAAAAAAIIIII!!!"
     play sound ctc
     "(Você acabou de acordar e foi\nlogo para o banheiro escovar\nseus dentes...)"
     play sound ctc
@@ -258,14 +310,19 @@ label wrong_end_03_03_1:
     "(...)"
     play sound ctc
     #Senna mutante
+    voice voz_cap03_03_33
     "{p=4.0}{nw}"
     $ register_ending("O")
     jump game_over
 
 label wrong_end_03_03_2:
+    $ drpc_update("finalP")
     stop music
+    play sound running_window_breaking
     "(Você se levanta rapidamente da mesa\ncomo se não houvesse amanhã e pula\npela janela do segundo andar.)"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound running_footsteps
     "(Você lesiona sua perna, mas você\nainda consegue sair correndo pela\nrua.)"
     play sound ctc
     "(A doutora não pode ser mais vista\nem seu campo de visão,\nparece que você\nconseguiu escapar dela com sucesso.)"
@@ -274,6 +331,7 @@ label wrong_end_03_03_2:
     play sound ctc
     "EU VOU PROCESSAR ESSE HOSPITAL\nMALIGNO!"
     play sound ctc
+    voice voz_cap02_03_02
     "NA VIDA DE VOCÊS VAI CAIR\nMALDIÇÃO!"
     play sound ctc
     "(IndiGUINAdo, você decide abrir\num processo contra o\nConsultório Santa Mônica\npor injúria e difamação.)"
@@ -304,6 +362,7 @@ label wrong_end_03_03_2:
     "{p=1.0}{nw}"
     "(duas semanas depois)"
     play sound ctc
+    play sound_bg audio.city_02 fadein 4.0
     "(...)"
     play sound ctc
     "(Você está morando na rua.)"
@@ -324,6 +383,7 @@ label wrong_end_03_03_2:
     play sound ctc
     "(Cobertor, não existe\n- Deus, não existe.)"
     play sound ctc
+    stop sound_bg fadeout 3.0
     $ game_over_musica = False
     $ game_over_delay_musica = 5.0
     $ game_over_fadeout_musica = 5.0

@@ -89,6 +89,7 @@ init python:
         
         renpy.hide_screen("name_input")
         renpy.show_screen("creditos")
+        drpc_update("menu")
         renpy.music.play(audio.fm_freeduel)
 
         
@@ -239,6 +240,7 @@ init python:
         #print(guinodia_array)
 
         if(is_guinodia_available()):
+            drpc_update("guinodia")
             renpy.jump_out_of_context("guinodia_label")
         
     def is_guinodia_available():
@@ -252,10 +254,6 @@ init python:
         if(message == "Tem certeza de que deseja sobrescrever seu Save?"):
             return True
         return False
-    
-
-
-    
     
 
 ############################################################################################################
@@ -294,7 +292,13 @@ define endings_names = {
     "W":"Casamento-Surpresa",
     "X":"El Gángster de Familia",
     "Y":"Árabe de Família",
-    "Z":"As Aparências Enganam"
+    "Z":"As Aparências Enganam",
+    "C1":"Capítulo 1",
+    "C2":"Capítulo 2",
+    "C3":"Capítulo 3",
+    "C4":"Capítulo 4",
+    "C5":"Capítulo 5",
+    "CXX":"Capítulo XX"
 }
 
 define deck_g_names = [
@@ -305,7 +309,7 @@ define deck_g_names = [
     "Minha Mu;lher",
     "Braço Esquerdo do Proibido",
     "Cabação",
-    "Filhona",
+    "Pegasus do PAU BRILHANTE",
     "Grito Ensurdecedor de Lily Santos",
     "Perna Direita do Proibido",
     "Paulo Guina Piscineiro",
@@ -314,7 +318,7 @@ define deck_g_names = [
     "Paulo Guina Árabe",
     "Paulo Guina Matrix",
     "Paulo Guina, O Deixador de Ocos",
-    "Monstro Que Relaxa",
+    "Pica-Pau Biruta",
     "Perna Esquerda do Proibido",
     "Kid Bengala, O Grande",
     "CJ de Família",
@@ -322,18 +326,18 @@ define deck_g_names = [
     "Terceira Perna do Proibido",
     "FOME.",
     "Princesa Demacol",
-    "Coringa Dano",
-    "Sandro Lima, O Arquiteto do Universo G",
-    "Guinodia, O Proibido",
-    "Dragão BAIANO",
-    "Polimerização G",
-    "Polimerização G",
     "É JESUUUUIIIISSSSSSSSSS",
-    "Pica-Pau Biruta",
-    "Pica-Pau Biruta",
-    "Danger?! Gilson?",
     "Sarcófago da Ícaro Studios",
-    "Pegasus do PAU BRILHANTE",
+    "Guinodia, O Proibido",
+    "Monstro Que Relaxa",
+    "Filhona",
+    "Dragão BAIANO",
+    "Coringa Dano",
+    "Polimerização G",
+    "Sandro Lima, O Arquiteto do Universo G",
+    "Vegeta de Família",
+    "Danger?! Gilson?",
+    "Globglogabgalab, A Traça Melancólica",
     "Mark_77Souls, O Esquizofrêncio",
     "Taeyeon115, O Amigo de Sangue",
     "Master Exploder, O Calvo Supremo"
@@ -462,6 +466,13 @@ transform side_image_out:
 transform credits_11():
     align (0.5,0.5) alpha 1.0
 
+transform intro_cap:
+    subpixel True
+    alpha 0.0
+    linear 1.5 alpha 1.0
+    linear 1.5
+    linear 2.5 alpha 0.0
+
 ###################Personagens
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
@@ -495,6 +506,163 @@ image game_over_bg = "mod_assets/images/GameOver.png"
 image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 image textbox_black = "mod_assets/gui/textbox_black.png"
 image white_bg = "mod_assets/images/white.png"
+
+image yami_senna:
+    "mod_assets/images/yami_senna.png"
+    alpha 0.0
+    linear 0.5
+    linear 4.0 alpha 1.0
+    linear 1.0
+    linear 0.5 alpha 0.2
+
+image yami_senna_bg:
+    "mod_assets/images/yami_senna.png"
+    alpha 0.2
+
+image yami_senna_bg_end:
+    "mod_assets/images/yami_senna.png"
+    alpha 0.2
+    linear 4.0 alpha 0.0
+
+image capitulo_concluido:
+    "mod_assets/images/capitulo_concluido.png"
+    align (0.5,0.5)
+    block:
+        alpha 1.0
+        0.25
+        alpha 0.0
+        0.25 
+        repeat 11
+    block:
+        alpha 1.0
+        0.03
+    
+        alpha 0.0
+        0.03 
+        repeat 24
+    
+image voce_desbloqueou:
+    "mod_assets/images/voce_desbloqueou.png"
+    align (0.5,0.10)
+    alpha 0.0
+    linear 0.8 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_01:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/monstro_que_relaxa.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_01:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Monstro Que\nRelaxa\n\n\n\nReviva um\nmacho do seu\ncemitério vain", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_02:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/filhona.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_02:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Filhona\n\n\n\nNUOOOSSA MINHA\nFILHONA EU\nNA CREDITO", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_03:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/dragao_baiano.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_03:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Dragão BAIANO\n\n\n\nUma criatura vinda\nda Bahia, lá de\nCupiqueno.", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_04:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/coringa_dano.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_04:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Coringa Dano\n\n\n\nAHHH O CORINGA DANO\nMAS VAI VER O\nCORINGA DANO", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_05:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/polimerizacao.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_05:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Polimerização G\n\n\n\nFaça uma fusão\ngrande e gostosa de\ndois machos peludos.", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_img_cap_06:
+    align (0.15,0.75)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/sandro_lima.png"
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
+image carta_desc_cap_06:
+    align (0.85,0.65)
+    alpha 0.0
+    time 1.5
+    Text("Sandro Lima,\no Arquiteto\nda Delícia\n\n\n\nDeus onipotente\nda criação do\nUniverso G.", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 3.0 alpha 0.0
+
 
 image header_cap_01 = "mod_assets/images/cap01.png"
 image header_cap_02 = "mod_assets/images/cap02.png"
@@ -530,6 +698,8 @@ image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 ###################Musicas 
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
+define audio.yugioco = "<loop 0.0>mod_assets/music/yugioco.ogg"
+define audio.sh4_resting_comfortably = "<loop 1.966>mod_assets/music/sh4_resting_comfortably.ogg"
 
 define audio.indio_policia = "<loop 0.0>mod_assets/music/indio_policia.ogg"
 define audio.tv_001 = "mod_assets/music/tv_001.ogg"
@@ -676,6 +846,8 @@ define voz_cap01_04_60 = "mod_assets/voices/01_04/01_04_60.ogg"
 define voz_cap01_04_61 = "mod_assets/voices/01_04/01_04_61.ogg"
 define voz_cap01_04_62 = "mod_assets/voices/01_04/01_04_62.ogg"
 define voz_cap01_04_63 = "mod_assets/voices/01_04/01_04_63.ogg"
+define voz_cap01_04_64 = "mod_assets/voices/01_04/01_04_64.ogg"
+define voz_cap01_04_65 = "mod_assets/voices/01_04/01_04_65.ogg"
 
 
 #02_01
@@ -795,6 +967,14 @@ define voz_cap02_04_43 = "mod_assets/voices/02_04/02_04_43.ogg"
 
 #03_01
 define voz_cap03_01_01 = "mod_assets/voices/03_01/03_01_01.ogg"
+define voz_cap03_01_02 = "mod_assets/voices/03_01/03_01_02.ogg"
+define voz_cap03_01_03 = "mod_assets/voices/03_01/03_01_03.ogg"
+define voz_cap03_01_04 = "mod_assets/voices/03_01/03_01_04.ogg"
+define voz_cap03_01_05 = "mod_assets/voices/03_01/03_01_05.ogg"
+define voz_cap03_01_06 = "mod_assets/voices/03_01/03_01_06.ogg"
+define voz_cap03_01_07 = "mod_assets/voices/03_01/03_01_07.ogg"
+define voz_cap03_01_08 = "mod_assets/voices/03_01/03_01_08.ogg"
+define voz_cap03_01_09 = "mod_assets/voices/03_01/03_01_09.ogg"
 
 
 #03_02
@@ -834,6 +1014,7 @@ define voz_cap03_02_33 = "mod_assets/voices/03_02/03_02_33.ogg"
 define voz_cap03_02_34 = "mod_assets/voices/03_02/03_02_34.ogg"
 define voz_cap03_02_35 = "mod_assets/voices/03_02/03_02_35.ogg"
 define voz_cap03_02_36 = "mod_assets/voices/03_02/03_02_36.ogg"
+define voz_cap03_02_37 = "mod_assets/voices/03_02/03_02_37.ogg"
 
 
 #03_03
@@ -870,6 +1051,7 @@ define voz_cap03_03_30 = "mod_assets/voices/03_03/03_03_30.ogg"
 define voz_cap03_03_31 = "mod_assets/voices/03_03/03_03_31.ogg"
 define voz_cap03_03_32 = "mod_assets/voices/03_03/03_03_32.ogg"
 define voz_cap03_03_33 = "mod_assets/voices/03_03/03_03_33.ogg"
+define voz_cap03_03_34 = "mod_assets/voices/03_03/03_03_34.ogg"
 
 
 #04_01
@@ -928,6 +1110,26 @@ define voz_cap04_04_34 = "mod_assets/voices/04_04/04_04_34.ogg"
 #05_01
 define voz_cap05_01_01 = "mod_assets/voices/05_01/05_01_01.ogg"
 define voz_cap05_01_02 = "mod_assets/voices/05_01/05_01_02.ogg"
+define voz_cap05_01_03 = "mod_assets/voices/05_01/05_01_03.ogg"
+define voz_cap05_01_04 = "mod_assets/voices/05_01/05_01_04.ogg"
+define voz_cap05_01_05 = "mod_assets/voices/05_01/05_01_05.ogg"
+define voz_cap05_01_06 = "mod_assets/voices/05_01/05_01_06.ogg"
+define voz_cap05_01_07 = "mod_assets/voices/05_01/05_01_07.ogg"
+define voz_cap05_01_08 = "mod_assets/voices/05_01/05_01_08.ogg"
+define voz_cap05_01_09 = "mod_assets/voices/05_01/05_01_09.ogg"
+define voz_cap05_01_10 = "mod_assets/voices/05_01/05_01_10.ogg"
+define voz_cap05_01_11 = "mod_assets/voices/05_01/05_01_11.ogg"
+define voz_cap05_01_12 = "mod_assets/voices/05_01/05_01_12.ogg"
+define voz_cap05_01_13 = "mod_assets/voices/05_01/05_01_13.ogg"
+define voz_cap05_01_14 = "mod_assets/voices/05_01/05_01_14.ogg"
+define voz_cap05_01_15 = "mod_assets/voices/05_01/05_01_15.ogg"
+define voz_cap05_01_16 = "mod_assets/voices/05_01/05_01_16.ogg"
+define voz_cap05_01_17 = "mod_assets/voices/05_01/05_01_17.ogg"
+define voz_cap05_01_18 = "mod_assets/voices/05_01/05_01_18.ogg"
+define voz_cap05_01_19 = "mod_assets/voices/05_01/05_01_19.ogg"
+define voz_cap05_01_20 = "mod_assets/voices/05_01/05_01_20.ogg"
+define voz_cap05_01_21 = "mod_assets/voices/05_01/05_01_21.ogg"
+
 
 
 #05_02
@@ -1145,6 +1347,17 @@ define audio.door_slam = "<loop 0.00>mod_assets/sounds/door_slam.ogg"
 define audio.toaster_ding = "<loop 0.00>mod_assets/sounds/toaster_ding.ogg"
 define audio.plates_dropping = "<loop 0.00>mod_assets/sounds/plates_dropping.ogg"
 define audio.door_kick = "<loop 0.00>mod_assets/sounds/door_kick.ogg"
+define audio.gun_shots = "<loop 0.00>mod_assets/sounds/gun_shots.ogg"
+define audio.gun_cocking = "<loop 0.00>mod_assets/sounds/gun_cocking.ogg"
+define audio.door_creaking = "<loop 0.00>mod_assets/sounds/door_creaking.ogg"
+define audio.voices = "<loop 0.00>mod_assets/sounds/voices.ogg"
+define audio.handcuffs = "<loop 0.00>mod_assets/sounds/handcuffs.ogg"
+define audio.running_footsteps = "<loop 0.00>mod_assets/sounds/running_footsteps.ogg"
+define audio.bell = "<loop 0.00>mod_assets/sounds/bell.ogg"
+define audio.energy_source = "<loop 0.00>mod_assets/sounds/energy_source.ogg"
+define audio.running_window_breaking = "<loop 0.00>mod_assets/sounds/running_window_breaking.ogg"
+define audio.city_02 = "<loop 0.00>mod_assets/sounds/city_02.ogg"
+
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -1153,39 +1366,145 @@ define audio.door_kick = "<loop 0.00>mod_assets/sounds/door_kick.ogg"
 
 #Discord Rich Presence
 #ALTERAR FORBIDDEN MEMORIES G
-#init python:
-#    import time
-#    import drpc
-#    global drpc_details
-#    global drpc_state
-#    client_id = '466702541732839462' 
-#    start_time = int(time.time())
-#    large_text = 'Você acredita em tudo o que vê?'
-#    large_image = 'ymel_large'
-#    try: drpc = drpc.DiscordIpcClient.for_platform(client_id)
-#    except:
-         #Discord's IPC wasn't found
-#        pass
+init python:
+    import time
+    import drpc
+    global drpc_details
+    global drpc_state
+    client_id = '960873947803549776' 
+    start_time = int(time.time())
+    large_text = 'Forbidden Memories G'
+    large_image = 'fmg_logo'
 
-#    def drpc_update():
-#        drpc_details = persistent.current_chapter_head
-#        drpc_state = persistent.current_chapter_title
-#        try: drpc.set_activity({
-#            "state": drpc_state,
-#            "details": drpc_details,
-#            "timestamps": {
-#                "start": start_time
-#            },
-#            "assets": {
-#                #"small_text": small_text,
-#                #"small_image": small_text,
-#                "large_text": large_text,
-#                "large_image": large_image }
-#            })
-#        except:
+    chapters_head = {
+        "menu": "Menu Principal",
+        "intro": "Introdução",
+        "cap01": "Capítulo 1",
+        "cap02-1": "Capítulo 2",
+        "cap02-2": "Capítulo 2",
+        "cap03-1": "Capítulo 3",
+        "cap03-2": "Capítulo 3",
+        "cap04-1": "Capítulo 4",
+        "cap04-2": "Capítulo 4",
+        "cap05": "Capítulo 5",
+        "finalG": "Final G",
+        "epilogo": "Final G - Epílogo",
+        "creditos": "Créditos",
+        "capXX": "Capítulo Extra",
+        "guinodia": "Guinódia, O Proibido",
+        "finalA": "Final A",
+        "finalB": "Final B",
+        "finalC": "Final C",
+        "finalD": "Final D",
+        "finalE": "Final E",
+        "finalF": "Final F",
+        "finalH": "Final H",
+        "finalI": "Final I",
+        "finalJ": "Final J",
+        "finalK": "Final K",
+        "finalL": "Final L",
+        "finalM": "Final M",
+        "finalN": "Final N",
+        "finalO": "Final O",
+        "finalP": "Final P",
+        "finalQ": "Final Q",
+        "finalR": "Final R",
+        "finalS": "Final S",
+        "finalT": "Final T",
+        "finalU": "Final U",
+        "finalV": "Final V",
+        "finalW": "Final W",
+        "finalX": "Final X",
+        "finalY": "Final Y",
+        "finalZ": "Final Z",
+        "aparencias": "As aparencias enganam."
+    }
+
+    chapters_details = {
+        "menu": "Explorando o Menu",
+        "intro": "Desvendando o Códex G",
+        "cap01": "Pelada do James",
+        "cap02-1": "Alexandre Senna Gringo",
+        "cap02-2": "Roda de Amigos",
+        "cap03-1": "Alexandre Senna no Hospital",
+        "cap03-2": "Exame do Senna",
+        "cap04-1": "Alexandre Senna e Yeah Man",
+        "cap04-2": "Cadê o Arrombamento?",
+        "cap05": "Teste do Senna",
+        "finalG": "As Crônicas de Alexandre Senna",
+        "epilogo": "As Crônicas de Alexandre Senna",
+        "creditos": "Criado por Operation Senna",
+        "capXX": "Clube de Literatura",
+        "guinodia": "Invocando Guinódia",
+        "finalA": "Melancolia do Toque de Celular Irritante",
+        "finalB": "Sem Tempo Para Brincadeiras",
+        "finalC": "Você É Real Mesmo?",
+        "finalD": "Assassino G",
+        "finalE": "Extinção Humana",
+        "finalF": "Policial de Família",
+        "finalH": "Os Carros São Como As Lanchas",
+        "finalI": "Tele Senna",
+        "finalJ": "Recordista do Guinnass Book",
+        "finalK": "Nunca Abra A Porta Para Estranhos",
+        "finalL": "Hétero com G",
+        "finalM": "Contra-Trote Mortal",
+        "finalN": "Tratamento de Choque",
+        "finalO": "O Acidente de Cupiqueno",
+        "finalP": "Dois Dias Na Fila, Um Ano Na Rua",
+        "finalQ": "Só os Skates Sabem",
+        "finalR": "Sádico e Calculista",
+        "finalS": "Gosto Buocólico",
+        "finalT": "Viagem para Pau Grande",
+        "finalU": "Teoria do Kenoverso",
+        "finalV": "Watashi wa Arekusando desu",
+        "finalW": "Casamento-Surpresa",
+        "finalX": "El Gángster de Familia",
+        "finalY": "Árabe de Família",
+        "finalZ": "As Aparências Enganam",
+        "aparencias": "??????"
+    }
+
+    try: 
+        if(not renpy.variant("touch")):
+            drpc = drpc.DiscordIpcClient.for_platform(client_id)
+    except:
+         #Discord's IPC wasn't found
+        pass
+
+    def drpc_update(capitulo):
+        if(renpy.variant("touch")):
+            return
+
+        drcp_infos = drcp_info(capitulo)
+
+        drpc_state = drcp_infos[0]
+        drpc_details = drcp_infos[1]
+        
+        try: drpc.set_activity({
+            "state": drpc_state,
+            "details": drpc_details,
+            "timestamps": {
+                "start": start_time
+            },
+            "assets": {
+                #"small_text": small_text,
+                #"small_image": small_text,
+                "large_text": large_text,
+                "large_image": large_image }
+            })
+        except:
             # rip
-#            pass
-#        return
+            pass
+        return
+
+    def drcp_info(capitulo):
+
+        global current_chapter
+        current_chapter = capitulo
+
+        #print("drcp",current_chapter)
+
+        return chapters_head[capitulo],chapters_details[capitulo]
 
 # Hashwatch
 

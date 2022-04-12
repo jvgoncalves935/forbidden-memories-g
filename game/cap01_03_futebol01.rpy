@@ -1,4 +1,5 @@
 label cap01_03_futebol01:
+    $ drpc_update("cap01")
     scene black
     stop music
     show textbox_black at center
@@ -112,6 +113,7 @@ label cap01_03_futebol01:
     return
 
 label wrong_end_01_03_1:
+    $ drpc_update("finalB")
     stop music
     "(Igual qualquer pessoa normal em um\ncampo de futebol, você propõe para os\ncolegas de time a treinarem pênaltis.)"
     play sound ctc

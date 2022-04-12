@@ -1,4 +1,6 @@
 label epilogo:
+    $ drpc_update("epilogo")
+    
     scene black
     stop music
     show textbox_black at center

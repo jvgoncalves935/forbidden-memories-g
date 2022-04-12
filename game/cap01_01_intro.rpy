@@ -1,4 +1,6 @@
 label cap01_01_intro:
+    $ drpc_update("intro")
+
     scene black
     stop music
     show textbox_black at center

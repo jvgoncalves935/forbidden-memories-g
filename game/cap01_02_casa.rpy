@@ -1,9 +1,11 @@
 label cap01_02_casa:
+    $ drpc_update("cap01")
+
     scene black
     stop music
 
-    show header_cap_01
-    pause 1.5
+    show header_cap_01 at intro_cap
+    pause 7.0
     hide header_cap_01 
 
     show textbox_black at center
@@ -19,7 +21,7 @@ label cap01_02_casa:
     play sound ctc
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             hide textbox_aux
             pass
         "<Ignorar>":
@@ -37,23 +39,24 @@ label cap01_02_casa:
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click
-    "(desliga o telefone)"
+    "(desligou o celular)"
     play sound ctc
     "Tava esperando a semana inteira\npra jogar essa bola..."
     play sound ctc
     return
 
 label wrong_end_01_02_1:
+    $ drpc_update("finalA")
     play sound ctc
-    "Quer saber? Que se foda esse\ntelefone, tô cansado pra caralho..."
+    "Quer saber? Que se foda esse\ncelular, tô cansado pra caralho..."
     play sound ctc
-    "(Você deixa o telefone tocando sem\natendê-lo...)"
+    "(Você deixa o celular tocando sem\natendê-lo...)"
     play sound ctc
     "(O barulho irritante parece nunca\nter fim...)"
     play sound ctc
-    "(Você decide tacar o telefone pela\njanela da rua e um carro passa em\ncima dele.)"
+    "(Você decide tacar o celular pela\njanela da rua e um carro passa em\ncima dele.)"
     play sound ctc
-    "(Mas o telefone simplesmente não para\nde tocar.)"
+    "(Mas o celular simplesmente não para\nde tocar.)"
     play sound ctc
     voice voz_cap01_02_01
     "CAMBADA DE DEMÔNIO!"
@@ -61,9 +64,9 @@ label wrong_end_01_02_1:
     "(O barulho de seu toque ainda ecoa em\nsua mente, te levando à insanidade...)"
     play sound ctc
     voice voz_cap01_02_02
-    "VOCÊS NÃO ME DEIXAM EM PAZ!\n(telefone vibrando)"
+    "VOCÊS NÃO ME DEIXAM EM PAZ!\n(celular vibrando)"
     play sound ctc
-    "(Você decide ir até o aterro\nsanitário mais próximo e enterra o\ntelefone satânico no meio da\npilha de lixo.)"
+    "(Você decide ir até o aterro\nsanitário mais próximo e enterra o\ncelular satânico no meio da\npilha de lixo.)"
     play sound ctc
     "(Ele ainda não para de tocar, mas\nisso não importa mais.)"
     play sound ctc

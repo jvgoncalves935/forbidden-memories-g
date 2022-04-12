@@ -1,4 +1,5 @@
 label cap05_02_testeporno:
+    $ drpc_update("cap05")
     scene black
     stop music
     show textbox_black at center
@@ -413,10 +414,12 @@ label cap05_02_testeporno:
     voice voz_cap05_02_126
     "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
     play sound ctc
+    stop voice
     return
 
 
 label wrong_end_05_02_a:
+    $ drpc_update("finalW")
     stop music
     "(Você rola seu corpo em cima da\nmesa, que nem nos filmes\nde ação.)"
     play sound ctc
@@ -496,6 +499,7 @@ label wrong_end_05_02_a:
     play sound ctc
     "(Depois do dialogo esquizofrênico\ncom sua própria consciência,\nvocê vai para a cerimônia\nde casório.)"
     play sound ctc
+    stop voice
 
     window hide(None)
     $ game_over_pos_cutscene = True
@@ -504,6 +508,7 @@ label wrong_end_05_02_a:
     jump game_over
 
 label wrong_end_05_02_b:
+    $ drpc_update("finalX")
     stop music
     "(Você segura o Milzão na mão com\ntoda sua força e sai correndo\nda sala, derrubando tudo\nna sua frente.)"
     play sound ctc
@@ -573,6 +578,7 @@ label wrong_end_05_02_b:
     play sound ctc
     "(Sobreviver...)"
     play sound ctc
+    stop voice
 
     window hide(None)
     $ game_over_pos_cutscene = True

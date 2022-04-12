@@ -1,4 +1,5 @@
 label cap01_04_futebol02:
+    $ drpc_update("cap01")
     scene black
     stop music
     show textbox_black at center
@@ -62,6 +63,7 @@ label cap01_04_futebol02:
     "Tá me tirando, meu!"
     play sound ctc
     stop music
+    stop voice
 
     $ renpy.movie_cutscene("mod_assets/videos/pelada_james_01.webm")
     
@@ -109,6 +111,7 @@ label cap01_04_futebol02:
     voice voz_cap01_04_24
     "Simbora, simbora, simbora!"
     play sound ctc
+    stop voice
 
     show pelada_james_06
     "{p=3.6}{nw}"
@@ -147,6 +150,7 @@ label cap01_04_futebol02:
     voice voz_cap01_04_22
     "ISSO, ISSO, ISSO, FALOU\nMEU GOLEIRO!"
     play sound ctc
+    stop voice
 
     show pelada_james_05
     "{p=1.06}{nw}"
@@ -277,8 +281,6 @@ label cap01_04_futebol02:
     "(40 minutos depois)"
     play sound ctc
 
-    play music fm_youwin
-
     "(O jogo se encerra com a\nvitória do seu time!)"
     play sound ctc
     "(Agora todos estão indo embora\npara casa comemorar...)"
@@ -291,6 +293,47 @@ label cap01_04_futebol02:
     play sound ctc
 
     stop music
+    stop voice
+
+
+    $ backup_game_menu_keymap = config.keymap['game_menu']
+    $ backup_game_hide_windows = config.keymap['hide_windows']
+    $ config.keymap['game_menu'] = []
+    $ config.keymap['hide_windows'] = []
+    $ renpy.display.behavior.clear_keymap_cache()  
+
+
+    $ register_ending("C1")
+    play music fm_youwin
+    scene black
+
+    show capitulo_concluido
+    pause 1.0
+    play sound voz_cap01_04_21
+    pause 3.7
+    play sound voz_cap01_04_65
+    pause 4.26
+    hide capitulo_concluido
+    
+    show voce_desbloqueou
+    show carta_img_cap_01
+    show carta_desc_cap_01
+    pause 1.5
+    play sound voz_cap01_04_64
+    pause 5.0
+
+    stop music fadeout 3.0
+    stop sound fadeout 3.0
+    pause 4.0
+
+    hide voce_desbloqueou
+    hide carta_img_cap_01
+    hide carta_desc_cap_01
+
+    $ config.keymap['game_menu'] = backup_game_menu_keymap
+    $ config.keymap['hide_windows'] = backup_game_hide_windows
+    $ renpy.display.behavior.clear_keymap_cache()
+
     return
 
 label wrong_end_01_04_common:
@@ -317,6 +360,7 @@ label wrong_end_01_04_common:
     return
 
 label wrong_end_01_04_1:
+    $ drpc_update("finalC")
     call wrong_end_01_04_common from _call_wrong_end_01_04_common
     "(Enquanto seu time não para de te\nxingar, você questiona sua própria\nexistência.)"
     play sound ctc
@@ -333,6 +377,7 @@ label wrong_end_01_04_1:
     jump game_over
 
 label wrong_end_01_04_2:
+    $ drpc_update("finalD")
     call wrong_end_01_04_common from _call_wrong_end_01_04_common_1
     "(Você começa a discutir com Índio e\nbotar a culpa nele por não ter\najudado a defender o ataque da\nbola na zaga.)"
     play sound ctc
@@ -364,6 +409,7 @@ label wrong_end_01_04_2:
     jump game_over
 
 label wrong_end_01_04_3:
+    $ drpc_update("finalE")
     call wrong_end_01_04_common from _call_wrong_end_01_04_common_2
     "(Completamente frustrado, você joga\nsuas luvas de goleiro no chão\ne sai correndo do campo.)"
     play sound ctc

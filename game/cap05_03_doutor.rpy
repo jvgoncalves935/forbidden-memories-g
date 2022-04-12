@@ -1,4 +1,6 @@
 label cap05_03_doutor:
+    $ drpc_update("finalG")
+
     scene black
     stop music
     show textbox_black at center
@@ -16,6 +18,7 @@ label cap05_03_doutor:
     play sound ctc
     "(no dia seguinte depois\ndo Filme G)"
     play sound ctc
+    stop voice
 
     $ renpy.movie_cutscene("mod_assets/videos/bob_alemao.webm")
 
@@ -104,6 +107,47 @@ label cap05_03_doutor:
     play sound ctc
     "FIM"
     play sound ctc
+    stop voice
+
+
+    $ backup_game_menu_keymap = config.keymap['game_menu']
+    $ backup_game_hide_windows = config.keymap['hide_windows']
+    $ config.keymap['game_menu'] = []
+    $ config.keymap['hide_windows'] = []
+    $ renpy.display.behavior.clear_keymap_cache()  
+
+
+    $ register_ending("C5")
+    play music fm_youwin
+    scene black
+
+    show capitulo_concluido
+    pause 1.0
+    play sound voz_cap01_04_21
+    pause 3.7
+    play sound voz_cap01_04_65
+    pause 4.26
+    hide capitulo_concluido
+    
+    show voce_desbloqueou
+    show carta_img_cap_05
+    show carta_desc_cap_05
+    pause 1.5
+    play sound voz_cap01_04_64
+    pause 5.0
+
+    stop music fadeout 3.0
+    stop sound fadeout 3.0
+    pause 4.0
+
+    hide voce_desbloqueou
+    hide carta_img_cap_05
+    hide carta_desc_cap_05
+
+    $ config.keymap['game_menu'] = backup_game_menu_keymap
+    $ config.keymap['hide_windows'] = backup_game_hide_windows
+    $ renpy.display.behavior.clear_keymap_cache()
+
     return
 
 

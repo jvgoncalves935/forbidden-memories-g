@@ -1,4 +1,5 @@
 label cap_arabe:
+    $ drpc_update("finalY")
     $ register_ending("Y")
 
     play sound menu_start

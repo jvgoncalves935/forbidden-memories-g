@@ -1,9 +1,10 @@
 label cap02_01_casa01:
+    $ drpc_update("cap02-1")
     scene black
     stop music
 
-    show header_cap_02
-    pause 1.5
+    show header_cap_02 at intro_cap
+    pause 7.0
     hide header_cap_02 
 
     show textbox_black at center
@@ -25,7 +26,7 @@ label cap02_01_casa01:
     play sound ctc
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             hide textbox_aux
             pass
         "<Desligar>":
@@ -43,17 +44,18 @@ label cap02_01_casa01:
     voice voz_cap02_02_37
     "No problem."
     play sound ctc
-    "(Você desliga o telefone e vai em\ndireção à oficina.)"
+    "(Você desliga o celular e vai em\ndireção à oficina.)"
     play sound ctc
     "(Você ainda fica curioso sobre onde\nestava o problema no carro.)"
     play sound ctc
     return
 
 label wrong_end_02_01_1:
+    $ drpc_update("finalF")
     stop music
     "{p=0.2}{nw}"
     play sound phone_click
-    "(Você desliga o telefone o mais rápido\nque pode.)"
+    "(Você desliga o celular o mais rápido\nque pode.)"
     play sound ctc
     "(\"Eu odeio esse toque!\", você pensa.)"
     play sound ctc
@@ -98,13 +100,14 @@ label wrong_end_02_01_1:
     play sound ctc
     "{p=0.3}{nw}"
     play sound phone_click
-    "(desligou o telefone)"
+    "(desligou o celular)"
     play sound ctc
     "Tenho que atender o chamado\nda viatura...!"
     play sound ctc
     "(...)"
     play sound ctc
     stop sound_bg
+    stop voice
 
     window hide(None)
     $ game_over_pos_cutscene = True

@@ -1,9 +1,11 @@
 label cap04_01_casa01:
+    $ drpc_update("cap04-1")
+    
     scene black
     stop music
 
-    show header_cap_04
-    pause 1.5
+    show header_cap_04 at intro_cap
+    pause 7.0
     hide header_cap_04 
 
     show textbox_black at center
@@ -34,8 +36,8 @@ label cap04_01_casa01:
     play sound ctc
     "(...)"
     play sound ctc
-    voice voz_cap02_04_39
-    "AAAAHHHH!"
+    voice voz_cap05_01_02
+    "AAAAIIII!"
     play sound ctc
     "..."
     play sound ctc
@@ -97,7 +99,7 @@ label cap04_01_casa01:
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click
-    "(desligou o telefone)"     
+    "(desligou o celular)"     
     play sound ctc
     "Esse cara é louco, puta que\npariu... Só me meto\ncom louco cretino!"
     play sound ctc
@@ -110,6 +112,7 @@ label cap04_01_casa01:
     return
 
 label wrong_end_04_01_1:
+    $ drpc_update("finalQ")
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
@@ -129,6 +132,7 @@ label wrong_end_04_01_1:
     play sound ctc
     "(...)"
     play sound ctc
+    stop voice
 
     window hide(None)
     $ game_over_pos_cutscene = True

@@ -1,58 +1,77 @@
 label cap05_01_casa01:
+    $ drpc_update("cap05")
     scene black
     stop music
 
-    show header_cap_05
-    pause 1.5
+    show header_cap_05 at intro_cap
+    pause 7.0
     hide header_cap_05 
-
+    play music sh4_resting_comfortably
     show textbox_black at center
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
+    voice voz_cap05_01_03
     "(Alexandre Senna estava em uma\npadaria, procurando onde estava\no arrombamento...)"
     play sound ctc
+    voice voz_cap05_01_04
     "Onde, onde, onde? Cadê o arrombamento?"
     play sound ctc
+    voice voz_cap05_01_05
     "Bem... na verdade não tem arrombamento\nnenhum, só queria que você desse\numa olhada em minha cozinha para\nver se ela segue os padrões\nde segurança..."
     play sound ctc
+    voice voz_cap05_01_06
     "Oh, se tá maluco meu, seu viado! Você\nme deixou nervoso!"
     play sound ctc
-    "Calma, calma, mas não se irrite...\ntome um suco de laranja que eu\njá vou buscar o cacetinho\nque acabei de fazer."
+    voice voz_cap05_01_07
+    "Calma, calma, mas não se irrite...\nTome um suco de laranja que eu\njá vou buscar o cacetinho\nque acabei de fazer."
     play sound ctc
+    voice voz_cap05_01_08
     "(Alguns momentos se passam e é\npossível escutar murmúrios\nvindo da área do forno.)"
     play sound ctc
+    voice voz_cap05_01_09
     "(Senna decide ir conferir.)"
     play sound ctc
+    voice voz_cap05_01_10
     "Está tudo bem?"
     play sound ctc
-    "O meu cacetinho ficou preso no\nfundo do forno e eu não consigo\npegar... você pode pegar\nele para mim?"
+    voice voz_cap05_01_11
+    "O meu cacetinho ficou preso no\nfundo do forno e eu não consigo\npegar... você pode pegar\nele pra mim?"
     play sound ctc
+    voice voz_cap05_01_12
     "Mas é claro! Sempre adoro ajudar..."
     play sound ctc
+    voice voz_cap05_01_13
     "(Senna se aproxima do forno e fica\nde quatro para pegar o pão\ncom maior facilidade.)"
     play sound ctc
+    voice voz_cap05_01_14
     "(Um pouco depois que ele entra,\nele sente algo GRANDE E\nGOSTOSO LÁ NO ESTÔMAGO PORRA)"
     play sound ctc
+    voice voz_cap05_01_15
     "(É o Padeiro G, demonstrando todo\nseu amor por Senna.)"
     play sound ctc
+    voice voz_cap05_01_16
     "(Senna começa a relaxar com o\nPadeiro G, tentando pegar o\ncacetinho no forno e levando\no outro cacetão atrás.)"
     play sound ctc
+    voice voz_cap05_01_17
     "(\"É possível um homem engravidar?\",\npensou Senna profundamente\nenquanto sentia todo o\namor em sua alma vazia.)"
     play sound ctc
+    voice voz_cap05_01_18
     "(\"Eu vou te encher de recheio\",\ndisse o Padeiro G momentos\nantes de explodir todo o\nseu amor dentro de Senna.)"
     play sound ctc
+    voice voz_cap05_01_19
     "(O Padeiro G solta todo seu líquido\nde amor grudento e viscoso\ndentro de Senna, escorrendo e\nborbulhando sem parar no chão.)"
     play sound ctc
+    voice voz_cap05_01_20
     "E aí, achou meu cacetinho grande?"
     play sound ctc
+    voice voz_cap05_01_21
     "Amei seu cacetinho, quero mais\ne mais!"
     play sound ctc
     "(...)"
     play sound ctc
-    "(...)"
-    play sound ctc
+    stop music
     voice voz_cap05_01_02
     "AAAAAAIIIII!!!"
     play sound ctc
@@ -67,14 +86,14 @@ label cap05_01_casa01:
     "Aquele morador me enganou,\nmaldito mentiroso do caralho."
     play sound ctc
     play sound_bg celular
-    "(telefone tocando)"
+    "(celular tocando)"
     play sound ctc
     "NENHUM. DIA DE SOSSEGO!"
     play sound ctc
     
     show textbox_aux
     menu:
-        "<Atender o telefone>":
+        "<Atender o celular>":
             hide textbox_aux
             pass
         "<Desligar e dar um passeio na rua>":
@@ -131,7 +150,7 @@ label cap05_01_casa01:
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click
-    "(desligou o telefone)"
+    "(desligou o celular)"
     play sound ctc
     "Nossa, que maravilha. Ator pornô..."
     play sound ctc
@@ -149,10 +168,11 @@ label cap05_01_casa01:
     return
 
 label wrong_end_05_01_1:
+    $ drpc_update("finalV")
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
-    "(desligou o telefone)"
+    "(desligou o celular)"
     play sound ctc
     "Com certeza era aquele filho da\nputa que faz trote todo\nsanto dia."
     play sound ctc

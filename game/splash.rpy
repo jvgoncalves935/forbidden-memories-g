@@ -81,7 +81,13 @@ init python:
                         ("W",False),
                         ("X",False),
                         ("Y",False),
-                        ("Z",False)]
+                        ("Z",False),
+                        ("C1",False),
+                        ("C2",False),
+                        ("C3",False),
+                        ("C4",False),
+                        ("C5",False),
+                        ("CXX",False),]
                         
             persistent.endings = dict(array_aux)
 
@@ -291,6 +297,7 @@ label splashscreen:
 
     #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
+    $ drpc_update("menu")
     $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 

@@ -1,4 +1,5 @@
 label cap02_02_oficina_gringo:
+    $ drpc_update("cap02-1")
     scene black
     stop music
     show textbox_black at center
@@ -212,6 +213,7 @@ label cap02_02_oficina_gringo:
 
 
 label wrong_end_02_02_1:
+    $ drpc_update("finalH")
     stop music
     "(Sua consciência diz para você sair da\noficina o mais rápido que\nvocê puder!)"
     play sound ctc
@@ -268,6 +270,7 @@ label wrong_end_02_02_1:
     jump game_over
 
 label wrong_end_02_02_2:
+    $ drpc_update("finalI")
     stop music
     "(Inicialmente, você pensa em sair\ncorrendo o máximo que puder\nda Oficina do Gringo...)"
     play sound ctc

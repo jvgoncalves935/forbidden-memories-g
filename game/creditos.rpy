@@ -56,7 +56,7 @@ image cred_02_01:
 image cred_02_02:
     align (0.85,0.5)
     alpha 0.0
-    Text("Programação,\nGame Design,\nFonte (Gamerip),\nRoteiro, Scripts,\nEdição de Imagens\n/Música:\n\n\n\nMaster Exploder\n(Converting Minds)", style="credits_text")
+    Text("Programação,\nGame Design,\nFonte (Gamerip),\nRoteiro, Scripts,\nSound Design,\n/Design Gráfico:\n\n\n\nMaster Exploder\n(Converting Minds)", style="credits_text")
     linear 1.0 alpha 1.0
     time 4.0
     linear 1.5 alpha 0.0
@@ -212,6 +212,24 @@ image cred_05_13:
     Text("Pixels.svg (Pixels to SVG Online)", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.0
+    linear 1.5 alpha 0.0
+
+image cred_051_01:
+    align (0.15,0.5)
+    zoom 0.75
+    alpha 0.0
+    time 1.5
+    "mod_assets/images/deck/glob.png"
+    linear 1.0 alpha 1.0
+    time 3.5
+    linear 1.5 alpha 0.0
+
+image cred_051_02:
+    align (0.85,0.5)
+    alpha 0.0
+    Text("Participação\nEspecial\n\nDublagem\n(Sonho do\nPadeiro G):\n\n\n\nDRAMA TV 3D", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 3.5
     linear 1.5 alpha 0.0
 
 image cred_06_01:
@@ -384,6 +402,127 @@ image cred_07_13:
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
+
+
+
+image cred_071_01:
+    align (0.5,0.10)
+    alpha 0.0
+    time 1.0
+    Text("Direitos Autorais de", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_02:
+    align (0.5,0.15)
+    alpha 0.0
+    time 1.0
+    Text("Propriedade Intelectual", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_03:
+    align (0.5,0.25)
+    alpha 0.0
+    time 3.0
+    Text("Música:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_04:
+    align (0.5,0.30)
+    alpha 0.0
+    time 3.0
+    Text("\"Resting Comfortably\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_05:
+    align (0.5,0.35)
+    alpha 0.0
+    time 3.0
+    Text("Silent Hill 4 OST", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_06:
+    align (0.5,0.40)
+    alpha 0.0
+    time 3.0
+    Text("Compositor: Akira Yamaoka", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_07:
+    align (0.5,0.50)
+    alpha 0.0
+    time 4.0
+    Text("Música:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_08:
+    align (0.5,0.55)
+    alpha 0.0
+    time 4.0
+    Text("\"Yu-Gi-Oh! Theme (Delícia Remix)\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_09:
+    align (0.5,0.65)
+    alpha 0.0
+    time 5.0
+    Text("Remix: Master Exploder", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_10:
+    align (0.5,0.70)
+    alpha 0.0
+    time 5.0
+    Text("Homenagem a Saviola Games", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_11:
+    align (0.5,0.75)
+    alpha 0.0
+    time 5.0
+    Text("Compositores:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_12:
+    align (0.5,0.80)
+    alpha 0.0
+    time 5.0
+    Text("Wayne Sharpe", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_13:
+    align (0.5,0.85)
+    alpha 0.0
+    time 5.0
+    Text("John Siegler", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.5
+    linear 1.5 alpha 0.0
+
+
 
 image cred_08_01:
     align (0.5,0.40)
@@ -1379,6 +1518,8 @@ image cred_49_09:
     linear 1.0 alpha 0.0
 
 label creditos:
+    $ drpc_update("creditos")
+
     $ backup_game_menu_keymap = config.keymap['game_menu']
     $ backup_game_hide_windows = config.keymap['hide_windows']
 
@@ -1388,30 +1529,34 @@ label creditos:
     $ renpy.display.behavior.clear_keymap_cache()    
 
     stop music
+    stop voice
+    play music yugioco
     
-    play music fm_credits
+    show yami_senna
+    pause 6.0
+
     show cred_01_01 
     show cred_01_02
     show cred_01_03
     show cred_01_04
     show cred_01_05
     pause 8
-    scene black
+    scene yami_senna_bg
     
     show cred_02_01
     show cred_02_02
     pause 6
-    scene black
+    scene yami_senna_bg
 
     show cred_03_01
     show cred_03_02
     pause 5
-    scene black
+    scene yami_senna_bg
 
     show cred_04_01
     show cred_04_02
     pause 5
-    scene black
+    scene yami_senna_bg
 
     show cred_05_01 
     show cred_05_02
@@ -1427,190 +1572,195 @@ label creditos:
     show cred_05_12
     show cred_05_13
     pause 8
-    scene black
+    scene yami_senna_bg
+
+    show cred_051_01
+    show cred_051_02
+    pause 5
+    scene yami_senna_bg
 
     show cred_10_01
     pause 2
-    scene black
+    scene yami_senna_bg
 
     show cred_11_01
     show cred_11_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_12_01
     show cred_12_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_13_01
     show cred_13_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_14_01
     show cred_14_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_15_01
     show cred_15_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_16_01
     show cred_16_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_17_01
     show cred_17_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_18_01
     show cred_18_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_19_01
     show cred_19_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_20_01
     show cred_20_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_21_01
     show cred_21_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_22_01
     show cred_22_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_23_01
     show cred_23_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_24_01
     show cred_24_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_25_01
     show cred_25_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_26_01
     show cred_26_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_27_01
     pause 2
-    scene black
+    scene yami_senna_bg
 
     show cred_28_01
     show cred_28_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_29_01
     show cred_29_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_30_01
     show cred_30_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_31_01
     show cred_31_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_32_01
     show cred_32_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_33_01
     show cred_33_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_34_01
     show cred_34_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_35_01
     show cred_35_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_36_01
     show cred_36_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_37_01
     show cred_37_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_38_01
     show cred_38_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_39_01
     show cred_39_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_40_01
     show cred_40_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_41_01
     show cred_41_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_42_01
     show cred_42_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_43_01
     show cred_43_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_44_01
     show cred_44_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_442_01
     show cred_442_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_443_01
     show cred_443_02
     pause 4
-    scene black
+    scene yami_senna_bg
 
     show cred_06_01
     show cred_06_02
@@ -1619,7 +1769,7 @@ label creditos:
     show cred_06_05
     show cred_06_06
     pause 6
-    scene black
+    scene yami_senna_bg
 
     show cred_07_01
     show cred_07_02
@@ -1635,14 +1785,30 @@ label creditos:
     show cred_07_12
     show cred_07_13
     pause 8
-    scene black
+    scene yami_senna_bg
+
+    show cred_071_01
+    show cred_071_02
+    show cred_071_03
+    show cred_071_04
+    show cred_071_05
+    show cred_071_06
+    show cred_071_07
+    show cred_071_08
+    show cred_071_09
+    show cred_071_10
+    show cred_071_11
+    show cred_071_12
+    show cred_071_13
+    pause 8
+    scene yami_senna_bg
 
     show cred_08_01
     show cred_08_02
     show cred_08_03
     show cred_08_04
     pause 5
-    scene black
+    scene yami_senna_bg
 
     show cred_09_01
     show cred_09_02
@@ -1658,7 +1824,7 @@ label creditos:
     show cred_09_12
     show cred_09_13
     pause 8
-    scene black
+    scene yami_senna_bg
 
     show cred_45_01
     show cred_45_02
@@ -1686,7 +1852,7 @@ label creditos:
     show cred_47_03
     pause 6
 
-    scene black
+    scene yami_senna_bg_end
 
     show cred_48_01
     show cred_48_02
