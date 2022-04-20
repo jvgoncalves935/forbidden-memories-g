@@ -9,8 +9,16 @@ label cap02_02_oficina_gringo:
     "(20 minutos depois)"
     play sound ctc
     "(Você acabou de chegar em frente à\nOficina do Gringo.)"
+    play sound_bg heresy fadein 4.0
     play sound ctc
     "(A oficina é bem fudida mas\nesse é o lugar.)"
+    play sound ctc
+    "(Você escuta uma música tocando em\num rádio do outro\nlado da rua.)"
+    play sound ctc
+    "Eu conheço essa música de\nalgum lugar..."
+    play sound ctc
+    stop sound_bg fadeout 1.5
+    "Ah, foda-se. Tenho mais o que fazer."
     play sound ctc
 
     play music audio.fm_password

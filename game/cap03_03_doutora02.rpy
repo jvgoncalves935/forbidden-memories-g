@@ -184,7 +184,7 @@ label cap03_03_doutora02:
     "VAI... VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
     play sound ctc
     voice voz_cap03_03_28
-    "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CU! UUGH..."
+    "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CUHH! UUGH..."
     play sound ctc
     voice voz_cap03_03_29
     "AI QUE DELÍCIA DOUTORA... AI\nDOUTORA, AI DOUTORA,\nAI DOUTORA..."
@@ -217,9 +217,9 @@ label cap03_03_doutora02:
 
     show capitulo_concluido
     pause 1.0
-    play sound voz_cap01_04_21
+    play sound voz_cap03_03_36
     pause 3.7
-    play sound voz_cap01_04_65
+    play sound voz_cap03_03_37
     pause 4.26
     hide capitulo_concluido
     
@@ -227,7 +227,7 @@ label cap03_03_doutora02:
     show carta_img_cap_03
     show carta_desc_cap_03
     pause 1.5
-    play sound voz_cap01_04_64
+    play sound voz_cap03_03_35
     pause 5.0
 
     stop music fadeout 3.0

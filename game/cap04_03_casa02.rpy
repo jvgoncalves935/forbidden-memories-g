@@ -19,6 +19,7 @@ label cap04_03_casa02:
     "(celular tocando)"
     play sound ctc
     "Eu nem acordei direito, seus\nfilha da puta!"
+    play sound ctc
     show textbox_aux
     menu:
         "<Atender o celular>":
@@ -49,6 +50,7 @@ label cap04_03_casa02:
     "(Mano, que vontade de...)"
     play sound ctc
     show textbox_aux
+    play music audio.fm_password
     menu:
         "<Responder o que ele merece ouvir>":
             hide textbox_aux
@@ -109,6 +111,8 @@ label cap04_03_casa02:
             play sound ctc
             "AAAAH CARALHO, EU VOU GOZAR LÁ NO SEU\nÚTERO MARLENE!"
             play sound ctc
+            "{p=0.2}{nw}"
+            play sound phone_end_call
             "(desligou o fone do outro lado)"
             play sound ctc
             "Haha, ficou putinho ow seu\nengraçadinho? Vai chorar\npra mamãe?"
@@ -136,21 +140,29 @@ label cap04_03_casa02:
 label wrong_end_04_03_1:
     $ drpc_update("finalS")
     stop sound_bg
-    "AAARRRGHH PORRA!"
+    voice voz_cap04_03_02
+    "AI CARALHO!"
     play sound ctc
     "(Você segura o botão de desligar do\ncelular com toda sua força.)"
     play sound ctc
-    "(Ele fica na parte de cima do\ncelular e é pequeno pra caralho.)"
+    "(Ele fica na parte de cima do\ncelular e é pequeno para\num cacete.)"
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click
     "(Depois de machucar seu dedo você\nconsegue desligar o celular.)"
     play sound ctc
+    "QUE MERDA DE TELEFONE!"
+    play sound ctc
+    "{p=0.2}{nw}"
+    play sound floor_slam
     "(Você joga o celular no chão, com\ntoda a raiva acumulada pela\ndor na sua alma.)"
     play sound ctc
     "(...)"
     play sound ctc
     "(O celular fez um buraco no chão.)"
+    play sound ctc
+    voice voz_cap04_03_01
+    "PUTA QUE PARIU MEU!"
     play sound ctc
     "(...)"
     play sound ctc
@@ -158,7 +170,7 @@ label wrong_end_04_03_1:
     play sound ctc
     "Quer saber mermão?"
     play sound ctc
-    "Eu vou tirar uma semana de férias\nna fazenda do meu tio\ne é isso aí!"
+    "Eu vou tirar uma semana de férias\nna fazenda do meu amigo\nMarcinho e é isso aí!"
     play sound ctc
     "Aquele pessoal do condomínio pode\nir enfiar o dedo no cu,\nfoda-se, tá ligado?"
     play sound ctc
@@ -169,8 +181,9 @@ label wrong_end_04_03_1:
     "(...)"
     play sound ctc
     "(dois dias depois)"
+    play sound_bg cicadas fadein 6.0
     play sound ctc
-    "Ah, a vida no campo tem as suas\nvantagens, sabia?"
+    "Ahhhh... a vida no campo tem\nas suas vantagens, sabia?"
     play sound ctc
     "Não tem gente te ligando,\natendente de telemarketing\nnem nada do tipo."
     play sound ctc
@@ -184,14 +197,23 @@ label wrong_end_04_03_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "Só o barulho dessas cigarras\nque já encheram o saco."
+    "Só o barulho dessas cigarras\nque já encheu o saco."
     play sound ctc
     "Não tem como fazer elas\npararem não?"
     play sound ctc
-    "NA VIDA DE VOCÊS VAI\nCAIR MALDIÇÃO!"
+    voice voz_cap04_03_03
+    "EU AMALDIÇOO TODO MUNDO!"
     play sound ctc
     "(...)"
     play sound ctc
+    "Bora encontrar com\no Marcinho então, né..."
+    play sound ctc
+    stop sound_bg
+
+    window hide(None)
+    $ game_over_pos_cutscene = True
+    $ renpy.movie_cutscene("mod_assets/videos/cowboy.webm")
+
     $ register_ending("S")
     jump game_over
 
@@ -220,7 +242,7 @@ label wrong_end_04_03_2:
     play sound ctc
     "Acho melhor abaixar a poeira e\nfazer uma viagem pra\nqualquer lugar fora daqui..."
     play sound ctc
-    "Hmm... será que tem ônibus\npara Pau Grande?"
+    "Hmm... será que tem ônibus\npra Pau Grande?"
     play sound ctc
     "(...)"
     play sound ctc

@@ -275,6 +275,8 @@ label splashscreen:
         play sound ctc
         "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
         play sound ctc
+        "Este jogo NÃO SALVA automaticamente.\nSALVE e CARREGUE o jogo o\nmáximo que puder!"
+        play sound ctc
         scene black
         with Dissolve(1.5)
         $ persistent.splash_complete = True

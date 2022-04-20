@@ -129,9 +129,9 @@ label cap04_04_arrombamento:
 
     show capitulo_concluido
     pause 1.0
-    play sound voz_cap01_04_21
+    play sound voz_cap04_04_35
     pause 3.7
-    play sound voz_cap01_04_65
+    play sound voz_cap04_04_36
     pause 4.26
     hide capitulo_concluido
     
@@ -139,7 +139,7 @@ label cap04_04_arrombamento:
     show carta_img_cap_04
     show carta_desc_cap_04
     pause 1.5
-    play sound voz_cap01_04_64
+    play sound voz_cap04_04_37
     pause 5.0
 
     stop music fadeout 3.0
@@ -190,6 +190,7 @@ label wrong_end_04_04_1:
     play sound ctc
     "(Você corre para o beco do lado\nde fora do prédio na rua,\nesperando encontrar o arrombamento.)"
     play sound ctc
+    play sound_bg black_hole fadeout 4.0
     "...?"
     play sound ctc
     "(...)"
@@ -217,5 +218,6 @@ label wrong_end_04_04_1:
     "(...)"
     play sound ctc
     "(...)"
+    stop sound_bg fadeout 3.0
     $ register_ending("U")
     jump game_over

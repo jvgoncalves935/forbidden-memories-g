@@ -491,7 +491,7 @@ image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l
 image gilson 1a = "mod_assets/characters/gilson/1a.png"
 
 
-###################Imagens
+###################Videos
 image guinodia_movie = Movie(play="mod_assets/videos/guinodia.webm",size=(960,720))
 image pelada_james_02 = Movie(play="mod_assets/videos/pelada_james_02.webm",size=(960,720))
 image pelada_james_03 = Movie(play="mod_assets/videos/pelada_james_03.webm",size=(960,720))
@@ -499,7 +499,15 @@ image pelada_james_04 = Movie(play="mod_assets/videos/pelada_james_04.webm",size
 image pelada_james_05 = Movie(play="mod_assets/videos/pelada_james_05.webm",size=(960,720))
 image pelada_james_06 = Movie(play="mod_assets/videos/pelada_james_06.webm",size=(960,720))
 image pelada_james_07 = Movie(play="mod_assets/videos/pelada_james_07.webm",size=(960,720))
+image senna_danca = Movie(play="mod_assets/videos/senna_danca.webm",size=(960,720))
 
+
+
+
+
+
+
+###################Imagens
 image testeee = "mod_assets/images/teste.png"
 image logo01 = "mod_assets/images/logo01.png"
 image game_over_bg = "mod_assets/images/GameOver.png"
@@ -620,7 +628,7 @@ image carta_desc_cap_04:
     align (0.85,0.65)
     alpha 0.0
     time 1.5
-    Text("Coringa Dano\n\n\n\nAHHH O CORINGA DANO\nMAS VAI VER O\nCORINGA DANO", style="credits_text")
+    Text("Coringa Dano\n\n\n\nO CORINGA DANO MAS\nVAI VER HOJE O\nCORINGA DANO", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 3.0 alpha 0.0
@@ -699,6 +707,7 @@ image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
 define audio.yugioco = "<loop 0.0>mod_assets/music/yugioco.ogg"
+define audio.farao_amet = "<loop 0.0>mod_assets/music/farao_amet.ogg"
 define audio.sh4_resting_comfortably = "<loop 1.966>mod_assets/music/sh4_resting_comfortably.ogg"
 
 define audio.indio_policia = "<loop 0.0>mod_assets/music/indio_policia.ogg"
@@ -963,6 +972,9 @@ define voz_cap02_04_40 = "mod_assets/voices/02_04/02_04_40.ogg"
 define voz_cap02_04_41 = "mod_assets/voices/02_04/02_04_41.ogg"
 define voz_cap02_04_42 = "mod_assets/voices/02_04/02_04_42.ogg"
 define voz_cap02_04_43 = "mod_assets/voices/02_04/02_04_43.ogg"
+define voz_cap02_04_44 = "mod_assets/voices/02_04/02_04_44.ogg"
+define voz_cap02_04_45 = "mod_assets/voices/02_04/02_04_45.ogg"
+define voz_cap02_04_46 = "mod_assets/voices/02_04/02_04_46.ogg"
 
 
 #03_01
@@ -1052,6 +1064,9 @@ define voz_cap03_03_31 = "mod_assets/voices/03_03/03_03_31.ogg"
 define voz_cap03_03_32 = "mod_assets/voices/03_03/03_03_32.ogg"
 define voz_cap03_03_33 = "mod_assets/voices/03_03/03_03_33.ogg"
 define voz_cap03_03_34 = "mod_assets/voices/03_03/03_03_34.ogg"
+define voz_cap03_03_35 = "mod_assets/voices/03_03/03_03_35.ogg"
+define voz_cap03_03_36 = "mod_assets/voices/03_03/03_03_36.ogg"
+define voz_cap03_03_37 = "mod_assets/voices/03_03/03_03_37.ogg"
 
 
 #04_01
@@ -1059,14 +1074,37 @@ define voz_cap04_01_01 = "mod_assets/voices/04_01/04_01_01.ogg"
 define voz_cap04_01_02 = "mod_assets/voices/04_01/04_01_02.ogg"
 define voz_cap04_01_03 = "mod_assets/voices/04_01/04_01_03.ogg"
 define voz_cap04_01_04 = "mod_assets/voices/04_01/04_01_04.ogg"
+define voz_cap04_01_05 = "mod_assets/voices/04_01/04_01_05.ogg"
+define voz_cap04_01_06 = "mod_assets/voices/04_01/04_01_06.ogg"
+define voz_cap04_01_07 = "mod_assets/voices/04_01/04_01_07.ogg"
 
 
 #04_02
 define voz_cap04_02_01 = "mod_assets/voices/04_02/04_02_01.ogg"
+define voz_cap04_02_02 = "mod_assets/voices/04_02/04_02_02.ogg"
+define voz_cap04_02_03 = "mod_assets/voices/04_02/04_02_03.ogg"
+define voz_cap04_02_04 = "mod_assets/voices/04_02/04_02_04.ogg"
+define voz_cap04_02_05 = "mod_assets/voices/04_02/04_02_05.ogg"
+define voz_cap04_02_06 = "mod_assets/voices/04_02/04_02_06.ogg"
+define voz_cap04_02_07 = "mod_assets/voices/04_02/04_02_07.ogg"
+define voz_cap04_02_08 = "mod_assets/voices/04_02/04_02_08.ogg"
+define voz_cap04_02_09 = "mod_assets/voices/04_02/04_02_09.ogg"
+define voz_cap04_02_10 = "mod_assets/voices/04_02/04_02_10.ogg"
+define voz_cap04_02_11 = "mod_assets/voices/04_02/04_02_11.ogg"
+define voz_cap04_02_12 = "mod_assets/voices/04_02/04_02_12.ogg"
+define voz_cap04_02_13 = "mod_assets/voices/04_02/04_02_13.ogg"
+define voz_cap04_02_14 = "mod_assets/voices/04_02/04_02_14.ogg"
+define voz_cap04_02_15 = "mod_assets/voices/04_02/04_02_15.ogg"
+define voz_cap04_02_16 = "mod_assets/voices/04_02/04_02_16.ogg"
+define voz_cap04_02_17 = "mod_assets/voices/04_02/04_02_17.ogg"
+define voz_cap04_02_18 = "mod_assets/voices/04_02/04_02_18.ogg"
+define voz_cap04_02_19 = "mod_assets/voices/04_02/04_02_19.ogg"
 
 
 #04_03
 define voz_cap04_03_01 = "mod_assets/voices/04_03/04_03_01.ogg"
+define voz_cap04_03_02 = "mod_assets/voices/04_03/04_03_02.ogg"
+define voz_cap04_03_03 = "mod_assets/voices/04_03/04_03_03.ogg"
 
 
 #04_04
@@ -1104,6 +1142,9 @@ define voz_cap04_04_31 = "mod_assets/voices/04_04/04_04_31.ogg"
 define voz_cap04_04_32 = "mod_assets/voices/04_04/04_04_32.ogg"
 define voz_cap04_04_33 = "mod_assets/voices/04_04/04_04_33.ogg"
 define voz_cap04_04_34 = "mod_assets/voices/04_04/04_04_34.ogg"
+define voz_cap04_04_35 = "mod_assets/voices/04_04/04_04_35.ogg"
+define voz_cap04_04_36 = "mod_assets/voices/04_04/04_04_36.ogg"
+define voz_cap04_04_37 = "mod_assets/voices/04_04/04_04_37.ogg"
  
 
 
@@ -1276,6 +1317,9 @@ define voz_cap05_03_11 = "mod_assets/voices/05_03/05_03_11.ogg"
 define voz_cap05_03_12 = "mod_assets/voices/05_03/05_03_12.ogg"
 define voz_cap05_03_13 = "mod_assets/voices/05_03/05_03_13.ogg"
 define voz_cap05_03_14 = "mod_assets/voices/05_03/05_03_14.ogg"
+define voz_cap05_03_15 = "mod_assets/voices/05_03/05_03_15.ogg"
+define voz_cap05_03_16 = "mod_assets/voices/05_03/05_03_16.ogg"
+define voz_cap05_03_17 = "mod_assets/voices/05_03/05_03_17.ogg"
 
 #Epilogo
 define voz_epilogo_01 = "mod_assets/voices/epilogo/epilogo_01.ogg"
@@ -1323,6 +1367,8 @@ define voz_capXX_018 = "mod_assets/voices/capXX/capxx_018.ogg"
 define voz_capXX_019 = "mod_assets/voices/capXX/capxx_019.ogg"
 define voz_capXX_020 = "mod_assets/voices/capXX/capxx_020.ogg"
 define voz_capXX_021 = "mod_assets/voices/capXX/capxx_021.ogg"
+define voz_capXX_022 = "mod_assets/voices/capXX/capxx_022.ogg"
+define voz_capXX_023 = "mod_assets/voices/capXX/capxx_023.ogg"
 
 
 ###################Audios
@@ -1357,6 +1403,9 @@ define audio.bell = "<loop 0.00>mod_assets/sounds/bell.ogg"
 define audio.energy_source = "<loop 0.00>mod_assets/sounds/energy_source.ogg"
 define audio.running_window_breaking = "<loop 0.00>mod_assets/sounds/running_window_breaking.ogg"
 define audio.city_02 = "<loop 0.00>mod_assets/sounds/city_02.ogg"
+define audio.heresy = "<loop 0.00>mod_assets/sounds/heresy.ogg"
+define audio.floor_slam = "<loop 0.00>mod_assets/sounds/floor_slam.ogg"
+define audio.black_hole = "<loop 0.00>mod_assets/sounds/black_hole.ogg"
 
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"

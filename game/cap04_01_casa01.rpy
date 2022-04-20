@@ -81,21 +81,25 @@ label cap04_01_casa01:
     play sound phone_click
     "Fala meu querido, tudo bem?"
     play sound ctc
+    voice voz_cap04_01_05
     "YEAH MAN!"
     play sound ctc
     "Eu já tô indo aí pra academia, só tô\narrumando umas coisas aqui\nem casa primeiro..."
     play sound ctc
     "Você já chegou na esquina aqui já?"
     play sound ctc
+    voice voz_cap04_01_06
     "YEAH MAN!"
     play sound ctc
     "Beleza, querido. Espera só dois\nminutinhos."
     play sound ctc
+    voice voz_cap04_01_05
     "YEAH MAN!"
     play sound ctc
     "Tudo bem, falou."
     play sound ctc
-    "OH CARALHO, OH!"
+    voice voz_cap04_01_07
+    "OH CARALHO!"
     play sound ctc
     "{p=0.2}{nw}"
     play sound phone_click

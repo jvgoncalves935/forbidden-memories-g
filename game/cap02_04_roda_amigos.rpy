@@ -154,9 +154,9 @@ label cap02_04_roda_amigos:
 
     show capitulo_concluido
     pause 1.0
-    play sound voz_cap01_04_21
+    play sound voz_cap02_04_44
     pause 3.7
-    play sound voz_cap01_04_65
+    play sound voz_cap02_04_45
     pause 4.26
     hide capitulo_concluido
     
@@ -164,7 +164,7 @@ label cap02_04_roda_amigos:
     show carta_img_cap_02
     show carta_desc_cap_02
     pause 1.5
-    play sound voz_cap01_04_64
+    play sound voz_cap02_04_46
     pause 5.0
 
     stop music fadeout 3.0

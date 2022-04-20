@@ -123,9 +123,9 @@ label cap05_03_doutor:
 
     show capitulo_concluido
     pause 1.0
-    play sound voz_cap01_04_21
+    play sound voz_cap05_03_15
     pause 3.7
-    play sound voz_cap01_04_65
+    play sound voz_cap05_03_16
     pause 4.26
     hide capitulo_concluido
     
@@ -133,10 +133,11 @@ label cap05_03_doutor:
     show carta_img_cap_05
     show carta_desc_cap_05
     pause 1.5
-    play sound voz_cap01_04_64
+    play sound voz_cap05_03_17
     pause 5.0
 
     stop music fadeout 3.0
+    pause 1.0
     stop sound fadeout 3.0
     pause 4.0
 

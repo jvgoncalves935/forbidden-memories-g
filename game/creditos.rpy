@@ -232,6 +232,24 @@ image cred_051_02:
     time 3.5
     linear 1.5 alpha 0.0
 
+image cred_052_01:
+    align (0.5,0.10)
+    alpha 0.0
+    time 1.0
+    Text("Testers", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_052_02:
+    align (0.5,0.3)
+    alpha 0.0
+    time 1.0
+    Text("Taeyeon115\nMark_77Souls\nCofanic\nDeide Costa\nLima Mei\nDavid Vonderhaar", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
 image cred_06_01:
     align (0.5,0.40)
     alpha 0.0
@@ -411,7 +429,7 @@ image cred_071_01:
     time 1.0
     Text("Direitos Autorais de", style="credits_text")
     linear 1.0 alpha 1.0
-    time 6.5
+    time 11.5
     linear 1.5 alpha 0.0
 
 image cred_071_02:
@@ -420,7 +438,7 @@ image cred_071_02:
     time 1.0
     Text("Propriedade Intelectual", style="credits_text")
     linear 1.0 alpha 1.0
-    time 6.5
+    time 11.5
     linear 1.5 alpha 0.0
 
 image cred_071_03:
@@ -490,7 +508,7 @@ image cred_071_10:
     align (0.5,0.70)
     alpha 0.0
     time 5.0
-    Text("Homenagem a Saviola Games", style="credits_text")
+    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -520,6 +538,60 @@ image cred_071_13:
     Text("John Siegler", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
+    linear 1.5 alpha 0.0
+
+image cred_071_14:
+    align (0.5,0.25)
+    alpha 0.0
+    time 8.0
+    Text("Música:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_15:
+    align (0.5,0.30)
+    alpha 0.0
+    time 9.0
+    Text("\"Pharaoh's Theme (Faraó Amet Edit)\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_16:
+    align (0.5,0.35)
+    alpha 0.0
+    time 9.0
+    Text("Edit: Master Exploder", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_17:
+    align (0.5,0.40)
+    alpha 0.0
+    time 9.0
+    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_18:
+    align (0.5,0.45)
+    alpha 0.0
+    time 9.0
+    Text("Compositor: Joel Douek", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_19:
+    align (0.5,0.50)
+    alpha 0.0
+    time 9.0
+    Text("Label: 4Kids", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
     linear 1.5 alpha 0.0
 
 
@@ -807,7 +879,7 @@ image cred_17_02:
 image cred_18_01:
     align (0.85,0.5)
     alpha 0.0
-    Text("Mangueira Evil\n\n\n\nGosta de umas\nbrincadeira bem\ndiferente", style="credits_text")
+    Text("Mangueira Evil\n\n\n\nGosta, tipo, de\numas brincadeira\ntipo bem diferente", style="credits_text")
     linear 0.8 alpha 1.0
     time 2.5
     linear 1.5 alpha 0.0
@@ -1531,7 +1603,12 @@ label creditos:
     stop music
     stop voice
     play music yugioco
+    queue music farao_amet noloop
     
+    show senna_danca
+    pause 20.0
+    hide senna_danca
+
     show yami_senna
     pause 6.0
 
@@ -1577,6 +1654,11 @@ label creditos:
     show cred_051_01
     show cred_051_02
     pause 5
+    scene yami_senna_bg
+
+    show cred_052_01
+    show cred_052_02
+    pause 6
     scene yami_senna_bg
 
     show cred_10_01
@@ -1663,104 +1745,104 @@ label creditos:
     pause 4
     scene yami_senna_bg
 
-    show cred_27_01
-    pause 2
-    scene yami_senna_bg
+    #show cred_27_01
+    #pause 2
+    #scene yami_senna_bg
 
-    show cred_28_01
-    show cred_28_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_28_01
+    #show cred_28_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_29_01
-    show cred_29_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_29_01
+    #show cred_29_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_30_01
-    show cred_30_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_30_01
+    #show cred_30_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_31_01
-    show cred_31_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_31_01
+    #show cred_31_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_32_01
-    show cred_32_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_32_01
+    #show cred_32_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_33_01
-    show cred_33_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_33_01
+    #show cred_33_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_34_01
-    show cred_34_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_34_01
+    #show cred_34_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_35_01
-    show cred_35_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_35_01
+    #show cred_35_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_36_01
-    show cred_36_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_36_01
+    #show cred_36_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_37_01
-    show cred_37_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_37_01
+    #show cred_37_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_38_01
-    show cred_38_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_38_01
+    #show cred_38_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_39_01
-    show cred_39_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_39_01
+    #show cred_39_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_40_01
-    show cred_40_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_40_01
+    #show cred_40_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_41_01
-    show cred_41_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_41_01
+    #show cred_41_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_42_01
-    show cred_42_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_42_01
+    #show cred_42_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_43_01
-    show cred_43_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_43_01
+    #show cred_43_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_44_01
-    show cred_44_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_44_01
+    #show cred_44_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_442_01
-    show cred_442_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_442_01
+    #show cred_442_02
+    #pause 4
+    #scene yami_senna_bg
 
-    show cred_443_01
-    show cred_443_02
-    pause 4
-    scene yami_senna_bg
+    #show cred_443_01
+    #show cred_443_02
+    #pause 4
+    #scene yami_senna_bg
 
     show cred_06_01
     show cred_06_02
@@ -1800,7 +1882,13 @@ label creditos:
     show cred_071_11
     show cred_071_12
     show cred_071_13
-    pause 8
+    show cred_071_14
+    show cred_071_15
+    show cred_071_16
+    show cred_071_17
+    show cred_071_18
+    show cred_071_19
+    pause 13
     scene yami_senna_bg
 
     show cred_08_01

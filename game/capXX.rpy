@@ -314,9 +314,9 @@ label capXX:
 
     show capitulo_concluido
     pause 1.0
-    play sound voz_cap01_04_21
+    play sound voz_capXX_022
     pause 3.7
-    play sound voz_cap01_04_65
+    #play sound voz_cap01_04_65
     pause 4.26
     hide capitulo_concluido
     
@@ -324,7 +324,7 @@ label capXX:
     show carta_img_cap_06
     show carta_desc_cap_06
     pause 1.5
-    play sound voz_cap01_04_64
+    play sound voz_capXX_023
     pause 5.0
 
     stop music fadeout 3.0
