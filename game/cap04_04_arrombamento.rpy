@@ -164,33 +164,36 @@ label wrong_end_04_04_1:
     play sound ctc
     "(Ele te agarra de novo pelo braço\nmas você joga ele com toda\na força contra a parede.)"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound chaves_punch
     "(Ele bate forte com a cabeça na\nparede, parece que ele\nficou inconsciente.)"
     play sound ctc
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
-    voice voz_cap04_04_33
+    voice voz_cap04_04_38
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Você fica frenético enquanto\nprocura o arrombamento.)"
     play sound ctc
-    voice voz_cap04_04_33
+    voice voz_cap04_04_39
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Onde está o arrombamento? Será\nque foi do lado de fora\ndo prédio?)"
     play sound ctc
-    voice voz_cap04_04_33
+    voice voz_cap04_04_38
     "CADE O ARROMBAMENTO?"
     play sound ctc
+    voice voz_cap04_04_40
     "(CADÊ O ARROMBAMENTO?)"
     play sound ctc
-    voice voz_cap04_04_33
+    voice voz_cap04_04_38
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Você corre para o beco do lado\nde fora do prédio na rua,\nesperando encontrar o arrombamento.)"
     play sound ctc
-    play sound_bg black_hole fadeout 4.0
+    play sound_bg black_hole fadein 4.0
     "...?"
     play sound ctc
     "(...)"
@@ -199,7 +202,7 @@ label wrong_end_04_04_1:
     play sound ctc
     "(Parece ser um portal... mágico?)"
     play sound ctc
-    voice voz_cap04_04_33
+    voice voz_cap04_04_39
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Parece que essa porta mágica\npode te levar para o\nlocal do ARROMBAMENTO!)"
@@ -208,16 +211,18 @@ label wrong_end_04_04_1:
     play sound ctc
     "(...)"
     play sound ctc
-    voice voz_cap04_04_34
+    voice voz_cap04_04_41
     "ARROMBAMENTO"
     play sound ctc
     "(Você corre com tudo, pula e se\njoga dentro do círculo\nmágico.)"
     play sound ctc
-    "(...)"
-    play sound ctc
-    "(...)"
-    play sound ctc
-    "(...)"
     stop sound_bg fadeout 3.0
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    "(...)"
+    play sound ctc
+    
     $ register_ending("U")
     jump game_over

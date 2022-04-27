@@ -440,6 +440,7 @@ label wrong_end_05_02_a:
     "(...)"
     play sound ctc
     "(no dia seguinte)"
+    play sound_bg tv_005 noloop
     play sound ctc
     "\"Acidente doméstico acontece em\nSão Paulo.\""
     play sound ctc

@@ -540,6 +540,7 @@ image cred_071_13:
     time 6.5
     linear 1.5 alpha 0.0
 
+
 image cred_071_14:
     align (0.5,0.25)
     alpha 0.0
@@ -552,8 +553,8 @@ image cred_071_14:
 image cred_071_15:
     align (0.5,0.30)
     alpha 0.0
-    time 9.0
-    Text("\"Pharaoh's Theme (Faraó Amet Edit)\"", style="credits_text")
+    time 8.0
+    Text("\"Clima de Rodeio\"", style="credits_text")
     linear 1.0 alpha 1.0
     time 11.5
     linear 1.5 alpha 0.0
@@ -561,8 +562,8 @@ image cred_071_15:
 image cred_071_16:
     align (0.5,0.35)
     alpha 0.0
-    time 9.0
-    Text("Edit: Master Exploder", style="credits_text")
+    time 8.0
+    Text("Banda: Dallas Company", style="credits_text")
     linear 1.0 alpha 1.0
     time 11.5
     linear 1.5 alpha 0.0
@@ -570,28 +571,131 @@ image cred_071_16:
 image cred_071_17:
     align (0.5,0.40)
     alpha 0.0
-    time 9.0
-    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
+    time 8.0
+    Text("Compositor: Marcelo Kju", style="credits_text")
     linear 1.0 alpha 1.0
     time 11.5
     linear 1.5 alpha 0.0
 
+
+
 image cred_071_18:
-    align (0.5,0.45)
+    align (0.5,0.50)
     alpha 0.0
     time 9.0
-    Text("Compositor: Joel Douek", style="credits_text")
+    Text("Música:", style="credits_text")
     linear 1.0 alpha 1.0
     time 11.5
     linear 1.5 alpha 0.0
 
 image cred_071_19:
-    align (0.5,0.50)
+    align (0.5,0.55)
     alpha 0.0
     time 9.0
-    Text("Label: 4Kids", style="credits_text")
+    Text("\"Só Os Skates Sabem (Paródia)\"", style="credits_text")
     linear 1.0 alpha 1.0
     time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_20:
+    align (0.5,0.65)
+    alpha 0.0
+    time 9.0
+    Text("Paródia: Niel", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_21:
+    align (0.5,0.70)
+    alpha 0.0
+    time 9.0
+    Text("Original: Só Os Loucos Sabem", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_22:
+    align (0.5,0.75)
+    alpha 0.0
+    time 9.0
+    Text("Compositores:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_23:
+    align (0.5,0.80)
+    alpha 0.0
+    time 9.0
+    Text("Chorão (Charlie Brown Jr.)", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+image cred_071_24:
+    align (0.5,0.85)
+    alpha 0.0
+    time 9.0
+    Text("Thiago Castanho (Charlie Brown Jr.)", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 11.5
+    linear 1.5 alpha 0.0
+
+
+
+image cred_071_25:
+    align (0.5,0.25)
+    alpha 0.0
+    time 13.0
+    Text("Música:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_26:
+    align (0.5,0.30)
+    alpha 0.0
+    time 13.0
+    Text("\"Pharaoh's Theme (Faraó Amet Edit)\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_27:
+    align (0.5,0.35)
+    alpha 0.0
+    time 13.0
+    Text("Edit: Master Exploder", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_28:
+    align (0.5,0.40)
+    alpha 0.0
+    time 13.0
+    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_29:
+    align (0.5,0.45)
+    alpha 0.0
+    time 13.0
+    Text("Compositor: Joel Douek", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_30:
+    align (0.5,0.50)
+    alpha 0.0
+    time 13.0
+    Text("Label: 4Kids", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
     linear 1.5 alpha 0.0
 
 
@@ -1888,7 +1992,18 @@ label creditos:
     show cred_071_17
     show cred_071_18
     show cred_071_19
-    pause 13
+    show cred_071_20
+    show cred_071_21
+    show cred_071_22
+    show cred_071_23
+    show cred_071_24
+    show cred_071_25
+    show cred_071_26
+    show cred_071_27
+    show cred_071_28
+    show cred_071_29
+    show cred_071_30
+    pause 18
     scene yami_senna_bg
 
     show cred_08_01

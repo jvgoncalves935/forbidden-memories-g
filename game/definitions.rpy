@@ -715,6 +715,7 @@ define audio.tv_001 = "mod_assets/music/tv_001.ogg"
 define audio.tv_002 = "mod_assets/music/tv_002.ogg"
 define audio.tv_003 = "mod_assets/music/tv_003.ogg"
 define audio.tv_004 = "mod_assets/music/tv_004.ogg"
+define audio.tv_005 = "mod_assets/music/tv_005.ogg"
 define audio.siren = "mod_assets/music/siren.ogg"
 define audio.siren2 = "<loop 0.433>mod_assets/music/siren2.ogg"
 define audio.ambulance_01 = "<loop 0.00>mod_assets/music/ambulance_01.ogg"
@@ -1145,6 +1146,10 @@ define voz_cap04_04_34 = "mod_assets/voices/04_04/04_04_34.ogg"
 define voz_cap04_04_35 = "mod_assets/voices/04_04/04_04_35.ogg"
 define voz_cap04_04_36 = "mod_assets/voices/04_04/04_04_36.ogg"
 define voz_cap04_04_37 = "mod_assets/voices/04_04/04_04_37.ogg"
+define voz_cap04_04_38 = "mod_assets/voices/04_04/04_04_38.ogg"
+define voz_cap04_04_39 = "mod_assets/voices/04_04/04_04_39.ogg"
+define voz_cap04_04_40 = "mod_assets/voices/04_04/04_04_40.ogg"
+define voz_cap04_04_41 = "mod_assets/voices/04_04/04_04_41.ogg"
  
 
 

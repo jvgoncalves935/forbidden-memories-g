@@ -24,11 +24,13 @@ label cap04_03_casa02:
     menu:
         "<Atender o celular>":
             hide textbox_aux
+            stop sound_bg
             pass
         "<Desligar o celular com ignorância>":
             hide textbox_aux
+            stop sound_bg
             jump wrong_end_04_03_1
-    stop sound_bg
+    
     "{p=0.2}{nw}"
     play sound phone_click
     "Alexandre aqui."
@@ -54,8 +56,10 @@ label cap04_03_casa02:
     menu:
         "<Responder o que ele merece ouvir>":
             hide textbox_aux
+            stop music
             jump wrong_end_04_03_2
         "<\"Tá bom, eu já tô indo.\">":
+            stop music
             hide textbox_aux
             pass
     "Tá bom, eu já tô indo."
