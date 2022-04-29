@@ -245,7 +245,7 @@ image cred_052_02:
     align (0.5,0.3)
     alpha 0.0
     time 1.0
-    Text("Taeyeon115\nMark_77Souls\nCofanic\nDeide Costa\nLima Mei\nDavid Vonderhaar", style="credits_text")
+    Text("Taeyeon115\nMark_77Souls\nCofanic\nDeide Costa\nLima Mei\nDavid Vonderhaar\niFW xSpetsnaz\nzObelisks\nSheik Volim Habah", style="credits_text")
     linear 1.0 alpha 1.0
     time 4.5
     linear 1.5 alpha 0.0
@@ -429,7 +429,7 @@ image cred_071_01:
     time 1.0
     Text("Direitos Autorais de", style="credits_text")
     linear 1.0 alpha 1.0
-    time 11.5
+    time 16.5
     linear 1.5 alpha 0.0
 
 image cred_071_02:
@@ -438,7 +438,7 @@ image cred_071_02:
     time 1.0
     Text("Propriedade Intelectual", style="credits_text")
     linear 1.0 alpha 1.0
-    time 11.5
+    time 16.5
     linear 1.5 alpha 0.0
 
 image cred_071_03:
@@ -508,7 +508,7 @@ image cred_071_10:
     align (0.5,0.70)
     alpha 0.0
     time 5.0
-    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
+    Text("Homenagem: Saviola Games", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -675,7 +675,7 @@ image cred_071_28:
     align (0.5,0.40)
     alpha 0.0
     time 13.0
-    Text("Homenagem: Saviola Games, TorcedorCaixiense", style="credits_text")
+    Text("Homenagem: Saviola Games", style="credits_text")
     linear 1.0 alpha 1.0
     time 16.5
     linear 1.5 alpha 0.0
@@ -696,6 +696,133 @@ image cred_071_30:
     Text("Label: 4Kids", style="credits_text")
     linear 1.0 alpha 1.0
     time 16.5
+    linear 1.5 alpha 0.0
+
+
+image cred_071_31:
+    align (0.5,0.20)
+    alpha 0.0
+    time 18.0
+    Text("Menções Honrosas", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_32:
+    align (0.5,0.40)
+    alpha 0.0
+    time 18.0
+    Text("Saviola Games", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_33:
+    align (0.5,0.45)
+    alpha 0.0
+    time 18.0
+    Text("A Cena do Senna", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_34:
+    align (0.5,0.50)
+    alpha 0.0
+    time 18.0
+    Text("TorcedorCaixiense", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_35:
+    align (0.5,0.55)
+    alpha 0.0
+    time 18.0
+    Text("Carlos Massa (Ratinho G)", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_351:
+    align (0.5,0.60)
+    alpha 0.0
+    time 18.0
+    Text("Keno", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_352:
+    align (0.5,0.65)
+    alpha 0.0
+    time 18.0
+    Text("Canoa Furada", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_353:
+    align (0.5,0.70)
+    alpha 0.0
+    time 18.0
+    Text("Flaviow12", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_354:
+    align (0.5,0.75)
+    alpha 0.0
+    time 18.0
+    Text("HtenekBR", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_36:
+    align (0.5,0.3)
+    alpha 0.0
+    time 24.0
+    Text("Em memória de", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 28.5
+    linear 1.5 alpha 0.0
+
+image cred_071_37:
+    align (0.5,0.50)
+    alpha 0.0
+    time 24.0
+    Text("Jocione Mendonça", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 28.5
+    linear 1.5 alpha 0.0
+
+image cred_071_38:
+    align (0.5,0.55)
+    alpha 0.0
+    time 24.0
+    Text("Popularmente conhecido como:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 28.5
+    linear 1.5 alpha 0.0
+
+image cred_071_39:
+    align (0.5,0.60)
+    alpha 0.0
+    time 24.0
+    Text("Jailson Mendes", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 28.5
+    linear 1.5 alpha 0.0
+
+image cred_071_40:
+    align (0.5,0.65)
+    alpha 0.0
+    time 24.0
+    Text("(O Pai de Família)", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 28.5
     linear 1.5 alpha 0.0
 
 
@@ -2003,7 +2130,21 @@ label creditos:
     show cred_071_28
     show cred_071_29
     show cred_071_30
-    pause 18
+    show cred_071_31
+    show cred_071_32
+    show cred_071_33
+    show cred_071_34
+    show cred_071_35
+    show cred_071_351
+    show cred_071_352
+    show cred_071_353
+    show cred_071_354
+    show cred_071_36
+    show cred_071_37
+    show cred_071_38
+    show cred_071_39
+    show cred_071_40
+    pause 30
     scene yami_senna_bg
 
     show cred_08_01
@@ -2061,7 +2202,9 @@ label creditos:
     show cred_48_02
     show cred_48_03
     stop music fadeout 8.0
-    pause 8
+    pause 3
+    play sound voz_epilogo_22
+    pause 5
 
     scene black
     pause 3.0

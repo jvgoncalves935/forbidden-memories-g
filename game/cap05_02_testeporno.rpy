@@ -159,7 +159,7 @@ label cap05_02_testeporno:
             pass      
     stop music
     voice voz_cap05_02_047
-    "Cem... cem eu não faço não."
+    "100... 100 eu não faço não."
     play sound ctc
     voice voz_cap05_02_048
     "Eu vou dobrar, eu vou dobrar,\neu vou entrar nessa também, eu\nvou botar mais 100... 100 pau."
@@ -186,7 +186,7 @@ label cap05_02_testeporno:
     "Vamo fazer o seguinte... eu vou\nbotar mais 100, mais 100.\nMais 100. 400 pau, filhão."
     play sound ctc
     voice voz_cap05_02_056
-    "Vamo ou não vamo? Escuta...\nA gente vai devagarzinho\ncara..."
+    "Vamo ou não vamo? Escuta...\nA gente vai devagarzinho,\ncara..."
     play sound ctc
     voice voz_cap05_02_057
     "Ah não, não curto não cara,\nnunca fiz essas coisas aí..."
@@ -400,7 +400,7 @@ label cap05_02_testeporno:
     "Caralho, você é filho da\nputa aí, meu..."
     play sound ctc
     voice voz_cap05_02_122
-    "Gostou do teste?"
+    "Gostou do teste, irmão?"
     play sound ctc
     voice voz_cap05_02_123
     "Foi ótimo." 
@@ -414,6 +414,7 @@ label cap05_02_testeporno:
     voice voz_cap05_02_126
     "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
     play sound ctc
+    "{p=0.2}{nw}"
     stop voice
     return
 
@@ -421,38 +422,51 @@ label cap05_02_testeporno:
 label wrong_end_05_02_a:
     $ drpc_update("finalW")
     stop music
+    play sound table_rolling
     "(Você rola seu corpo em cima da\nmesa, que nem nos filmes\nde ação.)"
     play sound ctc
-    "(No final do rolamento, você\nvira para trás e chuta\na mesa em Bob.)"
+    play sound_bg kick_alemao noloop
+    "(No final do rolamento, você\nvira para trás e chuta\na mesa em Alemão.)"
     play sound ctc
-    "(É tudo muito rápido, eles apenas\ngritam sem entender nada\nenquanto a mesa bate Bob\ncontra a parede.)"
+    "(É tudo muito rápido, eles apenas\ngritam sem entender nada\nenquanto a mesa bate Alemão\ncontra a parede.)"
     play sound ctc
-    "(Alemão vem correndo te bater.)"
+    play sound_bg running_footsteps fadein 1.0
+    "(Bob vem correndo te bater.)"
     play sound ctc
+    play sound_bg carrinho noloop
     "(Você simplesmente dá um carrinho\nnele, derruba ele no chão e\ndepois mete uma voadora\nna porta.)"
     play sound ctc
+    play sound_bg slam noloop
     "(Enquanto fugia pelos corredores,\nvocê tromba com tudo em uma\nmulher.)"
     play sound ctc
     "(Parece que você machucou ela de\nverdade. Ela não está\nacordada!)"
     play sound ctc
+    play sound_bg running_footsteps
     "(Você decide carregá-la enquanto\nfoge de Bob e Alemão.)"
+    stop sound_bg fadeout 1.5
     play sound ctc
     "(...)"
     play sound ctc
+    
     "(no dia seguinte)"
     play sound_bg tv_005 noloop
     play sound ctc
-    "\"Acidente doméstico acontece em\nSão Paulo.\""
+    "\"Acidente doméstico acontece em\nSão Paulo, capital.\""
     play sound ctc
     "\"Incêndio acontece devido a uma\nexplosão, peritos acreditam\nque houve um vazamento\nde gás do fogão da residência.\""
     play sound ctc
     "\"O acidente ocorreu na Rua Serra\nPaulista número 7.\""
     play sound ctc
-    "Isso não foi na mesma rua onde eu\nfui ontem? Coisa mais\nesquisita."
+    "Isso não foi na mesma rua onde eu\nfui ontem?"
     play sound ctc
+    voice voz_cap01_04_62
+    stop sound_bg fadeout 1.5
+    "Coisa mais esquisita..."
+    play sound ctc
+    play sound_bg hospital fadein 3.0
     "(...)"
     play sound ctc
-    "(Você está agora em um hospital.)"
+    "(Você está agora em um hospital\nvendo a notícia pela TV.)"
     play sound ctc
     "(Você levou a mulher para os médicos\ne cuidou dela. Parece não ter\nsido nada grave.)"
     play sound ctc
@@ -474,6 +488,7 @@ label wrong_end_05_02_a:
     play sound ctc
     "(\"Ela deve ter muito\ndinheiro.\", você pensa.)"
     play sound ctc
+    stop sound_bg fadeout 1.5
     "(...)"
     play sound ctc
     "(...)"
@@ -481,6 +496,7 @@ label wrong_end_05_02_a:
     "(...)"
     play sound ctc
     "(2 anos depois)"
+    play sound_bg church_bell noloop
     play sound ctc
     "(Chegou o dia do seu\ncasamento.)"
     play sound ctc
@@ -501,6 +517,7 @@ label wrong_end_05_02_a:
     "(Depois do dialogo esquizofrênico\ncom sua própria consciência,\nvocê vai para a cerimônia\nde casório.)"
     play sound ctc
     stop voice
+    stop sound_bg
 
     window hide(None)
     $ game_over_pos_cutscene = True
@@ -511,12 +528,15 @@ label wrong_end_05_02_a:
 label wrong_end_05_02_b:
     $ drpc_update("finalX")
     stop music
+    play sound_bg running_breaking_glasses noloop
     "(Você segura o Milzão na mão com\ntoda sua força e sai correndo\nda sala, derrubando tudo\nna sua frente.)"
     play sound ctc
     "(\"PEGA LADRÃO! LADRÃO! PEGA\nLADRÃO!\", grita Bob enquanto\nele e Alemão vêm correndo com\ntudo atrás de você.)"
     play sound ctc
+    play sound_bg running_window_breaking noloop
     "(Você joga seu corpo contra a\njanela do segundo andar e\naterissa no chão com um\nrolamento dramático.)"
     play sound ctc
+    stop sound_bg
     "(Não tem como eles te alcançarem\nmais, você já está correndo\npara o outro lado da\nrua.)"
     play sound ctc
     "(Ou será que tem?)"
@@ -535,6 +555,7 @@ label wrong_end_05_02_b:
     play sound ctc
     "(As pessoas em volta ligam para\no Sanatório de Cupiqueno para\nsocorrerem o homem ferido no\nchão e interná-lo.)"
     play sound ctc
+    play sound_bg police_background fadein 3.0
     "(Enquanto isso, você já está em\noutro quarteirão. Você perdeu todo\nmundo de vista.)"
     play sound ctc
     "Milzão..."
@@ -557,16 +578,20 @@ label wrong_end_05_02_b:
     play sound ctc
     "Espanha!"
     play sound ctc
+    stop sound_bg fadeout 2.0
     "Isso, Espanha! Eu falo espanhol!\nÉ isso!"
     play sound ctc
+    play sound_bg airplane noloop
     "(Você vai para o Aeroporto de\nGuarulhos para comprar uma\npassagem pra Espanha,\nclasse econômica.)"
     play sound ctc
     "(...)"
     play sound ctc
     "(...)"
+    stop sound_bg fadeout 1.0
     play sound ctc
     "(duas semanas depois)"
     play sound ctc
+    play sound_bg audio.city_02 fadein 4.0
     "(Você está assaltando pessoas\ninocentes pelas ruas de\nMadrid.)"
     play sound ctc
     "(Não tinha um lugar para\ndormir, mas recentemente você\nfez... \"novos amigos\".)"
@@ -575,6 +600,7 @@ label wrong_end_05_02_b:
     play sound ctc
     "(Não tem muito o que\nfazer agora.)"
     play sound ctc
+    stop sound_bg fadeout 3.0
     "(Sobreviver.)"
     play sound ctc
     "(Sobreviver...)"

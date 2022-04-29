@@ -184,6 +184,7 @@ label wrong_end_05_01_1:
     play sound ctc
     "(...)"
     play sound ctc
+    play sound_bg park fadein 4.0
     "(Você sai de casa para dar\num passeio no parque,\nsem camisa.)"
     play sound ctc
     "Nossa, mas que parque lindo.\nCoisa linda de se ver."
@@ -192,6 +193,7 @@ label wrong_end_05_01_1:
     play sound ctc
     "Que sensação maravilhosa-"
     play sound ctc
+    stop sound_bg fadeout 2.0
     "(...!)"
     play sound ctc
     "(Você vê uma linda garota\nno banco do parque,\nparece ser japonesa.)"
@@ -202,20 +204,25 @@ label wrong_end_05_01_1:
     play sound ctc
     "(Guinomo?)"
     play sound ctc
+    play sound_bg park fadein 4.0
     "(A garota te chama para\nsentar ao lado dela com\no dedo indicador de forma\nbem erótica.)"
     play sound ctc
     "(Eu não resisto, vain.)"
     play sound ctc
     "(Você senta ao lado dela\ne começa a conversar.)"
     play sound ctc
-    "Olá, moça. Você é japonesa?\nQue roupa linda a sua!"
+    "Olá, moça. Você é japonesa?\nQue bonita a sua roupa!"
     play sound ctc
     "Gostou? A cultura japonesa é\nrealmente encantadora mesmo."
     play sound ctc
     "Encantadora e bem peculiar..."
     play sound ctc
+    "{p=0.2}{nw}"
+    stop sound_bg fadeout 5.0
+    play sound spray
     "(cof cof)"
     play sound ctc
+    
     "(Você sente um cheiro estranho\ne começa a ficar extremamente\ntonto!)"
     play sound ctc
     "(Mooooooççççaaaaa...!)"
@@ -226,12 +233,14 @@ label wrong_end_05_01_1:
     play sound ctc
     "(...)"
     play sound ctc
+    voice voz_cap02_04_39
     "AAAHHH!"
     play sound ctc
     "(Você acorda em um tatame,\nvestido com uma roupa igual\na que você usa no judô\ne uma bandana do Japão.)"
     play sound ctc
     "Que porra é essa?"
     play sound ctc
+    play sound_bg kabuki noloop
     "(Você vira pra trás e vê a\nmesma garota linda do parque.)"
     play sound ctc
     "(Ela joga a roupa toda dela\nno chão de uma vez,\nficando nua.)"
@@ -248,9 +257,11 @@ label wrong_end_05_01_1:
     play sound ctc
     "(...)"
     play sound ctc
+    stop sound_bg
     voice voz_cap05_01_01
     "UUUHHH... WAKARANAI... WAKARANAI!\nAAAHHHH!!"
     play sound ctc
+    stop voice
     $ register_ending("V")
     jump game_over
 

@@ -68,7 +68,7 @@ init python:
             renpy.hide_screen(screen)
             renpy.call(end_label)
         return Text(tformat.format(**parts_dict), 
-                     style = ok_style if remaining > style_swap else near_style), .1
+                    style = ok_style if remaining > style_swap else near_style), .1
 
 
     def init_input_operation_senna():
@@ -1348,6 +1348,7 @@ define voz_epilogo_18 = "mod_assets/voices/epilogo/epilogo_18.ogg"
 define voz_epilogo_19 = "mod_assets/voices/epilogo/epilogo_19.ogg"
 define voz_epilogo_20 = "mod_assets/voices/epilogo/epilogo_20.ogg"
 define voz_epilogo_21 = "mod_assets/voices/epilogo/epilogo_21.ogg"
+define voz_epilogo_22 = "mod_assets/voices/epilogo/epilogo_22.ogg"
 
 
 #Capitulo XX
@@ -1411,7 +1412,18 @@ define audio.city_02 = "<loop 0.00>mod_assets/sounds/city_02.ogg"
 define audio.heresy = "<loop 0.00>mod_assets/sounds/heresy.ogg"
 define audio.floor_slam = "<loop 0.00>mod_assets/sounds/floor_slam.ogg"
 define audio.black_hole = "<loop 0.00>mod_assets/sounds/black_hole.ogg"
-
+define audio.park = "<loop 0.00>mod_assets/sounds/park.ogg"
+define audio.spray = "<loop 0.00>mod_assets/sounds/spray.ogg"
+define audio.kabuki = "<loop 0.00>mod_assets/sounds/kabuki.ogg"
+define audio.kick_alemao = "<loop 0.00>mod_assets/sounds/kick_alemao.ogg"
+define audio.table_rolling = "<loop 0.00>mod_assets/sounds/table_rolling.ogg"
+define audio.carrinho = "<loop 0.00>mod_assets/sounds/carrinho.ogg"
+define audio.slam = "<loop 0.00>mod_assets/sounds/slam.ogg"
+define audio.church_bell = "<loop 0.00>mod_assets/sounds/church_bell.ogg"
+define audio.hospital = "<loop 0.00>mod_assets/sounds/hospital.ogg"
+define audio.airplane = "<loop 0.00>mod_assets/sounds/airplane.ogg"
+define audio.running_breaking_glasses = "<loop 0.00>mod_assets/sounds/running_breaking_glasses.ogg"
+define audio.police_background = "<loop 0.00>mod_assets/sounds/police_background.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -1522,7 +1534,7 @@ init python:
         if(not renpy.variant("touch")):
             drpc = drpc.DiscordIpcClient.for_platform(client_id)
     except:
-         #Discord's IPC wasn't found
+        #Discord's IPC wasn't found
         pass
 
     def drpc_update(capitulo):
