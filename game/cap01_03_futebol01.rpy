@@ -1,7 +1,7 @@
 label cap01_03_futebol01:
     $ drpc_update("cap01")
     scene black
-    stop music
+    play music fm_modern_shop
     show textbox_black at center
     #show intro_001 at top
     voice voz_cap01_03_01
@@ -62,7 +62,7 @@ label cap01_03_futebol01:
             hide textbox_aux
             pass
     stop music
-
+    play music fm_preliminary_duel
     voice voz_cap01_03_16
     "Da pra gente fazer uma brincadeira\naí! Jogar uma bola..."
     play sound ctc
@@ -93,6 +93,10 @@ label cap01_03_futebol01:
     play sound ctc
     voice voz_cap01_03_25
     "OOHHH... HMMMM!"
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
     play sound ctc
     voice voz_cap01_03_26
     "Você viu que horas são?"
@@ -103,18 +107,20 @@ label cap01_03_futebol01:
     voice voz_cap01_03_28
     "Pessoal tá chegando aí, vamo, vamo...!"
     play sound ctc
-    "(Você ouve uma voz\nna sua cabeça:)"
+    "(Goleiro de Família ouve uma\nvoz na sua cabeça:)"
     play sound ctc
     voice voz_cap01_03_29
     "(Veste, veste, veste!)"
     play sound ctc
     voice voz_cap01_03_30
     "O pessoal tá chegando aí, vai cara!"
+    
     return
 
 label wrong_end_01_03_1:
     $ drpc_update("finalB")
     stop music
+    play music fm_tournament
     "(Igual qualquer pessoa normal em um\ncampo de futebol, você propõe para os\ncolegas de time a treinarem pênaltis.)"
     play sound ctc
     "(Ambos concordam e vocês começam a\ntreinar para o jogo que irá acontecer\nassim que o outro time chegar.)"
@@ -141,6 +147,7 @@ label wrong_end_01_03_1:
     play sound ctc
     "(O Campeonato irá começar em\ninstantes.)"
     play sound ctc
+    stop music fadeout 2.0
     $ register_ending("B")
     jump game_over
 

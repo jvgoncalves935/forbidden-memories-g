@@ -775,6 +775,15 @@ image cred_071_354:
     align (0.5,0.75)
     alpha 0.0
     time 18.0
+    Text("Arquivo G", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
+image cred_071_355:
+    align (0.5,0.75)
+    alpha 0.0
+    time 18.0
     Text("HtenekBR", style="credits_text")
     linear 1.0 alpha 1.0
     time 22.5
@@ -2139,6 +2148,7 @@ label creditos:
     show cred_071_352
     show cred_071_353
     show cred_071_354
+    show cred_071_355
     show cred_071_36
     show cred_071_37
     show cred_071_38

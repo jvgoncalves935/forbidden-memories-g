@@ -364,7 +364,7 @@ define endings_descriptions = {
     "R":"Deixou Yeah Man agonizar até a morte.",
     "S":"Foi viver uma vida no campo.",
     "T":"Foi visitar a Praia de Pau Grande.",
-    "U":"Foi procurar o arrombamento em outro Kenoverso.",
+    "U":"Foi procurar o arrombamento em outra dimensão do Kenoverso.",
     "V":"Aprendeu mais sobre as coisas exóticas da cultura japonesa.",
     "W":"Se casou com uma estrangeira avantajada.",
     "X":"Fugiu para Madrid e virou gangster.",
@@ -726,7 +726,6 @@ define audio.tele_sena = "<loop 0.00>mod_assets/music/tele_sena.ogg"
 define audio.tele_sena_metaleiro = "<loop 0.00>mod_assets/music/tele_sena_metaleiro.ogg"
 define audio.despacito_nokia = "<loop 0.00>mod_assets/music/despacito_nokia.ogg"
 
-
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
 define audio.fm_intro = "mod_assets/music/fm_intro.ogg"
 define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_preliminary_faceoff.ogg"
@@ -744,6 +743,22 @@ define audio.fm_finals = "<loop 21.066>mod_assets/music/fm_finals.ogg"
 define audio.fm_finals_faceoff = "<loop 2.233>mod_assets/music/fm_finals_faceoff.ogg"
 define audio.fm_youlose = "mod_assets/music/fm_youlose.ogg"
 define audio.fm_youwin = "<loop 9.2>mod_assets/music/fm_youwin.ogg"
+define audio.fm_modern_times = "<loop 1.633>mod_assets/music/fm_modern_times.ogg"
+define audio.fm_modern_shop = "<loop 1.633>mod_assets/music/fm_modern_shop.ogg"
+define audio.fm_tournament = "<loop 10.366>mod_assets/music/fm_tournament.ogg"
+define audio.fm_preliminary_duel = "<loop 0.933>mod_assets/music/fm_preliminary_duel.ogg"
+define audio.fm_inside_the_puzzle = "<loop 3.433>mod_assets/music/fm_inside_the_puzzle.ogg"
+define audio.fm_heishin_encounter = "<loop 8.6>mod_assets/music/fm_heishin_encounter.ogg"
+define audio.fm_heishin_theme = "<loop 0.5>mod_assets/music/fm_heishin_theme.ogg"
+define audio.fm_seto_encounter = "<loop 5.2>mod_assets/music/fm_seto_encounter.ogg"
+define audio.fm_temple_ruins = "<loop 0.0>mod_assets/music/fm_temple_ruins.ogg"
+define audio.fm_map_select_2 = "<loop 0.0>mod_assets/music/fm_map_select_2.ogg"
+define audio.fm_shadi_egypt = "<loop 2.4>mod_assets/music/fm_shadi_egypt.ogg"
+define audio.fm_simon_muran = "<loop 14.766>mod_assets/music/fm_simon_muran.ogg"
+define audio.fm_map_select_1 = "<loop 0.0>mod_assets/music/fm_map_select_1.ogg"
+define audio.fm_seto_theme = "<loop 3.266>mod_assets/music/fm_seto_theme.ogg"
+define audio.fm_duel_grounds = "<loop 6.933>mod_assets/music/fm_duel_grounds.ogg"
+define audio.fm_mages_duel = "<loop 9.2>mod_assets/music/fm_mages_duel.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"

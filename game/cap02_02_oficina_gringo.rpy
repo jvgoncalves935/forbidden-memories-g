@@ -4,8 +4,6 @@ label cap02_02_oficina_gringo:
     stop music
     show textbox_black at center
     #show intro_001 at top
-    "(...)"
-    play sound ctc
     "(20 minutos depois)"
     play sound ctc
     "(Você acabou de chegar em frente à\nOficina do Gringo.)"
@@ -223,6 +221,7 @@ label cap02_02_oficina_gringo:
 label wrong_end_02_02_1:
     $ drpc_update("finalH")
     stop music
+    play music fm_preliminary_faceoff
     "(Sua consciência diz para você sair da\noficina o mais rápido que\nvocê puder!)"
     play sound ctc
     "(...)"
@@ -247,12 +246,14 @@ label wrong_end_02_02_1:
     voice voz_cap02_02_51
     "OH, OH, OH, OH, OH, OH!"
     play sound ctc
+    stop music fadeout 2.0
     "(Você está bem no meio da rua e...)"
     play sound ctc
     stop music
     play sound_bg audio.car_crash noloop
     "{p=1.5}{nw}"
     voice voz_cap02_02_53
+    play music fm_heishin_theme
     "OOOOOOIIIIHHHH, OOOOOOHHHH!!!"
     play sound ctc
     play sound_bg audio.ambulance_01 noloop
@@ -274,6 +275,7 @@ label wrong_end_02_02_1:
     "\"Vamos ter que levá-lo para\na Doutora de Plantão!\""
     play sound ctc
     stop sound_bg fadeout 3.0
+    stop music fadeout 2.0
     $ register_ending("H")
     jump game_over
 

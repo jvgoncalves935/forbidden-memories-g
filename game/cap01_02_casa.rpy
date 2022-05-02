@@ -9,6 +9,7 @@ label cap01_02_casa:
     hide header_cap_01 
 
     show textbox_black at center
+    play music fm_modern_times
     #show intro_001 at top
     "Nossa, hoje é o dia da pelada com o\nJames..."
     play sound ctc
@@ -17,6 +18,10 @@ label cap01_02_casa:
     "Bora esperar a ligação de alguém\naí e eu já vou lá pro futebol."
     play sound ctc
     play sound_bg celular
+
+    $ pos_music = renpy.music.get_pos("music")
+    stop music
+    
     "(celular tocando)"
     play sound ctc
     show textbox_aux
@@ -31,6 +36,8 @@ label cap01_02_casa:
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
+    "{p=0.2}{nw}"
+    $ renpy.music.play("<loop 1.633 from {}>mod_assets/music/fm_modern_times.ogg".format(pos_music))
     "Alô?"
     play sound ctc
     "Fala aí Senna, aqui é o Índio,\nbora lá pro futebol\nagora, eu já tô indo mano..."
@@ -43,6 +50,8 @@ label cap01_02_casa:
     play sound ctc
     "Tava esperando a semana inteira\npra jogar essa bola..."
     play sound ctc
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     return
 
 label wrong_end_01_02_1:

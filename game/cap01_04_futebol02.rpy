@@ -89,8 +89,7 @@ label cap01_04_futebol02:
     
     stop music
 
-    play music "<from 21.066>mod_assets/music/fm_finals.ogg"
-    queue music audio.fm_finals
+    $ renpy.music.play("<loop 21.066 from 21.066>mod_assets/music/fm_finals.ogg")
 
     show pelada_james_03
     voice voz_cap01_04_20
@@ -106,6 +105,8 @@ label cap01_04_futebol02:
     voice voz_cap01_04_23
     "Valeu!"
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound chaves_punch
     "(Você levou uma dedada de James\nMatarazzo!)"
     play sound ctc
     voice voz_cap01_04_24
@@ -194,7 +195,7 @@ label cap01_04_futebol02:
     play sound ctc
 
     stop music
-
+    play music fm_seto_encounter
     voice voz_cap01_04_26
     "AHHHHHH, ARGH!\nAAAAAAAAARRRRRGH!"
     play sound ctc
@@ -225,6 +226,11 @@ label cap01_04_futebol02:
     voice voz_cap01_04_35
     "Ok, vamo lá!"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_heishin_encounter
     voice voz_cap01_04_36
     "O cara machucou memo?"
     play sound ctc
@@ -252,7 +258,12 @@ label cap01_04_futebol02:
     voice voz_cap01_04_44
     "Aqui oh, tomei uma aqui também, e aí?\nNão, tomei uma aqui também, olha aqui, \ntá roxo aqui, vei! Olha aqui o\nmaluco! Olha aqui! É, TIME\nDA FRESCURA!"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     "(uma hora e meia depois)"
+    play music fm_map_select_2
     play sound ctc
     voice voz_cap01_04_45
     "Caralho hein, já se passaram horas e\nos cara nada. Puta merda, tá\nquase anoitecendo já! Foda..."
@@ -264,6 +275,8 @@ label cap01_04_futebol02:
     "Aí, oh galera, eu vo dar\no fora, falou?"
     play sound ctc
     voice voz_cap01_04_48
+    stop music
+    play music fm_shadi_egypt
     "E AIIIII, CARAAAALHO...? Ah, tô indo\nembora mano, tá escurescendo o\nbagulho..."
     play sound ctc
     voice voz_cap01_04_49
@@ -278,6 +291,11 @@ label cap01_04_futebol02:
     voice voz_cap01_04_52
     "Vish, nós cuidamo, bicho!\nVamo voltar o jogo."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_modern_times
     "(40 minutos depois)"
     play sound ctc
 
@@ -291,6 +309,9 @@ label cap01_04_futebol02:
     voice voz_cap01_04_54
     "Que tesão, hein? Gostosão..."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
 
     stop music
     stop voice
@@ -345,6 +366,7 @@ label wrong_end_01_04_common:
     hide pelada_james_07
 
     stop music
+    $ renpy.music.play("<loop 9.2 from 9.2>mod_assets/music/fm_youwin.ogg")
     scene black
     
     "(VOCÊ ERROU A BOLA E TOMOU UM GOL!)"
@@ -355,6 +377,7 @@ label wrong_end_01_04_common:
     play sound ctc
     "(Era sua única oportunidade de\nbrilhar na vida e você\ndesperdiçou ela!)"
     play sound ctc
+    stop music fadeout 1.5
     "(...)"
     play sound ctc
     return
@@ -362,6 +385,7 @@ label wrong_end_01_04_common:
 label wrong_end_01_04_1:
     $ drpc_update("finalC")
     call wrong_end_01_04_common from _call_wrong_end_01_04_common
+    play music fm_inside_the_puzzle
     "(Enquanto seu time não para de te\nxingar, você questiona sua própria\nexistência.)"
     play sound ctc
     "Eu não consigo nem defender uma bola\nno gol."
@@ -371,14 +395,16 @@ label wrong_end_01_04_1:
     "Eu sou real mesmo?"
     play sound ctc
     voice voz_cap01_04_59
-    "Isso é real mesmo? Eu não acredito..."
+    "Isso é real mesmo? Não acredito..."
     play sound ctc
+    stop music fadeout 2.0
     $ register_ending("C")
     jump game_over
 
 label wrong_end_01_04_2:
     $ drpc_update("finalD")
     call wrong_end_01_04_common from _call_wrong_end_01_04_common_1
+    play music fm_heishin_theme
     "(Você começa a discutir com Índio e\nbotar a culpa nele por não ter\najudado a defender o ataque da\nbola na zaga.)"
     play sound ctc
     voice voz_cap01_04_55
@@ -392,9 +418,10 @@ label wrong_end_01_04_2:
     play sound ctc
     "(Todos apavorados começam a fugir do\nÍndio, saindo do campo de\nfutebol o mais rápido possível.)"
     play sound ctc
-    stop sound_bg fadeout 5.0
     "(Índio começa a se aproximar cada vez\nmais perto de você, ainda com a\nfaca na mão e um olhar psicótico.)"
     play sound ctc
+    stop sound_bg fadeout 5.0
+    stop music fadeout 5.0
     "(Você dá o seu último respiro de\nagonia e desmaia, sem possuir\nmais forças para viver.)"
     play sound ctc
     "(Índio coloca o rosto extremamente\nperto de seu ouvido e\nsussurra algo...)"
@@ -405,6 +432,7 @@ label wrong_end_01_04_2:
     voice voz_cap01_04_58
     "ÍNDIO É BEM A TUA MÃE, SEU\nFILHO DA PUTA!"
     play sound ctc
+    
     $ register_ending("D")
     jump game_over
 
@@ -462,7 +490,7 @@ label wrong_end_01_04_3:
     "\"Está previsto que a destruição\ncausada pela colisão resultará\nna extinção de toda a vida humana!\""
     play sound ctc
     play music audio.siren fadein 1.0
-    "\"O caos preenche as ruas de\nCupiqueno e de todo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""
+    "\"O caos preenche as ruas de\n todo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""
     play sound ctc
     voice voz_cap01_04_60
     "PUTA QUE PARIU MEU, QUE PORRA\nÉ ESSA?"
