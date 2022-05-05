@@ -4,6 +4,10 @@ label cap04_04_arrombamento:
     stop music
     show textbox_black at center
     #show intro_001 at top
+    
+    play music fm_vast_shrine
+    "(Você chega no prédio onde você\ntrabalha procurando pelo\narrombamento.)"
+    play sound ctc
     voice voz_cap04_04_01
     "Onde, onde, onde?"
     play sound ctc
@@ -13,10 +17,12 @@ label cap04_04_arrombamento:
     voice voz_cap04_04_03
     "Err, por aqui..."
     play sound ctc
+    stop music
     voice voz_cap04_04_04
     "Porra, se ta me tirando mermão?"
     play sound ctc
     voice voz_cap04_04_05
+    play music fm_heishin_encounter
     "Aonde tá tendo arrombamento aqui,\nseu viado?!"
     play sound ctc
     voice voz_cap04_04_06
@@ -41,9 +47,11 @@ label cap04_04_arrombamento:
     "Porra, eu tô nervoso.\nVocê me deixou nervoso..."
     play sound ctc
     voice voz_cap04_04_13
+    stop music fadeout 2.0
     "Fica calmo, calma!"
     play sound ctc
     voice voz_cap04_04_14
+    play music fm_finals_faceoff
     "O arrombamento mesmo é esse aqui que\neu queria!"
     play sound ctc
     voice voz_cap04_04_15
@@ -69,22 +77,30 @@ label cap04_04_arrombamento:
     play sound ctc
     voice voz_cap04_04_22
     "ENTÃO SEGURA NO MEU PAU AQUI, OH!"
+    stop music
 
     show textbox_aux
     play music audio.fm_password
     menu:
-        "<Empurrar o cabação e fugir do local do arrombamento>":
+        "<Empurrar o cabação e procurar o arrombamento>":
             hide textbox_aux
             jump wrong_end_04_04_1
         "<Não fazer nada>":
             hide textbox_aux
+            stop music
             "(...)"
             play sound ctc
-            pass
+
+            stop music fadeout 2.0
+            play sound ctc
+            "{p=2.0}{nw}"
+            stop music
+            stop voice
     
-    stop music
-    play sound ctc
+    
+    
     voice voz_cap04_04_23
+    play music fm_finals
     "AAAGRH! PISA NA MINHA CABEÇA VAI!\nPISA!"
     play sound ctc
     voice voz_cap04_04_24
@@ -102,6 +118,11 @@ label cap04_04_arrombamento:
     voice voz_cap04_04_28
     "VEM CÁ FILHO DA PUTA, FODE! ISSO,\nMETE NO CU, VAI!\nMETE NO CU!\nMETE NO CU!"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_modern_times
     voice voz_cap04_04_29
     "Ai, agora eu sei onde tá o\narrombamento, cara..."
     play sound ctc
@@ -114,6 +135,10 @@ label cap04_04_arrombamento:
     voice voz_cap04_04_32
     "Gostou do arrombamento?"
     play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
     stop voice
 
     $ backup_game_menu_keymap = config.keymap['game_menu']
@@ -160,6 +185,7 @@ label cap04_04_arrombamento:
 label wrong_end_04_04_1:
     $ drpc_update("finalU")
     stop music
+    play music fm_seto_encounter
     "(Você empurra o morador e se\nliberta dos braços dele.)"
     play sound ctc
     "(Ele te agarra de novo pelo braço\nmas você joga ele com toda\na força contra a parede.)"
@@ -168,11 +194,13 @@ label wrong_end_04_04_1:
     play sound chaves_punch
     "(Ele bate forte com a cabeça na\nparede, parece que ele\nficou inconsciente.)"
     play sound ctc
+    stop music fadeout 1.0
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
     voice voz_cap04_04_38
+    play music fm_library
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Você fica frenético enquanto\nprocura o arrombamento.)"
@@ -185,15 +213,15 @@ label wrong_end_04_04_1:
     voice voz_cap04_04_38
     "CADE O ARROMBAMENTO?"
     play sound ctc
-    voice voz_cap04_04_40
     "(CADÊ O ARROMBAMENTO?)"
     play sound ctc
-    voice voz_cap04_04_38
+    voice voz_cap04_04_40
     "CADÊ O ARROMBAMENTO?"
     play sound ctc
     "(Você corre para o beco do lado\nde fora do prédio na rua,\nesperando encontrar o arrombamento.)"
     play sound ctc
     play sound_bg black_hole fadein 4.0
+    stop music fadeout 2.0
     "...?"
     play sound ctc
     "(...)"
@@ -217,12 +245,18 @@ label wrong_end_04_04_1:
     "(Você corre com tudo, pula e se\njoga dentro do círculo\nmágico.)"
     play sound ctc
     stop sound_bg fadeout 3.0
+    play music fm_inside_the_puzzle
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
+    stop voice
     
     $ register_ending("U")
     jump game_over

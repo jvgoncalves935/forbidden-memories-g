@@ -10,23 +10,23 @@ label cap05_03_doutor:
     play sound ctc
     "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"
     play sound ctc
-    "(Recusando a proposta de Alemão,\nvocê nunca mais volta a\nfalar com eles.)"
-    play sound ctc
-    "(...)"
-    play sound ctc
-    "(...)"
-    play sound ctc
+    
+    "{p=2.0}{nw}"
+    
     "(no dia seguinte depois\ndo Filme G)"
     play sound ctc
     stop voice
 
     $ renpy.movie_cutscene("mod_assets/videos/bob_alemao.webm")
 
+    play music fm_pharaoh
+    "(Recusando a proposta de Alemão,\nvocê nunca mais volta a\nfalar com eles.)"
+    play sound ctc
     "(Com o dinheiro que ganhou de Bob\ne Alemão, Senna conseguiu financiar\nseus estudos para realizar\nseu mais novo sonho:)"
     play sound ctc
     "(Se tornar um médico renomado e\nrespeitado.)"
     play sound ctc
-    "\"Vou ser um médico mil vezes\nmelhor que a doutora!\""
+    "\"Vou ser um médico muito\nmelhor que a Doutora!\""
     play sound ctc
     "(Senna estudou nas horas vagas de\nseu serviço como segurança\ncom os novos livros que\nhavia comprado.)"
     play sound ctc
@@ -36,8 +36,9 @@ label cap05_03_doutor:
     play sound ctc
     "(Universidade Federal de Cupiqueno.)"
     play sound ctc
-    "(...)"
-    play sound ctc
+
+    "{p=2.0}{nw}"
+    
     "(6 anos depois)"
     play sound ctc
     "(...)"
@@ -64,25 +65,31 @@ label cap05_03_doutor:
     play sound ctc
     "(Alexandre Senna começou sua carreira\nacadêmica como médico e\npesquisador da UFCP.)"
     play sound ctc
-    "\"Não vai ter nenhum médico com o\nCUrrículo à minha altura.\""
+    voice voz_cap05_03_18
+    "\"No Brasil não vão existir médicos\nà altura do meu CUrrículo.\""
     play sound ctc
-    "(...)"
-    play sound ctc
+
+    "{p=2.0}{nw}"
+    
     "(Certo dia, Doutor Senna encontra\ncom um rosto familiar na\nacademia...)"
     play sound ctc
     "James...?"
     play sound ctc
 
     voice voz_cap05_03_08
+    stop music
     "E aí, tudo bemmmm??"
     play sound ctc
     "Fala aí, meu camarada!\nQuanto tempo!"
     voice voz_cap05_03_09
     "Meu nome é James Matarazzo..."
     play sound ctc
+    play music fm_pharaoh
     "Eu sei, mermão. Nossa, que saudade\ndos velhos tempos..."
     play sound ctc
     
+    "{p=2.0}{nw}"
+
     voice voz_cap05_03_10
     "Meu nome é James, James Matarazzo...\nsou cirurgião plástico..."
     play sound ctc
@@ -107,6 +114,10 @@ label cap05_03_doutor:
     play sound ctc
     "FIM"
     play sound ctc
+    
+    stop music fadeout 4.0
+    "{p=4.0}{nw}"
+    
     stop voice
 
 
@@ -150,14 +161,3 @@ label cap05_03_doutor:
     $ renpy.display.behavior.clear_keymap_cache()
 
     return
-
-
-label wrong_end_05_02_1:
-    stop music
-    $ register_ending("W")
-    jump game_over
-
-label wrong_end_05_02_2:
-    stop music
-    $ register_ending("X")
-    jump game_over

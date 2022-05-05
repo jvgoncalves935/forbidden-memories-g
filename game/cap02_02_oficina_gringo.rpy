@@ -29,6 +29,7 @@ label cap02_02_oficina_gringo:
             hide textbox_aux
             jump wrong_end_02_02_1
     stop music
+    play music fm_modern_shop
     voice voz_cap02_02_01
     "Excuse me?"
     play sound ctc
@@ -77,8 +78,9 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_14
     "Ies, okei..."
     play sound ctc
-    "(Esse gringo é broxa ou o quê?\nSerá que ele tem algum\nestranho? Devo me preocupar?)"
+    "(Esse gringo é broxa ou o quê?\nSerá que ele tem algum\nfetish estranho? Devo me\npreocupar?)"
     voice voz_cap02_02_15
+    play sound ctc
     "You think you can fuck her for me?"
     play sound ctc
     voice voz_cap02_02_16
@@ -99,9 +101,11 @@ label cap02_02_oficina_gringo:
     "YAS."
     play sound ctc
     voice voz_cap02_02_21
+    stop music fadeout 3.0
     "Ok, you know... I'll leave you alone..."
     play sound ctc
     voice voz_cap02_02_22
+    play music fm_sebek_neku
     "I need you two guys come around\nthe car..."
     play sound ctc
     voice voz_cap02_02_23
@@ -125,12 +129,14 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_29
     "And maybe you can show him...\nyour surprise..."
     play sound ctc
+    stop music fadeout 2.0
     "(Do que esse filho da\nputa tá falando?)"
     play sound ctc
     voice voz_cap02_02_30
-    "Here my friend, here is a\nextra for you today."
+    "Here you are, my friend,\nhere is a little extra\nfor you today."
     play sound ctc
     voice voz_cap02_02_31
+    play music fm_3d_duel
     "Ouuuu mai góóó...!"
     play sound ctc
     "(É isso que eles chamam de\nMulher do Futuro?)"
@@ -160,7 +166,7 @@ label cap02_02_oficina_gringo:
     play sound ctc
     
 
-    play sound ctc
+    stop music
     play music audio.fm_password
     show textbox_aux
     menu:
@@ -173,6 +179,7 @@ label cap02_02_oficina_gringo:
     stop music
 
     voice voz_cap02_02_37
+    play music fm_free_duel_theme
     "No problem."
     play sound ctc
     voice voz_cap02_02_38
@@ -214,6 +221,9 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_50
     "FOCK ME! FOCK ME..."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
 
     return
 
@@ -284,8 +294,10 @@ label wrong_end_02_02_2:
     stop music
     "(Inicialmente, você pensa em sair\ncorrendo o máximo que puder\nda Oficina do Gringo...)"
     play sound ctc
+    play music fm_kaiba_faceoff
     "(Mas uma onda emergente de maldade\nconsome o seu coração!)"
     play sound ctc
+    voice voz_cap02_03_06
     "OW SEU FILHO DA PUTA!"
     play sound ctc
     "{p=0.2}{nw}"
@@ -302,6 +314,10 @@ label wrong_end_02_02_2:
     play sound ctc
     "(Revoltado com a humilhação que passou,\nvocê decide tacar o foda-se e\nvai para a casa lotérica\nmais próxima.)"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     play sound_bg audio.tele_sena
     "(Você decide tentar a sorte\nna Tele Senna.)"
     play sound ctc
@@ -323,14 +339,18 @@ label wrong_end_02_02_2:
     play sound ctc
     "(Puto.)"
     play sound ctc
+
     stop sound_bg fadeout 2.0
+    "{p=2.0}{nw}"
+    
+
     "(uma semana depois)"
     play sound ctc
-    "(...)"
-    play sound ctc
+    play music fm_forest_shrine
     "(Não mais puto, você curte a viagem\ncom o carro novo na\nCachoeira de Pau Grande.)"
     play sound ctc
     "(A sensação de aventura e liberdade\né muito gostosa...)"
     play sound ctc
+    stop music fadeout 2.0
     $ register_ending("I")
     jump game_over

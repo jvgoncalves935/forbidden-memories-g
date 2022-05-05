@@ -360,7 +360,7 @@ define endings_descriptions = {
     "N":"Foi confundido com um louco e foi internado no Sanatório de Cupiqueno.",
     "O":"Ganhou super poderes.",
     "P":"Foi processado pelo Consultório Santa Mônica e entrou em falência.",
-    "Q":"Virou o skatista profissional de Cupiqueno.",
+    "Q":"Virou um skatista profissional de Cupiqueno.",
     "R":"Deixou Yeah Man agonizar até a morte.",
     "S":"Foi viver uma vida no campo.",
     "T":"Foi visitar a Praia de Pau Grande.",
@@ -744,7 +744,7 @@ define audio.fm_finals_faceoff = "<loop 2.233>mod_assets/music/fm_finals_faceoff
 define audio.fm_youlose = "mod_assets/music/fm_youlose.ogg"
 define audio.fm_youwin = "<loop 9.2>mod_assets/music/fm_youwin.ogg"
 define audio.fm_modern_times = "<loop 1.633>mod_assets/music/fm_modern_times.ogg"
-define audio.fm_modern_shop = "<loop 1.633>mod_assets/music/fm_modern_shop.ogg"
+define audio.fm_modern_shop = "<loop 2.058>mod_assets/music/fm_modern_shop.ogg"
 define audio.fm_tournament = "<loop 10.366>mod_assets/music/fm_tournament.ogg"
 define audio.fm_preliminary_duel = "<loop 0.933>mod_assets/music/fm_preliminary_duel.ogg"
 define audio.fm_inside_the_puzzle = "<loop 3.433>mod_assets/music/fm_inside_the_puzzle.ogg"
@@ -759,6 +759,20 @@ define audio.fm_map_select_1 = "<loop 0.0>mod_assets/music/fm_map_select_1.ogg"
 define audio.fm_seto_theme = "<loop 3.266>mod_assets/music/fm_seto_theme.ogg"
 define audio.fm_duel_grounds = "<loop 6.933>mod_assets/music/fm_duel_grounds.ogg"
 define audio.fm_mages_duel = "<loop 9.2>mod_assets/music/fm_mages_duel.ogg"
+define audio.fm_3d_duel = "<loop 10.333>mod_assets/music/fm_3d_duel.ogg"
+define audio.fm_free_duel_theme = "<loop 1.766>mod_assets/music/fm_free_duel_theme.ogg"
+define audio.fm_shadi_future = "<loop 0.0>mod_assets/music/fm_shadi_future.ogg"
+define audio.fm_kaiba_faceoff = "<loop 0.833>mod_assets/music/fm_kaiba_faceoff.ogg"
+define audio.fm_kaiba_theme = "<loop 0.0>mod_assets/music/fm_kaiba_theme.ogg"
+define audio.fm_forest_shrine = "<loop 0.0>mod_assets/music/fm_forest_shrine.ogg"
+define audio.fm_vast_shrine = "<loop 38.3>mod_assets/music/fm_vast_shrine.ogg"
+define audio.fm_egyptian_duel = "<loop 0.666>mod_assets/music/fm_egyptian_duel.ogg"
+define audio.fm_high_mages_duel = "<loop 16.666>mod_assets/music/fm_high_mages_duel.ogg"
+define audio.fm_darknite_encounter = "<loop 17.266>mod_assets/music/fm_darknite_encounter.ogg"
+define audio.fm_darknite_theme = "<loop 6.6>mod_assets/music/fm_darknite_theme.ogg"
+define audio.fm_pharaoh = "<loop 0.0>mod_assets/music/fm_pharaoh.ogg"
+define audio.fm_3d_duel_finals = "<loop 9.933>mod_assets/music/fm_3d_duel_finals.ogg"
+define audio.fm_forbidden_ruins = "<loop 16.8>mod_assets/music/fm_forbidden_ruins.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -942,6 +956,9 @@ define voz_cap02_03_02 = "mod_assets/voices/02_03/02_03_02.ogg"
 define voz_cap02_03_03 = "mod_assets/voices/02_03/02_03_03.ogg"
 define voz_cap02_03_04 = "mod_assets/voices/02_03/02_03_04.ogg"
 define voz_cap02_03_05 = "mod_assets/voices/02_03/02_03_05.ogg"
+define voz_cap02_03_06 = "mod_assets/voices/02_03/02_03_06.ogg"
+define voz_cap02_03_07 = "mod_assets/voices/02_03/02_03_07.ogg"
+define voz_cap02_03_08 = "mod_assets/voices/02_03/02_03_08.ogg"
 
 
 #02_04
@@ -1003,6 +1020,9 @@ define voz_cap03_01_06 = "mod_assets/voices/03_01/03_01_06.ogg"
 define voz_cap03_01_07 = "mod_assets/voices/03_01/03_01_07.ogg"
 define voz_cap03_01_08 = "mod_assets/voices/03_01/03_01_08.ogg"
 define voz_cap03_01_09 = "mod_assets/voices/03_01/03_01_09.ogg"
+define voz_cap03_01_10 = "mod_assets/voices/03_01/03_01_10.ogg"
+define voz_cap03_01_11 = "mod_assets/voices/03_01/03_01_11.ogg"
+define voz_cap03_01_12 = "mod_assets/voices/03_01/03_01_12.ogg"
 
 
 #03_02
@@ -1093,6 +1113,9 @@ define voz_cap04_01_04 = "mod_assets/voices/04_01/04_01_04.ogg"
 define voz_cap04_01_05 = "mod_assets/voices/04_01/04_01_05.ogg"
 define voz_cap04_01_06 = "mod_assets/voices/04_01/04_01_06.ogg"
 define voz_cap04_01_07 = "mod_assets/voices/04_01/04_01_07.ogg"
+define voz_cap04_01_08 = "mod_assets/voices/04_01/04_01_08.ogg"
+define voz_cap04_01_09 = "mod_assets/voices/04_01/04_01_09.ogg"
+define voz_cap04_01_10 = "mod_assets/voices/04_01/04_01_10.ogg"
 
 
 #04_02
@@ -1121,6 +1144,10 @@ define voz_cap04_02_19 = "mod_assets/voices/04_02/04_02_19.ogg"
 define voz_cap04_03_01 = "mod_assets/voices/04_03/04_03_01.ogg"
 define voz_cap04_03_02 = "mod_assets/voices/04_03/04_03_02.ogg"
 define voz_cap04_03_03 = "mod_assets/voices/04_03/04_03_03.ogg"
+define voz_cap04_03_04 = "mod_assets/voices/04_03/04_03_04.ogg"
+define voz_cap04_03_05 = "mod_assets/voices/04_03/04_03_05.ogg"
+define voz_cap04_03_06 = "mod_assets/voices/04_03/04_03_06.ogg"
+define voz_cap04_03_07 = "mod_assets/voices/04_03/04_03_07.ogg"
 
 
 #04_04
@@ -1190,6 +1217,8 @@ define voz_cap05_01_18 = "mod_assets/voices/05_01/05_01_18.ogg"
 define voz_cap05_01_19 = "mod_assets/voices/05_01/05_01_19.ogg"
 define voz_cap05_01_20 = "mod_assets/voices/05_01/05_01_20.ogg"
 define voz_cap05_01_21 = "mod_assets/voices/05_01/05_01_21.ogg"
+define voz_cap05_01_22 = "mod_assets/voices/05_01/05_01_22.ogg"
+define voz_cap05_01_23 = "mod_assets/voices/05_01/05_01_23.ogg"
 
 
 
@@ -1340,6 +1369,7 @@ define voz_cap05_03_14 = "mod_assets/voices/05_03/05_03_14.ogg"
 define voz_cap05_03_15 = "mod_assets/voices/05_03/05_03_15.ogg"
 define voz_cap05_03_16 = "mod_assets/voices/05_03/05_03_16.ogg"
 define voz_cap05_03_17 = "mod_assets/voices/05_03/05_03_17.ogg"
+define voz_cap05_03_18 = "mod_assets/voices/05_03/05_03_18.ogg"
 
 #Epilogo
 define voz_epilogo_01 = "mod_assets/voices/epilogo/epilogo_01.ogg"

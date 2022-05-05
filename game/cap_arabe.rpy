@@ -28,12 +28,14 @@ label cap_arabe:
             $ arabe = texto_arabe()
             voice voz_jailson_arabe
             narrator_arabe "[arabe]"
+            play sound ctc
             $ arabe_cont += 1
         hide cap_arabe_img
         show cap_arabe_img2 at top
         $ arabe = texto_arabe()
         voice voz_guina_arabe
         narrator_arabe "[arabe]"
+        play sound ctc
         hide cap_arabe_img2
     return
 

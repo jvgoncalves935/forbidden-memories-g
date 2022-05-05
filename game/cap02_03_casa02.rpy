@@ -4,6 +4,7 @@ label cap02_03_casa02:
     scene black
     stop music
     show textbox_black at center
+    play music fm_duel_grounds
     #show intro_001 at top
     "Aquele gringo filho da puta me enganou,\ncara safado..."
     play sound ctc
@@ -11,6 +12,7 @@ label cap02_03_casa02:
     play sound ctc
     "A Anita era muito gostosa..."
     play sound ctc
+    stop music
     play sound_bg celular
     "(celular tocando)"
     play sound ctc
@@ -28,6 +30,7 @@ label cap02_03_casa02:
             play sound phone_click
             "Alô?"
             play sound ctc
+            play music fm_duel_grounds
             "\"Fala aí Senna, a gente vai reunir a\ngalera pra tomar uma gelada na\nminha casa, topa vir?\""
             play sound ctc
             "Topo sim, gente boa! Que horas\nvai ser?"
@@ -40,7 +43,6 @@ label cap02_03_casa02:
             play sound ctc
             "Show, então de noite eu apareço aí,\naté mais."
             play sound ctc
-            stop music
             "{p=0.2}{nw}"
             play sound phone_click
             "(desligou o celular)"
@@ -55,6 +57,7 @@ label cap02_03_casa02:
             play sound phone_click
             "(desligou o celular)"
             play sound ctc
+            play music fm_map_select_1
             "Vai tomar no cu, deve ser trote\nessa merda."
             play sound ctc
             "O pessoal não tem mais o que\nfazer nessa porcaria mais não?"
@@ -62,6 +65,7 @@ label cap02_03_casa02:
             "Acho que eu vou fazer um toddynho\nali pra mim..."
             play sound ctc
     "{p=0.2}{nw}"
+    stop music
     play sound door_bell
     "(campainha tocando)"
     play sound ctc
@@ -78,6 +82,7 @@ label cap02_03_casa02:
         "<Fingir que não está em casa>":
             hide textbox_aux
             stop music
+            play music fm_map_select_2
             "(Você ignora a campainha, fingindo que\nnão tem ninguém em casa)."
             play sound ctc
             "(...Ou fingindo que você é surdo e não\nouviu, sei lá.)"
@@ -105,6 +110,7 @@ label cap02_03_casa02:
             play sound ctc
             "(...)"
             play sound ctc
+            play music fm_duel_grounds
             "(Parece que finalmente o vagabundo\ninconveniente desistiu de\nchamar na campainha.)"
             play sound ctc
             if(telefone_02_03):
@@ -118,8 +124,6 @@ label cap02_03_casa02:
             play sound ctc
     if(wrong_end):
         return
-    stop music
-    play sound ctc
     if(telefone_02_03):
         "(Logo após, você sai de casa para\nencontrar com seus amigos na\ncasa do Mangueira Evil.)"
         play sound ctc
@@ -127,6 +131,9 @@ label cap02_03_casa02:
         play sound ctc
         "(Mangueira Evil é tão mão de vaca\nque ele nunca compra nada pra\nninguém comer quando recebe\nvisitas.)"
         play sound ctc
+
+        stop music fadeout 2.0
+        "{p=2.0}{nw}"
     else:
         jump wrong_end_02_03_1
     return
@@ -137,6 +144,7 @@ label cap02_03_casa02_campainha:
     play sound ctc
     "(Irritado, você vai atender a\nporta.)"
     play sound ctc
+    play music fm_vast_shrine
     "(É um mendigo com umas roupas bem\nvelhas.)"
     play sound ctc
     "\"Bom dia, meu senhor. Tô precisando\nde arrumar um dinheiro pra eu\ne minha filha comer...\""
@@ -145,7 +153,7 @@ label cap02_03_casa02_campainha:
     play sound ctc
     "\"Eu posso limpar a frente da sua\ncasa, é só pra me dar uma\najuda mesmo...\""
     play sound ctc
-    "(Realmente, o passeio da sua casa\ntem que tirar os matos e\nas plantas da calçada. Você não\nfaz isso tem dois anos.)"
+    "(Realmente, o passeio da sua casa\ntem que tirar os matos e\nas plantas da calçada. Você não\nfaz isso tem uns dois anos.)"
     play sound ctc
     "(Mas tem algo estranho nisso tudo...)"
     play sound ctc
@@ -155,6 +163,8 @@ label cap02_03_casa02_campainha:
     play sound ctc
     "(Será que é apenas impressão?)"
     play sound ctc
+    stop music
+
     play music audio.fm_password
     show textbox_aux
     menu:
@@ -164,6 +174,7 @@ label cap02_03_casa02_campainha:
         "<Fechar a porta com muita ignorância>":
             hide textbox_aux
             stop music
+            play music fm_finals_faceoff
             voice voz_cap02_03_03
             "OW SEU FILHA DA PUTA,\nSEU VAGABUNDO...!"
             play sound ctc
@@ -174,8 +185,10 @@ label cap02_03_casa02_campainha:
             play sound door_slam
             "(porta fechando com muita ignorância)"
             play sound ctc
+            stop music fadeout 2.0
             "(Você pensa que deve ser apenas um\npilantra que iria fazer algo\nde ruim com você.)"
             play sound ctc
+            play music fm_duel_grounds
             "(Pensando assim, você fica mais\ncalmo.)"
             play sound ctc
             "Vou ir lá fazer meu toddynho com\nmisto quente."
@@ -190,12 +203,15 @@ label cap02_03_casa02_campainha:
 
 label wrong_end_02_03_1:
     $ drpc_update("finalJ")
-    stop music
     $ wrong_end = True
     "(Como você não tem nada para fazer,\nvocê decide jogar o jogo da\ncobrinha.)"
     play sound ctc
     "(Você sempre foi bom nele...)"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
     play sound_bg audio.despacito_nokia
     "(...)"
     play sound ctc
@@ -211,11 +227,13 @@ label wrong_end_02_03_1:
     play sound ctc
     "E junto com essa música envolvente,\na imersão é garantida!"
     play sound ctc
+    voice voz_cap02_03_08
     "Imersão GRANDE E GOSTOSA!"
     play sound ctc
-    stop sound_bg fadeout 1.0
-    "(...)"
-    play sound ctc
+    
+    stop sound_bg fadeout 2.0
+    "{p=2.0}{nw}"
+
     play sound_bg audio.despacito_nokia
     "(30 minutos depois)"
     play sound ctc
@@ -225,9 +243,15 @@ label wrong_end_02_03_1:
     play sound ctc
     "Isso aqui é diversão garantida..."
     play sound ctc
-    stop sound_bg fadeout 1.0
-    "(...)"
+    "VAI COBRINHA, RASTEJA RÁPIDO!"
     play sound ctc
+    voice voz_cap02_03_07
+    "RÁPIDO, BEM RÁPIDO, VAI! VAI,\nVOCÊ NÃO TÁ CANSADA... VAI!"
+    play sound ctc
+
+    stop sound_bg fadeout 2.0
+    "{p=2.0}{nw}"
+
     play sound_bg audio.despacito_nokia
     "(64 minutos depois)"
     play sound ctc
@@ -236,6 +260,7 @@ label wrong_end_02_03_1:
     "{p=0.2}{nw}"
     play sound phone_click
     stop sound_bg
+    play music fm_modern_times
     "(Você liga para o pessoal do Guinnass\nBook para tentar registrar um\nnovo recorde.)"
     play sound ctc
     "(A ligação por interurbano fica em\nmais de 100 reais, você agora tem\numa nova dívida a pagar!)"
@@ -252,6 +277,7 @@ label wrong_end_02_03_1:
     voice voz_cap02_03_05
     "(Faria certas coisas que você nunca\nimaginaria que eu tinha que eu,\nTERIA coragem de fazer!)"
     play sound ctc
+    stop music fadeout 2.0
     $ register_ending("J")
     jump game_over
     return
@@ -259,6 +285,7 @@ label wrong_end_02_03_1:
 label wrong_end_02_03_2:
     $ drpc_update("finalK")
     stop music
+    play music fm_simon_muran
     $ wrong_end = True
     "Tá bom então, quanto que você vai\ncobrar?"
     play sound ctc
@@ -272,6 +299,7 @@ label wrong_end_02_03_2:
     play sound ctc
     "Beleza, vou ir ali pegar a faca-"
     play sound ctc
+    stop music fadeout 2.0
     "(Quando você se vira para dentro\nde casa pra pegar a faca\npra ele tirar o mato...)"
     play sound ctc
     "{p=0.2}{nw}"
@@ -287,6 +315,7 @@ label wrong_end_02_03_2:
     "(...!)"
     play sound ctc
     voice voz_cap05_02_038
+    play music fm_heishin_encounter
     "AI CARA! Puta que pariu meu,\nque porra é essa?!"
     play sound ctc
     "(Você sente uma dor de cabeça\nabsurda!)"
@@ -311,6 +340,7 @@ label wrong_end_02_03_2:
     play sound ctc
     "(Você tranca sua casa e vai\nfazer uma OCOrrência na delegacia,\npois levaram até o seu celular.)"
     play sound ctc
+    stop music fadeout 2.0
     $ register_ending("K")
     jump game_over
     return

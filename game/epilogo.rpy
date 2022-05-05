@@ -3,6 +3,7 @@ label epilogo:
     
     scene black
     stop music
+    play music fm_credits
     show textbox_black at center
     #show intro_001 at top
     "(...)"
@@ -73,6 +74,13 @@ label epilogo:
     voice voz_epilogo_21
     "Tá com medo do quê? Se abaixa\naí, chupa meu pau aí!"
     play sound ctc
+
+    stop music fadeout 4.0
+    "{p=4.0}{nw}"
+
+    stop voice
+    stop music
+
     $ register_ending("G")
     return
 

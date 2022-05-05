@@ -20,6 +20,7 @@ label cap03_02_doutora01:
             hide textbox_aux
             jump wrong_end_03_02_1
     stop music
+    play music fm_modern_shop
     play sound ctc
     voice voz_cap03_02_03
     "É o seguinte... Fiquei sabendo...\nAtravés de um amigo que a\nclínica de vocês é especializada\nno... no reto e eu tô com\num problema no meu reto..."
@@ -72,10 +73,12 @@ label cap03_02_doutora01:
     voice voz_cap03_02_19
     "Não, não... Só uma coceirinha\nmesmo, assim..."
     play sound ctc
+    stop music fadeout 2.0
     "(...)"
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_high_mages_duel
     voice voz_cap03_02_20
     "Tem mais um pouquinho daquele gel lá?\nTem? Dá um pouquinho\ndele pra mim, dá..."
     play sound ctc
@@ -127,13 +130,18 @@ label cap03_02_doutora01:
     voice voz_cap03_02_36
     "Queria..."
     play sound ctc
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
+    stop voice
+
     return
 
 label wrong_end_03_02_1:
     $ drpc_update("finalN")
     stop music
+    play music fm_3d_duel_finals
     "(Você escuta vozes na sua cabeça\ndizendo para sair dali\ncorrendo!)"
     play sound ctc
     play sound_bg running_footsteps fadein 3.0
@@ -163,8 +171,17 @@ label wrong_end_03_02_1:
     play sound ctc
     voice voz_cap05_01_02
     stop sound_bg fadeout 4.0
+    stop music fadeout 2.0
     "(Ele aplica uma injeção no seu\npescoço e você desmaia.)"
     play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
+    stop voice
+
+    
+    play music fm_inside_the_puzzle
     "(...)"
     play sound ctc
     play sound_bg voices fadein 5.0
@@ -199,6 +216,8 @@ label wrong_end_03_02_1:
     play sound ctc
     "POR FAVOR!"
     play sound ctc
+
+    stop music fadeout 2.0
 
     $ game_over_musica = False
     $ game_over_fadeout_sound = 2.0

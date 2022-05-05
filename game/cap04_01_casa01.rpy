@@ -10,12 +10,15 @@ label cap04_01_casa01:
 
     show textbox_black at center
     #show intro_001 at top
+    play music fm_map_select_2
     "(...)"
     play sound ctc
     "(Hmm... ainn...)"
+    stop music fadeout 1.5
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_modern_times
     "(Você está na academia fazendo seus\ntreinos de fisiculturismo.)"
     play sound ctc
     "(Parece que chegou um aparelho novo\nna academia...)"
@@ -23,6 +26,7 @@ label cap04_01_casa01:
     "(Ele é meio... diferente...)"
     play sound ctc
     voice voz_cap04_01_01
+    stop music
     "Ahhh, que exercício ótimo..."
     play sound ctc
     voice voz_cap04_01_02
@@ -37,10 +41,12 @@ label cap04_01_casa01:
     "(...)"
     play sound ctc
     voice voz_cap05_01_02
+    stop music
     "AAAAIIII!"
     play sound ctc
     "..."
     play sound ctc
+    play music fm_library
     "Outro sonho, de novo..."
     play sound ctc
     "Que sonho bom, cara."
@@ -54,6 +60,7 @@ label cap04_01_casa01:
     "Não lembro de ter comido nada\ntão pesado-"
     play sound ctc
     play sound_bg celular
+    stop music
     "(celular tocando)"
     play sound ctc
     "NÃO TEM UM DIA DE SOSSÊGO, NÉ?"
@@ -79,6 +86,7 @@ label cap04_01_casa01:
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
+    play music fm_shadi_future
     "Fala meu querido, tudo bem?"
     play sound ctc
     voice voz_cap04_01_05
@@ -107,12 +115,60 @@ label cap04_01_casa01:
     play sound ctc
     "Esse cara é louco, puta que\npariu... Só me meto\ncom louco cretino!"
     play sound ctc
+    play sound_bg celular
+    stop music
+    "(celular tocando)"
+    play sound ctc
+    "Lá vem de novo essa bosta!"
+    play sound ctc
+
+    show textbox_aux
+    menu:
+        "<Atende essa porra>":
+            hide textbox_aux
+            stop sound_bg
+            "{p=0.2}{nw}"
+            play sound phone_click
+            "Alou?"
+            play sound ctc
+            voice voz_cap03_01_01
+            play music fm_preliminary_faceoff
+            "ALOR, É DO CORPO DE BOMBEIRO?"
+            play sound ctc
+            voice voz_cap04_01_08
+            "AH MULEQUE, VAI SE FODER\nMANO! E AÍ, ESQUECE O\nMEU NÚMERO!"
+            play sound ctc
+            voice voz_cap04_01_09
+            "VAI TOMAR NO OLHO DO\nSEU CU, MANO!"
+            play sound ctc
+            "{p=0.2}{nw}"
+            play sound phone_click
+            "(desligou o celular)"
+            play sound ctc
+            voice voz_cap04_01_10
+            "Ah vai dar meia hora de\nbunda, cara chato..."
+            play sound ctc
+            stop music fadeout 2.0
+
+        "<Não>":
+            hide textbox_aux
+            stop sound_bg
+            "{p=0.2}{nw}"
+            play sound phone_click
+            "(desligou o celular)"
+            play sound ctc
+            "Foda-se, não era nada\nimportante mesmo."
+            play sound ctc
+    stop sound_bg
+
     "Ok, vou botar o kimono e já\nto vazando..."
     play sound ctc
-    "(...)"
-    play sound ctc
-    "(Na academia...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
+    stop voice
+
     return
 
 label wrong_end_04_01_1:
@@ -120,6 +176,7 @@ label wrong_end_04_01_1:
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
+    play music fm_nameinput
     "Que se foda aquele esquizofrênico\ndo caralho."
     play sound ctc
     "Vai ver se eu tô lá na esquina!"
@@ -134,8 +191,12 @@ label wrong_end_04_01_1:
     play sound ctc
     "Tô achando que eu vou dar uma\nvolta no parque e é isso aí."
     play sound ctc
-    "(...)"
+    "(Você deixa seu celular em casa\ne vai para o Parque Kukepal.)"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
     stop voice
 
     window hide(None)

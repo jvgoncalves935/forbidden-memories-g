@@ -50,8 +50,11 @@ label cap01_02_casa:
     play sound ctc
     "Tava esperando a semana inteira\npra jogar essa bola..."
     play sound ctc
+
     stop music fadeout 2.0
     "{p=2.0}{nw}"
+    stop music
+    
     return
 
 label wrong_end_01_02_1:

@@ -4,12 +4,14 @@ label cap05_02_testeporno:
     stop music
     show textbox_black at center
     #show intro_001 at top
-
+    "(dia seguinte, São Paulo, 10:00,\nRua Serra Paulista,\nnúmero 60)"
+    play sound ctc
+    play music fm_vast_shrine
     voice voz_cap05_02_001
     "E aí, será que vai dar certo o anúncio\nque a gente colocou?"
     play sound ctc
     voice voz_cap05_02_002
-    "Lógico que vai... a publicação lá \nfoi publicada hoje. Vai\nter muita gente nova."
+    "Acho que vai... a publicação lá \nfoi publicada hoje, então\nvai aparecer muita gente nova."
     play sound ctc
     voice voz_cap05_02_003
     "Aí vai chegar, eu tenho certeza que\nvai chegar, eu acho que..."
@@ -18,7 +20,7 @@ label cap05_02_testeporno:
     "Já chegou gente aí, cara."
     play sound ctc
     voice voz_cap05_02_005
-    "Tá na hora do almoço mas vamos\natender. Esse aí esse\né o último."
+    "Tá na hora do almoço mas vamos\natender. Esse aí, esse\né o último."
     play sound ctc
     voice voz_cap05_02_006
     "(TOC TOC)"
@@ -27,13 +29,15 @@ label cap05_02_testeporno:
     "Entra aí... entra aí, pode entrar."
     play sound ctc
     voice voz_cap05_02_008
+    stop music fadeout 2.0
+    queue music fm_modern_shop
     "Opa, tudo bem? Boa tarde."
     play sound ctc
     voice voz_cap05_02_009
     "Eu vi o anúncio de vocês aí no\njornal, inclusive não deu nem\ntempo de trocar de roupa,\ntô vindo do meu trabalho..."
     play sound ctc
     voice voz_cap05_02_010
-    "Achei muito interessante, né? E decidi\nsaber mais a respeito, do teste,\nqual que é o procedimento, o\nque que tem q ser feito, né..."
+    "Achei muito interessante, né? O\nanúncio, e vim saber a respeito,\ndo teste, qual que é o\nprocedimento, o que que tem\nque ser feito, né..."
     play sound ctc
     voice voz_cap05_02_011
     "Senta aqui, por favor."
@@ -53,6 +57,8 @@ label cap05_02_testeporno:
     voice voz_cap05_02_016
     "Claro pô, pra fuder uma bucetinha,\nnão é? Um hétero, quem\nnão gosta?"
     play sound ctc
+    stop music fadeout 1.5
+    queue music fm_preliminary_duel
     voice voz_cap05_02_017
     "Falar para você... dá uma levantada\naí para eu avaliar\nseu corpo, seu porte físico..."
     play sound ctc
@@ -69,12 +75,16 @@ label cap05_02_testeporno:
     "Eu sou... trabalho na área de...\nsegurança..."
     play sound ctc
     voice voz_cap05_02_022
+    stop music fadeout 1.5
+    queue music fm_preliminary_faceoff
     "Você, você parece que tem o\nsotaque nordestino, como que é?"
     play sound ctc
     voice voz_cap05_02_023
     "É eu nasci lá na Bahia lá... já\nouviu falar de Cupiqueno\nou não?"
     play sound ctc
     voice voz_cap05_02_024
+    stop music fadeout 1.0
+    queue music fm_map_select_2
     "Aqui é uma agência de respeito,\na gente... só faz filme\nde mulher."
     play sound ctc
     voice voz_cap05_02_025
@@ -84,6 +94,8 @@ label cap05_02_testeporno:
     "Então a gente não vai decepcionar\nnossos clientes. A gente não\npode fazer uma propaganda\nenganosa."
     play sound ctc
     voice voz_cap05_02_027
+    stop music fadeout 1.5
+    queue music fm_preliminary_duel
     "Tá certo, vou trocar a roupa aqui."
     play sound ctc
     voice voz_cap05_02_028
@@ -117,10 +129,12 @@ label cap05_02_testeporno:
     "Tá."
     play sound ctc
     "{p=0.2}{nw}"
+    stop music
     play sound chaves_punch
     "(Você levou uma dedada!)"
     play sound ctc
     voice voz_cap05_02_038
+    play music fm_kaiba_faceoff
     "AAAAI cara... puta que pariu meu,\nque porra é essa?"
     play sound ctc
     voice voz_cap05_02_039
@@ -146,6 +160,7 @@ label cap05_02_testeporno:
     play sound ctc
     voice voz_cap05_02_046
     "Porra, pensa bem no que você ganha\ncara, você disse que ganha 300\npau por mês... cemzinho\nsó com uma brincadeirinha, caralho..."
+    stop music
     play sound ctc
 
     show textbox_aux
@@ -154,7 +169,7 @@ label cap05_02_testeporno:
         "<Iniciar manobras evasivas>":
             hide textbox_aux
             jump wrong_end_05_02_a
-        "<Continuar ouvindo>":
+        "<Negociar outro teste>":
             hide textbox_aux
             pass      
     stop music
@@ -162,6 +177,7 @@ label cap05_02_testeporno:
     "100... 100 eu não faço não."
     play sound ctc
     voice voz_cap05_02_048
+    play music fm_darknite_encounter
     "Eu vou dobrar, eu vou dobrar,\neu vou entrar nessa também, eu\nvou botar mais 100... 100 pau."
     play sound ctc
     voice voz_cap05_02_049
@@ -222,6 +238,8 @@ label cap05_02_testeporno:
     "700 pau, olha, tô liso!"
     play sound ctc
     voice voz_cap05_02_068
+    stop music fadeout 1.0
+    queue music fm_preliminary_faceoff
     "Eu não falei, eu não falei pra\nvocê que eu vim do interior,\nlá de Cupiqueno, lá de..."
     play sound ctc
     voice voz_cap05_02_069
@@ -234,6 +252,8 @@ label cap05_02_testeporno:
     "Vou falar a verdade, eu gostei\ndo seu pau. Eu sou... tô\ndoidinho pra chupar, mano..."
     play sound ctc
     voice voz_cap05_02_072
+    stop music
+    $ renpy.music.play("<from 16.266 loop 17.266>mod_assets/music/fm_darknite_encounter.ogg")
     "Eu vou botar mais um\ndinheirinho. Vou botar mais\n100 conto."
     play sound ctc
     voice voz_cap05_02_073
@@ -293,6 +313,7 @@ label cap05_02_testeporno:
     voice voz_cap05_02_091
     "Pensa: são 100 dias que você,\nvocê vai deixar de\ntrabalhar..."
     play sound ctc
+    stop music
     
     show textbox_aux
     play music audio.fm_password
@@ -304,11 +325,12 @@ label cap05_02_testeporno:
             hide textbox_aux
             pass
             
-    stop music
+    play music fm_darknite_theme
     "(1000 reais... eu PRECISO\ndesse dinheiro vain...)"
     play sound ctc
-    "(...)"
-    play sound ctc
+    
+    "{p=2.0}{nw}"
+
     voice voz_cap05_02_092
     "Você é lá de Pau Grande,\nnão é não, cara?"
     play sound ctc
@@ -322,7 +344,7 @@ label cap05_02_testeporno:
     "Você poderia ficar com medo...\npensar que é pequenininho..."
     play sound ctc
     voice voz_cap05_02_096
-    "Você é um filha duma puta memo..."
+    "Você é um filha duma puta, viu?"
     play sound ctc
     voice voz_cap05_02_097
     "Mas você tá gostando, né? Eu\nsaquei logo que você gostava."
@@ -399,6 +421,11 @@ label cap05_02_testeporno:
     voice voz_cap05_02_121
     "Caralho, você é filho da\nputa aí, meu..."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_pharaoh
     voice voz_cap05_02_122
     "Gostou do teste, irmão?"
     play sound ctc
@@ -414,7 +441,9 @@ label cap05_02_testeporno:
     voice voz_cap05_02_126
     "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
     play sound ctc
-    "{p=0.2}{nw}"
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     stop voice
     return
 
@@ -423,6 +452,7 @@ label wrong_end_05_02_a:
     $ drpc_update("finalW")
     stop music
     play sound table_rolling
+    play music fm_freeduel
     "(Você rola seu corpo em cima da\nmesa, que nem nos filmes\nde ação.)"
     play sound ctc
     play sound_bg kick_alemao noloop
@@ -445,8 +475,9 @@ label wrong_end_05_02_a:
     "(Você decide carregá-la enquanto\nfoge de Bob e Alemão.)"
     stop sound_bg fadeout 1.5
     play sound ctc
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     
     "(no dia seguinte)"
     play sound_bg tv_005 noloop
@@ -472,6 +503,7 @@ label wrong_end_05_02_a:
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_shadi_future
     "(A mulher não fala português.)"
     play sound ctc
     "(Ela parece ter vindo dos Estados\nUnidos.)"
@@ -489,8 +521,10 @@ label wrong_end_05_02_a:
     "(\"Ela deve ter muito\ndinheiro.\", você pensa.)"
     play sound ctc
     stop sound_bg fadeout 1.5
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     "(...)"
     play sound ctc
     "(...)"
@@ -529,6 +563,7 @@ label wrong_end_05_02_b:
     $ drpc_update("finalX")
     stop music
     play sound_bg running_breaking_glasses noloop
+    play music fm_heishin_theme
     "(Você segura o Milzão na mão com\ntoda sua força e sai correndo\nda sala, derrubando tudo\nna sua frente.)"
     play sound ctc
     "(\"PEGA LADRÃO! LADRÃO! PEGA\nLADRÃO!\", grita Bob enquanto\nele e Alemão vêm correndo com\ntudo atrás de você.)"
@@ -555,9 +590,11 @@ label wrong_end_05_02_b:
     play sound ctc
     "(As pessoas em volta ligam para\no Sanatório de Cupiqueno para\nsocorrerem o homem ferido no\nchão e interná-lo.)"
     play sound ctc
+    stop music fadeout 1.0
     play sound_bg police_background fadein 3.0
     "(Enquanto isso, você já está em\noutro quarteirão. Você perdeu todo\nmundo de vista.)"
     play sound ctc
+    play music fm_heishin_encounter
     "Milzão..."
     play sound ctc
     "MEU MILZÃO!"
@@ -581,16 +618,21 @@ label wrong_end_05_02_b:
     stop sound_bg fadeout 2.0
     "Isso, Espanha! Eu falo espanhol!\nÉ isso!"
     play sound ctc
+    stop music fadeout 0.5
     play sound_bg airplane noloop
     "(Você vai para o Aeroporto de\nGuarulhos para comprar uma\npassagem pra Espanha,\nclasse econômica.)"
     play sound ctc
     "(...)"
     play sound ctc
-    "(...)"
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     stop sound_bg fadeout 1.0
-    play sound ctc
+    
     "(duas semanas depois)"
     play sound ctc
+    play music fm_sebek_neku
     play sound_bg audio.city_02 fadein 4.0
     "(Você está assaltando pessoas\ninocentes pelas ruas de\nMadrid.)"
     play sound ctc
@@ -607,8 +649,12 @@ label wrong_end_05_02_b:
     play sound ctc
     stop voice
 
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     window hide(None)
     $ game_over_pos_cutscene = True
     $ renpy.movie_cutscene("mod_assets/videos/espanhol.webm")
+    $ renpy.movie_cutscene("mod_assets/videos/muy_loco.webm")
     $ register_ending("X")
     jump game_over

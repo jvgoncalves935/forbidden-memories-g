@@ -5,6 +5,7 @@ label cap03_03_doutora02:
     stop music
     show textbox_black at center
     #show intro_001 at top
+    play music fm_modern_shop
     "(...)"
     play sound ctc
     "Alexandre, vou te encaminhar para\numa especialista da área."
@@ -19,9 +20,14 @@ label cap03_03_doutora02:
     play sound ctc
     "(...)"
     play sound ctc
-    "{p=1.0}{nw}"
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_map_select_1
     "(uma hora depois)"
     play sound ctc
+    
     "AI! AI... Que dor horrível...!"
     play sound ctc
     "A qualquer momento a doutora vai\nme chamar..."
@@ -30,7 +36,11 @@ label cap03_03_doutora02:
     play sound ctc
     "...Não vai?"
     play sound ctc
-    "{p=1.0}{nw}"
+
+    stop music fadeout 1.5
+    "{p=2.0}{nw}"
+
+    play music fm_map_select_2
     "(uma hora depois)"
     play sound ctc
     "Caramba, mas que demora!"
@@ -41,7 +51,11 @@ label cap03_03_doutora02:
     play sound ctc
     "Mas que porcaria é essa?"
     play sound ctc
-    "{p=1.0}{nw}"
+
+    stop music fadeout 1.5
+    "{p=1.5}{nw}"
+
+    play music fm_map_select_2
     "(cinco horas depois)"
     play sound ctc
     "A bateria do meu celular já acabou\nde tanto jogar o jogo\nda cobrinha..."
@@ -50,16 +64,25 @@ label cap03_03_doutora02:
     play sound ctc
     "Hahh... Tô muito cansado... acho\nque vou tirar um\ncochilo..."
     play sound ctc
-    "{p=1.0}{nw}"
+    
+    stop music fadeout 1.5
+    "{p=1.5}{nw}"
+
+    play music fm_inside_the_puzzle
     "(no dia seguinte)"
     play sound ctc
     "Nossa, eu dormi a noite\ninteira...? Não é possível!"
     play sound ctc
     "Onde tá essa doutora, meu Deus\ndo céu?!"
     play sound ctc
-    "{p=1.0}{nw}"
+
+
+    stop music fadeout 1.5
+    "{p=1.5}{nw}"
+
     "(no dia seguinte)"
     play sound ctc
+    play music fm_modern_shop
     "Olá, Alexandre! Aqui é a secretária!\nA doutora está te aguardando\nno consultório dela. Pode\nentrar."
     play sound ctc
     "(ATÉ QUE ENFIM SUA VADIA\nDESGRAÇADA...!)"
@@ -69,6 +92,9 @@ label cap03_03_doutora02:
     "(...)"
     play sound ctc
     stop voice
+
+    stop music fadeout 1.5
+    "{p=1.5}{nw}"
 
     $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
     
@@ -114,9 +140,11 @@ label cap03_03_doutora02:
     voice voz_cap03_03_10
     "O que a senhora vai fazer...?"
     play sound ctc
+    stop music fadeout 2.0
     "(Você sente uma aura malígna vindo\nda doutora, ela é indiscritivelmente\nsombria.)"
     play sound ctc
     voice voz_cap03_03_11
+    play music fm_kaiba_faceoff
     "Um exame de toque..."
     play sound ctc
     voice voz_cap03_03_12
@@ -125,6 +153,7 @@ label cap03_03_doutora02:
     "{p=0.2}{nw}"
     play sound chaves_punch
     "(Você levou uma dedada da doutora!)"
+    play sound ctc
     voice voz_cap03_03_13
     "Ai doutora... coisa mais esquisita..."
     play sound ctc
@@ -136,6 +165,8 @@ label cap03_03_doutora02:
     voice voz_cap03_03_15
     "Por enquanto vamos ver... a gente\ntem que dar uma olhadinha\nprofundamente... O que\nvocê acha?"
     play sound ctc
+    
+    stop music
     play music audio.fm_password
     show textbox_aux
     menu:
@@ -146,13 +177,18 @@ label cap03_03_doutora02:
             hide textbox_aux
             pass
     stop music
-    play music fm_preliminary_faceoff
+    
     voice voz_cap03_03_16
     "Ah, eu acho que... Você é muito\ngostosa..."
     play sound ctc
     voice voz_cap03_03_17
     "Teria que examinar mais profundamente\nseu reto."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_kaiba_theme
     voice voz_cap03_03_18
     "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
     play sound ctc
@@ -178,10 +214,10 @@ label cap03_03_doutora02:
     "ISSO, AAAAAHHHH, AAAAHHHHH,\nAAAAIIIIII!!! FODE... FODE RÁPIDO...\nFODE... FODE...!"
     play sound ctc
     voice voz_cap03_03_26
-    "FODE RÁPIDO, BEM RÁPIDO\nVAI... VAI VOCÊ NÃO\nTÁ CANSADA..."
+    "FODE RÁPIDO, BEM RÁPIDO\nVAI... VAI VOCÊ NÃO\nTÁ CANSADA... VAI!"
     play sound ctc
     voice voz_cap03_03_27
-    "VAI... VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
+    "VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
     play sound ctc
     voice voz_cap03_03_28
     "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CUHH! UUGH..."
@@ -192,8 +228,13 @@ label cap03_03_doutora02:
     voice voz_cap03_03_30
     "CARALHO... TO SENTINDO LÁ NO\nESTÔMAGO PORRA, QUE PAUZÃO...\nQUE PAUZÃO GAROTA..."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    play music fm_preliminary_faceoff
     voice voz_cap03_03_31
-    "Doutora... Agora eu estou me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
+    "Doutora... Agora eu tô me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
     play sound ctc
     voice voz_cap03_03_32
     "Sempre que precisar de uma\nconsulta pode vir!"
@@ -201,6 +242,9 @@ label cap03_03_doutora02:
     voice voz_cap03_03_33
     "Tá bom!"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     stop music
     stop voice
 
@@ -248,6 +292,9 @@ label cap03_03_doutora02:
 label wrong_end_03_03_1:
     $ drpc_update("finalO")
     stop music
+    play music fm_3d_duel
+    "(Você se levanta da cadeira de uma\nvez. A Doutora te encara,\nbastante confusa.)"
+    play sound ctc
     play sound door_kick
     "(Sem dar satisfação nenhuma para a\ndoutora, você chuta a\nporta com muita ignorância\ne sai correndo.)"
     play sound ctc
@@ -256,7 +303,11 @@ label wrong_end_03_03_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "{p=1.0}{nw}"
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
+    play music fm_shadi_egypt
     "(Faz dez minutos que você está\ncorrendo, parece finalmente ser\numa boa hora para descansar.)"
     stop sound_bg
     play sound ctc
@@ -265,8 +316,10 @@ label wrong_end_03_03_1:
     play sound_bg energy_source fadein 7.0
     "(Você se encontra na frente do\nFerro-Velho de Cupiqueno, um\nlugar completamente sem\ninteresse para você.)"
     play sound ctc
+    stop music fadeout 2.0
     "(Bem, não deveria ter interesse\nnenhum... entretanto, você vê\nde longe um objeto\nbrilhante.)"
     play sound ctc
+    
     "(Ele brilha com uma cor laranja muito,\nmuito forte. Que nem nos\nfilmes de ficção.)"
     play sound ctc
     "(Ele fica pulsando, como se\nestivesse vivo.)"
@@ -275,16 +328,21 @@ label wrong_end_03_03_1:
     play sound ctc
     "(Inicialmente com medo, você chega\nperto da pedra mágica e\na observa, cautelosamente.)"
     play sound ctc
+    play music fm_shadi_future
     "(...)"
     play sound ctc
     "Que se foda."
     play sound ctc
     "(Você pega a pedra mágica, coloca\nno bolso e volta para sua\ncasa como se nada tivesse\nacontecido.)"
+    play sound ctc
+
     stop sound_bg fadeout 2.0
-    play sound ctc
-    "(...)"
-    play sound ctc
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    
     play sound_bg energy_source fadein 2.0
+    play music fm_shadi_egypt
     "(Você chega em casa, ansioso para\nguardar seu novo enfeite\npara casa.)"
     play sound ctc
     "Essa pedra ficaria linda na\nminha sala!"
@@ -295,10 +353,13 @@ label wrong_end_03_03_1:
     play sound ctc
     "Essa pedra é tão linda..."
     play sound ctc
-    stop sound_bg fadeout 2.0
+    stop music fadeout 2.0
     "(...)"
     play sound ctc
-    "{p=1.0}{nw}"
+    
+    stop sound_bg fadeout 2.0
+    "{p=2.0}{nw}"
+
     "(no dia seguinte)"
     play sound ctc
     "(Você acabou de acordar e foi\nlogo para o banheiro escovar\nseus dentes...)"
@@ -307,11 +368,14 @@ label wrong_end_03_03_1:
     play sound ctc
     "(...)"
     play sound ctc
-    "(...)"
+    play music fm_seto_encounter
+    "(...!)"
     play sound ctc
     #Senna mutante
-    voice voz_cap03_03_33
+    voice voz_cap03_03_34
     "{p=4.0}{nw}"
+
+    stop music fadeout 2.0
     $ register_ending("O")
     jump game_over
 
@@ -319,14 +383,17 @@ label wrong_end_03_03_2:
     $ drpc_update("finalP")
     stop music
     play sound running_window_breaking
+    play music fm_heishin_theme
     "(Você se levanta rapidamente da mesa\ncomo se não houvesse amanhã e pula\npela janela do segundo andar.)"
     play sound ctc
     "{p=0.2}{nw}"
     play sound running_footsteps
     "(Você lesiona sua perna, mas você\nainda consegue sair correndo pela\nrua.)"
     play sound ctc
+    stop music fadeout 2.0
     "(A doutora não pode ser mais vista\nem seu campo de visão,\nparece que você\nconseguiu escapar dela com sucesso.)"
     play sound ctc
+    play music fm_vast_shrine
     "(Você reflete sobre o que poderia\nter acontecido caso tivesse\noptado em continuar com\no exame...)"
     play sound ctc
     "EU VOU PROCESSAR ESSE HOSPITAL\nMALIGNO!"
@@ -340,13 +407,15 @@ label wrong_end_03_03_2:
     play sound ctc
     "Isso tudo vai ir no processo,\nquero nem saber!"
     play sound ctc
-    "(...)"
-    play sound ctc
-    "{p=1.0}{nw}"
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
     "(no dia do julgamento)"
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_temple_ruins
     "(Você PERDEU o processo contra\no consultório!)"
     play sound ctc
     "(O juiz considerou como\n\"improcedente\" sua acusação\nde difamação.)"
@@ -357,9 +426,10 @@ label wrong_end_03_03_2:
     play sound ctc
     "(Você nunca vai conseguir\npagar essa dívida!)"
     play sound ctc
-    "(...)"
-    play sound ctc
-    "{p=1.0}{nw}"
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     "(duas semanas depois)"
     play sound ctc
     play sound_bg audio.city_02 fadein 4.0

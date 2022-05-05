@@ -1,6 +1,15 @@
 label game_over:
     $ game_over = True
     
+
+    $ backup_game_menu_keymap = config.keymap['game_menu']
+    $ backup_game_hide_windows = config.keymap['hide_windows']
+    $ config.keymap['game_menu'] = []
+    $ config.keymap['hide_windows'] = []
+    $ renpy.display.behavior.clear_keymap_cache()
+
+
+
     if(not game_over_pos_cutscene):
         show textbox_aux
         scene black
@@ -41,6 +50,12 @@ label game_over:
     $ game_over_delay_musica = 0.0
     $ game_over_fadeout_musica = 0.0
     $ game_over_fadeout_sound = 0.0
+
+
+    $ config.keymap['game_menu'] = backup_game_menu_keymap
+    $ config.keymap['hide_windows'] = backup_game_hide_windows
+    $ renpy.display.behavior.clear_keymap_cache()
+    
 
     $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
     return

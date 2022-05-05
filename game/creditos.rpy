@@ -335,7 +335,7 @@ image cred_07_04:
     align (0.5,0.30)
     alpha 0.0
     time 3.0
-    Text("Naoko Ishii", style="credits_text")
+    Text("Naoko Ishii, Hiroshi (nabevan) Tanabe,", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -344,7 +344,7 @@ image cred_07_05:
     align (0.5,0.35)
     alpha 0.0
     time 3.0
-    Text("Hiroshi (nabevan) Tanabe", style="credits_text")
+    Text("Waichiro Ozaki", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -353,7 +353,7 @@ image cred_07_06:
     align (0.5,0.40)
     alpha 0.0
     time 3.0
-    Text("Waichiro Ozaki", style="credits_text")
+    Text("Remasterização (não-oficial): Atmosound", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -699,6 +699,69 @@ image cred_071_30:
     linear 1.5 alpha 0.0
 
 
+
+image cred_071_41:
+    align (0.5,0.50)
+    alpha 0.0
+    time 13.0
+    Text("Música:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_42:
+    align (0.5,0.55)
+    alpha 0.0
+    time 13.0
+    Text("\"Vinheta da Tele-Sena\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_43:
+    align (0.5,0.65)
+    alpha 0.0
+    time 13.0
+    Text("Label: SBT", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_44:
+    align (0.5,0.70)
+    alpha 0.0
+    time 13.0
+    Text("\"Tele-Sena (Versão Metal)\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_45:
+    align (0.5,0.75)
+    alpha 0.0
+    time 13.0
+    Text("Remix:", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+image cred_071_46:
+    align (0.5,0.80)
+    alpha 0.0
+    time 13.0
+    Text("Calonense (O Metaleiro)", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 16.5
+    linear 1.5 alpha 0.0
+
+
+
+
+
+
+
+
+
 image cred_071_31:
     align (0.5,0.20)
     alpha 0.0
@@ -781,7 +844,7 @@ image cred_071_354:
     linear 1.5 alpha 0.0
 
 image cred_071_355:
-    align (0.5,0.75)
+    align (0.5,0.80)
     alpha 0.0
     time 18.0
     Text("HtenekBR", style="credits_text")
@@ -1187,7 +1250,7 @@ image cred_21_02:
 image cred_22_01:
     align (0.85,0.5)
     alpha 0.0
-    Text("Yeah Man\n\n\n\nOHHH CARALHO\nOOHHH OHHH OHH\nYEAH MAN\nYEAH MAN", style="credits_text")
+    Text("Douglas Torres\n(Yeah Man)\n\n\n\nOHHH CARALHO\nOOHHH OHHH OHH\nYEAH MAN\nYEAH MAN", style="credits_text")
     linear 0.8 alpha 1.0
     time 2.5
     linear 1.5 alpha 0.0
@@ -2154,6 +2217,12 @@ label creditos:
     show cred_071_38
     show cred_071_39
     show cred_071_40
+    show cred_071_41
+    show cred_071_42
+    show cred_071_43
+    show cred_071_44
+    show cred_071_45
+    show cred_071_46
     pause 30
     scene yami_senna_bg
 

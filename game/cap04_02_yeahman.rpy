@@ -7,6 +7,7 @@ label cap04_02_yeahman:
     stop voice
 
     $ renpy.movie_cutscene("mod_assets/videos/yeahman.webm")
+    play music fm_sebek_neku
     "(...!)"
     play sound ctc
     "Machucou, cara?"
@@ -14,6 +15,8 @@ label cap04_02_yeahman:
     voice voz_cap04_02_16
     "YEAH MAN!"
     play sound ctc
+    stop music
+
     play music audio.fm_password
     show textbox_aux
     menu:
@@ -24,6 +27,7 @@ label cap04_02_yeahman:
             hide textbox_aux
             jump wrong_end_04_02_1
     stop music
+    play music fm_modern_shop
     voice voz_cap04_02_01
     "(Como que esse louco conseguiu\nmachucar a perna no saco\nde pancada...?)"
     play sound ctc
@@ -45,6 +49,7 @@ label cap04_02_yeahman:
     "Fica tranquilo aí..."
     play sound ctc
     voice voz_cap04_02_19
+    stop music
     "OOHH!"
     play sound ctc
     "(Yeah Man começa a te encarar,\ncom medo do que você\nirá fazer com ele.)"
@@ -59,6 +64,7 @@ label cap04_02_yeahman:
 label wrong_end_04_02_1:
     $ drpc_update("finalR")
     stop music
+    play music fm_inside_the_puzzle
     voice voz_cap04_02_01
     "(Você vê a dor e agonia na expressão\naflita de Yeah Man...)"
     play sound ctc
@@ -99,6 +105,7 @@ label wrong_end_04_02_1:
     "(Desesperado em pensar sobre como\na humanidade pode ser\ntão perversa e doentia.)"
     play sound ctc
     voice voz_cap04_02_14
+    stop music fadeout 5.0
     "(Você sente uma vontade urgente\nde rir.)"
     play sound ctc
     voice voz_cap04_02_15
@@ -108,6 +115,7 @@ label wrong_end_04_02_1:
     play sound ctc
     "{p=0.2}{nw}"
     play sound voz_cap04_02_17
+    stop music
     pause 9.0
     $ register_ending("R")
     jump game_over

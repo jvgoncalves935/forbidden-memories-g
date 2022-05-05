@@ -48,6 +48,8 @@ label cap02_01_casa01:
     voice voz_cap02_02_37
     "No problem."
     play sound ctc
+    "{p=0.2}{nw}"
+    play sound phone_click
     "(Você desliga o celular e vai em\ndireção à oficina.)"
     play sound ctc
     "(Você ainda fica curioso sobre onde\nestava o problema no carro.)"
@@ -62,7 +64,7 @@ label wrong_end_02_01_1:
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
-    "(Você desliga o celular o mais rápido\nque pode.)"
+    "(Você desliga o celular rápido bem\nrápido, vai.)"
     play sound ctc
     "(\"Eu odeio esse toque!\", você pensa.)"
     play sound ctc

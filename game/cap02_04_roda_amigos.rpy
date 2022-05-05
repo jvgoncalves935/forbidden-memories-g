@@ -4,7 +4,7 @@ label cap02_04_roda_amigos:
     stop music
     show textbox_black at center
     #show intro_001 at top
-
+    play music fm_library
     voice voz_cap02_04_01
     "Foi mó legal lá na balada,\nvocês perderam meu..."
     play sound ctc
@@ -88,8 +88,9 @@ label cap02_04_roda_amigos:
     play sound ctc
     voice voz_cap02_04_28
     "Bem, te pegar ali na piscina mesmo,\nentendeu? Começar a fazer assim,\naquelas coisas assim... bem...\ndiferente contigo..."
-    
     play sound ctc
+    stop music
+
     show textbox_aux
     play music audio.fm_password
     menu:
@@ -101,6 +102,7 @@ label cap02_04_roda_amigos:
             pass
     stop music
 
+    play music fm_map_select_2
     voice voz_cap02_04_29
     "Posso imaginar...?"
     play sound ctc
@@ -115,6 +117,7 @@ label cap02_04_roda_amigos:
     play sound ctc
     "(Você adentra no Mundo dos Sonhos.)"
     play sound ctc
+    stop music fadeout 2.0
     "(...)"
     play sound ctc
     "(Você está sozinho, no meio de uma\npiscina misteriosa...)"
@@ -122,6 +125,7 @@ label cap02_04_roda_amigos:
     voice voz_cap02_04_33
     "Pô, essa piscina aqui sozinha...\ne eu queria o homem\ndos meus sonhos... Poxa..."
     play sound ctc
+    play music fm_egyptian_duel
     "(Um homem misterioso emerge da\nsauna!)"
     play sound ctc
     "(Ele é extremamente forte e\nmusculoso...)"
@@ -137,7 +141,10 @@ label cap02_04_roda_amigos:
     play sound ctc
     voice voz_cap02_04_40
     "{p=14.0}{nw}"
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     stop voice
+    stop music
 
 
     
@@ -185,6 +192,7 @@ label cap02_04_roda_amigos:
 label wrong_end_02_04_1:
     $ drpc_update("finalL")
     stop music
+    play music fm_seto_encounter
     voice voz_cap02_04_37
     "EU AMALDIÇOO TODO MUNDO QUE FAZ PARTE\nDESSE GRUPO!"
     play sound ctc
@@ -211,8 +219,11 @@ label wrong_end_02_04_1:
     voice voz_cap02_04_41
     "EU SOU HÉTERO!"
     play sound ctc
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
+    play music fm_high_mages_duel
     "(Você começa a fugir da casa\ndo Mangueira Boy.)"
     play sound ctc
     "(Você continua correndo na rua.)"
@@ -249,6 +260,7 @@ label wrong_end_02_04_1:
     voice voz_cap02_04_43
     "EU SOU HÉTERO...!"
     play sound ctc
+    stop music fadeout 2.0
     stop sound_bg fadeout 3.0
     $ register_ending("L")
     jump game_over

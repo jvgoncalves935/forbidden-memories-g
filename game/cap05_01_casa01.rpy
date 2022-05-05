@@ -77,6 +77,7 @@ label cap05_01_casa01:
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_modern_times
     "Foi um sonho, de novo..."
     play sound ctc
     "Que delícia..."
@@ -86,6 +87,7 @@ label cap05_01_casa01:
     "Aquele morador me enganou,\nmaldito mentiroso do caralho."
     play sound ctc
     play sound_bg celular
+    stop music
     "(celular tocando)"
     play sound ctc
     "NENHUM. DIA DE SOSSEGO!"
@@ -104,6 +106,7 @@ label cap05_01_casa01:
     play sound phone_click
     "Alô?"
     play sound ctc
+    play music fm_tournament
     "Olá, é do número do Alexandre?"
     play sound ctc
     "Sim, sou eu mesmo."
@@ -144,26 +147,25 @@ label cap05_01_casa01:
     play sound ctc
     "Se você quiser a gente deixou mais\ninformações lá no nosso anúncio que\na gente colocou em frente a\nsua academia."
     play sound ctc
-    "Tudo certo, mas tarde vou dar uma\nolhada nele."
+    "Tudo certo, mais tarde vou dar uma\nolhada nele."
     play sound ctc
     "Então até amanhã, Alexandre. Foi\nbom fazer negócio com você!\nTchau tchau."
     play sound ctc
+    stop music
     "{p=0.2}{nw}"
     play sound phone_click
     "(desligou o celular)"
     play sound ctc
+    play music fm_free_duel_theme
     "Nossa, que maravilha. Ator pornô..."
     play sound ctc
     "Ganhar dinheiro fácil, viajar pra\nSão Paulo e ainda poder degustar\nvárias mulheres... que incrível."
     play sound ctc
     "Nossa, já tô atrasado pro\ntrabalho. Amanhã eu penso\nnisso."
     play sound ctc
-    "(...)"
-    play sound ctc
-    "(...)"
-    play sound ctc
-    "(dia seguinte, São Paulo, 10:00,\nRua Serra Paulista,\nnúmero 60)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
 
     return
 
@@ -174,6 +176,7 @@ label wrong_end_05_01_1:
     play sound phone_click
     "(desligou o celular)"
     play sound ctc
+    play music fm_modern_times
     "Com certeza era aquele filho da\nputa que faz trote todo\nsanto dia."
     play sound ctc
     "Eu vou pegar o número dele\ndepois e chamar a polícia,\nque se dane."
@@ -182,8 +185,11 @@ label wrong_end_05_01_1:
     play sound ctc
     "Agora eu tô a fim de relaxar."
     play sound ctc
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    
     play sound_bg park fadein 4.0
     "(Você sai de casa para dar\num passeio no parque,\nsem camisa.)"
     play sound ctc
@@ -196,6 +202,7 @@ label wrong_end_05_01_1:
     stop sound_bg fadeout 2.0
     "(...!)"
     play sound ctc
+    play music fm_forbidden_ruins
     "(Você vê uma linda garota\nno banco do parque,\nparece ser japonesa.)"
     play sound ctc
     "(Ela está usando um roupão\ntradicional japonês\ntambém.)"
@@ -220,15 +227,21 @@ label wrong_end_05_01_1:
     "{p=0.2}{nw}"
     stop sound_bg fadeout 5.0
     play sound spray
+    stop music
     "(cof cof)"
     play sound ctc
-    
+    play music fm_sebek_neku
     "(Você sente um cheiro estranho\ne começa a ficar extremamente\ntonto!)"
     play sound ctc
-    "(Mooooooççççaaaaa...!)"
+    voice voz_cap05_01_22
+    "AAAAAAaaaAaAahhaHAAHahAHhaHhhhhhh...!"
     play sound ctc
     "(...)"
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     "(...)"
     play sound ctc
     "(...)"
@@ -238,6 +251,7 @@ label wrong_end_05_01_1:
     play sound ctc
     "(Você acorda em um tatame,\nvestido com uma roupa igual\na que você usa no judô\ne uma bandana do Japão.)"
     play sound ctc
+    voice voz_cap05_01_23
     "Que porra é essa?"
     play sound ctc
     play sound_bg kabuki noloop
@@ -247,6 +261,8 @@ label wrong_end_05_01_1:
     play sound ctc
     "(\"Japonesas tem três pernas?\",\né a primeira coisa que você pensa.)"
     play sound ctc
+    stop sound_bg
+    play music fm_kaiba_theme
     "(Não, espera aí...!)"
     play sound ctc
     "Vou te ensinar muita coisa nova\nhoje, gostosão."
@@ -257,11 +273,13 @@ label wrong_end_05_01_1:
     play sound ctc
     "(...)"
     play sound ctc
-    stop sound_bg
+    "(...)"
+    play sound ctc
     voice voz_cap05_01_01
     "UUUHHH... WAKARANAI... WAKARANAI!\nAAAHHHH!!"
     play sound ctc
     stop voice
+    stop music fadeout 2.0
     $ register_ending("V")
     jump game_over
 

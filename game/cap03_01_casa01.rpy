@@ -10,12 +10,16 @@ label cap03_01_casa01:
 
     show textbox_black at center
     #show intro_001 at top
-
+    play music fm_map_select_1
     "Hmm..."
     play sound ctc
     "..."
     play sound ctc
     "Hmm..."
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
     play sound ctc
     $ renpy.movie_cutscene("mod_assets/videos/recruta.webm")
     voice voz_cap02_04_39
@@ -25,6 +29,7 @@ label cap03_01_casa01:
     play sound ctc
     "(...)"
     play sound ctc
+    play music fm_modern_times
     "Foi só um sonho..."
     play sound ctc
     "Será que é a minha mente\ndizendo que eu esqueci de\nfazer alguma coisa?"
@@ -41,6 +46,7 @@ label cap03_01_casa01:
     play sound ctc
     "Mas aquela dor estranha ainda\ntá me atacando, é foda..."
     play sound ctc
+    stop music
     play sound_bg celular
     "(celular tocando)"
     play sound ctc
@@ -60,7 +66,7 @@ label cap03_01_casa01:
             play sound phone_click
             "(desliga o celular)"
             play sound ctc
-    stop sound_bg
+    play music fm_modern_times
     "Mas que droga, o pessoal do\nconsultório não me liga..."
     play sound ctc
     "Eles ficam atrasando a minha\nconsulta, que droga!"
@@ -69,6 +75,7 @@ label cap03_01_casa01:
     play sound ctc
     "Eu preciso resolver logo essa\nsituação mas eles ficam de\nenrolação comigo!"
     play sound ctc
+    stop music
     play sound_bg celular
     "(celular tocando)"
     play sound ctc
@@ -88,10 +95,12 @@ label cap03_01_casa01:
             play sound phone_click
             "(desliga o celular)"
             play sound ctc
+            play music fm_modern_times
             "Vai ver se eu tô lá na esquina!"
             play sound ctc
             "O pessoal não tem mais o que fazer não?"
             play sound ctc
+            stop music
     hide textbox_aux
     stop sound_bg
     play sound_bg celular
@@ -106,6 +115,7 @@ label cap03_01_casa01:
             stop sound_bg
             "ALÔ!?!"
             play sound ctc
+            play music fm_modern_shop
             "Bom dia, eu falo com o\nAlexandre?"
             play sound ctc
             "(Espera, acho que agora\né a ligação certa...)"
@@ -134,14 +144,17 @@ label cap03_01_casa01:
             stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
+            play music fm_seto_encounter
             "(desliga o celular)"
             play sound ctc
             "MAIS ALGUÉM VAI ME LIGAR?"
             play sound ctc
             "(...)"
             play sound ctc
+            stop music fadeout 1.0
             "(...)"
             play sound ctc
+            play music fm_modern_times
             "Parece que não..."
             play sound ctc
     hide textbox_aux
@@ -155,6 +168,7 @@ label cap03_01_casa01:
     "Até que enfim, esse celular já\ntava me dando nos nervos..."
     play sound ctc
     play sound_bg celular
+    stop music
     "(celular tocando)"
     play sound ctc
     "Ah, foda-se quem tá ligando, já\nme ligaram do consultório\nmesmo..."
@@ -164,10 +178,16 @@ label cap03_01_casa01:
     play sound phone_click
     "(desligou o celular)"
     play sound ctc
+    play music fm_modern_shop
     "AI! AI... Que dor horrível...!"
     play sound ctc
     "Partiu ir pro hospital..."
     play sound ctc
+
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop music
+
     return
 
 label telefone_03_01_01:
@@ -196,6 +216,7 @@ label telefone_03_01_02:
     voice voz_cap03_01_02
     "Alô, boa noite? Eu falo do setor\nde promoções, eu falo com\no Vinícius?"
     play sound ctc
+    play music fm_finals_faceoff
     voice voz_cap03_01_03
     "CAMBADA DE MALDITO, PARA DE ME\nADICIONAR NESSES GRUPO!"
     play sound ctc
@@ -208,6 +229,16 @@ label telefone_03_01_02:
     voice voz_cap03_01_06
     "E O LÍDER DA RELIGIÃO QUE\nVOCÊS TEM!"
     play sound ctc
+    voice voz_cap03_01_10
+    "ADICIONA SUA MÃE!\nADICIONA SUA VÓ!"
+    play sound ctc
+    voice voz_cap03_01_11
+    "ADICIONA TEU PAI!\nADICIONA SUA SOGRA!"
+    play sound ctc
+    voice voz_cap03_01_12
+    "O PADRE, QUEM VOCÊ QUISER,\nMAS ME ESQUECE!"
+    play sound ctc
+    stop music
     "{p=0.2}{nw}"
     play sound phone_click
     "(desliga o celular)"
@@ -220,6 +251,7 @@ label telefone_03_01_02:
 label wrong_end_03_01:
     $ drpc_update("finalM")
     "Esse celular não para de tocar,\nmas que porcaria!"
+    stop music
     play sound ctc
     play sound_bg celular
     "(celular tocando)"
@@ -228,6 +260,7 @@ label wrong_end_03_01:
     play sound ctc
     "..."
     play sound ctc
+    play music fm_seto_encounter
     "Quer saber? Eu vou SACANEAR ESSE\nPALHAÇO!"
     play sound ctc
     "{p=0.2}{nw}"
@@ -237,6 +270,7 @@ label wrong_end_03_01:
     play sound ctc
     "Alou, Jefferson?"
     play sound ctc
+    
     "AQUI NÃO TEM JEFFERSON NENHUM NÃO,\nQUEBRADA. TÁ QUERENDO ALGUMA\nCOISA, PALHAÇO?"
     play sound ctc
     "Ow mano, tá maluco rapá?"
@@ -259,16 +293,19 @@ label wrong_end_03_01:
     play sound ctc
     "Grande bosta."
     play sound ctc
-    "(...)"
-    play sound ctc
-    "(...)"
-    play sound ctc
+    
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    
     "(no dia seguinte)"
     play sound ctc
+    play music fm_duel_grounds
     "Acabou o pão, vou ter que ir na\npadaria..."
     play sound ctc
     "(Você decide para a padaria. Coloca\no dinheiro no bolso e pega a\nchave pra abrir a porta.)"
     play sound ctc
+    stop music fadeout 2.0
     "{p=0.2}{nw}"
     play sound door_creaking
     "(Assim que você abre a porta,\nvocê sente uma sensação\nde perigo...)"
@@ -277,6 +314,7 @@ label wrong_end_03_01:
     play sound gun_cocking
     "{p=0.6}{nw}"
     play sound gun_shots
+    $ renpy.music.play("<from 16.266 loop 17.266>mod_assets/music/fm_darknite_encounter.ogg")
     "OOOOOHHHHHH!!! AAAAAAHHHHH!!!\nAAAIII, AAIIIIIIIII!!!"
     play sound ctc
     voice voz_cap03_01_08
@@ -290,12 +328,15 @@ label wrong_end_03_01:
     play sound ctc
     voice voz_cap03_01_09
     "(O homem aponta a arma bem no\nmeio da sua cabeça.)"
+    stop music fadeout 3.0
     play sound ctc
     "{p=0.2}{nw}"
     voice voz_cap03_01_07
     "{p=2.8}{nw}"
     #tela preta
     "{p=3.0}{nw}"
+
+
     $ register_ending("M")
     jump game_over
     return

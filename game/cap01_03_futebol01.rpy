@@ -114,7 +114,7 @@ label cap01_03_futebol01:
     play sound ctc
     voice voz_cap01_03_30
     "O pessoal tá chegando aí, vai cara!"
-    
+
     return
 
 label wrong_end_01_03_1:
