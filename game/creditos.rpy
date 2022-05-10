@@ -838,7 +838,7 @@ image cred_071_354:
     align (0.5,0.75)
     alpha 0.0
     time 18.0
-    Text("Arquivo G", style="credits_text")
+    Text("Arquivo P", style="credits_text")
     linear 1.0 alpha 1.0
     time 22.5
     linear 1.5 alpha 0.0

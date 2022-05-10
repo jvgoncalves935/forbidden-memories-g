@@ -45,7 +45,8 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_05
     "Alexandre..."
     play sound ctc
-    "(Você tem amnésia, porra?\nOs gringo são bundão mesmo.)"
+    voice voz_cap02_02_55
+    "\"Os gringos... são... BUNDAL,\n tá ligado, zé?\". Esta\ncélebre frase de um grande\nfilósofo ecoa em sua mente."
     play sound ctc
     voice voz_cap02_02_06
     "Uhh... Alexandre. Are you busy...\nor... you can talk a few\nminutes, yeah?"

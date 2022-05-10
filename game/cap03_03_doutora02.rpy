@@ -144,7 +144,7 @@ label cap03_03_doutora02:
     "(Você sente uma aura malígna vindo\nda doutora, ela é indiscritivelmente\nsombria.)"
     play sound ctc
     voice voz_cap03_03_11
-    play music fm_kaiba_faceoff
+    play music fm_kaiba_theme
     "Um exame de toque..."
     play sound ctc
     voice voz_cap03_03_12
@@ -188,7 +188,7 @@ label cap03_03_doutora02:
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 
-    play music fm_kaiba_theme
+    play music fm_preliminary_faceoff
     voice voz_cap03_03_18
     "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
     play sound ctc
@@ -232,7 +232,7 @@ label cap03_03_doutora02:
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 
-    play music fm_preliminary_faceoff
+    play music fm_preliminary_duel
     voice voz_cap03_03_31
     "Doutora... Agora eu tô me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
     play sound ctc

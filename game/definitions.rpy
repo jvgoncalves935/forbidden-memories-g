@@ -22,6 +22,9 @@ init python:
     #config.rollback_enabled = False
 
     config.keymap['self_voicing'] = []
+    config.keymap['performance'] = []
+    config.keymap['screenshot'] = []
+    config.keymap['accessibility'] = []
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     config.keymap['game_menu'] = ['K_ESCAPE']
@@ -515,6 +518,251 @@ image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 image textbox_black = "mod_assets/gui/textbox_black.png"
 image white_bg = "mod_assets/images/white.png"
 
+
+
+
+#01_02
+image img_01_02_01 = "mod_assets/images/01_02/01_02_01.png"
+
+
+image img_01_03_01 = "mod_assets/images/01_03/01_03_01.png"
+image img_01_03_02 = "mod_assets/images/01_03/01_03_02.png"
+image img_01_03_03 = "mod_assets/images/01_03/01_03_03.png"
+image img_01_03_04 = "mod_assets/images/01_03/01_03_04.png"
+image img_01_03_05 = "mod_assets/images/01_03/01_03_05.png"
+image img_01_03_06 = "mod_assets/images/01_03/01_03_06.png"
+image img_01_03_07 = "mod_assets/images/01_03/01_03_07.png"
+image img_01_03_08 = "mod_assets/images/01_03/01_03_08.png"
+image img_01_03_09 = "mod_assets/images/01_03/01_03_09.png"
+image img_01_03_10 = "mod_assets/images/01_03/01_03_10.png"
+image img_01_03_11 = "mod_assets/images/01_03/01_03_11.png"
+image img_01_03_12 = "mod_assets/images/01_03/01_03_12.png"
+image img_01_03_13 = "mod_assets/images/01_03/01_03_13.png"
+image img_01_03_14 = "mod_assets/images/01_03/01_03_14.png"
+image img_01_03_15 = "mod_assets/images/01_03/01_03_15.png"
+image img_01_03_16 = "mod_assets/images/01_03/01_03_16.png"
+image img_01_03_17 = "mod_assets/images/01_03/01_03_17.png"
+image img_01_03_18 = "mod_assets/images/01_03/01_03_18.png"
+image img_01_03_19 = "mod_assets/images/01_03/01_03_19.png"
+image img_01_03_20 = "mod_assets/images/01_03/01_03_20.png"
+image img_01_03_21 = "mod_assets/images/01_03/01_03_21.png"
+image img_01_03_22 = "mod_assets/images/01_03/01_03_22.png"
+image img_01_03_23 = "mod_assets/images/01_03/01_03_23.png"
+image img_01_03_24 = "mod_assets/images/01_03/01_03_24.png"
+image img_01_03_25 = "mod_assets/images/01_03/01_03_25.png"
+image img_01_03_26 = "mod_assets/images/01_03/01_03_26.png"
+image img_01_03_27 = "mod_assets/images/01_03/01_03_27.png"
+image img_01_03_28 = "mod_assets/images/01_03/01_03_28.png"
+image img_01_03_29 = "mod_assets/images/01_03/01_03_29.png"
+image img_01_03_30 = "mod_assets/images/01_03/01_03_30.png"
+image img_01_03_31 = "mod_assets/images/01_03/01_03_31.png"
+image img_01_03_32 = "mod_assets/images/01_03/01_03_32.png"
+image img_01_03_33 = "mod_assets/images/01_03/01_03_33.png"
+image img_01_03_34 = "mod_assets/images/01_03/01_03_34.png"
+image img_01_03_35 = "mod_assets/images/01_03/01_03_35.png"
+image img_01_03_36 = "mod_assets/images/01_03/01_03_36.png"
+image img_01_03_37 = "mod_assets/images/01_03/01_03_37.png"
+
+
+image img_01_04_01 = "mod_assets/images/01_04/01_04_01.png"
+image img_01_04_02 = "mod_assets/images/01_04/01_04_02.png"
+image img_01_04_03 = "mod_assets/images/01_04/01_04_03.png"
+image img_01_04_04 = "mod_assets/images/01_04/01_04_04.png"
+image img_01_04_05 = "mod_assets/images/01_04/01_04_05.png"
+image img_01_04_06 = "mod_assets/images/01_04/01_04_06.png"
+image img_01_04_07 = "mod_assets/images/01_04/01_04_07.png"
+image img_01_04_08 = "mod_assets/images/01_04/01_04_08.png"
+image img_01_04_09 = "mod_assets/images/01_04/01_04_09.png"
+image img_01_04_10 = "mod_assets/images/01_04/01_04_10.png"
+image img_01_04_11 = "mod_assets/images/01_04/01_04_11.png"
+image img_01_04_12 = "mod_assets/images/01_04/01_04_12.png"
+image img_01_04_13 = "mod_assets/images/01_04/01_04_13.png"
+image img_01_04_14 = "mod_assets/images/01_04/01_04_14.png"
+image img_01_04_15 = "mod_assets/images/01_04/01_04_15.png"
+image img_01_04_16 = "mod_assets/images/01_04/01_04_16.png"
+image img_01_04_17 = "mod_assets/images/01_04/01_04_17.png"
+image img_01_04_18 = "mod_assets/images/01_04/01_04_18.png"
+image img_01_04_19 = "mod_assets/images/01_04/01_04_19.png"
+image img_01_04_20 = "mod_assets/images/01_04/01_04_20.png"
+image img_01_04_21 = "mod_assets/images/01_04/01_04_21.png"
+image img_01_04_22 = "mod_assets/images/01_04/01_04_22.png"
+image img_01_04_23 = "mod_assets/images/01_04/01_04_23.png"
+image img_01_04_24 = "mod_assets/images/01_04/01_04_24.png"
+image img_01_04_25 = "mod_assets/images/01_04/01_04_25.png"
+image img_01_04_26 = "mod_assets/images/01_04/01_04_26.png"
+image img_01_04_27 = "mod_assets/images/01_04/01_04_27.png"
+image img_01_04_28 = "mod_assets/images/01_04/01_04_28.png"
+image img_01_04_29 = "mod_assets/images/01_04/01_04_29.png"
+image img_01_04_30 = "mod_assets/images/01_04/01_04_30.png"
+image img_01_04_31 = "mod_assets/images/01_04/01_04_31.png"
+image img_01_04_32 = "mod_assets/images/01_04/01_04_32.png"
+image img_01_04_33 = "mod_assets/images/01_04/01_04_33.png"
+image img_01_04_34 = "mod_assets/images/01_04/01_04_34.png"
+image img_01_04_35 = "mod_assets/images/01_04/01_04_35.png"
+image img_01_04_36 = "mod_assets/images/01_04/01_04_36.png"
+image img_01_04_37 = "mod_assets/images/01_04/01_04_37.png"
+image img_01_04_38 = "mod_assets/images/01_04/01_04_38.png"
+image img_01_04_39 = "mod_assets/images/01_04/01_04_39.png"
+image img_01_04_40 = "mod_assets/images/01_04/01_04_40.png"
+image img_01_04_41 = "mod_assets/images/01_04/01_04_41.png"
+image img_01_04_42 = "mod_assets/images/01_04/01_04_42.png"
+image img_01_04_43 = "mod_assets/images/01_04/01_04_43.png"
+image img_01_04_44 = "mod_assets/images/01_04/01_04_44.png"
+image img_01_04_45 = "mod_assets/images/01_04/01_04_45.png"
+image img_01_04_46 = "mod_assets/images/01_04/01_04_46.png"
+image img_01_04_47 = "mod_assets/images/01_04/01_04_47.png"
+image img_01_04_48 = "mod_assets/images/01_04/01_04_48.png"
+image img_01_04_49 = "mod_assets/images/01_04/01_04_49.png"
+image img_01_04_50 = "mod_assets/images/01_04/01_04_50.png"
+image img_01_04_51 = "mod_assets/images/01_04/01_04_51.png"
+image img_01_04_52 = "mod_assets/images/01_04/01_04_52.png"
+image img_01_04_53 = "mod_assets/images/01_04/01_04_53.png"
+image img_01_04_54 = "mod_assets/images/01_04/01_04_54.png"
+image img_01_04_55 = "mod_assets/images/01_04/01_04_55.png"
+image img_01_04_56 = "mod_assets/images/01_04/01_04_56.png"
+image img_01_04_57 = "mod_assets/images/01_04/01_04_57.png"
+image img_01_04_58 = "mod_assets/images/01_04/01_04_58.png"
+image img_01_04_59 = "mod_assets/images/01_04/01_04_59.png"
+
+
+#02_01
+image img_02_01_01 = "mod_assets/images/02_01/02_01_01.png"
+
+
+#02_02
+image img_02_02_01 = "mod_assets/images/02_02/02_02_01.png"
+image img_02_02_02 = "mod_assets/images/02_02/02_02_02.png"
+image img_02_02_03 = "mod_assets/images/02_02/02_02_03.png"
+image img_02_02_04 = "mod_assets/images/02_02/02_02_04.png"
+image img_02_02_05 = "mod_assets/images/02_02/02_02_05.png"
+image img_02_02_06 = "mod_assets/images/02_02/02_02_06.png"
+image img_02_02_07 = "mod_assets/images/02_02/02_02_07.png"
+image img_02_02_08 = "mod_assets/images/02_02/02_02_08.png"
+image img_02_02_09 = "mod_assets/images/02_02/02_02_09.png"
+image img_02_02_10 = "mod_assets/images/02_02/02_02_10.png"
+image img_02_02_11 = "mod_assets/images/02_02/02_02_11.png"
+image img_02_02_12 = "mod_assets/images/02_02/02_02_12.png"
+image img_02_02_13 = "mod_assets/images/02_02/02_02_13.png"
+image img_02_02_14 = "mod_assets/images/02_02/02_02_14.png"
+image img_02_02_15 = "mod_assets/images/02_02/02_02_15.png"
+image img_02_02_16 = "mod_assets/images/02_02/02_02_16.png"
+image img_02_02_17 = "mod_assets/images/02_02/02_02_17.png"
+image img_02_02_18 = "mod_assets/images/02_02/02_02_18.png"
+image img_02_02_19 = "mod_assets/images/02_02/02_02_19.png"
+image img_02_02_20 = "mod_assets/images/02_02/02_02_20.png"
+image img_02_02_21 = "mod_assets/images/02_02/02_02_21.png"
+image img_02_02_22 = "mod_assets/images/02_02/02_02_22.png"
+image img_02_02_23 = "mod_assets/images/02_02/02_02_23.png"
+image img_02_02_24 = "mod_assets/images/02_02/02_02_24.png"
+image img_02_02_25 = "mod_assets/images/02_02/02_02_25.png"
+image img_02_02_26 = "mod_assets/images/02_02/02_02_26.png"
+image img_02_02_27 = "mod_assets/images/02_02/02_02_27.png"
+image img_02_02_28 = "mod_assets/images/02_02/02_02_28.png"
+image img_02_02_29 = "mod_assets/images/02_02/02_02_29.png"
+image img_02_02_30 = "mod_assets/images/02_02/02_02_30.png"
+image img_02_02_31 = "mod_assets/images/02_02/02_02_31.png"
+image img_02_02_32 = "mod_assets/images/02_02/02_02_32.png"
+image img_02_02_33 = "mod_assets/images/02_02/02_02_33.png"
+image img_02_02_34 = "mod_assets/images/02_02/02_02_34.png"
+image img_02_02_35 = "mod_assets/images/02_02/02_02_35.png"
+image img_02_02_36 = "mod_assets/images/02_02/02_02_36.png"
+image img_02_02_37 = "mod_assets/images/02_02/02_02_37.png"
+image img_02_02_38 = "mod_assets/images/02_02/02_02_38.png"
+image img_02_02_39 = "mod_assets/images/02_02/02_02_39.png"
+image img_02_02_40 = "mod_assets/images/02_02/02_02_40.png"
+image img_02_02_41 = "mod_assets/images/02_02/02_02_41.png"
+image img_02_02_42 = "mod_assets/images/02_02/02_02_42.png"
+image img_02_02_43 = "mod_assets/images/02_02/02_02_43.png"
+
+
+#02_03
+image img_02_03_01 = "mod_assets/images/02_03/02_03_01.png"
+
+
+#02_04
+image img_02_04_01 = "mod_assets/images/02_04/02_04_01.png"
+image img_02_04_02 = "mod_assets/images/02_04/02_04_02.png"
+image img_02_04_03 = "mod_assets/images/02_04/02_04_03.png"
+image img_02_04_04 = "mod_assets/images/02_04/02_04_04.png"
+image img_02_04_05 = "mod_assets/images/02_04/02_04_05.png"
+image img_02_04_06 = "mod_assets/images/02_04/02_04_06.png"
+image img_02_04_07 = "mod_assets/images/02_04/02_04_07.png"
+image img_02_04_08 = "mod_assets/images/02_04/02_04_08.png"
+image img_02_04_09 = "mod_assets/images/02_04/02_04_09.png"
+image img_02_04_10 = "mod_assets/images/02_04/02_04_10.png"
+image img_02_04_11 = "mod_assets/images/02_04/02_04_11.png"
+image img_02_04_12 = "mod_assets/images/02_04/02_04_12.png"
+image img_02_04_13 = "mod_assets/images/02_04/02_04_13.png"
+image img_02_04_14 = "mod_assets/images/02_04/02_04_14.png"
+image img_02_04_15 = "mod_assets/images/02_04/02_04_15.png"
+image img_02_04_16 = "mod_assets/images/02_04/02_04_16.png"
+image img_02_04_17 = "mod_assets/images/02_04/02_04_17.png"
+image img_02_04_18 = "mod_assets/images/02_04/02_04_18.png"
+image img_02_04_19 = "mod_assets/images/02_04/02_04_19.png"
+image img_02_04_20 = "mod_assets/images/02_04/02_04_20.png"
+image img_02_04_21 = "mod_assets/images/02_04/02_04_21.png"
+image img_02_04_22 = "mod_assets/images/02_04/02_04_22.png"
+image img_02_04_23 = "mod_assets/images/02_04/02_04_23.png"
+image img_02_04_24 = "mod_assets/images/02_04/02_04_24.png"
+image img_02_04_25 = "mod_assets/images/02_04/02_04_25.png"
+image img_02_04_26 = "mod_assets/images/02_04/02_04_26.png"
+image img_02_04_27 = "mod_assets/images/02_04/02_04_27.png"
+image img_02_04_28 = "mod_assets/images/02_04/02_04_28.png"
+image img_02_04_29 = "mod_assets/images/02_04/02_04_29.png"
+image img_02_04_30 = "mod_assets/images/02_04/02_04_30.png"
+image img_02_04_31 = "mod_assets/images/02_04/02_04_31.png"
+image img_02_04_32 = "mod_assets/images/02_04/02_04_32.png"
+image img_02_04_33 = "mod_assets/images/02_04/02_04_33.png"
+image img_02_04_34 = "mod_assets/images/02_04/02_04_34.png"
+image img_02_04_35 = "mod_assets/images/02_04/02_04_35.png"
+image img_02_04_36 = "mod_assets/images/02_04/02_04_36.png"
+image img_02_04_37 = "mod_assets/images/02_04/02_04_37.png"
+image img_02_04_38 = "mod_assets/images/02_04/02_04_38.png"
+
+
+#03_01
+image img_03_01_01 = "mod_assets/images/03_01/03_01_01.png"
+
+
+#03_02
+image img_03_02_01 = "mod_assets/images/03_02/03_02_01.png"
+
+
+#03_03
+image img_03_03_01 = "mod_assets/images/03_03/03_03_01.png"
+
+
+#04_01
+image img_04_01_01 = "mod_assets/images/04_01/04_01_01.png"
+
+
+#04_02
+image img_04_02_01 = "mod_assets/images/04_02/04_02_01.png"
+
+
+#04_03
+image img_04_03_01 = "mod_assets/images/04_03/04_03_01.png"
+
+
+#04_04
+image img_04_04_01 = "mod_assets/images/04_04/04_04_01.png"
+
+
+#05_01
+image img_05_01_01 = "mod_assets/images/05_01/05_01_01.png"
+
+
+#05_02
+image img_05_02_01 = "mod_assets/images/05_02/05_02_01.png"
+
+
+#05_03
+image img_05_03_01 = "mod_assets/images/05_03/05_03_01.png"
+
+
+
+
+
 image yami_senna:
     "mod_assets/images/yami_senna.png"
     alpha 0.0
@@ -948,6 +1196,7 @@ define voz_cap02_02_51 = "mod_assets/voices/02_02/02_02_51.ogg"
 define voz_cap02_02_52 = "mod_assets/voices/02_02/02_02_52.ogg"
 define voz_cap02_02_53 = "mod_assets/voices/02_02/02_02_53.ogg"
 define voz_cap02_02_54 = "mod_assets/voices/02_02/02_02_54.ogg"
+define voz_cap02_02_55 = "mod_assets/voices/02_02/02_02_55.ogg"
 
 
 #02_03

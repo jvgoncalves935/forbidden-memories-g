@@ -3,11 +3,28 @@
 ## Before load, check to be sure that the archive files were found.
 ## If not, display an error message and quit.
 init -100 python:
+    import hashlib
     #Check for each archive needed
     for archive in ['audio','scripts','images','fonts']:
         if archive in config.archives:
             #If one is missing, throw an error and chlose
             renpy.error("O arquivo "+arquive+" de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
+    
+    dokis_names = ['yuri.chr','sayori.chr','monika.chr','natsuki.chr']
+    dokis_hashes = ['b13e8044ac74fc021a4d8a29ac28309519778c5a756071d263fa1288f653a68e',
+                    'ae4670655a5381464a62ac92f1572b6dfe4dfca92c0df43075e0aceaf3352fb5',
+                    '508cd3fa9bd30caadf05d2def59cfb4d98b3ffbc8b9dec23525eb2f46ab1ec44',
+                    '4e0ebef87e52c9f34f1abe68f0bcb34f246f98b363b16bcc18aa3bab41aca3ec']
+    i = 0
+    for archive in dokis_names:
+        try:
+            hash_file = hashlib.sha256(renpy.file("../characters/"+archive).read().encode('utf-8')).hexdigest()
+            if(hash_file != dokis_hashes[i]):
+                raise Exception()
+            i += 1
+        except:
+            renpy.error("O arquivo "+archive+" foi excluído ou corrompido. Por favor, recupere o arquivo original.")
+            pass
 
 ## First, a disclaimer declaring this is a mod is shown, then there is a
 ## check for the original DDLC assets in the install folder. If those are
@@ -92,8 +109,8 @@ init python:
             persistent.endings = dict(array_aux)
 
         #Liberar todos os finais (debug)
-        #for key, value in persistent.endings.items():
-        #    persistent.endings[key] = True
+        for key, value in persistent.endings.items():
+            persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):

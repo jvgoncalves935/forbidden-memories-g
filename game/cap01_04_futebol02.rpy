@@ -490,7 +490,7 @@ label wrong_end_01_04_3:
     "\"Está previsto que a destruição\ncausada pela colisão resultará\nna extinção de toda a vida humana!\""
     play sound ctc
     play music audio.siren fadein 1.0
-    "\"O caos preenche as ruas de\n todo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""
+    "\"O caos preenche as ruas de\ntodo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""
     play sound ctc
     voice voz_cap01_04_60
     "PUTA QUE PARIU MEU, QUE PORRA\nÉ ESSA?"

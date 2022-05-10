@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
+            textbutton _("OPEN BETA 0.1.5 (WIP)"):
                 style "page_label_text"
                 text_size 12
     
@@ -376,7 +376,7 @@ screen choice(items):
         xalign 0.96
         yalign 0.98
         
-        textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
+        textbutton _("OPEN BETA 0.1.5 (WIP)"):
             style "page_label_text"
             text_size 12
     
@@ -625,7 +625,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("CLOSED ALPHA 0.1.4 (WIP)"):
+            textbutton _("OPEN BETA 0.1.5 (WIP)"):
                 style "page_label_text"
                 text_size 12
 
