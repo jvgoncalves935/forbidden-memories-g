@@ -109,8 +109,8 @@ init python:
             persistent.endings = dict(array_aux)
 
         #Liberar todos os finais (debug)
-        for key, value in persistent.endings.items():
-            persistent.endings[key] = True
+        #for key, value in persistent.endings.items():
+        #    persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
@@ -122,6 +122,7 @@ init python:
     menu_trans_time = 1
     #The default splash message, originally shown in Act 1 and Act 4
     splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
+    #splash_message_default = "'VAI ESPANCA MEU CU, ME ESTUPRA CARALHO' -Alexandre Senna"
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
 
     init_endings()
@@ -288,7 +289,11 @@ label splashscreen:
         play sound ctc
         "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de\n\"Universo G\"."
         play sound ctc
-        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npor fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        "O objetivo do humor deste jogo é\nsatirizar apenas a atuação dos atores\ne os contextos dos filmes\nde forma divertida e saudável."
+        play sound ctc
+        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        play sound ctc
+        "Este jogo não possui intenção de\nofender ou satirizar a orientação\nsexual de nenhuma pessoa. Somos contra\nqualquer tipo de desrespeito e\nsomos a favor das liberdades\nindividuais."
         play sound ctc
         "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
         play sound ctc

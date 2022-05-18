@@ -28,8 +28,10 @@ label cap01_01_intro:
     "{p=1.0}{nw}"
     "Finalmente eu encontrei!"
     play sound ctc
+    
     "O Códex G, a História do Alexandre\nSenna!"
     play sound ctc
+    
     hide intro_003
     show black
     with dissolve
@@ -39,7 +41,9 @@ label cap01_01_intro:
     "{p=1.0}{nw}"
     "Hahahahaha!"
     play sound ctc
+    
     "Hahahahaha...\nHahahahaha!!!{p=2.5}{nw}"
+    
     $ renpy.music.play(audio.fm_intro)
     $ renpy.music.queue(None,clear_queue=True)
     #play music fm_intro

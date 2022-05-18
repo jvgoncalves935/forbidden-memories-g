@@ -141,9 +141,11 @@ label capXX:
 
     "De onde aquele louco saiu?!"
     play sound ctc
+
     show yuri 2o
     "Com certeza ele não estava usando uma\nfantasia...!"
     play sound ctc
+    
     show senna_s1 at side_image_in zorder 3
     stop music
     play music senna_theme
@@ -152,41 +154,43 @@ label capXX:
     voice voz_capXX_007
     "Onde, onde, onde...?"
     play sound ctc
+    
     show senna_s1 at side_image_out
     "{p=0.6}{nw}"
     hide senna_s1
     show yuri 3p
     "Hã...?!"
     play sound ctc
+    
     show senna 1a at rightin(755,time=0.25)
-
-
     "{p=1.0}{nw}"
     voice voz_capXX_008
     "Cadê o arrombamento? Foi aqui, foi\naonde?"
     play sound ctc
+
     show yuri 3r
     "Mas que DROGA você está falando? Quem\né você!?"
     play sound ctc
-    show senna_s1 at side_image_in zorder 3
-
     
-
+    show senna_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_009
     "Porra cara, você tá me tirando mermão?"
     play sound ctc
+
     show senna_s1 at side_image_out
     "{p=0.6}{nw}"
     hide senna_s1
     show yuri 3xe
     "O QUE ESTÁ ACONTECENDO NESSA ESCOLA???"
     play sound ctc
+    
     show senna_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_010
     "AONDE TÁ TENDO ARROMBAMENTO AQUI,\nSEU VIADO?"
     play sound ctc
+    
     show senna_s1 at side_image_out
     "{p=0.6}{nw}"
     hide senna_s1
@@ -197,18 +201,22 @@ label capXX:
     "{p=0.6}{nw}"
     "AAAHHHH!!! SAIA DE PERTO DE MIM!"
     play sound ctc
+    
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s1
     voice voz_capXX_011
     "Pô rapaz, você tá maluco?"
     play sound ctc
+    
     voice voz_capXX_012
     "Você me deixou nervoso..."
     play sound ctc
+    
     voice voz_capXX_013
     "Tá atrapalhando meu trabalho, seu...!"
     play sound ctc
+    
     show senna at rhide(time=0.25)
     hide senna
     "{p=1.0}{nw}"
@@ -226,39 +234,46 @@ label capXX:
     hide yuri
     "{p=1.0}"
     play sound ctc
+    
     show yuri 3p at l32
-
     stop music fadeout 3.0
 
     "{p=1.0}{nw}"
     "DE ONDE ESTAS PESSOAS ESTÃO VINDO?!"
     play sound ctc
+
     show yuri 3o
     "...Ali! O professor de Matemática!"
     play sound ctc
+    
     show yuri 3n
     "Professor...! Me ajude!"
     play sound ctc
+    
     show guina_s at side_image_in zorder 3
     play music guina_piscineiro
     "{p=0.6}{nw}"
     voice voz_capXX_014
     "Que isso menino, qual foi?"
     play sound ctc
+    
     show guina_s at side_image_out
     "{p=0.6}{nw}"
     hide guina_s
     show yuri 3p
     "...Professor? É você mesmo?"
     play sound ctc
+    
     show guina 1a at l31
     "{p=0.6}{nw}"
     voice voz_capXX_015
     "Achou meu pau grande? Você é bem\ncuriosinho, né cara?"
     play sound ctc
+    
     show yuri 3xd
     "NÃÃÃÃO! AAAAHHHRRRGGHH!"
     play sound ctc
+    
     show yuri at rhide(time=0.25,position=1300)
     hide yuri
     "{p=0.6}{nw}"
@@ -266,29 +281,34 @@ label capXX:
     "{p=0.6}{nw}"
     "SOCORRO! UM PERVERTIDO!"
     play sound ctc
+    
     "SOCORROOOOO!!!"
     play sound ctc
+    
     show yuri_s2 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s2
     voice voz_capXX_016
     "A profissão de professor é uma coisa\nmuito SÉRIA, que tem que ser levada a\nSÉRIO..."
     play sound ctc
+    
     voice voz_capXX_017
     "Se tiver algum aluno fazendo coisa\nerrada... A gente COME JÁ."
     play sound ctc
+    
     stop music
-
     show gilson 1a at rightin(755,time=0.25)
     "{p=0.6}{nw}"
     voice voz_capXX_019
     "Gilson?"
     play sound ctc
+    
     show guina_s at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_020
     "Salve salve, Gilson..."
     play sound ctc
+    
     show guina_s at side_image_out
     "{p=0.6}{nw}"
     hide guina_s
@@ -339,8 +359,6 @@ label capXX:
     $ config.keymap['hide_windows'] = backup_game_hide_windows
     $ renpy.display.behavior.clear_keymap_cache()
     
-
-
     return
 
 
