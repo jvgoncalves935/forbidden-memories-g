@@ -131,9 +131,17 @@ label cap04_03_casa02:
             play sound ctc
             
             voice voz_cap03_01_01
+
+            show mangueiraboy_s1 at side_image_in zorder 3
+            "{p=0.6}{nw}"
+
             play music fm_kaiba_theme
             "ALOR, É DO CORPO DE BOMBEIRO?"
             play sound ctc
+
+            show mangueiraboy_s1 at side_image_out
+            "{p=0.6}{nw}"
+            hide mangueiraboy_s1
             
             voice voz_cap04_03_04
             "VOU CHUPAR A BUCETA DA SUA\nMÃE E O CU DESSA VAGABUNDA\nQUE TÁ DO SEU LADO!"
@@ -173,6 +181,7 @@ label cap04_03_casa02:
             "LIGA PRA SUA MÃE, PRA SUA VÓ, AQUELA\nVEIA ESPÍRITO DO\nEXU POMBA GIRA!"
             play sound ctc
             
+            stop sound_bg
             "{p=0.2}{nw}"
             play sound phone_click
             "(desligou o celular)"

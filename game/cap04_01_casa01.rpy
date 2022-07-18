@@ -21,33 +21,55 @@ label cap04_01_casa01:
     "(...)"
     play sound ctc
     
+    show img_04_01_01 at top_fade
     play music fm_modern_times
     "(Você está na academia fazendo seus\ntreinos de fisiculturismo.)"
     play sound ctc
     
+    hide img_04_01_01
+    show img_04_01_02 at top_fade
+    "{p=1.5}{nw}"
+
+    hide img_04_01_02
+    show img_04_01_03 at top_fade
+    "{p=1.5}{nw}"
+
+    hide img_04_01_03
+    show img_04_01_04 at top_fade
     "(Parece que chegou um aparelho novo\nna academia...)"
     play sound ctc
     
-    "(Ele é meio... diferente...)"
+    hide img_04_01_04
+    show img_04_01_05 at top_fade
+    "(Ele é meio... DEFERENTE...)"
     play sound ctc
     
+    hide img_04_01_05
+    show img_04_01_06 at top_fade
     voice voz_cap04_01_01
     stop music
     "Ahhh, que exercício ótimo..."
     play sound ctc
-    
+
+    hide img_04_01_06
+    show img_04_01_07 at top_fade    
     voice voz_cap04_01_02
     "Que máquina BOA cara... Porra..."
     play sound ctc
     
+    hide img_04_01_07
+    show img_04_01_08 at top_fade  
     voice voz_cap04_01_03
     "Tô sentindo o músculo\ndo meu CU crescer..."
     play sound ctc
     
+    hide img_04_01_08
+    show img_04_01_09 at top_fade  
     voice voz_cap04_01_04
     "Isso, assim..."
     play sound ctc
     
+    hide img_04_01_09
     "(...)"
     play sound ctc
     
@@ -116,9 +138,16 @@ label cap04_01_casa01:
     "Fala meu querido, tudo bem?"
     play sound ctc
     
+    show yeahman_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_01_05
     "YEAH MAN!"
     play sound ctc
+
+    show yeahman_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide yeahman_s1
     
     "Eu já tô indo aí pra academia, só tô\narrumando umas coisas aqui\nem casa primeiro..."
     play sound ctc
@@ -126,23 +155,44 @@ label cap04_01_casa01:
     "Você já chegou na esquina aqui já?"
     play sound ctc
     
+    show yeahman_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_01_06
     "YEAH MAN!"
     play sound ctc
+
+    show yeahman_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide yeahman_s1
     
     "Beleza, querido. Espera só dois\nminutinhos."
     play sound ctc
     
+    show yeahman_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_01_05
     "YEAH MAN!"
     play sound ctc
+
+    show yeahman_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide yeahman_s1
     
     "Tudo bem, falou."
     play sound ctc
     
+    show yeahman_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_01_07
     "OH CARALHO!"
     play sound ctc
+
+    show yeahman_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide yeahman_s1
     
     "{p=0.2}{nw}"
     play sound phone_click
@@ -171,8 +221,17 @@ label cap04_01_casa01:
             play sound ctc
             voice voz_cap03_01_01
             play music fm_preliminary_faceoff
+
+            show mangueiraboy_s1 at side_image_in zorder 3
+            "{p=0.6}{nw}"
+
             "ALOR, É DO CORPO DE BOMBEIRO?"
             play sound ctc
+
+            show mangueiraboy_s1 at side_image_out
+            "{p=0.6}{nw}"
+            hide mangueiraboy_s1
+
             voice voz_cap04_01_08
             "AH MULEQUE, VAI SE FODER\nMANO! E AÍ, ESQUECE O\nMEU NÚMERO!"
             play sound ctc

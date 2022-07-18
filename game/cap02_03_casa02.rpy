@@ -31,16 +31,43 @@ label cap02_03_casa02:
             "Alô?"
             play sound ctc
             play music fm_duel_grounds
+
+            show mangueiraevil_s1 at side_image_in zorder 3
+            "{p=0.6}{nw}"
+
             "\"Fala aí Senna, a gente vai reunir a\ngalera pra tomar uma gelada na\nminha casa, topa vir?\""
             play sound ctc
+
+            show mangueiraevil_s1 at side_image_out
+            "{p=0.6}{nw}"
+            hide mangueiraevil_s1
+
             "Topo sim, gente boa! Que horas\nvai ser?"
             play sound ctc
+
+            show mangueiraevil_s1 at side_image_in zorder 3
+            "{p=0.6}{nw}"
+
             "\"18 horas, meu parceiro.\""
             play sound ctc
+
+            show mangueiraevil_s1 at side_image_out
+            "{p=0.6}{nw}"
+            hide mangueiraevil_s1
+
             "Quem que vai chegar aí também?"
             play sound ctc
+
+            show mangueiraevil_s1 at side_image_in zorder 3
+            "{p=0.6}{nw}"
+
             "\"O Índio e o Goleiro de Família.\""
             play sound ctc
+
+            show mangueiraevil_s1 at side_image_out
+            "{p=0.6}{nw}"
+            hide mangueiraevil_s1
+
             "Show, então de noite eu apareço aí,\naté mais."
             play sound ctc
             "{p=0.2}{nw}"

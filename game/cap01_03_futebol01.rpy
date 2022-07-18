@@ -30,11 +30,11 @@ label cap01_03_futebol01:
     hide img_01_03_05
     show img_01_03_06 at top_fade
     voice voz_cap01_03_03
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_06
     show img_01_03_07 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_07
     show img_01_03_08 at top_fade
@@ -45,15 +45,15 @@ label cap01_03_futebol01:
     voice voz_cap01_03_01
     hide img_01_03_08
     show img_01_03_09 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_09
     show img_01_03_10 at top_fade
-    "{p=2.0}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_10
     show img_01_03_11 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_11
     show img_01_03_12 at top_fade
@@ -64,11 +64,11 @@ label cap01_03_futebol01:
     voice voz_cap01_03_01
     hide img_01_03_12
     show img_01_03_13 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_13
     show img_01_03_14 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_14
     show img_01_03_15 at top_fade
@@ -106,7 +106,7 @@ label cap01_03_futebol01:
     "Chega aí, Indião!"
     play sound ctc
     
-    hide img_01_03_21
+    hide img_01_03_20
     show img_01_03_22 at top_fade
     voice voz_cap01_03_12
     "E aí, beleza?"
@@ -124,7 +124,7 @@ label cap01_03_futebol01:
     "Ow, o pessoal tá... vai chegar mais\ntarde, o pessoal."
     play sound ctc
     
-    hide img_01_03_23
+    hide img_01_03_21
     show img_01_03_24 at top_fade
     voice voz_cap01_03_15
     "Ihh..."
@@ -160,18 +160,24 @@ label cap01_03_futebol01:
     "Então... mas já que o pessoal vai\nchegar mais tarde, pô, quê que\nvocês acham de fazer\numa brincadeira?"
     play sound ctc
     
-    hide img_01_03_25
+    hide img_01_03_27
     show img_01_03_26 at top_fade
     voice voz_cap01_03_19
     "Ahhh... bem que seria bom, né?"
     play sound ctc
     
-    
+    show goleiro_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap01_03_20
     "Demorou!"
     play sound ctc
+
+    show goleiro_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide goleiro_s1
     
-    hide img_01_03_27
+    hide img_01_03_26
     show img_01_03_28 at top_fade
     voice voz_cap01_03_21
     "Fazer um joguinho diferente, né?"
@@ -184,7 +190,7 @@ label cap01_03_futebol01:
 
     hide img_01_03_29
     show img_01_03_30 at top_fade
-    "{p=1.5}{nw}"
+    "{p=1.2}{nw}"
 
     hide img_01_03_30
     show img_01_03_31 at top_fade
@@ -194,9 +200,11 @@ label cap01_03_futebol01:
 
     hide img_01_03_31
     show img_01_03_32 at top_fade
-    "{p=1.5}{nw}"
 
     hide img_01_03_32
+    stop voice    
+    "{p=1.2}{nw}"
+
     show img_indio_cavalo at top_fade
     voice voz_cap01_03_24
     "AAAAHHH! HMMMM... NOSSA... OHHH\nASSIM VAIN!"
@@ -206,38 +214,64 @@ label cap01_03_futebol01:
     "OOHHH... HMMMM!"
     play sound ctc
     stop music fadeout 2.0
+    hide img_indio_cavalo
     "{p=2.0}{nw}"
     
-    hide img_indio_cavalo
     show img_01_03_35 at top_fade
     voice voz_cap01_03_26
     "Você viu que horas são?"
     play sound ctc
 
+    show indio_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap01_03_27
     "Nossa, vamo já vestir a roupa!"
     play sound ctc
+
+    show indio_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide indio_s1
     
     hide img_01_03_35
     show img_01_03_36 at top_fade
+
+
+    show senna_s3 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap01_03_28
     "Pessoal tá chegando aí, vamo, vamo...!"
-    
     play sound ctc
+
+    show senna_s3 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s3
+
     "(Goleiro de Família ouve uma\nvoz na sua cabeça:)"
-    
+    play sound ctc
+
     hide img_01_03_36
     show img_01_03_37 at top_fade
-    play sound ctc
+    
     voice voz_cap01_03_29
     "(Veste, veste, veste!)"
     play sound ctc
+
+    show senna_s3 at side_image_in zorder 3
+    "{p=0.6}{nw}"
 
     voice voz_cap01_03_30
     "O pessoal tá chegando aí, vai cara!"
     play sound ctc
 
+    show senna_s3 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s3
+
     hide img_01_03_37
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     return
 
 label wrong_end_01_03_1:

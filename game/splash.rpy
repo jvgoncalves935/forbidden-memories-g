@@ -272,11 +272,11 @@ label splashscreen:
 
     if(persistent.splash_complete is None or not persistent.splash_complete):
         #jump capXX
-        scene black
-        show black
-        with dissolve
-        show splash_image at top
-        with dissolve
+        #scene black
+        #show black
+        #with dissolve
+        show splash_image at top_fade
+        #with dissolve
         "{p=1.5}{nw}"
         play music fm_nameinput
         "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
@@ -299,11 +299,13 @@ label splashscreen:
         play sound ctc
         "Este jogo NÃO SALVA automaticamente.\nSALVE e CARREGUE o jogo o\nmáximo que puder!"
         play sound ctc
-        scene black
-        with Dissolve(1.5)
+        hide splash_image
+        stop music fadeout 1.5
+        #scene black
+        #with Dissolve(1.5)
+        "{p=1.5}{nw}"
         $ persistent.splash_complete = True
-        pause 1.0
-        stop music
+        
 
     #Optional, load a copy of DDLC save data
     #call import_ddlc_persistent

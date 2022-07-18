@@ -34,35 +34,49 @@ label cap02_02_oficina_gringo:
             hide textbox_aux
             jump wrong_end_02_02_1
     stop music
+
+    show img_02_02_01 at top_fade
     play music fm_modern_shop
     voice voz_cap02_02_01
     "Excuse me?"
     play sound ctc
     
+    hide img_02_02_01
+    show img_02_02_02 at top_fade
     voice voz_cap02_02_02
     "Excuse me... hi."
     play sound ctc
     
+    hide img_02_02_02
+    show img_02_02_03 at top_fade
     voice voz_cap02_02_03
     "Uhh... What's your name?"
     play sound ctc
     
+    hide img_02_02_03
+    show img_02_02_04 at top_fade
     voice voz_cap02_02_04
     "Mai neime is... Alexandre."
     play sound ctc
     
+    hide img_02_02_04
+    show img_02_02_05 at top_fade
     voice voz_cap02_02_05
     "Alexandre..."
     play sound ctc
     
     voice voz_cap02_02_55
-    "\"Os gringos... são... BUNDAL,\n tá ligado, zé?\". Esta\ncélebre frase de um grande\nfilósofo ecoa em sua mente."
+    "\"Os gringos... são... BUNDAL,\ntá ligado, zé?\". Esta\ncélebre frase de um grande\nfilósofo ecoa em sua mente."
     play sound ctc
     
+    hide img_02_02_05
+    show img_02_02_06 at top_fade
     voice voz_cap02_02_06
     "Uhh... Alexandre. Are you busy...\nor... you can talk a few\nminutes, yeah?"
     play sound ctc
     
+    hide img_02_02_06
+    show img_02_02_07 at top_fade
     voice voz_cap02_02_07
     "Yeah."
     play sound ctc
@@ -71,6 +85,8 @@ label cap02_02_oficina_gringo:
     "Okay..."
     play sound ctc
     
+    hide img_02_02_07
+    show img_02_02_08 at top_fade
     voice voz_cap02_02_09
     "I have a small problem and maybe\nyou can help me out..."
     play sound ctc
@@ -78,25 +94,38 @@ label cap02_02_oficina_gringo:
     "(Foda-se o seu problema\nCADÊ MEU CARRO CARALHO)"
     play sound ctc
     
+    hide img_02_02_08
+    show img_02_02_09 at top_fade
     voice voz_cap02_02_10
     "Uhh, this is my girlfriend, Anita..."
     play sound ctc
     
-    "(Nuoooossa, minha filhona,\neu não acrediiito...)"
+    hide img_02_02_09
+    show img_02_02_11 at top_fade
+    voice voz_cap02_02_56
+    "(\"Nuoooossa, minha filhona,\neu não acrediiito...\",\nvocê pensa.)"
     play sound ctc
     
+    hide img_02_02_11
+    show img_02_02_12 at top_fade
     voice voz_cap02_02_11
     "She loves... FUCKING, you understand?"
     play sound ctc
     
+    hide img_02_02_12
+    show img_02_02_13 at top_fade
     voice voz_cap02_02_12
     "And... I have been fucking her for\ntwo days now and I cannot\nfuck her anymore."
     play sound ctc
     
+    hide img_02_02_13
+    show img_02_02_14 at top_fade
     voice voz_cap02_02_13
     "And she's getting a little 'cause I\ncannot fuck her, you think\nyou can help me out here?"
     play sound ctc
     
+    hide img_02_02_14
+    show img_02_02_15 at top_fade
     voice voz_cap02_02_14
     "Ies, okei..."
     play sound ctc
@@ -105,6 +134,8 @@ label cap02_02_oficina_gringo:
     voice voz_cap02_02_15
     play sound ctc
     
+    hide img_02_02_15
+    show img_02_02_16 at top_fade
     "You think you can fuck her for me?"
     play sound ctc
     
@@ -116,35 +147,56 @@ label cap02_02_oficina_gringo:
     "And you can go home, grab and have it.\nSo you can do it, yeah?"
     play sound ctc
     
+    show senna_s4 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap02_02_18
     "Ié, ié, ooouuu ié...!"
     play sound ctc
 
+    show senna_s4 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s4
+
     "(Caralho vei, deu MUITO\nMUITO bom...)"
     play sound ctc
     
+    hide img_02_02_16
+    show img_02_02_17 at top_fade
     voice voz_cap02_02_19
     "He's okay for you, Anita? You\nliked him, yes?"
     play sound ctc
     
+    show anita_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap02_02_20
     "YAS."
     play sound ctc
     
+    show anita_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide anita_s1
+
     voice voz_cap02_02_21
     stop music fadeout 3.0
     "Ok, you know... I'll leave you alone..."
     play sound ctc
     
+    hide img_02_02_17
+    show img_02_02_18 at top_fade
     voice voz_cap02_02_22
     play music fm_sebek_neku
     "I need you two guys come around\nthe car..."
     play sound ctc
     
+    hide img_02_02_18
+    show img_02_02_19 at top_fade
     voice voz_cap02_02_23
     "Now close the gate, that no one\ncan see us, okay?"
     play sound ctc
     
+    hide img_02_02_19
     voice voz_cap02_02_24
     "Oukei, oukei..."
     play sound ctc
@@ -153,22 +205,34 @@ label cap02_02_oficina_gringo:
     "Okay now, here is the thing, Alexandre,\nwe have a little surprise\nfor you..."
     play sound ctc
     
+    show senna_s4 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap02_02_26
     "Surprais...?"
     play sound ctc
+
+    show senna_s4 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s4
     
     voice voz_cap02_02_27
     "A surprise for you, yeah..."
     play sound ctc
     
+    show img_02_02_21 at top_fade
     voice voz_cap02_02_28
     "So we have... woman? Stand up for\na second... Huh?"
     play sound ctc
-    
+
+    hide img_02_02_21
+    show img_02_02_20 at top_fade
     voice voz_cap02_02_29
     "And maybe you can show him...\nyour surprise..."
     play sound ctc
     
+    hide img_02_02_20
+    show img_02_02_22 at top_fade
     stop music fadeout 2.0
     "(Do que esse filho da\nputa tá falando?)"
     play sound ctc
@@ -177,6 +241,8 @@ label cap02_02_oficina_gringo:
     "Here you are, my friend,\nhere is a little extra\nfor you today."
     play sound ctc
     
+    hide img_02_02_22
+    show img_02_02_24 at top_fade
     voice voz_cap02_02_31
     play music fm_3d_duel
     "Ouuuu mai góóó...!"
@@ -185,20 +251,39 @@ label cap02_02_oficina_gringo:
     "(É isso que eles chamam de\nMulher do Futuro?)"
     play sound ctc
     
+    hide img_02_02_24
+    show img_02_02_23 at top_fade
+
+    show anita_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     "(Talvez seja um fenômeno da\nnatureza, olha o tamanho\ndo fenômeno...)"
     play sound ctc
     
+    show anita_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide anita_s1
+
+    hide img_02_02_23
+    show img_02_02_24 at top_fade
     voice voz_cap02_02_32
     "Huh? It is not incredible?"
     play sound ctc
     
+    hide img_02_02_24
+    show img_02_02_26 at top_fade
     voice voz_cap02_02_33
     "Does not look fantastic with\nthose big fucking tits,\nget home with it!"
     play sound ctc
     
+    hide img_02_02_26
+    stop voice
+    "{p=2.0}{nw}"
+
     "(dois minutos depois)"
     play sound ctc
     
+    show img_02_02_28 at top_fade
     "(Anita te deu uma chuopadinha\nmuito boa.)"
     play sound ctc
     
@@ -213,6 +298,8 @@ label cap02_02_oficina_gringo:
     "Ié, ié."
     play sound ctc
     
+    hide img_02_02_28
+    show img_02_02_29 at top_fade
     voice voz_cap02_02_36
     "You wanna give her a little, huh..."
     play sound ctc
@@ -230,31 +317,46 @@ label cap02_02_oficina_gringo:
             pass
     stop music
 
+    hide img_02_02_29
+    show img_02_02_31 at top_fade
     voice voz_cap02_02_37
     play music fm_free_duel_theme
     "No problem."
     play sound ctc
     
+    hide img_02_02_31
+    show img_02_02_32 at top_fade
     voice voz_cap02_02_38
     "You do it? That's my boy!"
     play sound ctc
     
+    hide img_02_02_32
+    show img_02_02_34 at top_fade
     voice voz_cap02_02_39
     "Okay... alright..."
     play sound ctc
     
+    hide img_02_02_34
+    show img_02_02_35 at top_fade
     voice voz_cap02_02_40
     "God, you beautiful in here...\nYou're SO fucking beautiful!"
     play sound ctc
     
+    hide img_02_02_35
+    show img_02_02_37 at top_fade
     voice voz_cap02_02_41
     "Plis... plis fuck mai és..."
     play sound ctc
-    
+
     voice voz_cap02_02_42
     "Plis fuck me..."
     play sound ctc
     
+    hide img_02_02_37
+    stop voice
+    "{p=2.0}{nw}"
+
+    show img_senna_foca at top_fade
     voice voz_cap02_02_43
     "OU IEEE!"
     play sound ctc
@@ -271,6 +373,8 @@ label cap02_02_oficina_gringo:
     "(palmada na bunda) FOCK ME!"
     play sound ctc
     
+    hide img_senna_foca
+    show img_senna_paraquedas at top_fade
     voice voz_cap02_02_47
     "OU IE... OU FOCK ME..."
     play sound ctc
@@ -287,6 +391,7 @@ label cap02_02_oficina_gringo:
     "FOCK ME! FOCK ME..."
     play sound ctc
 
+    hide img_senna_paraquedas
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 

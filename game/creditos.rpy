@@ -362,7 +362,7 @@ image cred_07_07:
     align (0.5,0.50)
     alpha 0.0
     time 4.0
-    Text("Sprite de \"Seto\" e Interface", style="credits_text")
+    Text("Sprite de \"Seto\", Interface, CGs", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
@@ -420,6 +420,98 @@ image cred_07_13:
     linear 1.0 alpha 1.0
     time 6.5
     linear 1.5 alpha 0.0
+
+
+
+
+
+
+
+
+
+
+image cred_07_14:
+    align (0.5,0.40)
+    alpha 0.0
+    time 1.0
+    Text("\"Forbidden Memories G\"", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_15:
+    align (0.5,0.45)
+    alpha 0.0
+    time 1.0
+    Text("utiliza sem fins lucrativos", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_16:
+    align (0.5,0.50)
+    alpha 0.0
+    time 1.0
+    Text("imagens de filmes adultos.", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_17:
+    align (0.5,0.55)
+    alpha 0.0
+    time 1.0
+    Text("Todos os direitos reservados para", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_18:
+    align (0.5,0.60)
+    alpha 0.0
+    time 1.0
+    Text("as produtoras e distribuidoras", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_19:
+    align (0.5,0.65)
+    alpha 0.0
+    time 1.0
+    Text("dos filmes originais.", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.5
+    linear 1.5 alpha 0.0
+
+image cred_07_20:
+    align (0.5,0.10)
+    alpha 0.0
+    time 6.0
+    Text("Direitos Autorais de", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 10.0
+    linear 1.5 alpha 0.0
+
+image cred_07_21:
+    align (0.5,0.15)
+    alpha 0.0
+    time 6.0
+    Text("Imagem", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 10.0
+    linear 1.5 alpha 0.0
+
+image cred_07_22:
+    align (0.15,0.5)
+    zoom 1.0
+    alpha 0.0
+    time 6.0
+    "mod_assets/images/creditos_filmes.png"
+    linear 1.0 alpha 1.0
+    time 10.0
+    linear 1.5 alpha 0.0
+
 
 
 
@@ -1199,7 +1291,7 @@ image cred_18_02:
 image cred_19_01:
     align (0.15,0.5)
     alpha 0.0
-    Text("Servo eGípcio\n\n\n\nSerá que ele\né real mesmo?", style="credits_text")
+    Text("Servo eGípcio\n(Renzo)\n\n\n\nSerá que ele\né real mesmo?", style="credits_text")
     linear 0.8 alpha 1.0
     time 2.5
     linear 1.5 alpha 0.0
@@ -2170,6 +2262,18 @@ label creditos:
     show cred_07_12
     show cred_07_13
     pause 8
+    scene yami_senna_bg
+
+    show cred_07_14
+    show cred_07_15
+    show cred_07_16
+    show cred_07_17
+    show cred_07_18
+    show cred_07_19
+    show cred_07_20
+    show cred_07_21
+    show cred_07_22
+    pause 12
     scene yami_senna_bg
 
     show cred_071_01

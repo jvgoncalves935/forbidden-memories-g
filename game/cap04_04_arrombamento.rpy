@@ -5,98 +5,164 @@ label cap04_04_arrombamento:
     show textbox_black at center
     #show intro_001 at top
     
+    show img_04_04_01 at top_fade
+    "{p=1.5}{nw}"
+
+    hide img_04_04_01
+    show img_04_04_02 at top_fade
     play music fm_vast_shrine
     "(Você chega no prédio onde você\ntrabalha procurando pelo\narrombamento.)"
     play sound ctc
     
+    hide img_04_04_02
+    show img_04_04_03 at top_fade
+
+    show senna_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_04_01
     "Onde, onde, onde?"
     play sound ctc
     
+    hide img_04_04_03
+    show img_04_04_04 at top_fade
     voice voz_cap04_04_02
     "Cadê o arromabento? Foi aqui, foi\naonde?"
     play sound ctc
+
+    show senna_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s1
     
+    hide img_04_04_04
+    show img_04_04_07 at top_fade
     voice voz_cap04_04_03
     "Err, por aqui..."
     play sound ctc
     
     stop music
+
+    hide img_04_04_07
+    show img_04_04_08 at top_fade
     voice voz_cap04_04_04
     "Porra, se ta me tirando mermão?"
     play sound ctc
     
+    hide img_04_04_08
+    show img_04_04_10 at top_fade
     voice voz_cap04_04_05
     play music fm_heishin_encounter
     "Aonde tá tendo arrombamento aqui,\nseu viado?!"
     play sound ctc
     
+    hide img_04_04_10
+    show img_04_04_11 at top_fade
     voice voz_cap04_04_06
     "Posso falar a verdade?"
     play sound ctc
     
+    hide img_04_04_11
+    show img_04_04_12 at top_fade
     voice voz_cap04_04_07
     "Você tá louco?"
     play sound ctc
     
+    hide img_04_04_12
+    show img_04_04_13 at top_fade
     voice voz_cap04_04_08
     "Não, na verdade não teve nada\naqui..."
     play sound ctc
     
+    hide img_04_04_13
+    show img_04_04_14 at top_fade
+
+    show senna_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_04_09
     "Onde que teve o arrombamento\naqui, mano?"
     play sound ctc
     
+    hide img_04_04_14
+    show img_04_04_15 at top_fade
     voice voz_cap04_04_10
     "TÁ MALUCO, RAPAZ? TÁ ATRAPALHANDO\nMEU TRABALHO, SEU...!"
     play sound ctc
+
+    show senna_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s1
     
+    hide img_04_04_15
+    show img_04_04_18 at top_fade
     voice voz_cap04_04_11
     "N-não é isso, deixa eu te explicar!"
     play sound ctc
     
+    hide img_04_04_18
+    show img_04_04_19 at top_fade
     voice voz_cap04_04_12
     "Porra, eu tô nervoso.\nVocê me deixou nervoso..."
     play sound ctc
     
+    hide img_04_04_19
+    show img_04_04_20 at top_fade
     voice voz_cap04_04_13
     stop music fadeout 2.0
     "Fica calmo, calma!"
     play sound ctc
     
+    hide img_04_04_20
+    show img_04_04_21 at top_fade
     voice voz_cap04_04_14
     play music fm_finals_faceoff
     "O arrombamento mesmo é esse aqui que\neu queria!"
     play sound ctc
     
+    hide img_04_04_21
+    show img_04_04_22 at top_fade
     voice voz_cap04_04_15
     "OU, RAPAZ CÊ TÁ MALUCO, MERMÃO?"
     play sound ctc
     
+    hide img_04_04_22
+    show img_04_04_23 at top_fade
     voice voz_cap04_04_16
     "Eu tô de olho nesse teu cuzinho a\ntempo cara, eu queria\narrombar teu CU!"
     play sound ctc
     
+    hide img_04_04_23
+    show img_04_04_24 at top_fade
     voice voz_cap04_04_17
     "FILHA DA PUTA!"
     play sound ctc
     
+    hide img_04_04_24
+    show img_04_04_25 at top_fade
     voice voz_cap04_04_18
     "Eu vou comer esse cu gostoso...!"
     play sound ctc
     
+    hide img_04_04_25
+    show img_04_04_26 at top_fade
     voice voz_cap04_04_19
     "Comer meu cu, mermão?!"
     play sound ctc
     
+    hide img_04_04_26
+    show img_04_04_28 at top_fade
     voice voz_cap04_04_20
     "Tu não é segurança aqui, cara?"
     play sound ctc
     
+    hide img_04_04_28
+    show img_04_04_31 at top_fade
     voice voz_cap04_04_21
     "Eu sou segurança...!"
     play sound ctc
     
+    hide img_04_04_31
+    show img_04_04_32 at top_fade
     voice voz_cap04_04_22
     "ENTÃO SEGURA NO MEU PAU AQUI, OH!"
     stop music
@@ -104,12 +170,13 @@ label cap04_04_arrombamento:
     show textbox_aux
     play music audio.fm_password
     menu:
-        "<Empurrar o cabação e procurar o arrombamento>":
+        "<Se soltar do cabação e procurar o arrombamento>":
             hide textbox_aux
             jump wrong_end_04_04_1
         "<Não fazer nada>":
             hide textbox_aux
             stop music
+            hide img_04_04_32
             "(...)"
             play sound ctc
 
@@ -120,6 +187,7 @@ label cap04_04_arrombamento:
             stop music
             stop voice
     
+    show img_senna_cavalo at top_fade
     voice voz_cap04_04_23
     play music fm_finals
     "AAAGRH! PISA NA MINHA CABEÇA VAI!\nPISA!"
@@ -145,21 +213,37 @@ label cap04_04_arrombamento:
     "VEM CÁ FILHO DA PUTA, FODE! ISSO,\nMETE NO CU, VAI!\nMETE NO CU!\nMETE NO CU!"
     play sound ctc
 
+    hide img_senna_cavalo
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 
     play music fm_modern_times
+    
+    show senna_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_04_29
     "Ai, agora eu sei onde tá o\narrombamento, cara..."
     play sound ctc
+
+    show senna_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s1
     
     voice voz_cap04_04_30
     "Não é?"
     play sound ctc
     
+    show senna_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap04_04_31
     "é, esse arrombamento tá no\nmeu cu, né?"
     play sound ctc
+
+    show senna_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s1
     
     voice voz_cap04_04_32
     "Gostou do arrombamento?"

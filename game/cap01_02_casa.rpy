@@ -45,8 +45,15 @@ label cap01_02_casa:
     "Alô?"
     play sound ctc
     
+    show indio_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     "Fala aí Senna, aqui é o Índio,\nbora lá pro futebol\nagora, eu já tô indo mano..."
     play sound ctc
+
+    show indio_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide indio_s1
     
     "Beleza meu querido, já tô saindo\nde casa agora."
     play sound ctc

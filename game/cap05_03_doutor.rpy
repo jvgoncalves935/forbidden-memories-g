@@ -6,14 +6,6 @@ label cap05_03_doutor:
 
     show textbox_black at center
     #show intro_001 at top
-    play sound audio.millenniumitem
-    "(Senna conseguiu o Milzão!)"
-    play sound ctc
-    
-    "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"
-    play sound ctc
-    
-    "{p=2.0}{nw}"
     "(no dia seguinte depois\ndo Filme G)"
     play sound ctc
 
@@ -52,86 +44,160 @@ label cap05_03_doutor:
     play sound ctc
     
     "(...)"
+    play sound ctc
+
+    show img_05_03_01 at top_fade
     voice voz_cap05_03_01
     "A coisa vai ser... vai ser muito\nséria hoje... tá certo?\nHoje... a nossa aula... vai ser\nsobre SEXO..."
     play sound ctc
     
+    hide img_05_03_01
+    show img_05_03_02 at top_fade
     voice voz_cap05_03_02
     "UUUHUUUUUUUUUUUUUUULLLLL!!!"
     play sound ctc
     
+    hide img_05_03_02
+    show img_05_03_03 at top_fade
     voice voz_cap05_03_03
     "Vai tirar a roupa?\nQuero ver nu!"
     play sound ctc
     
+    hide img_05_03_03
+    show img_05_03_04 at top_fade
     voice voz_cap05_03_04
     "E a gente... e hoje\nvocês vão aprender como\nque se utiliza... o preservativo..."
     play sound ctc
     
+    hide img_05_03_04
+    show img_05_03_05 at top_fade
     voice voz_cap05_03_05
     "Você sabe muito bem!"
     play sound ctc
     
+    hide img_05_03_05
+    show img_05_03_06 at top_fade
     voice voz_cap05_03_06
     "Coloca o pau pra fora aí..."
     play sound ctc
     
+    hide img_05_03_06
+    show img_05_03_07 at top_fade
     voice voz_cap05_03_07
     "Tem que ser com a boca, não\npode utilizar a mão!"
     play sound ctc
-    
+
+    hide img_05_03_07
     "(Alexandre Senna começou sua carreira\nacadêmica como médico e\npesquisador da UFCP.)"
     play sound ctc
     
+    show senna_s2 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap05_03_18
     "\"No Brasil não vão existir médicos\nà altura do meu CUrrículo.\""
     play sound ctc
 
+    show senna_s2 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s2
+
     "{p=2.0}{nw}"
     
+    show img_05_03_08 at top_fade
+    "{p=1.2}{nw}"
+
+    hide img_05_03_08
+    show img_05_03_09 at top_fade
+    "{p=1.2}{nw}"
+    
+    hide img_05_03_09
+    show img_05_03_10 at top_fade
     "(Certo dia, Doutor Senna encontra\ncom um rosto familiar na\nacademia...)"
     play sound ctc
     
+    hide img_05_03_10
+    show img_05_03_11 at top_fade
     "James...?"
     play sound ctc
 
+    hide img_05_03_11
+    show img_05_03_13 at top_fade
     voice voz_cap05_03_08
     stop music
     "E aí, tudo bemmmm??"
     play sound ctc
     
+    hide img_05_03_13
+    show img_05_03_12 at top_fade
+
+    show senna_s2 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     "Fala aí, meu camarada!\nQuanto tempo!"
     play sound ctc
+
+    show senna_s2 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s2
     
+    hide img_05_03_12
+    show img_05_03_15 at top_fade
     voice voz_cap05_03_09
     "Meu nome é James Matarazzo..."
     play sound ctc
     
+    hide img_05_03_15
+    show img_05_03_14 at top_fade
+
+    show senna_s2 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     play music fm_pharaoh
     "Eu sei, mermão. Nossa, que saudade\ndos velhos tempos..."
     play sound ctc
+
+    show senna_s2 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s2
     
+    hide img_05_03_14
     "{p=2.0}{nw}"
+
+    show img_05_03_16 at top_fade
+    "{p=2.0}{nw}"
+
+    hide img_05_03_16
+    show img_05_03_17 at top_fade
     voice voz_cap05_03_10
     "Meu nome é James, James Matarazzo...\nsou cirurgião plástico..."
     play sound ctc
     
+    hide img_05_03_17
+    show img_05_03_18 at top_fade
     voice voz_cap05_03_11
     "Nas horas vagas eu gosto de fazer\nuns esportes sexuais..."
     play sound ctc
     
+    hide img_05_03_18
+    show img_05_03_19 at top_fade
     voice voz_cap05_03_12
     "Esse aqui é meu amigo..."
     play sound ctc
     
+    hide img_05_03_19
+    show img_05_03_20 at top_fade
     voice voz_cap05_03_13
     "Tudo bom? Meu nome é\nAlexandre Senna..."
     play sound ctc
     
+    hide img_05_03_20
+    show img_05_03_22 at top_fade
     voice voz_cap05_03_14
     "E... tô aí, com meu amigo, meu\ncamarada aqui que a gente\nse conheceu no parque aí\nfazendo exercício, não é,\nJames?"
     play sound ctc
 
+    hide img_05_03_22
     "(No futuro, Senna teve uma carreira\ngrande e gostosa com um\nfuturo brilhante.)"
     play sound ctc
     

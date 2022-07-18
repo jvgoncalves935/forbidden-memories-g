@@ -16,11 +16,12 @@ label cap03_01_casa01:
     "..."
     play sound ctc
     "Hmm..."
+    play sound ctc
 
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 
-    play sound ctc
+    
     $ renpy.movie_cutscene("mod_assets/videos/recruta.webm")
     voice voz_cap02_04_39
     "AHHHHHH!"
@@ -246,9 +247,16 @@ label telefone_03_01_01:
     "Alô?"
     play sound ctc
     
+    show mangueiraboy_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_01_01
     "Alôr? É do corpo de bombeiro?"
     play sound ctc
+
+    show mangueiraboy_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide mangueiraboy_s1
     
     "Não parceiro. Até mais."
     play sound ctc

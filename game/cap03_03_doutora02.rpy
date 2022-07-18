@@ -120,32 +120,57 @@ label cap03_03_doutora02:
     "{p=1.5}{nw}"
 
     $ renpy.movie_cutscene("mod_assets/videos/doutora01.webm")
-    
     play music audio.fm_plazatown
+    
+    show img_03_03_01 at top_fade
     voice voz_cap03_03_01
     "...Muito boa em toque, eu quero saber\no que tá acontecendo com\nmeu cu... só isso..."
     play sound ctc
     
+    hide img_03_03_01
+    show img_03_03_04 at top_fade
     voice voz_cap03_03_02
     "Só coceira, e nada mais?"
     play sound ctc
     
+    hide img_03_03_04
+    show img_03_03_06 at top_fade
     voice voz_cap03_03_03
     "Coceira... sinto um calor, sabe aquele\ncalor que sai de dentro, eu não sei o\nque é, tô sentindo umas coisas\nesquisitas..."
     play sound ctc
     
+    hide img_03_03_06
+    show img_03_03_09 at top_fade
     voice voz_cap03_03_04
     "Né? E eu sou casado e tudo... e pra mim \né estranho isso daí... Né...\ntem como a senhora dar um\ndiagnóstico e tudo?"
     play sound ctc
     
+    hide img_03_03_09
+    show img_03_03_14 at top_fade
+
+    show doutora_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_03_05
     "Ah, primeiro eu tenho que dar uma\nolhadinha..."
     play sound ctc
     
+    hide img_03_03_14
+    show img_03_03_15 at top_fade
     voice voz_cap03_03_06
     "Então vamo lá?"
     play sound ctc
+
+    show doutora_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide doutora_s1
     
+    hide img_03_03_15
+    show img_03_03_16 at top_fade
+    "{p=1.5}{nw}"
+
+    hide img_03_03_16
+    show img_03_03_17 at top_fade
     voice voz_cap03_03_07
     "Deita na mesa!"
     play sound ctc
@@ -161,44 +186,75 @@ label cap03_03_doutora02:
             jump wrong_end_03_03_1
     stop music
     
+    hide img_03_03_17
+    show img_03_03_18 at top_fade
     play music audio.fm_plazatown
     voice voz_cap03_03_08
     "Já tô há dias aqui meu... Pô...\nÉ... Roupa de hospital e tudo, né..."
     play sound ctc
     
+    hide img_03_03_18
+    show img_03_03_19 at top_fade
+
+    show doutora_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_03_09
     "Relaxa e fica à vontade!"
     play sound ctc
+
+    show doutora_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide doutora_s1
     
+    hide img_03_03_19
+    show img_03_03_20 at top_fade
     voice voz_cap03_03_10
     "O que a senhora vai fazer...?"
     play sound ctc
     
+    hide img_03_03_20
+    show img_03_03_21 at top_fade
     stop music fadeout 2.0
     "(Você sente uma aura malígna vindo\nda doutora, ela é indiscritivelmente\nsombria.)"
     play sound ctc
     
+    hide img_03_03_21
+    show img_03_03_22 at top_fade
     voice voz_cap03_03_11
     play music fm_kaiba_theme
     "Um exame de toque..."
     play sound ctc
     
+    hide img_03_03_22
+    show img_03_03_23 at top_fade
     voice voz_cap03_03_12
     "...Toque?"
     play sound ctc
 
+    hide img_03_03_23
+    show img_03_03_24 at top_fade
     "{p=0.2}{nw}"
     play sound chaves_punch
-    "(Você levou uma dedada da doutora!)"
+    "(Você levou uma dedada da Doutora!)"
     play sound ctc
     
+    show senna_s6 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_03_13
     "Ai doutora... coisa mais esquisita..."
     play sound ctc
+
+    show senna_s6 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s6
     
     "(Seu instinto de sobrevivência te\ndeixa inquieto, o perigo é\niminente...)"
     play sound ctc
     
+    hide img_03_03_24
+    show img_03_03_27 at top_fade
     voice voz_cap03_03_14
     "Cuzinho quentinho também..."
     play sound ctc
@@ -207,6 +263,9 @@ label cap03_03_doutora02:
     "Por enquanto vamos ver... a gente\ntem que dar uma olhadinha\nprofundamente... O que\nvocê acha?"
     play sound ctc
     
+    hide img_03_03_27
+    show img_03_03_25 at top_fade
+
     stop music
     play music audio.fm_password
     show textbox_aux
@@ -219,17 +278,23 @@ label cap03_03_doutora02:
             pass
     stop music
     
+    hide img_03_03_25
+    show img_03_03_26 at top_fade
     voice voz_cap03_03_16
     "Ah, eu acho que... Você é muito\ngostosa..."
     play sound ctc
     
+    hide img_03_03_26
+    show img_03_03_27 at top_fade
     voice voz_cap03_03_17
     "Teria que examinar mais profundamente\nseu reto."
     play sound ctc
 
+    hide img_03_03_27
     stop music fadeout 2.0
     "{p=2.0}{nw}"
 
+    show img_senna_doutora_01 at top_fade
     play music fm_preliminary_faceoff
     voice voz_cap03_03_18
     "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
@@ -247,6 +312,8 @@ label cap03_03_doutora02:
     "AAHH... AAAAHHH... AAAAAHHHH! FODE!\nFODE...! FODE MEU CU...\nFODE PORRA!"
     play sound ctc
     
+    hide img_senna_doutora_01
+    show img_senna_doutora_02 at top_fade
     voice voz_cap03_03_22
     "ISSO...VAI CARALHOOO! METE COM FORÇA\nPORRA... METE..."
     play sound ctc
@@ -259,6 +326,8 @@ label cap03_03_doutora02:
     "VAI ESPANCA MEU CU... VAI ME ESTUPRA\nCARALHO... METE COM FORÇA...\nMETE COM FORÇA... ISSOOO!\nAAAH...!"
     play sound ctc
     
+    hide img_senna_doutora_02
+    show img_senna_doutora_03 at top_fade
     voice voz_cap03_03_25
     "ISSO, AAAAAHHHH, AAAAHHHHH,\nAAAAIIIIII!!! FODE... FODE RÁPIDO...\nFODE... FODE...!"
     play sound ctc
@@ -271,6 +340,8 @@ label cap03_03_doutora02:
     "VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
     play sound ctc
     
+    hide img_senna_doutora_03
+    show img_senna_doutora_04 at top_fade
     voice voz_cap03_03_28
     "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CUHH! UUGH..."
     play sound ctc
@@ -283,22 +354,53 @@ label cap03_03_doutora02:
     "CARALHO... TO SENTINDO LÁ NO\nESTÔMAGO PORRA, QUE PAUZÃO...\nQUE PAUZÃO GAROTA..."
     play sound ctc
 
+    hide img_senna_doutora_04
     stop music fadeout 2.0
     "{p=2.0}{nw}"
+
+    show img_03_03_32 at top_fade
+
+    show senna_s6 at side_image_in zorder 3
+    "{p=0.6}{nw}"
 
     play music fm_preliminary_duel
     voice voz_cap03_03_31
     "Doutora... Agora eu tô me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
     play sound ctc
+
+    show senna_s6 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s6
     
+    hide img_03_03_32
+    show img_03_03_33 at top_fade
+
+    show doutora_s1 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_03_32
     "Sempre que precisar de uma\nconsulta pode vir!"
     play sound ctc
+
+    show doutora_s1 at side_image_out
+    "{p=0.6}{nw}"
+    hide doutora_s1
     
+    hide img_03_03_33
+    show img_03_03_34 at top_fade
+
+    show senna_s6 at side_image_in zorder 3
+    "{p=0.6}{nw}"
+
     voice voz_cap03_03_33
     "Tá bom!"
     play sound ctc
 
+    show senna_s6 at side_image_out
+    "{p=0.6}{nw}"
+    hide senna_s6
+
+    hide img_03_03_34
     stop music fadeout 2.0
     "{p=2.0}{nw}"
     stop music

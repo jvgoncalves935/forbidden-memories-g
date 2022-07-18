@@ -632,6 +632,10 @@ image img_01_04_56 = "mod_assets/images/01_04/01_04_56.png"
 image img_01_04_57 = "mod_assets/images/01_04/01_04_57.png"
 image img_01_04_58 = "mod_assets/images/01_04/01_04_58.png"
 image img_01_04_59 = "mod_assets/images/01_04/01_04_59.png"
+image img_01_04_60 = "mod_assets/images/01_04/01_04_60.png"
+image img_01_04_61 = "mod_assets/images/01_04/01_04_61.png"
+image img_01_04_62 = "mod_assets/images/01_04/01_04_62.png"
+image img_01_04_63 = "mod_assets/images/01_04/01_04_63.png"
 
 
 #02_01
@@ -682,7 +686,8 @@ image img_02_02_40 = "mod_assets/images/02_02/02_02_40.png"
 image img_02_02_41 = "mod_assets/images/02_02/02_02_41.png"
 image img_02_02_42 = "mod_assets/images/02_02/02_02_42.png"
 image img_02_02_43 = "mod_assets/images/02_02/02_02_43.png"
-
+image img_senna_foca = "mod_assets/images/02_02/senna_foca.png" 
+image img_senna_paraquedas = "mod_assets/images/02_02/senna_paraquedas.png"
 
 #02_03
 image img_02_03_01 = "mod_assets/images/02_03/02_03_01.png"
@@ -727,6 +732,91 @@ image img_02_04_35 = "mod_assets/images/02_04/02_04_35.png"
 image img_02_04_36 = "mod_assets/images/02_04/02_04_36.png"
 image img_02_04_37 = "mod_assets/images/02_04/02_04_37.png"
 image img_02_04_38 = "mod_assets/images/02_04/02_04_38.png"
+image imgs_senna_egito:
+    block:
+        "mod_assets/images/02_04/senna_egito01.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito02.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito03.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito04.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito05.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito06.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito07.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito08.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito09.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito10.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito11.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito12.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito13.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito14.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito15.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito16.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito17.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito18.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito19.png"
+        0.3
+        "mod_assets/images/02_04/senna_egito20.png"
+        0.3
+    block:
+        choice:
+            "mod_assets/images/02_04/senna_egito01.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito02.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito03.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito04.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito05.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito06.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito07.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito08.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito09.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito10.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito11.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito12.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito13.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito14.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito15.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito16.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito17.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito18.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito19.png"
+        choice:
+            "mod_assets/images/02_04/senna_egito20.png"
+        0.3
+        repeat
 
 
 #03_01
@@ -763,6 +853,7 @@ image img_03_02_26 = "mod_assets/images/03_02/03_02_26.png"
 image img_03_02_27 = "mod_assets/images/03_02/03_02_27.png"
 image img_03_02_28 = "mod_assets/images/03_02/03_02_28.png"
 image img_03_02_29 = "mod_assets/images/03_02/03_02_29.png"
+image img_senna_estatua = "mod_assets/images/03_02/senna_estatua.png"
 
 
 #03_03
@@ -800,10 +891,22 @@ image img_03_03_31 = "mod_assets/images/03_03/03_03_31.png"
 image img_03_03_32 = "mod_assets/images/03_03/03_03_32.png"
 image img_03_03_33 = "mod_assets/images/03_03/03_03_33.png"
 image img_03_03_34 = "mod_assets/images/03_03/03_03_34.png"
+image img_senna_doutora_01 = "mod_assets/images/03_03/senna_doutora_01.png"
+image img_senna_doutora_02 = "mod_assets/images/03_03/senna_doutora_02.png"
+image img_senna_doutora_03 = "mod_assets/images/03_03/senna_doutora_03.png"
+image img_senna_doutora_04 = "mod_assets/images/03_03/senna_doutora_04.png"
 
 
 #04_01
 image img_04_01_01 = "mod_assets/images/04_01/04_01_01.png"
+image img_04_01_02 = "mod_assets/images/04_01/04_01_02.png"
+image img_04_01_03 = "mod_assets/images/04_01/04_01_03.png"
+image img_04_01_04 = "mod_assets/images/04_01/04_01_04.png"
+image img_04_01_05 = "mod_assets/images/04_01/04_01_05.png"
+image img_04_01_06 = "mod_assets/images/04_01/04_01_06.png"
+image img_04_01_07 = "mod_assets/images/04_01/04_01_07.png"
+image img_04_01_08 = "mod_assets/images/04_01/04_01_08.png"
+image img_04_01_09 = "mod_assets/images/04_01/04_01_09.png"
 
 
 #04_02
@@ -826,7 +929,11 @@ image img_04_02_16 = "mod_assets/images/04_02/04_02_16.png"
 image img_04_02_17 = "mod_assets/images/04_02/04_02_17.png"
 image img_04_02_18 = "mod_assets/images/04_02/04_02_18.png"
 image img_04_02_19 = "mod_assets/images/04_02/04_02_19.png"
-image img_yeah_man_foca = "mod_assets/images/04_02/yeah_man_foca.png"
+
+image img_yeah_man_foca:
+    "mod_assets/images/04_02/yeah_man_foca.png"
+    linear 23.9 zoom 2.8 xoffset -500 yoffset -200
+
 
 
 #04_03
@@ -868,6 +975,7 @@ image img_04_04_31 = "mod_assets/images/04_04/04_04_31.png"
 image img_04_04_32 = "mod_assets/images/04_04/04_04_32.png"
 image img_04_04_33 = "mod_assets/images/04_04/04_04_33.png"
 image img_04_04_34 = "mod_assets/images/04_04/04_04_34.png"
+image img_senna_cavalo = "mod_assets/images/04_04/senna_cavalo.png"
 
 #05_01
 image img_05_01_01 = "mod_assets/images/05_01/05_01_01.png"
@@ -1056,10 +1164,58 @@ image img_05_02_179 = "mod_assets/images/05_02/05_02_179.png"
 image img_05_02_180 = "mod_assets/images/05_02/05_02_180.png"
 image img_05_02_181 = "mod_assets/images/05_02/05_02_181.png"
 image img_05_02_182 = "mod_assets/images/05_02/05_02_182.png"
+image img_milzao = "mod_assets/images/05_02/milzao.png"
 
 
 #05_03
 image img_05_03_01 = "mod_assets/images/05_03/05_03_01.png"
+image img_05_03_02 = "mod_assets/images/05_03/05_03_02.png"
+image img_05_03_03 = "mod_assets/images/05_03/05_03_03.png"
+image img_05_03_04 = "mod_assets/images/05_03/05_03_04.png"
+image img_05_03_05 = "mod_assets/images/05_03/05_03_05.png"
+image img_05_03_06 = "mod_assets/images/05_03/05_03_06.png"
+image img_05_03_07 = "mod_assets/images/05_03/05_03_07.png"
+image img_05_03_08 = "mod_assets/images/05_03/05_03_08.png"
+image img_05_03_09 = "mod_assets/images/05_03/05_03_09.png"
+image img_05_03_10 = "mod_assets/images/05_03/05_03_10.png"
+image img_05_03_11 = "mod_assets/images/05_03/05_03_11.png"
+image img_05_03_12 = "mod_assets/images/05_03/05_03_12.png"
+image img_05_03_13 = "mod_assets/images/05_03/05_03_13.png"
+image img_05_03_14 = "mod_assets/images/05_03/05_03_14.png"
+image img_05_03_15 = "mod_assets/images/05_03/05_03_15.png"
+image img_05_03_16 = "mod_assets/images/05_03/05_03_16.png"
+image img_05_03_17 = "mod_assets/images/05_03/05_03_17.png"
+image img_05_03_18 = "mod_assets/images/05_03/05_03_18.png"
+image img_05_03_19 = "mod_assets/images/05_03/05_03_19.png"
+image img_05_03_20 = "mod_assets/images/05_03/05_03_20.png"
+image img_05_03_21 = "mod_assets/images/05_03/05_03_21.png"
+image img_05_03_22 = "mod_assets/images/05_03/05_03_22.png"
+
+
+#Epilogo
+image img_epilogo_01 = "mod_assets/images/epilogo/epilogo_01.png"
+image img_epilogo_02 = "mod_assets/images/epilogo/epilogo_02.png"
+image img_epilogo_03 = "mod_assets/images/epilogo/epilogo_03.png"
+image img_epilogo_04 = "mod_assets/images/epilogo/epilogo_04.png"
+image img_epilogo_05 = "mod_assets/images/epilogo/epilogo_05.png"
+image img_epilogo_06 = "mod_assets/images/epilogo/epilogo_06.png"
+image img_epilogo_07 = "mod_assets/images/epilogo/epilogo_07.png"
+image img_epilogo_08 = "mod_assets/images/epilogo/epilogo_08.png"
+image img_epilogo_09 = "mod_assets/images/epilogo/epilogo_09.png"
+image img_epilogo_10 = "mod_assets/images/epilogo/epilogo_10.png"
+image img_epilogo_11 = "mod_assets/images/epilogo/epilogo_11.png"
+image img_epilogo_12 = "mod_assets/images/epilogo/epilogo_12.png"
+image img_epilogo_13 = "mod_assets/images/epilogo/epilogo_13.png"
+image img_epilogo_14 = "mod_assets/images/epilogo/epilogo_14.png"
+image img_epilogo_15 = "mod_assets/images/epilogo/epilogo_15.png"
+image img_epilogo_16 = "mod_assets/images/epilogo/epilogo_16.png"
+image img_epilogo_17 = "mod_assets/images/epilogo/epilogo_17.png"
+image img_epilogo_18 = "mod_assets/images/epilogo/epilogo_18.png"
+image img_epilogo_19 = "mod_assets/images/epilogo/epilogo_19.png"
+image img_epilogo_20 = "mod_assets/images/epilogo/epilogo_20.png"
+image img_epilogo_21 = "mod_assets/images/epilogo/epilogo_21.png"
+image img_epilogo_22 = "mod_assets/images/epilogo/epilogo_22.png"
+image img_epilogo_23 = "mod_assets/images/epilogo/epilogo_23.png"
 
 
 
@@ -1234,11 +1390,33 @@ image textbox_aux:
     xalign 0.5
     yalign 1.0
 
+image alemao_s1 = "mod_assets/characters/side/alemao_s1.png"
+image anita_s1 = "mod_assets/characters/side/anita_s1.png"
+image bob_s1 = "mod_assets/characters/side/bob_s1.png"
+image bob_s2 = "mod_assets/characters/side/bob_s2.png"
+image doutora_s1 = "mod_assets/characters/side/doutora_s1.png"
+image goleiro_s1 = "mod_assets/characters/side/goleiro_s1.png"
+image guina_s = "mod_assets/characters/side/guina_s.png"
+image indio_s1 = "mod_assets/characters/side/indio_s1.png"
+image indio_s2 = "mod_assets/characters/side/indio_s2.png"
+image james_s1 = "mod_assets/characters/side/james_s1.png"
+image james_s2 = "mod_assets/characters/side/james_s2.png"
+image mangueiraboy_s1 = "mod_assets/characters/side/mangueiraboy_s1.png"
+image mangueiraevil_s1 = "mod_assets/characters/side/mangueiraevil_s1.png"
+image secretaria_s1 = "mod_assets/characters/side/secretaria_s1.png"
+image senna_s1 = "mod_assets/characters/side/senna_s1.png"
+image senna_s2 = "mod_assets/characters/side/senna_s2.png"
+image senna_s3 = "mod_assets/characters/side/senna_s3.png"
+image senna_s4 = "mod_assets/characters/side/senna_s4.png"
+image senna_s5 = "mod_assets/characters/side/senna_s5.png"
+image senna_s6 = "mod_assets/characters/side/senna_s6.png"
+image senna_s7 = "mod_assets/characters/side/senna_s7.png"
+image senna_s8 = "mod_assets/characters/side/senna_s8.png"
 image seto_s = "mod_assets/characters/side/seto_s.png"
+image yeahman_s1 = "mod_assets/characters/side/yeahman_s1.png"
 image yuri_s1 = "mod_assets/characters/side/yuri_s1.png"
 image yuri_s2 = "mod_assets/characters/side/yuri_s2.png"
-image guina_s = "mod_assets/characters/side/guina_s.png"
-image senna_s1 = "mod_assets/characters/side/senna_s1.png"
+
 
 image splash_image = "mod_assets/images/splash_image.png"
 image intro_001 = "mod_assets/images/intro/intro_001.png"
@@ -1499,6 +1677,7 @@ define voz_cap02_02_52 = "mod_assets/voices/02_02/02_02_52.ogg"
 define voz_cap02_02_53 = "mod_assets/voices/02_02/02_02_53.ogg"
 define voz_cap02_02_54 = "mod_assets/voices/02_02/02_02_54.ogg"
 define voz_cap02_02_55 = "mod_assets/voices/02_02/02_02_55.ogg"
+define voz_cap02_02_56 = "mod_assets/voices/02_02/02_02_56.ogg"
 
 
 #02_03
@@ -1690,6 +1869,9 @@ define voz_cap04_02_17 = "mod_assets/voices/04_02/04_02_17.ogg"
 define voz_cap04_02_18 = "mod_assets/voices/04_02/04_02_18.ogg"
 define voz_cap04_02_19 = "mod_assets/voices/04_02/04_02_19.ogg"
 define voz_cap04_02_20 = "mod_assets/voices/04_02/04_02_20.ogg"
+define voz_cap04_02_21 = "mod_assets/voices/04_02/04_02_21.ogg"
+define voz_cap04_02_22 = "mod_assets/voices/04_02/04_02_22.ogg"
+define voz_cap04_02_23 = "mod_assets/voices/04_02/04_02_23.ogg"
 
 
 #04_03
