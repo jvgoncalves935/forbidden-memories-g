@@ -769,6 +769,7 @@ label wrong_end_01_04_3:
     
     "\"Está previsto que a destruição\ncausada pela colisão resultará\nna extinção de toda a vida humana!\""
     play sound ctc
+    stop sound_bg
     
     play music audio.siren fadein 1.0
     "\"O caos preenche as ruas de\ntodo o mundo. Assaltos,\nestupros e assassinatos tomam conta do\ncenário pré-apocaliptico.\""

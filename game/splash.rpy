@@ -57,6 +57,12 @@ init python:
 
     def register_ending(ending):
         persistent.endings[ending] = True
+        global current_ending_id
+        global current_ending_name
+        current_ending_id = ending
+        current_ending_name = endings_names[ending]
+        
+        print(current_ending_id,current_ending_name)
         
 
     def is_all_endings_unlocked():

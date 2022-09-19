@@ -3038,3 +3038,16 @@ style notify_frame:
 style notify_text:
     size gui.notify_text_size
 
+
+#Texto Game Over
+screen texto_game_over:
+    vbox:
+        xalign 0.94
+        yalign 0.96
+
+        textbutton _("Final "+current_ending_id+": \""+endings_names[current_ending_id]+"\""):
+            style "page_label_text"
+            text_size 16
+
+        
+    

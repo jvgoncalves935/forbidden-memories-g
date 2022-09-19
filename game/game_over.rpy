@@ -35,15 +35,23 @@ label game_over:
     else:
         pause 8.0
 
+    hide game_over_bg
+    with Dissolve(1.5)
+
+    show screen texto_game_over
+    with Dissolve(0.5)
+
     if(game_over_musica):
-        stop music fadeout 2.0
+        stop music fadeout 1.0
     if(game_over_fadeout_musica > 0.0):
         stop music fadeout game_over_fadeout_musica
     if(game_over_fadeout_sound > 0.0):
         stop sound_bg fadeout game_over_fadeout_sound
     
-    hide game_over_bg
-    with Dissolve(2.0)
+
+    pause 1.5
+    hide screen texto_game_over
+    with Dissolve(0.5)
 
     $ game_over_musica = True
     $ game_over_pos_cutscene = False
