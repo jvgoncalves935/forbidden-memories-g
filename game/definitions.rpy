@@ -436,12 +436,45 @@ define music_player_active = False
 #define flag_input_operation_senna_concluido = False
 
 ###################Transform
+
+#Largura: 960
+#Altura: 720
+#Altura textbox: 254
+
+transform l2_11:
+    leftin2(480)
+
+transform l2_21:
+    leftin2(240)
+
+transform l2_22:
+    leftin2(720)
+
+transform r2_11:
+    rightin2(480)
+
+transform r2_21:
+    rightin2(240)
+
+transform r2_22:
+    rightin2(720)
+
+
+
+transform leftin2(x=480):
+    xcenter -300 ycenter 254 zoom 1.00 alpha 1.00 subpixel True
+    easein .25 xcenter x
+
 transform select_slot_pos(x=0.5,y=0.5):
     align (x,y) alpha 1.0
 
 transform rightin(x=640, z=0.80,time=0.25):
     xcenter 1300 yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.00 alpha 1.00 subpixel True
     easein time xcenter x
+
+transform rightin2(x=480):
+    xcenter 1300 ycenter 254 zoom 1.00 alpha 1.00 subpixel True
+    easein .25 xcenter x
 
 transform rhide(time=0.25,position=1300):
     subpixel True
@@ -493,6 +526,11 @@ image seto 1a = "mod_assets/characters/seto/1a.png"
 image seto 1b = "mod_assets/characters/seto/1b.png"
 
 image senna 1a = "mod_assets/characters/senna/1a.png"
+image senna 2a = "mod_assets/characters/senna/2a.png"
+image senna 3a = "mod_assets/characters/senna/3a.png"
+image senna 3b = "mod_assets/characters/senna/3b.png"
+image senna 3c = "mod_assets/characters/senna/3c.png"
+image senna 4a = "mod_assets/characters/senna/4a.png"
 
 image guina 1a = "mod_assets/characters/guina/1a.png"
 

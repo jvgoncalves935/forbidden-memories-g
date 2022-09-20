@@ -62,7 +62,7 @@ init python:
         current_ending_id = ending
         current_ending_name = endings_names[ending]
         
-        print(current_ending_id,current_ending_name)
+        #print(current_ending_id,current_ending_name)
         
 
     def is_all_endings_unlocked():
