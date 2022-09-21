@@ -522,22 +522,51 @@ define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 
-image seto 1a = "mod_assets/characters/seto/1a.png"
-image seto 1b = "mod_assets/characters/seto/1b.png"
+
+
+image alemao 1a = "mod_assets/characters/alemao/1a.png"
+
+image anitta 1a = "mod_assets/characters/anitta/1a.png"
+
+image bob 1a = "mod_assets/characters/bob/1a.png"
+
+image doutora 1a = "mod_assets/characters/doutora/1a.png"
+
+image gilson 1a = "mod_assets/characters/gilson/1a.png"
+
+image goleiro 1a = "mod_assets/characters/goleiro/1a.png"
+
+image guina 1a = "mod_assets/characters/guina/1a.png"
+
+image indio 1a = "mod_assets/characters/goleiro/1a.png"
+
+image james 1a = "mod_assets/characters/james/1a.png"
+
+image mendigo 1a = "mod_assets/characters/mendigo/1a.png"
+
+image morador 1a = "mod_assets/characters/morador/1a.png"
+
+image padeiro 1a = "mod_assets/characters/padeiro/1a.png"
+
+image policial 1a = "mod_assets/characters/policial/1a.png"
 
 image senna 1a = "mod_assets/characters/senna/1a.png"
 image senna 2a = "mod_assets/characters/senna/2a.png"
 image senna 3a = "mod_assets/characters/senna/3a.png"
 image senna 3b = "mod_assets/characters/senna/3b.png"
 image senna 3c = "mod_assets/characters/senna/3c.png"
+image senna 3d = "mod_assets/characters/senna/3d.png"
 image senna 4a = "mod_assets/characters/senna/4a.png"
 
-image guina 1a = "mod_assets/characters/guina/1a.png"
+image seto 1a = "mod_assets/characters/seto/1a.png"
+image seto 1b = "mod_assets/characters/seto/1b.png"
+
+image yeahman 1a = "mod_assets/characters/yeahman/1a.png"
 
 image yuri 3xd = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xd.png")
 image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xe.png")
 
-image gilson 1a = "mod_assets/characters/gilson/1a.png"
+
 
 
 ###################Videos
