@@ -556,6 +556,8 @@ image senna 3a = "mod_assets/characters/senna/3a.png"
 image senna 3b = "mod_assets/characters/senna/3b.png"
 image senna 3c = "mod_assets/characters/senna/3c.png"
 image senna 3d = "mod_assets/characters/senna/3d.png"
+image senna 3e = "mod_assets/characters/senna/3e.png"
+image senna 3f = "mod_assets/characters/senna/3f.png"
 image senna 4a = "mod_assets/characters/senna/4a.png"
 
 image seto 1a = "mod_assets/characters/seto/1a.png"

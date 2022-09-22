@@ -582,6 +582,9 @@ label wrong_end_03_03_2:
     play music fm_vast_shrine
     "(Você reflete sobre o que poderia\nter acontecido caso tivesse\noptado em continuar com\no exame...)"
     play sound ctc
+
+    "Ah, mas isso não vai\nficar assim...!"
+    play sound ctc
     
     "EU VOU PROCESSAR ESSE HOSPITAL\nMALIGNO!"
     play sound ctc
