@@ -1747,6 +1747,7 @@ define voz_cap02_02_53 = "mod_assets/voices/02_02/02_02_53.ogg"
 define voz_cap02_02_54 = "mod_assets/voices/02_02/02_02_54.ogg"
 define voz_cap02_02_55 = "mod_assets/voices/02_02/02_02_55.ogg"
 define voz_cap02_02_56 = "mod_assets/voices/02_02/02_02_56.ogg"
+define voz_cap02_02_57 = "mod_assets/voices/02_02/02_02_57.ogg"
 
 
 #02_03
@@ -1902,6 +1903,7 @@ define voz_cap03_03_34 = "mod_assets/voices/03_03/03_03_34.ogg"
 define voz_cap03_03_35 = "mod_assets/voices/03_03/03_03_35.ogg"
 define voz_cap03_03_36 = "mod_assets/voices/03_03/03_03_36.ogg"
 define voz_cap03_03_37 = "mod_assets/voices/03_03/03_03_37.ogg"
+define voz_cap03_03_38 = "mod_assets/voices/03_03/03_03_38.ogg"
 
 
 #04_01
@@ -2606,15 +2608,6 @@ default s_name = "Sayori"
 default m_name = "Monika"
 default n_name = "Natsuki"
 default y_name = "Yuri"
-default kd_name = "King Dice"
-default crs_name = "Kurisu"
-default iy_name = "Insane Yuri"
-default may_name = "Mayuri"
-default lucas_name = "Luka"
-default nya_name = "Faris"
-default daru_name = "Daru"
-default pedro_name = "Pedro Bial"
-default supervisor_name = "Supervisor"
 
 # Instantiating variables for poem appeal. This is how much each character likes the poem for each day.
 # -1 = Dislike, 0 = Neutral, 1 = Like

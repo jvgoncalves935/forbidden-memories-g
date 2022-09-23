@@ -561,6 +561,13 @@ label wrong_end_02_02_2:
     "(A sensação de aventura e liberdade\né muito gostosa...)"
     play sound ctc
     
+    "(Você se impressiona com a beleza\nda cachoeira e dos\noutros elementos da natureza.)"
+    play sound ctc
+    
+    voice voz_cap02_02_57
+    "Nossa... que extraordinário!"
+    play sound ctc
+
     stop music fadeout 2.0
     $ register_ending("I")
     jump game_over
