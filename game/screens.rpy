@@ -1120,6 +1120,14 @@ screen converting_minds_scr():
             
             action [NullAction()]
             text_style "font_creditos_menu_2"
+    else:
+        textbutton _("??????????????"):
+            xalign 0.5
+            yalign 0.5
+            
+            action [NullAction()]
+            text_style "font_creditos_menu_2"
+
 
     textbutton _("Voltar?"):
         xalign 0.05

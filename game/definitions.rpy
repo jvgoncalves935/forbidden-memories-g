@@ -558,6 +558,7 @@ image senna 3c = "mod_assets/characters/senna/3c.png"
 image senna 3d = "mod_assets/characters/senna/3d.png"
 image senna 3e = "mod_assets/characters/senna/3e.png"
 image senna 3f = "mod_assets/characters/senna/3f.png"
+image senna 3g = "mod_assets/characters/senna/3g.png"
 image senna 4a = "mod_assets/characters/senna/4a.png"
 
 image seto 1a = "mod_assets/characters/seto/1a.png"
@@ -1048,6 +1049,22 @@ image img_senna_cavalo = "mod_assets/images/04_04/senna_cavalo.png"
 
 #05_01
 image img_05_01_01 = "mod_assets/images/05_01/05_01_01.png"
+image img_05_01_02 = "mod_assets/images/05_01/05_01_02.png"
+image img_05_01_03 = "mod_assets/images/05_01/05_01_03.png"
+image img_05_01_04 = "mod_assets/images/05_01/05_01_04.png"
+image img_05_01_05 = "mod_assets/images/05_01/05_01_05.png"
+image img_05_01_06 = "mod_assets/images/05_01/05_01_06.png"
+image img_05_01_07 = "mod_assets/images/05_01/05_01_07.png"
+image img_05_01_08 = "mod_assets/images/05_01/05_01_08.png"
+image img_05_01_09 = "mod_assets/images/05_01/05_01_09.png"
+image img_05_01_10 = "mod_assets/images/05_01/05_01_10.png"
+image img_05_01_11 = "mod_assets/images/05_01/05_01_11.png"
+image img_05_01_12 = "mod_assets/images/05_01/05_01_12.png"
+image img_05_01_13 = "mod_assets/images/05_01/05_01_13.png"
+image img_05_01_14 = "mod_assets/images/05_01/05_01_14.png"
+image img_05_01_15 = "mod_assets/images/05_01/05_01_15.png"
+image img_05_01_16 = "mod_assets/images/05_01/05_01_16.png"
+image img_05_01_17 = "mod_assets/images/05_01/05_01_17.png"
 
 
 #05_02
