@@ -70,8 +70,9 @@ init python:
         if remaining <= 0.0:
             renpy.hide_screen(screen)
             renpy.call(end_label)
-        return Text(tformat.format(**parts_dict), 
-                    style = ok_style if remaining > style_swap else near_style), .1
+        print(parts_dict["microseconds"])
+        #return Text(tformat.format(**parts_dict), 
+        #            style = ok_style if remaining > style_swap else near_style), .1
 
 
     def init_input_operation_senna():
@@ -301,7 +302,8 @@ define endings_names = {
     "C3":"Capítulo 3",
     "C4":"Capítulo 4",
     "C5":"Capítulo 5",
-    "CXX":"Capítulo XX"
+    "CXX":"Capítulo XX",
+    "CXY":"OH MAN"
 }
 
 define deck_g_names = [
@@ -343,7 +345,8 @@ define deck_g_names = [
     "Globglogabgalab, A Traça Melancólica",
     "Mark_77Souls, O Esquizofrêncio",
     "Taeyeon115, O Amigo de Sangue",
-    "Master Exploder, O Calvo Supremo"
+    "Master Exploder, O Calvo Supremo",
+    "OH MAN"
 ]
 
 define endings_descriptions = {
@@ -2324,6 +2327,7 @@ init python:
         "epilogo": "Final G - Epílogo",
         "creditos": "Créditos",
         "capXX": "Capítulo Extra",
+        "capXY": "OH MAN",
         "guinodia": "Guinódia, O Proibido",
         "finalA": "Final A",
         "finalB": "Final B",
@@ -2368,6 +2372,7 @@ init python:
         "epilogo": "As Crônicas de Alexandre Senna",
         "creditos": "Criado por Operation Senna",
         "capXX": "Clube de Literatura",
+        "capXY": "OH MAN",
         "guinodia": "Invocando Guinódia",
         "finalA": "Melancolia do Toque de Celular Irritante",
         "finalB": "Sem Tempo Para Brincadeiras",

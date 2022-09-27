@@ -575,6 +575,9 @@ init python:
         else:
             renpy.jump_out_of_context("cap_arabe")
 
+    def FinishEnterNameCapXY():
+        renpy.jump_out_of_context("capXY")
+
 
 
 screen navigation():
@@ -1141,7 +1144,9 @@ screen guinodia_scr():
     timer 60 action Function(renpy.quit)
     key "dismiss" action [[]]
 
-
+#screen texttimer(**kwargs):
+#    vbox:
+#        add DynamicDisplayable(timercountdown, **kwargs)
 
 
 screen endings():
@@ -1482,7 +1487,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.14
-            textbutton _("Carta 28"):
+            textbutton _("Carta 30"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="kawan.png",card=1),Function(guinodia,False,0)]
@@ -1493,7 +1498,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.19
-            textbutton _("Carta 29"):
+            textbutton _("Carta 33"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guinodia_braco_direito.png",card=2),Function(guinodia,True,0)]
@@ -1504,7 +1509,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.24
-            textbutton _("Carta 30"):
+            textbutton _("Carta 36"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="jo_abdul.png",card=3),Function(guinodia,False,0)]
@@ -1515,7 +1520,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.29
-            textbutton _("Carta 31"):
+            textbutton _("Carta 39"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="minha_mulher.png",card=4),Function(guinodia,False,0)]
@@ -1526,7 +1531,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.34
-            textbutton _("Carta 32"):
+            textbutton _("Carta 42"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guinodia_braco_esquerdo.png",card=5),Function(guinodia,True,1)]
@@ -1537,7 +1542,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.39
-            textbutton _("Carta 33"):
+            textbutton _("Carta 45"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="cabacao.png",card=6),Function(guinodia,False,0)]
@@ -1548,7 +1553,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.44
-            textbutton _("Carta 34"):
+            textbutton _("Carta 48"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="pegasus.png",card=7),Function(guinodia,False,0)]
@@ -1559,7 +1564,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.49
-            textbutton _("Carta 35"):
+            textbutton _("Carta 51"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="lily_santos.png",card=8),Function(guinodia,False,0)]
@@ -1570,7 +1575,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.09
-            textbutton _("Carta 36"):
+            textbutton _("Carta 28"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guinodia_perna_direita.png",card=9),Function(guinodia,True,2)]
@@ -1581,7 +1586,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.14
-            textbutton _("Carta 37"):
+            textbutton _("Carta 31"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_guina_piscineiro.png",card=10),Function(guinodia,False,0)]
@@ -1592,7 +1597,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.19
-            textbutton _("Carta 38"):
+            textbutton _("Carta 34"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_guina_bombeiro.png",card=11),Function(guinodia,False,0)]
@@ -1603,7 +1608,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.24
-            textbutton _("Carta 39"):
+            textbutton _("Carta 37"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_guina_professor.png",card=12),Function(guinodia,False,0)]
@@ -1626,7 +1631,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.34
-            textbutton _("Carta 41"):
+            textbutton _("Carta 43"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_guina_matrix.png",card=14),Function(guinodia,False,0)]
@@ -1637,7 +1642,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.39
-            textbutton _("Carta 42"):
+            textbutton _("Carta 46"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_guina.png",card=15),Function(guinodia,False,0)]
@@ -1648,7 +1653,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.44
-            textbutton _("Carta 43"):
+            textbutton _("Carta 49"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="pica_pau.png",card=16),Function(guinodia,False,0)]
@@ -1659,7 +1664,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.49
-            textbutton _("Carta 44"):
+            textbutton _("Carta 52"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guinodia_perna_esquerda.png",card=17),Function(guinodia,True,3)]
@@ -1670,7 +1675,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.09
-            textbutton _("Carta 45"):
+            textbutton _("Carta 29"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="kid_bengala.png",card=18),Function(guinodia,False,0)]
@@ -1681,7 +1686,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.14
-            textbutton _("Carta 46"):
+            textbutton _("Carta 32"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="cj_de_familia.png",card=19),Function(guinodia,False,0)]
@@ -1692,7 +1697,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.19
-            textbutton _("Carta 47"):
+            textbutton _("Carta 35"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="demacol.png",card=20),Function(guinodia,False,0)]
@@ -1703,7 +1708,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.24
-            textbutton _("Carta 48"):
+            textbutton _("Carta 38"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guinodia_terceira_perna.png",card=21),Function(guinodia,True,4)]
@@ -1714,7 +1719,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.29
-            textbutton _("Carta 49"):
+            textbutton _("Carta 41"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="fome.png",card=22),Function(guinodia,False,0)]
@@ -1725,7 +1730,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.34
-            textbutton _("Carta 50"):
+            textbutton _("Carta 44"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="princesa_demacol.png",card=23),Function(guinodia,False,0)]
@@ -1736,7 +1741,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.39
-            textbutton _("Carta 51"):
+            textbutton _("Carta 47"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="chessus.png",card=24),Function(guinodia,False,0)]
@@ -1747,7 +1752,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.44
-            textbutton _("Carta 52"):
+            textbutton _("Carta 50"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="sarcofago.png",card=25),Function(guinodia,False,0)]
@@ -1765,7 +1770,16 @@ screen endings():
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-
+    if(persistent.endings["CXY"]):
+        vbox:
+            xalign 0.66
+            yalign 0.54
+            textbutton _("Carta 54"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(guinodia,False,0)]
+                unhovered [Hide("side_img_left")]
+                action [Function(FinishEnterNameCapXY)]
 
 
 
@@ -1778,7 +1792,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.59
-            textbutton _("Carta 54"):
+            textbutton _("Carta 55"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(guinodia,False,0)]
@@ -1789,7 +1803,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.59
-            textbutton _("Carta 55"):
+            textbutton _("Carta 56"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(guinodia,False,0)]
@@ -1800,7 +1814,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.59
-            textbutton _("Carta 56"):
+            textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(guinodia,False,0)]
@@ -1811,7 +1825,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.64
-            textbutton _("Carta 57"):
+            textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(guinodia,False,0)]
@@ -1822,7 +1836,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.64
-            textbutton _("Carta 58"):
+            textbutton _("Carta 59"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=31),Function(guinodia,False,0)]
@@ -1833,7 +1847,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.64
-            textbutton _("Carta 59"):
+            textbutton _("Carta 60"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="sandro_lima.png",card=32),Function(guinodia,False,0)]
@@ -1853,7 +1867,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.69
-            textbutton _("Carta 60"):
+            textbutton _("Carta 61"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(guinodia,False,0)]
@@ -1864,7 +1878,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.69
-            textbutton _("Carta 61"):
+            textbutton _("Carta 62"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=34),Function(guinodia,False,0)]
@@ -1875,7 +1889,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.69
-            textbutton _("Carta 62"):
+            textbutton _("Carta 63"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(guinodia,False,0)]
@@ -1886,7 +1900,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.74
-            textbutton _("Carta 63"):
+            textbutton _("Carta 64"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="mark.png",card=36),Function(guinodia,False,0)]
@@ -1897,7 +1911,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.74
-            textbutton _("Carta 64"):
+            textbutton _("Carta 65"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="taeyeon.png",card=37),Function(guinodia,False,0)]
@@ -1908,7 +1922,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.74
-            textbutton _("Carta 65"):
+            textbutton _("Carta 66"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(guinodia,False,0)]

@@ -110,13 +110,14 @@ init python:
                         ("C3",False),
                         ("C4",False),
                         ("C5",False),
-                        ("CXX",False),]
+                        ("CXX",False),
+                        ("CXY",False)]
                         
             persistent.endings = dict(array_aux)
 
         #Liberar todos os finais (debug)
-        #for key, value in persistent.endings.items():
-        #    persistent.endings[key] = True
+        for key, value in persistent.endings.items():
+            persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
