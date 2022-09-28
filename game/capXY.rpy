@@ -18,10 +18,6 @@ label capXY:
     "(Oh Man, a versão \"Ativa\"\ndo Yeah Man!)"
     play sound ctc
 
-    stop music fadeout 1.0
-    "{p=1.0}{nw}"
-    play music fm_inside_the_puzzle
-
     "aaaaaaaaa"
     play sound ctc
 

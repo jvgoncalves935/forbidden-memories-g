@@ -246,6 +246,29 @@ init python:
         if(is_guinodia_available()):
             drpc_update("guinodia")
             renpy.jump_out_of_context("guinodia_label")
+
+    def sfx_carta(audio,toggle,pos):
+        guinodia(toggle,pos)
+        renpy.music.play(audio,"sound")
+
+    def reset_jumpscare_senna(toggle,pos):
+        guinodia(toggle,pos)
+        global jumpscare_count
+        jumpscare_count = 0
+        if(pos == 1):
+            sfx_carta(audio.senna_doutora01,toggle,pos)
+    
+    def jumpscare_senna_count(toggle,pos):
+        global jumpscare_count
+        jumpscare_count += 1
+        if(jumpscare_count == 5):
+            FinishEnterNameCapSenna()
+            return
+        if(jumpscare_count % 2 == 1):
+            sfx_carta(audio.senna_doutora02,toggle,pos)
+        else:
+            sfx_carta(audio.senna_doutora01,toggle,pos)
+        
         
     def is_guinodia_available():
         global guinodia_array
@@ -258,6 +281,7 @@ init python:
         if(message == "Tem certeza de que deseja sobrescrever seu Save?"):
             return True
         return False
+
     
 
 ############################################################################################################
@@ -303,7 +327,8 @@ define endings_names = {
     "C4":"Capítulo 4",
     "C5":"Capítulo 5",
     "CXX":"Capítulo XX",
-    "CXY":"OH MAN"
+    "CXY":"OH MAN",
+    "CYM":"YEAH MAN"
 }
 
 define deck_g_names = [
@@ -1520,6 +1545,12 @@ image club = "mod_assets/images/capXX/club.png"
 image corredor_ddlc = "mod_assets/images/capXX/corridor.png"
 image escadas_ddlc = "mod_assets/images/capXX/stairs.png"
 
+image ym_01 = "mod_assets/images/capYM/ym_01.png"
+image ym_02 = "mod_assets/images/capYM/ym_02.png"
+
+image ja_01 = "mod_assets/images/capJA/ja_01.png"
+image ja_02 = "mod_assets/images/capJA/ja_02.png"
+
 ###################Musicas 
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
@@ -2294,6 +2325,15 @@ define audio.hospital = "<loop 0.00>mod_assets/sounds/hospital.ogg"
 define audio.airplane = "<loop 0.00>mod_assets/sounds/airplane.ogg"
 define audio.running_breaking_glasses = "<loop 0.00>mod_assets/sounds/running_breaking_glasses.ogg"
 define audio.police_background = "<loop 0.00>mod_assets/sounds/police_background.ogg"
+define audio.yeahman_02 = "<loop 0.00>mod_assets/sounds/yeah_man.ogg"
+define audio.yeahman_03 = "<loop 0.00>mod_assets/sounds/yeah_man2.ogg"
+define audio.yeahman_04 = "<loop 0.00>mod_assets/sounds/yeah_man_compilado.ogg"
+define audio.violencia_auditiva = "<loop 0.00>mod_assets/sounds/VIOLENCIA_AUDITIVA.ogg"
+define audio.jailson01 = "<loop 0.00>mod_assets/sounds/jailson01.ogg"
+define audio.jailson02 = "<loop 0.00>mod_assets/sounds/jailson02.ogg"
+define audio.jailson03 = "<loop 0.00>mod_assets/sounds/jailson03.ogg"
+define audio.senna_doutora01 = "<loop 0.00>mod_assets/sounds/senna_doutora01.ogg"
+define audio.senna_doutora02 = "<loop 0.00>mod_assets/sounds/senna_doutora02.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -2328,6 +2368,9 @@ init python:
         "creditos": "Créditos",
         "capXX": "Capítulo Extra",
         "capXY": "OH MAN",
+        "capYM": "YEAH MAN",
+        "capSN": "AI DOUTORA AI DOUTORA",
+        "capJA": "Capítulo do Jailson",
         "guinodia": "Guinódia, O Proibido",
         "finalA": "Final A",
         "finalB": "Final B",
@@ -2372,7 +2415,10 @@ init python:
         "epilogo": "As Crônicas de Alexandre Senna",
         "creditos": "Criado por Operation Senna",
         "capXX": "Clube de Literatura",
-        "capXY": "OH MAN",
+        "capXY": "OH MAN OH MAN OH MAN OH MAN",
+        "capYM": "YEAH MAN YEAH MAN YEAH MAN YEAH MAN",
+        "capSN": "TO TE SENTINDO LÁ NO ESTÔMAGO PORRA",
+        "capJA": "Aula de Biologia",
         "guinodia": "Invocando Guinódia",
         "finalA": "Melancolia do Toque de Celular Irritante",
         "finalB": "Sem Tempo Para Brincadeiras",

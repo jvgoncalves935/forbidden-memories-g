@@ -578,6 +578,15 @@ init python:
     def FinishEnterNameCapXY():
         renpy.jump_out_of_context("capXY")
 
+    def FinishEnterNameCapYeahMan():
+        renpy.jump_out_of_context("capYM")
+
+    def FinishEnterNameCapSenna():
+        renpy.jump_out_of_context("capSN")
+
+    def FinishEnterNameCapJailson():
+        renpy.jump_out_of_context("capJA")
+
 
 
 screen navigation():
@@ -1195,18 +1204,18 @@ screen endings():
             xalign 0.09
             yalign 0.21
             textbutton _("Final C"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="alexandre_senna.png",ending="C"),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                hovered [ShowTransient("side_img_right", img="alexandre_senna.png",ending="C"),Function(reset_jumpscare_senna,False,1)]
+                unhovered [Hide("side_img_right"),Function(reset_jumpscare_senna,False,0)]
+                action [Function(jumpscare_senna_count,False,0)]
     
     if(persistent.endings["D"]):
         vbox:
             xalign 0.09
             yalign 0.26
             textbutton _("Final D"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="indio.png",ending="D"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
@@ -1361,11 +1370,11 @@ screen endings():
             xalign 0.29
             yalign 0.31
             textbutton _("Final R"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="yeah_man.png",ending="R"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="yeah_man.png",ending="R"),Function(sfx_carta,audio.yeahman_02,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(FinishEnterNameCapYeahMan)]
 
     if(persistent.endings["S"]):
         vbox:
@@ -1416,7 +1425,7 @@ screen endings():
             xalign 0.29
             yalign 0.56
             textbutton _("Final W"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="bob.png",ending="W"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
@@ -1438,18 +1447,18 @@ screen endings():
             xalign 0.29
             yalign 0.66
             textbutton _("Final Y"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="jailson_mendes.png",ending="Y"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="jailson_mendes.png",ending="Y"),Function(sfx_carta,audio.jailson01,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(FinishEnterNameCapJailson)]
 
     if(persistent.endings["Z"]):
         vbox:
             xalign 0.29
             yalign 0.71
             textbutton _("Final Z"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="darkilson.png",ending="Z"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
@@ -1775,7 +1784,7 @@ screen endings():
             xalign 0.66
             yalign 0.54
             textbutton _("Carta 54"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
@@ -2878,6 +2887,7 @@ style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_2 is gui_medium_button
 style confirm_button_3 is gui_medium_button
+style confirm_button_4 is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
@@ -2939,6 +2949,20 @@ style confirm_button_3:
     properties gui.button_properties("navigation_button")
     hover_sound audio.fm_arrow_select
     activate_sound audio.fm_error
+    xalign 0.5
+    yalign 0.5
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+
+style confirm_button_4:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound audio.fm_arrow_select
+    activate_sound gui.activate_sound
     xalign 0.5
     yalign 0.5
 
