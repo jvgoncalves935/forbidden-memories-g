@@ -1206,7 +1206,7 @@ screen endings():
             textbutton _("Final C"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="alexandre_senna.png",ending="C"),Function(reset_jumpscare_senna,False,1)]
+                hovered [ShowTransient("side_img_right", img="alexandre_senna.png",ending="C"),Function(reset_jumpscare_senna,False,2)]
                 unhovered [Hide("side_img_right"),Function(reset_jumpscare_senna,False,0)]
                 action [Function(jumpscare_senna_count,False,0)]
     
@@ -1217,7 +1217,7 @@ screen endings():
             textbutton _("Final D"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="indio.png",ending="D"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="indio.png",ending="D"),Function(sfx_carta,audio.indio01,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1458,10 +1458,10 @@ screen endings():
             xalign 0.29
             yalign 0.71
             textbutton _("Final Z"):
-                style "confirm_button_4"
+                style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="darkilson.png",ending="Z"),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_right")]
+                hovered [ShowTransient("side_img_right", img="darkilson.png",ending="Z"),Function(sfx_carta,audio.vcs_broxaram,False,1),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_right"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [NullAction()]
 
 

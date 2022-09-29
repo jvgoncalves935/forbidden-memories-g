@@ -249,13 +249,25 @@ init python:
 
     def sfx_carta(audio,toggle,pos):
         guinodia(toggle,pos)
-        renpy.music.play(audio,"sound")
+        if(pos == 1):
+            renpy.music.play(audio,"sound",loop=True)
+        else:
+            renpy.music.play(audio,"sound")
+        
+    def music_channel_stop(channel_name):
+        global pos_music_aux
+        pos_music_aux = renpy.music.get_pos(channel_name)
+        renpy.music.stop(channel_name)
+
+    def music_channel_play(channel_name,_loop,_filename):
+        global pos_music_aux
+        renpy.music.play("<loop {} from {}>{}".format(_loop,pos_music_aux,_filename),channel=channel_name)
 
     def reset_jumpscare_senna(toggle,pos):
         guinodia(toggle,pos)
         global jumpscare_count
         jumpscare_count = 0
-        if(pos == 1):
+        if(pos == 2):
             sfx_carta(audio.senna_doutora01,toggle,pos)
     
     def jumpscare_senna_count(toggle,pos):
@@ -2334,6 +2346,8 @@ define audio.jailson02 = "<loop 0.00>mod_assets/sounds/jailson02.ogg"
 define audio.jailson03 = "<loop 0.00>mod_assets/sounds/jailson03.ogg"
 define audio.senna_doutora01 = "<loop 0.00>mod_assets/sounds/senna_doutora01.ogg"
 define audio.senna_doutora02 = "<loop 0.00>mod_assets/sounds/senna_doutora02.ogg"
+define audio.indio01 = "<loop 0.00>mod_assets/sounds/indio.ogg"
+define audio.vcs_broxaram = "<loop 0.00>mod_assets/sounds/vcs_broxaram.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
