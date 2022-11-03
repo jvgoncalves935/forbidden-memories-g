@@ -16,7 +16,7 @@ label capYM:
     "{p=4.0}{nw}"
 
     play music fm_preliminary_faceoff
-    show ym_02 at top_fade
+    show ym_02 at r2_out
     play sound_bg audio.yeahman_04 noloop
     $ renpy.pause(84.0, hard=True)
 

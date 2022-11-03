@@ -1,7 +1,7 @@
 label capSN:
     
     $ drpc_update("capSN")
-    play sound menu_start
+    #play sound menu_start
 
     $ backup_game_menu_keymap = config.keymap['game_menu']
     $ backup_game_hide_windows = config.keymap['hide_windows']
@@ -11,8 +11,11 @@ label capSN:
 
     stop music
 
-    show ym_02 at top_fade
+    show jumpscare at center
+    show ctc
+
     play sound_bg audio.violencia_auditiva noloop
+    #"{cps=400}Atenção: esta parte pode conter um\njumpscare. Recomendamos que você\nabaixe o volume do seu fone de\nouvido e definitivamente não assista\nisso na sua TV."
     $ renpy.pause(14.6, hard=True)
     stop sound_bg
 

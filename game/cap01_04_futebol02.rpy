@@ -154,7 +154,7 @@ label cap01_04_futebol02:
     $ renpy.movie_cutscene("mod_assets/videos/pelada_james_01.webm")
     
     stop music
-    play music "<from 56.2>mod_assets/music/fm_finals.ogg"
+    play music "<loop 21.066 from 56.2>mod_assets/music/fm_finals.ogg"
 
     show pelada_james_05
     "{p=1.06}{nw}"
@@ -466,7 +466,7 @@ label cap01_04_futebol02:
     hide img_01_04_49
     show img_01_04_50 at top_fade
     voice voz_cap01_04_47
-    "Aí, oh galera, eu vo dar\no fora, falou?"
+    "Aí, oh galera, eu vou dar\no fora, falou?"
     play sound ctc
     
     stop music

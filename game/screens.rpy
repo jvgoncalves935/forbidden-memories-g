@@ -1228,7 +1228,7 @@ screen endings():
             textbutton _("Final E"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="manto_azul.png",ending="E"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="manto_azul.png",ending="E"),Function(sfx_carta,audio.computador_guina,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
     
@@ -1261,7 +1261,7 @@ screen endings():
             textbutton _("Final H"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="os_carros.png",ending="H"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="os_carros.png",ending="H"),Function(sfx_carta,audio.os_carros_sao,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1316,7 +1316,7 @@ screen endings():
             textbutton _("Final M"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="mangueira_boy.png",ending="M"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="mangueira_boy.png",ending="M"),Function(sfx_carta,audio.mangueira_boy_01,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
     
@@ -1350,7 +1350,7 @@ screen endings():
             textbutton _("Final P"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="doutora.png",ending="P"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="doutora.png",ending="P"),Function(sfx_carta,audio.doutora02,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1361,7 +1361,7 @@ screen endings():
             textbutton _("Final Q"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="james_matarazzo.png",ending="Q"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="james_matarazzo.png",ending="Q"),Function(sfx_carta,audio.james_matarazzo_01,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1394,7 +1394,7 @@ screen endings():
             textbutton _("Final T"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="felipe_dylon.png",ending="T"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="felipe_dylon.png",ending="T"),Function(sfx_carta,audio.felipe_dylon_01,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1416,7 +1416,7 @@ screen endings():
             textbutton _("Final V"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="anita.png",ending="V"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="anita.png",ending="V"),Function(sfx_carta,voz_cap02_02_20,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1427,7 +1427,7 @@ screen endings():
             textbutton _("Final W"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="bob.png",ending="W"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="bob.png",ending="W"),Function(sfx_carta,voz_cap05_02_032,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
     
@@ -1438,7 +1438,7 @@ screen endings():
             textbutton _("Final X"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="alemao.png",ending="X"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="alemao.png",ending="X"),Function(sfx_carta,audio.alemao_01,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1565,7 +1565,7 @@ screen endings():
             textbutton _("Carta 48"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="pegasus.png",card=7),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="pegasus.png",card=7),Function(sfx_carta,audio.pau_brilhante,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1934,8 +1934,8 @@ screen endings():
             textbutton _("Carta 66"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_left")]
+                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [NullAction()]
 
     textbutton _("Voltar"):

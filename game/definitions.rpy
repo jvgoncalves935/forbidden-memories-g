@@ -322,7 +322,7 @@ define endings_names = {
     "M":"Contra-Trote Mortal",
     "N":"Tratamento de Choque",
     "O":"O Acidente de Cupiqueno",
-    "P":"Dois Dias Na Fila, Um Ano Na Rua",
+    "P":"Dois Dias Na Fila, Dois Anos Na Rua",
     "Q":"Só os Skates Sabem",
     "R":"Sádico e Calculista",
     "S":"Gosto Buocólico",
@@ -499,11 +499,14 @@ transform r2_21:
 transform r2_22:
     rightin2(720)
 
+transform r2_out:
+    rightin2(-200,84,900)
 
 
-transform leftin2(x=480):
+
+transform leftin2(x=480,t=0.25):
     xcenter -300 ycenter 254 zoom 1.00 alpha 1.00 subpixel True
-    easein .25 xcenter x
+    easein t xcenter x
 
 transform select_slot_pos(x=0.5,y=0.5):
     align (x,y) alpha 1.0
@@ -512,9 +515,9 @@ transform rightin(x=640, z=0.80,time=0.25):
     xcenter 1300 yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.00 alpha 1.00 subpixel True
     easein time xcenter x
 
-transform rightin2(x=480):
-    xcenter 1300 ycenter 254 zoom 1.00 alpha 1.00 subpixel True
-    easein .25 xcenter x
+transform rightin2(x=480, t=0.25,xc=1300):
+    xcenter xc ycenter 254 zoom 1.00 alpha 1.00 subpixel True
+    easein t xcenter x
 
 transform rhide(time=0.25,position=1300):
     subpixel True
@@ -1563,6 +1566,8 @@ image ym_02 = "mod_assets/images/capYM/ym_02.png"
 image ja_01 = "mod_assets/images/capJA/ja_01.png"
 image ja_02 = "mod_assets/images/capJA/ja_02.png"
 
+image jumpscare = "mod_assets/images/capSN/jumpscare.png"
+
 ###################Musicas 
 define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
@@ -2289,6 +2294,51 @@ define voz_capXX_021 = "mod_assets/voices/capXX/capxx_021.ogg"
 define voz_capXX_022 = "mod_assets/voices/capXX/capxx_022.ogg"
 define voz_capXX_023 = "mod_assets/voices/capXX/capxx_023.ogg"
 
+#Capitulo XY
+define voz_capXY_001 = "mod_assets/voices/capXY/capxy_001.ogg"
+define voz_capXY_002 = "mod_assets/voices/capXY/capxy_002.ogg"
+define voz_capXY_003 = "mod_assets/voices/capXY/capxy_003.ogg"
+define voz_capXY_004 = "mod_assets/voices/capXY/capxy_004.ogg"
+define voz_capXY_005 = "mod_assets/voices/capXY/capxy_005.ogg"
+define voz_capXY_006 = "mod_assets/voices/capXY/capxy_006.ogg"
+define voz_capXY_007 = "mod_assets/voices/capXY/capxy_007.ogg"
+define voz_capXY_008 = "mod_assets/voices/capXY/capxy_008.ogg"
+define voz_capXY_009 = "mod_assets/voices/capXY/capxy_009.ogg"
+define voz_capXY_010 = "mod_assets/voices/capXY/capxy_010.ogg"
+define voz_capXY_011 = "mod_assets/voices/capXY/capxy_011.ogg"
+define voz_capXY_012 = "mod_assets/voices/capXY/capxy_012.ogg"
+define voz_capXY_013 = "mod_assets/voices/capXY/capxy_013.ogg"
+define voz_capXY_014 = "mod_assets/voices/capXY/capxy_014.ogg"
+define voz_capXY_015 = "mod_assets/voices/capXY/capxy_015.ogg"
+define voz_capXY_016 = "mod_assets/voices/capXY/capxy_016.ogg"
+define voz_capXY_017 = "mod_assets/voices/capXY/capxy_017.ogg"
+define voz_capXY_018 = "mod_assets/voices/capXY/capxy_018.ogg"
+define voz_capXY_019 = "mod_assets/voices/capXY/capxy_019.ogg"
+define voz_capXY_020 = "mod_assets/voices/capXY/capxy_020.ogg"
+define voz_capXY_021 = "mod_assets/voices/capXY/capxy_021.ogg"
+define voz_capXY_022 = "mod_assets/voices/capXY/capxy_022.ogg"
+define voz_capXY_023 = "mod_assets/voices/capXY/capxy_023.ogg"
+define voz_capXY_024 = "mod_assets/voices/capXY/capxy_024.ogg"
+define voz_capXY_025 = "mod_assets/voices/capXY/capxy_025.ogg"
+define voz_capXY_026 = "mod_assets/voices/capXY/capxy_026.ogg"
+define voz_capXY_027 = "mod_assets/voices/capXY/capxy_027.ogg"
+define voz_capXY_028 = "mod_assets/voices/capXY/capxy_028.ogg"
+define voz_capXY_029 = "mod_assets/voices/capXY/capxy_029.ogg"
+define voz_capXY_030 = "mod_assets/voices/capXY/capxy_030.ogg"
+define voz_capXY_031 = "mod_assets/voices/capXY/capxy_031.ogg"
+define voz_capXY_032 = "mod_assets/voices/capXY/capxy_032.ogg"
+define voz_capXY_033 = "mod_assets/voices/capXY/capxy_033.ogg"
+define voz_capXY_034 = "mod_assets/voices/capXY/capxy_034.ogg"
+define voz_capXY_035 = "mod_assets/voices/capXY/capxy_035.ogg"
+define voz_capXY_036 = "mod_assets/voices/capXY/capxy_036.ogg"
+define voz_capXY_037 = "mod_assets/voices/capXY/capxy_037.ogg"
+define voz_capXY_038 = "mod_assets/voices/capXY/capxy_038.ogg"
+define voz_capXY_039 = "mod_assets/voices/capXY/capxy_039.ogg"
+define voz_capXY_040 = "mod_assets/voices/capXY/capxy_040.ogg"
+define voz_capXY_041 = "mod_assets/voices/capXY/capxy_041.ogg"
+define voz_capXY_042 = "mod_assets/voices/capXY/capxy_042.ogg"
+define voz_capXY_043 = "mod_assets/voices/capXY/capxy_043.ogg"
+define voz_capXY_044 = "mod_assets/voices/capXY/capxy_044.ogg"
 
 ###################Audios
 
@@ -2348,6 +2398,15 @@ define audio.senna_doutora01 = "<loop 0.00>mod_assets/sounds/senna_doutora01.ogg
 define audio.senna_doutora02 = "<loop 0.00>mod_assets/sounds/senna_doutora02.ogg"
 define audio.indio01 = "<loop 0.00>mod_assets/sounds/indio.ogg"
 define audio.vcs_broxaram = "<loop 0.00>mod_assets/sounds/vcs_broxaram.ogg"
+define audio.mangueira_boy_01 = "<loop 0.00>mod_assets/sounds/mangueira_boy.ogg"
+define audio.james_matarazzo_01 = "<loop 0.00>mod_assets/sounds/james_matarazzo_01.ogg"
+define audio.doutora02 = "<loop 0.00>mod_assets/sounds/doutora.ogg"
+define audio.os_carros_sao = "<loop 0.00>mod_assets/sounds/os_carros_sao.ogg"
+define audio.computador_guina = "<loop 0.00>mod_assets/sounds/computador_guina.ogg"
+define audio.alemao_01 = "<loop 0.00>mod_assets/sounds/alemao_01.ogg"
+define audio.felipe_dylon_01 = "<loop 0.00>mod_assets/sounds/felipe_dylon_01.ogg"
+define audio.calvoooo = "<loop 0.00>mod_assets/sounds/calvoooo.ogg"
+define audio.pau_brilhante = "<loop 0.00>mod_assets/sounds/pau_brilhante.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -2448,7 +2507,7 @@ init python:
         "finalM": "Contra-Trote Mortal",
         "finalN": "Tratamento de Choque",
         "finalO": "O Acidente de Cupiqueno",
-        "finalP": "Dois Dias Na Fila, Um Ano Na Rua",
+        "finalP": "Dois Dias Na Fila, Dois Anos Na Rua",
         "finalQ": "Só os Skates Sabem",
         "finalR": "Sádico e Calculista",
         "finalS": "Gosto Buocólico",
