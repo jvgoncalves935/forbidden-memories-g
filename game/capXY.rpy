@@ -20,31 +20,65 @@ label capXY:
     stop music fadeout 1.5
     "{p=2.0}{nw}"
 
+
+    show img_capXY_01 at top_fade
     play music fm_kaiba_faceoff
     voice voz_capXY_001
     "Oi galeeeera, eu sou a Belinha que\ndá o cu na janelinha..."
     play sound ctc
 
+    hide img_capXY_01
+    show img_capXY_03 at top_fade
+    "{p=1.0}{nw}"
+
+    hide img_capXY_03
+    show img_capXY_04 at top_fade
     voice voz_capXY_002
     "Esse é o Doooouglas..."
     play sound ctc
 
+    hide img_capXY_04
+    show img_capXY_08 at top_fade
     voice voz_capXY_003
     "Daqui a pouquinho eu vou pegar\nele bem gostoso, aguardem."
     play sound ctc
 
+    hide img_capXY_08
+    show img_capXY_09 at top_fade
     voice voz_capXY_004
     "Essa é a Marcelinha que\nfica toda molhadhinha..."
     play sound ctc
 
+    hide img_capXY_09
+    show img_capXY_10 at top_fade
     voice voz_capXY_005
-    "E essa é a gostosona da\nMonica Mattos, hmm... que eu\ntambém vou aproveitar hoje, hein?"
+    "E essa é a gostosona da\nMonica Mattos, hmm... {w=1.0}{nw}"
+    
+    hide img_capXY_10
+    show img_capXY_05 at top_fade
+    "E essa é a gostosona da\nMonica Mattos, hmm... {fast}que eu\ntambém vou aproveitar hoje, hein?"
     play sound ctc
 
+    hide img_capXY_05
+    show img_capXY_11 at top_fade
+    "{p=1.2}{nw}"
+
+    hide img_capXY_11
+    show img_capXY_12 at top_fade
+    "{p=1.2}{nw}"
+
+    hide img_capXY_12
+    show img_capXY_13 at top_fade
+    "{p=1.2}{nw}"
+
+    hide img_capXY_13
+    show img_capXY_15 at top_fade
     voice voz_capXY_006
     "Então Douglas... conta pra gente\ncomo você fez pra mandar\num email pra Garotas Na Van..."
     play sound ctc
 
+    hide img_capXY_15
+    show img_capXY_25 at top_fade
     voice voz_capXY_007
     "Nossa vida, eu fiquei...\nimpressionado com... de ver\nagora de bem de perto vocês, né."
     play sound ctc
@@ -96,6 +130,9 @@ label capXY:
     voice voz_capXY_019
     "NUUUOOOSSA! Então ela\né um canguru!"
     play sound ctc
+
+    show img_capXY_37 at top_fade
+    "{p=4.0}{nw}"
 
     voice voz_capXY_020
     "Ele tá muito vestido, olha pra\nessa roupa dele. (é verdade.)"
@@ -189,7 +226,7 @@ label capXY:
     play sound ctc
 
     voice voz_capXY_040
-    "Gostou de tar aqui? Vou."
+    "Gostou de tar aqui? (vou.)"
     play sound ctc
 
     voice voz_capXY_041
