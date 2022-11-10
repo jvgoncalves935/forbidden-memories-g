@@ -83,96 +83,149 @@ label capXY:
     "Nossa vida, eu fiquei...\nimpressionado com... de ver\nagora de bem de perto vocês, né."
     play sound ctc
 
+    hide img_capXY_25
+    show img_capXY_22 at top_fade
     voice voz_capXY_008
     "Olha... hahaha!"
     play sound ctc
 
+    hide img_capXY_22
+    show img_capXY_27 at top_fade
     voice voz_capXY_009
     "Então é isso aí, olha. Seja\nmuito bem vindo e... oh!"
     play sound ctc
 
+    hide img_capXY_27
+    show img_capXY_30 at top_fade
     voice voz_capXY_010
     "Explica pra gente, você faz o\nquê da vida? Você trabalha do quê?"
     play sound ctc
 
+    hide img_capXY_30
+    show img_capXY_26 at top_fade
     voice voz_capXY_011
     "Eu trabalho de segurança, só."
     play sound ctc
 
+    hide img_capXY_26
+    show img_capXY_29 at top_fade
     voice voz_capXY_012
     "Segurança? (ai...) Ah, que ele\nseja o meu SEGURANÇA... (segura bem?)"
     play sound ctc
 
+    hide img_capXY_29
+    show img_capXY_30 at top_fade
     voice voz_capXY_013
     "Sabia que eu sou mágica?"
     play sound ctc
 
+    hide img_capXY_30
+    show img_capXY_35 at top_fade
     voice voz_capXY_014
     "Eu sou... é sério..."
     play sound ctc
 
+    hide img_capXY_35
+    show img_capXY_36 at top_fade
     voice voz_capXY_015
     "Faço tudo SUMIR dentro de mim!"
     play sound ctc
 
+    hide img_capXY_36
+    show img_capXY_38 at top_fade
     voice voz_capXY_016
     "(Engasgard) OPAAAAA!"
     play sound ctc
 
+    hide img_capXY_38
+    show img_capXY_39 at top_fade
     voice voz_capXY_017
     "Fui campeã olímpica, sabia?"
     play sound ctc
 
+    hide img_capXY_39
+    show img_capXY_40 at top_fade
     voice voz_capXY_018
     "Eu ganhei medalha de ouro em\nSalto na Vara, 3 metros."
     play sound ctc
 
+    hide img_capXY_40
+    show img_capXY_41 at top_fade
     voice voz_capXY_019
     "NUUUOOOSSA! Então ela\né um canguru!"
     play sound ctc
 
+    hide img_capXY_41
     show img_capXY_37 at top_fade
-    "{p=4.0}{nw}"
+    "{p=2.5}{nw}"
 
+    hide img_capXY_37
+    show img_capXY_60 at top_fast
+    "{p=0.5}{nw}"
+
+    hide img_capXY_60
+    show img_capXY_43 at top_fade
     voice voz_capXY_020
     "Ele tá muito vestido, olha pra\nessa roupa dele. (é verdade.)"
     play sound ctc
 
+    hide img_capXY_43
+    show img_capXY_44 at top_fade
     voice voz_capXY_021
     "E olha só o tamanho do braço\ndesse cara, se ele desse\nem mim eu... caio aqui de-"
     play sound ctc
 
+    hide img_capXY_44
+    show img_capXY_34 at top_fade
     voice voz_capXY_022
     "Mas será que você pode passar\nna minha casa?"
     play sound ctc
 
+    hide img_capXY_34
+    show img_capXY_46 at top_fade
     voice voz_capXY_023
     "É, eu preciso de uma... de\numa segurança básica..."
     play sound ctc
 
+    hide img_capXY_46
+    show img_capXY_47 at top_fade
     voice voz_capXY_024
     "A gente precisa de alguém\npra nos defender..."
     play sound ctc
 
+    hide img_capXY_47
+    show img_capXY_48 at top_fade
     voice voz_capXY_025
     "Olha meus bracinhos pequeninhos\ne... opa, que é isso...?"
     play sound ctc
 
+    hide img_capXY_48
+    show img_capXY_49 at top_fade
+    "{p=1.0}{nw}"
+
+    hide img_capXY_49
+    show img_capXY_50 at top_fade
     voice voz_capXY_026
     "Olha..."
     play sound ctc
 
+    hide img_capXY_50
+    show img_capXY_51 at top_fade
     voice voz_capXY_027
     "Esse segurança segura com\nforça... Esse segura!"
     play sound ctc
 
+    hide img_capXY_51
+    show img_capXY_52 at top_fade
     voice voz_capXY_028
     "Olha, o braço dele dá a\nminha coxa!"
     play sound ctc
 
+    hide img_capXY_52
     stop music fadeout 1.0
     "{p=1.0}{nw}"
 
+    show img_capXY_53 at top_fade
     play music fm_kaiba_theme
     voice voz_capXY_029
     "..."
@@ -182,12 +235,14 @@ label capXY:
     "..."
     play sound ctc
 
+    hide img_capXY_53
     voice voz_capXY_031
     "..."
     play sound ctc
 
     "{p=2.0}{nw}"
 
+    show ym_03 at top_fade
     play music "<loop 0.0 from 50.0>mod_assets/music/fm_kaiba_theme.ogg"
     voice voz_capXY_032
     "OHHH... OHHH..."
@@ -205,30 +260,42 @@ label capXY:
     "OH MAN... OHH... OH SAFADA..."
     play sound ctc
 
+    hide ym_03
     stop music fadeout 1.5
     "{p=2.0}{nw}"
 
+    show img_capXY_58 at top_fade
     play music fm_modern_shop
     voice voz_capXY_036
     "Aí Douglas, foi bom pra você-"
     play sound ctc
 
+    hide img_capXY_58
+    show img_capXY_31 at top_fade
     voice voz_capXY_037
-    "É... foi maravilhoso, é...\n(risadas)"
+    "É... foi maravilhoso... (risadas)\nÉ..."
     play sound ctc
 
+    hide img_capXY_31
+    show img_capXY_56 at top_fade
     voice voz_capXY_038
     "Mas e aí, você indica pros\nseus amigos estarem mandando-"
     play sound ctc
 
+    hide img_capXY_56
+    show img_capXY_32 at top_fade
     voice voz_capXY_039
     "Vou sim, vou... Vou falar, é...\nvou sim!"
     play sound ctc
 
+    hide img_capXY_32
+    show img_capXY_54 at top_fade
     voice voz_capXY_040
     "Gostou de tar aqui? (vou.)"
     play sound ctc
 
+    hide img_capXY_54
+    show img_capXY_33 at top_fade
     voice voz_capXY_041
     "Quem é que não gostaria?\nÉ, eu gostei né, cara..."
     play sound ctc
@@ -237,16 +304,32 @@ label capXY:
     "Esse equipe aqui tá... mil.\nNota mil."
     play sound ctc
 
+    hide img_capXY_33
+    show img_capXY_57 at top_fade
     voice voz_capXY_043
     "É...? Nota mil?"
     play sound ctc
 
+    hide img_capXY_57
+    show img_capXY_55 at top_fade
     voice voz_capXY_044
     "Bom... beijão pessoal!\nBeijo, beijo...!"
     play sound ctc
 
-    stop music fadeout 1.5
+    hide img_capXY_55
+    show img_capXY_58 at top_fade
+    "{p=1.0}{nw}"
+
+    hide img_capXY_58
+    show img_capXY_59 at top_fast
+    play music "<loop 0.0 from 61.0>mod_assets/music/fm_kaiba_theme.ogg"
+    "{p=1.0}{nw}"
+
+    hide img_capXY_59
     "{p=2.0}{nw}"
+
+    stop music fadeout 1.5
+    "{p=1.5}{nw}"
 
     stop music
     stop sound_bg

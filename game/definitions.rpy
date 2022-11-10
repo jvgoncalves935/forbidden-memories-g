@@ -560,6 +560,13 @@ transform top_fade:
     on hide:
         easeout 0.5 alpha 0
 
+transform top_fast:
+    on show:
+        align (0,0)
+        alpha 1.0
+    on hide:
+        easeout 0.5 alpha 0
+
 ###################Personagens
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
@@ -1406,6 +1413,8 @@ image img_capXY_56 = "mod_assets/images/capXY/capXY_56.png"
 image img_capXY_57 = "mod_assets/images/capXY/capXY_57.png"
 image img_capXY_58 = "mod_assets/images/capXY/capXY_58.png"
 image img_capXY_59 = "mod_assets/images/capXY/capXY_59.png"
+image img_capXY_60 = "mod_assets/images/capXY/capXY_60.png"
+image ym_03 = "mod_assets/images/capXY/ym_03.png"
 
 
 
