@@ -294,6 +294,21 @@ init python:
             return True
         return False
 
+    def is_main_chapters_unlocked():
+        if(persistent.endings["C1"] and persistent.endings["C2"] and persistent.endings["C3"] and persistent.endings["C4"] 
+        and persistent.endings["C5"] and persistent.endings["CXX"]):
+            return True
+        return False
+
+    def abrir_FACELESSGAMES_site():
+        import os
+        if(renpy.variant("pc")):
+            try:
+                os.system('cmd /c start iexplore "http://FACELESSGAMES.COM.BR"')
+            except:
+                pass
+
+
     
 
 ############################################################################################################
@@ -1416,7 +1431,18 @@ image img_capXY_59 = "mod_assets/images/capXY/capXY_59.png"
 image img_capXY_60 = "mod_assets/images/capXY/capXY_60.png"
 image ym_03 = "mod_assets/images/capXY/ym_03.png"
 
-
+image FACELESSGAMES_COM_BR:
+    block:
+        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR.png"
+        #align (0.875,0.9)
+        alpha 1.0
+        0.3
+        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR2.png"
+        #align (0.875,0.9)
+        alpha 1.0
+        0.3
+        repeat
+        
 
 
 
@@ -1638,29 +1664,8 @@ image ja_02 = "mod_assets/images/capJA/ja_02.png"
 
 image jumpscare = "mod_assets/images/capSN/jumpscare.png"
 
+
 ###################Musicas 
-define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
-define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
-define audio.yugioco = "<loop 0.0>mod_assets/music/yugioco.ogg"
-define audio.farao_amet = "<loop 0.0>mod_assets/music/farao_amet.ogg"
-define audio.sh4_resting_comfortably = "<loop 1.966>mod_assets/music/sh4_resting_comfortably.ogg"
-
-define audio.indio_policia = "<loop 0.0>mod_assets/music/indio_policia.ogg"
-define audio.tv_001 = "mod_assets/music/tv_001.ogg"
-define audio.tv_002 = "mod_assets/music/tv_002.ogg"
-define audio.tv_003 = "mod_assets/music/tv_003.ogg"
-define audio.tv_004 = "mod_assets/music/tv_004.ogg"
-define audio.tv_005 = "mod_assets/music/tv_005.ogg"
-define audio.siren = "mod_assets/music/siren.ogg"
-define audio.siren2 = "<loop 0.433>mod_assets/music/siren2.ogg"
-define audio.ambulance_01 = "<loop 0.00>mod_assets/music/ambulance_01.ogg"
-define audio.ambulance_02 = "<loop 0.00>mod_assets/music/ambulance_02.ogg"
-define audio.city_01 = "<loop 0.00>mod_assets/music/city_01.ogg"
-define audio.cicadas = "<loop 0.00>mod_assets/music/cicadas.ogg"
-define audio.tele_sena = "<loop 0.00>mod_assets/music/tele_sena.ogg"
-define audio.tele_sena_metaleiro = "<loop 0.00>mod_assets/music/tele_sena_metaleiro.ogg"
-define audio.despacito_nokia = "<loop 0.00>mod_assets/music/despacito_nokia.ogg"
-
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
 define audio.fm_intro = "mod_assets/music/fm_intro.ogg"
 define audio.fm_preliminary_faceoff = "<loop 1.333>mod_assets/music/fm_preliminary_faceoff.ogg"
@@ -2410,7 +2415,31 @@ define voz_capXY_042 = "mod_assets/voices/capXY/capxy_042.ogg"
 define voz_capXY_043 = "mod_assets/voices/capXY/capxy_043.ogg"
 define voz_capXY_044 = "mod_assets/voices/capXY/capxy_044.ogg"
 
-###################Audios
+
+
+
+###################Audios Misc 
+define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
+define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
+define audio.yugioco = "<loop 0.0>mod_assets/music/yugioco.ogg"
+define audio.farao_amet = "<loop 0.0>mod_assets/music/farao_amet.ogg"
+define audio.sh4_resting_comfortably = "<loop 1.966>mod_assets/music/sh4_resting_comfortably.ogg"
+
+define audio.indio_policia = "<loop 0.0>mod_assets/music/indio_policia.ogg"
+define audio.tv_001 = "mod_assets/music/tv_001.ogg"
+define audio.tv_002 = "mod_assets/music/tv_002.ogg"
+define audio.tv_003 = "mod_assets/music/tv_003.ogg"
+define audio.tv_004 = "mod_assets/music/tv_004.ogg"
+define audio.tv_005 = "mod_assets/music/tv_005.ogg"
+define audio.siren = "mod_assets/music/siren.ogg"
+define audio.siren2 = "<loop 0.433>mod_assets/music/siren2.ogg"
+define audio.ambulance_01 = "<loop 0.00>mod_assets/music/ambulance_01.ogg"
+define audio.ambulance_02 = "<loop 0.00>mod_assets/music/ambulance_02.ogg"
+define audio.city_01 = "<loop 0.00>mod_assets/music/city_01.ogg"
+define audio.cicadas = "<loop 0.00>mod_assets/music/cicadas.ogg"
+define audio.tele_sena = "<loop 0.00>mod_assets/music/tele_sena.ogg"
+define audio.tele_sena_metaleiro = "<loop 0.00>mod_assets/music/tele_sena_metaleiro.ogg"
+define audio.despacito_nokia = "<loop 0.00>mod_assets/music/despacito_nokia.ogg"
 
 define audio.menu_start = "mod_assets/sounds/menu_start.ogg"
 define audio.ctc = "mod_assets/sounds/ctc.ogg"
@@ -2477,6 +2506,12 @@ define audio.alemao_01 = "<loop 0.00>mod_assets/sounds/alemao_01.ogg"
 define audio.felipe_dylon_01 = "<loop 0.00>mod_assets/sounds/felipe_dylon_01.ogg"
 define audio.calvoooo = "<loop 0.00>mod_assets/sounds/calvoooo.ogg"
 define audio.pau_brilhante = "<loop 0.00>mod_assets/sounds/pau_brilhante.ogg"
+define audio.jailson_ainn = "<loop 0.00>mod_assets/sounds/jailson_ainn.ogg"
+define audio.jailson_ainn2 = "<loop 0.00>mod_assets/sounds/jailson_ainn2.ogg"
+define audio.filhona2 = "<loop 0.00>mod_assets/sounds/filhona.ogg"
+define audio.dragao_baiano2 = "<loop 0.00>mod_assets/sounds/dragao_baiano.ogg"
+define audio.coringa_dano2 = "<loop 0.00>mod_assets/sounds/coringa_dano.ogg"
+define audio.vegeta_de_familia = "<loop 0.00>mod_assets/sounds/vegeta_de_familia.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

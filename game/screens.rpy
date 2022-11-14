@@ -1488,7 +1488,7 @@ screen endings():
             textbutton _("Carta 27"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="pote_da_delicia.png",card=0),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="pote_da_delicia.png",card=0),Function(sfx_carta,audio.jailson_ainn,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1786,8 +1786,8 @@ screen endings():
             textbutton _("Carta 54"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_left")]
+                hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(sfx_carta,"<from 0.833 loop 0.833>mod_assets/music/fm_kaiba_faceoff.ogg",False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [Function(FinishEnterNameCapXY)]
 
 
@@ -1804,7 +1804,7 @@ screen endings():
             textbutton _("Carta 55"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(sfx_carta,audio.jailson_ainn2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1815,7 +1815,7 @@ screen endings():
             textbutton _("Carta 56"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(sfx_carta,audio.filhona2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1826,7 +1826,7 @@ screen endings():
             textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(sfx_carta,audio.dragao_baiano2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1837,7 +1837,7 @@ screen endings():
             textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(sfx_carta,audio.coringa_dano2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1879,8 +1879,8 @@ screen endings():
             textbutton _("Carta 61"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_left")]
+                hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(sfx_carta,audio.vegeta_de_familia,False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
@@ -1971,6 +1971,17 @@ screen creditos():
             action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias")]]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
+
+    if(is_main_chapters_unlocked()):
+        vbox:
+            xalign 0.925
+            yalign 0.9
+            imagebutton:
+                idle "FACELESSGAMES_COM_BR"
+                action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.fm_freeduel),Function(renpy.call_in_new_context,"capFACELESSGAMES")]]
+                hover_sound audio.fm_arrow_select
+                activate_sound audio.fm_back
+            #image "FACELESSGAMES_COM_BR"
 
     vbox:
         xalign 0.5
