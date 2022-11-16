@@ -1079,6 +1079,31 @@ screen side_img_left(img,card):
         textbutton _("\""+deck_g_names[card]+"\""):
             style "page_label_text"
             text_size 16
+
+
+screen side_img_left_video(img,card,video):
+
+    vbox:
+        xalign 0.105
+        yalign 0.275
+        
+        add "mod_assets/images/deck/" + img:
+            zoom 0.78
+    
+    vbox:
+        xalign 0.145
+        yalign 0.33
+
+        add video:
+            zoom 0.78
+
+    vbox:
+        xalign 0.94
+        yalign 0.96
+
+        textbutton _("\""+deck_g_names[card]+"\""):
+            style "page_label_text"
+            text_size 16
     #$ guinodia(guinodia_toggle,guinodia_pos)
 
     #on "show" action Play("sound", "audio/se/SE_シスてム_タイとル_ルーぷ.wav")
@@ -1166,7 +1191,7 @@ screen endings():
     
     textbutton _("Finais"):
         xalign 0.5
-        yalign 0.0
+        yalign 0.005
         style "page_label_text"
         text_size 28
 
@@ -1676,8 +1701,8 @@ screen endings():
             textbutton _("Carta 52"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="guinodia_perna_esquerda.png",card=17),Function(guinodia,True,3)]
-                unhovered [Hide("side_img_left")]
+                hovered [ShowTransient("side_img_left_video", img="tom_chines.png",card=40,video="img_tom_chines"),Function(sfx_carta,audio.tom_chines,False,1),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left_video"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [NullAction()]
 
     if(persistent.endings["S"]):
@@ -1779,17 +1804,27 @@ screen endings():
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
-    if(persistent.endings["CXY"]):
+    if(persistent.endings["CYM"]):
         vbox:
             xalign 0.66
             yalign 0.54
             textbutton _("Carta 54"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(sfx_carta,"<from 0.833 loop 0.833>mod_assets/music/fm_kaiba_faceoff.ogg",False,0),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left", img="oh_man.png",card=39),Function(sfx_carta,"<from 0.833 loop 0.833>mod_assets/music/fm_kaiba_faceoff.ogg",False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(music_channel_stop,"sound")]
                 action [Function(FinishEnterNameCapXY)]
 
+    if(persistent.endings["CXY"]):
+        vbox:
+            xalign 0.795
+            yalign 0.54
+            textbutton _("Carta 55"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="guinodia_perna_esquerda.png",card=17),Function(guinodia,True,3)]
+                unhovered [Hide("side_img_left")]
+                action [NullAction()]
 
 
 
@@ -1801,7 +1836,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.59
-            textbutton _("Carta 55"):
+            textbutton _("Carta 56"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(sfx_carta,audio.jailson_ainn2,False,0)]
@@ -1812,7 +1847,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.59
-            textbutton _("Carta 56"):
+            textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(sfx_carta,audio.filhona2,False,0)]
@@ -1823,7 +1858,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.59
-            textbutton _("Carta 57"):
+            textbutton _("Carta 58"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(sfx_carta,audio.dragao_baiano2,False,0)]
@@ -1834,7 +1869,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.64
-            textbutton _("Carta 58"):
+            textbutton _("Carta 59"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(sfx_carta,audio.coringa_dano2,False,0)]
@@ -1845,7 +1880,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.64
-            textbutton _("Carta 59"):
+            textbutton _("Carta 60"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=31),Function(guinodia,False,0)]
@@ -1856,7 +1891,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.64
-            textbutton _("Carta 60"):
+            textbutton _("Carta 61"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="sandro_lima.png",card=32),Function(guinodia,False,0)]
@@ -1876,7 +1911,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.69
-            textbutton _("Carta 61"):
+            textbutton _("Carta 62"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(sfx_carta,audio.vegeta_de_familia,False,0),Function(music_channel_stop,"music")]
@@ -1887,7 +1922,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.69
-            textbutton _("Carta 62"):
+            textbutton _("Carta 63"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=34),Function(guinodia,False,0)]
@@ -1898,7 +1933,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.69
-            textbutton _("Carta 63"):
+            textbutton _("Carta 64"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(guinodia,False,0)]
@@ -1909,7 +1944,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.74
-            textbutton _("Carta 64"):
+            textbutton _("Carta 65"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="mark.png",card=36),Function(guinodia,False,0)]
@@ -1920,7 +1955,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.74
-            textbutton _("Carta 65"):
+            textbutton _("Carta 66"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="taeyeon.png",card=37),Function(guinodia,False,0)]
@@ -1931,7 +1966,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.74
-            textbutton _("Carta 66"):
+            textbutton _("Carta 67"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
@@ -1940,7 +1975,7 @@ screen endings():
 
     textbutton _("Voltar"):
         xalign 0.05
-        ypos 0.975
+        ypos 0.99
         style "return_button"
         action [Return(), Play("music", config.main_menu_music),Function(guinodia_init)]
 

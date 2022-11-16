@@ -111,7 +111,8 @@ init python:
                         ("C4",False),
                         ("C5",False),
                         ("CXX",False),
-                        ("CXY",False)]
+                        ("CXY",False),
+                        ("CYM",False)]
                         
             persistent.endings = dict(array_aux)
 

@@ -398,7 +398,8 @@ define deck_g_names = [
     "Mark_77Souls, O Esquizofrêncio",
     "Taeyeon115, O Amigo de Sangue",
     "Master Exploder, O Calvo Supremo",
-    "OH MAN"
+    "OH MAN",
+    "Tom Chinês (Nego Drama)"
 ]
 
 define endings_descriptions = {
@@ -646,6 +647,7 @@ image pelada_james_05 = Movie(play="mod_assets/videos/pelada_james_05.webm",size
 image pelada_james_06 = Movie(play="mod_assets/videos/pelada_james_06.webm",size=(960,720))
 image pelada_james_07 = Movie(play="mod_assets/videos/pelada_james_07.webm",size=(960,720))
 image senna_danca = Movie(play="mod_assets/videos/senna_danca.webm",size=(960,720))
+image img_tom_chines = Movie(play="mod_assets/videos/tom.webm",size=(326,326),channel="movie")
 
 
 
@@ -2512,6 +2514,7 @@ define audio.filhona2 = "<loop 0.00>mod_assets/sounds/filhona.ogg"
 define audio.dragao_baiano2 = "<loop 0.00>mod_assets/sounds/dragao_baiano.ogg"
 define audio.coringa_dano2 = "<loop 0.00>mod_assets/sounds/coringa_dano.ogg"
 define audio.vegeta_de_familia = "<loop 0.00>mod_assets/sounds/vegeta_de_familia.ogg"
+define audio.tom_chines = "<loop 0.00>mod_assets/sounds/tom chines.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

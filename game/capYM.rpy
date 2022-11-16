@@ -29,7 +29,7 @@ label capYM:
 
     hide ym_02
 
-    $ register_ending("CXY")
+    $ register_ending("CYM")
     show ym_01 at top_fade
     play sound_bg audio.millenniumitem noloop
     "(Você desbloqueou o capítulo\nsecreto do \"Oh Man\"!!!)"

@@ -334,7 +334,7 @@ label capXY:
     stop music
     stop sound_bg
     scene black
-    #$ register_ending("CXY")
+    $ register_ending("CXY")
 
     $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
     
