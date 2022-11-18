@@ -18,11 +18,14 @@ label capXX:
     "{p=0.3}{nw}"
     "Ora, as garotas ainda não chegaram\nno clube..."
     play sound ctc
+
     show yuri 2h
     "Tenho que estudar muito ainda para a\nprova de amanhã, não estou entendendo\na matéria direito."
     play sound ctc
+    
     "Não estou conseguindo..."
     play sound ctc
+    
     stop music
     play music fm_plazatown
     show seto_s at side_image_in zorder 3
@@ -30,6 +33,7 @@ label capXX:
     voice voz_capXX_001
     "O que eu sempre digo: \"Se não\nconsegue da primeira vez, ATAQUE COM O\nOLHOS AZUIS DE NOVO!\""
     play sound ctc
+    
     show seto_s at side_image_out
     "{p=0.6}{nw}"
     hide seto_s
@@ -42,24 +46,28 @@ label capXX:
     voice voz_capXX_002
     "Se você não puder, isso não vai me\nsurpreender..."
     play sound ctc
-    show yuri 2o at t31
 
+    show yuri 2o at t31
     "{p=0.3}{nw}"
     "(Parece que ele surgiu de outra\nera...! Antigo Egito?)"
     play sound ctc
+    
     show yuri 2n at t31
     "{p=0.3}{nw}"
     "O-o que você está fazendo aqui?"
     play sound ctc
+    
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s1
+    
     show seto_s at side_image_in
-
     "{p=0.6}{nw}"
+
     voice voz_capXX_003
     "Nada que seja do seu interesse, eu\nvim ver uma carta..."
     play sound ctc
+    
     show seto_s at side_image_out
     "{p=0.6}{nw}"
     hide seto_s
@@ -72,9 +80,11 @@ label capXX:
 
     show seto_s at side_image_in
     "{p=0.6}{nw}"
+    
     voice voz_capXX_018
     "Você e eu vamos ter um duelo\nFINAL... Você vai PERDER\ne EU vou VENCER!"
     play sound ctc
+    
     show seto_s at side_image_out
     "{p=0.6}{nw}"
     hide seto_s
@@ -83,19 +93,22 @@ label capXX:
     stop music
     play music fm_preliminary_faceoff
     "{p=0.3}{nw}"
+    
     "V-Você é louco! Estou indo embora!"
     play sound ctc
 
     show yuri_s1 at side_image_out
     "{p=0.6}{nw}"
     hide yuri_s1
+    
     show yuri 2p
     show yuri at lhide
     hide yuri
     "{p=0.3}{nw}"
+    
     show seto 1b at t32
-
     "{p=0.3}{nw}"
+    
     voice voz_capXX_004
     "HA! HAHAHAHAHAAAA!"
     play sound ctc

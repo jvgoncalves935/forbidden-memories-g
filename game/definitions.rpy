@@ -254,14 +254,23 @@ init python:
         else:
             renpy.music.play(audio,"sound")
         
+    def init_music_channel_stopped():
+        global music_channel_stopped
+        music_channel_stopped = False
+
     def music_channel_stop(channel_name):
         global pos_music_aux
-        pos_music_aux = renpy.music.get_pos(channel_name)
+        global music_channel_stopped
+        if(renpy.music.get_pos(channel_name) is not None):
+            pos_music_aux = renpy.music.get_pos(channel_name)
         renpy.music.stop(channel_name)
+        music_channel_stopped = True
 
     def music_channel_play(channel_name,_loop,_filename):
         global pos_music_aux
+        global music_channel_stopped
         renpy.music.play("<loop {} from {}>{}".format(_loop,pos_music_aux,_filename),channel=channel_name)
+        music_channel_stopped = False
 
     def reset_jumpscare_senna(toggle,pos):
         guinodia(toggle,pos)
@@ -2515,14 +2524,21 @@ define audio.dragao_baiano2 = "<loop 0.00>mod_assets/sounds/dragao_baiano.ogg"
 define audio.coringa_dano2 = "<loop 0.00>mod_assets/sounds/coringa_dano.ogg"
 define audio.vegeta_de_familia = "<loop 0.00>mod_assets/sounds/vegeta_de_familia.ogg"
 define audio.tom_chines = "<loop 0.00>mod_assets/sounds/tom chines.ogg"
+define audio.kid_bengala2 = "<loop 0.00>mod_assets/sounds/kid.ogg"
+define audio.kawan2 = "<loop 0.00>mod_assets/sounds/relaxar.ogg"
+define audio.guina_professor = "<loop 0.00>mod_assets/sounds/guina_professor.ogg"
+define audio.mangueira = "<loop 0.00>mod_assets/sounds/mangueira.ogg"
+define audio.fomehahaha = "<loop 0.00>mod_assets/sounds/fome.ogg"
+define audio.jo_abdul2 = "<loop 0.00>mod_assets/sounds/jo_abdul.ogg"
+define audio.cabacao2 = "<loop 0.00>mod_assets/sounds/cabacao.ogg"
+define audio.guina_seguranca = "<loop 0.00>mod_assets/sounds/guina_seguranca.ogg"
+define audio.princesa_demacol2 = "<loop 0.00>mod_assets/sounds/princesa_demacol.ogg"
+define audio.guina_supremo = "<loop 0.00>mod_assets/sounds/guina_supremo.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
-############################################################################################################
-############################################################################################################
 
 #Discord Rich Presence
-#ALTERAR FORBIDDEN MEMORIES G
 init python:
     import time
     import drpc
@@ -2680,13 +2696,23 @@ image hashwatch_img:
     pause 1.0
     repeat
 
+#Fim Forbidden Memories G
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
+
+
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
+#Doki Doki Literature Club!
+
 init python:
     import hashlib
     import shutil
     import time
     import singleton
     import os
-
 
 #Music
 #The Music section is where you can reference existing DDLC audio
