@@ -7,6 +7,7 @@
 define persistent.demo = False
 define persistent.steam = False
 define config.developer = True #Change this flag to True to enable dev tools
+#define config.darkilson = True #VOCÊS BROXARAM
 
 python early:
     import singleton
@@ -17,10 +18,6 @@ init python:
     def print_debug(var):
         print("teste",var)
 
-    #config.keymap['game_menu'].remove('mouseup_3')
-    #config.keymap['hide_windows'].append('mouseup_3')
-    #config.rollback_enabled = False
-
     config.keymap['self_voicing'] = []
     config.keymap['performance'] = []
     config.keymap['screenshot'] = []
@@ -29,15 +26,6 @@ init python:
     config.keymap['toggle_skip'] = []
     config.keymap['game_menu'] = ['K_ESCAPE']
     renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
-
-
-    #config.preferences['prefs_left'].append(
-    #            _Preference(
-    #                "FadeIn",
-    #                "fadein",
-    #                [ ("Ativado", True, "True"),
-    #                ("Desativado", False, "True") ],
-    #                base=persistent))
 
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
@@ -80,14 +68,17 @@ init python:
         flag_input_operation_senna =False
     
     def set_input_operation_senna():
-        #print(player)
         set_flag_input_operation_senna(True)
         register_ending("Z")
         hash_aux = hashlib.sha512(str(player).upper().encode("utf-8")).hexdigest().upper()
         
-        #print(hash_aux)
         global hash_operation_senna
+        #Talvez agora você não consiga encontrar a chave. Aguarde.
+        #Sempre mantenha sua visão atenta.
+        #As aparências enganam.
         if(hash_aux == hash_operation_senna):
+            #Se você chegou até aqui, meus parabéns.
+            #Verdadeiro Final Verdadeiro desbloqueado.
             renpy.quit()
             return
         
@@ -95,24 +86,9 @@ init python:
         renpy.show_screen("creditos")
         drpc_update("menu")
         renpy.music.play(audio.fm_freeduel)
-
-        
-
-    
-    #def is_input_operation_senna():
-    #    global flag_input_operation_senna
-    #    (player,"aaaaa")
-    #    if(player == "" or not flag_input_operation_senna):
-    #        print("input_op")
-    #        renpy.show_screen("operation_senna_scr")
-    #        ShowMenu("operation_senna_scr")
-    #        SensitiveIf(renpy.get_screen("operation_senna_scr") == None)
-    #    else:
-    #        print("return")
             
     
     def set_flag_input_operation_senna(flag):
-        #print("set",flag)
         global flag_input_operation_senna
         if(flag_input_operation_senna):
             return
@@ -230,7 +206,6 @@ init python:
     def guinodia_init():
         global guinodia_array
         guinodia_array = [False,False,False,False,False,False]
-        #print(guinodia_array)
 
     def guinodia(toggle,pos):
         global guinodia_array
@@ -241,7 +216,6 @@ init python:
         
         guinodia_array[pos] = True
         renpy.music.play(audio.oco,"sound")
-        #print(guinodia_array)
 
         if(is_guinodia_available()):
             drpc_update("guinodia")
@@ -317,6 +291,10 @@ init python:
             except:
                 pass
 
+    def is_error242424():
+        if(persistent.error242424 == False and is_all_endings_unlocked()):
+            FinishEnterNameError242424()
+
 
     
 
@@ -327,7 +305,7 @@ init python:
 #Variaveis
 define input_operation_senna = ""
 define flag_input_operation_senna = False
-define hash_operation_senna = "DA05114A91FFC80DE0C2E579754AF46FCFEA573041BD4C885B6A7FD44BC3E43DE825B8F6D7C20F812C2E43E3D0B1C5B6B119BC1691E3287F737F195868B9DBB0"
+define hash_operation_senna = "FE3D27C19061890036E84A96E150F95084ACA74DAE8CBC8FBE7E5943A7B7E048D2F3A5409C6CAFBE5D41D9232B8594D45F879621A11A8AF0FF6E1409466F42AD"
 define guinarnia_null = [False,False,False,False,False,False]
 
 define endings_names = {
@@ -2534,6 +2512,9 @@ define audio.cabacao2 = "<loop 0.00>mod_assets/sounds/cabacao.ogg"
 define audio.guina_seguranca = "<loop 0.00>mod_assets/sounds/guina_seguranca.ogg"
 define audio.princesa_demacol2 = "<loop 0.00>mod_assets/sounds/princesa_demacol.ogg"
 define audio.guina_supremo = "<loop 0.00>mod_assets/sounds/guina_supremo.ogg"
+define audio.jesuis = "<loop 0.00>mod_assets/sounds/jesuis.ogg"
+define audio.globglogabgalab = "<loop 0.00>mod_assets/sounds/globglogabgalab.ogg"
+define audio.lily_santos2 = "<loop 0.00>mod_assets/sounds/lily_santos.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -2594,7 +2575,8 @@ init python:
         "finalX": "Final X",
         "finalY": "Final Y",
         "finalZ": "Final Z",
-        "aparencias": "As aparencias enganam."
+        "aparencias": "As aparencias enganam.",
+        "error242424": "FATAL ERROR 242424"
     }
 
     chapters_details = {
@@ -2642,7 +2624,8 @@ init python:
         "finalX": "El Gángster de Familia",
         "finalY": "Árabe de Família",
         "finalZ": "As Aparências Enganam",
-        "aparencias": "??????"
+        "aparencias": "??????",
+        "error242424": "??????????"
     }
 
     try: 

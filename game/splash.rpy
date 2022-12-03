@@ -117,12 +117,18 @@ init python:
             persistent.endings = dict(array_aux)
 
         #Liberar todos os finais (debug)
-        for key, value in persistent.endings.items():
-            persistent.endings[key] = True
+        #for key, value in persistent.endings.items():
+        #    persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
         store.current_label = name
+
+    def init_error242424():
+        if(persistent.error242424 is None):
+            persistent.error242424 = False
+        if(persistent.is_error242424_splashscreen is None):
+            persistent.is_error242424_splashscreen = False
 
     config.label_callback = label_callback
     #"--> You are at [current_label]"
@@ -134,6 +140,7 @@ init python:
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
 
     init_endings()
+    init_error242424()
     
     
     #persistent._character_volume['narrator'] = 1.0
@@ -331,6 +338,15 @@ label splashscreen:
 
     #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
+
+    if(persistent.is_error242424_splashscreen == True):
+        $ drpc_update("error242424")
+        $ persistent.error242424 = True
+        $ persistent.is_error242424_splashscreen = False
+
+        $ renpy.movie_cutscene("mod_assets/videos/erro242424.webm")
+        $ renpy.quit()
+
     $ drpc_update("menu")
     $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")

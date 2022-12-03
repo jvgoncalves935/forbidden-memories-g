@@ -40,7 +40,7 @@ style arabe_style:
 
 style font_creditos_menu:
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
-    size 14
+    size 16
     color gui.text_color
     outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     line_overlap_split 1
@@ -586,6 +586,15 @@ init python:
 
     def FinishEnterNameCapJailson():
         renpy.jump_out_of_context("capJA")
+
+    def FinishEnterNameChurrasco():
+        renpy.jump_out_of_context("churrasco")
+
+    def FinishEnterNameOnlyMen():
+        renpy.jump_out_of_context("onlymen")
+
+    def FinishEnterNameError242424():
+        renpy.jump_out_of_context("label_error242424_begin")
 
 
 
@@ -1328,11 +1337,11 @@ screen endings():
             xalign 0.09
             yalign 0.66
             textbutton _("Final L"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="alexandre_senna_carrasco.png",ending="L"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(FinishEnterNameOnlyMen)]
 
     if(persistent.endings["M"]):
         vbox:
@@ -1689,7 +1698,7 @@ screen endings():
             textbutton _("Carta 43"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_matrix.png",card=14),Function(sfx_carta,audio.cabacao2,False,0)]
+                hovered [ShowTransient("side_img_left", img="paulo_guina_matrix.png",card=14),Function(sfx_carta,audio.guina_seguranca,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1733,7 +1742,7 @@ screen endings():
             textbutton _("Carta 47"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="chessus.png",card=24),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="chessus.png",card=24),Function(sfx_carta,audio.jesuis,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1777,7 +1786,7 @@ screen endings():
             textbutton _("Carta 51"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="lily_santos.png",card=8),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="lily_santos.png",card=8),Function(sfx_carta,audio.lily_santos2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1847,11 +1856,11 @@ screen endings():
             xalign 0.795
             yalign 0.59
             textbutton _("Carta 57"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(sfx_carta,audio.filhona2,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(FinishEnterNameChurrasco)]
 
     if(persistent.endings["C3"]):
         vbox:
@@ -1935,8 +1944,8 @@ screen endings():
             textbutton _("Carta 64"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_left")]
+                hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(sfx_carta,audio.globglogabgalab,False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
                 action [NullAction()]
 
     if(is_all_endings_unlocked()):
@@ -1988,7 +1997,7 @@ screen creditos():
 
     vbox:
         xalign 0.475
-        yalign 0.165
+        yalign 0.22
         imagebutton:
             idle "mod_assets/images/operation_senna.png"
             hover "mod_assets/images/operation_senna_hover.png"
@@ -1998,11 +2007,11 @@ screen creditos():
 
     vbox:
         xalign 0.475
-        yalign 0.9
+        yalign 0.89
         imagebutton:
             idle "mod_assets/images/converting_minds.png"
             hover "mod_assets/images/converting_minds_hover.png"
-            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias")]]
+            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias"),Function(is_error242424)]]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
@@ -2019,87 +2028,76 @@ screen creditos():
 
     vbox:
         xalign 0.5
-        yalign 0.0
+        yalign 0.05
         
-        text "Forbidden Memories G"
-        style "font_creditos_menu"
+        text "Forbidden Memories G" style "font_creditos_menu":
+            size 22
     
     vbox:
         xalign 0.5
-        yalign 0.04
+        yalign 0.10
         
-        text "Desenvolvido por:"
-        style "font_creditos_menu"
+        text "Desenvolvido por:" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.08
+        yalign 0.13
         
-        text "Converting Minds: Operation Senna"
-        style "font_creditos_menu"
+        text "Converting Minds: Operation Senna" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.27
+        yalign 0.34
         
-        text "Programação, Game Design, Fonte, Roteiro,"
-        style "font_creditos_menu"
+        text "Programação, Game Design, Fonte, Roteiro," style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.31
+        yalign 0.37
         
-        text "Scripts, Sound Design, Design Gráfico:"
-        style "font_creditos_menu"
+        text "Scripts, Sound Design, Design Gráfico:" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.35
+        yalign 0.40
         
-        text "Master Exploder (Converting Minds)"
-        style "font_creditos_menu"
-
-    vbox:
-        xalign 0.5
-        yalign 0.45
-        
-        text "Transcripts:"
-        style "font_creditos_menu"
+        text "Master Exploder (Converting Minds)" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.49
         
-        text "Taeyeon115, Mark_77Souls"
-        style "font_creditos_menu"
+        text "Transcripts:" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.60
+        yalign 0.52
         
-        text "\"Converting Minds: Operation Senna\" é a"
-        style "font_creditos_menu"
+        text "Taeyeon115, Mark_77Souls" style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.61
+        
+        text "\"Converting Minds: Operation Senna\" é a" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.64
         
-        text "equipe criada para o desenvolvimento de"
-        style "font_creditos_menu"
+        text "equipe criada para o desenvolvimento de" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 0.68
+        yalign 0.67
         
-        text "Forbidden Memories G."
-        style "font_creditos_menu"
+        text "Forbidden Memories G." style "font_creditos_menu"
 
     vbox:
         xalign 0.5
-        yalign 1.0
+        yalign 0.975
         
-        text "Converting Minds, 2022"
-        style "font_creditos_menu"
+        text "Converting Minds, 2022" style "font_creditos_menu"
             
 
     #        text "[config.version]":
@@ -2109,7 +2107,7 @@ screen creditos():
 
     textbutton _("Voltar"):
         xalign 0.05
-        ypos 0.975
+        ypos 1.015
         style "return_button"
         action [Return(), Play("music", config.main_menu_music)]
 
@@ -2845,7 +2843,7 @@ screen name_input(message, ok_action):
                 style "confirm_prompt"
                 xalign 0.5
 
-            input default "" value VariableInputValue("player") length 1000 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            input default "" value VariableInputValue("player") length 1000 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.!@#$%&*()"
 
             hbox:
                 xalign 0.5
