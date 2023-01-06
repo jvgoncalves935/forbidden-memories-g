@@ -4,27 +4,36 @@
 ## If not, display an error message and quit.
 init -100 python:
     import hashlib
-    #Check for each archive needed
-    for archive in ['audio','scripts','images','fonts']:
-        if archive in config.archives:
-            #If one is missing, throw an error and chlose
-            renpy.error("O arquivo "+arquive+" de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
+    global melancholic_glitch
+    global melancholic_glitch_filename
     
-    dokis_names = ['yuri.chr','sayori.chr','monika.chr','natsuki.chr']
-    dokis_hashes = ['b13e8044ac74fc021a4d8a29ac28309519778c5a756071d263fa1288f653a68e',
-                    'ae4670655a5381464a62ac92f1572b6dfe4dfca92c0df43075e0aceaf3352fb5',
-                    '508cd3fa9bd30caadf05d2def59cfb4d98b3ffbc8b9dec23525eb2f46ab1ec44',
-                    '4e0ebef87e52c9f34f1abe68f0bcb34f246f98b363b16bcc18aa3bab41aca3ec']
-    i = 0
-    for archive in dokis_names:
-        try:
-            hash_file = hashlib.sha256(renpy.file("../characters/"+archive).read().encode('utf-8')).hexdigest()
-            if(hash_file != dokis_hashes[i]):
-                raise Exception()
-            i += 1
-        except:
-            renpy.error("O arquivo "+archive+" foi excluído ou corrompido. Por favor, recupere o arquivo original.")
-            pass
+    global racionais_g_count
+    racionais_g_count = 0
+    
+    melancholic_glitch = False
+    #Check for each archive needed
+    if renpy.variant("pc"):
+        for archive in ['audio','scripts','images','fonts']:
+            if archive in config.archives:
+                #If one is missing, throw an error and chlose
+                renpy.error("O arquivo "+arquive+" de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
+        
+        dokis_names = ['yuri.chr','sayori.chr','monika.chr','natsuki.chr']
+        dokis_hashes = ['b13e8044ac74fc021a4d8a29ac28309519778c5a756071d263fa1288f653a68e',
+                        'ae4670655a5381464a62ac92f1572b6dfe4dfca92c0df43075e0aceaf3352fb5',
+                        '508cd3fa9bd30caadf05d2def59cfb4d98b3ffbc8b9dec23525eb2f46ab1ec44',
+                        '4e0ebef87e52c9f34f1abe68f0bcb34f246f98b363b16bcc18aa3bab41aca3ec']
+        i = 0
+        for archive in dokis_names:
+            try:
+                hash_file = hashlib.sha256(renpy.file("../characters/"+archive).read().encode('utf-8')).hexdigest()
+                if(hash_file != dokis_hashes[i]):
+                    melancholic_glitch = True
+                    melancholic_glitch_filename = archive
+                    break
+                i += 1
+            except:
+                pass
 
 ## First, a disclaimer declaring this is a mod is shown, then there is a
 ## check for the original DDLC assets in the install folder. If those are
@@ -135,7 +144,7 @@ init python:
 
     menu_trans_time = 1
     #The default splash message, originally shown in Act 1 and Act 4
-    splash_message_default = "'A melancolia é a felicidade de se ser triste.' -Victor Hugo"
+    
     #splash_message_default = "'VAI ESPANCA MEU CU, ME ESTUPRA CARALHO' -Alexandre Senna"
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
 
@@ -284,6 +293,23 @@ label splashscreen:
         persistent.guinodia_active = False
 
     $ quick_menu = False
+    
+
+    if(melancholic_glitch):
+        $ splash_message_default = "'A melancolia é a felicidade de estar triste.' -Victor Hugo"
+        show img_melancholic_glitch
+        play sound audio.melancholic_glitch2
+        pause 2.2
+        #hide img_melancholic_glitch
+        python:
+            global melancholic_glitch_filename
+            try:
+                raise Exception()    
+            except:
+                renpy.error("O arquivo "+melancholic_glitch_filename+" foi excluído ou corrompido. Por favor, recupere o arquivo original e reinicie o jogo.")
+                pass
+        
+        $ renpy.quit()
 
     if(persistent.splash_complete is None or not persistent.splash_complete):
         #jump capXX

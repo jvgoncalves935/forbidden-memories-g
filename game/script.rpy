@@ -33,6 +33,11 @@ label start:
     
     play sound menu_start
 
+    #True True Ending Route
+    if(not game_over and is_true_true_ending_route()):
+        call AS_APARENCIAS_ENGANAM from _call_AS_APARENCIAS_ENGANAM
+        return
+
     if(not game_over):
         call cap01 from _call_cap01
     if(not game_over):

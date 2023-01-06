@@ -8,11 +8,6 @@ label cap01_01_intro:
     hide black
     play sound footsteps
 
-
-    #show senna 2a at l2_11
-    #pause 3.0
-    #hide senna
-
     show intro_001 at top
     with dissolve
     #scene bg intro_001 at top

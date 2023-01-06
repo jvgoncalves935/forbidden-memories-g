@@ -18,6 +18,7 @@ init python:
     def print_debug(var):
         print("teste",var)
 
+    #Keymap alterado do Forbidden
     config.keymap['self_voicing'] = []
     config.keymap['performance'] = []
     config.keymap['screenshot'] = []
@@ -25,6 +26,14 @@ init python:
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     config.keymap['game_menu'] = ['K_ESCAPE']
+    config.keymap['input_copy'] = []
+    config.keymap['input_jump_word_left'] = []
+    config.keymap['input_jump_word_right'] = []
+    config.keymap['skip'] = []
+    config.keymap['bar_activate'] = []
+    config.keymap['bar_deactivate'] = []
+    config.keymap['hide_windows'] = []
+
     renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
 
     def get_pos(channel='music'):
@@ -70,16 +79,21 @@ init python:
     def set_input_operation_senna():
         set_flag_input_operation_senna(True)
         register_ending("Z")
-        hash_aux = hashlib.sha512(str(player).upper().encode("utf-8")).hexdigest().upper()
+
+        global operation_senna_salt_prefix
+        global operation_senna_salt_suffix
+        salt_input_prefix_suffix = str(operation_senna_salt_prefix+str(player)+operation_senna_salt_suffix).upper()
         
+        hash_aux = hashlib.sha512(salt_input_prefix_suffix.encode("utf-8")).hexdigest().upper()
         global hash_operation_senna
         #Talvez agora você não consiga encontrar a chave. Aguarde.
         #Sempre mantenha sua visão atenta.
         #As aparências enganam.
         if(hash_aux == hash_operation_senna):
             #Se você chegou até aqui, meus parabéns.
-            #Verdadeiro Final Verdadeiro desbloqueado.
+            #Você conseguiu mais do que nunca prosseguir na Rota do Verdadeiro Final Verdadeiro.
             renpy.quit()
+            #Humano, ambição, existência: sinônimos. Um ser humano sem ambição é uma carcaça de não-existência.
             return
         
         renpy.hide_screen("name_input")
@@ -249,7 +263,8 @@ init python:
     def reset_jumpscare_senna(toggle,pos):
         guinodia(toggle,pos)
         global jumpscare_count
-        jumpscare_count = 0
+        if(not renpy.variant("touch")):
+            jumpscare_count = 0
         if(pos == 2):
             sfx_carta(audio.senna_doutora01,toggle,pos)
     
@@ -295,6 +310,55 @@ init python:
         if(persistent.error242424 == False and is_all_endings_unlocked()):
             FinishEnterNameError242424()
 
+    def racionais_g_audio(audio,toggle,pos):
+        global racionais_g_count
+        guinodia(toggle,pos)
+        racionais_g_count += 1
+
+        if(racionais_g_count == 5):
+            renpy.music.play("mod_assets/sounds/racionais_g.ogg","sound",loop=True)
+            return    
+
+        if(pos == 1):
+            renpy.music.play(audio,"sound",loop=True)
+        else:
+            renpy.music.play(audio,"sound")
+
+    def prtd_shuffle_list(countdown_time=None):
+        global prtd_current_index
+        global prtd_array
+        global prtd_time_countdown
+
+        if(countdown_time is not None):
+            prtd_time_countdown = countdown_time
+
+        prtd_current_index = -1
+
+        prtd_array = [i for i in range (0,18)]
+        random.shuffle(prtd_array)
+        
+    
+    def prtd_func_countdown(st, at):
+        global prtd_current_index
+        global prtd_array
+        global prtd_time_countdown
+
+        prtd_current_index += 1
+        if(prtd_current_index == 18):
+            prtd_shuffle_list()
+            prtd_current_index = 0
+        
+        return Image("mod_assets/characters/prtd/{}.png".format(prtd_array[prtd_current_index]), xcenter=295, ycenter=235), prtd_time_countdown
+
+    def is_true_true_ending_route():
+        try: 
+            if(renpy.exists("../characters/prtd.chr")):
+                return True
+            return False
+        except:
+            return False
+        
+
 
     
 
@@ -305,7 +369,9 @@ init python:
 #Variaveis
 define input_operation_senna = ""
 define flag_input_operation_senna = False
-define hash_operation_senna = "FE3D27C19061890036E84A96E150F95084ACA74DAE8CBC8FBE7E5943A7B7E048D2F3A5409C6CAFBE5D41D9232B8594D45F879621A11A8AF0FF6E1409466F42AD"
+define hash_operation_senna = "DD24F7379F7F320CF39A83AFB7EC8FB175E5EE40D6EC8887BDD5DA5898114E406A82DE83A832BE542BD78551715EEA06C8690964A8E0AAA65B829757B76C6C8D"
+define operation_senna_salt_prefix = "CONVERTING MINDS. AS APARÊNCIAS ENGANAM. HUMANO, AMBIÇÃO, EXISTÊNCIA: SINÔNIMOS. "
+define operation_senna_salt_suffix = " \"UM SER HUMANO SEM AMBIÇÃO É UMA CARCAÇA DE NÃO-EXISTÊNCIA.\""
 define guinarnia_null = [False,False,False,False,False,False]
 
 define endings_names = {
@@ -505,6 +571,8 @@ transform r2_22:
 transform r2_out:
     rightin2(-200,84,900)
 
+transform select_pos_xy(x=0,y=0):
+    xcenter x ycenter y zoom 1.00 alpha 1.00 subpixel True
 
 
 transform leftin2(x=480,t=0.25):
@@ -574,6 +642,22 @@ transform top_fast:
 define narrator = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='')
 define narrator_arabe = Character(ctc="ctc", ctc_position="fixed", voice_tag="narrator",what_prefix='',what_suffix='',what_style="arabe_style")
 define seto = DynamicCharacter('seto', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define alemao = Character(image='alemao',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define anitta = Character(image='anitta',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define bob = Character(image='bob',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define doutora = Character(image='doutora',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define gilson = Character(image='gilson',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define guina = Character(image='guina',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define indio = Character(image='indio',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define james = Character(image='james',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define mendigo = Character(image='mendigo',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define morador = Character(image='morador',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define padeiro = Character(image='padeiro',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define policial = Character(image='policial',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define senna = Character(image='senna',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define yeahman = Character(image='yeahman',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define yuri = Character(image='yuri',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define prtd = Character(image='prtd',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 
 
 
@@ -622,7 +706,27 @@ image yeahman 1a = "mod_assets/characters/yeahman/1a.png"
 image yuri 3xd = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xd.png")
 image yuri 3xe = im.Composite((960, 960), (0, 0), "mod_assets/characters/yuri/2l.png", (0, 0), "mod_assets/characters/yuri/2r.png", (0, 0), "mod_assets/characters/yuri/xe.png")
 
+image prtd 1a = "mod_assets/characters/prtd/0.png"
+image prtd 1b = "mod_assets/characters/prtd/1.png"
+image prtd 1c = "mod_assets/characters/prtd/2.png"
+image prtd 1d = "mod_assets/characters/prtd/3.png"
+image prtd 1e = "mod_assets/characters/prtd/4.png"
+image prtd 1f = "mod_assets/characters/prtd/5.png"
+image prtd 1g = "mod_assets/characters/prtd/6.png"
+image prtd 1h = "mod_assets/characters/prtd/7.png"
+image prtd 1i = "mod_assets/characters/prtd/8.png"
+image prtd 1j = "mod_assets/characters/prtd/9.png"
+image prtd 1k = "mod_assets/characters/prtd/10.png"
+image prtd 1l = "mod_assets/characters/prtd/11.png"
+image prtd 1m = "mod_assets/characters/prtd/12.png"
+image prtd 1n = "mod_assets/characters/prtd/13.png"
+image prtd 1o = "mod_assets/characters/prtd/14.png"
+image prtd 1p = "mod_assets/characters/prtd/15.png"
+image prtd 1q = "mod_assets/characters/prtd/16.png"
+image prtd 1r = "mod_assets/characters/prtd/17.png"
+image prtd 1s = "mod_assets/characters/prtd/18.png"
 
+image prtd_countdown = DynamicDisplayable(prtd_func_countdown)
 
 
 ###################Videos
@@ -650,6 +754,70 @@ image options_menu_bg = "mod_assets/images/OptionsMenu.png"
 image textbox_black = "mod_assets/gui/textbox_black.png"
 image white_bg = "mod_assets/images/white.png"
 
+#Melancolic Glitch
+image img_melancholic_glitch:
+    align (0.5,0.15)
+    block:
+        "mod_assets/images/glitch/y50.png"
+        0.7
+        "mod_assets/images/glitch/y51.png"
+        0.02
+        "mod_assets/images/glitch/y52.png"
+        0.02
+        "mod_assets/images/glitch/y53.png"
+        0.02
+        "mod_assets/images/glitch/y54.png"
+        0.02
+        "mod_assets/images/glitch/y55.png"
+        0.02
+        "mod_assets/images/glitch/y56.png"
+        0.02
+        "mod_assets/images/glitch/y57.png"
+        0.02
+        "mod_assets/images/glitch/y58.png"
+        0.02
+        "mod_assets/images/glitch/y51.png"
+        0.02
+        "mod_assets/images/glitch/y52.png"
+        0.02
+        "mod_assets/images/glitch/y53.png"
+        0.02
+        "mod_assets/images/glitch/y54.png"
+        0.02
+        "mod_assets/images/glitch/y55.png"
+        0.02
+        "mod_assets/images/glitch/y56.png"
+        0.02
+        "mod_assets/images/glitch/y57.png"
+        0.02
+        "mod_assets/images/glitch/y58.png"
+        0.02
+        "mod_assets/images/glitch/y51.png"
+        0.02
+        "mod_assets/images/glitch/y52.png"
+        0.02
+        "mod_assets/images/glitch/y53.png"
+        0.02
+        "mod_assets/images/glitch/y54.png"
+        0.02
+        "mod_assets/images/glitch/y55.png"
+        0.02
+        "mod_assets/images/glitch/y56.png"
+        0.02
+        "mod_assets/images/glitch/y57.png"
+        0.02
+        "mod_assets/images/glitch/y58.png"
+        0.02
+        "mod_assets/images/glitch/y59.png"
+        0.05
+        "mod_assets/images/glitch/y60.png"
+        0.05
+        "mod_assets/images/glitch/y61.png"
+        0.05
+        "mod_assets/images/glitch/y62.png"
+        0.05
+        "mod_assets/images/glitch/y63.png"
+        0.5
 
 
 
@@ -1653,6 +1821,8 @@ image ja_02 = "mod_assets/images/capJA/ja_02.png"
 
 image jumpscare = "mod_assets/images/capSN/jumpscare.png"
 
+image event_horizon = "mod_assets/images/event_horizon/event_horizon.png"
+
 
 ###################Musicas 
 define audio.fm_nameinput = "<loop 9.00>mod_assets/music/fm_nameinput.ogg"
@@ -1702,6 +1872,7 @@ define audio.fm_darknite_theme = "<loop 6.6>mod_assets/music/fm_darknite_theme.o
 define audio.fm_pharaoh = "<loop 0.0>mod_assets/music/fm_pharaoh.ogg"
 define audio.fm_3d_duel_finals = "<loop 9.933>mod_assets/music/fm_3d_duel_finals.ogg"
 define audio.fm_forbidden_ruins = "<loop 16.8>mod_assets/music/fm_forbidden_ruins.ogg"
+define audio.inside_the_event_horizon = "<loop 3.4 to 104.133>mod_assets/music/Inside The Event Horizon.mp3"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -2515,6 +2686,8 @@ define audio.guina_supremo = "<loop 0.00>mod_assets/sounds/guina_supremo.ogg"
 define audio.jesuis = "<loop 0.00>mod_assets/sounds/jesuis.ogg"
 define audio.globglogabgalab = "<loop 0.00>mod_assets/sounds/globglogabgalab.ogg"
 define audio.lily_santos2 = "<loop 0.00>mod_assets/sounds/lily_santos.ogg"
+define audio.melancholic_glitch2 = "mod_assets/sounds/melancholic_glitch.ogg"
+define audio.racionais_g = "mod_assets/sounds/racionais_g.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
@@ -2696,6 +2869,7 @@ init python:
     import time
     import singleton
     import os
+    import string
 
 #Music
 #The Music section is where you can reference existing DDLC audio

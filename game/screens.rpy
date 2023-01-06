@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("OPEN BETA 0.1.5 (WIP)"):
+            textbutton _("OPEN BETA 0.1.6 (WIP)"):
                 style "page_label_text"
                 text_size 12
     
@@ -376,7 +376,7 @@ screen choice(items):
         xalign 0.96
         yalign 0.98
         
-        textbutton _("OPEN BETA 0.1.5 (WIP)"):
+        textbutton _("OPEN BETA 0.1.6 (WIP)"):
             style "page_label_text"
             text_size 12
     
@@ -646,7 +646,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("OPEN BETA 0.1.5 (WIP)"):
+            textbutton _("OPEN BETA 0.1.6 (WIP)"):
                 style "page_label_text"
                 text_size 12
 
@@ -1139,18 +1139,18 @@ screen operation_senna_scr():
 
     add "black"
     
-    textbutton _(glitchtext(renpy.random.randint(8,16))):
+    textbutton _(glitchtext(renpy.random.randint(12,50))):
         xalign 0.5
         yalign 0.5
         style "return_button"
-        action [Show(screen="name_input", message=glitchtext(renpy.random.randint(8,16)), ok_action=Function(set_input_operation_senna))]
+        action [Show(screen="name_input", message=glitchtext(renpy.random.randint(12,50)), ok_action=Function(set_input_operation_senna))]
 
-    textbutton _("Voltar?"):
-        xalign 0.05
-        yalign 0.975
-        style "return_button_2"
-        text_style "navigation_button_text"
-        action [NullAction()]
+    hbox:
+        align (0.10,1.015)
+        textbutton _("Voltar?"):
+            style "return_button_2"
+            text_style "navigation_button_text"
+            action [NullAction()]
 
 screen converting_minds_scr():
     tag menu
@@ -1797,7 +1797,7 @@ screen endings():
             textbutton _("Carta 52"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left_video", img="tom_chines.png",card=40,video="img_tom_chines"),Function(sfx_carta,audio.tom_chines,False,1),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left_video", img="tom_chines.png",card=40,video="img_tom_chines"),Function(racionais_g_audio,audio.tom_chines,False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left_video"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
@@ -2156,6 +2156,7 @@ screen file_slots(title):
     #on 'show' action toggle_current_music_player(True)
     
     add "mod_assets/images/logo02.png" #alpha 0.5
+    on 'show' action [PauseAudio('sound_bg', True),PauseAudio('sound', True),PauseAudio('movie', True)]
 
     textbutton _(title):
         xalign 0.5
@@ -2843,7 +2844,7 @@ screen name_input(message, ok_action):
                 style "confirm_prompt"
                 xalign 0.5
 
-            input default "" value VariableInputValue("player") length 1000 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.!@#$%&*()"
+            input default "" value VariableInputValue("player") length 1000 allow string.printable
 
             hbox:
                 xalign 0.5

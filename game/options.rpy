@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.1.5"
+define config.version = "0.1.6"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line
@@ -225,26 +225,26 @@ init python:
     ## Classify files as None to exclude them from the built distributions.
 
     ## This is the archive of data for your mod
-    build.archive("data01", "all")
+    build.archive("forbiddenmemoriesg", "all")
 
 
     ## These files get put into your data file
-    build.classify("game/mod_assets/**","data01")
-    build.classify("game/gui/**","data01")
-    build.classify("game/tl/**","data01")
-    #build.classify("game/**.rpy","data01") #Optional line to include plaintext scripts
-    build.classify("game/**.rpyc","data01") #Serialized scripts must be included
-    build.classify("README.html","data01") #Included help file for mod installation
+    build.classify("game/mod_assets/**","forbiddenmemoriesg")
+    build.classify("game/gui/**","forbiddenmemoriesg")
+    build.classify("game/tl/**","forbiddenmemoriesg")
+    #build.classify("game/**.rpy","forbiddenmemoriesg") #Optional line to include plaintext scripts
+    build.classify("game/**.rpyc","forbiddenmemoriesg") #Serialized scripts must be included
+    build.classify("README.html","forbiddenmemoriesg") #Included help file for mod installation
 
     #Add the pictures necessary for the tutorial selection menu
-    build.classify("game/gui/button/tutorial_hover_background.png","data01")
-    build.classify("game/gui/button/tutorial_idle_background.png","data01")
+    build.classify("game/gui/button/tutorial_hover_background.png","forbiddenmemoriesg")
+    build.classify("game/gui/button/tutorial_idle_background.png","forbiddenmemoriesg")
 
     ##Optionally include a zip file with all source code
     build.classify('**.rpy','source')
     build.package(build.directory_name + "source",'zip','source',description='Source Code Archive')
 
-    build.package(build.directory_name + "Mod",'zip',"data01",description='DDLC Compatible Mod')
+    build.package(build.directory_name + "Mod",'zip',"forbiddenmemoriesg",description='DDLC Compatible Mod')
 
     build.classify('**~', None)
     build.classify('**.bak', None)
