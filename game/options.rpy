@@ -248,6 +248,8 @@ init python:
 
     build.classify('**~', None)
     build.classify('**.bak', None)
+    build.classify('**.sfl', None)
+    build.classify('**.sfk', None)
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
@@ -269,6 +271,9 @@ init python:
     build.classify('community_assets/**.**',None)
     build.classify('README.md', None)
     build.classify('game/mod_assets/images/deck/json/**.**', None)
+
+    #As aparências enganam.
+    build.classify('characters/prtd.chr', None)
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

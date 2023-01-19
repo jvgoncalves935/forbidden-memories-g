@@ -34,6 +34,7 @@ label start:
     play sound menu_start
 
     #True True Ending Route
+    #As aparências enganam.
     if(not game_over and is_true_true_ending_route()):
         call AS_APARENCIAS_ENGANAM from _call_AS_APARENCIAS_ENGANAM
         return

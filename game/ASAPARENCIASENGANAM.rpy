@@ -1,5 +1,8 @@
 label AS_APARENCIAS_ENGANAM:
     #Verdadeiro Final Verdadeiro
+    #Parabéns por ter chegado até aqui.
+    #Você irá conseguir ler o que eu escrevi logo abaixo: todos os meus pensamentos.
+    #Mas a questão é: você consegue literalmente me enxergar?
     $ drpc_update("aparencias")
 
     scene black
@@ -62,13 +65,19 @@ label AS_APARENCIAS_ENGANAM:
     hide prtd_countdown
 
     show prtd at select_pos_xy(287,257)
-    prtd 1e "Volte para o início e use a\nprimeira chave. Logo após, remova\ntodos os \"z\" e os números\nmaiores que 5."
+    prtd 1e "Volte no início da \"Operation:\nHidden Link\" e use a primeira\nchave. Logo após, remova todos\nos \"z\" e os números maiores\nque 5."
+    play sound ctc
+
+    prtd 1a "Este é o último passo."
     play sound ctc
 
     prtd 1b "Não se preocupe agora com a\nsegunda chave. Mas aguarde:\nvocê eventualmente irá precisar dela.\nNÃO SE ESQUEÇA DISSO."
     play sound ctc
 
     prtd 1f "Volte na \"Operation: Faust\" para\nobter informações importantes e\nperdidas no caminho. Quem negligencia a\nhistória está fadado a repeti-la."
+    play sound ctc
+
+    prtd 1a "\"A história é contada pelos\nvencedores\", não é mesmo?"
     play sound ctc
 
     prtd 1g "Aguarde instruções no futuro.\nEu voltarei."

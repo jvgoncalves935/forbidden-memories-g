@@ -350,6 +350,7 @@ init python:
         
         return Image("mod_assets/characters/prtd/{}.png".format(prtd_array[prtd_current_index]), xcenter=295, ycenter=235), prtd_time_countdown
 
+    #As aparências enganam.
     def is_true_true_ending_route():
         try: 
             if(renpy.exists("../characters/prtd.chr")):

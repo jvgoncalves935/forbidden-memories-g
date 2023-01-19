@@ -126,8 +126,8 @@ init python:
             persistent.endings = dict(array_aux)
 
         #Liberar todos os finais (debug)
-        #for key, value in persistent.endings.items():
-        #    persistent.endings[key] = True
+        for key, value in persistent.endings.items():
+            persistent.endings[key] = True
         
         #print(persistent.endings)
     def label_callback(name, abnormal):
@@ -324,18 +324,31 @@ label splashscreen:
         play sound ctc
         "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
         play sound ctc
-        "Este é um jogo de humor, porém\nenvolve temas adultos. Mesmo assim,\nele NÃO possui nenhum conteúdo\nexplícito. Não é recomendado para\nmenores de 18 anos."
+        "Este é um jogo de HUMOR, porém\nenvolve TEMAS ADULTOS. Mesmo assim,\nele NÃO POSSUI nenhum conteúdo\nvisualmente explícito. Não é\nrecomendado para menores de 18 anos."
         play sound ctc
-        "Projeto inspirado na série do\nYoutube \"Alexandre Senna rpG\"\nde Cena do Senna."
+        "Este projeto foi inspirado no vídeo\ndo YouTube \"Alexandre Senna rpG\"\ndo canal \"Cena do Senna\". Atualmente\neste vídeo é uma \"Lost Media\"."
         play sound ctc
-        "Caso não conheça, esse jogo fala\nsobre os personagens do universo do\nPai de Família, atualmente chamado de\n\"Universo G\"."
+        "Caso não conheça, esse jogo irá falar\nsobre os personagens do \"Universo do\nPai de Família\", atualmente chamado de\n\"Universo G\"."
         play sound ctc
-        "O objetivo do humor deste jogo é\nsatirizar apenas a atuação dos atores\ne os contextos dos filmes\nde forma divertida e saudável."
+        "O objetivo do humor deste jogo é\nsatirizar APENAS a atuação dos atores,\nassim como os contextos e narrativas\n\"peculiares\" dos filmes adultos\nbrasileiros de baixo orçamento,tudo\nde forma divertida e saudável."
         play sound ctc
         "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
         play sound ctc
         "Este jogo não possui intenção de\nofender ou satirizar a orientação\nsexual de nenhuma pessoa. Somos contra\nqualquer tipo de desrespeito e\nsomos a favor das liberdades\nindividuais."
         play sound ctc
+        "Este jogo não possui intenção de\nofender grupos minoritários,\netnias ou nacionalidades de nenhuma\npessoa. Condenamos o escárnio público\ndesses tópicos."
+        play sound ctc
+        "\"Confirmo que estou ciente que o jogo\npossui HUMOR ADULTO e não possui\nintenção de ofender pessoas, minorias,\netnias, opções sexuais ou\nnacionalidades.\""
+        play sound ctc
+
+        show textbox_aux
+        menu:
+            "Eu COMPACTUO com TODOS estes avisos.":
+                hide textbox_aux
+                pass
+            "Eu NÃO CONCORDO com os avisos e\nNÃO JOGAREI este jogo.":
+                $ renpy.quit()
+
         "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
         play sound ctc
         "Este jogo NÃO SALVA automaticamente.\nSALVE e CARREGUE o jogo o\nmáximo que puder!"

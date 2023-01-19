@@ -944,6 +944,15 @@ image cred_071_355:
     time 22.5
     linear 1.5 alpha 0.0
 
+image cred_071_356:
+    align (0.5,0.85)
+    alpha 0.0
+    time 18.0
+    Text("Nipkow", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 22.5
+    linear 1.5 alpha 0.0
+
 image cred_071_36:
     align (0.5,0.3)
     alpha 0.0
@@ -2316,6 +2325,7 @@ label creditos:
     show cred_071_353
     show cred_071_354
     show cred_071_355
+    show cred_071_356
     show cred_071_36
     show cred_071_37
     show cred_071_38
