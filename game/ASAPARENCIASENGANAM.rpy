@@ -23,7 +23,7 @@ label AS_APARENCIAS_ENGANAM:
 
     
     
-    prtd 1b "Quero dizer, finalmente você me\nencontrou. Eu estava aqui o\ntempo todo."
+    prtd 1b "Quero dizer, finalmente você me\nencontrou. Eu estava aqui o\ntempo todo. Então... seja\nbem-vindo ao meu inferno."
     play sound ctc
 
     prtd 1c "Não se engane pela aparência desta\ngarota. Esta não é minha\nverdadeira forma. Isso não é um\ndetalhe relevante agora."
@@ -77,6 +77,9 @@ label AS_APARENCIAS_ENGANAM:
     prtd 1f "Volte na \"Operation: Faust\" para\nobter informações importantes e\nperdidas no caminho. Quem negligencia a\nhistória está fadado a repeti-la."
     play sound ctc
 
+    prtd 1f "?v=1bZDBR2Lu2Y"
+    play sound ctc
+
     prtd 1a "\"A história é contada pelos\nvencedores\", não é mesmo?"
     play sound ctc
 
@@ -103,8 +106,7 @@ label AS_APARENCIAS_ENGANAM:
     stop voice
 
     scene black
-    $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
-    $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
+    
     return
 
 

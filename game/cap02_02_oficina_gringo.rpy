@@ -234,7 +234,7 @@ label cap02_02_oficina_gringo:
     hide img_02_02_20
     show img_02_02_22 at top_fade
     stop music fadeout 2.0
-    "(Do que esse filho da\nputa tá falando?)"
+    "Do que esse filho da\nputa tá falando?"
     play sound ctc
     
     voice voz_cap02_02_30
@@ -248,7 +248,7 @@ label cap02_02_oficina_gringo:
     "Ouuuu mai góóó...!"
     play sound ctc
     
-    "(É isso que eles chamam de\nMulher do Futuro?)"
+    "É isso que eles chamam de\nMulher do Futuro?"
     play sound ctc
     
     hide img_02_02_24
@@ -257,7 +257,7 @@ label cap02_02_oficina_gringo:
     show anita_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
 
-    "(Talvez seja um fenômeno da\nnatureza, olha o tamanho\ndo fenômeno...)"
+    "Talvez seja um fenômeno da\nnatureza, olha o tamanho\ndo fenômeno..."
     play sound ctc
     
     show anita_s1 at side_image_out
@@ -408,6 +408,9 @@ label wrong_end_02_02_1:
     
     "(...)"
     play sound ctc
+
+    "Aí, vou dar o fora, falou?"
+    play sound ctc
     
     play sound_bg audio.city_01 fadein 2.0
     "(...)"
@@ -508,7 +511,7 @@ label wrong_end_02_02_2:
     "(Ela acabou de te dar uma chuopadinha,\nmas você decide não\nretribuir o favor.)"
     play sound ctc
     
-    "(\"Eu tenho cara de comunista pra\ncompartilhar as coisas?\",\nvocê pensa.)"
+    "Eu tenho cara de comunista pra\nficar compartilhando as\ncoisas, hein quebrada?"
     play sound ctc
     
     "(Revoltado com a humilhação que passou,\nvocê decide tacar o foda-se e\nvai para a casa lotérica\nmais próxima.)"
@@ -522,6 +525,10 @@ label wrong_end_02_02_2:
     play sound ctc
     
     "(Você preenche o bilhete puto e entrega\npara a atendente, ainda puto.)"
+    play sound ctc
+
+    voice voz_cap04_04_12
+    "Porra, eu tô nervoso.\nVocê me deixou nervoso..."
     play sound ctc
     
     "(Você vai para a casa puto, com a\nsensação de que se esqueceu de\nalguma coisa... mas continua puto.)"
@@ -541,7 +548,7 @@ label wrong_end_02_02_2:
     "(Ainda puto, você vai para a casa\nlotérica resgatar seu prêmio.)"
     play sound ctc
     
-    "\"Meu sonho foi sempre viajar pra\numa cachoeira...\", você ainda diz."
+    "Meu sonho foi sempre viajar pra\numa cachoeira..."
     play sound ctc
     
     "(Puto.)"

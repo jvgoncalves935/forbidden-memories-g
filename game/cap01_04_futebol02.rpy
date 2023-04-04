@@ -179,7 +179,7 @@ label cap01_04_futebol02:
 
     show pelada_james_03
     voice voz_cap01_04_20
-    "OLHA A BOMBAAA! AÍ, MEU GOLEIRO!{p=2.5}{nw}"
+    "BOOOA, BOOOOA! AÍ, MEU GOLEIRO!{p=2.5}{nw}"
     
     hide pelada_james_03
     show img_01_04_60 at top_fade
@@ -748,7 +748,7 @@ label wrong_end_01_04_3:
     "Espera aí, esse não é aquele\ndesenho lá que é do..."
     play sound ctc
     
-    "Esse desenho é DO DEMÔNIO.\nEsse é o baralho DO CAPETA!"
+    "Esse desenho é DO DEMÔNIO.\nEsse é o baralho DO CAPETA!\nNA SUA VIDA VAI CAIR MALDIÇÃO!"
     play sound ctc
     
     "Eu não assisto isso não!"
@@ -765,6 +765,9 @@ label wrong_end_01_04_3:
     play sound ctc
     
     "\"O tempo aproximado para impacto\ncontra a superfície é de\nexatamente 32 horas!\""
+    play sound ctc
+
+    "Puxa, só isso? De tempo?"
     play sound ctc
     
     "\"Está previsto que a destruição\ncausada pela colisão resultará\nna extinção de toda a vida humana!\""
@@ -806,7 +809,7 @@ label wrong_end_01_04_3:
     "(Pensando em uma resposta, você\ndecide ir para o trabalho. Hoje vai\nser um dia difícil no seu turno\ncomo segurança.)"
     play sound ctc
     
-    "\"Onde foi que eu deixei minhas\nluvas de goleiro?\", você pensa\nconsigo."
+    "Onde foi que eu deixei minhas\nluvas de goleiro?"
     play sound ctc
     
     "(Você sente uma sensação sinistra\nao pensar que perdeu elas.)"

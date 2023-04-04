@@ -423,12 +423,12 @@ define deck_g_names = [
     "Pegasus do PAU BRILHANTE",
     "Grito Ensurdecedor de Lily Santos",
     "Perna Direita do Proibido",
-    "Paulo Guina Piscineiro",
-    "Paulo Guina Bombeiro",
-    "Paulo Guina Professor",
-    "Paulo Guina Árabe",
-    "Paulo Guina Matrix",
-    "Paulo Guina, O Deixador de Ocos",
+    "Paulo Gino Piscineiro",
+    "Paulo Gino Bombeiro",
+    "Paulo Gino Professor",
+    "Paulo Gino Árabe",
+    "Paulo Gino Matrix",
+    "Paulo Gino, O Deixador de Ocos",
     "Pica-Pau Biruta",
     "Perna Esquerda do Proibido",
     "Kid Bengala, O Grande",
@@ -449,11 +449,12 @@ define deck_g_names = [
     "Vegeta de Família",
     "Danger?! Gilson?",
     "Globglogabgalab, A Traça Melancólica",
-    "Mark_77Souls, O Esquizofrêncio",
-    "Taeyeon115, O Amigo de Sangue",
-    "Master Exploder, O Calvo Supremo",
+    "Mark, O Esquizofrêncio",
+    "Von List, O Amigo de Sangue",
+    "Macho, O Calvo Supremo",
     "OH MAN",
-    "Tom Chinês (Nego Drama)"
+    "Tom Chinês",
+    "Ricco Puentes"
 ]
 
 define endings_descriptions = {
@@ -648,7 +649,7 @@ define anitta = Character(image='anitta',ctc="ctc", ctc_position="fixed", voice_
 define bob = Character(image='bob',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 define doutora = Character(image='doutora',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 define gilson = Character(image='gilson',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
-define guina = Character(image='guina',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
+define gino = Character(image='gino',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 define indio = Character(image='indio',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 define james = Character(image='james',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
 define mendigo = Character(image='mendigo',ctc="ctc", ctc_position="fixed", voice_tag="narrator", what_prefix=narrator_what_prefix, what_suffix=narrator_what_suffix)
@@ -674,7 +675,7 @@ image gilson 1a = "mod_assets/characters/gilson/1a.png"
 
 image goleiro 1a = "mod_assets/characters/goleiro/1a.png"
 
-image guina 1a = "mod_assets/characters/guina/1a.png"
+image gino 1a = "mod_assets/characters/gino/1a.png"
 
 image indio 1a = "mod_assets/characters/goleiro/1a.png"
 
@@ -1779,7 +1780,7 @@ image bob_s1 = "mod_assets/characters/side/bob_s1.png"
 image bob_s2 = "mod_assets/characters/side/bob_s2.png"
 image doutora_s1 = "mod_assets/characters/side/doutora_s1.png"
 image goleiro_s1 = "mod_assets/characters/side/goleiro_s1.png"
-image guina_s = "mod_assets/characters/side/guina_s.png"
+image gino_s = "mod_assets/characters/side/gino_s.png"
 image indio_s1 = "mod_assets/characters/side/indio_s1.png"
 image indio_s2 = "mod_assets/characters/side/indio_s2.png"
 image james_s1 = "mod_assets/characters/side/james_s1.png"
@@ -1878,7 +1879,7 @@ define audio.inside_the_event_horizon = "<loop 3.4 to 104.133>mod_assets/music/I
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
 define voz_jailson_arabe = "mod_assets/voices/jailson_arabe.ogg"
-define voz_guina_arabe = "mod_assets/voices/guina_arabe.ogg"
+define voz_gino_arabe = "mod_assets/voices/gino_arabe.ogg"
 
 #01_01
 
@@ -2580,7 +2581,7 @@ define voz_capXY_044 = "mod_assets/voices/capXY/capxy_044.ogg"
 
 
 ###################Audios Misc 
-define audio.guina_piscineiro = "<loop 0.0>mod_assets/music/paulo_guina_piscineiro.ogg"
+define audio.gino_piscineiro = "<loop 0.0>mod_assets/music/paulo_gino_piscineiro.ogg"
 define audio.senna_theme = "<loop 0.0>mod_assets/music/senna_theme.ogg"
 define audio.yugioco = "<loop 0.0>mod_assets/music/yugioco.ogg"
 define audio.farao_amet = "<loop 0.0>mod_assets/music/farao_amet.ogg"
@@ -2662,9 +2663,9 @@ define audio.mangueira_boy_01 = "<loop 0.00>mod_assets/sounds/mangueira_boy.ogg"
 define audio.james_matarazzo_01 = "<loop 0.00>mod_assets/sounds/james_matarazzo_01.ogg"
 define audio.doutora02 = "<loop 0.00>mod_assets/sounds/doutora.ogg"
 define audio.os_carros_sao = "<loop 0.00>mod_assets/sounds/os_carros_sao.ogg"
-define audio.computador_guina = "<loop 0.00>mod_assets/sounds/computador_guina.ogg"
+define audio.computador_gino = "<loop 0.00>mod_assets/sounds/computador_gino.ogg"
 define audio.alemao_01 = "<loop 0.00>mod_assets/sounds/alemao_01.ogg"
-define audio.felipe_dylon_01 = "<loop 0.00>mod_assets/sounds/felipe_dylon_01.ogg"
+define audio.felipinho_01 = "<loop 0.00>mod_assets/sounds/felipinho_01.ogg"
 define audio.calvoooo = "<loop 0.00>mod_assets/sounds/calvoooo.ogg"
 define audio.pau_brilhante = "<loop 0.00>mod_assets/sounds/pau_brilhante.ogg"
 define audio.jailson_ainn = "<loop 0.00>mod_assets/sounds/jailson_ainn.ogg"
@@ -2676,14 +2677,14 @@ define audio.vegeta_de_familia = "<loop 0.00>mod_assets/sounds/vegeta_de_familia
 define audio.tom_chines = "<loop 0.00>mod_assets/sounds/tom chines.ogg"
 define audio.kid_bengala2 = "<loop 0.00>mod_assets/sounds/kid.ogg"
 define audio.kawan2 = "<loop 0.00>mod_assets/sounds/relaxar.ogg"
-define audio.guina_professor = "<loop 0.00>mod_assets/sounds/guina_professor.ogg"
+define audio.gino_professor = "<loop 0.00>mod_assets/sounds/gino_professor.ogg"
 define audio.mangueira = "<loop 0.00>mod_assets/sounds/mangueira.ogg"
 define audio.fomehahaha = "<loop 0.00>mod_assets/sounds/fome.ogg"
 define audio.jo_abdul2 = "<loop 0.00>mod_assets/sounds/jo_abdul.ogg"
 define audio.cabacao2 = "<loop 0.00>mod_assets/sounds/cabacao.ogg"
-define audio.guina_seguranca = "<loop 0.00>mod_assets/sounds/guina_seguranca.ogg"
+define audio.gino_seguranca = "<loop 0.00>mod_assets/sounds/gino_seguranca.ogg"
 define audio.princesa_demacol2 = "<loop 0.00>mod_assets/sounds/princesa_demacol.ogg"
-define audio.guina_supremo = "<loop 0.00>mod_assets/sounds/guina_supremo.ogg"
+define audio.gino_supremo = "<loop 0.00>mod_assets/sounds/gino_supremo.ogg"
 define audio.jesuis = "<loop 0.00>mod_assets/sounds/jesuis.ogg"
 define audio.globglogabgalab = "<loop 0.00>mod_assets/sounds/globglogabgalab.ogg"
 define audio.lily_santos2 = "<loop 0.00>mod_assets/sounds/lily_santos.ogg"

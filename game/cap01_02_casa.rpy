@@ -104,11 +104,17 @@ label wrong_end_01_02_1:
     
     "(Você decide ir até o aterro\nsanitário mais próximo e enterra o\ncelular satânico no meio da\npilha de lixo.)"
     play sound ctc
+
+    "Tu vai pro lixão, quebrada!"
+    play sound ctc
     
     "(Ele ainda não para de tocar, mas\nisso não importa mais.)"
     play sound ctc
     
     "(Você volta para casa e decide jogar\npalavras-cruzadas.)"
+    play sound ctc
+
+    "Palavras-cruzadas, tá ótimo..."
     play sound ctc
     
     stop sound_bg fadeout 3.0

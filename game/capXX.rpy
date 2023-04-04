@@ -238,7 +238,7 @@ label capXX:
     with dissolve
     hide black
 
-    #Yuri encontra Professor Guina
+    #Yuri encontra Professor Gino
     show escadas_ddlc at top
     with dissolve
     "{p=0.3}{nw}"
@@ -263,21 +263,21 @@ label capXX:
     "Professor...! Me ajude!"
     play sound ctc
     
-    show guina_s at side_image_in zorder 3
-    play music guina_piscineiro
+    show gino_s at side_image_in zorder 3
+    play music gino_piscineiro
     "{p=0.6}{nw}"
     voice voz_capXX_014
     "Que isso menino, qual foi?"
     play sound ctc
     
-    show guina_s at side_image_out
+    show gino_s at side_image_out
     "{p=0.6}{nw}"
-    hide guina_s
+    hide gino_s
     show yuri 3p
     "...Professor? É você mesmo?"
     play sound ctc
     
-    show guina 1a at l31
+    show gino 1a at l31
     "{p=0.6}{nw}"
     voice voz_capXX_015
     "Achou meu pau grande? Você é bem\ncuriosinho, né cara?"
@@ -316,15 +316,15 @@ label capXX:
     "Gilson?"
     play sound ctc
     
-    show guina_s at side_image_in zorder 3
+    show gino_s at side_image_in zorder 3
     "{p=0.6}{nw}"
     voice voz_capXX_020
     "Salve salve, Gilson..."
     play sound ctc
     
-    show guina_s at side_image_out
+    show gino_s at side_image_out
     "{p=0.6}{nw}"
-    hide guina_s
+    hide gino_s
     voice voz_capXX_021
     "Gilson?"
     play sound ctc

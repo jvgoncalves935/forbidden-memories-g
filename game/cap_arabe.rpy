@@ -33,7 +33,7 @@ label cap_arabe:
         hide cap_arabe_img
         show cap_arabe_img2 at top
         $ arabe = texto_arabe()
-        voice voz_guina_arabe
+        voice voz_gino_arabe
         narrator_arabe "[arabe]"
         play sound ctc
         hide cap_arabe_img2

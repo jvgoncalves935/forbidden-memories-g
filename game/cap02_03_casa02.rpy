@@ -10,7 +10,7 @@ label cap02_03_casa02:
     play sound ctc
     "Mas eu não resisto vain..."
     play sound ctc
-    "A Anita era muito gostosa..."
+    "A Anita era muuuito gostosa..."
     play sound ctc
     stop music
     play sound_bg celular
@@ -184,11 +184,11 @@ label cap02_03_casa02_campainha:
     play sound ctc
     "(Mas tem algo estranho nisso tudo...)"
     play sound ctc
-    "(A voz do mendigo é bem familiar.)"
+    "A voz do mendigo é bem familiar."
     play sound ctc
     "(Uma voz meio esquisita, parecendo\nque ele fala bocejando\nque nem um retardado.)"
     play sound ctc
-    "(Será que é apenas impressão?)"
+    "Será que é apenas impressão?\nCoisa mais esquisita..."
     play sound ctc
     stop music
 
@@ -218,7 +218,7 @@ label cap02_03_casa02_campainha:
             play music fm_duel_grounds
             "(Pensando assim, você fica mais\ncalmo.)"
             play sound ctc
-            "Vou ir lá fazer meu toddynho com\nmisto quente."
+            "Vou ir lá fazer meu toddynho com\nmisto quente. Que gostoso\nvain..."
             play sound ctc
             "{p=0.2}{nw}"
             play sound toaster_ding
@@ -270,7 +270,7 @@ label wrong_end_02_03_1:
     play sound ctc
     "Isso aqui é diversão garantida..."
     play sound ctc
-    "VAI COBRINHA, RASTEJA RÁPIDO!"
+    "VAI COBRINHA, RASTEJA RÁPIDO,\nVAI!"
     play sound ctc
     voice voz_cap02_03_07
     "RÁPIDO, BEM RÁPIDO, VAI! VAI,\nVOCÊ NÃO TÁ CANSADA... VAI!"
@@ -299,7 +299,7 @@ label wrong_end_02_03_1:
     "(Você ganha 6.000 dólares como\nrecompensa!)"
     play sound ctc
     voice voz_cap01_04_63
-    "(O que que você faria com um\ndinheiro desses?)"
+    "O que que você faria com um\ndinheiro desses?"
     play sound ctc
     voice voz_cap02_03_05
     "(Faria certas coisas que você nunca\nimaginaria que eu tinha que eu,\nTERIA coragem de fazer!)"

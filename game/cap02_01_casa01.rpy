@@ -80,7 +80,7 @@ label wrong_end_02_01_1:
     "(Você desliga o celular rápido bem\nrápido, vai.)"
     play sound ctc
     
-    "(\"Eu odeio esse toque!\", você pensa.)"
+    "Eu odeio esse toque!"
     play sound ctc
     
     "(...)"
@@ -103,6 +103,9 @@ label wrong_end_02_01_1:
     play music fm_nameinput
     "(Você foi aprovado em primeiro lugar!)"
     play sound ctc
+
+    "Na credito..."
+    play sound ctc
     
     "(Você pergunta para o policial se o\nconcurso do ano havia sido\nencerrado.)"
     play sound ctc
@@ -113,7 +116,7 @@ label wrong_end_02_01_1:
     "(Você fica incrédulo de como você deu\nmuita muita muita muita muita sorte.)"
     play sound ctc
     
-    "(\"Essa foi a escolha dos Deuses G.\",\nvocê pensa.)"
+    "Essa foi a escolha dos Deuses G."
     play sound ctc
     
     stop music fadeout 2.0
@@ -149,7 +152,7 @@ label wrong_end_02_01_1:
     "(desligou o celular)"
     play sound ctc
     
-    "Tenho que atender o chamado\nda viatura...!"
+    "Tenho que atender o chamado\nda viatura RÁPIDO BEM\nRÁPIDO VAI...!"
     play sound ctc
     
     "(...)"

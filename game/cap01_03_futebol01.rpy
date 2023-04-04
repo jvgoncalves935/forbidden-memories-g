@@ -289,6 +289,10 @@ label wrong_end_01_03_1:
     
     "(Você nunca defendeu tão bem no gol\nem toda a sua vida!)"
     play sound ctc
+
+    voice voz_cap02_02_57
+    "Nossa, que extraordinário!"
+    play sound ctc
     
     "\"Caramba, você não defenderia\nbolas que jamais - teria a capacidade\nde defender!\", diz Índio."
     play sound ctc
@@ -302,7 +306,7 @@ label wrong_end_01_03_1:
     "(Parece que eles chegaram.)"
     play sound ctc
     
-    "\"PODEM VIR, SEUS FILHOS DA PUTA!\",\nvocê berra com toda a sua força."
+    "\"PODEM VIR, SEUS FILHOS DA PUTA!\""
     play sound ctc
     
     "(Os adversários tremem de medo de sua\neminente derrota...)"
@@ -312,6 +316,9 @@ label wrong_end_01_03_1:
     play sound ctc
     
     "(Você será a nova estrela do time\ne ele apenas um verme\ninsignificante!)"
+    play sound ctc
+
+    "Vou te mostrar agora todo o meu\ngingado!"
     play sound ctc
     
     "(O Campeonato irá começar em\ninstantes.)"

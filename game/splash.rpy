@@ -322,21 +322,25 @@ label splashscreen:
         play music fm_nameinput
         "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
         play sound ctc
-        "Este jogo é um CLONE sem fins\nlucrativos de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
+        "Este jogo é um CLONE SEM FINS\nLUCRATIVOS de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
         play sound ctc
         "Este é um jogo de HUMOR, porém\nenvolve TEMAS ADULTOS. Mesmo assim,\nele NÃO POSSUI nenhum conteúdo\nvisualmente explícito. Não é\nrecomendado para menores de 18 anos."
         play sound ctc
-        "Este projeto foi inspirado no vídeo\ndo YouTube \"Alexandre Senna rpG\"\ndo canal \"Cena do Senna\". Atualmente\neste vídeo é uma \"Lost Media\"."
+        "Este projeto foi inspirado no vídeo\ndo YouTube \"Alexandre Senna rpG\"\ndo canal \"Cena do Senna\". O reupload\npode ser encontrado em seu canal."
         play sound ctc
         "Caso não conheça, esse jogo irá falar\nsobre os personagens do \"Universo do\nPai de Família\", atualmente chamado de\n\"Universo G\"."
         play sound ctc
         "O objetivo do humor deste jogo é\nsatirizar APENAS a atuação dos atores,\nassim como os contextos e narrativas\n\"peculiares\" dos filmes adultos\nbrasileiros de baixo orçamento,tudo\nde forma divertida e saudável."
         play sound ctc
-        "Este jogo não possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        "Este jogo NÃO possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
         play sound ctc
-        "Este jogo não possui intenção de\nofender ou satirizar a orientação\nsexual de nenhuma pessoa. Somos contra\nqualquer tipo de desrespeito e\nsomos a favor das liberdades\nindividuais."
+        "Nenhum conteúdo particular sobre\nos atores é divulgado neste jogo.\nSão utilizados apenas seus nomes\nfantasia, imagens e áudios de filmes\nautorais publicados na internet."
         play sound ctc
-        "Este jogo não possui intenção de\nofender grupos minoritários,\netnias ou nacionalidades de nenhuma\npessoa. Condenamos o escárnio público\ndesses tópicos."
+        "Todos os direitos de imagem\npertencem às produtoras dos\nfilmes adultos originais."
+        play sound ctc
+        "Este jogo NÃO possui intenção de\nofender ou satirizar a orientação\nsexual de nenhuma pessoa. Somos contra\nqualquer tipo de desrespeito e\nsomos a favor das liberdades\nindividuais."
+        play sound ctc
+        "Este jogo NÃO possui intenção de\nofender ou satirizar grupos\nminoritários, etnias ou nacionalidades\nde nenhuma pessoa. Condenamos o\nescárnio público desses tópicos."
         play sound ctc
         "\"Confirmo que estou ciente que o jogo\npossui HUMOR ADULTO e não possui\nintenção de ofender pessoas, minorias,\netnias, opções sexuais ou\nnacionalidades.\""
         play sound ctc
@@ -358,7 +362,8 @@ label splashscreen:
         #scene black
         #with Dissolve(1.5)
         "{p=1.5}{nw}"
-        $ persistent.splash_complete = True
+        $ persistent.splash_complete = False
+        
         
 
     #Optional, load a copy of DDLC save data
@@ -387,6 +392,12 @@ label splashscreen:
         $ renpy.quit()
 
     $ drpc_update("menu")
+
+    if(persistent.splash_complete == False): 
+        $ persistent.splash_complete = True
+    else:
+        $ renpy.movie_cutscene("mod_assets/videos/disclaimer.webm")
+    
     $ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     $ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 

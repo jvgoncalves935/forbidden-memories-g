@@ -593,6 +593,9 @@ init python:
     def FinishEnterNameOnlyMen():
         renpy.jump_out_of_context("onlymen")
 
+    def FinishEnterNameBadBoy():
+        renpy.jump_out_of_context("badboy")
+
     def FinishEnterNameError242424():
         renpy.jump_out_of_context("label_error242424_begin")
 
@@ -1262,7 +1265,7 @@ screen endings():
             textbutton _("Final E"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="manto_azul.png",ending="E"),Function(sfx_carta,audio.computador_guina,False,0)]
+                hovered [ShowTransient("side_img_right", img="manto_azul.png",ending="E"),Function(sfx_carta,audio.computador_gino,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
     
@@ -1317,7 +1320,7 @@ screen endings():
             textbutton _("Final J"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="guinass_book.png",ending="J"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="guinnass_book.png",ending="J"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1426,11 +1429,11 @@ screen endings():
             xalign 0.29
             yalign 0.41
             textbutton _("Final T"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="felipe_dylon.png",ending="T"),Function(sfx_carta,audio.felipe_dylon_01,False,0)]
+                hovered [ShowTransient("side_img_right", img="felipinho.png",ending="T"),Function(sfx_carta,audio.felipinho_01,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(FinishEnterNameBadBoy)]
 
     if(persistent.endings["U"]):
         vbox:
@@ -1566,7 +1569,7 @@ screen endings():
             textbutton _("Carta 31"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_piscineiro.png",card=10),Function(sfx_carta,audio.guina_piscineiro,False,1),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left", img="paulo_gino_piscineiro.png",card=10),Function(sfx_carta,audio.gino_piscineiro,False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
@@ -1599,7 +1602,7 @@ screen endings():
             textbutton _("Carta 34"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_bombeiro.png",card=11),Function(sfx_carta,audio.mangueira,False,0)]
+                hovered [ShowTransient("side_img_left", img="paulo_gino_bombeiro.png",card=11),Function(sfx_carta,audio.mangueira,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1632,7 +1635,7 @@ screen endings():
             textbutton _("Carta 37"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_professor.png",card=12),Function(sfx_carta,audio.guina_professor,False,0)]
+                hovered [ShowTransient("side_img_left", img="paulo_gino_professor.png",card=12),Function(sfx_carta,audio.gino_professor,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1665,7 +1668,7 @@ screen endings():
             textbutton _("Carta 40"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_arabe.png",card=13),Function(sfx_carta,voz_guina_arabe,False,0),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=13),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
@@ -1698,7 +1701,7 @@ screen endings():
             textbutton _("Carta 43"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina_matrix.png",card=14),Function(sfx_carta,audio.guina_seguranca,False,0)]
+                hovered [ShowTransient("side_img_left", img="paulo_gino_matrix.png",card=14),Function(sfx_carta,audio.gino_seguranca,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1731,7 +1734,7 @@ screen endings():
             textbutton _("Carta 46"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="paulo_guina.png",card=15),Function(sfx_carta,audio.guina_supremo,False,0)]
+                hovered [ShowTransient("side_img_left", img="paulo_gino.png",card=15),Function(sfx_carta,audio.gino_supremo,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1775,7 +1778,7 @@ screen endings():
             textbutton _("Carta 50"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="sarcofago.png",card=25),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="guinodia_perna_esquerda.png",card=17),Function(guinodia,True,3)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1801,14 +1804,14 @@ screen endings():
                 unhovered [Hide("side_img_left_video"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
-    if(is_all_endings_unlocked()):
+    if(persistent.endings["CYM"]):
         vbox:
             xalign 0.93
             yalign 0.49
             textbutton _("Carta 53"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="guinodia_o_proibido.png",card=26),Function(guinodia,True,5)]
+                hovered [ShowTransient("side_img_left", img="ricco_puentes.png",card=41),Function(sfx_carta,audio.lily_santos2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1830,10 +1833,20 @@ screen endings():
             textbutton _("Carta 55"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="guinodia_perna_esquerda.png",card=17),Function(guinodia,True,3)]
+                hovered [ShowTransient("side_img_left", img="sarcofago.png",card=25),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
+    if(is_all_endings_unlocked()):
+        vbox:
+            xalign 0.93
+            yalign 0.54
+            textbutton _("Carta 56"):
+                style "confirm_button_3"
+                text_style "navigation_button_text_endings_2"
+                hovered [ShowTransient("side_img_left", img="guinodia_o_proibido.png",card=26),Function(guinodia,True,5)]
+                unhovered [Hide("side_img_left")]
+                action [NullAction()]
 
 
 
@@ -1844,7 +1857,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.59
-            textbutton _("Carta 56"):
+            textbutton _("Carta 57"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="monstro_que_relaxa.png",card=27),Function(sfx_carta,audio.jailson_ainn2,False,0)]
@@ -1855,18 +1868,20 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.59
-            textbutton _("Carta 57"):
+            textbutton _("Carta 58"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="filhona.png",card=28),Function(sfx_carta,audio.filhona2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [Function(FinishEnterNameChurrasco)]
 
+    
+
     if(persistent.endings["C3"]):
         vbox:
             xalign 0.93
             yalign 0.59
-            textbutton _("Carta 58"):
+            textbutton _("Carta 59"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="dragao_baiano.png",card=29),Function(sfx_carta,audio.dragao_baiano2,False,0)]
@@ -1877,7 +1892,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.64
-            textbutton _("Carta 59"):
+            textbutton _("Carta 60"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=30),Function(sfx_carta,audio.coringa_dano2,False,0)]
@@ -1888,7 +1903,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.64
-            textbutton _("Carta 60"):
+            textbutton _("Carta 61"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="polimerizacao.png",card=31),Function(guinodia,False,0)]
@@ -1899,7 +1914,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.64
-            textbutton _("Carta 61"):
+            textbutton _("Carta 62"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="sandro_lima.png",card=32),Function(guinodia,False,0)]
@@ -1919,7 +1934,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.69
-            textbutton _("Carta 62"):
+            textbutton _("Carta 63"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="vegeta.png",card=33),Function(sfx_carta,audio.vegeta_de_familia,False,0),Function(music_channel_stop,"music")]
@@ -1930,7 +1945,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.69
-            textbutton _("Carta 63"):
+            textbutton _("Carta 64"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="danger_gilson.png",card=34),Function(sfx_carta,voz_capXX_019,False,0),Function(music_channel_stop,"music")]
@@ -1941,7 +1956,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.69
-            textbutton _("Carta 64"):
+            textbutton _("Carta 65"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="glob.png",card=35),Function(sfx_carta,audio.globglogabgalab,False,0),Function(music_channel_stop,"music")]
@@ -1952,7 +1967,7 @@ screen endings():
         vbox:
             xalign 0.66
             yalign 0.74
-            textbutton _("Carta 65"):
+            textbutton _("Carta 66"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="mark.png",card=36),Function(guinodia,False,0)]
@@ -1963,7 +1978,7 @@ screen endings():
         vbox:
             xalign 0.795
             yalign 0.74
-            textbutton _("Carta 66"):
+            textbutton _("Carta 67"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="taeyeon.png",card=37),Function(guinodia,False,0)]
@@ -1974,7 +1989,7 @@ screen endings():
         vbox:
             xalign 0.93
             yalign 0.74
-            textbutton _("Carta 67"):
+            textbutton _("Carta 68"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
@@ -2037,13 +2052,13 @@ screen creditos():
         xalign 0.5
         yalign 0.10
         
-        text "Desenvolvido por:" style "font_creditos_menu"
+        text "Desenvolvido por: \"Operation: Senna\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.13
         
-        text "Converting Minds: Operation Senna" style "font_creditos_menu"
+        text "Publicado por: \"Operation: Hidden Link\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2061,7 +2076,7 @@ screen creditos():
         xalign 0.5
         yalign 0.40
         
-        text "Master Exploder (Converting Minds)" style "font_creditos_menu"
+        text "\"Macho\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2073,13 +2088,13 @@ screen creditos():
         xalign 0.5
         yalign 0.52
         
-        text "Taeyeon115, Mark_77Souls" style "font_creditos_menu"
+        text "\"Von List\", \"Mark\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.61
         
-        text "\"Converting Minds: Operation Senna\" é a" style "font_creditos_menu"
+        text "\"Operation: Senna\" é a" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2097,7 +2112,7 @@ screen creditos():
         xalign 0.5
         yalign 0.975
         
-        text "Converting Minds, 2022" style "font_creditos_menu"
+        text "Operation: Hidden Link, 2023" style "font_creditos_menu"
             
 
     #        text "[config.version]":
@@ -2373,7 +2388,7 @@ screen preferences():
                 vbox:
                     xmaximum 500
                     style_prefix "radio"
-                    label _("Modo de Exibicão   ")
+                    label _("Modo de Exibicão")
                     textbutton _("Modo Janela") action Preference("display", "window")
                     textbutton _("Tela Cheia") action Preference("display", "fullscreen")
             #if config.developer:
@@ -2383,13 +2398,14 @@ screen preferences():
             #        textbutton _("Disable") action Preference("rollback side", "disable")
             #        textbutton _("Left") action Preference("rollback side", "left")
             #        textbutton _("Right") action Preference("rollback side", "right")
-
+            null width (12 * gui.pref_spacing)
             vbox:
                 xmaximum 400
-                style_prefix "check"
-                label _("Pular")
-                textbutton _("Texto Não Visualizado") action Preference("skip", "toggle")
-                textbutton _("Depois de Escolhas") action Preference("after choices", "toggle")
+                style_prefix "radio"
+                label _("Efeito Texto")
+                
+                textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
+                textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
                 #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
             ## Additional vboxes of type "radio_pref" or "check_pref" can be
@@ -2452,15 +2468,6 @@ screen preferences():
         hbox:
             box_wrap True
             xmaximum 900
-            vbox:
-                hbox:
-                    style_prefix "radio"
-                    label _("Efeito Texto")
-                hbox:
-                    style_prefix "radio"
-                    textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
-                    textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
-            null width (3 * gui.pref_spacing)
             vbox:
                 hbox:
                     style_prefix "radio"

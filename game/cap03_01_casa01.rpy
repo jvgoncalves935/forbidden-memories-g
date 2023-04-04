@@ -241,10 +241,14 @@ label cap03_01_casa01:
     return
 
 label telefone_03_01_01:
+    "Tá bom, então."
+    play sound ctc
+    
     stop sound_bg
     "{p=0.2}{nw}"
     play sound phone_click
-    "Alô?"
+    
+    "Boa tarde."
     play sound ctc
     
     show mangueiraboy_s1 at side_image_in zorder 3
@@ -258,7 +262,7 @@ label telefone_03_01_01:
     "{p=0.6}{nw}"
     hide mangueiraboy_s1
     
-    "Não parceiro. Até mais."
+    "Não é não, quebrada. Até mais."
     play sound ctc
     
     "{p=0.2}{nw}"
