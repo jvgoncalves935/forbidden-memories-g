@@ -598,6 +598,9 @@ init python:
 
     def FinishEnterNameError242424():
         renpy.jump_out_of_context("label_error242424_begin")
+    
+    def FinishStandingHereIRealize():
+        renpy.jump_out_of_context("standing_here_i_realize")
 
 
 
@@ -1442,8 +1445,8 @@ screen endings():
             textbutton _("Final U"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="poder_da_velha_amizade.png",ending="U"),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_right")]
+                hovered [ShowTransient("side_img_right", img="omacho.png",ending="U"),Function(sfx_carta,audio.pingu,False,1),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_right"),Function(music_channel_play,"music",0.00,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
     if(persistent.endings["V"]):
@@ -1990,11 +1993,11 @@ screen endings():
             xalign 0.93
             yalign 0.74
             textbutton _("Carta 68"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="master_exploder.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left", img="calvo_supremo.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [NullAction()]
+                action [Function(renpy.music.stop,"sound"),Function(FinishStandingHereIRealize)]
 
     textbutton _("Voltar"):
         xalign 0.05
@@ -2414,6 +2417,7 @@ screen preferences():
         null height (7 * gui.pref_spacing)
 
         hbox:
+            xmaximum 900
             style_prefix "slider"
             box_wrap True
 
@@ -2422,11 +2426,7 @@ screen preferences():
                 label _("Velocidade do Texto")
 
                 #bar value Preference("text speed")
-                bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=False, style="slider", offset=20)
-
-                label _("Tempo do Auto-Avançar")
-
-                bar value Preference("auto-forward time")
+                bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=True, style="slider", step=10)
 
             vbox:
 
@@ -2434,6 +2434,7 @@ screen preferences():
                     label _("Volume de Música")
 
                     hbox:
+                        #bar value SteppedMixerValue('music', step=0.01)
                         bar value Preference("music volume")
 
                 if config.has_sound:
@@ -2443,9 +2444,6 @@ screen preferences():
                     hbox:
                         bar value Preference("sound volume")
 
-                        if config.sample_sound:
-                            textbutton _("Test") action Play("sound", config.sample_sound)
-
 
                 if config.has_voice:
                     label _("Volume de Voz")
@@ -2453,8 +2451,6 @@ screen preferences():
                     hbox:
                         bar value Preference("voice volume")
 
-                        if config.sample_voice:
-                            textbutton _("Test") action Play("voice", config.sample_voice)
 
                 if config.has_music or config.has_sound or config.has_voice:
                     null height gui.pref_spacing

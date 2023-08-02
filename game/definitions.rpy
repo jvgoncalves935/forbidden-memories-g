@@ -30,8 +30,8 @@ init python:
     config.keymap['input_jump_word_left'] = []
     config.keymap['input_jump_word_right'] = []
     config.keymap['skip'] = []
-    config.keymap['bar_activate'] = []
-    config.keymap['bar_deactivate'] = []
+    #config.keymap['bar_activate'] = []
+    #config.keymap['bar_deactivate'] = []
     config.keymap['hide_windows'] = []
 
     renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
@@ -358,6 +358,42 @@ init python:
             return False
         except:
             return False
+
+    #https://www.reddit.com/r/RenPy/comments/ruskub/skip_text_custom_speed_bar_in_preferences/
+    #https://lemmasoft.renai.us/forums/viewtopic.php?t=26295
+
+    class SteppedMixerValue(BarValue):
+        """
+            :doc: value
+
+            The value of an audio mixer.
+
+            `mixer`
+                The name of the mixer to adjust. This is usually one of
+                "music", "sfx", or "voice", but user code can create new
+                mixers.
+            `step`
+                The amount to change the bar by. If None, defaults to 1/10th of
+                the bar.
+        """
+
+        def __init__(self, mixer, step=None):
+            self.mixer = mixer
+            self.step = step
+
+        def set_mixer(self, value):
+            _preferences.set_volume(self.mixer, value)
+
+        def get_adjustment(self):
+            print(preferences.get_volume(self.mixer))
+            return ui.adjustment(
+                range=1.0,
+                value=_preferences.get_volume(self.mixer),
+                changed=self.set_mixer,
+                step=self.step)
+
+        def get_style(self):
+            return "slider", "vslider"
         
 
 
@@ -2690,6 +2726,7 @@ define audio.globglogabgalab = "<loop 0.00>mod_assets/sounds/globglogabgalab.ogg
 define audio.lily_santos2 = "<loop 0.00>mod_assets/sounds/lily_santos.ogg"
 define audio.melancholic_glitch2 = "mod_assets/sounds/melancholic_glitch.ogg"
 define audio.racionais_g = "mod_assets/sounds/racionais_g.ogg"
+define audio.pingu = "mod_assets/sounds/pingu.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
