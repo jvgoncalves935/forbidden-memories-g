@@ -74,7 +74,7 @@ image cred_03_01:
 image cred_03_02:
     align (0.15,0.5)
     alpha 0.0
-    Text("Transcripts:\n\n\n\nTaeyeon115", style="credits_text")
+    Text("Transcripts:\n\n\n\nTaeyeon", style="credits_text")
     linear 1.0 alpha 1.0
     time 3.5
     linear 1.5 alpha 0.0
@@ -245,7 +245,7 @@ image cred_052_02:
     align (0.5,0.3)
     alpha 0.0
     time 1.0
-    Text("Taeyeon115\nMark_77Souls\nCofanic\nDeide Costa\nLima Mei\nDavid Vonderhaar\niFW xSpetsnaz\nzObelisks\nSheik Volim Habah", style="credits_text")
+    Text("Taeyeon\nMark\nCofanic\nDeide Costa\nLima Mei\nDavid Vonderhaar\nReneral\nzObelisks\nSheik Volim Habah", style="credits_text")
     linear 1.0 alpha 1.0
     time 4.5
     linear 1.5 alpha 0.0
@@ -1822,7 +1822,7 @@ image cred_46_00:
     align (0.5,0.9)
     alpha 0.0
     time 1.0
-    Text("2022", style="credits_text")
+    Text("2024", style="credits_text")
     linear 1.0 alpha 1.0
     time 10.5
     linear 1.5 alpha 0.0

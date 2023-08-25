@@ -2091,7 +2091,7 @@ screen creditos():
         xalign 0.5
         yalign 0.52
         
-        text "\"Von List\", \"Mark\"" style "font_creditos_menu"
+        text "\"Taeyeon\", \"Mark\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2115,7 +2115,7 @@ screen creditos():
         xalign 0.5
         yalign 0.975
         
-        text "Operation: Hidden Link, 2023" style "font_creditos_menu"
+        text "Operation: Rabbithole, 2024" style "font_creditos_menu"
             
 
     #        text "[config.version]":

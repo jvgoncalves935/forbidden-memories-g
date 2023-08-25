@@ -1911,6 +1911,7 @@ define audio.fm_pharaoh = "<loop 0.0>mod_assets/music/fm_pharaoh.ogg"
 define audio.fm_3d_duel_finals = "<loop 9.933>mod_assets/music/fm_3d_duel_finals.ogg"
 define audio.fm_forbidden_ruins = "<loop 16.8>mod_assets/music/fm_forbidden_ruins.ogg"
 define audio.inside_the_event_horizon = "<loop 3.4 to 104.133>mod_assets/music/Inside The Event Horizon.mp3"
+define audio.nicole_mode_music = "<loop 0.0>mod_assets/music/nicole_mode_music.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
