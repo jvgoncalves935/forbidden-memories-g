@@ -81,7 +81,7 @@
 81 - Lain Iwakura
 82 - Melancholic Yuri
 83 - Deus Ex Nibonetti
-84 - Mara
+84 - mara
 85 - Revelação do Reneral Paus Negros
 86 - Boy Stronda
 87 - Barra de Metal
@@ -107,3 +107,4 @@
 
 XX - Revista G
 XX - Pedra G
+XX - mara mara
