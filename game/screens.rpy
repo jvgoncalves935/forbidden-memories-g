@@ -1998,6 +1998,19 @@ screen endings():
                 hovered [ShowTransient("side_img_left", img="calvo_supremo.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [Function(renpy.music.stop,"sound"),Function(FinishStandingHereIRealize)]
+    
+
+
+
+    vbox:
+        xalign 0.93
+        yalign 0.79
+        textbutton _("Página 2"):
+            style "confirm_button_4"
+            text_style "navigation_button_text_endings_2"
+            #hovered [ShowTransient("side_img_left", img="calvo_supremo.png",card=38),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
+            #unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [Function(renpy.music.stop,"sound"),Function(FinishStandingHereIRealize)]
 
     textbutton _("Voltar"):
         xalign 0.05
