@@ -6,7 +6,7 @@ label AS_APARENCIAS_ENGANAM:
     #Mas a questão é: você consegue literalmente me enxergar?
     #"Como posso ativar este final dentro do jogo?"
     
-    $ drpc_update("aparencias")
+    $ drpc_update("finalPRTD")
 
     scene black
     stop music
@@ -115,6 +115,8 @@ label AS_APARENCIAS_ENGANAM:
     stop voice
 
     scene black
+
+    $ register_ending("PRTD")
     
     return
 

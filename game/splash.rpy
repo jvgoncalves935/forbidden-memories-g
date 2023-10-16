@@ -121,7 +121,9 @@ init python:
                         ("C5",False),
                         ("CXX",False),
                         ("CXY",False),
-                        ("CYM",False)]
+                        ("CYM",False),
+                        ("mara",False),
+                        ("PRTD",False)]
                         
             persistent.endings = dict(array_aux)
 
@@ -320,7 +322,7 @@ label splashscreen:
         #with dissolve
         "{p=1.5}{nw}"
         play music fm_nameinput
-        "[config.name] é um jogo feito\nem Ren'Py a partir de um template de\num mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
+        "[config.name] é uma Visual Novel\nfeita em Ren'Py a partir de um template\nde um mod de Doki Doki Literature Club.\nEste jogo não é afiliado à Team\nSalvato."
         play sound ctc
         "Este jogo é um CLONE SEM FINS\nLUCRATIVOS de \"Yu-Gi-Oh: Forbidden\nMemories\", desenvolvido pela Konami\nEntertaiment Japan (atual Konami\nCorporation) em 1999. Todos os\ndireitos reservados."
         play sound ctc

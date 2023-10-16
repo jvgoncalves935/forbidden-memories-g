@@ -224,7 +224,7 @@ screen say(who, what):
             xalign 0.96
             yalign 0.96
             
-            textbutton _("OPEN BETA 0.1.6 (WIP)"):
+            textbutton _("OPEN BETA 0.1.7 (WIP)"):
                 style "page_label_text"
                 text_size 12
     
@@ -376,7 +376,7 @@ screen choice(items):
         xalign 0.96
         yalign 0.98
         
-        textbutton _("OPEN BETA 0.1.6 (WIP)"):
+        textbutton _("OPEN BETA 0.1.7 (WIP)"):
             style "page_label_text"
             text_size 12
     
@@ -652,7 +652,7 @@ screen navigation():
             xalign 0.96
             yalign 0.96
             
-            textbutton _("OPEN BETA 0.1.6 (WIP)"):
+            textbutton _("OPEN BETA 0.1.7 (WIP)"):
                 style "page_label_text"
                 text_size 12
 
@@ -1088,7 +1088,7 @@ screen side_img_left(img,card):
             zoom 0.78
 
     vbox:
-        xalign 0.94
+        xalign 0.92
         yalign 0.945
 
         textbutton _("\""+deck_g_names[card]+"\""):
@@ -2317,6 +2317,7 @@ style page_label_text:
     color "#fff"
     text_align 0.5
     layout "subtitle"
+    xmaximum 760
     font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
     outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
     hover_color "#070e5c"
@@ -3139,6 +3140,15 @@ screen texto_game_over:
         yalign 0.96
 
         textbutton _("Final "+current_ending_id+": \""+endings_names[current_ending_id]+"\""):
+            style "page_label_text"
+            text_size 16
+
+screen texto_final_mara:
+    vbox:
+        xalign 0.94
+        yalign 0.96
+
+        textbutton _("final mara"):
             style "page_label_text"
             text_size 16
 
