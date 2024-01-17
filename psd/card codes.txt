@@ -63,7 +63,7 @@
 69115063 1ª Edição - Tom Chinês																TCG/OCG: 1
 69115064 1ª Edição - Taeyeon, O Amigo de Sangue												TCG/OCG: 0
 69115065 1ª Edição - Mark, O Esquizofrêncio													TCG/OCG: 0
-69115066 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
+69115066 1ª Edição - 																		TCG/OCG: 0
 69115067 1ª Edição - FEMINISTAAA, RAINHA DO TANQUE											TCG/OCG: 0
 69115068 1ª Edição - Macho, O Calvo Supremo													TCG/OCG: 0
 69115069 1ª Edição - Conehead																TCG/OCG: 0
@@ -103,7 +103,17 @@
 69115103 1ª Edição - MARCELO																TCG/OCG: 0
 69115104 1ª Edição - Melancholic Yuri														TCG/OCG: 1
 69115105 1ª Edição - mara																	TCG/OCG: 1
-69115106 1ª Edição - Yami Senna																TCG/OCG: 1
+69115106 1ª Edição - Sava "Entra Que Eu Te Explico" do Rael Vol. 1							TCG/OCG: 1
+69115107 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
+69115108 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
+69115109 1ª Edição - Ricardo Milos															TCG/OCG: 1
+69115110 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
+69115111 1ª Edição - Papai Noel de Família													TCG/OCG: 1
+69115112 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
+69115113 1ª Edição - 																		TCG/OCG: 1
+69115114 1ª Edição - 																		TCG/OCG: 1
+69115115 1ª Edição - Yami Senna																TCG/OCG: 1
 XX - Revista G
 XX - Pedra G
 XX - mara mara
+vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1

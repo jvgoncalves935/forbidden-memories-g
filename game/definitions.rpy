@@ -84,7 +84,9 @@ init python:
         global operation_senna_salt_suffix
         salt_input_prefix_suffix = str(operation_senna_salt_prefix+str(player)+operation_senna_salt_suffix).upper()
         
+        #Nome do Arquivo de Save
         hash_aux = hashlib.sha512(salt_input_prefix_suffix.encode("utf-8")).hexdigest().upper()
+        
         global hash_operation_senna
         #Talvez agora você não consiga encontrar a chave. Aguarde.
         #Sempre mantenha sua visão atenta.

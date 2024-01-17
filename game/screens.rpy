@@ -2062,7 +2062,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.17
+        yalign 0.12
         textbutton _("Carta 69"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2072,7 +2072,7 @@ screen endings_pag_2():
     
     vbox:
         xalign 0.29
-        yalign 0.17
+        yalign 0.12
         textbutton _("Carta 70"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2082,7 +2082,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.22
+        yalign 0.17
         textbutton _("Carta 71"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2092,7 +2092,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.22
+        yalign 0.17
         textbutton _("Carta 72"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2102,7 +2102,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.27
+        yalign 0.22
         textbutton _("Carta 73"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
@@ -2112,7 +2112,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.27
+        yalign 0.22
         textbutton _("Carta 74"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2122,7 +2122,7 @@ screen endings_pag_2():
     
     vbox:
         xalign 0.09
-        yalign 0.32
+        yalign 0.27
         textbutton _("Carta 75"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
@@ -2132,7 +2132,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.32
+        yalign 0.27
         textbutton _("Carta 76"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2142,7 +2142,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.37
+        yalign 0.32
         textbutton _("Carta 77"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2152,7 +2152,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.37
+        yalign 0.32
         textbutton _("Carta 78"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
@@ -2162,7 +2162,7 @@ screen endings_pag_2():
     
     vbox:
         xalign 0.09
-        yalign 0.42
+        yalign 0.37
         textbutton _("Carta 79"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2172,7 +2172,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.42
+        yalign 0.37
         textbutton _("Carta 80"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2182,7 +2182,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.47
+        yalign 0.42
         textbutton _("Carta 81"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2192,7 +2192,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.47
+        yalign 0.42
         textbutton _("Carta 82"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
@@ -2202,7 +2202,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.52
+        yalign 0.47
         textbutton _("Carta 83"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2212,7 +2212,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.52
+        yalign 0.47
         textbutton _("Carta 84"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2222,7 +2222,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.57
+        yalign 0.52
         textbutton _("Carta 85"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2232,7 +2232,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.57
+        yalign 0.52
         textbutton _("Carta 86"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2242,7 +2242,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.62
+        yalign 0.57
         textbutton _("Carta 87"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2252,7 +2252,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.62
+        yalign 0.57
         textbutton _("Carta 88"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2262,7 +2262,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.09
-        yalign 0.67
+        yalign 0.62
         textbutton _("Carta 89"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
@@ -2272,7 +2272,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.29
-        yalign 0.67
+        yalign 0.62
         textbutton _("Carta 90"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2280,80 +2280,81 @@ screen endings_pag_2():
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
     vbox:
-        xalign 0.69
-        yalign 0.17
+        xalign 0.09
+        yalign 0.67
         textbutton _("Carta 91"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_left", img="bob.png",card=91),Function(sfx_carta,voz_cap05_02_032,False,0)]
-            unhovered [Hide("side_img_left")]
+            hovered [ShowTransient("side_img_right_2", img="bob.png",card=91),Function(sfx_carta,voz_cap05_02_032,False,0)]
+            unhovered [Hide("side_img_right_2")]
             action [NullAction()]
     
     vbox:
-        xalign 0.91
-        yalign 0.17
+        xalign 0.29
+        yalign 0.67
         textbutton _("Carta 92"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_left", img="alemao.png",card=92),Function(sfx_carta,audio.alemao_01,False,0)]
-            unhovered [Hide("side_img_left")]
+            hovered [ShowTransient("side_img_right_2", img="alemao.png",card=92),Function(sfx_carta,audio.alemao_01,False,0)]
+            unhovered [Hide("side_img_right_2")]
             action [NullAction()]
-
+    
     vbox:
-        xalign 0.69
-        yalign 0.22
+        xalign 0.09
+        yalign 0.72
         textbutton _("Carta 93"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_left", img="jailson_mendes.png",card=93),Function(sfx_carta,audio.jailson01,False,0)]
-            unhovered [Hide("side_img_left")]
+            hovered [ShowTransient("side_img_right_2", img="jailson_mendes.png",card=93),Function(sfx_carta,audio.jailson01,False,0)]
+            unhovered [Hide("side_img_right_2")]
             action [Function(FinishEnterNameCapJailson)]
 
     vbox:
-        xalign 0.91
-        yalign 0.22
+        xalign 0.29
+        yalign 0.72
         textbutton _("Carta 94"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_left", img="darkilson.png",card=94),Function(sfx_carta,audio.vcs_broxaram,False,1),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_right_2", img="darkilson.png",card=94),Function(sfx_carta,audio.vcs_broxaram,False,1),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_right_2"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
             action [NullAction()]
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
 
     vbox:
         xalign 0.69
-        yalign 0.27
+        yalign 0.12
         textbutton _("Carta 95"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2363,7 +2364,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.27
+        yalign 0.12
         textbutton _("Carta 96"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2373,7 +2374,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.32
+        yalign 0.17
         textbutton _("Carta 97"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2383,7 +2384,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.32
+        yalign 0.17
         textbutton _("Carta 98"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2393,7 +2394,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.37
+        yalign 0.22
         textbutton _("Carta 99"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2403,7 +2404,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.37
+        yalign 0.22
         textbutton _("Carta 100"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2413,7 +2414,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.42
+        yalign 0.27
         textbutton _("Carta 101"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2423,7 +2424,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.42
+        yalign 0.27
         textbutton _("Carta 102"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2433,7 +2434,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.47
+        yalign 0.32
         textbutton _("Carta 103"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2443,7 +2444,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.47
+        yalign 0.32
         textbutton _("Carta 104"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2453,7 +2454,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.52
+        yalign 0.37
         textbutton _("Carta 105"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2463,7 +2464,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.52
+        yalign 0.37
         textbutton _("Carta 106"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2473,7 +2474,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.57
+        yalign 0.42
         textbutton _("Carta 107"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2483,7 +2484,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.91
-        yalign 0.57
+        yalign 0.42
         textbutton _("Carta 108"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
@@ -2493,13 +2494,121 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.69
-        yalign 0.62
+        yalign 0.47
         textbutton _("Carta 109"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
+
+    vbox:
+        xalign 0.91
+        yalign 0.47
+        textbutton _("Carta 110"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=108),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.69
+        yalign 0.52
+        textbutton _("Carta 111"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.91
+        yalign 0.52
+        textbutton _("Carta 112"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=108),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.69
+        yalign 0.57
+        textbutton _("Carta 113"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.91
+        yalign 0.57
+        textbutton _("Carta 114"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=108),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [NullAction()]
+    
+    vbox:
+        xalign 0.69
+        yalign 0.62
+        textbutton _("Carta 115"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.69
+        yalign 0.67
+        textbutton _("Token 01"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.91
+        yalign 0.67
+        textbutton _("Token 02"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=108),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.69
+        yalign 0.72
+        textbutton _("Token 03"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="fome.png",card=109),Function(sfx_carta,audio.fomehahaha,False,0)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.91
+        yalign 0.72
+        textbutton _("vtnc kkkk"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings"
+            hovered [ShowTransient("side_img_left", img="paulo_gino_arabe.png",card=108),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            action [NullAction()]
+
+
+
+
+
+
+
+
 
     
 
