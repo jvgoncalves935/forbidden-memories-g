@@ -312,6 +312,12 @@ init python:
         if(persistent.error242424 == False and is_all_endings_unlocked()):
             FinishEnterNameError242424()
 
+    def change_main_menu_music(flag):
+        if(flag):
+            audio.main_menu = audio.duelista_de_familia
+        else:
+            audio.main_menu = audio.fm_mainmenu
+
     def racionais_g_audio(audio,toggle,pos):
         global racionais_g_count
         guinodia(toggle,pos)
@@ -1984,6 +1990,9 @@ define audio.fm_3d_duel_finals = "<loop 9.933>mod_assets/music/fm_3d_duel_finals
 define audio.fm_forbidden_ruins = "<loop 16.8>mod_assets/music/fm_forbidden_ruins.ogg"
 define audio.inside_the_event_horizon = "<loop 3.4 to 104.133>mod_assets/music/Inside The Event Horizon.mp3"
 define audio.nicole_mode_music = "<loop 0.0>mod_assets/music/nicole_mode_music.ogg"
+define audio.fm_mainmenu = "<loop 0.7666>mod_assets/music/fm_mainmenu.ogg"
+define audio.duelista_de_familia = "<loop 13.122 from 13.122>mod_assets/music/Duelista de Família.mp3"
+default audio.main_menu = audio.duelista_de_familia
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"

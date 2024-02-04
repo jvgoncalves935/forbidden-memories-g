@@ -162,4 +162,6 @@ label epilogo:
     stop music
 
     $ register_ending("G")
+    $ persistent.config_main_menu_music = True
+    $ change_main_menu_music(persistent.config_main_menu_music)
     return

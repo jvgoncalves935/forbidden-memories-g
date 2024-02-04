@@ -62,7 +62,7 @@ define config.default_voice_volume = 1.0
 ## game, until it is stopped or another file is played.
 
 #define config.main_menu_music = audio.t1
-define config.main_menu_music = "<loop 0.7666>mod_assets/music/fm_mainmenu.ogg"
+define config.main_menu_music = None
 
 ## Transitions #################################################################
 ##

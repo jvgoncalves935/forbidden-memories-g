@@ -71,7 +71,7 @@
 69115071 1ª Edição - The Boys do Ano														TCG/OCG: 1
 69115072 1ª Edição - Indiana Torres															TCG/OCG: 1
 69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1
-69115074 1ª Edição - Poder da Imaginação													TCG/OCG: 1
+69115074 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
 69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
@@ -110,9 +110,18 @@
 69115110 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
 69115111 1ª Edição - Papai Noel de Família													TCG/OCG: 1
 69115112 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
-69115113 1ª Edição - 																		TCG/OCG: 1
-69115114 1ª Edição - 																		TCG/OCG: 1
-69115115 1ª Edição - Yami Senna																TCG/OCG: 1
+69115113 1ª Edição - Entregador de Pizza G													TCG/OCG: 1
+69115114 1ª Edição - Papaco, O Pistoleiro													TCG/OCG: 1
+69115115 1ª Edição - Ed Hector, O Maluco do Casebre											TCG/OCG: 1
+69115116 1ª Edição - Clone do Dolph Ziggler													TCG/OCG: 1
+69115117 1ª Edição - Akuma de Família														TCG/OCG: 1
+69115118 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
+69115119 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
+69115120 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
+69115121 1ª Edição - Magrinho																TCG/OCG: 1
+69115122 1ª Edição - Bizarro de Família														TCG/OCG: 1
+69115123 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
+69115124 1ª Edição - Yami Senna																TCG/OCG: 1
 XX - Revista G
 XX - Pedra G
 XX - mara mara

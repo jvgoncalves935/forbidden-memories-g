@@ -365,6 +365,7 @@ label splashscreen:
         #with Dissolve(1.5)
         "{p=1.5}{nw}"
         $ persistent.splash_complete = False
+        $ persistent.config_main_menu_music = False
         
         
 
@@ -407,7 +408,7 @@ label splashscreen:
     show white
     #$ persistent.ghost_menu = False #Handling for easter egg from DDLC
     #$ splash_message = splash_message_default #Default splash message
-    $ renpy.music.play(config.main_menu_music)
+    $ renpy.music.play(audio.main_menu)
     #show intro with Dissolve(0.5, alpha=True)
     #pause 2.5
     #hide intro with Dissolve(0.5, alpha=True)
@@ -418,6 +419,11 @@ label splashscreen:
     #pause 2.0
     #hide splash_warning with Dissolve(0.5, alpha=True)
     $ config.allow_skipping = True
+    return
+
+label before_main_menu:
+    $ change_main_menu_music(persistent.config_main_menu_music)
+    $ renpy.music.play(audio.main_menu)
     return
 
 label warningscreen:
