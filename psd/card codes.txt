@@ -49,7 +49,7 @@
 69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1
 69115050 1ª Edição - Bob, O Construtor														TCG/OCG: 1
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
-69115052 1ª Edição - Indiana Torres															TCG/OCG: 1
+69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1
 69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1
 69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
@@ -59,7 +59,7 @@
 69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
 69115060 1ª Edição - Coringa Dano															TCG/OCG: 1
 69115061 1ª Edição - Polimerização G														TCG/OCG: 1
-69115062 1ª Edição - Ricco Puentes															TCG/OCG: 1
+69115062 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
 69115063 1ª Edição - Globglogabgalab, A Traça Melancólica									TCG/OCG: 1
 69115064 1ª Edição - Taeyeon, O Amigo de Sangue												TCG/OCG: 0
 69115065 1ª Edição - Mark, O Esquizofrêncio													TCG/OCG: 0
@@ -77,50 +77,50 @@
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
 69115078 1ª Edição - Jô Abdul																TCG/OCG: 1
 69115079 1ª Edição - Vaca no Ku, Porra?														TCG/OCG: 1
-69115080 1ª Edição - Pegasus do PAU BRILHANTE												TCG/OCG: 1
-69115081 1ª Edição - Super Choque															TCG/OCG: 1
-69115082 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
-69115083 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
-69115084 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
-69115085 1ª Edição - Crow of Judgement														TCG/OCG: 1
-69115086 1ª Edição - FOME.																	TCG/OCG: 1
-69115087 1ª Edição - Barra de Metal															TCG/OCG: 1
-69115088 1ª Edição - Pica-Pau Biruta														TCG/OCG: 1
-69115089 1ª Edição - Gemidão do Zap															TCG/OCG: 1
-69115090 1ª Edição - Nego BAM																TCG/OCG: 1
-69115091 1ª Edição - MC Gorila																TCG/OCG: 1
-69115092 1ª Edição - Everson Zoio															TCG/OCG: 0
-69115093 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1
-69115094 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
-69115095 1ª Edição - Kakapo, Papagaio Obeso kkkkk											TCG/OCG: 1
-69115096 1ª Edição - MC VV, Explorador de Portais											TCG/OCG: 1
-69115097 1ª Edição - Miyuki Sone															TCG/OCG: 1
-69115098 1ª Edição - Lain Iwakura															TCG/OCG: 1
-69115099 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
-69115100 1ª Edição - 12 do Gugu																TCG/OCG: 1
+69115080 1ª Edição - Gemidão do Zap															TCG/OCG: 1
+69115081 1ª Edição - Bizarro de Família														TCG/OCG: 1
+69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1
+69115083 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
+69115084 1ª Edição - Indiana Torres															TCG/OCG: 1
+69115085 1ª Edição - Papai Noel de Família													TCG/OCG: 1
+69115086 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
+69115087 1ª Edição - Entregador de Pizza G													TCG/OCG: 1
+69115088 1ª Edição - Papaco, O Pistoleiro													TCG/OCG: 1
+69115089 1ª Edição - Ed Hector, O Maluco do Casebre											TCG/OCG: 1
+69115090 1ª Edição - Clone do Dolph Ziggler													TCG/OCG: 1
+69115091 1ª Edição - Akuma de Família														TCG/OCG: 1
+69115092 1ª Edição - Demacol (Morpheus Form)												TCG/OCG: 1
+69115093 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
+69115094 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
+69115095 1ª Edição - Magrinhu																TCG/OCG: 1
+69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
+69115097 1ª Edição - Kakapo, Papagaio Obeso kkkkk											TCG/OCG: 1
+69115098 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
+69115099 1ª Edição - Everson Zoio															TCG/OCG: 1
+69115100 1ª Edição - Pica-Pau Biruta														TCG/OCG: 1
 69115101 1ª Edição - Espírito do Manto Azul													TCG/OCG: 1
-69115102 1ª Edição - Deus Ex Nibonetti														TCG/OCG: 1
-69115103 1ª Edição - MARCELO																TCG/OCG: 0
-69115104 1ª Edição - Melancholic Yuri														TCG/OCG: 1
-69115105 1ª Edição - mara																	TCG/OCG: 1
-69115106 1ª Edição - Sava "Entra Que Eu Te Explico" do Rael Vol. 1							TCG/OCG: 1
-69115107 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
-69115108 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
-69115109 1ª Edição - Ricardo Milos															TCG/OCG: 1
-69115110 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
-69115111 1ª Edição - Papai Noel de Família													TCG/OCG: 1
-69115112 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
-69115113 1ª Edição - Entregador de Pizza G													TCG/OCG: 1
-69115114 1ª Edição - Papaco, O Pistoleiro													TCG/OCG: 1
-69115115 1ª Edição - Ed Hector, O Maluco do Casebre											TCG/OCG: 1
-69115116 1ª Edição - Clone do Dolph Ziggler													TCG/OCG: 1
-69115117 1ª Edição - Akuma de Família														TCG/OCG: 1
-69115118 1ª Edição - Demacol (Morpheus Form)												TCG/OCG: 1
-69115119 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
-69115120 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
-69115121 1ª Edição - Magrinhu																TCG/OCG: 1
-69115122 1ª Edição - PC Siqueira de Família													TCG/OCG: 1
-69115123 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
+69115102 1ª Edição - Pegasus do PAU BRILHANTE												TCG/OCG: 1
+69115103 1ª Edição - Nego BAM																TCG/OCG: 1
+69115104 1ª Edição - MC VV, Explorador de Portais											TCG/OCG: 1
+69115105 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
+69115106 1ª Edição - MC Gorila																TCG/OCG: 1
+69115107 1ª Edição - Sava "Entra Que Eu Te Explico" do Rael Vol. 1							TCG/OCG: 1
+69115108 1ª Edição - Super Choque															TCG/OCG: 1
+69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
+69115110 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
+69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
+69115112 1ª Edição - FOME.																	TCG/OCG: 1
+69115113 1ª Edição - Barra de Metal															TCG/OCG: 1
+69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1
+69115115 1ª Edição - Deus Ex Nibonetti														TCG/OCG: 1
+69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
+69115117 1ª Edição - 12 do Gugu																TCG/OCG: 1
+69115118 1ª Edição - Reneral Paus Negros													TCG/OCG: 1
+69115119 1ª Edição - MARCELO																TCG/OCG: 1
+69115120 1ª Edição - Lain Iwakura															TCG/OCG: 1
+69115121 1ª Edição - Miyuki Sone															TCG/OCG: 1
+69115122 1ª Edição - Melancholic Yuri														TCG/OCG: 1
+69115123 1ª Edição - mara																	TCG/OCG: 1
 69115124 1ª Edição - Yami Senna																TCG/OCG: 1
 XX - Revista G
 XX - Pedra G
