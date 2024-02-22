@@ -7,7 +7,7 @@
 69115007 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
 69115008 1ª Edição - Os Carros São Como As Lanchas, As Motos São Como Os Jet-Skis			TCG/OCG: 1
 69115009 1ª Edição - Tele-Senna																TCG/OCG: 1
-69115010 1ª Edição - Guinass Book 2007														TCG/OCG: 1
+69115010 1ª Edição - Guinnass Book 2007														TCG/OCG: 1
 69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
 69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
 69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
@@ -96,27 +96,27 @@
 69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
 69115097 1ª Edição - Kakapo, Papagaio Obeso kkkkk											TCG/OCG: 1
 69115098 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
-69115099 1ª Edição - Everson Zoio															TCG/OCG: 1
-69115100 1ª Edição - Pica-Pau Biruta														TCG/OCG: 1
-69115101 1ª Edição - Espírito do Manto Azul													TCG/OCG: 1
+69115099 1ª Edição - Everson Zoio															TCG/OCG: 0
+69115100 1ª Edição - MC Gorila																TCG/OCG: 1
+69115101 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
 69115102 1ª Edição - Pegasus do PAU BRILHANTE												TCG/OCG: 1
 69115103 1ª Edição - Nego BAM																TCG/OCG: 1
 69115104 1ª Edição - MC VV, Explorador de Portais											TCG/OCG: 1
-69115105 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
-69115106 1ª Edição - MC Gorila																TCG/OCG: 1
+69115105 1ª Edição - FOME.																	TCG/OCG: 1
+69115106 1ª Edição - Barra de Metal															TCG/OCG: 1
 69115107 1ª Edição - Sava "Entra Que Eu Te Explico" do Rael Vol. 1							TCG/OCG: 1
 69115108 1ª Edição - Super Choque															TCG/OCG: 1
 69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
 69115110 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
-69115112 1ª Edição - FOME.																	TCG/OCG: 1
-69115113 1ª Edição - Barra de Metal															TCG/OCG: 1
+69115112 1ª Edição - Pica-Pau Biruta														TCG/OCG: 1
+69115113 1ª Edição - Espírito do Manto Azul													TCG/OCG: 1
 69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1
 69115115 1ª Edição - Deus Ex Nibonetti														TCG/OCG: 1
 69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
 69115117 1ª Edição - 12 do Gugu																TCG/OCG: 1
-69115118 1ª Edição - Reneral Paus Negros													TCG/OCG: 1
-69115119 1ª Edição - MARCELO																TCG/OCG: 1
+69115118 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
+69115119 1ª Edição - MARCELO																TCG/OCG: 0
 69115120 1ª Edição - Lain Iwakura															TCG/OCG: 1
 69115121 1ª Edição - Miyuki Sone															TCG/OCG: 1
 69115122 1ª Edição - Melancholic Yuri														TCG/OCG: 1
