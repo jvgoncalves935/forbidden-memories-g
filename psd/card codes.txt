@@ -1,77 +1,77 @@
 69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1
-69115002 1ª Edição - James Matarazzo														TCG/OCG: 1
-69115003 1ª Edição - Yeah Man																TCG/OCG: 1
-69115004 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
-69115005 1ª Edição - Darkilson																TCG/OCG: 1
-69115006 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1
-69115007 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1
-69115008 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
-69115009 1ª Edição - Paulo Gino Matrix														TCG/OCG: 1
-69115010 1ª Edição - Paulo Gino Árabe														TCG/OCG: 1
-69115011 1ª Edição - Paulo Gino, O Deixador de Ocos											TCG/OCG: 1
-69115012 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
-69115013 1ª Edição - Braço Esquerdo do Proibido												TCG/OCG: 1
-69115014 1ª Edição - Braço Direito do Proibido												TCG/OCG: 1
-69115015 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
-69115016 1ª Edição - Perna Direita do Proibido												TCG/OCG: 1
-69115017 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
-69115018 1ª Edição - Doutora																TCG/OCG: 1
-69115019 1ª Edição - Minha mu;lher															TCG/OCG: 1
-69115020 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
-69115021 1ª Edição - Grito Ensurdecedor de Lily Santos										TCG/OCG: 1
-69115022 1ª Edição - Boy Stronda															TCG/OCG: 1
-69115023 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1
-69115024 1ª Edição - Índio (Indígena)														TCG/OCG: 1
-69115025 1ª Edição - Goleiro de Família														TCG/OCG: 1
-69115026 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
-69115027 1ª Edição - Os Carros São Como As Lanchas, As Motos São Como Os Jet-Skis			TCG/OCG: 1
-69115028 1ª Edição - Tele-Senna																TCG/OCG: 1
-69115029 1ª Edição - Guinass Book 2007														TCG/OCG: 1
-69115030 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
-69115031 1ª Edição - Polimerização G														TCG/OCG: 1
-69115032 1ª Edição - Bob, O Construtor														TCG/OCG: 1
-69115033 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
-69115034 1ª Edição - Mangueira Boy															TCG/OCG: 1
-69115035 1ª Edição - Sandro Lima, O Arquiteto do Universo G									TCG/OCG: 1
-69115036 1ª Edição - Pote da Delícia														TCG/OCG: 1
-69115037 1ª Edição - Princesa Demacol														TCG/OCG: 1
-69115038 1ª Edição - Demacol (Morpheus Form)												TCG/OCG: 1
-69115039 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1
-69115040 1ª Edição - Cabação																TCG/OCG: 1
-69115041 1ª Edição - Filhona																TCG/OCG: 1
-69115042 1ª Edição - Mangueira Evil															TCG/OCG: 1
-69115043 1ª Edição - Renzo																	TCG/OCG: 1
-69115044 1ª Edição - Felipe de Nylon G														TCG/OCG: 1
-69115045 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1
-69115046 1ª Edição - CJ de Família															TCG/OCG: 1
-69115047 1ª Edição - Anita																	TCG/OCG: 1
-69115048 1ª Edição - Doutora's Hospital														TCG/OCG: 1
-69115049 1ª Edição - Coringa Dano															TCG/OCG: 1
-69115050 1ª Edição - Vegeta de Família														TCG/OCG: 1
-69115051 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
-69115052 1ª Edição - Foodeezecuvain & Omacho												TCG/OCG: 1
+69115002 1ª Edição - Goleiro de Família														TCG/OCG: 1
+69115003 1ª Edição - James Matarazzo														TCG/OCG: 1
+69115004 1ª Edição - Índio (Indígena)														TCG/OCG: 1
+69115005 1ª Edição - Vaimeti																TCG/OCG: 1
+69115006 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
+69115007 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
+69115008 1ª Edição - Os Carros São Como As Lanchas, As Motos São Como Os Jet-Skis			TCG/OCG: 1
+69115009 1ª Edição - Tele-Senna																TCG/OCG: 1
+69115010 1ª Edição - Guinass Book 2007														TCG/OCG: 1
+69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
+69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
+69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
+69115014 1ª Edição - Doutora's Hospital														TCG/OCG: 1
+69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
+69115016 1ª Edição - CJ de Família															TCG/OCG: 1
+69115017 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1
+69115018 1ª Edição - Yeah Man																TCG/OCG: 1
+69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1
+69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1
+69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
+69115022 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1
+69115023 1ª Edição - Princesa Demacol														TCG/OCG: 1
+69115024 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
+69115025 1ª Edição - Paulo Gino Árabe														TCG/OCG: 1
+69115026 1ª Edição - Darkilson																TCG/OCG: 1
+69115027 1ª Edição - Minha mu;lher															TCG/OCG: 1
+69115028 1ª Edição - Perna Direita do Proibido												TCG/OCG: 1
+69115029 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1
+69115030 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1
+69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1
+69115032 1ª Edição - Renzo																	TCG/OCG: 1
+69115033 1ª Edição - Paulo Gino, O Deixador de Ocos											TCG/OCG: 1
+69115034 1ª Edição - Cabação																TCG/OCG: 1
+69115035 1ª Edição - Anita																	TCG/OCG: 1
+69115036 1ª Edição - Grito Ensurdecedor de Lily Santos										TCG/OCG: 1
+69115037 1ª Edição - Boy Stronda															TCG/OCG: 1
+69115038 1ª Edição - Mangueira Boy															TCG/OCG: 1
+69115039 1ª Edição - Dansa gatinho dansakkkkkkkkk											TCG/OCG: 1
+69115040 1ª Edição - Felipe de Nylon G														TCG/OCG: 1
+69115041 1ª Edição - Doutora																TCG/OCG: 1
+69115042 1ª Edição - Braço Esquerdo do Proibido												TCG/OCG: 1
+69115043 1ª Edição - Braço Direito do Proibido												TCG/OCG: 1
+69115044 1ª Edição - Oh Man																	TCG/OCG: 1
+69115045 1ª Edição - Tom Chinês																TCG/OCG: 1
+69115046 1ª Edição - Guilhotina G															TCG/OCG: 1
+69115047 1ª Edição - Sandro Lima, O Arquiteto do Universo G									TCG/OCG: 1
+69115048 1ª Edição - Paulo Gino Matrix														TCG/OCG: 1
+69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1
+69115050 1ª Edição - Bob, O Construtor														TCG/OCG: 1
+69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
+69115052 1ª Edição - Indiana Torres															TCG/OCG: 1
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1
-69115054 1ª Edição - Dansa gatinho dansakkkkkkkkk											TCG/OCG: 1
-69115055 1ª Edição - Dragão BAIANO															TCG/OCG: 1
-69115056 1ª Edição - Guilhotina G															TCG/OCG: 1
-69115057 1ª Edição - Oh Man																	TCG/OCG: 1
-69115058 1ª Edição - Ricco Puentes															TCG/OCG: 1
-69115059 1ª Edição - Vaimeti																TCG/OCG: 1
-69115060 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1
-69115061 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
-69115062 1ª Edição - Globglogabgalab, A Traça Melancólica									TCG/OCG: 1
-69115063 1ª Edição - Tom Chinês																TCG/OCG: 1
+69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1
+69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
+69115056 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
+69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1
+69115058 1ª Edição - Filhona																TCG/OCG: 1
+69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
+69115060 1ª Edição - Coringa Dano															TCG/OCG: 1
+69115061 1ª Edição - Polimerização G														TCG/OCG: 1
+69115062 1ª Edição - Ricco Puentes															TCG/OCG: 1
+69115063 1ª Edição - Globglogabgalab, A Traça Melancólica									TCG/OCG: 1
 69115064 1ª Edição - Taeyeon, O Amigo de Sangue												TCG/OCG: 0
 69115065 1ª Edição - Mark, O Esquizofrêncio													TCG/OCG: 0
-69115066 1ª Edição - 																		TCG/OCG: 0
+69115066 1ª Edição - DECODE: Paxcii - O Inv3ntor M4luco										TCG/OCG: 0
 69115067 1ª Edição - FEMINISTAAA, RAINHA DO TANQUE											TCG/OCG: 0
 69115068 1ª Edição - Macho, O Calvo Supremo													TCG/OCG: 0
 69115069 1ª Edição - Conehead																TCG/OCG: 0
 69115070 1ª Edição - Jailson Mendes, O Primeiro Machinho									TCG/OCG: 1
 69115071 1ª Edição - The Boys do Ano														TCG/OCG: 1
-69115072 1ª Edição - Indiana Torres															TCG/OCG: 1
+69115072 1ª Edição - Foodeezecuvain & Omacho												TCG/OCG: 1
 69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1
-69115074 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
+69115074 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
 69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
@@ -81,7 +81,7 @@
 69115081 1ª Edição - Super Choque															TCG/OCG: 1
 69115082 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
 69115083 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
-69115084 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1
+69115084 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
 69115085 1ª Edição - Crow of Judgement														TCG/OCG: 1
 69115086 1ª Edição - FOME.																	TCG/OCG: 1
 69115087 1ª Edição - Barra de Metal															TCG/OCG: 1
@@ -115,11 +115,11 @@
 69115115 1ª Edição - Ed Hector, O Maluco do Casebre											TCG/OCG: 1
 69115116 1ª Edição - Clone do Dolph Ziggler													TCG/OCG: 1
 69115117 1ª Edição - Akuma de Família														TCG/OCG: 1
-69115118 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
+69115118 1ª Edição - Demacol (Morpheus Form)												TCG/OCG: 1
 69115119 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
 69115120 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
-69115121 1ª Edição - Magrinho																TCG/OCG: 1
-69115122 1ª Edição - Bizarro de Família														TCG/OCG: 1
+69115121 1ª Edição - Magrinhu																TCG/OCG: 1
+69115122 1ª Edição - PC Siqueira de Família													TCG/OCG: 1
 69115123 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
 69115124 1ª Edição - Yami Senna																TCG/OCG: 1
 XX - Revista G
