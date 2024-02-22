@@ -53,13 +53,13 @@
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1
 69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1
 69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
-69115056 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
+69115056 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
 69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1
 69115058 1ª Edição - Filhona																TCG/OCG: 1
 69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
 69115060 1ª Edição - Coringa Dano															TCG/OCG: 1
 69115061 1ª Edição - Polimerização G														TCG/OCG: 1
-69115062 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
+69115062 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
 69115063 1ª Edição - Globglogabgalab, A Traça Melancólica									TCG/OCG: 1
 69115064 1ª Edição - Taeyeon, O Amigo de Sangue												TCG/OCG: 0
 69115065 1ª Edição - Mark, O Esquizofrêncio													TCG/OCG: 0
