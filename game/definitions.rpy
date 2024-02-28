@@ -323,8 +323,11 @@ init python:
         guinodia(toggle,pos)
         racionais_g_count += 1
 
-        if(racionais_g_count == 5):
-            renpy.music.play("mod_assets/sounds/racionais_g.ogg","sound",loop=True)
+        if(racionais_g_count >= 4):
+            if(racionais_g_count % 2 == 0):
+                renpy.music.play("mod_assets/sounds/racionais_g.ogg","sound",loop=True)
+            else:
+                renpy.music.play("mod_assets/sounds/15_cavalos_diferentes.ogg","sound",loop=True)
             return    
 
         if(pos == 1):
@@ -475,7 +478,7 @@ define deck_g_names = [
     "Alexandre Senna Carrasco",
     "Doutora's Hospital",
     "Maldita Hora Que Eu Sentei Nesse Banco",
-    "CJ de Família",
+    "Doutora",
     "Chorão, O Viajante de Mundos Paralelos",
     "Yeah Man",
     "Mangueira Evil",
@@ -500,7 +503,7 @@ define deck_g_names = [
     "Mangueira Boy",
     "Dansa gatinho dansakkkkkkkkk",
     "Felipe de Nylon G",
-    "Doutora",
+    "CJ de Família",
     "Braço Esquerdo do Proibido",
     "Kawan Desu, O Mecânico",
     "Oh Man",
