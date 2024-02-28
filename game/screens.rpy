@@ -2221,8 +2221,8 @@ screen endings_pag_2():
         textbutton _("Carta 84"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="indiana_torres.png",card=84),Function(sfx_carta,audio.pingu,False,1),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_right_2"),Function(music_channel_play,"music",0.00,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_right_2", img="indiana_torres.png",card=84)]
+            unhovered [Hide("side_img_right_2")]
             action [NullAction()]
 
     vbox:
@@ -2241,7 +2241,7 @@ screen endings_pag_2():
         textbutton _("Carta 86"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="zeh.png",card=86),Function(sfx_carta,voz_cap02_02_20,False,0)]
+            hovered [ShowTransient("side_img_right_2", img="zeh.png",card=86)]
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
 
@@ -2281,7 +2281,7 @@ screen endings_pag_2():
         textbutton _("Carta 90"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="dolph_ziggler.png",card=90),Function(sfx_carta,audio.mangueira_boy_01,False,0)]
+            hovered [ShowTransient("side_img_right_2", img="dolph_ziggler.png",card=90)]
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
     
@@ -2291,7 +2291,7 @@ screen endings_pag_2():
         textbutton _("Carta 91"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="akuma.png",card=91),Function(sfx_carta,voz_cap05_02_032,False,0)]
+            hovered [ShowTransient("side_img_right_2", img="akuma.png",card=91)]
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
     
@@ -2301,7 +2301,7 @@ screen endings_pag_2():
         textbutton _("Carta 92"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="demacol.png",card=92),Function(sfx_carta,audio.alemao_01,False,0)]
+            hovered [ShowTransient("side_img_right_2", img="demacol.png",card=92)]
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
     
@@ -2311,9 +2311,9 @@ screen endings_pag_2():
         textbutton _("Carta 93"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="ursos_lolitos.png",card=93),Function(sfx_carta,audio.jailson01,False,0)]
+            hovered [ShowTransient("side_img_right_2", img="ursos_lolitos.png",card=93)]
             unhovered [Hide("side_img_right_2")]
-            action [Function(FinishEnterNameCapJailson)]
+            action [NullAction()]
 
     vbox:
         xalign 0.29
@@ -2321,8 +2321,8 @@ screen endings_pag_2():
         textbutton _("Carta 94"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="vin_diesel.png",card=94),Function(sfx_carta,audio.vcs_broxaram,False,1),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_right_2"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_right_2", img="vin_diesel.png",card=94)]
+            unhovered [Hide("side_img_right_2")]
             action [NullAction()]
 
     
@@ -2363,7 +2363,7 @@ screen endings_pag_2():
         textbutton _("Carta 95"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="magrinhu.png",card=95),Function(sfx_carta,audio.jailson_ainn,False,0)]
+            hovered [ShowTransient("side_img_left", img="magrinhu.png",card=95)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2393,7 +2393,7 @@ screen endings_pag_2():
         textbutton _("Carta 98"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="leo_lins.png",card=98),Function(sfx_carta,audio.kid_bengala2,False,0)]
+            hovered [ShowTransient("side_img_left", img="leo_lins.png",card=98)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2423,8 +2423,8 @@ screen endings_pag_2():
         textbutton _("Carta 101"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="gil_brother.png",card=101),Function(sfx_carta,audio.gino_piscineiro,False,1),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="gil_brother.png",card=101)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2493,7 +2493,7 @@ screen endings_pag_2():
         textbutton _("Carta 108"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="super_choque.png",card=108),Function(sfx_carta,audio.jo_abdul2,False,0)]
+            hovered [ShowTransient("side_img_left", img="super_choque.png",card=108)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2553,8 +2553,8 @@ screen endings_pag_2():
         textbutton _("Carta 114"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="nicole.png",card=114),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="nicole.png",card=114)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2583,8 +2583,8 @@ screen endings_pag_2():
         textbutton _("Carta 117"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="12_do_gugu.png",card=117),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="12_do_gugu.png",card=117)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2603,7 +2603,7 @@ screen endings_pag_2():
         textbutton _("Carta 119"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="MARCELO.png",card=119),Function(sfx_carta,audio.fomehahaha,False,0)]
+            hovered [ShowTransient("side_img_left", img="MARCELO.png",card=119)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2613,8 +2613,8 @@ screen endings_pag_2():
         textbutton _("Carta 120"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="lain.png",card=120),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="lain.png",card=120)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2633,7 +2633,7 @@ screen endings_pag_2():
         textbutton _("Carta 122"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="yuri.png",card=122),Function(sfx_carta,audio.fomehahaha,False,0)]
+            hovered [ShowTransient("side_img_left", img="yuri.png",card=122)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2643,8 +2643,8 @@ screen endings_pag_2():
         textbutton _("Carta 123"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="mara.png",card=123),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="mara.png",card=123)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2663,7 +2663,7 @@ screen endings_pag_2():
         textbutton _("Token 01"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="revista_g.png",card=125),Function(sfx_carta,audio.fomehahaha,False,0)]
+            hovered [ShowTransient("side_img_left", img="revista_g.png",card=125)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2673,8 +2673,8 @@ screen endings_pag_2():
         textbutton _("Token 02"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="pedra_g.png",card=126),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="pedra_g.png",card=126)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
     vbox:
@@ -2683,7 +2683,7 @@ screen endings_pag_2():
         textbutton _("Token 03"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="mara_mara.png",card=127),Function(sfx_carta,audio.fomehahaha,False,0)]
+            hovered [ShowTransient("side_img_left", img="mara_mara.png",card=127)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2693,8 +2693,8 @@ screen endings_pag_2():
         textbutton _("vtnc kkkk"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="noir.png",card=128),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
-            unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+            hovered [ShowTransient("side_img_left", img="noir.png",card=128)]
+            unhovered [Hide("side_img_left")]
             action [NullAction()]
 
 
