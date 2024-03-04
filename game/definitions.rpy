@@ -274,7 +274,7 @@ init python:
         global jumpscare_count
         jumpscare_count += 1
         if(jumpscare_count == 5):
-            FinishEnterNameCapSenna()
+            ExtraContentCapSenna()
             return
         if(jumpscare_count % 2 == 1):
             sfx_carta(audio.senna_doutora02,toggle,pos)
@@ -310,7 +310,7 @@ init python:
 
     def is_error242424():
         if(persistent.error242424 == False and is_all_endings_unlocked()):
-            FinishEnterNameError242424()
+            SecretError242424()
 
     def change_main_menu_music(flag):
         if(flag):
@@ -2805,7 +2805,7 @@ define audio.doutora02 = "<loop 0.00>mod_assets/sounds/doutora.ogg"
 define audio.os_carros_sao = "<loop 0.00>mod_assets/sounds/os_carros_sao.ogg"
 define audio.computador_gino = "<loop 0.00>mod_assets/sounds/computador_gino.ogg"
 define audio.alemao_01 = "<loop 0.00>mod_assets/sounds/alemao_01.ogg"
-define audio.felipinho_01 = "<loop 0.00>mod_assets/sounds/felipinho_01.ogg"
+define audio.felipinho_01 = "<loop 0.00>mod_assets/sounds/felipe_dylon_01.ogg"
 define audio.calvoooo = "<loop 0.00>mod_assets/sounds/calvoooo.ogg"
 define audio.pau_brilhante = "<loop 0.00>mod_assets/sounds/pau_brilhante.ogg"
 define audio.jailson_ainn = "<loop 0.00>mod_assets/sounds/jailson_ainn.ogg"
@@ -2831,6 +2831,7 @@ define audio.lily_santos2 = "<loop 0.00>mod_assets/sounds/lily_santos.ogg"
 define audio.melancholic_glitch2 = "mod_assets/sounds/melancholic_glitch.ogg"
 define audio.racionais_g = "mod_assets/sounds/racionais_g.ogg"
 define audio.pingu = "mod_assets/sounds/pingu.ogg"
+define audio.boy_stronda = "mod_assets/sounds/boy_stronda.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

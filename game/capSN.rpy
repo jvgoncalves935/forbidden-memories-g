@@ -26,13 +26,6 @@ label capSN:
     $ renpy.quit()
 
     $ renpy.pause(5.0, hard=True)
-
-    stop music
-    stop sound_bg
-    scene black
-    
-
-    $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
     
     return
 

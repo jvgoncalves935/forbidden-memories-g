@@ -575,35 +575,6 @@ init python:
         else:
             renpy.jump_out_of_context("cap_arabe")
 
-    def FinishEnterNameCapXY():
-        renpy.jump_out_of_context("capXY")
-
-    def FinishEnterNameCapYeahMan():
-        renpy.jump_out_of_context("capYM")
-
-    def FinishEnterNameCapSenna():
-        renpy.jump_out_of_context("capSN")
-
-    def FinishEnterNameCapJailson():
-        renpy.jump_out_of_context("capJA")
-
-    def FinishEnterNameChurrasco():
-        renpy.jump_out_of_context("churrasco")
-
-    def FinishEnterNameOnlyMen():
-        renpy.jump_out_of_context("onlymen")
-
-    def FinishEnterNameBadBoy():
-        renpy.jump_out_of_context("badboy")
-
-    def FinishEnterNameError242424():
-        renpy.jump_out_of_context("label_error242424_begin")
-    
-    def FinishStandingHereIRealize():
-        renpy.jump_out_of_context("standing_here_i_realize")
-
-
-
 screen navigation():
 
     #vbox:
@@ -1335,7 +1306,7 @@ screen endings():
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="tele_senna.png",ending="I"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [Function(FinishEnterNameOnlyMen)]
+                action [Function(ExtraContentOnlyMen)]
 
     if(persistent.endings["J"]):
         vbox:
@@ -1364,7 +1335,7 @@ screen endings():
             xalign 0.09
             yalign 0.66
             textbutton _("Final L"):
-                style "confirm_button_4"
+                style "confirm_button_3"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="posso_imaginar.png",ending="L"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
@@ -1435,7 +1406,7 @@ screen endings():
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="yeah_man.png",ending="R"),Function(sfx_carta,audio.yeahman_02,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [Function(FinishEnterNameCapYeahMan)]
+                action [Function(ExtraContentYeahMan)]
 
     if(persistent.endings["S"]):
         vbox:
@@ -1453,7 +1424,7 @@ screen endings():
             xalign 0.29
             yalign 0.41
             textbutton _("Final T"):
-                style "confirm_button_4"
+                style "confirm_button_3"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="kid_bengala.png",ending="T"),Function(sfx_carta,audio.kid_bengala2,False,0)]
                 unhovered [Hide("side_img_right")]
@@ -1512,7 +1483,7 @@ screen endings():
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="paulo_gino_arabe.png",ending="Y"),Function(sfx_carta,voz_gino_arabe,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [Function(FinishEnterNameCapJailson)]
+                action [Function(ExtraContentCapJailson)]
 
     if(persistent.endings["Z"]):
         vbox:
@@ -1624,11 +1595,11 @@ screen endings():
             xalign 0.795
             yalign 0.19
             textbutton _("Carta 34"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="cabacao.png",card=34),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [Function(FinishEnterNameChurrasco)]
+                action [Function(ExtraContentStart,"churrasco")]
 
     if(persistent.endings["I"]):
         vbox:
@@ -1657,11 +1628,11 @@ screen endings():
             xalign 0.795
             yalign 0.24
             textbutton _("Carta 37"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="boy_stronda.png",card=37),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_left")]
-                action [Function(FinishEnterNameBadBoy)]
+                hovered [ShowTransient("side_img_left", img="boy_stronda.png",card=37),Function(sfx_carta,audio.boy_stronda,False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
+                action [Function(ExtraContentStart,"badboy")]
 
     if(persistent.endings["L"]):
         vbox:
@@ -1692,9 +1663,9 @@ screen endings():
             textbutton _("Carta 40"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="felipinho.png",card=40),Function(sfx_carta,audio.felipinho_01,False,0),Function(music_channel_stop,"music")]
-                unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [NullAction()]
+                hovered [ShowTransient("side_img_left", img="felipinho.png",card=40),Function(sfx_carta,audio.felipinho_01,False,0)]
+                unhovered [Hide("side_img_left")]
+                action [Function(ExtraContentStart,"felipe_de_nylon")]
 
     if(persistent.endings["O"]):
         vbox:
@@ -1734,11 +1705,11 @@ screen endings():
             xalign 0.93
             yalign 0.34
             textbutton _("Carta 44"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="oh_man.png",card=44),Function(sfx_carta,"<from 0.833 loop 0.833>mod_assets/music/fm_kaiba_faceoff.ogg",False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [Function(FinishEnterNameCapXY)]
+                action [Function(ExtraContentCapXY)]
                 
 
     if(persistent.endings["S"]):
@@ -1845,7 +1816,7 @@ screen endings():
             xalign 0.66
             yalign 0.54
             textbutton _("Carta 54"):
-                style "confirm_button_4"
+                style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="pote_da_delicia.png",card=54),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
@@ -2019,7 +1990,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="calvo_supremo.png",card=68),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [Function(renpy.music.stop,"sound"),Function(FinishStandingHereIRealize)]
+                action [Function(renpy.music.stop,"sound"),Function(ExtraContentStandingHereIRealize)]
     
 
 
@@ -2129,7 +2100,7 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.27
         textbutton _("Carta 75"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="xaropinho.png",card=75)]
             unhovered [Hide("side_img_right_2")]
@@ -2159,11 +2130,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.32
         textbutton _("Carta 78"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="jo_abdul.png",card=78),Function(sfx_carta,audio.jo_abdul2,False,0)]
             unhovered [Hide("side_img_right_2")]
-            action [Function(FinishEnterNameCapYeahMan)]
+            action [Function(ExtraContentYeahMan)]
     
     vbox:
         xalign 0.09
@@ -2199,11 +2170,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.42
         textbutton _("Carta 82"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ricardo_milos.png",card=82)]
             unhovered [Hide("side_img_right_2")]
-            action [Function(FinishEnterNameBadBoy)]
+            action [NullAction()]
 
     vbox:
         xalign 0.09
@@ -2269,11 +2240,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.62
         textbutton _("Carta 89"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ed_hector.png",card=89)]
             unhovered [Hide("side_img_right_2")]
-            action [Function(FinishEnterNameOnlyMen)]
+            action [NullAction()]
 
     vbox:
         xalign 0.29
@@ -2289,7 +2260,7 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.67
         textbutton _("Carta 91"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="akuma.png",card=91)]
             unhovered [Hide("side_img_right_2")]
@@ -2309,7 +2280,7 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.72
         textbutton _("Carta 93"):
-            style "confirm_button_4"
+            style "confirm_button_3"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ursos_lolitos.png",card=93)]
             unhovered [Hide("side_img_right_2")]
