@@ -2240,21 +2240,21 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.62
         textbutton _("Carta 89"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ed_hector.png",card=89)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"maluco_do_casebre")]
 
     vbox:
         xalign 0.29
         yalign 0.62
         textbutton _("Carta 90"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="dolph_ziggler.png",card=90)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"dolph_ziggler")]
     
     vbox:
         xalign 0.09
@@ -2280,11 +2280,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.72
         textbutton _("Carta 93"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ursos_lolitos.png",card=93)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"ursos_e_lolitos")]
 
     vbox:
         xalign 0.29

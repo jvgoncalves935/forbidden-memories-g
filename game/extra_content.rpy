@@ -92,3 +92,26 @@ label standing_here_i_realize:
     
     return
 
+label extra_content_ursos_e_lolitos:
+    $ play_video("mod_assets/videos/ursos_lolitos.webm","forbidden_memories_intro_web")
+
+    "\"Ursos e Lolitos\"\n\nAlex Lesson, Erick Munhoz"
+    play sound ctc
+    
+    return
+
+label extra_content_maluco_do_casebre:
+    $ play_video("mod_assets/videos/maluco_casebre.webm","forbidden_memories_intro_web")
+
+    "\"Maluco do Casebre\"\n\nEd Hector e Vivian Mello"
+    play sound ctc
+    
+    return
+
+label extra_content_dolph_ziggler:
+    $ play_video("mod_assets/videos/dolph_ziggler.webm","forbidden_memories_intro_web")
+
+    "\"Dolph Ziggler de Família\"\n\nClone do Dolph Ziggler e\nMr. Bean de Família"
+    play sound ctc
+    
+    return
