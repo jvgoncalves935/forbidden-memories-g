@@ -115,3 +115,35 @@ label extra_content_dolph_ziggler:
     play sound ctc
     
     return
+
+label extra_content_indios_papacu:
+    $ play_video("mod_assets/videos/indios_papacu.webm","forbidden_memories_intro_web")
+
+    "\"Aldeia dos Índios Papacu\"\n\nJames Matarazzo e os Índios\n(Indígenas) Papacu"
+    play sound ctc
+    
+    return
+
+label extra_content_bizarro_de_familia:
+    $ play_video("mod_assets/videos/bizarro_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"Realizando Desejos\"\n\nAndré Ferraz"
+    play sound ctc
+    
+    return
+
+label extra_content_empregado_de_familia:
+    $ play_video("mod_assets/videos/empregado_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"Lavando os pratos\"\n\nEmpregado de Família\n(Vin Diesel de Família)"
+    play sound ctc
+    
+    return
+
+label extra_content_entregador_de_pizza_g:
+    $ play_video("mod_assets/videos/entregador_de_pizza_g.webm","forbidden_memories_intro_web")
+
+    "\"Vida de Entregador de Pizzas G\"\n\nEntregador de Pizza G"
+    play sound ctc
+    
+    return

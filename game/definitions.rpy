@@ -2894,7 +2894,8 @@ init python:
         "finalZ": "Final Z",
         "error242424": "FATAL ERROR 242424",
         "finalmara": "final mara",
-        "finalPRTD": "Verdadeiro Final Verdadeiro"
+        "finalPRTD": "Verdadeiro Final Verdadeiro",
+        "aparencias": "AS APARÊNCIAS ENGANAM"
     }
 
     chapters_details = {
@@ -2942,8 +2943,10 @@ init python:
         "finalX": "El Gángster de Familia",
         "finalY": "Árabe de Família",
         "finalZ": "As Aparências Enganam",
-        "aparencias": "??????",
-        "error242424": "??????????"
+        "aparencias": "???????????",
+        "error242424": "???????????",
+        "finalmara": "de onde vem a mara mara?",
+        "finalPRTD": "Operation: Rabbithole, concluída."
     }
 
     try: 

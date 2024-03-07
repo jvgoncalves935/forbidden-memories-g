@@ -2083,18 +2083,18 @@ screen endings_pag_2():
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="rocky_gaucho.png",card=73)]
-            unhovered [Hide("side_img_right_2"),Function(reset_jumpscare_senna,False,0)]
-            action [Function(jumpscare_senna_count,False,0)]
+            unhovered [Hide("side_img_right_2")]
+            action [NullAction()]
 
     vbox:
         xalign 0.29
         yalign 0.22
         textbutton _("Carta 74"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="indios_papacu.png",card=74)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"indios_papacu")]
     
     vbox:
         xalign 0.09
@@ -2160,11 +2160,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.42
         textbutton _("Carta 81"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="bizarro.png",card=81)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"bizarro_de_familia")]
 
     vbox:
         xalign 0.29
@@ -2220,11 +2220,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.57
         textbutton _("Carta 87"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="entregador_de_pizza.png",card=87)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"entregador_de_pizza_g")]
 
     vbox:
         xalign 0.29
@@ -2290,11 +2290,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.72
         textbutton _("Carta 94"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="vin_diesel.png",card=94)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"empregado_de_familia")]
 
     
 
@@ -2720,7 +2720,7 @@ screen creditos():
         imagebutton:
             idle "mod_assets/images/operation_senna.png"
             hover "mod_assets/images/operation_senna_hover.png"
-            action [ShowMenu("operation_senna_scr"), SensitiveIf(renpy.get_screen("operation_senna_scr") == None), [init_input_operation_senna(),Function(drpc_update,"finalZ")],Play("music", audio.m_converting_minds)]
+            action [ShowMenu("operation_senna_scr"), Function(init_input_operation_senna),Function(drpc_update,"finalZ"),Play("music", audio.m_converting_minds)]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
@@ -2728,9 +2728,9 @@ screen creditos():
         xalign 0.475
         yalign 0.89
         imagebutton:
-            idle "mod_assets/images/converting_minds.png"
-            hover "mod_assets/images/converting_minds_hover.png"
-            action [ShowMenu("converting_minds_scr"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias"),Function(is_error242424)]]
+            idle "mod_assets/images/operation_rabbithole.png"
+            hover "mod_assets/images/operation_rabbithole_hover.png"
+            action [ShowMenu("converting_minds_scr"), Play("music", audio.m_converting_minds),Function(drpc_update,"aparencias"),Function(is_error242424)]
             hover_sound audio.fm_arrow_select
             activate_sound audio.fm_back
 
@@ -2740,7 +2740,7 @@ screen creditos():
             yalign 0.9
             imagebutton:
                 idle "FACELESSGAMES_COM_BR"
-                action [ShowMenu("creditos"), SensitiveIf(renpy.get_screen("converting_minds_scr") == None),[Play("music", audio.fm_freeduel),Function(renpy.call_in_new_context,"capFACELESSGAMES")]]
+                action [ShowMenu("creditos"), Play("music", audio.fm_freeduel),Function(renpy.call_in_new_context,"capFACELESSGAMES")]
                 hover_sound audio.fm_arrow_select
                 activate_sound audio.fm_back
             #image "FACELESSGAMES_COM_BR"
@@ -2762,7 +2762,7 @@ screen creditos():
         xalign 0.5
         yalign 0.13
         
-        text "Publicado por: \"Operation: Hidden Link\"" style "font_creditos_menu"
+        text "Publicado por: \"Operation: Rabbithole\"" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2780,31 +2780,37 @@ screen creditos():
         xalign 0.5
         yalign 0.40
         
-        text "\"Macho\"" style "font_creditos_menu"
+        text "Macho" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.49
         
-        text "Transcripts:" style "font_creditos_menu"
+        text "Transcripts: Taeyeon, Mark" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.52
         
-        text "\"Taeyeon\", \"Mark\"" style "font_creditos_menu"
+        text "Revisão Deck G: DECODE Paxcii" style "font_creditos_menu"
+
+    vbox:
+        xalign 0.5
+        yalign 0.55
+        
+        text "Tradução EN-US: FEMINISTAAA" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.61
         
-        text "\"Operation: Senna\" é a" style "font_creditos_menu"
+        text "\"Operation: Senna\" é a equipe" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
         yalign 0.64
         
-        text "equipe criada para o desenvolvimento de" style "font_creditos_menu"
+        text "criada para o desenvolvimento de" style "font_creditos_menu"
 
     vbox:
         xalign 0.5
@@ -2817,12 +2823,6 @@ screen creditos():
         yalign 0.975
         
         text "Operation: Rabbithole, 2024" style "font_creditos_menu"
-            
-
-    #        text "[config.version]":
-    #            style "main_menu_version"
-
-    #1996 Kazuki Takahashi
 
     textbutton _("Voltar"):
         xalign 0.05
