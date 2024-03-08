@@ -2946,7 +2946,7 @@ init python:
         "aparencias": "???????????",
         "error242424": "???????????",
         "finalmara": "de onde vem a mara mara?",
-        "finalPRTD": "Operation: Rabbithole, concluída."
+        "finalPRTD": "Memórias Proibidas"
     }
 
     try: 

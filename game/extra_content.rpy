@@ -147,3 +147,35 @@ label extra_content_entregador_de_pizza_g:
     play sound ctc
     
     return
+
+label extra_content_magrinho:
+    $ play_video("mod_assets/videos/magrinho.webm","forbidden_memories_intro_web")
+
+    "\"Teste G do Magrinho\"\n\"Bait and Switch: The Big Deception\"\n\nMagrinho, Alemão e Bob"
+    play sound ctc
+    
+    return
+
+label extra_content_akuma_de_familia:
+    $ play_video("mod_assets/videos/akuma_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"Akuma de Família\"\n\nAkuma de Família e Alexandre Senna"
+    play sound ctc
+    
+    return
+
+label extra_content_saci:
+    $ play_video("mod_assets/videos/saci.webm","forbidden_memories_intro_web")
+
+    "\"O Saci de Duas Pernas\"\n\nSaci de Duas Pernas e\nCUripira G"
+    play sound ctc
+    
+    return
+
+label extra_content_papai_noel:
+    $ play_video("mod_assets/videos/papai_noel.webm","forbidden_memories_intro_web")
+
+    "\"Papai Noel de Família\"\n\nPapai Noel da Hot Boys"
+    play sound ctc
+    
+    return

@@ -2180,11 +2180,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.47
         textbutton _("Carta 83"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="saci.png",card=83)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"saci")]
 
     vbox:
         xalign 0.29
@@ -2200,11 +2200,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.52
         textbutton _("Carta 85"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="papai_noel.png",card=85)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"papai_noel")]
 
     vbox:
         xalign 0.29
@@ -2260,11 +2260,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.67
         textbutton _("Carta 91"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="akuma.png",card=91)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"akuma_de_familia")]
     
     vbox:
         xalign 0.29
@@ -2332,11 +2332,11 @@ screen endings_pag_2():
         xalign 0.64
         yalign 0.12
         textbutton _("Carta 95"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="magrinhu.png",card=95)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"magrinho")]
 
     vbox:
         xalign 0.795
