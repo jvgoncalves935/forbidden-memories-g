@@ -179,3 +179,35 @@ label extra_content_papai_noel:
     play sound ctc
     
     return
+
+label extra_content_zeh:
+    $ play_video("mod_assets/videos/zeh.webm","forbidden_memories_intro_web")
+
+    "\"Zeh Está Bolado (Dublado)\"\n\nZeh Está Bolado\n(Bolado de Família)"
+    play sound ctc
+    
+    return
+
+label extra_content_corvo:
+    $ play_video("mod_assets/videos/corvo.webm","forbidden_memories_intro_web")
+
+    "\"Corvo Jailson Mendes\""
+    play sound ctc
+    
+    return
+
+label extra_content_mara_mara:
+    $ play_video("mod_assets/videos/mara_mara.webm","forbidden_memories_intro_web")
+
+    "\"mara mara\"\n\nhttps:facelessgames.com.br"
+    play sound ctc
+    
+    return
+
+label extra_content_alemao_escravo:
+    $ play_video("mod_assets/videos/alemao_escravo.webm","forbidden_memories_intro_web")
+
+    "\"Escravo do Meu Mestre\"\n\nAlemão Escravo e Carrasco G"
+    play sound ctc
+    
+    return

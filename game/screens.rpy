@@ -1214,7 +1214,7 @@ screen endings():
             xalign 0.09
             yalign 0.11
             textbutton _("Final A"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="alexandre_senna.png",ending="A"),Function(reset_jumpscare_senna,False,2)]
                 unhovered [Hide("side_img_right"),Function(reset_jumpscare_senna,False,0)]
@@ -1831,7 +1831,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="noku_tijolao.png",card=55),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"alemao_escravo")]
 
     if(is_all_endings_unlocked()):
         vbox:
@@ -2210,11 +2210,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.52
         textbutton _("Carta 86"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="zeh.png",card=86)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"zeh")]
 
     vbox:
         xalign 0.09
@@ -2492,11 +2492,11 @@ screen endings_pag_2():
         xalign 0.795
         yalign 0.37
         textbutton _("Carta 111"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="crow.png",card=111)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"corvo")]
 
     vbox:
         xalign 0.95
@@ -2652,11 +2652,11 @@ screen endings_pag_2():
         xalign 0.95
         yalign 0.67
         textbutton _("Token 03"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="mara_mara.png",card=127)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"mara_mara")]
 
     vbox:
         xalign 0.95
