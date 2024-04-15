@@ -1180,6 +1180,30 @@ screen converting_minds_scr():
         text_style "navigation_button_text"
         action [NullAction()]
 
+screen faceless_games_scr():
+    tag menu
+
+    style_prefix "faceless_games_scr"
+
+    add "FACELESSGAMES_COM_BR"
+
+    vbox:
+        xalign 0.47
+        yalign 0.36
+        textbutton _("ANUNSIO OFISIAL!!!"):
+            style "return_button"
+            text_style "navigation_button_text"
+            action [Function(ExtraContentFacelessGames,True)]
+
+    vbox:
+        xalign 0.38
+        yalign 0.975
+        textbutton _("VOUTAR BLZ"):
+            style "return_button"
+            text_style "navigation_button_text"
+            action [MainMenu(confirm=False), Play("music", audio.main_menu)]
+
+
 screen guinodia_scr():
     add "guinodia_movie"
     timer 60 action Function(renpy.quit)
@@ -1271,8 +1295,8 @@ screen endings():
             textbutton _("Final F"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="alexandre_senna_policial.png",ending="F"),Function(guinodia,False,0)]
-                unhovered [Hide("side_img_right")]
+                hovered [ShowTransient("side_img_right", img="alexandre_senna_policial.png",ending="F"),Function(sfx_carta,audio.invisible,False,1),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_right"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [NullAction()]
 
     if(persistent.endings["G"]):
@@ -1291,11 +1315,11 @@ screen endings():
             xalign 0.09
             yalign 0.46
             textbutton _("Final H"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="os_carros.png",ending="H"),Function(sfx_carta,audio.os_carros_sao,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"ana")]
 
     if(persistent.endings["I"]):
         vbox:
@@ -1935,7 +1959,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="glob.png",card=63),Function(sfx_carta,audio.globglogabgalab,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"dramatv")]
 
     if(is_all_endings_unlocked()):
         vbox:
@@ -2042,9 +2066,9 @@ screen endings_pag_2():
         textbutton _("Carta 69"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="conehead.png",card=69)]
-            unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            hovered [ShowTransient("side_img_right_2", img="conehead.png",card=69),Function(music_channel_stop,"music"),Function(music_channel_stop,"sound")]
+            unhovered [Hide("side_img_right_2"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
+            action [Function(ExtraContentRestartError242424)]
     
     vbox:
         xalign 0.29
@@ -2120,11 +2144,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.32
         textbutton _("Carta 77"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="senhor_dos_anais.png",card=77)]
-            unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            hovered [ShowTransient("side_img_right_2", img="senhor_dos_anais.png",card=77),Function(sfx_carta,audio.senhor_dos_anais,False,1),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_right_2"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
+            action [Function(ExtraContentStart,"senhor_dos_anais")]
 
     vbox:
         xalign 0.29
@@ -2342,11 +2366,11 @@ screen endings_pag_2():
         xalign 0.795
         yalign 0.12
         textbutton _("Carta 96"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="ursos.png",card=96)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"ursos_grandes")]
 
     vbox:
         xalign 0.95
@@ -2442,11 +2466,11 @@ screen endings_pag_2():
         xalign 0.95
         yalign 0.27
         textbutton _("Carta 106"):
-            style "confirm_button_3"
+            style "confirm_button_5"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="barra_de_metal.png",card=106)]
-            unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            hovered [ShowTransient("side_img_left", img="barra_de_metal.png",card=106),Function(sfx_carta,audio.barra_de_metal,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
+            action [Function(sfx_carta,audio.barra_de_metal,False,0),Function(ExtraContentStart,"nimpf")]
 
     vbox:
         xalign 0.64
@@ -2472,10 +2496,10 @@ screen endings_pag_2():
         xalign 0.95
         yalign 0.32
         textbutton _("Carta 109"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="dragao_comunista.png",card=109)]
-            unhovered [Hide("side_img_left")]
+            hovered [ShowTransient("side_img_left", img="dragao_comunista.png",card=109),Function(sfx_carta,audio.faz_o_l,False,0),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_left"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
             action [NullAction()]
 
     vbox:
@@ -2502,11 +2526,11 @@ screen endings_pag_2():
         xalign 0.95
         yalign 0.37
         textbutton _("Carta 112"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="pica_pau.png",card=112)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"vurlcao")]
 
     vbox:
         xalign 0.64
@@ -2739,10 +2763,10 @@ screen creditos():
             xalign 0.925
             yalign 0.9
             imagebutton:
-                idle "FACELESSGAMES_COM_BR"
-                action [ShowMenu("creditos"), Play("music", audio.fm_freeduel),Function(renpy.call_in_new_context,"capFACELESSGAMES")]
+                idle "FACELESSGAMES_COM_BR_ALERTA"
+                action [Function(ExtraContentFacelessGames,False)]
                 hover_sound audio.fm_arrow_select
-                activate_sound audio.fm_back
+                activate_sound gui.activate_sound
             #image "FACELESSGAMES_COM_BR"
 
     vbox:
@@ -3727,6 +3751,20 @@ style confirm_button_4:
     properties gui.button_properties("navigation_button")
     hover_sound audio.fm_arrow_select
     activate_sound gui.activate_sound
+    xalign 0.5
+    yalign 0.5
+
+    font "mod_assets/gui/fonts/ForbiddenMemories.ttf"
+    color "#fff"
+    outlines [(4, "#000000aa", 0, 0),(1, "#9e9e9eaa", 0, 0)]
+    hover_outlines [(5, "#070e5c", 2, 2), (1, "#9e9e9eaa", 0, 0)]
+    insensitive_outlines [(5, "#070e5c", 0, 0), (2, "#9e9e9eaa", 0, 0)]
+
+style confirm_button_5:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    hover_sound audio.fm_arrow_select
+    activate_sound audio.barra_de_metal
     xalign 0.5
     yalign 0.5
 

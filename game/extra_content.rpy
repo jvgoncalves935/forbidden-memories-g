@@ -5,6 +5,11 @@ init python:
         
         renpy.jump_out_of_context("extra_content_label")
 
+    def ExtraContentFacelessGames(flag):
+        global faceless_games_active_flag
+        faceless_games_active_flag = flag
+        renpy.jump_out_of_context("capFACELESSGAMES")
+
 
     def ExtraContentCapXY():
         renpy.jump_out_of_context("capXY")
@@ -33,7 +38,24 @@ init python:
     def ExtraContentStandingHereIRealize():
         renpy.jump_out_of_context("standing_here_i_realize")
 
+    def ExtraContentRestartError242424():
+        persistent.error242424 = False
+        persistent.is_error242424_splashscreen = False
+        SecretError242424()
+
+
     global current_extra_content
+
+label capFACELESSGAMES():
+    if(faceless_games_active_flag or persistent.faceless_games_first_time): 
+        $ renpy.movie_cutscene("mod_assets/videos/FACELESSGAMES.COM.BR.webm")
+    
+    $ persistent.faceless_games_first_time = False
+
+    play music faceless_games
+    $ ShowMenu("faceless_games_scr")()
+    
+    return
 
 label extra_content_label:
     play sound menu_start
@@ -45,6 +67,7 @@ label extra_content_label:
 
     call expression "extra_content_"+current_extra_content
 
+    window hide(None)
     stop music
     stop sound_bg
     scene black
@@ -208,6 +231,75 @@ label extra_content_alemao_escravo:
     $ play_video("mod_assets/videos/alemao_escravo.webm","forbidden_memories_intro_web")
 
     "\"Escravo do Meu Mestre\"\n\nAlemão Escravo e Carrasco G"
+    play sound ctc
+    
+    return
+
+label extra_content_senhor_dos_anais:
+    $ play_video("mod_assets/videos/senhor_dos_anais.webm","forbidden_memories_intro_web")
+
+    "\"Senhor dos Anais\""
+    play sound ctc
+    
+    return
+
+label extra_content_nimpf:
+    $ play_video("mod_assets/videos/nimpf.webm","forbidden_memories_intro_web")
+
+    "\"nine inch metal pipes fodase\"\n\nRemix: Macho\nTrack Original: The Perfect Drug\nArtista: Nine Nich Nails"
+    play sound audio.barra_de_metal
+
+    $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
+
+    jump extra_content_nimpf_end
+    
+    return
+
+label extra_content_nimpf_end:
+    window hide(None)
+    play sound audio.barra_de_metal
+    $ renpy.full_restart()
+    return
+
+label extra_content_ursos_grandes:
+    "como seria os créditos do fim\ndo mundo:"
+    play sound ctc
+
+    pause 0.5
+
+    $ play_video("mod_assets/videos/ursos_grandes01.webm","forbidden_memories_intro_web")
+
+    "como eu gostaria que realmente fosse:"
+    play sound ctc
+
+    pause 0.5
+    window hide(None)
+    $ play_video("mod_assets/videos/ursos_grandes02.webm","forbidden_memories_intro_web")
+    
+    return
+
+label extra_content_dramatv:
+    call cap05_00_padeiro
+
+    pause 2.0
+
+    "\"Sonho do Padeiro G\"\n\nDublagem: DRAMA TV 3D"
+    play sound ctc
+
+    return
+
+label extra_content_ana:
+    $ play_video("mod_assets/videos/ana.webm","forbidden_memories_intro_web")
+
+    "\"Senna e a Anã\"\n\nAlexandre Senna e a Anã Ativa"
+    play sound ctc
+    
+    return
+
+label extra_content_vurlcao:
+    $ play_video("mod_assets/videos/vurlcao.webm","forbidden_memories_intro_web")
+
+    "\"Cena do Vurlcão\"\n\nAlexandre Senna e o Vurlcão"
     play sound ctc
     
     return

@@ -309,7 +309,7 @@ init python:
                 pass
 
     def is_error242424():
-        if(persistent.error242424 == False and is_all_endings_unlocked()):
+        if(persistent.error242424 == False):
             SecretError242424()
 
     def change_main_menu_music(flag):
@@ -1726,16 +1726,28 @@ image img_capXY_59 = "mod_assets/images/capXY/capXY_59.png"
 image img_capXY_60 = "mod_assets/images/capXY/capXY_60.png"
 image ym_03 = "mod_assets/images/capXY/ym_03.png"
 
+image FACELESSGAMES_COM_BR_ALERTA:
+    block:
+        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR_ALERTA.png"
+        #align (0.875,0.9)
+        alpha 1.0
+        0.3
+        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR_ALERTA2.png"
+        #align (0.875,0.9)
+        alpha 1.0
+        0.3
+        repeat
+
 image FACELESSGAMES_COM_BR:
     block:
         "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR.png"
         #align (0.875,0.9)
         alpha 1.0
-        0.3
-        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR2.png"
+        0.4
+        "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR 2.png"
         #align (0.875,0.9)
         alpha 1.0
-        0.3
+        0.4
         repeat
         
 
@@ -2015,6 +2027,8 @@ define audio.nicole_mode_music = "<loop 0.0>mod_assets/music/nicole_mode_music.o
 define audio.fm_mainmenu = "<loop 0.7666>mod_assets/music/fm_mainmenu.ogg"
 define audio.duelista_de_familia = "<loop 13.122 from 13.122>mod_assets/music/Duelista de Família.mp3"
 default audio.main_menu = audio.duelista_de_familia
+define audio.faceless_games = "<loop 1.05>mod_assets/music/facelessgames.com.br.ogg"
+define audio.FACELESSGAMES_ACELERADO_BLZ = "<loop 0.716>mod_assets/music/FACELESSGAMES.COM.BR_ACELERADO_BLZ.ogg"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -2832,6 +2846,10 @@ define audio.melancholic_glitch2 = "mod_assets/sounds/melancholic_glitch.ogg"
 define audio.racionais_g = "mod_assets/sounds/racionais_g.ogg"
 define audio.pingu = "mod_assets/sounds/pingu.ogg"
 define audio.boy_stronda = "mod_assets/sounds/boy_stronda.ogg"
+define audio.invisible = "mod_assets/sounds/invisible.ogg"
+define audio.senhor_dos_anais = "mod_assets/sounds/senhor_dos_anais.ogg"
+define audio.faz_o_l = "mod_assets/sounds/faz_o_l.ogg"
+define audio.barra_de_metal = "mod_assets/sounds/barra_de_metal.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

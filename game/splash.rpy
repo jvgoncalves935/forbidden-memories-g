@@ -8,6 +8,7 @@ init -100 python:
     global melancholic_glitch_filename
     
     global racionais_g_count
+    
     racionais_g_count = 0
     
     melancholic_glitch = False
@@ -366,6 +367,7 @@ label splashscreen:
         "{p=1.5}{nw}"
         $ persistent.splash_complete = False
         $ persistent.config_main_menu_music = False
+        $ persistent.faceless_games_first_time = True
         
         
 
@@ -388,6 +390,8 @@ label splashscreen:
 
     if(persistent.is_error242424_splashscreen == True):
         $ drpc_update("error242424")
+        pause 2.5
+
         $ persistent.error242424 = True
         $ persistent.is_error242424_splashscreen = False
 

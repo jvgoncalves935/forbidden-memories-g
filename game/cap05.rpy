@@ -1,5 +1,9 @@
 label cap05:
     if(not game_over):
+        call cap05_00_inicio
+    if(not game_over):
+        call cap05_00_padeiro
+    if(not game_over):
         call cap05_01_casa01 from _call_cap05_01_casa01
     if(not game_over):
         call cap05_02_testeporno from _call_cap05_02_testeporno
