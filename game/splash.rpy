@@ -8,7 +8,9 @@ init -100 python:
     global melancholic_glitch_filename
     
     global racionais_g_count
+    global faceless_mode
     
+    faceless_mode = True
     racionais_g_count = 0
     
     melancholic_glitch = False
@@ -296,6 +298,7 @@ label splashscreen:
         persistent.guinodia_active = False
 
     $ quick_menu = False
+    $ persistent.faceless_mode = False
     
 
     if(melancholic_glitch):
@@ -368,6 +371,7 @@ label splashscreen:
         $ persistent.splash_complete = False
         $ persistent.config_main_menu_music = False
         $ persistent.faceless_games_first_time = True
+
         
         
 

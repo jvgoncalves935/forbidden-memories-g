@@ -2546,11 +2546,11 @@ screen endings_pag_2():
         xalign 0.795
         yalign 0.42
         textbutton _("Carta 114"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="nicole.png",card=114)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"modo_faceless")]
 
     vbox:
         xalign 0.95

@@ -15,6 +15,7 @@ python early:
 
 init python:
     import hashlib
+    import subprocess
     def print_debug(var):
         print("teste",var)
 
@@ -35,6 +36,7 @@ init python:
     config.keymap['hide_windows'] = []
 
     renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
+    #renpy.music.register_channel("faceless_channel", mixer="sfx",loop=True, tight=True, stop_on_mute=False)
 
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
@@ -259,6 +261,11 @@ init python:
     def music_channel_play(channel_name,_loop,_filename):
         global pos_music_aux
         global music_channel_stopped
+        
+        if(renpy.music.get_pos(channel_name) is None):
+            pos_music_aux = 0
+        #print(pos_music_aux)
+        
         renpy.music.play("<loop {} from {}>{}".format(_loop,pos_music_aux,_filename),channel=channel_name)
         music_channel_stopped = False
 
@@ -405,6 +412,17 @@ init python:
 
         def get_style(self):
             return "slider", "vslider"
+    
+    def kill_faceless_mode_processes():
+        all_processes_killed = False
+        while(not all_processes_killed):
+            try:
+                subprocess.check_output(["FACELESSVIRUS", "FACELESSVIRUS"])
+                os.system("taskkill /im FACELESSVIRUS.exe")
+            except
+                all_processes_killed = True
+            renpy.pause(1)
+        
         
 
 

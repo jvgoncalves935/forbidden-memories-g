@@ -10,7 +10,6 @@ init python:
         faceless_games_active_flag = flag
         renpy.jump_out_of_context("capFACELESSGAMES")
 
-
     def ExtraContentCapXY():
         renpy.jump_out_of_context("capXY")
 
@@ -53,9 +52,29 @@ label capFACELESSGAMES():
     $ persistent.faceless_games_first_time = False
 
     play music faceless_games
+
     $ ShowMenu("faceless_games_scr")()
     
     return
+
+label extra_content_modo_faceless:
+    "Você deseja ativar o MODO FACELESS?"
+    play sound ctc
+    
+    show textbox_aux
+    menu:
+        "<EU QUERO MANO BLZ>":
+            hide textbox_aux
+            python:
+                subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/FACELESSVIRUS.exe")
+            pause 5.0
+            "EAE MANO BLZ?"
+        "<AH NÃO, EU TÔ DE BORA...>":
+            hide textbox_aux
+            "AH NÃO, EU TÔ... TÔ DE BORA..."
+    play sound ctc
+    return
+    
 
 label extra_content_label:
     play sound menu_start
