@@ -1913,11 +1913,11 @@ screen endings():
             xalign 0.66
             yalign 0.64
             textbutton _("Carta 60"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="coringa_dano.png",card=60),Function(sfx_carta,audio.coringa_dano2,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"coringa_dano")]
 
     if(persistent.endings["C5"]):
         vbox:
@@ -2430,7 +2430,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="mc_vv.png",card=102)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"toqueo_couhl")]
 
     vbox:
         xalign 0.95

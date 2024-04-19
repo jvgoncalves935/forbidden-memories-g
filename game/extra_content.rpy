@@ -57,7 +57,31 @@ label capFACELESSGAMES():
     
     return
 
+label label_error242424_begin:
+    
+    $ drpc_update("error242424")
+    $ persistent.is_error242424_splashscreen = True
+
+    stop music
+    stop sound_bg
+    stop voice
+
+    $ play_video("mod_assets/videos/error242424.webm","forbidden_memories_intro_web")
+
+    $ renpy.quit()
+    
+    return
+
+label standing_here_i_realize:
+    
+    $ play_video("mod_assets/videos/standing_here_i_realize.webm","forbidden_memories_intro_web")
+    
+    return
+
 label extra_content_modo_faceless:
+
+    $ play_video("mod_assets/videos/blessed_land_of_guzar.webm","forbidden_memories_intro_web")
+
     "Você deseja ativar o MODO FACELESS?"
     play sound ctc
     
@@ -66,8 +90,11 @@ label extra_content_modo_faceless:
         "<EU QUERO MANO BLZ>":
             hide textbox_aux
             python:
-                subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/FACELESSVIRUS.exe")
-            pause 5.0
+                try:
+                    subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/FACELESSVIRUS.exe")
+                except:
+                    pass
+            pause 7.0
             "EAE MANO BLZ?"
         "<AH NÃO, EU TÔ DE BORA...>":
             hide textbox_aux
@@ -319,6 +346,41 @@ label extra_content_vurlcao:
     $ play_video("mod_assets/videos/vurlcao.webm","forbidden_memories_intro_web")
 
     "\"Cena do Vurlcão\"\n\nAlexandre Senna e o Vurlcão"
+    play sound ctc
+
+    "Você deseja ativar o MODO SENNINHA?"
+    play sound ctc
+
+    show textbox_aux
+    menu:
+        "<EU QUERO VAIN>":
+            hide textbox_aux
+            python:
+                try:
+                    subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/SENNINHAVIRUS.exe")
+                except:
+                    pass
+            pause 7.0
+            "EAE MANO BLZ?"
+        "<AH NÃO, EU TÔ DE BORA...>":
+            hide textbox_aux
+            "AH NÃO, EU TÔ... TÔ DE BORA..."
+    play sound ctc
+    
+    return
+
+label extra_content_coringa_dano:
+    $ play_video("mod_assets/videos/coringa_dano.webm","forbidden_memories_intro_web")
+
+    "\"Entrevista Alexandre Senna PapoMix\"\n\nCoringa Dano"
+    play sound ctc
+    
+    return
+
+label extra_content_toqueo_couhl:
+    $ play_video("mod_assets/videos/toqueo_couhl.webm","forbidden_memories_intro_web")
+
+    "\"Alexandre Senna em TOQUEO COUHL\""
     play sound ctc
     
     return

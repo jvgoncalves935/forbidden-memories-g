@@ -300,6 +300,7 @@ label splashscreen:
     $ quick_menu = False
     $ persistent.faceless_mode = False
     
+    $ init_conehead_files_windows()
 
     if(melancholic_glitch):
         $ splash_message_default = "'A melancolia é a felicidade de estar triste.' -Victor Hugo"

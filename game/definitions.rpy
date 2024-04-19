@@ -415,13 +415,75 @@ init python:
     
     def kill_faceless_mode_processes():
         all_processes_killed = False
-        while(not all_processes_killed):
-            try:
-                subprocess.check_output(["FACELESSVIRUS", "FACELESSVIRUS"])
-                os.system("taskkill /im FACELESSVIRUS.exe")
-            except
-                all_processes_killed = True
-            renpy.pause(1)
+        process_names = ['FACELESSVIRUS.exe','SENNINHAVIRUS.exe']
+
+        try:
+            output = subprocess.check_output(["tasklist", "/fo", "csv"]).decode("utf-8").split("\n")
+            for line in output:
+                for process_name in process_names:
+                    if (process_name in line):
+                        pid = int(line.split(",")[1].strip(' "'))
+                        subprocess.call(["taskkill", "/f", "/pid", str(pid)])
+            return False
+        except subprocess.CalledProcessError:
+            return False
+
+    def init_conehead_files_windows():
+        if not renpy.windows:
+            return
+        
+        all_files_list = renpy.list_files()
+        conehead_folder_str = "mod_assets/executables/conehead"
+        conehead_folder_files = []
+
+        for _file in all_files_list:
+            if(conehead_folder_str in _file):
+                conehead_folder_files.append(_file)
+        
+        current_dir = os.getcwd()
+
+        conehead_ingame_files_dict = {}
+        conehead_final_files_dict = {}
+        for _file in conehead_folder_files:
+            _file_name = _file.split("/")[-1]
+            conehead_ingame_files_dict[_file_name] = _file
+            conehead_final_files_dict[_file] = os.path.join(current_dir,_file_name)
+
+        for _file in conehead_final_files_dict:
+        #    open(conehead_final_files_dict[_file],"wb").write(renpy.file(_file).read())
+        #    open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+        #    print(_file,conehead_final_files_dict[_file])
+        #    with open(_file, 'rb') as f1: 
+        #        with open(current_dir+, 'wb') as f2:
+        #            f2.write(f1.read())
+
+    def delete_conehead_files_windows():
+        if not renpy.windows:
+            return
+        pass
+                
+
+    class Quit(Action, DictEquality):
+        def __init__(self, confirm=None):
+            self.confirm = confirm
+
+        def __call__(self):
+
+            confirm = self.confirm
+
+            if confirm is None:
+                confirm = (not main_menu) and _confirm_quit
+
+            if confirm:
+                if config.autosave_on_quit:
+                    renpy.force_autosave()
+
+                layout.yesno_screen(layout.QUIT, Quit(False))
+
+            else:
+                if renpy.windows:
+                    kill_faceless_mode_processes()
+                renpy.quit(save=True)
         
         
 
