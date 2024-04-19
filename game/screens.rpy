@@ -2066,7 +2066,7 @@ screen endings_pag_2():
         textbutton _("Carta 69"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="conehead.png",card=69),Function(music_channel_stop,"music"),Function(music_channel_stop,"sound")]
+            hovered [ShowTransient("side_img_right_2", img="conehead.png",card=69),Function(sfx_carta,audio.conehead_influencia,False,1),Function(music_channel_stop,"music")]
             unhovered [Hide("side_img_right_2"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
             action [Function(ExtraContentRestartError242424)]
     

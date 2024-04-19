@@ -299,8 +299,6 @@ label splashscreen:
 
     $ quick_menu = False
     $ persistent.faceless_mode = False
-    
-    $ init_conehead_files_windows()
 
     if(melancholic_glitch):
         $ splash_message_default = "'A melancolia é a felicidade de estar triste.' -Victor Hugo"
@@ -372,6 +370,7 @@ label splashscreen:
         $ persistent.splash_complete = False
         $ persistent.config_main_menu_music = False
         $ persistent.faceless_games_first_time = True
+        $ persistent.should_delete_conehead_files = False
 
         
         
@@ -393,6 +392,10 @@ label splashscreen:
     #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 
+    if(persistent.should_delete_conehead_files):
+        $ delete_conehead_files()
+        $ persistent.should_delete_conehead_files = False
+
     if(persistent.is_error242424_splashscreen == True):
         $ drpc_update("error242424")
         pause 2.5
@@ -401,6 +404,8 @@ label splashscreen:
         $ persistent.is_error242424_splashscreen = False
 
         $ renpy.movie_cutscene("mod_assets/videos/erro242424.webm")
+        $ init_conehead_files()
+        $ persistent.should_delete_conehead_files = True
         $ renpy.quit()
 
     $ drpc_update("menu")

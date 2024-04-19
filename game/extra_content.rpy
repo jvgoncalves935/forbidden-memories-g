@@ -82,23 +82,28 @@ label extra_content_modo_faceless:
 
     $ play_video("mod_assets/videos/blessed_land_of_guzar.webm","forbidden_memories_intro_web")
 
-    "Você deseja ativar o MODO FACELESS?"
-    play sound ctc
-    
-    show textbox_aux
-    menu:
-        "<EU QUERO MANO BLZ>":
-            hide textbox_aux
-            python:
-                try:
-                    subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/FACELESSVIRUS.exe")
-                except:
-                    pass
-            pause 7.0
-            "EAE MANO BLZ?"
-        "<AH NÃO, EU TÔ DE BORA...>":
-            hide textbox_aux
-            "AH NÃO, EU TÔ... TÔ DE BORA..."
+    if(renpy.windows):
+        "Você deseja ativar o MODO FACELESS?"
+        play sound ctc
+        
+        show textbox_aux
+        menu:
+            "<EU QUERO MANO BLZ>":
+                hide textbox_aux
+                pause 0.2
+                python:
+                    try:
+                        init_subprocess("FACELESSVIRUS.exe")
+                    except:
+                        pass
+                pause 7.0
+                "EAE MANO BLZ?"
+            "<AH NÃO, EU TÔ DE BORA...>":
+                hide textbox_aux
+                play sound to_de_bora
+                "AH NÃO, EU TÔ... TÔ DE BORA..."
+    else:
+        "MODO FACELESS disponível apenas\npara Windows blz????"
     play sound ctc
     return
     
@@ -348,24 +353,30 @@ label extra_content_vurlcao:
     "\"Cena do Vurlcão\"\n\nAlexandre Senna e o Vurlcão"
     play sound ctc
 
-    "Você deseja ativar o MODO SENNINHA?"
+    if(renpy.windows):
+        "Você deseja ativar o MODO SENNINHA?"
+        play sound ctc
+        
+        show textbox_aux
+        menu:
+            "<EU QUERO VAIN>":
+                hide textbox_aux
+                pause 0.2
+                python:
+                    try:
+                        init_subprocess("SENNINHAVIRUS.exe")
+                    except:
+                        pass
+                pause 7.0
+                "EAE MANO BLZ?"
+            "<AH NÃO, EU TÔ DE BORA...>":
+                hide textbox_aux
+                play sound to_de_bora
+                "AH NÃO, EU TÔ... TÔ DE BORA..."
+    else:
+        "MODO SENNINHA disponível apenas\npara Windows kkkkkkkkk"
     play sound ctc
-
-    show textbox_aux
-    menu:
-        "<EU QUERO VAIN>":
-            hide textbox_aux
-            python:
-                try:
-                    subprocess.Popen("C:/Users/jvgon/Documents/renpy-7.4.11-sdk/forbidden-memories-g/game/mod_assets/executables/SENNINHAVIRUS.exe")
-                except:
-                    pass
-            pause 7.0
-            "EAE MANO BLZ?"
-        "<AH NÃO, EU TÔ DE BORA...>":
-            hide textbox_aux
-            "AH NÃO, EU TÔ... TÔ DE BORA..."
-    play sound ctc
+    return
     
     return
 

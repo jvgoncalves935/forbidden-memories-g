@@ -262,8 +262,8 @@ init python:
         global pos_music_aux
         global music_channel_stopped
         
-        if(renpy.music.get_pos(channel_name) is None):
-            pos_music_aux = 0
+        #if(renpy.music.get_pos(channel_name) is None):
+        #    pos_music_aux = 0
         #print(pos_music_aux)
         
         renpy.music.play("<loop {} from {}>{}".format(_loop,pos_music_aux,_filename),channel=channel_name)
@@ -416,22 +416,24 @@ init python:
     def kill_faceless_mode_processes():
         all_processes_killed = False
         process_names = ['FACELESSVIRUS.exe','SENNINHAVIRUS.exe']
+        output = []
 
         try:
             output = subprocess.check_output(["tasklist", "/fo", "csv"]).decode("utf-8").split("\n")
-            for line in output:
-                for process_name in process_names:
-                    if (process_name in line):
+        except:
+            pass
+        
+        for line in output:
+            for process_name in process_names:
+                if (process_name in line):
+                    try:
                         pid = int(line.split(",")[1].strip(' "'))
                         subprocess.call(["taskkill", "/f", "/pid", str(pid)])
-            return False
-        except subprocess.CalledProcessError:
-            return False
-
-    def init_conehead_files_windows():
-        if not renpy.windows:
-            return
-        
+                    except subprocess.CalledProcessError:
+                        return False
+        return True
+    
+    def get_conehead_files():
         all_files_list = renpy.list_files()
         conehead_folder_str = "mod_assets/executables/conehead"
         conehead_folder_files = []
@@ -448,20 +450,34 @@ init python:
             _file_name = _file.split("/")[-1]
             conehead_ingame_files_dict[_file_name] = _file
             conehead_final_files_dict[_file] = os.path.join(current_dir,_file_name)
+        
+        return conehead_ingame_files_dict, conehead_final_files_dict
 
-        for _file in conehead_final_files_dict:
-        #    open(conehead_final_files_dict[_file],"wb").write(renpy.file(_file).read())
-        #    open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
-        #    print(_file,conehead_final_files_dict[_file])
-        #    with open(_file, 'rb') as f1: 
-        #        with open(current_dir+, 'wb') as f2:
-        #            f2.write(f1.read())
+    def init_conehead_files():
+        if renpy.windows or renpy.macintosh or renpy.linux:
+        
+            conehead_ingame_files_dict, conehead_final_files_dict = get_conehead_files()
 
-    def delete_conehead_files_windows():
-        if not renpy.windows:
-            return
-        pass
-                
+            for _file in conehead_final_files_dict:
+                open(conehead_final_files_dict[_file],"wb").write(renpy.file(_file).read())
+
+    def delete_conehead_files():
+        if renpy.windows or renpy.macintosh or renpy.linux:
+            
+            conehead_ingame_files_dict, conehead_final_files_dict = get_conehead_files()
+
+            for _file in conehead_final_files_dict:
+                try:
+                    os.remove(conehead_final_files_dict[_file])
+                except:
+                    pass
+    
+    def init_subprocess(process_name):
+        current_dir = os.getcwd()
+        process_file = "mod_assets/executables/"+process_name
+        new_process_file = os.path.join(current_dir,process_name)
+        open(new_process_file,"wb").write(renpy.file(process_file).read())
+        subprocess.Popen(new_process_file)
 
     class Quit(Action, DictEquality):
         def __init__(self, confirm=None):
@@ -2930,6 +2946,8 @@ define audio.invisible = "mod_assets/sounds/invisible.ogg"
 define audio.senhor_dos_anais = "mod_assets/sounds/senhor_dos_anais.ogg"
 define audio.faz_o_l = "mod_assets/sounds/faz_o_l.ogg"
 define audio.barra_de_metal = "mod_assets/sounds/barra_de_metal.ogg"
+define audio.conehead_influencia = "mod_assets/sounds/conehead_influencia.ogg"
+define audio.to_de_bora = "mod_assets/sounds/to_de_bora.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
