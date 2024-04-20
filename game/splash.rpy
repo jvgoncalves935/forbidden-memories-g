@@ -392,20 +392,26 @@ label splashscreen:
     #$ renpy.movie_cutscene("mod_assets/videos/operation_senna.webm")
     #$ renpy.movie_cutscene("mod_assets/videos/intro.webm")
 
-    if(persistent.should_delete_conehead_files):
+    if(not renpy.android and persistent.should_delete_conehead_files):
         $ delete_conehead_files()
         $ persistent.should_delete_conehead_files = False
 
     if(persistent.is_error242424_splashscreen == True):
         $ drpc_update("error242424")
+        play sound conehead_influencia
+        show conehead
+        pause 0.1
+        hide conehead
         pause 2.5
+        stop sound
 
         $ persistent.error242424 = True
         $ persistent.is_error242424_splashscreen = False
 
         $ renpy.movie_cutscene("mod_assets/videos/erro242424.webm")
-        $ init_conehead_files()
-        $ persistent.should_delete_conehead_files = True
+        if(not renpy.android):
+            $ init_conehead_files()
+            $ persistent.should_delete_conehead_files = True
         $ renpy.quit()
 
     $ drpc_update("menu")

@@ -16,8 +16,6 @@ python early:
 init python:
     import hashlib
     import subprocess
-    def print_debug(var):
-        print("teste",var)
 
     #Keymap alterado do Forbidden
     config.keymap['self_voicing'] = []
@@ -37,6 +35,9 @@ init python:
 
     renpy.music.register_channel("sound_bg", mixer="sfx",loop=True, tight=True)
     #renpy.music.register_channel("faceless_channel", mixer="sfx",loop=True, tight=True, stop_on_mute=False)
+
+    def print_debug(var):
+        print("teste",var)
 
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
@@ -414,12 +415,11 @@ init python:
             return "slider", "vslider"
     
     def kill_faceless_mode_processes():
-        all_processes_killed = False
         process_names = ['FACELESSVIRUS.exe','SENNINHAVIRUS.exe']
         output = []
 
         try:
-            output = subprocess.check_output(["tasklist", "/fo", "csv"]).decode("utf-8").split("\n")
+            output = subprocess.check_output(["tasklist", "/fo", "csv"], shell=True).decode("utf-8").split("\n")
         except:
             pass
         
@@ -427,8 +427,9 @@ init python:
             for process_name in process_names:
                 if (process_name in line):
                     try:
+                        FNULL = open(os.devnull, 'w')
                         pid = int(line.split(",")[1].strip(' "'))
-                        subprocess.call(["taskkill", "/f", "/pid", str(pid)])
+                        subprocess.call(["taskkill", "/f", "/pid", str(pid)], shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
                     except subprocess.CalledProcessError:
                         return False
         return True
@@ -477,7 +478,7 @@ init python:
         process_file = "mod_assets/executables/"+process_name
         new_process_file = os.path.join(current_dir,process_name)
         open(new_process_file,"wb").write(renpy.file(process_file).read())
-        subprocess.Popen(new_process_file)
+        os.startfile(new_process_file)
 
     class Quit(Action, DictEquality):
         def __init__(self, confirm=None):
@@ -2068,6 +2069,8 @@ image ja_02 = "mod_assets/images/capJA/ja_02.png"
 image jumpscare = "mod_assets/images/capSN/jumpscare.png"
 
 image event_horizon = "mod_assets/images/event_horizon/event_horizon.png"
+
+image conehead = "mod_assets/executables/conehead/F00d-3553-c0011111111111111111111111111111111111111111111.png"
 
 
 ###################Musicas 

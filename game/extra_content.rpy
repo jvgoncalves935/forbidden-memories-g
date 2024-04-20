@@ -67,6 +67,8 @@ label label_error242424_begin:
     stop voice
 
     $ play_video("mod_assets/videos/error242424.webm","forbidden_memories_intro_web")
+    show conehead
+    pause 0.05
 
     $ renpy.quit()
     
@@ -116,7 +118,7 @@ label extra_content_label:
     show textbox_black at center
     "{p=4.0}{nw}"
 
-    call expression "extra_content_"+current_extra_content
+    call expression "extra_content_"+current_extra_content from _call_expression
 
     window hide(None)
     stop music
@@ -257,7 +259,7 @@ label extra_content_papai_noel:
 label extra_content_zeh:
     $ play_video("mod_assets/videos/zeh.webm","forbidden_memories_intro_web")
 
-    "\"Zeh Está Bolado (Dublado)\"\n\nZeh Está Bolado\n(Bolado de Família)"
+    "\"Zeh Está Bolado (Dublado)\"\nZeh Está Bolado (Bolado de\nFamília, Gomez Aguilar)\nDublagem: badshinji"
     play sound ctc
     
     return
@@ -330,7 +332,7 @@ label extra_content_ursos_grandes:
     return
 
 label extra_content_dramatv:
-    call cap05_00_padeiro
+    call cap05_00_padeiro from _call_cap05_00_padeiro
 
     pause 2.0
 
