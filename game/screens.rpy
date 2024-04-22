@@ -3107,7 +3107,7 @@ screen preferences():
 
     vbox:
         xalign 1.0
-        yalign 0.7
+        yalign 0.58
         xmaximum 900
         hbox:
             box_wrap True
@@ -3115,11 +3115,24 @@ screen preferences():
             if renpy.variant("pc"):
 
                 vbox:
-                    xmaximum 500
-                    style_prefix "radio"
-                    label _("Modo de Exibicão")
-                    textbutton _("Modo Janela") action Preference("display", "window")
-                    textbutton _("Tela Cheia") action Preference("display", "fullscreen")
+                    box_wrap True
+                    #xmaximum 500
+                    hbox:
+                        xmaximum 400
+                        style_prefix "radio"
+                        label _("Modo de Exibicão")
+                    hbox:
+                        xmaximum 400
+                        style_prefix "radio"
+                        textbutton _("Modo Janela") action Preference("display", "window")
+                        textbutton _("Tela Cheia") action Preference("display", "fullscreen")
+                    hbox:
+                        style_prefix "radio"
+                        label _("Idioma")
+                    hbox:
+                        style_prefix "radio"
+                        textbutton _("Português") action [SetField(persistent, "config_arabe", False)] #, toggle_fadein_texto(flag=True)
+                        textbutton _("Árabe?") action [SetField(persistent, "config_arabe", True)] #, toggle_fadein_texto(flag=False)
             #if config.developer:
             #    vbox:
             #        style_prefix "radio"
@@ -3127,35 +3140,66 @@ screen preferences():
             #        textbutton _("Disable") action Preference("rollback side", "disable")
             #        textbutton _("Left") action Preference("rollback side", "left")
             #        textbutton _("Right") action Preference("rollback side", "right")
-            null width (12 * gui.pref_spacing)
+            null width (7.6 * gui.pref_spacing)
             vbox:
-                xmaximum 400
-                style_prefix "radio"
-                label _("Efeito Texto")
-                
-                textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
-                textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
-                #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                box_wrap True
+                hbox:
+                    xmaximum 400
+                    style_prefix "radio"
+                    label _("Efeito de Textos")
+                hbox:
+                    xmaximum 400
+                    style_prefix "radio"
+                    textbutton _("Ativado") action [SetField(persistent, "config_fadein_texto", True)] #, toggle_fadein_texto(flag=True)
+                    textbutton _("Desativado") action [SetField(persistent, "config_fadein_texto", False)] #, toggle_fadein_texto(flag=False)
+                    #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
             ## Additional vboxes of type "radio_pref" or "check_pref" can be
             ## added here, to add additional creator-defined preferences.
 
-        null height (7 * gui.pref_spacing)
+        null height (6 * gui.pref_spacing)
 
         hbox:
             xmaximum 900
             style_prefix "slider"
             box_wrap True
+            
+            vbox:
+                box_wrap True
+                xmaximum 900
+                vbox:
+                    hbox:
+                        label _("Velocidade do Texto")
+                    hbox:
+                        #bar value Preference("text speed")
+                        bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=True, style="slider", step=10)
+
+                    hbox:
+                        style_prefix "radio"
+                        label _("Modo Streamer")
+                    hbox:
+                        style_prefix "radio"
+                        textbutton _("Ativado") action [SetField(persistent, "streamer_mode", True)] #, toggle_fadein_texto(flag=True)
+                        textbutton _("Desativado") action [SetField(persistent, "streamer_mode", False)] #, toggle_fadein_texto(flag=False)
+
+                    if(persistent.endings["G"]):
+                        #xalign 0.1
+                        #yalign 0.7
+                        #ymaximum 500
+                        hbox:
+                            xmaximum 500
+                            style_prefix "radio"
+                            label _("Música Menu Principal")
+                        hbox:
+                            xmaximum 500
+                            style_prefix "radio"
+                            textbutton _("Forbidden Memories Main Menu") action [SetField(persistent, "config_main_menu_music", False), Function(change_main_menu_music,False)] #, toggle_fadein_texto(flag=True)
+                        hbox:
+                            xmaximum 500
+                            style_prefix "radio"    
+                            textbutton _("Duelista de Família") action [SetField(persistent, "config_main_menu_music", True), Function(change_main_menu_music,True)] #, toggle_fadein_texto(flag=False)
 
             vbox:
-
-                label _("Velocidade do Texto")
-
-                #bar value Preference("text speed")
-                bar value FieldValue(_preferences, "text_cps", range=180, max_is_zero=True, style="slider", step=10)
-
-            vbox:
-
                 if config.has_music:
                     label _("Volume de Música")
 
@@ -3186,33 +3230,6 @@ screen preferences():
                         style "mute_all_button"
         
         null height (1 * gui.pref_spacing)
-
-        hbox:
-            box_wrap True
-            xmaximum 900
-            vbox:
-                hbox:
-                    style_prefix "radio"
-                    label _("Idioma")
-                hbox:
-                    style_prefix "radio"
-                    textbutton _("Português") action [SetField(persistent, "config_arabe", False)] #, toggle_fadein_texto(flag=True)
-                    textbutton _("Árabe") action [SetField(persistent, "config_arabe", True)] #, toggle_fadein_texto(flag=False)
-    
-    if(persistent.endings["G"]):
-        vbox:
-            xalign 0.1
-            yalign 0.7
-            ymaximum 500
-            vbox:
-                xmaximum 900
-                style_prefix "radio"
-                label _("Música Menu Principal")
-            vbox:
-                xmaximum 900
-                style_prefix "radio"
-                textbutton _("Forbidden Memories Main Menu") action [SetField(persistent, "config_main_menu_music", False), Function(change_main_menu_music,False)] #, toggle_fadein_texto(flag=True)
-                textbutton _("Duelista de Família") action [SetField(persistent, "config_main_menu_music", True), Function(change_main_menu_music,True)] #, toggle_fadein_texto(flag=False)
 
     textbutton _("Voltar"):
         xalign 0.95

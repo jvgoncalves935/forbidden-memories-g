@@ -358,7 +358,25 @@ label splashscreen:
             "Eu NÃO CONCORDO com os avisos e\nNÃO JOGAREI este jogo.":
                 $ renpy.quit()
 
-        "Caso o jogo esteja com baixa\nperformance, vá até o Menu de\nConfigurações e desative a opção\n\"Efeito Texto\"."
+        "Mesmo que este jogo NÃO tenha\nconteúdo visualmente explícito, ainda\nexiste a possibilidade de possuir\nconteúdos não permitidos em\nplataformas como YouTube."
+        play sound ctc
+        "Por isso, este jogo possui o\n\"Modo Streamer\", onde conteúdos\nconsiderados mais \"perigosos\"\nsão censurados."
+        play sound ctc
+        "Você deseja ATIVAR ou DESATIVAR\no Modo Streamer?"
+        play sound ctc
+        $ streamer_mode_choice = True
+        show textbox_aux
+        menu:
+            "Desejo ATIVAR o Modo Streamer.":
+                hide textbox_aux
+                "Caso você queria jogar o jogo\nSEM CENSURA, vá até o Menu\n\"Opções\" e DESATIVE o\nModo Streamer."
+                play sound ctc
+            "Desejo DESATIVAR o Modo Streamer.":
+                $ streamer_mode_choice = False
+                hide textbox_aux
+                "Caso você queria jogar o jogo\nCOM CENSURA, vá até o Menu\n\"Opções\" e ATIVE o\nModo Streamer."
+                play sound ctc
+        "Caso o jogo esteja com BAIXA\nperformance, vá até o Menu\n\"Opções\" e desative a opção\n\"Efeito de Textos\"."
         play sound ctc
         "Este jogo NÃO SALVA automaticamente.\nSALVE e CARREGUE o jogo o\nmáximo que puder!"
         play sound ctc
@@ -371,6 +389,7 @@ label splashscreen:
         $ persistent.config_main_menu_music = False
         $ persistent.faceless_games_first_time = True
         $ persistent.should_delete_conehead_files = False
+        $ persistent.streamer_mode = streamer_mode_choice
 
         
         
