@@ -356,6 +356,14 @@ label cap02_02_oficina_gringo:
     stop voice
     "{p=2.0}{nw}"
 
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap02_02_oficina_gringo_cena_g
+
+    return
+
+label cap02_02_oficina_gringo_cena_g:
     show img_senna_foca at top_fade
     voice voz_cap02_02_43
     "OU IEEE!"

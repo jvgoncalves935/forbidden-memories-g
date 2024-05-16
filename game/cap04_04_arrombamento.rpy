@@ -109,7 +109,7 @@ label cap04_04_arrombamento:
     show img_04_04_20 at top_fade
     voice voz_cap04_04_13
     stop music fadeout 2.0
-    "Fica calmo, calma!"
+    "Vou te explicar, calma!"
     play sound ctc
     
     hide img_04_04_20
@@ -187,35 +187,10 @@ label cap04_04_arrombamento:
             stop music
             stop voice
     
-    show img_senna_cavalo at top_fade
-    voice voz_cap04_04_23
-    play music fm_finals
-    "AAAGRH! PISA NA MINHA CABEÇA VAI!\nPISA!"
-    play sound ctc
-
-    voice voz_cap04_04_24
-    "JUDIA DE MIM, FILHA DA PUTA!"
-    play sound ctc
-    
-    voice voz_cap04_04_25
-    "ISSO QUE EU QUERIA A MUITO TEMPO!!!"
-    play sound ctc
-    
-    voice voz_cap04_04_26
-    "VAI, ENFIA A CARA NESSE CU VAIN!"
-    play sound ctc
-    
-    voice voz_cap04_04_27
-    "SÓ QUER JUDIAR? FAZ CARINHO TAMBÉM!\nVAI? VAI, METE NO MEU CU?\nMETE?"
-    play sound ctc
-    
-    voice voz_cap04_04_28
-    "VEM CÁ FILHO DA PUTA, FODE! ISSO,\nMETE NO CU, VAI!\nMETE NO CU!\nMETE NO CU!"
-    play sound ctc
-
-    hide img_senna_cavalo
-    stop music fadeout 2.0
-    "{p=2.0}{nw}"
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap04_04_arrombamento_cena_g
 
     play music fm_modern_times
     
@@ -291,6 +266,38 @@ label cap04_04_arrombamento:
     $ config.keymap['game_menu'] = backup_game_menu_keymap
     $ config.keymap['hide_windows'] = backup_game_hide_windows
     $ renpy.display.behavior.clear_keymap_cache()
+    return
+
+label cap04_04_arrombamento_cena_g:
+    show img_senna_cavalo at top_fade
+    voice voz_cap04_04_23
+    play music fm_finals
+    "AAAGRH! PISA NA MINHA CABEÇA VAI!\nPISA!"
+    play sound ctc
+
+    voice voz_cap04_04_24
+    "JUDIA DE MIM, FILHA DA PUTA!"
+    play sound ctc
+    
+    voice voz_cap04_04_25
+    "ISSO QUE EU QUERIA A MUITO TEMPO!!!"
+    play sound ctc
+    
+    voice voz_cap04_04_26
+    "VAI, ENFIA A CARA NESSE CU VAIN!"
+    play sound ctc
+    
+    voice voz_cap04_04_27
+    "SÓ QUER JUDIAR? FAZ CARINHO TAMBÉM!\nVAI? VAI, METE NO MEU CU?\nMETE?"
+    play sound ctc
+    
+    voice voz_cap04_04_28
+    "VEM CÁ FILHO DA PUTA, FODE! ISSO,\nMETE NO CU, VAI!\nMETE NO CU!\nMETE NO CU!"
+    play sound ctc
+
+    hide img_senna_cavalo
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
     return
 
 label wrong_end_04_04_1:

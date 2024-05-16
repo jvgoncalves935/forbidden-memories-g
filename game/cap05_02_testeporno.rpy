@@ -509,6 +509,7 @@ label cap05_02_testeporno:
     hide img_05_02_90
     show img_05_02_92 at top_fade
 
+    play music fm_darknite_encounter
     show senna_s1 at side_image_in zorder 3
     "{p=0.6}{nw}"
 
@@ -527,7 +528,7 @@ label cap05_02_testeporno:
     "{p=0.6}{nw}"
 
     voice voz_cap05_02_048
-    play music fm_darknite_encounter
+    
     "Eu vou dobrar, eu vou dobrar,\neu vou entrar nessa também, eu\nvou botar mais 100... 100 pau."
     play sound ctc
 
@@ -562,7 +563,7 @@ label cap05_02_testeporno:
     hide img_05_02_97
     show img_05_02_98 at top_fade
     voice voz_cap05_02_051
-    "Ei, escuta. Relaxa. Você não\nquer ganhar 300 pau por mês?"
+    "Ei, escuta. Relaxa. Você não\nganha é 300 pau por mês?"
     play sound ctc
     
     hide img_05_02_98
@@ -915,6 +916,63 @@ label cap05_02_testeporno:
     play sound ctc
     "{p=2.0}{nw}"
 
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap05_02_testeporno_cena_g
+
+    show img_05_02_177 at top_fade
+    play music fm_pharaoh
+    voice voz_cap05_02_122
+    "Gostou do teste, irmão?"
+    play sound ctc
+    
+    hide img_05_02_177
+    show img_05_02_178 at top_fade
+    voice voz_cap05_02_123
+    "Foi ótimo." 
+    play sound ctc
+    
+    hide img_05_02_178
+    show img_05_02_179 at top_fade
+    voice voz_cap05_02_124
+    "Levou no cu... ganhou milzão..."
+    play sound ctc
+    
+    hide img_05_02_179
+    show img_05_02_180 at top_fade
+    voice voz_cap05_02_125
+    "3 meses de trabalho, tá ótimo..."
+    play sound ctc
+    
+    hide img_05_02_180
+    show img_05_02_181 at top_fade
+    voice voz_cap05_02_126
+    "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
+    play sound ctc
+    
+    hide img_05_02_181
+    show img_05_02_182 at top_fade
+    "{p=2.5}{nw}"
+
+    hide img_05_02_182
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop voice
+
+    show img_milzao at top_fade
+    play sound_bg audio.millenniumitem noloop
+    "(Senna conseguiu o Milzão!)"
+    play sound ctc
+    
+    "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"
+    play sound ctc
+    
+    hide img_milzao
+    "{p=2.0}{nw}"
+    return
+
+label cap05_02_testeporno_cena_g:
     play music fm_darknite_theme
     show img_05_02_155 at top_fade
 
@@ -1109,56 +1167,6 @@ label cap05_02_testeporno:
 
     hide img_05_02_176
     stop music fadeout 2.0
-    "{p=2.0}{nw}"
-
-    show img_05_02_177 at top_fade
-    play music fm_pharaoh
-    voice voz_cap05_02_122
-    "Gostou do teste, irmão?"
-    play sound ctc
-    
-    hide img_05_02_177
-    show img_05_02_178 at top_fade
-    voice voz_cap05_02_123
-    "Foi ótimo." 
-    play sound ctc
-    
-    hide img_05_02_178
-    show img_05_02_179 at top_fade
-    voice voz_cap05_02_124
-    "Levou no cu... ganhou milzão..."
-    play sound ctc
-    
-    hide img_05_02_179
-    show img_05_02_180 at top_fade
-    voice voz_cap05_02_125
-    "3 meses de trabalho, tá ótimo..."
-    play sound ctc
-    
-    hide img_05_02_180
-    show img_05_02_181 at top_fade
-    voice voz_cap05_02_126
-    "Amanhã você traz sua carteira...\nque a gente vai assinar\nsua carteira."
-    play sound ctc
-    
-    hide img_05_02_181
-    show img_05_02_182 at top_fade
-    "{p=2.5}{nw}"
-
-    hide img_05_02_182
-    stop music fadeout 2.0
-    "{p=2.0}{nw}"
-    stop voice
-
-    show img_milzao at top_fade
-    play sound_bg audio.millenniumitem noloop
-    "(Senna conseguiu o Milzão!)"
-    play sound ctc
-    
-    "(Dá pra fazer muita coisa com esse\ndinheiro, especialmente\nnos anos 2000.)"
-    play sound ctc
-    
-    hide img_milzao
     "{p=2.0}{nw}"
     return
 

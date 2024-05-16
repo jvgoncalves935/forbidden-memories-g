@@ -9,9 +9,11 @@ init -100 python:
     
     global racionais_g_count
     global faceless_mode
+    global faceless_screen_paranoiascope
     
     faceless_mode = True
     racionais_g_count = 0
+    faceless_screen_paranoiascope = 0
     
     melancholic_glitch = False
     #Check for each archive needed

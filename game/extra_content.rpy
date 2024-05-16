@@ -51,7 +51,18 @@ label capFACELESSGAMES():
     
     $ persistent.faceless_games_first_time = False
 
-    play music faceless_games
+    if(faceless_screen_paranoiascope == 0):
+        play music blessed_land_of_guzar
+    if(faceless_screen_paranoiascope == 1):
+        play music faceless_games
+    if(faceless_screen_paranoiascope == 2):
+        play music FACELESS_CONVERSANDO
+
+    
+    if(faceless_screen_paranoiascope < 2):
+        $ faceless_screen_paranoiascope += 1
+    else:
+        $ faceless_screen_paranoiascope = 0 
 
     $ ShowMenu("faceless_games_scr")()
     
@@ -105,8 +116,34 @@ label extra_content_modo_faceless:
                 play sound to_de_bora
                 "AH NÃO, EU TÔ... TÔ DE BORA..."
     else:
+        play music MARCELO_MUSICA
         "MODO FACELESS disponível apenas\npara Windows blz????"
-    play sound ctc
+        play sound ctc
+        "Se você quer descobrir o que é o\nMODO FACELESS, jogue o jogo no\nWindows ou procure gameplay\nno YouTube xddd"
+        play sound ctc
+    if(renpy.linux):
+        "Eu juro que eu tentei de\ntudo pra essa porra\nfuncionar no Linux, mas\ncoisa de jogo/interface gráfica\nno Linux é uma merda kkkk"
+        play sound ctc
+        "É por isso que Linux não tem\njogo nenhum blz??????"
+        play sound ctc
+        "Deu até erro de driver nessa\nmerda de código KKKKKKKKKKK"
+        play sound ctc
+        "Cogitei até em chupar meu\npróprio pau, mas no final\nacabei largando fodase"
+        play sound ctc
+        "use linux cim amiginho\né muinto bom"
+        play sound ctc
+    if(renpy.macintosh):
+        "Infelizmente eu precisava de um Mac\npra fazer isso, mas não\nconheço ninguém que tenha."
+        play sound ctc
+        "Ao menos que você queira\nme dar um Macbook blzzz????"
+        play sound ctc
+    if(renpy.mobile):
+        "Infelizmente é impossível criar\no MODO FACELESS pra mobile."
+        play sound ctc
+        "Precisaria de um aplicativo\nseparado pra fazer isso."
+        play sound ctc
+        "Aí eu teria que chupar\nmeu próprio pau xddddddd"
+        play sound ctc
     return
     
 
@@ -149,7 +186,7 @@ label extra_content_onlymen:
 label extra_content_badboy:
     $ play_video("mod_assets/videos/badboy.webm","forbidden_memories_intro_web")
 
-    "\"Felipe De Nylon quebra a matrix\"\n\nFelipe de Nylon G e Boy Stronda\n(Badboy de Família)"
+    "\"Felipe De Nylon quebra a matrix\"\n\nFelipe de Nylon G e Boy Stronda\n(Badboy de Família, Rico Vidal)"
     play sound ctc
     
     return
@@ -259,7 +296,7 @@ label extra_content_papai_noel:
 label extra_content_zeh:
     $ play_video("mod_assets/videos/zeh.webm","forbidden_memories_intro_web")
 
-    "\"Zeh Está Bolado (Dublado)\"\nZeh Está Bolado (Bolado de\nFamília, Gomez Aguilar)\nDublagem: badshinji"
+    "\"Zeh Está Bolado (Dublado)\"\nZeh Está Bolado (Bolado de\nFamília, Gomez Aguilar)"
     play sound ctc
     
     return
@@ -376,7 +413,34 @@ label extra_content_vurlcao:
                 play sound to_de_bora
                 "AH NÃO, EU TÔ... TÔ DE BORA..."
     else:
-        "MODO SENNINHA disponível apenas\npara Windows kkkkkkkkk"
+        play music MARCELO_MUSICA
+        "MODO SENNINHA disponível apenas\npara Windows blz????"
+        play sound ctc
+        "Se você quer descobrir o que é o\nMODO SENNINHA, jogue o jogo no\nWindows ou procure gameplay\nno YouTube xddd"
+        play sound ctc
+    if(renpy.linux):
+        "Eu juro que eu tentei de\ntudo pra essa porra\nfuncionar no Linux, mas\ncoisa de jogo/interface gráfica\nno Linux é uma merda kkkk"
+        play sound ctc
+        "É por isso que Linux não tem\njogo nenhum blz??????"
+        play sound ctc
+        "Deu até erro de driver nessa\nmerda de código KKKKKKKKKKK"
+        play sound ctc
+        "Cogitei até em chupar meu\npróprio pau, mas no final\nacabei largando fodase"
+        play sound ctc
+        "use linux cim amiginho\né muinto bom"
+        play sound ctc
+    if(renpy.macintosh):
+        "Infelizmente eu precisava de um Mac\npra fazer isso, mas não\nconheço ninguém que tenha."
+        play sound ctc
+        "Ao menos que você queira\nme dar um Macbook blzzz????"
+        play sound ctc
+    if(renpy.mobile):
+        "Infelizmente é impossível criar\no MODO SENNINHA pra mobile."
+        play sound ctc
+        "Precisaria de um aplicativo\nseparado pra fazer isso."
+        play sound ctc
+        "Aí eu teria que chupar\nmeu próprio pau xddddddd"
+        play sound ctc
     play sound ctc
     return
     
@@ -394,6 +458,14 @@ label extra_content_toqueo_couhl:
     $ play_video("mod_assets/videos/toqueo_couhl.webm","forbidden_memories_intro_web")
 
     "\"Alexandre Senna em TOQUEO COUHL\""
+    play sound ctc
+    
+    return
+
+label extra_content_mangueira_evil:
+    $ play_video("mod_assets/videos/e_o_que_voce_faria.webm","forbidden_memories_intro_web")
+
+    "\"E O Que Você Faria?\"\nAlexandre e Índio\n\nVain e Come, Operation: Senna"
     play sound ctc
     
     return

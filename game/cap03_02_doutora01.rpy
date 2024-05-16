@@ -175,7 +175,15 @@ label cap03_02_doutora01:
     hide img_03_02_25
     "(...)"
     play sound ctc
-    
+
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap03_02_doutora01_cena_g
+
+    return
+
+label cap03_02_doutora01_cena_g:
     #play music fm_high_mages_duel
     voice voz_cap03_02_20
     "Tem mais um pouquinho daquele gel lá?\nTem? Dá um pouquinho\ndele pra mim, dá..."

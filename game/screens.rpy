@@ -654,8 +654,8 @@ screen navigation():
             xalign 0.5
             yalign 0.57
             imagebutton:
-                idle "mod_assets/gui/menu/menu_endings_idle.png"
-                hover "mod_assets/gui/menu/menu_endings_selected.png"
+                idle "mod_assets/gui/menu/menu_extras_idle.png"
+                hover "mod_assets/gui/menu/menu_extras_selected.png"
                 action [ShowMenu("endings"), SensitiveIf(renpy.get_screen("endings") == None), Play("music", audio.fm_library),Function(guinodia_init),Function(init_music_channel_stopped)]
                 hover_sound gui.hover_sound
                 activate_sound gui.activate_sound
@@ -1185,23 +1185,59 @@ screen faceless_games_scr():
 
     style_prefix "faceless_games_scr"
 
-    add "FACELESSGAMES_COM_BR"
+    if(faceless_screen_paranoiascope > 0):
+        add "FACELESSGAMES_COM_BR"  
+    else:
+        add "FACELESSGAMES_COM_BR_PARANOIASCOPE"
 
-    vbox:
-        xalign 0.47
-        yalign 0.36
-        textbutton _("ANUNSIO OFISIAL!!!"):
-            style "return_button"
-            text_style "navigation_button_text"
-            action [Function(ExtraContentFacelessGames,True)]
+    if(faceless_screen_paranoiascope == 1):
+        vbox:
+            xalign 0.47
+            yalign 0.36
+            textbutton _("ANUNSIO OFISIAL!!!"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [Function(ExtraContentFacelessGames,True)]
 
-    vbox:
-        xalign 0.38
-        yalign 0.975
-        textbutton _("VOUTAR BLZ"):
-            style "return_button"
-            text_style "navigation_button_text"
-            action [MainMenu(confirm=False), Play("music", audio.main_menu)]
+        vbox:
+            xalign 0.38
+            yalign 0.975
+            textbutton _("VOUTAR BLZ"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [MainMenu(confirm=False), Play("music", audio.main_menu)]
+    if(faceless_screen_paranoiascope == 2):
+        vbox:
+            xalign 0.47
+            yalign 0.36
+            textbutton _("CLICA AQUI DE NOVO BLZ"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [Function(ExtraContentFacelessGames,True)]
+
+        vbox:
+            xalign 0.38
+            yalign 0.975
+            textbutton _("VOUTAR BLZ"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [MainMenu(confirm=False), Play("music", audio.main_menu)]
+    if(faceless_screen_paranoiascope == 0):
+        vbox:
+            xalign 0.12
+            yalign 0.36
+            textbutton _("eae mano blz?"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [Function(ExtraContentFacelessGames,True)]
+
+        vbox:
+            xalign 0.74
+            yalign 1.0
+            textbutton _("eae mano blz?"):
+                style "return_button"
+                text_style "navigation_button_text"
+                action [MainMenu(confirm=False), Play("music", audio.main_menu)] 
 
 
 screen guinodia_scr():
@@ -1220,7 +1256,7 @@ screen endings():
 
     add "mod_assets/images/EndingsMenu.png"
     
-    textbutton _("Finais (Deck G)"):
+    textbutton _("Finais / Deck G"):
         xalign 0.5
         yalign 0.005
         style "page_label_text"
@@ -1437,11 +1473,11 @@ screen endings():
             xalign 0.29
             yalign 0.36
             textbutton _("Final S"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="mangueira_evil.png",ending="S"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"mangueira_evil")]
 
     if(persistent.endings["T"]):
         vbox:
@@ -3288,6 +3324,8 @@ style radio_vbox:
 style radio_button:
     properties gui.button_properties("radio_button")
     foreground "gui/button/check_[prefix_]foreground.png"
+    hover_sound gui.hover_sound
+    activate_sound gui.activate_sound
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")

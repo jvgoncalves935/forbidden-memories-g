@@ -68,5 +68,12 @@ label game_over:
     $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
     return
 
+label censored_content:
+    $ play_video("mod_assets/videos/censura_g.webm","forbidden_memories_intro_web")
+    stop music
+    stop sound
+    stop sound_bg
+    return
+
 
 

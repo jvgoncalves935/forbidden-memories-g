@@ -189,14 +189,21 @@ label cap04_02_yeahman:
 
     $ renpy.movie_cutscene("mod_assets/videos/yeahman2.webm")
 
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap04_02_yeahman_cena_g
+
+    stop voice
+    return
+
+label cap04_02_yeahman_cena_g:
     show img_yeah_man_foca at top
     voice voz_cap04_02_20
     "{p=23.9}{nw}"
 
     hide img_yeah_man_foca
     "{p=2.0}{nw}"
-
-    stop voice
     return
 
 label wrong_end_04_02_1:

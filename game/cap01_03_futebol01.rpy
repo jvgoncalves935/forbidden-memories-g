@@ -205,18 +205,13 @@ label cap01_03_futebol01:
     stop voice    
     "{p=1.2}{nw}"
 
-    show img_indio_cavalo at top_fade
-    voice voz_cap01_03_24
-    "AAAAHHH! HMMMM... NOSSA... OHHH\nASSIM VAIN!"
-    play sound ctc
-    
-    voice voz_cap01_03_25
-    "OOHHH... HMMMM!"
-    play sound ctc
-    stop music fadeout 2.0
-    hide img_indio_cavalo
-    "{p=2.0}{nw}"
-    
+
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap01_03_futebol01_cena_g
+
+
     show img_01_03_35 at top_fade
     voice voz_cap01_03_26
     "Você viu que horas são?"
@@ -272,6 +267,21 @@ label cap01_03_futebol01:
     hide img_01_03_37
     stop music fadeout 2.0
     "{p=2.0}{nw}"
+    return
+
+label cap01_03_futebol01_cena_g:
+    show img_indio_cavalo at top_fade
+    voice voz_cap01_03_24
+    "AAAAHHH! HMMMM... NOSSA... OHHH\nASSIM VAIN!"
+    play sound ctc
+    
+    voice voz_cap01_03_25
+    "OOHHH... HMMMM!"
+    play sound ctc
+    stop music fadeout 2.0
+    hide img_indio_cavalo
+    "{p=2.0}{nw}"
+
     return
 
 label wrong_end_01_03_1:

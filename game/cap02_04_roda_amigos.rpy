@@ -402,7 +402,7 @@ label cap02_04_roda_amigos:
     hide img_02_04_35
     show img_02_04_36 at top_fade
     voice voz_cap02_04_34
-    "Você não pediu o homem dos seus\nsonhos...? Aqui estou!"
+    "Você não queria o homem dos seus\nsonhos...? Aqui estou!"
     play sound ctc
     
     hide img_02_04_36
@@ -419,17 +419,12 @@ label cap02_04_roda_amigos:
 
     hide img_02_04_38
     "{p=1.2}{nw}"
-    
-    show imgs_senna_egito at top    
-    voice voz_cap02_04_40
-    "{p=9.7}{nw}"
 
-    hide imgs_senna_egito
-    "{p=4.0}{nw}"
-    stop music fadeout 2.0
-    "{p=2.0}{nw}"
-    stop voice
-    stop music
+
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap02_04_roda_amigos_cena_g
 
 
     
@@ -473,6 +468,19 @@ label cap02_04_roda_amigos:
 
     return
 
+label cap02_04_roda_amigos_cena_g:
+    show imgs_senna_egito at top    
+    voice voz_cap02_04_40
+    "{p=9.7}{nw}"
+
+    hide imgs_senna_egito
+    "{p=4.0}{nw}"
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    stop voice
+    stop music
+
+    return
 
 label wrong_end_02_04_1:
     $ drpc_update("finalL")

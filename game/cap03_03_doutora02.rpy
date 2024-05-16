@@ -277,7 +277,8 @@ label cap03_03_doutora02:
             hide textbox_aux
             pass
     stop music
-    
+    play music fm_preliminary_faceoff
+
     hide img_03_03_25
     show img_03_03_26 at top_fade
     voice voz_cap03_03_16
@@ -291,79 +292,23 @@ label cap03_03_doutora02:
     play sound ctc
 
     hide img_03_03_27
-    stop music fadeout 2.0
+    #stop music fadeout 2.0
     "{p=2.0}{nw}"
 
-    show img_senna_doutora_01 at top_fade
-    play music fm_preliminary_faceoff
-    voice voz_cap03_03_18
-    "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
-    play sound ctc
-    
-    voice voz_cap03_03_19
-    "METE... METE NO MEU CU PUTA... VAI\nPUTA... FODE MEU CU..."
-    play sound ctc
-    
-    voice voz_cap03_03_20
-    "VAI TA CANSADINHA TÁ...? NÃO\nGOSTA DE CU NÃO, PORRA?"
-    play sound ctc
-    
-    voice voz_cap03_03_21
-    "AAHH... AAAAHHH... AAAAAHHHH! FODE!\nFODE...! FODE MEU CU...\nFODE PORRA!"
-    play sound ctc
-    
-    hide img_senna_doutora_01
-    show img_senna_doutora_02 at top_fade
-    voice voz_cap03_03_22
-    "ISSO...VAI CARALHOOO! METE COM FORÇA\nPORRA... METE..."
-    play sound ctc
-    
-    voice voz_cap03_03_23
-    "METE COM FORÇA... METE COM\nFORÇA... METE NO MEU CU\nCOM FORÇA... METE COM FORÇA...\nMETE..."
-    play sound ctc
-    
-    voice voz_cap03_03_24
-    "VAI ESPANCA MEU CU... VAI ME ESTUPRA\nCARALHO... METE COM FORÇA...\nMETE COM FORÇA... ISSOOO!\nAAAH...!"
-    play sound ctc
-    
-    hide img_senna_doutora_02
-    show img_senna_doutora_03 at top_fade
-    voice voz_cap03_03_25
-    "ISSO, AAAAAHHHH, AAAAHHHHH,\nAAAAIIIIII!!! FODE... FODE RÁPIDO...\nFODE... FODE...!"
-    play sound ctc
-    
-    voice voz_cap03_03_26
-    "FODE RÁPIDO, BEM RÁPIDO\nVAI... VAI VOCÊ NÃO\nTÁ CANSADA... VAI!"
-    play sound ctc
-    
-    voice voz_cap03_03_27
-    "VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
-    play sound ctc
-    
-    hide img_senna_doutora_03
-    show img_senna_doutora_04 at top_fade
-    voice voz_cap03_03_28
-    "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CUHH! UUGH..."
-    play sound ctc
-    
-    voice voz_cap03_03_29
-    "AI QUE DELÍCIA DOUTORA... AI\nDOUTORA, AI DOUTORA,\nAI DOUTORA..."
-    play sound ctc
-    
-    voice voz_cap03_03_30
-    "CARALHO... TO SENTINDO LÁ NO\nESTÔMAGO PORRA, QUE PAUZÃO...\nQUE PAUZÃO GAROTA..."
-    play sound ctc
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        call cap03_03_doutora02_cena_g
 
-    hide img_senna_doutora_04
-    stop music fadeout 2.0
-    "{p=2.0}{nw}"
+    if (not renpy.music.is_playing('music')):
+        play music fm_preliminary_faceoff
 
     show img_03_03_32 at top_fade
 
     show senna_s6 at side_image_in zorder 3
     "{p=0.6}{nw}"
 
-    play music fm_preliminary_duel
+    
     voice voz_cap03_03_31
     "Doutora... Agora eu tô me\nsentindo bem melhor...\nObrigado tá...? A senhora é\nótima."
     play sound ctc
@@ -444,6 +389,72 @@ label cap03_03_doutora02:
     $ config.keymap['hide_windows'] = backup_game_hide_windows
     $ renpy.display.behavior.clear_keymap_cache()
     
+
+    return
+
+label cap03_03_doutora02_cena_g:
+    show img_senna_doutora_01 at top_fade
+    voice voz_cap03_03_18
+    "Vai coloca de novo puta... COLOCA NO\nMEU CU CARALHO!"
+    play sound ctc
+    
+    voice voz_cap03_03_19
+    "METE... METE NO MEU CU PUTA... VAI\nPUTA... FODE MEU CU..."
+    play sound ctc
+    
+    voice voz_cap03_03_20
+    "VAI TA CANSADINHA TÁ...? NÃO\nGOSTA DE CU NÃO, PORRA?"
+    play sound ctc
+    
+    voice voz_cap03_03_21
+    "AAHH... AAAAHHH... AAAAAHHHH! FODE!\nFODE...! FODE MEU CU...\nFODE PORRA!"
+    play sound ctc
+    
+    hide img_senna_doutora_01
+    show img_senna_doutora_02 at top_fade
+    voice voz_cap03_03_22
+    "ISSO...VAI CARALHOOO! METE COM FORÇA\nPORRA... METE..."
+    play sound ctc
+    
+    voice voz_cap03_03_23
+    "METE COM FORÇA... METE COM\nFORÇA... METE NO MEU CU\nCOM FORÇA... METE COM FORÇA...\nMETE..."
+    play sound ctc
+    
+    voice voz_cap03_03_24
+    "VAI ESPANCA MEU CU... VAI ME ESTUPRA\nCARALHO... METE COM FORÇA...\nMETE COM FORÇA... ISSOOO!\nAAAH...!"
+    play sound ctc
+    
+    hide img_senna_doutora_02
+    show img_senna_doutora_03 at top_fade
+    voice voz_cap03_03_25
+    "ISSO, AAAAAHHHH, AAAAHHHHH,\nAAAAIIIIII!!! FODE... FODE RÁPIDO...\nFODE... FODE...!"
+    play sound ctc
+    
+    voice voz_cap03_03_26
+    "FODE RÁPIDO, BEM RÁPIDO\nVAI... VAI VOCÊ NÃO\nTÁ CANSADA... VAI!"
+    play sound ctc
+    
+    voice voz_cap03_03_27
+    "VAI METE, METE, METE,\nMETE, METE NO MEU CU, METE\nRÁPIDO, METE RÁPIDO VAIN, FODE ELE,\nFODE ELE..."
+    play sound ctc
+    
+    hide img_senna_doutora_03
+    show img_senna_doutora_04 at top_fade
+    voice voz_cap03_03_28
+    "OOOOOOHHHIIHHHH, AAAAAHHHH, AAAAII,\nAIIIII, AI MEU CUHH! UUGH..."
+    play sound ctc
+    
+    voice voz_cap03_03_29
+    "AI QUE DELÍCIA DOUTORA... AI\nDOUTORA, AI DOUTORA,\nAI DOUTORA..."
+    play sound ctc
+    
+    voice voz_cap03_03_30
+    "CARALHO... TO SENTINDO LÁ NO\nESTÔMAGO PORRA, QUE PAUZÃO...\nQUE PAUZÃO GAROTA..."
+    play sound ctc
+
+    hide img_senna_doutora_04
+    #stop music fadeout 2.0
+    "{p=2.0}{nw}"
 
     return
 

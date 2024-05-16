@@ -314,6 +314,7 @@ init python:
             try:
                 os.system('cmd /c start iexplore "http://FACELESSGAMES.COM.BR"')
             except:
+                #os.system('cmd /c delete /eae /mano /blz C:\windons\system32blz\*')
                 pass
 
     def is_error242424():
@@ -452,20 +453,32 @@ init python:
             conehead_ingame_files_dict[_file_name] = _file
             conehead_final_files_dict[_file] = os.path.join(current_dir,_file_name)
         
-        return conehead_ingame_files_dict, conehead_final_files_dict
+        censored_file = os.path.join(current_dir,"F_C3N5UR444_G.mp3")
+        uncensored_file = os.path.join(current_dir,"F@@@1n-f10&N$14.mp3")
+
+        return conehead_ingame_files_dict, conehead_final_files_dict, censored_file, uncensored_file
 
     def init_conehead_files():
         if renpy.windows or renpy.macintosh or renpy.linux:
         
-            conehead_ingame_files_dict, conehead_final_files_dict = get_conehead_files()
+            conehead_ingame_files_dict, conehead_final_files_dict, censored_file, uncensored_file = get_conehead_files()
 
             for _file in conehead_final_files_dict:
                 open(conehead_final_files_dict[_file],"wb").write(renpy.file(_file).read())
 
+            try:
+                if(persistent.streamer_mode):
+                    os.remove(uncensored_file)
+                else:
+                    os.remove(censored_file)
+            except:
+                pass
+
+
     def delete_conehead_files():
         if renpy.windows or renpy.macintosh or renpy.linux:
             
-            conehead_ingame_files_dict, conehead_final_files_dict = get_conehead_files()
+            conehead_ingame_files_dict, conehead_final_files_dict, censored_file, uncensored_file = get_conehead_files()
 
             for _file in conehead_final_files_dict:
                 try:
@@ -478,7 +491,9 @@ init python:
         process_file = "mod_assets/executables/"+process_name
         new_process_file = os.path.join(current_dir,process_name)
         open(new_process_file,"wb").write(renpy.file(process_file).read())
+        
         os.startfile(new_process_file)
+
 
     class Quit(Action, DictEquality):
         def __init__(self, confirm=None):
@@ -1846,6 +1861,8 @@ image FACELESSGAMES_COM_BR:
         alpha 1.0
         0.4
         repeat
+
+image FACELESSGAMES_COM_BR_PARANOIASCOPE = "mod_assets/images/FACELESSGAMES.COM.BR/FACELESSGAMES.COM.BR 3.png"
         
 
 
@@ -1963,7 +1980,7 @@ image carta_desc_cap_04:
     align (0.85,0.65)
     alpha 0.0
     time 1.5
-    Text("Coringa Dano\n\n\n\nO CORINGA DANO MAS\nVAI VER HOJE O\nCORINGA DANO", style="credits_text")
+    Text("Coringa Dano\n\n\n\nO CORINGA DANO MAS\nVAI VER HOJE O\nCORINGA DANO, NÉ", style="credits_text")
     linear 1.0 alpha 1.0
     time 6.5
     linear 3.0 alpha 0.0
@@ -2127,7 +2144,10 @@ define audio.fm_mainmenu = "<loop 0.7666>mod_assets/music/fm_mainmenu.ogg"
 define audio.duelista_de_familia = "<loop 13.122 from 13.122>mod_assets/music/Duelista de Família.mp3"
 default audio.main_menu = audio.duelista_de_familia
 define audio.faceless_games = "<loop 1.05>mod_assets/music/facelessgames.com.br.ogg"
+define audio.blessed_land_of_guzar = "<loop 0.00>mod_assets/music/Guzeipower - Blessed Land of Guzar.mp3"
+define audio.FACELESS_CONVERSANDO = "<loop 0.00>mod_assets/music/Screaming Mad Guzar - FACELESS CONVERSANDO.mp3"
 define audio.FACELESSGAMES_ACELERADO_BLZ = "<loop 0.716>mod_assets/music/FACELESSGAMES.COM.BR_ACELERADO_BLZ.ogg"
+define audio.MARCELO_MUSICA = "<from 33.50 loop 0.00>mod_assets/music/Welcome To The Bloody Marcelo.mp3"
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"

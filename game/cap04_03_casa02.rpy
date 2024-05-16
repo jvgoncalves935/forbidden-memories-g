@@ -135,7 +135,7 @@ label cap04_03_casa02:
             show mangueiraboy_s1 at side_image_in zorder 3
             "{p=0.6}{nw}"
 
-            play music fm_kaiba_theme
+            play music "<loop 0.0 from 55.0>mod_assets/music/fm_kaiba_theme.ogg"
             "ALOR, É DO CORPO DE BOMBEIRO?"
             play sound ctc
 
