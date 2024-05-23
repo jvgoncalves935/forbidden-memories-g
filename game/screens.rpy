@@ -1340,11 +1340,11 @@ screen endings():
             xalign 0.09
             yalign 0.41
             textbutton _("Final G"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="jailson_mendes.png",ending="G"),Function(sfx_carta,audio.jailson_ainn,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"pai_de_familia_1")]
 
     if(persistent.endings["H"]):
         vbox:
@@ -1429,11 +1429,11 @@ screen endings():
             xalign 0.29
             yalign 0.16
             textbutton _("Final O"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="hetero.png",ending="O"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"maldita_hora")]
 
     if(persistent.endings["P"]):
         vbox:
@@ -1600,11 +1600,11 @@ screen endings():
             xalign 0.93
             yalign 0.09
             textbutton _("Carta 29"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="paulo_gino_piscineiro.png",card=29),Function(sfx_carta,audio.gino_piscineiro,False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"paulo_gino_piscineiro")]
 
     if(persistent.endings["D"]):
         vbox:
@@ -1659,7 +1659,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="cabacao.png",card=34),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [Function(ExtraContentStart,"churrasco")]
+                action [NullAction()]
 
     if(persistent.endings["I"]):
         vbox:
@@ -1699,11 +1699,11 @@ screen endings():
             xalign 0.93
             yalign 0.24
             textbutton _("Carta 38"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="mangueira_boy.png",card=38),Function(sfx_carta,audio.mangueira_boy_01,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"mangueira_boy")]
 
     if(persistent.endings["M"]):
         vbox:
@@ -1792,7 +1792,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="guilhotina_g.png",card=46),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"guilhotina_g")]
 
     if(persistent.endings["U"]):
         vbox:
@@ -2090,7 +2090,7 @@ screen endings_pag_2():
 
     add "mod_assets/images/EndingsMenu.png"
     
-    textbutton _("Finais (Deck G)"):
+    textbutton _("Finais / Deck G"):
         xalign 0.5
         yalign 0.005
         style "page_label_text"
@@ -2120,11 +2120,11 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.17
         textbutton _("Carta 71"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="the_boys_do_ano.png",card=71)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"boys_do_ano")]
 
     vbox:
         xalign 0.29
@@ -2142,9 +2142,9 @@ screen endings_pag_2():
         textbutton _("Carta 73"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="rocky_gaucho.png",card=73)]
-            unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            hovered [ShowTransient("side_img_right_2", img="rocky_gaucho.png",card=73),Function(sfx_carta,audio.rocky_gaucho,False,1),Function(music_channel_stop,"music")]
+            unhovered [Hide("side_img_right_2"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
+            action [Function(ExtraContentStart,"rocky_gaucho")]
 
     vbox:
         xalign 0.29
@@ -2160,21 +2160,21 @@ screen endings_pag_2():
         xalign 0.09
         yalign 0.27
         textbutton _("Carta 75"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="xaropinho.png",card=75)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"xaropinho_de_familia")]
 
     vbox:
         xalign 0.29
         yalign 0.27
         textbutton _("Carta 76"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ucraniano.png",card=76)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"senna_dona_de_casa")]
 
     vbox:
         xalign 0.09
@@ -2190,11 +2190,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.32
         textbutton _("Carta 78"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="jo_abdul.png",card=78),Function(sfx_carta,audio.jo_abdul2,False,0)]
             unhovered [Hide("side_img_right_2")]
-            action [Function(ExtraContentYeahMan)]
+            action [Function(ExtraContentStart,"jo_abdul")]
     
     vbox:
         xalign 0.09
@@ -2230,11 +2230,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.42
         textbutton _("Carta 82"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="ricardo_milos.png",card=82)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"ricardo_milos")]
 
     vbox:
         xalign 0.09
@@ -2250,11 +2250,11 @@ screen endings_pag_2():
         xalign 0.29
         yalign 0.47
         textbutton _("Carta 84"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="indiana_torres.png",card=84)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"indiana_torres")]
 
     vbox:
         xalign 0.09
@@ -2466,7 +2466,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="mc_vv.png",card=102)]
             unhovered [Hide("side_img_left")]
-            action [Function(ExtraContentStart,"toqueo_couhl")]
+            action [Function(ExtraContentStart,"mc_vv")]
 
     vbox:
         xalign 0.95
@@ -2526,7 +2526,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="super_choque.png",card=108)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"toqueo_couhl")]
 
     vbox:
         xalign 0.95
@@ -2536,7 +2536,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="dragao_comunista.png",card=109),Function(sfx_carta,audio.faz_o_l,False,0),Function(music_channel_stop,"music")]
             unhovered [Hide("side_img_left"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"caverna_g")]
 
     vbox:
         xalign 0.64
@@ -2612,11 +2612,11 @@ screen endings_pag_2():
         xalign 0.795
         yalign 0.47
         textbutton _("Carta 117"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="12_do_gugu.png",card=117)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"os_bem_vestidos")]
 
     vbox:
         xalign 0.95

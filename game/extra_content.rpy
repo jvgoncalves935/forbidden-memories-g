@@ -163,24 +163,22 @@ label extra_content_label:
     scene black
     
     $ play_video("mod_assets/videos/intro.webm","forbidden_memories_intro_web")
+    #$ MainMenu()
+    #$ ShowMenu("endings")()
 
     return
 
-label extra_content_churrasco:
+label extra_content_mc_vv:
+    $ play_video("mod_assets/videos/onlymen.webm","forbidden_memories_intro_web")
+
+    "Alexandre Senna no OnlyFans AMV\nOnly Men (MC VV)\nMúsica: Only Men\nArtista: MC VV prod. Launzera\nÁlbum: BONDA 2 (MC VV)"
+    play sound ctc
 
     $ play_video("mod_assets/videos/churrasco_gino.webm","forbidden_memories_intro_web")
     
     "Churrasco do Paulo Gino AMV\nNamorada Vegana (MC VV)\nMúsica: Namorada Vegana\nArtista: BOFE\nÁlbum: BONDA (MC VV)"
     play sound ctc
 
-    return
-
-label extra_content_onlymen:
-    $ play_video("mod_assets/videos/onlymen.webm","forbidden_memories_intro_web")
-
-    "Alexandre Senna no OnlyFans AMV\nOnly Men (MC VV)\nMúsica: Only Men\nArtista: MC VV prod. Launzera\nÁlbum: BONDA 2 (MC VV)"
-    play sound ctc
-    
     return
 
 label extra_content_badboy:
@@ -364,7 +362,10 @@ label extra_content_ursos_grandes:
 
     pause 0.5
     window hide(None)
-    $ play_video("mod_assets/videos/ursos_grandes02.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/ursos_grandes02.webm","forbidden_memories_intro_web")
     
     return
 
@@ -466,6 +467,209 @@ label extra_content_mangueira_evil:
     $ play_video("mod_assets/videos/e_o_que_voce_faria.webm","forbidden_memories_intro_web")
 
     "\"E O Que Você Faria?\"\nAlexandre e Índio\n\nVain e Come, Operation: Senna"
+    play sound ctc
+    
+    return
+
+label extra_content_maldita_hora:
+    $ play_video("mod_assets/videos/maldita_hora_1.webm","forbidden_memories_intro_web")
+    
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/maldita_hora_2.webm","forbidden_memories_intro_web")
+    
+    $ play_video("mod_assets/videos/maldita_hora_3.webm","forbidden_memories_intro_web")
+
+    "\"Alexandre Senna no Banco\"\n\nAlexandre Senna e Renzo"
+    play sound ctc
+    
+    return
+
+label extra_content_ricardo_milos:
+    $ play_video("mod_assets/videos/ricardo_milos.webm","forbidden_memories_intro_web")
+
+    "\"Ricardo Milos\""
+    play sound ctc
+    
+    return
+
+label extra_content_indiana_torres:
+    $ play_video("mod_assets/videos/indiana_torres_1.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/indiana_torres_1_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"Indiana Torres - Parte 1/4\"\n\"Bare Ass Bandidos\"\n\nDouglas Torres (Yeah Man)"
+    play sound ctc
+
+    $ play_video("mod_assets/videos/indiana_torres_2.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/indiana_torres_2_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"Indiana Torres - Parte 2/4\"\n\"Bare Ass Bandidos\"\n\nDouglas Torres (Yeah Man),\nAlexandre Senna e Alemão"
+    play sound ctc
+
+    $ play_video("mod_assets/videos/indiana_torres_3.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/indiana_torres_3_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"Indiana Torres - Parte 3/4\"\n\"Bare Ass Bandidos\"\n\nDouglas Torres (Yeah Man)"
+    play sound ctc
+
+    $ play_video("mod_assets/videos/indiana_torres_4.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/indiana_torres_4_cena_g.webm","forbidden_memories_intro_web")
+    $ play_video("mod_assets/videos/indiana_torres_5.webm","forbidden_memories_intro_web")
+
+    "\"Indiana Torres - Parte 4/4\"\n\"Bare Ass Bandidos\"\n\nDouglas Torres (Yeah Man)"
+    play sound ctc
+    
+    return
+
+label extra_content_senna_dona_de_casa:
+    $ play_video("mod_assets/videos/senna_dona_de_casa.webm","forbidden_memories_intro_web")
+
+    "\"Alexandre Senna Dona de Casa\"\n\nAlexandre Senna e Ucraniano\nde Família"
+    play sound ctc
+    
+    return
+
+label extra_content_xaropinho_de_familia:
+    $ play_video("mod_assets/videos/xaropinho_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"Xaropinho de Família\""
+    play sound ctc
+    
+    return
+
+label extra_content_jo_abdul:
+    $ play_video("mod_assets/videos/jo_abdul.webm","forbidden_memories_intro_web")
+
+    "\"Jô Abdul e Demacol\"\n\nJô Abdul e Demacol\n(Ivan Holmes)"
+    play sound ctc
+    
+    return
+
+label extra_content_guilhotina_g:
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/guilhotina_g.webm","forbidden_memories_intro_web")
+
+    "\"Guilhotina G\"\n\nJames Matarazzo e Índio (Indígena)"
+    play sound ctc
+    
+    return
+
+label extra_content_caverna_g:
+    $ play_video("mod_assets/videos/caverna_g.webm","forbidden_memories_intro_web")
+
+    "\"Alexandre Senna na Caverna\"\n\nCaverna G"
+    play sound ctc
+    
+    return
+
+label extra_content_pai_de_familia_1:
+    play music duelista_de_familia
+    show primeiro_machinho at top_fade
+    "{p=1.2}{nw}"
+
+    "Você se diz fã do Pai de Família?"
+    play sound ctc
+
+    "Só é fã DE VERDADE MESMO quem\nassistiu Pai de Família\nsem censura!"
+    play sound ctc
+
+    hide primeiro_machinho
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/jailson_mendes.webm","forbidden_memories_intro_web")
+
+    play music duelista_de_familia
+    show primeiro_machinho at top_fade
+
+    "E assim nasceu o Universo G!"
+    play sound ctc
+
+    "Já parou pra pensar que alguém teve\nque editar o Pai de Família 1\npela primeira vez?"
+    play sound ctc
+
+    "Ou seja, pelo menos algum herói teve\nque assistir o vídeo original\nsem censura xdddddd"
+    play sound ctc
+
+    "\"Pai de Família 1\"\n\nJailson Mendes e Paulo Gino"
+    play sound ctc
+    
+    hide primeiro_machinho
+    stop music fadeout 2.0
+    "{p=2.0}{nw}"
+    
+    return
+
+label extra_content_boys_do_ano:
+    $ play_video("mod_assets/videos/boys_do_ano.webm","forbidden_memories_intro_web")
+
+    "\"Boys do Ano\"\n\nAlexandre Senna e Mangueira Evil"
+    play sound ctc
+    
+    return
+
+label extra_content_os_bem_vestidos:
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/os_bem_vestidos.webm","forbidden_memories_intro_web")
+
+    "\"Os Bem Vestidos\"\n\nAlexandre Senna e Bob"
+    play sound ctc
+    
+    return
+
+label extra_content_rocky_gaucho:
+    $ play_video("mod_assets/videos/reveillon_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"Rocky Gaúcho no Réveillon de Família\"\n\nRocky Gaúcho"
+    play sound ctc
+
+    $ play_video("mod_assets/videos/rocky_gaucho.webm","forbidden_memories_intro_web")
+
+    "\"Rocky - A Revanche do Garanhão\"\n\nRocky Gaúcho e Passivão Desumilde\n(Marcelo Lagoas)"
+    play sound ctc
+    
+    return
+
+label extra_content_paulo_gino_piscineiro:
+    $ play_video("mod_assets/videos/paulo_gino_piscineiro.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/paulo_gino_piscineiro_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"The Biggest Dick I Ever Had\"\n\nPaulo Gino Piscineiro\nPaulo Gino Limpador de Piscina"
+    play sound ctc
+    
+    return
+
+label extra_content_mangueira_boy:
+    $ play_video("mod_assets/videos/mangueira_boy.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/mangueira_boy_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"Mangueira Boy\"\n\nPaulo Gino Bombeiro e\nMangueira Boy ao som de\nArt Attack 4"
     play sound ctc
     
     return

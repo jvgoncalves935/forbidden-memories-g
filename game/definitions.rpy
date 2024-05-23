@@ -1837,6 +1837,7 @@ image img_capXY_58 = "mod_assets/images/capXY/capXY_58.png"
 image img_capXY_59 = "mod_assets/images/capXY/capXY_59.png"
 image img_capXY_60 = "mod_assets/images/capXY/capXY_60.png"
 image ym_03 = "mod_assets/images/capXY/ym_03.png"
+image primeiro_machinho = "mod_assets/images/capJA/primeiro_machinho.png"
 
 image FACELESSGAMES_COM_BR_ALERTA:
     block:
@@ -2971,6 +2972,7 @@ define audio.faz_o_l = "mod_assets/sounds/faz_o_l.ogg"
 define audio.barra_de_metal = "mod_assets/sounds/barra_de_metal.ogg"
 define audio.conehead_influencia = "mod_assets/sounds/conehead_influencia.ogg"
 define audio.to_de_bora = "mod_assets/sounds/to_de_bora.ogg"
+define audio.rocky_gaucho = "mod_assets/sounds/rocky_gaucho.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
