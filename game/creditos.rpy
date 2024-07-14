@@ -1818,6 +1818,24 @@ image cred_45_04:
     time 4.0
     linear 1.5 alpha 0.0
 
+image cred_451_01:
+    align (0.5,0.40)
+    alpha 0.0
+    time 1.0
+    Text("Este jogo é livre de Consultorias DEI", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.0
+    linear 1.5 alpha 0.0
+
+image cred_451_02:
+    align (0.5,0.60)
+    alpha 0.0
+    time 1.0
+    Text("PAREM DE ESTRAGAR NOSSOS JOGOS", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 4.0
+    linear 1.5 alpha 0.0
+
 image cred_46_00:
     align (0.5,0.9)
     alpha 0.0
@@ -2371,6 +2389,12 @@ label creditos:
     hide cred_45_02
     hide cred_45_03
     hide cred_45_04
+
+    show cred_451_01
+    show cred_451_02
+    pause 6
+    hide cred_451_01
+    hide cred_451_02
 
     
     show cred_46_00

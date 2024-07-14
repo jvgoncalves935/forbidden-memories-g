@@ -310,7 +310,7 @@ label extra_content_corvo:
 label extra_content_mara_mara:
     $ play_video("mod_assets/videos/mara_mara.webm","forbidden_memories_intro_web")
 
-    "\"mara mara\"\n\nhttps:facelessgames.com.br"
+    "\"mara mara\"\n\nhttps://mara-mara.itch.io/mara-mara"
     play sound ctc
     
     return
