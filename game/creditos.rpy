@@ -160,6 +160,15 @@ image cred_05_07:
     time 6.0
     linear 1.5 alpha 0.0
 
+image cred_05_07_02:
+    align (0.5,0.50)
+    alpha 0.0
+    time 2.5
+    Text("Dueling Book - Card Maker", style="credits_text")
+    linear 1.0 alpha 1.0
+    time 6.0
+    linear 1.5 alpha 0.0
+
 image cred_05_08:
     align (0.5,0.65)
     alpha 0.0
@@ -1822,7 +1831,7 @@ image cred_451_01:
     align (0.5,0.40)
     alpha 0.0
     time 1.0
-    Text("Este jogo é livre de Consultorias DEI", style="credits_text")
+    Text("Este jogo é livre de Consultorias", style="credits_text")
     linear 1.0 alpha 1.0
     time 4.0
     linear 1.5 alpha 0.0
@@ -1831,7 +1840,7 @@ image cred_451_02:
     align (0.5,0.60)
     alpha 0.0
     time 1.0
-    Text("PAREM DE ESTRAGAR NOSSOS JOGOS", style="credits_text")
+    Text("de diversidade forçada", style="credits_text")
     linear 1.0 alpha 1.0
     time 4.0
     linear 1.5 alpha 0.0
@@ -2064,6 +2073,7 @@ label creditos:
     show cred_05_05
     show cred_05_06
     show cred_05_07
+    show cred_05_07_02
     show cred_05_08
     show cred_05_09
     show cred_05_10

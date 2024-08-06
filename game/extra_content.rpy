@@ -169,14 +169,18 @@ label extra_content_label:
     return
 
 label extra_content_mc_vv:
-    $ play_video("mod_assets/videos/onlymen.webm","forbidden_memories_intro_web")
+    $ play_video("mod_assets/videos/mc_vv.webm","forbidden_memories_intro_web")
 
-    "Alexandre Senna no OnlyFans AMV\nOnly Men (MC VV)\nMúsica: Only Men\nArtista: MC VV prod. Launzera\nÁlbum: BONDA 2 (MC VV)"
+    "\"MC VV - Shadow 4EVER\n(DeadLucky Remix)\"\n\nBURACU NEGRO PORRA"
     play sound ctc
+    #$ play_video("mod_assets/videos/onlymen.webm","forbidden_memories_intro_web")
 
-    $ play_video("mod_assets/videos/churrasco_gino.webm","forbidden_memories_intro_web")
+    #"Alexandre Senna no OnlyFans AMV\nOnly Men (MC VV)\nMúsica: Only Men\nArtista: MC VV prod. Launzera\nÁlbum: BONDA 2 (MC VV)"
+    #play sound ctc
+
+    #$ play_video("mod_assets/videos/churrasco_gino.webm","forbidden_memories_intro_web")
     
-    "Churrasco do Paulo Gino AMV\nNamorada Vegana (MC VV)\nMúsica: Namorada Vegana\nArtista: BOFE\nÁlbum: BONDA (MC VV)"
+    #"Churrasco do Paulo Gino AMV\nNamorada Vegana (MC VV)\nMúsica: Namorada Vegana\nArtista: BOFE\nÁlbum: BONDA (MC VV)"
     play sound ctc
 
     return
@@ -670,6 +674,45 @@ label extra_content_mangueira_boy:
         $ play_video("mod_assets/videos/mangueira_boy_cena_g.webm","forbidden_memories_intro_web")
 
     "\"Mangueira Boy\"\n\nPaulo Gino Bombeiro e\nMangueira Boy ao som de\nArt Attack 4"
+    play sound ctc
+    
+    return
+
+label extra_content_cupiqueno:
+    $ play_video("mod_assets/videos/cupiqueno.webm","forbidden_memories_intro_web")
+
+    "\"Cupiqueno\"\nMetaltest\n\nKeno OST"
+    play sound ctc
+    
+    return
+
+label extra_content_vegeta:
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/vegeta_vs_18.webm","forbidden_memories_intro_web")
+
+    "\"Vegeta de Família vs Android 18\"\n\nVitor Santoro (Vegeta de Família) e\nAndroid 18"
+    play sound ctc
+    
+    return
+
+label extra_content_ricco_vegeta:
+    $ play_video("mod_assets/videos/ricco_puentes_vegeta.webm","forbidden_memories_intro_web")
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/ricco_puentes_vegeta_cena_g.webm","forbidden_memories_intro_web")
+
+    "\"Ricco Puentes Is Fucking Fags\nBareback 3\"\n\nRicco Puentes e Vitor Santoro\n(Vegeta de Família)"
+    play sound ctc
+    
+    return
+
+label extra_content_badshinji:
+    $ play_video("mod_assets/videos/badshinji.webm","forbidden_memories_intro_web")
+
+    "\"badshinji - NÃO VAI TER PRÓXIMO TURNO\"\n\nPooper: Macho\nSource: badshinji"
     play sound ctc
     
     return

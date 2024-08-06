@@ -584,7 +584,7 @@ define deck_g_names = [
     "Jailson Mendes, O Pai de Família",
     "Os Carros São Como As Lanchas, As Motos São Como Os Jet-Skis",
     "Tele-Senna",
-    "Guinnass Book 2007",
+    "Investimentos no Tigrin!",
     "Yeah Man Bandido",
     "O QUÊ QUE VOCÊ FARIA?",
     "Alexandre Senna Carrasco",
@@ -615,7 +615,7 @@ define deck_g_names = [
     "Mangueira Boy",
     "Dansa gatinho dansakkkkkkkkk",
     "Felipe de Nylon G",
-    "CJ de Família",
+    "Buracu Negro",
     "Braço Esquerdo do Proibido",
     "Kawan Desu, O Mecânico",
     "Oh Man",
@@ -653,7 +653,7 @@ define deck_g_names = [
     "Ucraniano de Família",
     "Senhor dos Anais",
     "Jô Abdul",
-    "Vaca no Ku, Porra?",
+    "CJ de Família",
     "Gemidão do Zap",
     "Bizarro de Família",
     "Ricardo Milos",
@@ -671,7 +671,7 @@ define deck_g_names = [
     "Empregado de Família (Vin Diesel de Família)",
     "Magrinhu",
     "Ursos Grandes, Peludos e Mansos!",
-    "Kakapo, Papagaio Obeso kkkkk",
+    "MARCELO",
     "Leo Lins, A Peste Branca",
     "Everson Zoio",
     "MC Gorila",
@@ -686,19 +686,19 @@ define deck_g_names = [
     "Dragão Comunista do Imposto de Renda",
     "É JESUUUUIIIISSSSSSSSSS",
     "Crow of Judgement",
-    "Pica-Pau Biruta",
+    "Kakapo, Papagaio Obeso kkkkk",
     "Espírito do Manto Azul",
     "Nicole Interruptions & Faceless Games",
     "Deus Ex Nibonetti",
     "Danger!? Gilson?",
     "12 do Gugu",
     "Reneral Paus Negros",
-    "MARCELO",
     "Lain Iwakura",
     "Miyuki Sone",
     "Melancholic Yuri",
     "mara",
     "Yami Senna",
+    "Guardiões do Domínio das Trevas G",
     "Revista G",
     "Pedra G",
     "mara mara",
@@ -2973,6 +2973,7 @@ define audio.barra_de_metal = "mod_assets/sounds/barra_de_metal.ogg"
 define audio.conehead_influencia = "mod_assets/sounds/conehead_influencia.ogg"
 define audio.to_de_bora = "mod_assets/sounds/to_de_bora.ogg"
 define audio.rocky_gaucho = "mod_assets/sounds/rocky_gaucho.ogg"
+define audio.brazino = "mod_assets/sounds/brazino.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 

@@ -20,7 +20,7 @@ init -100 python:
     if renpy.variant("pc"):
         for archive in ['audio','scripts','images','fonts']:
             if archive in config.archives:
-                #If one is missing, throw an error and chlose
+                #If one is missing, throw an error and close
                 renpy.error("O arquivo "+arquive+" de Doki Doki Literature Club NÃO pode ser incluído pasta /game. Por favor, exclua-o e tente novamente.")
         
         dokis_names = ['yuri.chr','sayori.chr','monika.chr','natsuki.chr']
@@ -339,7 +339,7 @@ label splashscreen:
         play sound ctc
         "O objetivo do humor deste jogo é\nsatirizar APENAS a atuação dos atores,\nassim como os contextos e narrativas\n\"peculiares\" dos filmes adultos\nbrasileiros de baixo orçamento,tudo\nde forma divertida e saudável."
         play sound ctc
-        "Este jogo NÃO possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nrespeitarem os atores da vida real."
+        "Este jogo NÃO possui intenção de\nofender ou difamar os atores da vida\nreal, é apenas um jogo de humor feito\npelos fãs. Incentivamos os jogadores a\nRESPEITAREM os atores da vida real."
         play sound ctc
         "Nenhum conteúdo particular sobre\nos atores é divulgado neste jogo.\nSão utilizados apenas seus nomes\nfantasia, imagens e áudios de filmes\nautorais publicados na internet."
         play sound ctc
