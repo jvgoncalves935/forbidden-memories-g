@@ -716,3 +716,11 @@ label extra_content_badshinji:
     play sound ctc
     
     return
+
+label extra_content_theo_barone:
+    $ play_video("mod_assets/videos/theo_barone.webm","forbidden_memories_intro_web")
+
+    "\"Theo Barone Mophobic\"\n\nTheo Barone e Pantera Negra G"
+    play sound ctc
+    
+    return

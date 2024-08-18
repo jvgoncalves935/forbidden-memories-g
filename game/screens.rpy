@@ -1353,7 +1353,7 @@ screen endings():
             textbutton _("Final H"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="os_carros.png",ending="H"),Function(sfx_carta,audio.os_carros_sao,False,0)]
+                hovered [ShowTransient("side_img_right", img="metaleiro.png",ending="H"),Function(sfx_carta,audio.os_carros_sao,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [Function(ExtraContentStart,"ana")]
 
@@ -1362,11 +1362,11 @@ screen endings():
             xalign 0.09
             yalign 0.51
             textbutton _("Final I"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="tele_senna.png",ending="I"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="theo_barone.png",ending="I"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
-                action [Function(ExtraContentOnlyMen)]
+                action [Function(ExtraContentStart,"theo_barone")]
 
     if(persistent.endings["J"]):
         vbox:
@@ -1377,7 +1377,7 @@ screen endings():
                 text_style "navigation_button_text_endings"
                 hovered [ShowTransient("side_img_right", img="tigrin.png",ending="J"),Function(sfx_carta,audio.brazino,False,1),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_right"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
-                action [NullAction()]
+                action [Function(ExtraContentOnlyMen)]
 
     if(persistent.endings["K"]):
         vbox:
@@ -1397,7 +1397,7 @@ screen endings():
             textbutton _("Final L"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="posso_imaginar.png",ending="L"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="o_que_voce_faria.png",ending="L"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1431,7 +1431,7 @@ screen endings():
             textbutton _("Final O"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="hetero.png",ending="O"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="maldita_hora.png",ending="O"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [Function(ExtraContentStart,"maldita_hora")]
 
@@ -2564,7 +2564,7 @@ screen endings_pag_2():
         textbutton _("Carta 112"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="kakapo.png",card=112)]
+            hovered [ShowTransient("side_img_left", img="poderoso.png",card=112)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2574,7 +2574,7 @@ screen endings_pag_2():
         textbutton _("Carta 113"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="manto_azul.png",card=113),Function(sfx_carta,audio.computador_gino,False,0)]
+            hovered [ShowTransient("side_img_left", img="detonator.png",card=113),Function(sfx_carta,audio.computador_gino,False,0)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
@@ -2594,7 +2594,7 @@ screen endings_pag_2():
         textbutton _("Carta 115"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="nibonetti.png",card=115)]
+            hovered [ShowTransient("side_img_left", img="sr_donizildo.png",card=115)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 
