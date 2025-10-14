@@ -5,9 +5,9 @@
 69115005 1ª Edição - Vaimeti																TCG/OCG: 1
 69115006 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
 69115007 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
-69115008 1ª Edição - Os Carros São Como As Lanchas, As Motos São Como Os Jet-Skis			TCG/OCG: 1
-69115009 1ª Edição - Tele-Senna																TCG/OCG: 1
-69115010 1ª Edição - Guinnass Book 2007														TCG/OCG: 1
+69115008 1ª Edição - Bonde do Metaleiro														TCG/OCG: 1
+69115009 1ª Edição - Theo Barone Mophobic													TCG/OCG: 1
+69115010 1ª Edição - Investimentos no Tigrin!												TCG/OCG: 1
 69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
 69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
 69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
@@ -38,7 +38,7 @@
 69115038 1ª Edição - Mangueira Boy															TCG/OCG: 1
 69115039 1ª Edição - Dansa gatinho dansakkkkkkkkk											TCG/OCG: 1
 69115040 1ª Edição - Felipe de Nylon G														TCG/OCG: 1
-69115041 1ª Edição - CJ de Família															TCG/OCG: 1
+69115041 1ª Edição - Buracu Negro															TCG/OCG: 1
 69115042 1ª Edição - Braço Esquerdo do Proibido												TCG/OCG: 1
 69115043 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1
 69115044 1ª Edição - Oh Man																	TCG/OCG: 1
@@ -76,7 +76,7 @@
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
 69115078 1ª Edição - Jô Abdul																TCG/OCG: 1
-69115079 1ª Edição - Vaca no Ku, Porra?														TCG/OCG: 1
+69115079 1ª Edição - CJ de Família															TCG/OCG: 1
 69115080 1ª Edição - Gemidão do Zap															TCG/OCG: 1
 69115081 1ª Edição - Bizarro de Família														TCG/OCG: 1
 69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1
@@ -94,7 +94,7 @@
 69115094 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
 69115095 1ª Edição - Magrinhu																TCG/OCG: 1
 69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
-69115097 1ª Edição - Kakapo, Papagaio Obeso kkkkk											TCG/OCG: 1
+69115097 1ª Edição - MARCELO																TCG/OCG: 1
 69115098 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
 69115099 1ª Edição - Everson Zoio															TCG/OCG: 0
 69115100 1ª Edição - MC Gorila																TCG/OCG: 1
@@ -109,20 +109,22 @@
 69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
 69115110 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
-69115112 1ª Edição - Pica-Pau Biruta														TCG/OCG: 1
-69115113 1ª Edição - Espírito do Manto Azul													TCG/OCG: 1
+69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1
+69115113 1ª Edição - Detonator Abençoation													TCG/OCG: 1
 69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1
-69115115 1ª Edição - Deus Ex Nibonetti														TCG/OCG: 1
+69115115 1ª Edição - Sr. Donizildo															TCG/OCG: 1
 69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
 69115117 1ª Edição - 12 do Gugu																TCG/OCG: 1
 69115118 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
-69115119 1ª Edição - MARCELO																TCG/OCG: 0
-69115120 1ª Edição - Lain Iwakura															TCG/OCG: 1
-69115121 1ª Edição - Miyuki Sone															TCG/OCG: 1
-69115122 1ª Edição - Melancholic Yuri														TCG/OCG: 1
-69115123 1ª Edição - mara																	TCG/OCG: 1
-69115124 1ª Edição - Yami Senna																TCG/OCG: 1
+69115119 1ª Edição - Lain Iwakura															TCG/OCG: 0
+69115120 1ª Edição - Miyuki Sone															TCG/OCG: 1
+69115121 1ª Edição - Melancholic Yuri														TCG/OCG: 1
+69115122 1ª Edição - mara mara																TCG/OCG: 1
+69115123 1ª Edição - Yami Senna																TCG/OCG: 1
+69115124 1ª Edição - Guardiões do Domínio das Trevas G										TCG/OCG: 1
 XX - Revista G
 XX - Pedra G
-XX - mara mara
+XX - mara mara!
 vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1
+69069001 1ª Edição - Panty Anarchy															TCG/OCG: 1
+69069002 1ª Edição - Stocking Anarchy														TCG/OCG: 1

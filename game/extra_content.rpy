@@ -79,7 +79,8 @@ label label_error242424_begin:
 
     $ play_video("mod_assets/videos/error242424.webm","forbidden_memories_intro_web")
     show conehead
-    pause 0.05
+    play sound error242424_loop
+    pause 5.00
 
     $ renpy.quit()
     
@@ -314,7 +315,9 @@ label extra_content_corvo:
 label extra_content_mara_mara:
     $ play_video("mod_assets/videos/mara_mara.webm","forbidden_memories_intro_web")
 
-    "\"mara mara\"\n\nhttps://mara-mara.itch.io/mara-mara"
+    $ play_video("mod_assets/videos/react_mara_mara.webm","forbidden_memories_intro_web")
+
+    "\jogue o jogo da mara mara!\n\nhttps://mara-mara.itch.io/mara-mara"
     play sound ctc
     
     return
@@ -721,6 +724,49 @@ label extra_content_theo_barone:
     $ play_video("mod_assets/videos/theo_barone.webm","forbidden_memories_intro_web")
 
     "\"Theo Barone Mophobic\"\n\nTheo Barone e Pantera Negra G"
+    play sound ctc
+    
+    return
+
+label extra_content_desconfiava:
+    $ play_video("mod_assets/videos/desconfiava.webm","forbidden_memories_intro_web")
+
+    "\"Bem que eu desconfiava kkkkkk\"\n\nDeputada de Família e\nSubmisso de Família"
+    play sound ctc
+    
+    return
+
+label extra_content_dueling_book:
+    play music iron_mendes
+
+    "\"Bem que eu desconfiava kkkkkk\"\n\nDeputada de Família e\nSubmisso de Família"
+    play sound ctc
+    
+    return
+
+label extra_content_capoeira:
+    $ play_video("mod_assets/videos/capoeira.webm","forbidden_memories_intro_web")
+
+    "\"Alexndre Senna Capoeirista\""
+    play sound ctc
+    
+    return
+
+label extra_content_xemaiu:
+    if(persistent.streamer_mode):
+        call censored_content
+    else:
+        $ play_video("mod_assets/videos/xemaiu.webm","forbidden_memories_intro_web")
+
+    "\"Alemão, Bob e as Xemaiu\""
+    play sound ctc
+    
+    return
+
+label extra_content_cj_de_familia:
+    $ play_video("mod_assets/videos/cj_de_familia.webm","forbidden_memories_intro_web")
+
+    "\"CJ de Família - Pensei que fosse\num lugar privado\""
     play sound ctc
     
     return

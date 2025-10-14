@@ -1508,7 +1508,7 @@ screen endings():
             textbutton _("Final V"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="harpica.png",ending="V"),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_right", img="espanador.png",ending="V"),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_right")]
                 action [NullAction()]
 
@@ -1541,8 +1541,8 @@ screen endings():
             textbutton _("Final Y"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings"
-                hovered [ShowTransient("side_img_right", img="paulo_gino_arabe.png",ending="Y"),Function(sfx_carta,voz_gino_arabe,False,0)]
-                unhovered [Hide("side_img_right")]
+                hovered [ShowTransient("side_img_right", img="paulo_gino_arabe.png",ending="Y"),Function(sfx_carta,voz_gino_arabe,False,0),Function(music_channel_stop,"music")]
+                unhovered [Hide("side_img_right"),Function(renpy.music.stop,"sound"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg")]
                 action [Function(ExtraContentCapJailson)]
 
     if(persistent.endings["Z"]):
@@ -1723,7 +1723,7 @@ screen endings():
             textbutton _("Carta 40"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="felipinho.png",card=40),Function(sfx_carta,audio.felipinho_01,False,0)]
+                hovered [ShowTransient("side_img_left", img="felipe_de_nylon.png",card=40),Function(sfx_carta,audio.felipinho_01,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [Function(ExtraContentStart,"felipe_de_nylon")]
 
@@ -1736,7 +1736,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="buracu_negro.png",card=41),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [Function(ExtraContentStart,"ricco_vegeta")]
+                action [NullAction()]
 
     if(persistent.endings["P"]):
         vbox:
@@ -1756,7 +1756,7 @@ screen endings():
             textbutton _("Carta 43"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="kawan.png",card=43),Function(sfx_carta,audio.kawan2,True,1)]
+                hovered [ShowTransient("side_img_left", img="kawan_desu.png",card=43),Function(sfx_carta,audio.kawan2,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -1858,7 +1858,7 @@ screen endings():
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="ricco_puentes.png",card=52),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
-                action [NullAction()]
+                action [Function(ExtraContentStart,"ricco_vegeta")]
 
     if(persistent.endings["CYM"]):
         vbox:
@@ -1889,7 +1889,7 @@ screen endings():
             textbutton _("Carta 55"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="noku_tijolao.png",card=55),Function(guinodia,False,0)]
+                hovered [ShowTransient("side_img_left", img="escravo.png",card=55),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
                 action [Function(ExtraContentStart,"alemao_escravo")]
 
@@ -1973,7 +1973,7 @@ screen endings():
             textbutton _("Carta 62"):
                 style "confirm_button_3"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="guinodia_o_proibido.png",card=62),Function(guinodia,True,5)]
+                hovered [ShowTransient("side_img_left", img="guinodia.png",card=62),Function(guinodia,True,5)]
                 unhovered [Hide("side_img_left")]
                 action [NullAction()]
 
@@ -2024,7 +2024,7 @@ screen endings():
             xalign 0.66
             yalign 0.74
             textbutton _("Carta 66"):
-                style "confirm_button_3"
+                style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
                 hovered [ShowTransient("side_img_left", img="decode_paxcii.png",card=66),Function(guinodia,False,0)]
                 unhovered [Hide("side_img_left")]
@@ -2048,7 +2048,7 @@ screen endings():
             textbutton _("Carta 68"):
                 style "confirm_button_4"
                 text_style "navigation_button_text_endings_2"
-                hovered [ShowTransient("side_img_left", img="calvo_supremo.png",card=68),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
+                hovered [ShowTransient("side_img_left", img="macho.png",card=68),Function(sfx_carta,audio.calvoooo,False,0),Function(music_channel_stop,"music")]
                 unhovered [Hide("side_img_left"),Function(music_channel_play,"music",0.70,"mod_assets/music/fm_library.ogg"),Function(renpy.music.stop,"sound")]
                 action [Function(renpy.music.stop,"sound"),Function(ExtraContentStandingHereIRealize)]
     
@@ -2112,7 +2112,7 @@ screen endings_pag_2():
         textbutton _("Carta 70"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="jailson_mendes_primeiro.png",card=70)]
+            hovered [ShowTransient("side_img_right_2", img="jailson_machinho.png",card=70)]
             unhovered [Hide("side_img_right_2")]
             action [NullAction()]
 
@@ -2152,7 +2152,7 @@ screen endings_pag_2():
         textbutton _("Carta 74"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="indios_papacu.png",card=74)]
+            hovered [ShowTransient("side_img_right_2", img="aldeia.png",card=74)]
             unhovered [Hide("side_img_right_2")]
             action [Function(ExtraContentStart,"indios_papacu")]
     
@@ -2204,7 +2204,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings"
             hovered [ShowTransient("side_img_right_2", img="cj_de_familia.png",card=79)]
             unhovered [Hide("side_img_right_2")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"cj_de_familia")]
 
     vbox:
         xalign 0.29
@@ -2312,7 +2312,7 @@ screen endings_pag_2():
         textbutton _("Carta 90"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="dolph_ziggler.png",card=90)]
+            hovered [ShowTransient("side_img_right_2", img="dolph.png",card=90)]
             unhovered [Hide("side_img_right_2")]
             action [Function(ExtraContentStart,"dolph_ziggler")]
     
@@ -2322,7 +2322,7 @@ screen endings_pag_2():
         textbutton _("Carta 91"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="akuma.png",card=91)]
+            hovered [ShowTransient("side_img_right_2", img="akuma_de_familia.png",card=91)]
             unhovered [Hide("side_img_right_2")]
             action [Function(ExtraContentStart,"akuma_de_familia")]
     
@@ -2352,7 +2352,7 @@ screen endings_pag_2():
         textbutton _("Carta 94"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="vin_diesel.png",card=94)]
+            hovered [ShowTransient("side_img_right_2", img="empregado_de_familia.png",card=94)]
             unhovered [Hide("side_img_right_2")]
             action [Function(ExtraContentStart,"empregado_de_familia")]
 
@@ -2404,7 +2404,7 @@ screen endings_pag_2():
         textbutton _("Carta 96"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="ursos.png",card=96)]
+            hovered [ShowTransient("side_img_left", img="ursos_grandes.png",card=96)]
             unhovered [Hide("side_img_left")]
             action [Function(ExtraContentStart,"ursos_grandes")]
 
@@ -2426,7 +2426,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="leo_lins.png",card=98)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"capoeira")]
 
     vbox:
         xalign 0.795
@@ -2514,9 +2514,9 @@ screen endings_pag_2():
         textbutton _("Carta 107"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="entra_que_eu_te_explico.png",card=107)]
+            hovered [ShowTransient("side_img_left", img="sava.png",card=107)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"xemaiu")]
 
     vbox:
         xalign 0.795
@@ -2566,7 +2566,7 @@ screen endings_pag_2():
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="poderoso.png",card=112)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"desconfiava")]
 
     vbox:
         xalign 0.64
@@ -2682,11 +2682,11 @@ screen endings_pag_2():
         xalign 0.95
         yalign 0.57
         textbutton _("Carta 124"):
-            style "confirm_button_3"
+            style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
             hovered [ShowTransient("side_img_left", img="guardioes_g.png",card=124)]
             unhovered [Hide("side_img_left")]
-            action [NullAction()]
+            action [Function(ExtraContentStart,"dueling_book")]
 
     vbox:
         xalign 0.64
@@ -2717,14 +2717,32 @@ screen endings_pag_2():
             hovered [ShowTransient("side_img_left", img="mara_mara!.png",card=127)]
             unhovered [Hide("side_img_left")]
             action [Function(ExtraContentStart,"mara_mara")]
-
+    vbox:
+        xalign 0.64
+        yalign 0.72
+        textbutton _("Carta X01"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="panty_anarchy.png",card=128)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+    vbox:
+        xalign 0.795
+        yalign 0.72
+        textbutton _("Carta X02"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="stocking_anarchy.png",card=129)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+    
     vbox:
         xalign 0.95
         yalign 0.72
         textbutton _("vtnc kkkk"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="noir.png",card=128)]
+            hovered [ShowTransient("side_img_left", img="noir.png",card=130)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 

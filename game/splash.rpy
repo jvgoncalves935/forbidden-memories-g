@@ -420,9 +420,9 @@ label splashscreen:
     if(persistent.is_error242424_splashscreen == True):
         $ drpc_update("error242424")
         play sound conehead_influencia
-        show conehead
+        show conehead_2
         pause 0.1
-        hide conehead
+        hide conehead_2
         pause 2.5
         stop sound
 

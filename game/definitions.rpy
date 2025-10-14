@@ -598,7 +598,7 @@ define deck_g_names = [
     "Paulo Gino Professor",
     "Espanador de Penas da Harpica",
     "Princesa Demacol",
-    "Alemão (Arnold)",
+    "Bob, O Construtor",
     "Paulo Gino Árabe",
     "Darkilson",
     "Minha mu;lher",
@@ -624,9 +624,9 @@ define deck_g_names = [
     "Sandro Lima, O Arquiteto do Universo G",
     "Paulo Gino Matrix",
     "Vegeta de Família",
-    "Bob, O Construtor",
+    "Alemão (Arnold)",
     "Perna Esquerda do Proibido",
-    "Ricco Puentes",
+    "Ricco Puentes, The King Of Gueis",
     "Sarcófago da Ícaro Studios",
     "Pote da Delícia",
     "Escravo Do Meu Mestre",
@@ -696,12 +696,14 @@ define deck_g_names = [
     "Lain Iwakura",
     "Miyuki Sone",
     "Melancholic Yuri",
-    "mara",
+    "mara mara",
     "Yami Senna",
     "Guardiões do Domínio das Trevas G",
     "Revista G",
     "Pedra G",
-    "mara mara",
+    "mara mara!",
+    "Panty Anarchy",
+    "Stocking Anarchy",
     "Epurrely Noir"
 ]
 
@@ -2088,7 +2090,9 @@ image jumpscare = "mod_assets/images/capSN/jumpscare.png"
 
 image event_horizon = "mod_assets/images/event_horizon/event_horizon.png"
 
-image conehead = "mod_assets/executables/conehead/F00d-3553-c0011111111111111111111111111111111111111111111.png"
+image conehead = "mod_assets/images/ERROR242424.png"
+
+image conehead_2 = "mod_assets/executables/conehead/F00d-3553-c0011111111111111111111111111111111111111111111.png"
 
 
 ###################Musicas 
@@ -2149,6 +2153,9 @@ define audio.blessed_land_of_guzar = "<loop 0.00>mod_assets/music/Guzeipower - B
 define audio.FACELESS_CONVERSANDO = "<loop 0.00>mod_assets/music/Screaming Mad Guzar - FACELESS CONVERSANDO.mp3"
 define audio.FACELESSGAMES_ACELERADO_BLZ = "<loop 0.716>mod_assets/music/FACELESSGAMES.COM.BR_ACELERADO_BLZ.ogg"
 define audio.MARCELO_MUSICA = "<from 33.50 loop 0.00>mod_assets/music/Welcome To The Bloody Marcelo.mp3"
+define audio.iron_mendes = "<loop 0.00>mod_assets/music/Iron Mendes - The Trooper ft. Guela Entupida.mp3"
+
+
 
 ###################Vozes
 define voz_teste = "mod_assets/voices/teste.ogg"
@@ -2950,7 +2957,7 @@ define audio.coringa_dano2 = "<loop 0.00>mod_assets/sounds/coringa_dano.ogg"
 define audio.vegeta_de_familia = "<loop 0.00>mod_assets/sounds/vegeta_de_familia.ogg"
 define audio.tom_chines = "<loop 0.00>mod_assets/sounds/tom chines.ogg"
 define audio.kid_bengala2 = "<loop 0.00>mod_assets/sounds/kid.ogg"
-define audio.kawan2 = "<loop 0.00>mod_assets/sounds/relaxar.ogg"
+define audio.kawan2 = "mod_assets/sounds/relaxar.ogg"
 define audio.gino_professor = "<loop 0.00>mod_assets/sounds/gino_professor.ogg"
 define audio.mangueira = "<loop 0.00>mod_assets/sounds/mangueira.ogg"
 define audio.fomehahaha = "<loop 0.00>mod_assets/sounds/fome.ogg"
@@ -2974,6 +2981,7 @@ define audio.conehead_influencia = "mod_assets/sounds/conehead_influencia.ogg"
 define audio.to_de_bora = "mod_assets/sounds/to_de_bora.ogg"
 define audio.rocky_gaucho = "mod_assets/sounds/rocky_gaucho.ogg"
 define audio.brazino = "mod_assets/sounds/brazino.ogg"
+define audio.error242424_loop = "<loop 0.00>mod_assets/sounds/error242424.ogg"
 
 #define audio.confirm = "mod_assets/sounds/confirm.ogg"
 
