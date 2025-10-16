@@ -2690,7 +2690,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.67
+        yalign 0.62
         textbutton _("Token 01"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2700,7 +2700,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.67
+        yalign 0.62
         textbutton _("Token 02"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2710,7 +2710,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.67
+        yalign 0.62
         textbutton _("Token 03"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2719,7 +2719,7 @@ screen endings_pag_2():
             action [Function(ExtraContentStart,"mara_mara")]
     vbox:
         xalign 0.64
-        yalign 0.72
+        yalign 0.67
         textbutton _("Carta X01"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2728,7 +2728,7 @@ screen endings_pag_2():
             action [NullAction()]
     vbox:
         xalign 0.795
-        yalign 0.72
+        yalign 0.67
         textbutton _("Carta X02"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2738,11 +2738,21 @@ screen endings_pag_2():
     
     vbox:
         xalign 0.95
+        yalign 0.67
+        textbutton _("Carta X03"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="kika.png",card=130)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
+        xalign 0.95
         yalign 0.72
         textbutton _("vtnc kkkk"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="noir.png",card=130)]
+            hovered [ShowTransient("side_img_left", img="noir.png",card=131)]
             unhovered [Hide("side_img_left")]
             action [NullAction()]
 

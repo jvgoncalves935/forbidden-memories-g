@@ -704,6 +704,7 @@ define deck_g_names = [
     "mara mara!",
     "Panty Anarchy",
     "Stocking Anarchy",
+    "Kika: De Onde Vem?",
     "Epurrely Noir"
 ]
 
