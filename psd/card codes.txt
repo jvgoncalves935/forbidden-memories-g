@@ -1,6 +1,6 @@
-69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1
+69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1					OK	
 69115002 1ª Edição - Goleiro de Família														TCG/OCG: 1
-69115003 1ª Edição - James Matarazzo														TCG/OCG: 1
+69115003 1ª Edição - James Matarazzo														TCG/OCG: 1					OK	
 69115004 1ª Edição - Índio (Indígena)														TCG/OCG: 1
 69115005 1ª Edição - Vaimeti																TCG/OCG: 1
 69115006 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
@@ -15,9 +15,9 @@
 69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
 69115016 1ª Edição - Doutora																TCG/OCG: 1
 69115017 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1
-69115018 1ª Edição - Yeah Man																TCG/OCG: 1
+69115018 1ª Edição - Yeah Man																TCG/OCG: 1					OK
 69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1
-69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1
+69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1					OK
 69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
 69115022 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1
 69115023 1ª Edição - Princesa Demacol														TCG/OCG: 1
@@ -28,7 +28,7 @@
 69115028 1ª Edição - Perna Direita do Proibido												TCG/OCG: 1
 69115029 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1
 69115030 1ª Edição - Braço Direito do Proibido												TCG/OCG: 1
-69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1
+69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1					OK
 69115032 1ª Edição - Renzo																	TCG/OCG: 1
 69115033 1ª Edição - Paulo Gino, O Deixador de Ocos											TCG/OCG: 1
 69115034 1ª Edição - Cabação																TCG/OCG: 1
@@ -51,14 +51,14 @@
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
 69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1
-69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1
+69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1				OK
 69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
 69115056 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
 69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1
-69115058 1ª Edição - Filhona																TCG/OCG: 1
+69115058 1ª Edição - Filhona																TCG/OCG: 1				OK
 69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
-69115060 1ª Edição - Coringa Dano															TCG/OCG: 1
-69115061 1ª Edição - Polimerização G														TCG/OCG: 1
+69115060 1ª Edição - Coringa Dano															TCG/OCG: 1				OK
+69115061 1ª Edição - Polimerização G														TCG/OCG: 1				OK
 69115062 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
 69115063 1ª Edição - Globglogabgalab, A Traça Melancólica									TCG/OCG: 1
 69115064 1ª Edição - Taeyeon, O Amigo de Sangue												TCG/OCG: 0

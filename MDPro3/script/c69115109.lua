@@ -1,4 +1,5 @@
 --Dragão Comunista do Imposto de Renda
+--c69115109
 local s,id,o=GetID()
 function s.initial_effect(c)
 	-- Regras de Invocação por Fusão

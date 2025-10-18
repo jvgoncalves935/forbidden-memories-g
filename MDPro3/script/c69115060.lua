@@ -1,28 +1,29 @@
---Doutora
--- Sincro Genérico Nível 10
--- Script by ChatGPT
+--Coringa Dano
+--c69115060
 local s,id=GetID()
 function s.initial_effect(c)
-	-- Invocação-Sincro padrão
-	aux.AddSynchroProcedure(c,aux.FilterBoolFunction(Card.IsType,TYPE_TUNER),aux.NonTuner(nil),1)
+	-- Invocação Xyz padrão
+	aux.AddXyzProcedure(c,nil,4,2)
 	c:EnableReviveLimit()
 	
 	-- (Exemplo de efeito opcional)
-	-- Quando Invocado por Invocação-Sincro: compre 1 card
+	-- Uma vez por turno: remova 1 matéria para comprar 1 card
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetCategory(CATEGORY_DRAW)
-	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
-	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
-	e1:SetCondition(s.drcon)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1)
+	e1:SetCost(s.drcost)
 	e1:SetTarget(s.drtg)
 	e1:SetOperation(s.drop)
 	c:RegisterEffect(e1)
 end
 
--- Condição: apenas se foi Invocado por Sincro
-function s.drcon(e,tp,eg,ep,ev,re,r,rp)
-	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
+-- Custo: remover 1 matéria-xyz
+function s.drcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,1,REASON_COST) end
+	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)
 end
 
 -- Alvo: comprar 1 card
