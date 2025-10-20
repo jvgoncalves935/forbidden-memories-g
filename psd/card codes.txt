@@ -1,13 +1,13 @@
-69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1					OK	
+69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1				OK	
 69115002 1ª Edição - Goleiro de Família														TCG/OCG: 1
-69115003 1ª Edição - James Matarazzo														TCG/OCG: 1					OK	
+69115003 1ª Edição - James Matarazzo														TCG/OCG: 1				OK	
 69115004 1ª Edição - Índio (Indígena)														TCG/OCG: 1
 69115005 1ª Edição - Vaimeti																TCG/OCG: 1
 69115006 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
 69115007 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
 69115008 1ª Edição - Bonde do Metaleiro														TCG/OCG: 1
 69115009 1ª Edição - Theo Barone Mophobic													TCG/OCG: 1
-69115010 1ª Edição - Investimentos no Tigrin!												TCG/OCG: 1
+69115010 1ª Edição - Investimentos no Tigrin!												TCG/OCG: 1				OK
 69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
 69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
 69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
@@ -15,9 +15,9 @@
 69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
 69115016 1ª Edição - Doutora																TCG/OCG: 1
 69115017 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1
-69115018 1ª Edição - Yeah Man																TCG/OCG: 1					OK
+69115018 1ª Edição - Yeah Man																TCG/OCG: 1				OK
 69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1
-69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1					OK
+69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1				OK
 69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
 69115022 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1
 69115023 1ª Edição - Princesa Demacol														TCG/OCG: 1
@@ -28,11 +28,11 @@
 69115028 1ª Edição - Perna Direita do Proibido												TCG/OCG: 1
 69115029 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1
 69115030 1ª Edição - Braço Direito do Proibido												TCG/OCG: 1
-69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1					OK
+69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1				OK
 69115032 1ª Edição - Renzo																	TCG/OCG: 1
 69115033 1ª Edição - Paulo Gino, O Deixador de Ocos											TCG/OCG: 1
 69115034 1ª Edição - Cabação																TCG/OCG: 1
-69115035 1ª Edição - Anita																	TCG/OCG: 1
+69115035 1ª Edição - Anita																	TCG/OCG: 1				OK
 69115036 1ª Edição - Grito Ensurdecedor de Lily Santos										TCG/OCG: 1
 69115037 1ª Edição - Boy Stronda															TCG/OCG: 1
 69115038 1ª Edição - Mangueira Boy															TCG/OCG: 1
@@ -40,7 +40,7 @@
 69115040 1ª Edição - Felipe de Nylon G														TCG/OCG: 1
 69115041 1ª Edição - Buracu Negro															TCG/OCG: 1
 69115042 1ª Edição - Braço Esquerdo do Proibido												TCG/OCG: 1
-69115043 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1
+69115043 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1				OK
 69115044 1ª Edição - Oh Man																	TCG/OCG: 1
 69115045 1ª Edição - Tom Chinês																TCG/OCG: 1
 69115046 1ª Edição - Guilhotina G															TCG/OCG: 1
@@ -50,11 +50,11 @@
 69115050 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
 69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1
-69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1
+69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1				OK
 69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1				OK
 69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1
 69115056 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
-69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1
+69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1				OK
 69115058 1ª Edição - Filhona																TCG/OCG: 1				OK
 69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
 69115060 1ª Edição - Coringa Dano															TCG/OCG: 1				OK
@@ -100,13 +100,13 @@
 69115100 1ª Edição - MC Gorila																TCG/OCG: 1
 69115101 1ª Edição - Gil Brother "Away"														TCG/OCG: 1
 69115102 1ª Edição - MC VV, Explorador de Portais											TCG/OCG: 1
-69115103 1ª Edição - Nego BAM																TCG/OCG: 1
+69115103 1ª Edição - Nego BAM																TCG/OCG: 1				OK
 69115104 1ª Edição - Pegasus do PAU BRILHANTE												TCG/OCG: 1
-69115105 1ª Edição - FOME.																	TCG/OCG: 1
-69115106 1ª Edição - Barra de Metal															TCG/OCG: 1
+69115105 1ª Edição - FOME.																	TCG/OCG: 1				
+69115106 1ª Edição - Barra de Metal															TCG/OCG: 1				OK
 69115107 1ª Edição - Sava "Entra Que Eu Te Explico" do Rael Vol. 1							TCG/OCG: 1
 69115108 1ª Edição - Super Choque															TCG/OCG: 1
-69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1
+69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1				OK
 69115110 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
 69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1

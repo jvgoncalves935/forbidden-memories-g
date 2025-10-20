@@ -1,41 +1,78 @@
 --Doutora
 --c69115016
--- Sincro Genérico Nível 10
--- Script by ChatGPT
+
+--Doutora
 local s,id=GetID()
 function s.initial_effect(c)
-	-- Invocação-Sincro padrão
-	aux.AddSynchroProcedure(c,aux.FilterBoolFunction(Card.IsType,TYPE_TUNER),aux.NonTuner(nil),1)
+	-- Invocação-Sincro
+	-- 1 regulador Universo G + 1 nao-regulador
+	aux.AddSynchroProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0xc50),aux.NonTuner(nil),1)
 	c:EnableReviveLimit()
-	
-	-- (Exemplo de efeito opcional)
-	-- Quando Invocado por Invocação-Sincro: compre 1 card
+
+	-- Efeito 1: destruir 1 card alvo
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
-	e1:SetCategory(CATEGORY_DRAW)
-	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
-	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
-	e1:SetCondition(s.drcon)
-	e1:SetTarget(s.drtg)
-	e1:SetOperation(s.drop)
+	e1:SetCategory(CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,id)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetTarget(s.destg)
+	e1:SetOperation(s.desop)
 	c:RegisterEffect(e1)
+
+	-- Efeito 2: negar ativação e destruir
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(id,1))
+	e2:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
+	e2:SetType(EFFECT_TYPE_QUICK_O)
+	e2:SetCode(EVENT_CHAINING)
+	e2:SetProperty(EFFECT_FLAG_DAMAGE_STEP+EFFECT_FLAG_DAMAGE_CAL)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCountLimit(1,id+100)
+	e2:SetCondition(s.negcon)
+	e2:SetTarget(s.negtg)
+	e2:SetOperation(s.negop)
+	c:RegisterEffect(e2)
+
+	-- Efeito 3: perfurante
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_SINGLE)
+	e3:SetCode(EFFECT_PIERCE)
+	c:RegisterEffect(e3)
 end
 
--- Condição: apenas se foi Invocado por Sincro
-function s.drcon(e,tp,eg,ep,ev,re,r,rp)
-	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
+-- Efeito 1: destruir alvo
+function s.destg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsOnField() end
+	if chk==0 then return Duel.IsExistingTarget(aux.TRUE,tp,LOCATION_ONFIELD,LOCATION_ONFIELD,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,aux.TRUE,tp,LOCATION_ONFIELD,LOCATION_ONFIELD,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
 end
 
--- Alvo: comprar 1 card
-function s.drtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsPlayerCanDraw(tp,1) end
-	Duel.SetTargetPlayer(tp)
-	Duel.SetTargetParam(1)
-	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,1)
+function s.desop(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc and tc:IsRelateToEffect(e) then
+		Duel.Destroy(tc,REASON_EFFECT)
+	end
 end
 
--- Operação: compra o card
-function s.drop(e,tp,eg,ep,ev,re,r,rp)
-	local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
-	Duel.Draw(p,d,REASON_EFFECT)
+-- Efeito 2: negar ativação e destruir
+function s.negcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsChainNegatable(ev)
+end
+
+function s.negtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
+	if re:GetHandler():IsRelateToEffect(re) then
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,1,0,0)
+	end
+end
+
+function s.negop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Destroy(eg,REASON_EFFECT)
+	end
 end
