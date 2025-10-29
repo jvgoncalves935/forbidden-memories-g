@@ -648,7 +648,7 @@ define deck_g_names = [
     "The Boys do Ano",
     "Foodeezecuvain & Omacho",
     "Rocky Gaúcho",
-    "Aldeia dos Índios (Indígenas) Papacu",
+    "Matagal dos Índios (Indígenas) Papacu",
     "Xaropinho de Família",
     "Ucraniano de Família",
     "Senhor dos Anais",

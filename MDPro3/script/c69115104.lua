@@ -38,15 +38,15 @@ function s.initial_effect(c)
 	c:RegisterEffect(e1)
 
 	--Rank is treated as highest Level of materials (visual effect)
-	local e2=Effect.CreateEffect(c)
-	e2:SetType(EFFECT_TYPE_SINGLE)
-	e2:SetCode(EFFECT_XYZ_LEVEL)
-	e2:SetValue(s.xyzlv)
-	c:RegisterEffect(e2)
+	--local e2=Effect.CreateEffect(c)
+	--e2:SetType(EFFECT_TYPE_SINGLE)
+	--e2:SetCode(EFFECT_XYZ_LEVEL)
+	--e2:SetValue(s.xyzlv)
+	--c:RegisterEffect(e2)
 
 	--Quick Effect: detach 1 material, choose 1 effect
 	local e3=Effect.CreateEffect(c)
-	e3:SetDescription(aux.Stringid(id,1))
+	e3:SetDescription(aux.Stringid(id,8))
 	e3:SetCategory(CATEGORY_TOHAND+CATEGORY_SPECIAL_SUMMON)
 	e3:SetType(EFFECT_TYPE_QUICK_O)
 	e3:SetCode(EVENT_FREE_CHAIN)
@@ -59,7 +59,7 @@ function s.initial_effect(c)
 
 	--Quick Effect: equip 1 card from opponent field or grave
 	local e4=Effect.CreateEffect(c)
-	e4:SetDescription(aux.Stringid(id,2))
+	e4:SetDescription(aux.Stringid(id,7))
 	e4:SetCategory(CATEGORY_EQUIP)
 	e4:SetType(EFFECT_TYPE_QUICK_O)
 	e4:SetCode(EVENT_FREE_CHAIN)
@@ -69,13 +69,16 @@ function s.initial_effect(c)
 	e4:SetOperation(s.eqop)
 	c:RegisterEffect(e4)
 
-	--When this card is Special Summoned (by Xyz) -> register player flag (one Xyz summon per turn)
+	-- Continuous effect: if this card was Xyz Summoned, apply the summon limit (no chain activation)
 	local eSumm=Effect.CreateEffect(c)
-	eSumm:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	eSumm:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
 	eSumm:SetCode(EVENT_SPSUMMON_SUCCESS)
 	eSumm:SetCondition(function(e) return e:GetHandler():IsSummonType(SUMMON_TYPE_XYZ) end)
-	eSumm:SetOperation(s.on_xyz_summon)
+	eSumm:SetOperation(function(e,tp,eg,ep,ev,re,r,rp)
+		Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
+	end)
 	c:RegisterEffect(eSumm)
+
 
 	--Effect: when sent to Graveyard
 	local e5=Effect.CreateEffect(c)
@@ -147,10 +150,18 @@ function s.xyzlv(e,c,rc)
 	return lv
 end
 
--- Detach cost
+-- Detach cost (NOW selects the material explicitly and sends it to GY as COST; stores it in effect)
 function s.xyzcost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,1,REASON_COST) end
-	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)
+	local c=e:GetHandler()
+	if chk==0 then return c:GetOverlayCount()>0 end
+	local og=c:GetOverlayGroup()
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local sg=og:Select(tp,1,1,nil)
+	local dc=sg:GetFirst()
+	-- store the detached card in the effect so xyzop can reference it
+	e:SetLabelObject(dc)
+	-- send the chosen overlay to Grave as COST (and REASON_MATERIAL)
+	Duel.SendtoGrave(dc,REASON_COST+REASON_MATERIAL)
 end
 
 -- Quick Effect target: choose effect 1 or 2
@@ -161,7 +172,7 @@ function s.xyztg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 
 -- Quick Effect operation: resolve selected effect
--- NOTE: when detaching we removed the material already in cost; we try to special summon the detached card by looking at the group that was removed this chain via flag set in cost
+-- Now, option 2 will attempt to Special Summon exactly the card that was detached in s.xyzcost (if it's in the GY)
 function s.xyzop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if not c:IsRelateToEffect(e) then return end
@@ -169,46 +180,52 @@ function s.xyzop(e,tp,eg,ep,ev,re,r,rp)
 	if sel==0 then
 		-- Effect 1: add 1 Universo G from Deck or Grave to hand
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
-		local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(function(tc) return tc:IsSetCard(0xc50) and tc:IsType(TYPE_MONSTER) and tc:IsAbleToHand() end),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,1,nil)
+		local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(function(tc) return tc:IsSetCard(0x62) and tc:IsAbleToHand() end),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,1,nil)
 		if #g>0 then
 			Duel.SendtoHand(g,nil,REASON_EFFECT)
 			Duel.ConfirmCards(1-tp,g)
 		end
 	else
-		-- Effect 2: Special Summon a material that was detached
-		-- We'll try to special summon any monster in the grave that was detached this chain (best-effort)
-		-- Note: engines differ; commonly the removed overlay goes to grave, so we'll attempt to find any monster in grave that was previously overlay of this card
-		local sg=Group.CreateGroup()
-		-- gather all monsters in grave that belong to this card's original materials this duel attempt: fallback to any monster in grave that is "Universo G" and was recently sent (best-effort)
-		local g=Duel.GetMatchingGroup(function(tc) return tc:IsType(TYPE_MONSTER) and tc:IsLocation(LOCATION_GRAVE) and tc:IsReason(REASON_COST+REASON_MATERIAL) end,tp,LOCATION_GRAVE,0,nil)
-		-- If nothing, try any monster in grave (fallback)
-		if #g==0 then g=Duel.GetMatchingGroup(Card.IsType,tp,LOCATION_GRAVE,0,nil,TYPE_MONSTER) end
-		if #g>0 then
+		-- Effect 2: Special Summon the material that was detached in the cost (if it's in the GY)
+		local dc=e:GetLabelObject()
+		if dc and dc:IsLocation(LOCATION_GRAVE) and dc:IsType(TYPE_MONSTER) then
+			-- attempt to Special Summon that exact card
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-			local selg=g:Select(tp,1,1,nil)
-			if #selg>0 then
-				Duel.SpecialSummon(selg,0,tp,tp,false,false,POS_FACEUP)
-			end
+			-- no selection needed - summon the stored card
+			Duel.SpecialSummon(dc,0,tp,tp,false,false,POS_FACEUP)
+		else
+			-- fallback: if stored card not in GY or invalid, do nothing (best-effort)
 		end
 	end
+	-- clear labelobject after resolution for safety
+	e:SetLabelObject(nil)
 end
 
 -- Equip effect target
 function s.eqtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToChangeControler,tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,1,nil) end
+	-- Verificação adicional: impede a ativação se não houver espaço no backrow
+	if chk==0 then
+		if Duel.GetLocationCount(tp, LOCATION_SZONE) <= 0 then return false end
+		return Duel.IsExistingMatchingCard(Card.IsAbleToChangeControler,tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,1,nil)
+	end
 	Duel.SetOperationInfo(0,CATEGORY_EQUIP,nil,1,tp,LOCATION_ONFIELD+LOCATION_GRAVE)
 end
 
--- Equip operation
+
+-- Equip operation (NEW: monsters -> standard equip + ATK/DEF gain from current stats;
+-- spells/traps -> moved to S/T zone, converted to Equip Spell, then equipped)
 function s.eqop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:IsRelateToEffect(e) then return end
+	if not c or not c:IsRelateToEffect(e) then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
 	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToChangeControler,tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,1,1,nil)
 	local tc=g:GetFirst()
-	if tc then
+	if not tc then return end
+
+	-- If it's a monster, equip normally and gain its current ATK/DEF
+	if tc:IsType(TYPE_MONSTER) then
 		if Duel.Equip(tp,tc,c,true) then
-			-- Equip limit (make sure equip stays to this card)
+			-- Equip limit
 			local e1=Effect.CreateEffect(c)
 			e1:SetType(EFFECT_TYPE_SINGLE)
 			e1:SetCode(EFFECT_EQUIP_LIMIT)
@@ -216,24 +233,61 @@ function s.eqop(e,tp,eg,ep,ev,re,r,rp)
 			e1:SetReset(RESET_EVENT+RESETS_STANDARD)
 			e1:SetValue(function(ef,cc) return cc==c end)
 			tc:RegisterEffect(e1)
-			-- If equipped card is a monster, gain its ATK/DEF as text values
-			if tc:IsType(TYPE_MONSTER) then
-				local atk=tc:GetTextAttack()
-				local def=tc:GetTextDefense()
-				if atk<0 then atk=0 end
-				if def<0 then def=0 end
+			-- Gain current ATK/DEF of equipped monster
+			local atk=tc:GetAttack()
+			local def=tc:GetDefense()
+			if atk<0 then atk=0 end
+			if def<0 then def=0 end
+			if atk>0 then
 				local e2=Effect.CreateEffect(c)
 				e2:SetType(EFFECT_TYPE_SINGLE)
 				e2:SetCode(EFFECT_UPDATE_ATTACK)
 				e2:SetValue(atk)
 				e2:SetReset(RESET_EVENT+RESETS_STANDARD)
 				c:RegisterEffect(e2)
-				local e3=e2:Clone()
+			end
+			if def>0 then
+				local e3=Effect.CreateEffect(c)
+				e3:SetType(EFFECT_TYPE_SINGLE)
 				e3:SetCode(EFFECT_UPDATE_DEFENSE)
 				e3:SetValue(def)
+				e3:SetReset(RESET_EVENT+RESETS_STANDARD)
 				c:RegisterEffect(e3)
 			end
 		end
+		return
+	end
+
+	-- Else: it's a Spell/Trap. Try to move it to your S/T zone and convert to Equip Spell, then equip.
+	-- First try to move to S/T zone face-up (works if card is on field or in GY; engine-dependent).
+	if tc:IsLocation(LOCATION_ONFIELD) then
+		-- If it's already on the field (opponent's S/T), take control then move it to our zone
+		-- Use MoveToField to move it to our S/T zone face-up
+		Duel.MoveToField(tc,tp,tp,LOCATION_SZONE,POS_FACEUP,true)
+	else
+		-- if it's in the GY or other zone, attempt to move it to S/T zone (engine dependent)
+		Duel.MoveToField(tc,tp,tp,LOCATION_SZONE,POS_FACEUP,true)
+	end
+
+	-- Change type to Equip Spell so it behaves as equip
+	local echange=Effect.CreateEffect(c)
+	echange:SetType(EFFECT_TYPE_SINGLE)
+	echange:SetCode(EFFECT_CHANGE_TYPE)
+	echange:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	echange:SetValue(TYPE_SPELL+TYPE_EQUIP)
+	echange:SetReset(RESET_EVENT+RESETS_STANDARD)
+	tc:RegisterEffect(echange)
+
+	-- Equip it to this card
+	if Duel.Equip(tp,tc,c,true) then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_EQUIP_LIMIT)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetValue(function(ef,cc) return cc==c end)
+		tc:RegisterEffect(e1)
+		-- (No ATK/DEF gain for spells/traps by default — if you want some behavior, we can add it here)
 	end
 end
 

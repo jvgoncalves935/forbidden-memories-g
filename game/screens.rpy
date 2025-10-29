@@ -2152,7 +2152,7 @@ screen endings_pag_2():
         textbutton _("Carta 74"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings"
-            hovered [ShowTransient("side_img_right_2", img="aldeia.png",card=74)]
+            hovered [ShowTransient("side_img_right_2", img="matagal.png",card=74)]
             unhovered [Hide("side_img_right_2")]
             action [Function(ExtraContentStart,"indios_papacu")]
     
