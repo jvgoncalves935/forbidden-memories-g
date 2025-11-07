@@ -7,7 +7,8 @@ function s.initial_effect(c)
 	e1:SetCategory(CATEGORY_DESTROY)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
-	e1:SetCountLimit(1,id+EFFECT_COUNT_CODE_OATH)
+	-- "Uma vez por Duelo"
+	e1:SetCountLimit(1,id+EFFECT_COUNT_CODE_DUEL)
 	e1:SetCondition(s.condition)
 	e1:SetTarget(s.target)
 	e1:SetOperation(s.activate)
@@ -33,9 +34,7 @@ end
 
 -- Target: impede respostas e declara destruição
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	-- Bloqueio para "once per duel"
 	if chk==0 then
-		if Duel.GetFlagEffect(tp,id)~=0 then return false end
 		-- Também exige ao menos um monstro no campo do oponente
 		return Duel.IsExistingMatchingCard(s.filter,tp,0,LOCATION_MZONE,1,nil)
 	end

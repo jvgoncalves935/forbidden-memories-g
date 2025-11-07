@@ -46,7 +46,7 @@
 69115046 1ª Edição - Guilhotina G															TCG/OCG: 1
 69115047 1ª Edição - Sandro Lima, O Arquiteto do Universo G									TCG/OCG: 1
 69115048 1ª Edição - Paulo Gino Matrix														TCG/OCG: 1
-69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1
+69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1				OK
 69115050 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
 69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1
@@ -92,7 +92,7 @@
 69115092 1ª Edição - Demacol (Morpheus Form)												TCG/OCG: 1
 69115093 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
 69115094 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
-69115095 1ª Edição - Magrinhu																TCG/OCG: 1
+69115095 1ª Edição - Magrinhu																TCG/OCG: 1				OK
 69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
 69115097 1ª Edição - MARCELO																TCG/OCG: 1
 69115098 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
