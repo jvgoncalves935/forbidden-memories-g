@@ -42,7 +42,7 @@
 69115042 1ª Edição - Braço Esquerdo do Proibido												TCG/OCG: 1
 69115043 1ª Edição - Kawan Desu, O Mecânico													TCG/OCG: 1				OK
 69115044 1ª Edição - Oh Man																	TCG/OCG: 1
-69115045 1ª Edição - Tom Chinês																TCG/OCG: 1
+69115045 1ª Edição - Tom Chinês																TCG/OCG: 1				OK
 69115046 1ª Edição - Guilhotina G															TCG/OCG: 1
 69115047 1ª Edição - Sandro Lima, O Arquiteto do Universo G									TCG/OCG: 1
 69115048 1ª Edição - Paulo Gino Matrix														TCG/OCG: 1
@@ -111,7 +111,7 @@
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
 69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1
 69115113 1ª Edição - Detonator Abençoation													TCG/OCG: 1
-69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1
+69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1				OK
 69115115 1ª Edição - Sr. Donizildo															TCG/OCG: 1
 69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
 69115117 1ª Edição - 12 do Gugu																TCG/OCG: 1
