@@ -17,7 +17,7 @@ function s.initial_effect(c)
 	e1:SetOperation(s.lkop)
 	c:RegisterEffect(e1)
 
-	-- Restrição: se este card foi Invocado por Invocação-Especial,
+	-- Restrição: se este card foi Invocado por Invocação-Especial pelo método sem matérias,
 	-- você não pode Invocar do Extra Deck exceto “Universo G”
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
@@ -62,24 +62,34 @@ function s.lktg(e,tp,eg,ep,ev,re,r,rp,c)
 end
 
 function s.lkop(e,tp,eg,ep,ev,re,r,rp,c)
+	-- registra uso por turno (impede repetir o procedimento sem matérias)
 	Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
+	-- sem materiais
 	c:SetMaterial(nil)
+
+	-- marca no player que este Summon foi feito pelo método especial (flag temporária por turno)
+	Duel.RegisterFlagEffect(tp,id+1000,RESET_PHASE+PHASE_END,0,1)
 end
+
 
 -- Restrição após Special Summon (Extra Deck lock)
 function s.limop(e,tp,eg,ep,ev,re,r,rp)
-	local e1=Effect.CreateEffect(e:GetHandler())
+	local c=e:GetHandler()
+	local p=c:GetSummonPlayer()
+	-- só ativa a restrição se o jogador que Summonou registrou a flag do método especial
+	if Duel.GetFlagEffect(p,id+1000)==0 then return end
+
+	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e1:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
 	e1:SetTargetRange(1,0)
-	e1:SetTarget(function(e,c)
+	e1:SetTarget(function(e,c,sump,sumtype,sumpos,targetp,se)
 		return c:IsLocation(LOCATION_EXTRA) and not c:IsSetCard(0xc50)
 	end)
 	e1:SetReset(RESET_PHASE+PHASE_END)
-	Duel.RegisterEffect(e1,tp)
+	Duel.RegisterEffect(e1,p)
 end
-
 
 -- Ativa quando QUALQUER card seu é movido do campo por efeito do oponente
 function s.drcon(e,tp,eg,ep,ev,re,r,rp)
