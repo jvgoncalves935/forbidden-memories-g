@@ -39,7 +39,7 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_LEAVE_FIELD)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetProperty(EFFECT_FLAG_DELAY)
-	e4:SetCountLimit(1,id)	 -- soft OPT
+	e4:SetCountLimit(1,id)   -- soft OPT
 	e4:SetCondition(s.drcon)
 	e4:SetTarget(s.drtg)
 	e4:SetOperation(s.drop)
@@ -51,10 +51,11 @@ function s.lkcon(e,c)
 	if c==nil then return true end
 	local tp=c:GetControler()
 
+	-- impede repetir o Summon sem matérias no mesmo turno
 	if Duel.GetFlagEffect(tp,id)~=0 then return false end
 
-	return Duel.GetLocationCountFromEx(tp,tp,nil,c)>0
-		or Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+	-- checa somente zonas VÁLIDAS para Link Summon
+	return Duel.GetLocationCountFromEx(tp,tp,nil,c) > 0
 end
 
 function s.lktg(e,tp,eg,ep,ev,re,r,rp,c)

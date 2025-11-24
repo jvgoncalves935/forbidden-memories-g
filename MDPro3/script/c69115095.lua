@@ -8,7 +8,7 @@ function s.initial_effect(c)
 	local e0=Effect.CreateEffect(c)
 	e0:SetType(EFFECT_TYPE_SINGLE)
 	e0:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
-	e0:SetRange(LOCATION_MZONE+LOCATION_HAND)
+	e0:SetRange(LOCATION_MZONE+LOCATION_HAND+LOCATION_GRAVE)
 	e0:SetCode(EFFECT_NONTUNER)
 	e0:SetValue(s.ntval)
 	c:RegisterEffect(e0)
@@ -46,15 +46,13 @@ function s.initial_effect(c)
 	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e3)
 
-	--------------------------------------------------------------
 	-- [Efeito 3] Pode ser usado como material Sincro/Link da mão
-	--------------------------------------------------------------
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_SINGLE)
+	e4:SetCode(EFFECT_EXTRA_SYNCHRO_MATERIAL)
 	e4:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
 	e4:SetRange(LOCATION_HAND)
-	e4:SetCode(EFFECT_EXTRA_MATERIAL)
-	e4:SetOperation(s.handmatop)
+	e4:SetCountLimit(1,id)
 	e4:SetValue(s.handmatval)
 	c:RegisterEffect(e4)
 
@@ -84,9 +82,9 @@ end
 -- [Efeito 1] Invocação-Especial quando adicionado à mão
 --------------------------------------------------------------
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
-	local c=e:GetHandler()
-	return not c:IsReason(REASON_DRAW) or (c:IsPreviousLocation(LOCATION_DECK) and Duel.GetTurnCount()>1)
+	return true
 end
+
 function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,500) end
 	Duel.PayLPCost(tp,500)
@@ -102,17 +100,10 @@ end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
-	if c:IsRelateToEffect(e) and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0 then
-		-- Escolher alterar o nível (entre 1 e 3)
-		if Duel.SelectYesNo(tp,aux.Stringid(id,2)) then
-			local lv=Duel.AnnounceLevel(tp,1,3)
-			local e1=Effect.CreateEffect(c)
-			e1:SetType(EFFECT_TYPE_SINGLE)
-			e1:SetCode(EFFECT_UPDATE_LEVEL)
-			e1:SetValue(lv)
-			e1:SetReset(RESET_EVENT+RESETS_STANDARD)
-			c:RegisterEffect(e1)
-		end
+	if not c:IsRelateToEffect(e) then return end
+	if Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0 then
+		-- opcional: aqui você poderia adicionar prompts extras (ex: trocar nível/torna non-tuner) se quiser
+		-- atualmente o card já é tratado como non-tuner por efeito passivo
 	end
 end
 
@@ -135,13 +126,9 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
---------------------------------------------------------------
--- [Efeito 3] Pode ser usado da mão como material
---------------------------------------------------------------
-function s.handmatop(e,tp,eg,ep,ev,re,r,rp,c)
-end
 function s.handmatval(e,c)
-	return c:IsType(TYPE_SYNCHRO) or c:IsType(TYPE_LINK)
+	-- permite uso da mão como material em Sincro (apenas se o monstro-sincro for do arquétipo Universo G)
+	return c:IsType(TYPE_SYNCHRO) and c:IsSetCard(0xc50)
 end
 
 --------------------------------------------------------------
