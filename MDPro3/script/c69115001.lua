@@ -86,6 +86,19 @@ function s.initial_effect(c)
 	e7:SetOperation(s.negop)
 	c:RegisterEffect(e7)
 
+	-- PENDULUM EFFECT: Special Summon + Token opcional
+	local e8=Effect.CreateEffect(c)
+	e8:SetDescription(aux.Stringid(id,4))
+	e8:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_TOKEN)
+	e8:SetType(EFFECT_TYPE_QUICK_O)
+	e8:SetCode(EVENT_FREE_CHAIN)
+	e8:SetRange(LOCATION_PZONE)
+	e8:SetCountLimit(1,id+300) -- hard OPT exclusivo deste efeito
+	e8:SetTarget(s.pentg2)
+	e8:SetOperation(s.penop2)
+	c:RegisterEffect(e8)
+
+
 
 end
 
@@ -364,3 +377,66 @@ function s.negop(e,tp,eg,ep,ev,re,r,rp)
 		end
 	end
 end
+
+-- Target: apenas verifica se dá pra invocar este card da P-Zone
+function s.pentg2(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then
+		return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+			and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
+end
+
+-- Operation completa
+function s.penop2(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not c:IsRelateToEffect(e) then return end
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+
+	-- 1) Invocar o próprio card da P-Zone
+	if Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)==0 then return end
+
+	-- 2) Após invocar, verificar SE é o único monstro do jogador
+	if Duel.GetFieldGroupCount(tp,LOCATION_MZONE,0)>1 then return end
+
+	-- 3) Perguntar se o jogador quer criar a ficha
+	if not Duel.SelectYesNo(tp,aux.Stringid(id,6)) then return end
+
+	-- 4) Jogador escolhe nível 3~6
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
+	local lv=Duel.AnnounceLevel(tp,3,6)
+	if not lv then return end
+
+	-- Verificar espaço de novo
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+
+	-- 5) Criar a Ficha
+	local token=Duel.CreateToken(tp, 69069004)
+	if not token then return end
+	
+	-- Invoca a ficha
+	Duel.SpecialSummon(token,0,tp,tp,false,false,POS_FACEUP)
+
+	-- Aplica Level escolhido
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_CHANGE_LEVEL)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	e1:SetValue(lv)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+	token:RegisterEffect(e1,true)
+
+	-- Define Setcode "Universo G"
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetCode(EFFECT_ADD_SETCODE)
+	e2:SetValue(0xc50)
+	e2:SetReset(RESET_EVENT+RESETS_STANDARD)
+	token:RegisterEffect(e2,true)
+
+	-- necessário para alguns tokens reconhecerem efeitos contínuos
+	token:SetStatus(STATUS_PROC_COMPLETE,true)
+
+end
+
