@@ -31,7 +31,7 @@
 69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1				OK
 69115032 1ª Edição - Renzo																	TCG/OCG: 1
 69115033 1ª Edição - Paulo Gino, O Deixador de Ocos											TCG/OCG: 1
-69115034 1ª Edição - Cabação																TCG/OCG: 1
+69115034 1ª Edição - Cabação																TCG/OCG: 1				OK
 69115035 1ª Edição - Anita																	TCG/OCG: 1				OK
 69115036 1ª Edição - Grito Ensurdecedor de Lily Santos										TCG/OCG: 1
 69115037 1ª Edição - Boy Stronda															TCG/OCG: 1
@@ -49,7 +49,7 @@
 69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1				OK
 69115050 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
-69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1
+69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1				OK
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1				OK
 69115054 1ª Edição - Pote da Delícia														TCG/OCG: 1				OK
 69115055 1ª Edição - Escravo Do Meu Mestre													TCG/OCG: 1

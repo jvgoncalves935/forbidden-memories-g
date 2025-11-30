@@ -7,18 +7,44 @@ function s.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCountLimit(1,id+EFFECT_COUNT_CODE_OATH)
-	e1:SetCondition(s.condition)
+	e1:SetCondition(s.hand_condition)
 	e1:SetTarget(s.target)
 	c:RegisterEffect(e1)
 	Duel.AddCustomActivityCounter(id,ACTIVITY_CHAIN,s.chainfilter)
 end
+
+function s.hand_condition(e,tp,eg,ep,ev,re,r,rp)
+	-- só pode ativar da mão
+	if not e:GetHandler():IsLocation(LOCATION_HAND) then return false end
+	return s.condition(e,tp,eg,ep,ev,re,r,rp)
+end
+
 function s.chainfilter(re,tp,cid)
 	local ph=Duel.GetCurrentPhase()
 	return not (re:IsActiveType(TYPE_MONSTER))
 end
-function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetCustomActivityCount(id,1-tp,ACTIVITY_CHAIN)~=0
+
+-- conta cards "Universo G" do jogador
+function s.universog_count(tp)
+	return Duel.GetMatchingGroupCount(
+		function(c) return c:IsSetCard(0xc50) end,
+		tp,
+		LOCATION_HAND+LOCATION_MZONE+LOCATION_GRAVE,
+		0,
+		nil
+	)
 end
+
+function s.condition(e,tp,eg,ep,ev,re,r,rp)
+	-- precisa que o oponente tenha ativado efeito de monstro neste turno
+	if Duel.GetCustomActivityCount(id,1-tp,ACTIVITY_CHAIN)==0 then
+		return false
+	end
+
+	-- precisa de pelo menos 3 cards "Universo G" na mão, campo ou GY
+	return s.universog_count(tp) >= 3
+end
+
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local b1=Duel.IsPlayerCanDraw(tp,2)
 	local b2=Duel.IsExistingMatchingCard(Card.IsControlerCanBeChanged,tp,0,LOCATION_MZONE,1,nil)
@@ -65,10 +91,12 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,0,1-tp,LOCATION_HAND)
 	end
 end
+
 function s.draw(e,tp,eg,ep,ev,re,r,rp)
 	local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
 	Duel.Draw(p,d,REASON_EFFECT)
 end
+
 function s.control(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONTROL)
 	local g=Duel.SelectMatchingCard(tp,Card.IsControlerCanBeChanged,tp,0,LOCATION_MZONE,1,1,nil)
@@ -77,6 +105,7 @@ function s.control(e,tp,eg,ep,ev,re,r,rp)
 		Duel.GetControl(g:GetFirst(),tp,PHASE_END,1)
 	end
 end
+
 function s.todeck(e,tp,eg,ep,ev,re,r,rp)
 	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
 	local g=Duel.GetFieldGroup(p,0,LOCATION_HAND)
@@ -88,4 +117,9 @@ function s.todeck(e,tp,eg,ep,ev,re,r,rp)
 		Duel.SendtoDeck(sg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 		Duel.ShuffleHand(1-p)
 	end
+end
+
+function s.act_condition(e,tp,eg,ep,ev,re,r,rp)
+	-- este card só pode ser ativado da mão
+	return e:GetHandler():IsLocation(LOCATION_HAND)
 end
