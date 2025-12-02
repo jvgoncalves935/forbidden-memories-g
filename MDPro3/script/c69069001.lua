@@ -90,6 +90,15 @@ function s.initial_effect(c)
 	e11:SetTarget(s.destg2)
 	e11:SetOperation(s.desop2)
 	c:RegisterEffect(e11)
+
+	--Becomes "Universo G" while on hand and field
+	local e12=Effect.CreateEffect(c)
+	e4:SetType(EFFECT_TYPE_SINGLE)
+	e4:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e4:SetCode(EFFECT_ADD_SETCODE)
+	e4:SetRange(LOCATION_HAND+LOCATION_MZONE)
+	e4:SetValue(0xc50)
+	c:RegisterEffect(e12)
 end
 
 --Special Summon helper

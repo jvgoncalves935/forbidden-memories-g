@@ -95,6 +95,15 @@ function s.initial_effect(c)
 	e12:SetTarget(s.rmexdtg)
 	e12:SetOperation(s.rmexdop)
 	c:RegisterEffect(e12)
+
+	--Becomes "Universo G" while on hand and field
+	local e13=Effect.CreateEffect(c)
+	e4:SetType(EFFECT_TYPE_SINGLE)
+	e4:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e4:SetCode(EFFECT_ADD_SETCODE)
+	e4:SetRange(LOCATION_HAND+LOCATION_MZONE)
+	e4:SetValue(0xc50)
+	c:RegisterEffect(e13)
 end
 
 -- Special Summon cost filter: any card able to be sent to GY
