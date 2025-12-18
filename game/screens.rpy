@@ -2747,6 +2747,16 @@ screen endings_pag_2():
             action [NullAction()]
 
     vbox:
+        xalign 0.64
+        yalign 0.72
+        textbutton _("Carta X04"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="petit_dragon.png",card=132)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
         xalign 0.95
         yalign 0.72
         textbutton _("vtnc kkkk"):
