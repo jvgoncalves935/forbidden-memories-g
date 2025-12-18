@@ -93,7 +93,7 @@
 69115093 1ª Edição - Ursos e Lolitos														TCG/OCG: 1
 69115094 1ª Edição - Empregado de Família (Vin Diesel de Família)							TCG/OCG: 1
 69115095 1ª Edição - Magrinhu																TCG/OCG: 1				OK
-69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1
+69115096 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1				OK
 69115097 1ª Edição - MARCELO																TCG/OCG: 1
 69115098 1ª Edição - Leo Lins, A Peste Branca												TCG/OCG: 1
 69115099 1ª Edição - Everson Zoio															TCG/OCG: 0
@@ -130,3 +130,4 @@ vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
 69069004 - Revista G
 69069005 - Pedra G
 69069006 - mara mara!
+69069007 1ª Edição - Petit Dragon fodase kkkkkkk											TCG/OCG: 0

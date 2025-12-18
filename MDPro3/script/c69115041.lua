@@ -23,9 +23,17 @@ function s.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(Card.IsType,p,LOCATION_MZONE,0,1,nil,TYPE_MONSTER)
 end
 
+function s.filter(c)
+	--FIX
+	return true
+end
+
 --Seleciona todos os monstros no campo para destruição
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	-- Impede qualquer resposta até o final da chain
+	if chk==0 then
+		return Duel.IsExistingMatchingCard(s.filter,tp,0,LOCATION_ONFIELD,1,nil)
+	end
 	if e:IsHasType(EFFECT_TYPE_ACTIVATE) then
 		Duel.SetChainLimitTillChainEnd(aux.FALSE)
 	end
