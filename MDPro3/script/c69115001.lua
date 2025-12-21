@@ -37,7 +37,7 @@ function s.initial_effect(c)
 	e3:SetCode(EFFECT_ONLY_ATTACK_MONSTER)
 	e3:SetRange(LOCATION_MZONE)
 	e3:SetTargetRange(0,LOCATION_MZONE)
-	e3:SetValue(s.atklimit)
+	e3:SetValue(c)
 	c:RegisterEffect(e3)
 
 	-- QUICK EFFECT: quando o oponente ativa um card/efeito (EVENT_CHAINING)
@@ -158,11 +158,6 @@ function s.spop_quick(e,tp,eg,ep,ev,re,r,rp)
 		-- opcional: registrar flag se quiser impedir outra forma de summon no mesmo turno
 		-- (mas o CountLimit compartilhado já evita que seja usado duas vezes)
 	end
-end
-
--- RESTRIÇÃO DE ATAQUE
-function s.atklimit(e,c)
-	return c==e:GetHandler()
 end
 
 function s.pendcon(e,tp,eg,ep,ev,re,r,rp)

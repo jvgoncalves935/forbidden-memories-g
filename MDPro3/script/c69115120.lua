@@ -8,12 +8,15 @@ function s.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DELAY)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
+	e1:SetCountLimit(1,id)
 	e1:SetTarget(s.postg)
 	e1:SetOperation(s.posop)
 	c:RegisterEffect(e1)
+
 	local e2=e1:Clone()
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e2)
+
 
 	--special summon (grave effect: banish 4 as cost, etc.)
 	local e3=Effect.CreateEffect(c)
