@@ -1,7 +1,7 @@
 69115001 1ª Edição - Alexandre Senna														TCG/OCG: 1				OK	
-69115002 1ª Edição - Goleiro de Família														TCG/OCG: 1
+69115002 1ª Edição - Goleiro de Família														TCG/OCG: 1				OK
 69115003 1ª Edição - James Matarazzo														TCG/OCG: 1				OK	
-69115004 1ª Edição - Índio (Indígena)														TCG/OCG: 1
+69115004 1ª Edição - Índio (Indígena)														TCG/OCG: 1				OK
 69115005 1ª Edição - Vaimeti																TCG/OCG: 1				OK
 69115006 1ª Edição - Alexandre Senna Policial												TCG/OCG: 1
 69115007 1ª Edição - Jailson Mendes, O Pai de Família										TCG/OCG: 1
@@ -26,7 +26,7 @@
 69115026 1ª Edição - Darkilson																TCG/OCG: 1
 69115027 1ª Edição - Minha mu;lher															TCG/OCG: 1
 69115028 1ª Edição - Perna Direita do Proibido												TCG/OCG: 1
-69115029 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1
+69115029 1ª Edição - Paulo Gino Piscineiro													TCG/OCG: 1				OK
 69115030 1ª Edição - Braço Direito do Proibido												TCG/OCG: 1
 69115031 1ª Edição - Paulo Gino Bombeiro													TCG/OCG: 1				OK
 69115032 1ª Edição - Renzo																	TCG/OCG: 1
@@ -34,7 +34,7 @@
 69115034 1ª Edição - Cabação																TCG/OCG: 1				OK
 69115035 1ª Edição - Anita																	TCG/OCG: 1				OK
 69115036 1ª Edição - Grito Ensurdecedor de Lily Santos										TCG/OCG: 1
-69115037 1ª Edição - Boy Stronda															TCG/OCG: 1
+69115037 1ª Edição - Boy Stronda															TCG/OCG: 1				OK
 69115038 1ª Edição - Mangueira Boy															TCG/OCG: 1
 69115039 1ª Edição - Dansa gatinho dansakkkkkkkkk											TCG/OCG: 1
 69115040 1ª Edição - Felipe de Nylon G														TCG/OCG: 1
@@ -47,7 +47,7 @@
 69115047 1ª Edição - Sandro Lima, O Arquiteto do Universo G									TCG/OCG: 1
 69115048 1ª Edição - Paulo Gino Matrix														TCG/OCG: 1
 69115049 1ª Edição - Vegeta de Família														TCG/OCG: 1				OK
-69115050 1ª Edição - Alemão (Arnold)														TCG/OCG: 1
+69115050 1ª Edição - Alemão (Arnold)														TCG/OCG: 1				OK
 69115051 1ª Edição - Perna Esquerda do Proibido												TCG/OCG: 1
 69115052 1ª Edição - Ricco Puentes															TCG/OCG: 1				OK
 69115053 1ª Edição - Sarcófago da Ícaro Studios												TCG/OCG: 1				OK
@@ -70,7 +70,7 @@
 69115070 1ª Edição - Jailson Mendes, O Primeiro Machinho									TCG/OCG: 1
 69115071 1ª Edição - The Boys do Ano														TCG/OCG: 1
 69115072 1ª Edição - Foodeezecuvain & Omacho												TCG/OCG: 1
-69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1
+69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1				OK
 69115074 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
 69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
@@ -79,7 +79,7 @@
 69115079 1ª Edição - CJ de Família															TCG/OCG: 1
 69115080 1ª Edição - Gemidão do Zap															TCG/OCG: 1
 69115081 1ª Edição - Bizarro de Família														TCG/OCG: 1
-69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1
+69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1				OK
 69115083 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
 69115084 1ª Edição - Indiana Torres															TCG/OCG: 1
 69115085 1ª Edição - Papai Noel de Família													TCG/OCG: 1
@@ -121,7 +121,7 @@
 69115121 1ª Edição - Melancholic Yuri														TCG/OCG: 1
 69115122 1ª Edição - mara mara																TCG/OCG: 1
 69115123 1ª Edição - Yami Senna																TCG/OCG: 1
-69115124 1ª Edição - Guardiões do Domínio das Trevas G										TCG/OCG: 1
+69115124 1ª Edição - Guardiões do Domínio das Trevas G										TCG/OCG: 1				OK
 
 vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
 69069001 1ª Edição - Panty Anarchy															TCG/OCG: 1				OK
@@ -131,3 +131,4 @@ vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
 69069005 - Pedra G
 69069006 - mara mara!
 69069007 1ª Edição - Petit Dragon fodase kkkkkkk											TCG/OCG: 0
+69069008 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1				OK
