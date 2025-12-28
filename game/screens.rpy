@@ -2757,6 +2757,16 @@ screen endings_pag_2():
             action [NullAction()]
 
     vbox:
+        xalign 0.795
+        yalign 0.72
+        textbutton _("Carta X05"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="ursos_alt_art.png",card=96)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+
+    vbox:
         xalign 0.95
         yalign 0.72
         textbutton _("vtnc kkkk"):
