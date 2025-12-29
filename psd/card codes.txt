@@ -9,14 +9,14 @@
 69115009 1ª Edição - Theo Barone Mophobic													TCG/OCG: 1				OK
 69115010 1ª Edição - Investimentos no Tigrin!												TCG/OCG: 1				OK
 69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
-69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1
+69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1				OK
 69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
 69115014 1ª Edição - Doutora's Hospital														TCG/OCG: 1
 69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
 69115016 1ª Edição - Doutora																TCG/OCG: 1
 69115017 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1				OK
 69115018 1ª Edição - Yeah Man																TCG/OCG: 1				OK
-69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1
+69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1				OK
 69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1				OK
 69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
 69115022 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1				OK
@@ -67,22 +67,22 @@
 69115067 1ª Edição - FEMINISTAAA, RAINHA DO TANQUE											TCG/OCG: 0
 69115068 1ª Edição - Macho, O Calvo Supremo													TCG/OCG: 0
 69115069 1ª Edição - Conehead																TCG/OCG: 0
-69115070 1ª Edição - Jailson Mendes, O Primeiro Machinho									TCG/OCG: 1
+69115070 1ª Edição - Jailson Mendes, O Primeiro Machinho									TCG/OCG: 1				OK
 69115071 1ª Edição - The Boys do Ano														TCG/OCG: 1
 69115072 1ª Edição - Foodeezecuvain & Omacho												TCG/OCG: 1
 69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1				OK
 69115074 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
-69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1
+69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1				OK
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
-69115078 1ª Edição - Jô Abdul																TCG/OCG: 1
-69115079 1ª Edição - CJ de Família															TCG/OCG: 1
+69115078 1ª Edição - Jô Abdul																TCG/OCG: 1				OK
+69115079 1ª Edição - CJ de Família															TCG/OCG: 1				OK
 69115080 1ª Edição - Gemidão do Zap															TCG/OCG: 1
 69115081 1ª Edição - Bizarro de Família														TCG/OCG: 1				OK
 69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1				OK
 69115083 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
 69115084 1ª Edição - Indiana Torres															TCG/OCG: 1
-69115085 1ª Edição - Papai Noel de Família													TCG/OCG: 1
+69115085 1ª Edição - Papai Noel de Família													TCG/OCG: 1				OK
 69115086 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
 69115087 1ª Edição - Entregador de Pizza G													TCG/OCG: 1
 69115088 1ª Edição - Papaco, O Pistoleiro													TCG/OCG: 1
@@ -120,7 +120,7 @@
 69115120 1ª Edição - Miyuki Sone															TCG/OCG: 1				OK
 69115121 1ª Edição - Melancholic Yuri														TCG/OCG: 1
 69115122 1ª Edição - mara mara																TCG/OCG: 1
-69115123 1ª Edição - Yami Senna																TCG/OCG: 1
+69115123 1ª Edição - Yami Senna																TCG/OCG: 1				OK
 69115124 1ª Edição - Guardiões do Domínio das Trevas G										TCG/OCG: 1				OK
 
 vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
@@ -132,3 +132,4 @@ vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
 69069006 - mara mara!
 69069007 1ª Edição - Petit Dragon fodase kkkkkkk											TCG/OCG: 0
 69069008 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1				OK
+???????? ????????? - Conehead																TCG/OCG: 0
