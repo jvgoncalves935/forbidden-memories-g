@@ -1,4 +1,4 @@
---Nicole Interruptions & Faceless Games
+--Massacote Interruptions & Faceless Games
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--negate
@@ -7,7 +7,7 @@ function s.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_CHAINING)
 	e1:SetRange(LOCATION_HAND)
-	e1:SetCountLimit(1,69115114)
+	e1:SetCountLimit(1,id)
 	e1:SetCondition(s.discon)
 	e1:SetCost(s.discost)
 	e1:SetTarget(s.distg)
