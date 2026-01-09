@@ -25,6 +25,15 @@ function s.initial_effect(c)
 	e2:SetValue(6000)
 	e2:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
 	c:RegisterEffect(e2)
+
+	--Becomes "Universo G" while on field, GY or banished
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_SINGLE)
+	e3:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e3:SetCode(EFFECT_ADD_SETCODE)
+	e3:SetRange(LOCATION_MZONE+LOCATION_GRAVE+LOCATION_REMOVED)
+	e3:SetValue(0xc50)
+	c:RegisterEffect(e3)
 end
 
 -- Filtro para cards "Universo G"
