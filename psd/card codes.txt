@@ -56,7 +56,7 @@
 69115056 1ª Edição - Terceira Perna do Proibido												TCG/OCG: 1
 69115057 1ª Edição - Monstro Que Relaxa														TCG/OCG: 1				OK
 69115058 1ª Edição - Filhona																TCG/OCG: 1				OK
-69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1
+69115059 1ª Edição - Dragão BAIANO															TCG/OCG: 1				OK
 69115060 1ª Edição - Coringa Dano															TCG/OCG: 1				OK
 69115061 1ª Edição - Polimerização G														TCG/OCG: 1				OK
 69115062 1ª Edição - Guinodia, O Proibido													TCG/OCG: 1
@@ -111,9 +111,9 @@
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
 69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1
 69115113 1ª Edição - Detonator Abençoation													TCG/OCG: 1				OK
-69115114 1ª Edição - Nicole Interruptions & Faceless Games									TCG/OCG: 1				OK
+69115114 1ª Edição - Massacote Interruptions & Faceless Games								TCG/OCG: 1				OK
 69115115 1ª Edição - Sr. Donizildo															TCG/OCG: 1
-69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1
+69115116 1ª Edição - Danger!? Gilson?														TCG/OCG: 1				OK
 69115117 1ª Edição - 12 do Gugu																TCG/OCG: 1
 69115118 1ª Edição - Reneral Paus Negros													TCG/OCG: 0
 69115119 1ª Edição - Lain Iwakura															TCG/OCG: 0

@@ -6,7 +6,7 @@ function s.initial_effect(c)
 
 	-- SPECIAL SUMMON PROCEDURE (não gera chain)
 	local e1=Effect.CreateEffect(c)
-	e1:SetDescription(aux.Stringid(id,0))
+	e1:SetDescription(aux.Stringid(id,7))
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
 	e1:SetProperty(EFFECT_FLAG_UNCOPYABLE)
@@ -16,18 +16,9 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg_proc)
 	c:RegisterEffect(e1)
 
-	-- ATAQUE RESTRITO
-	local e3=Effect.CreateEffect(c)
-	e3:SetType(EFFECT_TYPE_FIELD)
-	e3:SetCode(EFFECT_ONLY_ATTACK_MONSTER)
-	e3:SetRange(LOCATION_MZONE)
-	e3:SetTargetRange(0,LOCATION_MZONE)
-	e3:SetValue(s.atklimit)
-	c:RegisterEffect(e3)
-
 	-- QUICK EFFECT: Special summon quando o oponente ativa um card/efeito (EVENT_CHAINING)
 	local e4=Effect.CreateEffect(c)
-	e4:SetDescription(aux.Stringid(id,2))
+	e4:SetDescription(aux.Stringid(id,7))
 	e4:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e4:SetType(EFFECT_TYPE_QUICK_O)
 	e4:SetCode(EVENT_CHAINING)
@@ -143,11 +134,6 @@ function s.spop_quick(e,tp,eg,ep,ev,re,r,rp)
 		-- opcional: registrar flag se quiser impedir outra forma de summon no mesmo turno
 		-- (mas o CountLimit compartilhado já evita que seja usado duas vezes)
 	end
-end
-
--- RESTRIÇÃO DE ATAQUE
-function s.atklimit(e,c)
-	return c==e:GetHandler()
 end
 
 function s.pendcon(e,tp,eg,ep,ev,re,r,rp)

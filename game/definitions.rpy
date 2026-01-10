@@ -688,7 +688,7 @@ define deck_g_names = [
     "Crow of Judgement",
     "Poderoso Castiga",
     "Detonator Abençoation",
-    "Nicole Interruptions & Faceless Games",
+    "Massacote Interruptions & Faceless Games",
     "Sr. Donizildo",
     "Danger!? Gilson?",
     "12 do Gugu",
