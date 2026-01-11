@@ -18,7 +18,7 @@
 69115018 1ª Edição - Yeah Man																TCG/OCG: 1				OK
 69115019 1ª Edição - Mangueira Evil															TCG/OCG: 1				OK
 69115020 1ª Edição - Kid Bengala, O Grande													TCG/OCG: 1				OK
-69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1
+69115021 1ª Edição - Paulo Gino Professor													TCG/OCG: 1				OK
 69115022 1ª Edição - Espanador de Penas da Harpica											TCG/OCG: 1				OK
 69115023 1ª Edição - Princesa Demacol														TCG/OCG: 1
 69115024 1ª Edição - Bob, O Construtor														TCG/OCG: 1
@@ -109,7 +109,7 @@
 69115109 1ª Edição - Dragão Comunista do Imposto de Renda									TCG/OCG: 1				OK
 69115110 1ª Edição - É JESUUUUIIIISSSSSSSSSS												TCG/OCG: 1
 69115111 1ª Edição - Crow of Judgement														TCG/OCG: 1
-69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1
+69115112 1ª Edição - Poderoso Castiga														TCG/OCG: 1				OK
 69115113 1ª Edição - Detonator Abençoation													TCG/OCG: 1				OK
 69115114 1ª Edição - Massacote Interruptions & Faceless Games								TCG/OCG: 1				OK
 69115115 1ª Edição - Sr. Donizildo															TCG/OCG: 1
