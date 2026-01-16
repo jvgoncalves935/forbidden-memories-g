@@ -11,26 +11,17 @@ function s.initial_effect(c)
 	e1:SetOperation(s.xyzop)
 	c:RegisterEffect(e1)
 
-	-- When attacked in DEF, battle damage is inflicted to you
+	-- Battle damage is inflicted to you when this card is attacked in Defense Position
 	local e2=Effect.CreateEffect(c)
-	e2:SetType(EFFECT_TYPE_FIELD)
-	e2:SetCode(EFFECT_PIERCE)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e2:SetCode(EVENT_PRE_DAMAGE_CALCULATE)
 	e2:SetRange(LOCATION_MZONE)
-	e2:SetTargetRange(0,LOCATION_MZONE)
-	e2:SetTarget(s.piercetg)
+	e2:SetOperation(s.defdamop)
 	c:RegisterEffect(e2)
-
-	local e3=Effect.CreateEffect(c)
-	e3:SetType(EFFECT_TYPE_FIELD)
-	e3:SetCode(EFFECT_BATTLE_DAMAGE_TO_EFFECT)
-	e3:SetRange(LOCATION_MZONE)
-	e3:SetTargetRange(0,LOCATION_MZONE)
-	e3:SetTarget(s.piercetg)
-	c:RegisterEffect(e3)
 	
 	-- Place 2 Universo G Pendulum Monsters in PZones
 	local e4=Effect.CreateEffect(c)
-	e4:SetDescription(aux.Stringid(id,0))
+	e4:SetDescription(aux.Stringid(id,2))
 	e4:SetType(EFFECT_TYPE_IGNITION)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetCountLimit(1,id)
@@ -38,6 +29,24 @@ function s.initial_effect(c)
 	e4:SetTarget(s.pztg)
 	e4:SetOperation(s.pzop)
 	c:RegisterEffect(e4)
+
+	-- Mandatory negation of monster effects with 2800 or more ATK
+	local e5=Effect.CreateEffect(c)
+	e5:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e5:SetCode(EVENT_CHAINING)
+	e5:SetRange(LOCATION_MZONE)
+	e5:SetOperation(s.negop)
+	c:RegisterEffect(e5)
+
+	-- Bounce 1 monster, then banish this card face-down
+	local e6=Effect.CreateEffect(c)
+	e6:SetDescription(aux.Stringid(id,3))
+	e6:SetType(EFFECT_TYPE_IGNITION)
+	e6:SetRange(LOCATION_MZONE)
+	e6:SetCountLimit(1) -- soft once per turn
+	e6:SetCost(s.bncost)
+	e6:SetOperation(s.bnoperation)
+	c:RegisterEffect(e6)
 
 end
 
@@ -83,6 +92,15 @@ function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
 	local e2=e1:Clone()
 	e2:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
 	Duel.RegisterEffect(e2,tp)
+
+	-- Não pode declarar ataques neste turno
+	local e3=Effect.CreateEffect(e:GetHandler())
+	e3:SetType(EFFECT_TYPE_FIELD)
+	e3:SetCode(EFFECT_CANNOT_DIRECT_ATTACK)
+	e3:SetTargetRange(LOCATION_MZONE,0)
+	e3:SetReset(RESET_PHASE+PHASE_END)
+	Duel.RegisterEffect(e3,tp)
+
 end
 
 function s.pzfilter(c)
@@ -115,26 +133,110 @@ end
 
 
 function s.pzop(e,tp,eg,ep,ev,re,r,rp)
-	if not s.check_pzones(tp) then return end
+	-- Confirma se ambas as zonas estão livres
+	if Duel.GetFieldCard(tp,LOCATION_PZONE,0)
+		or Duel.GetFieldCard(tp,LOCATION_PZONE,1) then
+		return
+	end
 
+	-- Seleciona o primeiro monstro (Zona de Pêndulo esquerda)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
-	local g=Duel.SelectMatchingCard(
+	local g1=Duel.SelectMatchingCard(
 		tp,s.pzfilter,tp,
-		LOCATION_DECK+LOCATION_HAND+LOCATION_GRAVE+LOCATION_REMOVED,
-		0,2,2,nil
+		LOCATION_DECK+LOCATION_EXTRA+LOCATION_GRAVE+LOCATION_REMOVED,
+		0,1,1,nil
 	)
-	if #g<2 then return end
-
-	local tc1=g:GetFirst()
-	local tc2=g:GetNext()
+	if #g1==0 then return end
+	local tc1=g1:GetFirst()
 
 	Duel.MoveToField(tc1,tp,tp,LOCATION_PZONE,POS_FACEUP,true)
+
+	-- Seleciona o segundo monstro (Zona de Pêndulo direita), excluindo o primeiro
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
+	local g2=Duel.SelectMatchingCard(
+		tp,s.pzfilter,tp,
+		LOCATION_DECK+LOCATION_EXTRA+LOCATION_GRAVE+LOCATION_REMOVED,
+		0,1,1,tc1
+	)
+	if #g2==0 then return end
+	local tc2=g2:GetFirst()
+
 	Duel.MoveToField(tc2,tp,tp,LOCATION_PZONE,POS_FACEUP,true)
 end
 
-function s.piercetg(e,c)
-	local bc=c:GetBattleTarget()
-	if not bc then return false end
-	return bc==e:GetHandler()
-		and bc:IsDefensePos()
+function s.defdamop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+
+	-- Este card precisa ser o alvo do ataque
+	if Duel.GetAttackTarget()~=c then return end
+
+	-- Precisa estar em posição de defesa
+	if not c:IsDefensePos() then return end
+
+	local a=Duel.GetAttacker()
+	if not a or not a:IsRelateToBattle() then return end
+
+	local atk=a:GetAttack()
+	local def=c:GetDefense()
+	if atk<=def then return end
+
+	local dmg=atk-def
+
+	-- Zera qualquer dano de batalha padrão
+	Duel.ChangeBattleDamage(tp,0)
+
+	-- Aplica dano manualmente ao controlador deste card
+	Duel.Damage(tp,dmg,REASON_BATTLE)
 end
+
+function s.negop(e,tp,eg,ep,ev,re,r,rp)
+	-- Só se for efeito de monstro
+	if not re:IsActiveType(TYPE_MONSTER) then return end
+
+	local rc=re:GetHandler()
+	if not rc then return end
+
+	-- ATK 2800 ou mais
+	if rc:GetAttack()<2800 then return end
+
+	-- Precisa poder ser negado
+	if not Duel.IsChainNegatable(ev) then return end
+
+	Duel.NegateEffect(ev)
+end
+
+function s.bncost(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then
+		return c:CheckRemoveOverlayCard(tp,3,REASON_COST)
+	end
+	c:RemoveOverlayCard(tp,3,3,REASON_COST)
+end
+
+function s.bnfilter(c,sc)
+	return c:IsType(TYPE_MONSTER) and c~=sc
+end
+
+function s.bnoperation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+
+	-- Tenta devolver 1 monstro do campo para o Deck (se existir)
+	if Duel.IsExistingMatchingCard(
+		s.bnfilter,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil,c
+	) then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
+		local g=Duel.SelectMatchingCard(
+			tp,s.bnfilter,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil,c
+		)
+		local tc=g:GetFirst()
+		if tc then
+			Duel.SendtoDeck(tc,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
+		end
+	end
+
+	-- Bane este card de face para baixo (independente do retorno)
+	if c:IsRelateToEffect(e) then
+		Duel.Remove(c,POS_FACEDOWN,REASON_EFFECT)
+	end
+end
+
