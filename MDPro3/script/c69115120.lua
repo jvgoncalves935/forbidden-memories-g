@@ -3,12 +3,12 @@ local s,id=GetID()
 function s.initial_effect(c)
 	--position
 	local e1=Effect.CreateEffect(c)
-	e1:SetDescription(aux.Stringid(id,0))
+	e1:SetDescription(aux.Stringid(id,1))
 	e1:SetCategory(CATEGORY_POSITION)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DELAY)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
-	e1:SetCountLimit(1,id)
+	e1:SetCountLimit(1,id+200) -- hard once per turn
 	e1:SetTarget(s.postg)
 	e1:SetOperation(s.posop)
 	c:RegisterEffect(e1)
@@ -16,7 +16,6 @@ function s.initial_effect(c)
 	local e2=e1:Clone()
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e2)
-
 
 	--special summon (grave effect: banish 4 as cost, etc.)
 	local e3=Effect.CreateEffect(c)
@@ -52,13 +51,28 @@ function s.initial_effect(c)
 
 	-- Change Level (5, 6 or 7) - soft once per turn
 	local e7=Effect.CreateEffect(c)
-	e7:SetDescription(aux.Stringid(id,0))
+	e7:SetDescription(aux.Stringid(id,1))
 	e7:SetType(EFFECT_TYPE_IGNITION)
 	e7:SetRange(LOCATION_MZONE)
-	e7:SetCountLimit(1,id+200) -- soft once-per-turn keyed to card id
+	e7:SetCountLimit(1,id+300)
 	e7:SetTarget(s.lvtg)
 	e7:SetOperation(s.lvop)
 	c:RegisterEffect(e7)
+
+	-- Hand trigger: discard this card to draw 1 if a Fusion/Link/Ritual/Xyz/Synchro/Pendulum Summon occurs
+	local e8=Effect.CreateEffect(c)
+	e8:SetDescription(aux.Stringid(id,0))
+	e8:SetCategory(CATEGORY_DRAW)
+	e8:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e8:SetProperty(EFFECT_FLAG_DELAY)
+	e8:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e8:SetRange(LOCATION_HAND)
+	e8:SetCountLimit(1,id+400) -- hard once per turn
+	e8:SetCondition(s.drcon)
+	e8:SetCost(s.drcost)
+	e8:SetTarget(s.drtg)
+	e8:SetOperation(s.drop)
+	c:RegisterEffect(e8)
 
 	-- Register when this card is Special Summoned -> set player-flag so it cannot use grave effect again this turn
 	local eReg=Effect.CreateEffect(c)
@@ -223,4 +237,38 @@ function s.lvop(e,tp,eg,ep,ev,re,r,rp)
 			c:RegisterEffect(e1)
 		end
 	end
+end
+
+function s.drcon(e,tp,eg,ep,ev,re,r,rp)
+	return eg:IsExists(s.sumfilter,1,nil)
+end
+
+function s.sumfilter(c)
+	-- precisa ser Invocação-Especial
+	if c:GetSummonType()&SUMMON_TYPE_SPECIAL==0 then
+		return false
+	end
+
+	-- precisa ser um dos tipos válidos
+	return c:IsType(TYPE_FUSION)
+		or c:IsType(TYPE_RITUAL)
+		or c:IsType(TYPE_SYNCHRO)
+		or c:IsType(TYPE_XYZ)
+		or c:IsType(TYPE_LINK)
+		or c:IsType(TYPE_PENDULUM)
+end
+
+function s.drcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return c:IsDiscardable() end
+	Duel.SendtoGrave(c,REASON_COST+REASON_DISCARD)
+end
+
+function s.drtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsPlayerCanDraw(tp,1) end
+	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,1)
+end
+
+function s.drop(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Draw(tp,1,REASON_EFFECT)
 end

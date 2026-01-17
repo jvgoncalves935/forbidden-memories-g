@@ -45,6 +45,7 @@ function s.initial_effect(c)
 	e6:SetRange(LOCATION_MZONE)
 	e6:SetCountLimit(1) -- soft once per turn
 	e6:SetCost(s.bncost)
+	e6:SetTarget(s.bntg)
 	e6:SetOperation(s.bnoperation)
 	c:RegisterEffect(e6)
 
@@ -66,7 +67,7 @@ function s.xyzcon(e,c)
 	-- Precisa de 3 "Universo G" no campo (face-up ou face-down)
 	return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 		and Duel.IsExistingMatchingCard(
-			s.xyzfilter,tp,LOCATION_ONFIELD,0,3,nil
+			s.xyzfilter,tp,LOCATION_ONFIELD,0,1,nil
 		)
 end
 
@@ -74,7 +75,7 @@ function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
 	-- Seleciona 3 matérias
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
 	local g=Duel.SelectMatchingCard(
-		tp,s.xyzfilter,tp,LOCATION_ONFIELD,0,3,3,nil
+		tp,s.xyzfilter,tp,LOCATION_ONFIELD,0,1,1,nil
 	)
 
 	c:SetMaterial(g)
@@ -208,13 +209,22 @@ end
 function s.bncost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then
-		return c:CheckRemoveOverlayCard(tp,3,REASON_COST)
+		return c:CheckRemoveOverlayCard(tp,1,REASON_COST)
 	end
-	c:RemoveOverlayCard(tp,3,3,REASON_COST)
+	c:RemoveOverlayCard(tp,1,1,REASON_COST)
 end
 
 function s.bnfilter(c,sc)
 	return c:IsType(TYPE_MONSTER) and c~=sc
+end
+
+function s.bntg(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then
+		return Duel.IsExistingMatchingCard(
+			s.bnfilter,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil,c
+		)
+	end
 end
 
 function s.bnoperation(e,tp,eg,ep,ev,re,r,rp)
@@ -239,4 +249,3 @@ function s.bnoperation(e,tp,eg,ep,ev,re,r,rp)
 		Duel.Remove(c,POS_FACEDOWN,REASON_EFFECT)
 	end
 end
-

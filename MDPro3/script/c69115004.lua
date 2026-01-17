@@ -100,12 +100,16 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local mc=mg:GetFirst()
 	if not mc then return end
 
-	-- envia materiais
+	-- envia materiais (ORDEM CORRETA)
 	local mat=Group.FromCards(c,mc)
-	Duel.SendtoGrave(mat,REASON_EFFECT+REASON_MATERIAL+REASON_SYNCHRO)
+
+	-- registra as matérias antes do envio
+	sc:SetMaterial(mat)
+
+	-- agora envia corretamente como matéria Sincro
+	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_SYNCHRO)
 
 	-- invocação sincro manual
-	sc:SetMaterial(mat)
 	if Duel.SpecialSummon(sc,SUMMON_TYPE_SYNCHRO,tp,tp,false,false,POS_FACEUP)>0 then
 		sc:CompleteProcedure()
 	end
@@ -173,5 +177,3 @@ function s.damop(e,tp,eg,ep,ev,re,r,rp)
 	local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
 	Duel.Damage(p,d,REASON_EFFECT)
 end
-
-

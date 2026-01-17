@@ -13,12 +13,13 @@ function s.initial_effect(c)
 	e1:SetOperation(s.winop)
 	c:RegisterEffect(e1)
 
-	-- If used as Fusion Material: place Universo G S/T
+	-- If used as Synchro/Fusion/Link Material: place/set Universo G S/T
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,5))
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e2:SetProperty(EFFECT_FLAG_DELAY)
 	e2:SetCode(EVENT_BE_MATERIAL)
+	e2:SetRange(LOCATION_GRAVE)
 	e2:SetCountLimit(1,id+200) -- hard OPT (segundo efeito)
 	e2:SetCondition(s.ufcon)
 	e2:SetTarget(s.uftg)
@@ -123,7 +124,9 @@ function s.matfilter(c)
 end
 
 function s.ufcon(e,tp,eg,ep,ev,re,r,rp)
-	return r & REASON_FUSION ~= 0
+	local c=e:GetHandler()
+	return c:IsReason(REASON_MATERIAL)
+		and c:IsReason(REASON_SYNCHRO+REASON_FUSION+REASON_LINK)
 end
 
 function s.ufilter(c)
@@ -152,15 +155,27 @@ function s.ufop(e,tp,eg,ep,ev,re,r,rp)
 	):GetFirst()
 	if not tc then return end
 
+	-- Escolha: face-up ou set
+	local opt=Duel.SelectOption(
+		tp,
+		aux.Stringid(id,5), -- Colocar com a face para cima
+		aux.Stringid(id,6)  -- Baixar no campo
+	)
+
 	local zone=LOCATION_SZONE
 	if tc:IsType(TYPE_FIELD) then
 		zone=LOCATION_FZONE
 	end
 
+	local pos=POS_FACEUP
+	if opt==1 and zone~=LOCATION_FZONE then
+		pos=POS_FACEDOWN
+	end
+
 	Duel.MoveToField(
 		tc,tp,tp,
 		zone,
-		POS_FACEUP,
+		pos,
 		true
 	)
 end
