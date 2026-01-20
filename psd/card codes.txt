@@ -11,8 +11,8 @@
 69115011 1ª Edição - Yeah Man Bandido														TCG/OCG: 1
 69115012 1ª Edição - O QUÊ QUE VOCÊ FARIA?													TCG/OCG: 1				OK
 69115013 1ª Edição - Alexandre Senna Carrasco												TCG/OCG: 1
-69115014 1ª Edição - Doutora's Hospital														TCG/OCG: 1
-69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1
+69115014 1ª Edição - Doutora's Hospital														TCG/OCG: 1				OK
+69115015 1ª Edição - Maldita Hora Que Eu Sentei Nesse Banco									TCG/OCG: 1				OK
 69115016 1ª Edição - Doutora																TCG/OCG: 1
 69115017 1ª Edição - Chorão, O Viajante de Mundos Paralelos									TCG/OCG: 1				OK
 69115018 1ª Edição - Yeah Man																TCG/OCG: 1				OK

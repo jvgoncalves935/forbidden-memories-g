@@ -155,27 +155,35 @@ function s.ufop(e,tp,eg,ep,ev,re,r,rp)
 	):GetFirst()
 	if not tc then return end
 
-	-- Escolha: face-up ou set
+	-- Escolha: face-up ou face-down
 	local opt=Duel.SelectOption(
 		tp,
 		aux.Stringid(id,5), -- Colocar com a face para cima
 		aux.Stringid(id,6)  -- Baixar no campo
 	)
 
+	-- =========================
+	-- SET (face-down)
+	-- =========================
+	if opt==1 then
+		if tc:IsSSetable() then
+			Duel.SSet(tp,tc)
+		end
+		return
+	end
+
+	-- =========================
+	-- FACE-UP
+	-- =========================
 	local zone=LOCATION_SZONE
 	if tc:IsType(TYPE_FIELD) then
 		zone=LOCATION_FZONE
 	end
 
-	local pos=POS_FACEUP
-	if opt==1 and zone~=LOCATION_FZONE then
-		pos=POS_FACEDOWN
-	end
-
 	Duel.MoveToField(
 		tc,tp,tp,
 		zone,
-		pos,
+		POS_FACEUP,
 		true
 	)
 end
