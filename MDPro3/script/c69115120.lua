@@ -81,6 +81,15 @@ function s.initial_effect(c)
 	eReg:SetCondition(function(e,tp,eg,ep,ev,re,r,rp) return e:GetHandler():IsRelateToEffect(e) end)
 	eReg:SetOperation(s.register_summon_flag)
 	c:RegisterEffect(eReg)
+
+	local e9=Effect.CreateEffect(c)
+	e9:SetDescription(aux.Stringid(id,0))
+	e9:SetType(EFFECT_TYPE_SINGLE)
+	e9:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e9:SetCode(EFFECT_ADD_ATTRIBUTE)
+	e9:SetRange(LOCATION_MZONE)
+	e9:SetValue(ATTRIBUTE_LIGHT)
+	c:RegisterEffect(e9)
 end
 
 function s.posfilter(c)

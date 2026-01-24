@@ -7,12 +7,12 @@ function s.initial_effect(c)
 	e0:SetCode(EVENT_FREE_CHAIN)
 	c:RegisterEffect(e0)
 	
-	-- Oponente não pode retornar cards do SEU campo para mão ou Deck
+	-- Oponente não pode retornar seus cards para mão ou Deck
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
-	e1:SetCode(EFFECT_CANNOT_TO_HAND)
 	e1:SetRange(LOCATION_SZONE)
-	e1:SetTargetRange(0,LOCATION_ONFIELD)
+	e1:SetCode(EFFECT_CANNOT_TO_HAND)
+	e1:SetTargetRange(LOCATION_ONFIELD+LOCATION_GRAVE+LOCATION_REMOVED,0)
 	e1:SetValue(s.retlmit)
 	c:RegisterEffect(e1)
 
@@ -32,8 +32,8 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 
-function s.retlmit(e,c,tp)
-	return c:IsLocation(LOCATION_ONFIELD)
+function s.retlmit(e,c)
+	return c:GetControler()==e:GetHandlerPlayer()
 end
 
 function s.ugfilter(c)
