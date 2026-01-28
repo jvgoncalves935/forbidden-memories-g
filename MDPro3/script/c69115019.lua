@@ -52,7 +52,7 @@ function s.initial_effect(c)
 	e6:SetCode(EVENT_FREE_CHAIN)
 	e6:SetRange(LOCATION_MZONE)
 	e6:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
-	e6:SetCountLimit(1,id+300) -- hard OPT
+	e6:SetCountLimit(1,id+400) -- hard OPT
 	e6:SetTarget(s.xyztg)
 	e6:SetOperation(s.xyzop)
 	c:RegisterEffect(e6)

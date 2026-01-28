@@ -39,7 +39,7 @@ function s.initial_effect(c)
 	e4:SetProperty(EFFECT_FLAG_DELAY)
 	e4:SetCode(EVENT_DESTROYED)
 	e4:SetRange(LOCATION_HAND+LOCATION_EXTRA)
-	e4:SetCountLimit(1,id+300) -- hard OPT
+	e4:SetCountLimit(1,id+400) -- hard OPT
 	e4:SetCondition(s.desban_con)
 	e4:SetTarget(s.pzsptg)
 	e4:SetOperation(s.pzspop)
@@ -72,7 +72,7 @@ function s.initial_effect(c)
 	e8:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e8:SetProperty(EFFECT_FLAG_DELAY)
 	e8:SetCode(EVENT_TO_GRAVE)
-	e8:SetCountLimit(1,id+500) -- hard OPT
+	e8:SetCountLimit(1,id+600) -- hard OPT
 	e8:SetTarget(s.tgextragy)
 	e8:SetOperation(s.opextragy)
 	c:RegisterEffect(e8)

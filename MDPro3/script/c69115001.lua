@@ -79,7 +79,7 @@ function s.initial_effect(c)
 	e7:SetType(EFFECT_TYPE_QUICK_O)
 	e7:SetCode(EVENT_CHAINING)
 	e7:SetRange(LOCATION_MZONE)
-	e7:SetCountLimit(1,id+300) -- hard OPT próprio
+	e7:SetCountLimit(1,id+400) -- hard OPT próprio
 	e7:SetCondition(s.negcon)
 	e7:SetCost(s.negcost)
 	e7:SetTarget(s.negtg)
@@ -93,7 +93,7 @@ function s.initial_effect(c)
 	e8:SetType(EFFECT_TYPE_QUICK_O)
 	e8:SetCode(EVENT_FREE_CHAIN)
 	e8:SetRange(LOCATION_PZONE)
-	e8:SetCountLimit(1,id+400) -- hard OPT exclusivo deste efeito
+	e8:SetCountLimit(1,id+600) -- hard OPT exclusivo deste efeito
 	e8:SetTarget(s.pentg2)
 	e8:SetOperation(s.penop2)
 	c:RegisterEffect(e8)
