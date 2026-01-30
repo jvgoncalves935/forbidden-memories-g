@@ -86,8 +86,6 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
 		return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 			and e:GetHandler():IsCanBeSpecialSummoned(e,0,tp,false,false)
-			and Duel.GetFieldGroupCount(tp,LOCATION_EXTRA,0)>0
-			and Duel.GetFieldGroupCount(1-tp,LOCATION_EXTRA,0)>0
 	end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
 end
@@ -96,34 +94,39 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if not c:IsRelateToEffect(e) then return end
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
-
 	if Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)==0 then return end
 
-	-- Jogador escolhe 1 do Extra Deck
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-	local g1=Duel.SelectMatchingCard(
-		tp,Card.IsAbleToGrave,tp,LOCATION_EXTRA,0,1,1,nil
-	)
-	if #g1==0 then return end
+	-- Jogador envia do Extra Deck (se existir)
+	if Duel.GetFieldGroupCount(tp,LOCATION_EXTRA,0)>0 then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
+		local g1=Duel.SelectMatchingCard(tp,Card.IsAbleToGrave,tp,LOCATION_EXTRA,0,1,1,nil)
+		if #g1>0 then
+			Duel.SendtoGrave(g1,REASON_EFFECT)
+		end
+	end
 
-	-- Oponente escolhe 1 do Extra Deck dele
-	Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_TOGRAVE)
-	local g2=Duel.SelectMatchingCard(
-		1-tp,Card.IsAbleToGrave,1-tp,LOCATION_EXTRA,0,1,1,nil
-	)
-	if #g2==0 then return end
-
-	g1:Merge(g2)
-	Duel.SendtoGrave(g1,REASON_EFFECT)
+	-- Oponente envia do Extra Deck (se existir)
+	if Duel.GetFieldGroupCount(1-tp,LOCATION_EXTRA,0)>0 then
+		Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_TOGRAVE)
+		local g2=Duel.SelectMatchingCard(1-tp,Card.IsAbleToGrave,1-tp,LOCATION_EXTRA,0,1,1,nil)
+		if #g2>0 then
+			Duel.SendtoGrave(g2,REASON_EFFECT)
+		end
+	end
 end
 
 function s.thfilter(c)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_SPELL)
-		and (c:IsType(TYPE_NORMAL)
-			or c:IsType(TYPE_CONTINUOUS)
-			or c:IsType(TYPE_FIELD))
-		and c:IsAbleToHand()
+	if not (c:IsSetCard(0xc50) and c:IsType(TYPE_SPELL) and c:IsAbleToHand()) then
+		return false
+	end
+
+	local t=c:GetType()
+	if t&TYPE_FIELD>0 then return true end
+	if t&TYPE_CONTINUOUS>0 then return true end
+	if t&TYPE_EQUIP==0 and t&TYPE_QUICKPLAY==0 and t&TYPE_RITUAL==0 then
+		return true -- Spell Normal
+	end
+	return false
 end
 
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
