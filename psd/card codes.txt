@@ -74,7 +74,7 @@
 69115074 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
 69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1				OK
 69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
-69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1
+69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1				OK
 69115078 1ª Edição - Jô Abdul																TCG/OCG: 1				OK
 69115079 1ª Edição - CJ de Família															TCG/OCG: 1				OK
 69115080 1ª Edição - Gemidão do Zap															TCG/OCG: 1
@@ -130,6 +130,6 @@ vtnc kkkkk - Epurrely Noir																	TCG/OCG: 1				OK
 69069004 - Revista G
 69069005 - Pedra G
 69069006 - mara mara!
-69069007 1ª Edição - Petit Dragon fodase kkkkkkk											TCG/OCG: 0
+69069007 1ª Edição - Petit Dragon fodase kkkkkkk											TCG/OCG: 0				OK
 69069008 1ª Edição - Ursos Grandes, Peludos e Mansos!										TCG/OCG: 1				OK
 ???????? ????????? - Conehead																TCG/OCG: 0
