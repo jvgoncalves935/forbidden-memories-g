@@ -2494,7 +2494,7 @@ screen endings_pag_2():
         textbutton _("Carta 105"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
-            hovered [ShowTransient("side_img_left", img="fome.png",card=105),Function(sfx_carta,audio.fomehahaha,False,0)]
+            hovered [ShowTransient("side_img_left", img="yes_king.png",card=105),Function(sfx_carta,audio.fomehahaha,False,0)]
             unhovered [Hide("side_img_left")]
             action [Function(ExtraContentStart,"vurlcao")]
 

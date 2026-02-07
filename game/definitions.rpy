@@ -679,7 +679,7 @@ define deck_g_names = [
     "MC VV, Explorador de Portais",
     "Nego BAM",
     "Pegasus do PAU BRILHANTE",
-    "FOME.",
+    "YES KING",
     "Barra de Metal",
     "Sava \"Entra Que Eu Te Explico\" do Rael Vol. 1",
     "Super Choque",

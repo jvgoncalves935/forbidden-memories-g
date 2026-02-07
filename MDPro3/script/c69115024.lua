@@ -7,23 +7,21 @@ function s.initial_effect(c)
 	--c.pendulum_type_allowed=true
 
 	--Xyz Summon
-	aux.AddXyzProcedureLevelFree(c,s.mfilter,s.xyzcheck,3,3)
+	aux.AddXyzProcedureLevelFree(c,s.mfilter,s.xyzcheck,3,3,nil,nil,true)
 	c:EnableReviveLimit()
 
-	-----------------------
-	-- (1) Boost de ATK permanente
-	-----------------------
+	--Boost de ATK permanente
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
-	e1:SetCountLimit(1)
+	e1:SetCountLimit(1) -- soft OPT
 	e1:SetOperation(s.atkop)
 	c:RegisterEffect(e1)
 
-	-----------------------
-	-- (2) Resposta a Spell (Efeito Rápido)
-	-----------------------
+
+	--Resposta a Spell (Efeito Rápido)
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_DESTROY)
@@ -37,9 +35,7 @@ function s.initial_effect(c)
 	e2:SetOperation(s.penop)
 	c:RegisterEffect(e2)
 
-	-----------------------
-	-- (3) Efeito Pêndulo
-	-----------------------
+	--Efeito Pêndulo
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,2))
 	e3:SetCategory(CATEGORY_DESTROY)
@@ -52,9 +48,7 @@ function s.initial_effect(c)
 	e3:SetOperation(s.pendestop)
 	c:RegisterEffect(e3)
 
-	-----------------------
 	-- (4) Turn Counter (para o efeito Pêndulo)
-	-----------------------
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
 	e4:SetCode(EVENT_MOVE)
@@ -65,9 +59,7 @@ end
 --Treat as Level 8 for valid Pendulum Summon
 c69115024.pendulum_level=8
 
-------------------------------------------------------------
 -- (A) Materiais Xyz (3 monstros "Universo G" de níveis diferentes)
-------------------------------------------------------------
 function s.mfilter(c,xyzc)
 	return c:IsSetCard(0xc50) and c:IsType(TYPE_MONSTER)
 end
@@ -83,27 +75,29 @@ function s.xyzcheck(g,lc,tp)
 	return true
 end
 
-------------------------------------------------------------
 -- (1) Boost de ATK permanente (+300)
-------------------------------------------------------------
 function s.atkop(e,tp,eg,ep,ev,re,r,rp)
-	local g=Duel.GetMatchingGroup(aux.TRUE,tp,LOCATION_MZONE,0,nil)
+	local g=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
 	for tc in aux.Next(g) do
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_UPDATE_ATTACK)
 		e1:SetValue(300)
-		e1:SetReset(RESET_EVENT+RESETS_STANDARD_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
 		tc:RegisterEffect(e1)
 	end
 end
 
-------------------------------------------------------------
 -- (2) Efeito Rápido: oponente ativa uma Magia
-------------------------------------------------------------
 function s.negcon(e,tp,eg,ep,ev,re,r,rp)
-	return rp==1-tp and re:IsActiveType(TYPE_SPELL)
+	return rp==1-tp
+		and re:IsHasType(EFFECT_TYPE_ACTIVATE)
+		and re:IsActiveType(TYPE_SPELL)
+		and Duel.IsChainDisablable(ev)
+		and (Duel.GetCurrentPhase()==PHASE_MAIN1
+			or Duel.GetCurrentPhase()==PHASE_MAIN2)
 end
+
 function s.negcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,3,REASON_COST) end
 	e:GetHandler():RemoveOverlayCard(tp,3,3,REASON_COST)
@@ -130,9 +124,7 @@ function s.penop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
-------------------------------------------------------------
 -- (3) Efeito Pêndulo: após 2 turnos, destrói-se e move 1 Pêndulo "Universo G" do GY para a PZone
-------------------------------------------------------------
 function s.reset_counter(e,tp,eg,ep,ev,re,r,rp)
 	if e:GetHandler():IsLocation(LOCATION_PZONE) then
 		e:GetHandler():SetTurnCounter(0)
