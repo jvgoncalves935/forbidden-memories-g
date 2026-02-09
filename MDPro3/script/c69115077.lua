@@ -63,11 +63,11 @@ end
 -- Efeito 1 — Ritual da mão escavando
 function s.ritcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		return Duel.GetFieldGroupCount(1-tp,LOCATION_DECK,0)>=5
+		return Duel.GetFieldGroupCount(1-tp,LOCATION_DECK,0)>=2
 			and e:GetHandler():IsReleasable()
 	end
-	Duel.ConfirmDecktop(1-tp,5)
-	local g=Duel.GetDecktopGroup(1-tp,5)
+	Duel.ConfirmDecktop(1-tp,2)
+	local g=Duel.GetDecktopGroup(1-tp,2)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 	local sg=g:Select(tp,1,1,nil)
 	sg:GetFirst():SetStatus(STATUS_BANISHED,true)
@@ -105,17 +105,16 @@ function s.ritcon2(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_RITUAL)
 end
 
-function s.ritfilter2(c,e,tp)
+function s.ritfilter2(c)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_RITUAL)
 		and c:IsLevelBelow(8)
-		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_RITUAL,tp,false,true)
 end
 
 function s.rittg2(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
 		return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
-			and Duel.IsExistingMatchingCard(s.ritfilter2,tp,LOCATION_DECK,0,1,nil,e,tp)
+			and Duel.IsExistingMatchingCard(s.ritfilter2,tp,LOCATION_DECK,0,1,nil)
 	end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
 end
@@ -123,13 +122,16 @@ end
 function s.ritop2(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local g=Duel.SelectMatchingCard(tp,s.ritfilter2,tp,LOCATION_DECK,0,1,1,nil,e,tp)
+	local g=Duel.SelectMatchingCard(tp,s.ritfilter2,tp,LOCATION_DECK,0,1,1,nil)
 	local tc=g:GetFirst()
-	if tc then
-		Duel.Release(tc,REASON_EFFECT+REASON_MATERIAL+REASON_RITUAL)
-		Duel.SpecialSummon(tc,SUMMON_TYPE_RITUAL,tp,tp,false,true,POS_FACEUP)
-		tc:CompleteProcedure()
-	end
+	if not tc then return end
+
+	-- Envia como material de Ritual (NÃO Release)
+	Duel.SendtoGrave(tc,REASON_EFFECT+REASON_MATERIAL+REASON_RITUAL)
+
+	-- Ritual Summon correto
+	Duel.SpecialSummon(tc,SUMMON_TYPE_RITUAL,tp,tp,false,true,POS_FACEUP)
+	tc:CompleteProcedure()
 end
 
 -- Efeito 3 — Substituição de remoção
@@ -166,8 +168,16 @@ function s.thfilter(c)
 end
 
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
 	if chk==0 then
-		return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_GRAVE+LOCATION_EXTRA,0,1,nil)
+		return Duel.IsExistingMatchingCard(
+			s.thfilter,
+			tp,
+			LOCATION_GRAVE+LOCATION_EXTRA,
+			0,
+			1,
+			c -- EXCLUI este card
+		)
 	end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_GRAVE+LOCATION_EXTRA)
 end

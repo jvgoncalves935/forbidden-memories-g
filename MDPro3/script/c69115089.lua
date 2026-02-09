@@ -2,7 +2,7 @@
 local s,id=GetID()
 function s.initial_effect(c)
 	-- Union
-	aux.EnableUnionAttribute(c,s.unfilter)
+	--aux.EnableUnionAttribute(c,s.unfilter)
 
 	-- Union equip limit
 	local e0=Effect.CreateEffect(c)
@@ -29,7 +29,6 @@ function s.initial_effect(c)
 	e2:SetDescription(aux.Stringid(id,2))
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
-	e2:SetProperty(EFFECT_FLAG_DELAY)
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e2:SetRange(LOCATION_SZONE)
 	e2:SetCountLimit(1,id+400) -- hard OPT
@@ -37,6 +36,28 @@ function s.initial_effect(c)
 	e2:SetTarget(s.sptg_eq)
 	e2:SetOperation(s.spop_eq)
 	c:RegisterEffect(e2)
+
+	-- Equip da mão
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(id,3))
+	e3:SetType(EFFECT_TYPE_IGNITION)
+	e3:SetRange(LOCATION_HAND)
+	e3:SetTarget(s.eqtg_hand)
+	e3:SetOperation(s.eqop_hand)
+	c:RegisterEffect(e3)
+
+	-- Se for banido: retornar ao Deck
+	local e4=Effect.CreateEffect(c)
+	e4:SetDescription(aux.Stringid(id,4))
+	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e4:SetProperty(EFFECT_FLAG_DELAY)
+	e4:SetCode(EVENT_REMOVE)
+	e4:SetCountLimit(1,id+600)
+	e4:SetCondition(s.tdcon)
+	e4:SetTarget(s.tdtg)
+	e4:SetOperation(s.tdop)
+	c:RegisterEffect(e4)
+
 end
 
 function s.unfilter(c)
@@ -45,6 +66,45 @@ end
 
 function s.eqlimit(e,c)
 	return c:IsSetCard(0xc50) and c:IsAttackBelow(2000)
+end
+
+function s.eqfilter_hand(c,tp)
+	return c:IsFaceup()
+		and c:IsSetCard(0xc50)
+		and c:IsAttackBelow(2000)
+		and c:IsControler(tp)
+end
+
+function s.eqtg_hand(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then
+		return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
+			and Duel.IsExistingMatchingCard(s.eqfilter_hand,tp,LOCATION_MZONE,0,1,nil,tp)
+	end
+
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
+	local g=Duel.SelectMatchingCard(tp,s.eqfilter_hand,tp,LOCATION_MZONE,0,1,1,nil,tp)
+	Duel.SetTargetCard(g)
+end
+
+function s.eqop_hand(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=Duel.GetFirstTarget()
+
+	if not c:IsRelateToEffect(e) then return end
+	if not tc or not tc:IsRelateToEffect(e) then return end
+	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 then return end
+
+	-- equipa corretamente
+	Duel.Equip(tp,c,tc)
+
+	-- garante que o equip respeite o limite Union
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_EQUIP_LIMIT)
+	e1:SetProperty(EFFECT_FLAG_COPY_INHERIT)
+	e1:SetValue(s.eqlimit)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+	c:RegisterEffect(e1)
 end
 
 -- Kaiju-style Special Summon
@@ -81,11 +141,11 @@ end
 function s.synfilter(c,tp)
 	return c:IsSummonType(SUMMON_TYPE_SYNCHRO)
 		and c:IsControler(tp)
+		and c:IsFaceup()
 end
 
 function s.spcon_eq(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	-- verifica se está equipado
 	if not c:GetEquipTarget() then return false end
 	return eg:IsExists(s.synfilter,1,nil,tp)
 end
@@ -101,8 +161,37 @@ end
 
 function s.spop_eq(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:GetEquipTarget() then return end
+	local eq=c:GetEquipTarget()
+	if not eq then return end
+
+	-- Special Summon
 	if Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)>0 then
-		-- se quiser, aqui você pode forçar o unequip automaticamente
+		-- Escolha do nível
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
+		local lv=Duel.AnnounceLevel(tp,4,6)
+
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_CHANGE_LEVEL)
+		e1:SetValue(lv)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		c:RegisterEffect(e1)
+	end
+end
+
+function s.tdcon(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	return c:IsFaceup()
+end
+
+function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():IsAbleToDeck() end
+	Duel.SetOperationInfo(0,CATEGORY_TODECK,e:GetHandler(),1,0,0)
+end
+
+function s.tdop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsRelateToEffect(e) then
+		Duel.SendtoDeck(c,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	end
 end

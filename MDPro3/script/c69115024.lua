@@ -102,27 +102,70 @@ function s.negcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,3,REASON_COST) end
 	e:GetHandler():RemoveOverlayCard(tp,3,3,REASON_COST)
 end
+
 function s.pentg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(aux.TRUE,tp,LOCATION_PZONE,0,1,nil) end
-	Duel.SetOperationInfo(0,CATEGORY_DESTROY,nil,1,tp,LOCATION_PZONE)
+	if chk==0 then return true end
 end
+
+function s.lockspell(e,tp)
+	local c=e:GetHandler()
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetCode(EFFECT_CANNOT_ACTIVATE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetTargetRange(0,1)
+	e1:SetValue(function(e,re,rp)
+		return rp~=tp and re:IsActiveType(TYPE_SPELL)
+	end)
+	e1:SetReset(RESET_PHASE+PHASE_END)
+	Duel.RegisterEffect(e1,tp)
+end
+
+
 function s.penop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
-	local g=Duel.SelectMatchingCard(tp,aux.TRUE,tp,LOCATION_PZONE,0,1,1,nil)
-	if #g>0 and Duel.Destroy(g,REASON_EFFECT)>0 then
-		Duel.MoveToField(c,tp,tp,LOCATION_PZONE,POS_FACEUP,true)
-		-- Impede o oponente de ativar Magias até o final do turno
-		local e1=Effect.CreateEffect(c)
-		e1:SetType(EFFECT_TYPE_FIELD)
-		e1:SetCode(EFFECT_CANNOT_ACTIVATE)
-		e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
-		e1:SetTargetRange(0,1)
-		e1:SetValue(function(e,re,tp) return re:IsActiveType(TYPE_SPELL) end)
-		e1:SetReset(RESET_PHASE+PHASE_END)
-		Duel.RegisterEffect(e1,tp)
+	if not c:IsRelateToEffect(e) then return end
+
+	local pz=Duel.GetMatchingGroup(aux.TRUE,tp,LOCATION_PZONE,0,nil)
+	local ct=#pz
+
+	-- CASO C: 2 cards nas PZones (destruição obrigatória)
+	if ct>=2 then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+		local dg=pz:Select(tp,1,1,nil)
+		local dc=dg:GetFirst()
+		local seq=dc:GetSequence()
+		if Duel.Destroy(dc,REASON_EFFECT)>0
+			and Duel.MoveToField(c,tp,tp,LOCATION_PZONE,POS_FACEUP,true,1<<seq) then
+			s.lockspell(e,tp)
+		end
+		return
+	end
+
+	-- CASO B: 1 card na PZone (destruição opcional)
+	if ct==1 then
+		local dc=pz:GetFirst()
+		if Duel.SelectYesNo(tp,aux.Stringid(id,3)) then
+			local seq=dc:GetSequence()
+			if Duel.Destroy(dc,REASON_EFFECT)>0
+				and Duel.MoveToField(c,tp,tp,LOCATION_PZONE,POS_FACEUP,true,1<<seq) then
+				s.lockspell(e,tp)
+				return
+			end
+		end
+		-- Não destruiu → escolhe zona livre
+		if Duel.MoveToField(c,tp,tp,LOCATION_PZONE,POS_FACEUP,true) then
+			s.lockspell(e,tp)
+		end
+		return
+	end
+
+	-- CASO A: nenhuma PZone ocupada
+	if Duel.MoveToField(c,tp,tp,LOCATION_PZONE,POS_FACEUP,true) then
+		s.lockspell(e,tp)
 	end
 end
+
 
 -- (3) Efeito Pêndulo: após 2 turnos, destrói-se e move 1 Pêndulo "Universo G" do GY para a PZone
 function s.reset_counter(e,tp,eg,ep,ev,re,r,rp)
@@ -135,7 +178,7 @@ function s.pencon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if not c:IsLocation(LOCATION_PZONE) then return false end
 	c:SetTurnCounter(c:GetTurnCounter()+1)
-	return c:GetTurnCounter()>=2
+	return c:GetTurnCounter()>=1
 end
 
 function s.pendesttg(e,tp,eg,ep,ev,re,r,rp,chk)
