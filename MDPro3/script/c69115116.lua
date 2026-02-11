@@ -4,6 +4,7 @@ function s.initial_effect(c)
 
 	-- Quick Effect Win Condition / Fusion
 	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_FUSION_SUMMON+CATEGORY_DECKDES)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -63,7 +64,7 @@ function s.winop(e,tp,eg,ep,ev,re,r,rp)
 		-- Seleciona 1 matéria da mão
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FMATERIAL)
 		local mg1=Duel.SelectMatchingCard(
-			tp,s.matfilter,tp,LOCATION_HAND,0,1,1,nil
+			tp,s.matfilter,tp,LOCATION_HAND+LOCATION_MZONE,0,1,1,nil
 		):GetFirst()
 		if not mg1 then return end
 

@@ -4,7 +4,7 @@ function s.initial_effect(c)
 	-- Quick Synchro from hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
-	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_DECKDES)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetRange(LOCATION_HAND)
@@ -96,7 +96,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 
 	-- escolhe o material correto do Deck
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SMATERIAL)
-	local mg=Duel.SelectMatchingCard(tp,s.matfilter,tp,LOCATION_DECK,0,1,1,nil,needlv)
+	local mg=Duel.SelectMatchingCard(tp,s.matfilter,tp,LOCATION_DECK+LOCATION_MZONE,0,1,1,nil,needlv)
 	local mc=mg:GetFirst()
 	if not mc then return end
 
