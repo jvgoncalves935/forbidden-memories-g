@@ -93,8 +93,9 @@ function s.initial_effect(c)
 end
 
 function s.posfilter(c)
-	return c:IsFaceup() and c:IsCanTurnSet()
+	return c:IsFaceup()
 end
+
 function s.postg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) and s.posfilter(chkc) end
 	if chk==0 then return Duel.IsExistingTarget(s.posfilter,tp,0,LOCATION_MZONE,1,nil) end
@@ -119,7 +120,7 @@ function s.posop(e,tp,eg,ep,ev,re,r,rp)
 		local g=Duel.SelectMatchingCard(1-tp,function(c) return c==tc end,1-tp,LOCATION_MZONE,0,1,1,nil)
 		if g and #g>0 then
 			-- envia para o cemitério sendo a ação do oponente (terceiro argumento = player who performs the send)
-			Duel.SendtoGrave(g,REASON_COST,1-tp)
+			Duel.SendtoGrave(g,REASON_RULE,1-tp)
 		end
 	end
 end
