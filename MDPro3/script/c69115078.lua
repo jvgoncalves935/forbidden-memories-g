@@ -66,13 +66,14 @@ function s.initial_effect(c)
 	e7:SetCode(EVENT_REMOVE)
 	c:RegisterEffect(e7)
 
-		-- If sent to GY: move to Extra Deck face-up
+	-- If sent to GY: move to Extra Deck face-up
 	local e8=Effect.CreateEffect(c)
 	e8:SetDescription(aux.Stringid(id,5))
 	e8:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e8:SetProperty(EFFECT_FLAG_DELAY)
 	e8:SetCode(EVENT_TO_GRAVE)
-	e8:SetCountLimit(1,id+600) -- hard OPT
+	e8:SetCountLimit(1,id+600)
+	e8:SetCondition(s.extracon)
 	e8:SetTarget(s.tgextragy)
 	e8:SetOperation(s.opextragy)
 	c:RegisterEffect(e8)
@@ -202,5 +203,16 @@ function s.desban_con(e,tp,eg,ep,ev,re,r,rp)
 	end
 	-- Banimento sempre é válido
 	return true
+end
+
+function s.extracon(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	return c:IsLocation(LOCATION_GRAVE)
+		and (c:IsPreviousLocation(LOCATION_ONFIELD)
+		or c:IsPreviousLocation(LOCATION_HAND)
+		or c:IsPreviousLocation(LOCATION_DECK)
+		or c:IsPreviousLocation(LOCATION_EXTRA)
+		or c:IsPreviousLocation(LOCATION_REMOVED)
+		or c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 

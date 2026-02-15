@@ -21,6 +21,7 @@ function s.initial_effect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e2:SetProperty(EFFECT_FLAG_DELAY)
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e2:SetCountLimit(1,id+200)
 	e2:SetCondition(s.ritcon2)
@@ -136,12 +137,16 @@ end
 
 -- Efeito 3 — Substituição de remoção
 function s.repfilter(c,tp)
-	return c:IsControler(tp) and c:IsOnField()
+	return c:IsControler(tp)
+		and c:IsOnField()
+		and c:IsReason(REASON_EFFECT)
 end
 
 function s.reptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		return rp==1-tp
+		return re
+			and re:IsActiveType(TYPE_SPELL+TYPE_TRAP+TYPE_MONSTER)
+			and re:GetHandlerPlayer()==1-tp
 			and eg:IsExists(s.repfilter,1,nil,tp)
 	end
 	return Duel.SelectYesNo(tp,aux.Stringid(id,2))
@@ -152,7 +157,7 @@ function s.repval(e,c)
 end
 
 function s.repop(e,tp,eg,ep,ev,re,r,rp)
-	-- Apenas substitui, não faz mais nada
+	-- apenas substitui
 end
 
 -- Efeito 4 — GY → Banir FD + Buscar Ritual

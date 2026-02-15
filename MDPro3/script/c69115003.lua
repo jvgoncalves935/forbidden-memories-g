@@ -235,7 +235,8 @@ function s.pendcon_gy(e,tp,eg,ep,ev,re,r,rp)
 		c:IsPreviousLocation(LOCATION_HAND) or
 		c:IsPreviousLocation(LOCATION_DECK) or
 		c:IsPreviousLocation(LOCATION_EXTRA) or
-		c:IsPreviousLocation(LOCATION_REMOVED))
+		c:IsPreviousLocation(LOCATION_REMOVED)) or 
+		c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 
 -- Se foi enviado ao Extra Deck face-up (padrão pendulum)
@@ -246,7 +247,8 @@ function s.pendcon_extra(e,tp,eg,ep,ev,re,r,rp)
 		c:IsPreviousLocation(LOCATION_HAND) or
 		c:IsPreviousLocation(LOCATION_DECK) or
 		c:IsPreviousLocation(LOCATION_GRAVE) or
-		c:IsPreviousLocation(LOCATION_REMOVED))
+		c:IsPreviousLocation(LOCATION_REMOVED)) or 
+		c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 
 function s.negcon(e,tp,eg,ep,ev,re,r,rp)
