@@ -272,7 +272,7 @@ function s.pendcon_extra(e,tp,eg,ep,ev,re,r,rp)
 		c:IsPreviousLocation(LOCATION_HAND) or
 		c:IsPreviousLocation(LOCATION_DECK) or
 		c:IsPreviousLocation(LOCATION_GRAVE) or
-		c:IsPreviousLocation(LOCATION_REMOVED)) or 
+		c:IsPreviousLocation(LOCATION_REMOVED) or 
 		c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 
@@ -352,8 +352,13 @@ function s.negop(e,tp,eg,ep,ev,re,r,rp)
 			-- destrói 1 monstro Universo G nível ≤4
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 			local g=Duel.SelectMatchingCard(tp,
-				function(tc) return tc:IsFaceup() and tc:IsSetCard(0xc50) and tc:IsLevelBelow(4) end,
-				tp, LOCATION_MZONE, LOCATION_MZONE, 1, 1, nil
+				function(tc)
+					return tc:IsFaceup()
+						and tc:IsSetCard(0xc50)
+						and tc:IsLevelBelow(4)
+						and tc:IsControler(tp)
+				end,
+				tp, LOCATION_MZONE, 0, 1, 1, nil
 			)
 			if #g>0 then
 				Duel.Destroy(g, REASON_EFFECT)

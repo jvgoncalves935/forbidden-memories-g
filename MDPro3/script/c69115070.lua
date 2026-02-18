@@ -52,7 +52,7 @@ function s.matfilter(c,lc,sumtype,tp)
 	return c:IsSetCard(0xc50)
 end
 
--- ===== Efeito 1: Comprar 5 / devolver 3 =====
+-- Efeito 1: Comprar 5 / devolver 3
 function s.drcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
 end
@@ -70,18 +70,29 @@ function s.drop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.SendtoDeck(g,nil,SEQ_DECKBOTTOM,REASON_EFFECT)
 end
 
--- ===== Efeito 2: Reviver Link =====
-function s.costfilter(c)
-	return c:IsAbleToGrave()
+-- Efeito 2: Reviver Link
+function s.costfilter(c,tp)
+	return c:IsControler(tp)
+		and c:IsAbleToGraveAsCost()
+		and not c:IsCode(id)
 end
 
 function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then
-		return Duel.IsExistingMatchingCard(s.costfilter,tp,LOCATION_HAND+LOCATION_MZONE,0,1,c)
+		return Duel.IsExistingMatchingCard(
+			s.costfilter,tp,
+			LOCATION_HAND+LOCATION_MZONE+LOCATION_SZONE,
+			0,1,c,tp
+		)
 	end
+
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-	local g=Duel.SelectMatchingCard(tp,s.costfilter,tp,LOCATION_HAND+LOCATION_MZONE,0,1,1,c)
+	local g=Duel.SelectMatchingCard(
+		tp,s.costfilter,tp,
+		LOCATION_HAND+LOCATION_MZONE+LOCATION_SZONE,
+		0,1,1,c,tp
+	)
 	Duel.SendtoGrave(g,REASON_COST)
 end
 
@@ -109,7 +120,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
--- ===== Efeito 3: Negar + perder ATK =====
+-- Efeito 3: Negar + perder ATK
 function s.negcon(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsChainNegatable(ev)
 end

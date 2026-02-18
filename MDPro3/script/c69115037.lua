@@ -231,10 +231,11 @@ function s.pdop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
-function s.rbfilter(c)
+function s.rbfilter(c,tp)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_PENDULUM)
 		and c:IsType(TYPE_MONSTER)
+		and c:IsControler(tp)
 end
 
 function s.rbretfilter(c,e,tp)
@@ -245,7 +246,7 @@ function s.rbretfilter(c,e,tp)
 end
 
 function s.rbcon(e,tp,eg,ep,ev,re,r,rp)
-	return eg:IsExists(s.rbfilter,1,nil)
+	return eg:IsExists(s.rbfilter,1,nil,tp)
 end
 
 function s.rbcost(e,tp,eg,ep,ev,re,r,rp,chk)
@@ -256,13 +257,18 @@ end
 
 function s.rbtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		return Duel.IsExistingMatchingCard(
-			s.rbretfilter,tp,LOCATION_REMOVED,0,1,nil,e,tp
-		)
+		return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+			and Duel.IsExistingMatchingCard(
+				s.rbretfilter,tp,LOCATION_REMOVED,0,1,nil,e,tp
+			)
 	end
+
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_REMOVED)
 end
 
 function s.rbop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local g=Duel.SelectMatchingCard(
 		tp,s.rbretfilter,tp,LOCATION_REMOVED,0,1,1,nil,e,tp

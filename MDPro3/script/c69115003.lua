@@ -235,7 +235,7 @@ function s.pendcon_gy(e,tp,eg,ep,ev,re,r,rp)
 		c:IsPreviousLocation(LOCATION_HAND) or
 		c:IsPreviousLocation(LOCATION_DECK) or
 		c:IsPreviousLocation(LOCATION_EXTRA) or
-		c:IsPreviousLocation(LOCATION_REMOVED)) or 
+		c:IsPreviousLocation(LOCATION_REMOVED) or 
 		c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 
@@ -247,7 +247,7 @@ function s.pendcon_extra(e,tp,eg,ep,ev,re,r,rp)
 		c:IsPreviousLocation(LOCATION_HAND) or
 		c:IsPreviousLocation(LOCATION_DECK) or
 		c:IsPreviousLocation(LOCATION_GRAVE) or
-		c:IsPreviousLocation(LOCATION_REMOVED)) or 
+		c:IsPreviousLocation(LOCATION_REMOVED) or 
 		c:IsPreviousLocation(LOCATION_OVERLAY))
 end
 
@@ -273,8 +273,13 @@ function s.negcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	-- opções disponíveis ao jogador
 	local op=0
 	local canNegDestroy = Duel.IsExistingMatchingCard(
-		function(tc) return tc:IsFaceup() and tc:IsSetCard(0xc50) and tc:IsLevelBelow(4) end,
-		tp, LOCATION_MZONE, LOCATION_MZONE, 1, nil
+		function(tc)
+			return tc:IsFaceup()
+				and tc:IsSetCard(0xc50)
+				and tc:IsLevelBelow(4)
+				and tc:IsControler(tp)
+		end,
+		tp, LOCATION_MZONE, 0, 1, nil
 	)
 
 	local canSS = Duel.IsExistingMatchingCard(
@@ -297,7 +302,7 @@ function s.negcost(e,tp,eg,ep,ev,re,r,rp,chk)
 
 	-- guarda escolha:
 	-- 0 = negar + destruir Universo G
-	-- 1 = Special Summon Ativo/Ativa
+	-- 1 = Enviar card para o Cemitério
 	e:SetLabel(op+1)
 end
 
@@ -326,16 +331,20 @@ function s.negop(e,tp,eg,ep,ev,re,r,rp)
 		if Duel.NegateActivation(ev) then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 			local g=Duel.SelectMatchingCard(tp,
-				function(tc) return tc:IsFaceup() and tc:IsSetCard(0xc50) and tc:IsLevelBelow(4) end,
-				tp, LOCATION_MZONE, LOCATION_MZONE, 1, 1, nil
+				function(tc)
+					return tc:IsFaceup()
+						and tc:IsSetCard(0xc50)
+						and tc:IsLevelBelow(4)
+						and tc:IsControler(tp)
+				end,
+				tp, LOCATION_MZONE, 0, 1, 1, nil
 			)
 			if #g>0 then
 				Duel.Destroy(g, REASON_EFFECT)
 			end
 		end
-
-	-- 2 → enviar 1 card do Deck para o Cemitério
 	else
+		-- 2 → enviar 1 card do Deck para o Cemitério
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 		local g=Duel.SelectMatchingCard(tp,
 			function(tc) return tc:IsAbleToGrave() end,
@@ -346,6 +355,7 @@ function s.negop(e,tp,eg,ep,ev,re,r,rp)
 		end
 	end
 end
+
 
 -- Target: apenas verifica se dá pra invocar este card da P-Zone
 function s.pentg2(e,tp,eg,ep,ev,re,r,rp,chk)

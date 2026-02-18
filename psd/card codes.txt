@@ -73,7 +73,7 @@
 69115073 1ª Edição - Rocky Gaúcho															TCG/OCG: 1				OK
 69115074 1ª Edição - Aldeia dos Índios (Indígenas) Papacu									TCG/OCG: 1
 69115075 1ª Edição - Xaropinho de Família													TCG/OCG: 1				OK
-69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1
+69115076 1ª Edição - Ucraniano de Família													TCG/OCG: 1				OK
 69115077 1ª Edição - Senhor dos Anais														TCG/OCG: 1				OK
 69115078 1ª Edição - Jô Abdul																TCG/OCG: 1				OK
 69115079 1ª Edição - CJ de Família															TCG/OCG: 1				OK

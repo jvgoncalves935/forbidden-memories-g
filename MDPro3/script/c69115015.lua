@@ -50,22 +50,55 @@ function s.acttg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 
 function s.actop(e,tp,eg,ep,ev,re,r,rp)
+
+	-- Parte 1: Reveal 3
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONFIRM)
 	local g=Duel.SelectMatchingCard(tp,s.thfilter,tp,LOCATION_DECK,0,3,3,nil)
-	if #g<3 then return end
 
-	-- Revela os 3 cards
-	Duel.ConfirmCards(1-tp,g)
+	if #g==3 then
+		Duel.ConfirmCards(1-tp,g)
 
-	-- Embaralha e o oponente escolhe 1 aleatoriamente
-	local sg=g:RandomSelect(1-tp,1)
-	local tc=sg:GetFirst()
+		local sg=g:RandomSelect(1-tp,1)
+		local tc=sg:GetFirst()
 
-	-- Adiciona à mão
-	Duel.SendtoHand(tc,nil,REASON_EFFECT)
-	Duel.ConfirmCards(tp,tc)
+		Duel.SendtoHand(tc,nil,REASON_EFFECT)
+		Duel.ConfirmCards(tp,tc)
 
-	-- Devolve o resto ao deck e embaralha
-	g:RemoveCard(tc)
-	Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
+		g:RemoveCard(tc)
+		Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
+	end
+
+	-- Parte 2: Bounce opcional (independente da parte 1)
+	if Duel.IsExistingMatchingCard(s.bouncefilter,tp,LOCATION_ONFIELD,0,1,nil)
+		and Duel.IsExistingMatchingCard(s.stzonefilter,tp,0,LOCATION_SZONE,1,nil) then
+
+		if Duel.SelectYesNo(tp,aux.Stringid(id,1)) then
+			Duel.BreakEffect()
+
+			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
+			local rg=Duel.SelectMatchingCard(tp,s.bouncefilter,tp,LOCATION_ONFIELD,0,1,1,nil)
+			local rc=rg:GetFirst()
+
+			if rc and Duel.SendtoHand(rc,nil,REASON_EFFECT)>0 then
+
+				Duel.BreakEffect()
+
+				Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+				local dg=Duel.SelectMatchingCard(tp,s.stzonefilter,tp,0,LOCATION_SZONE,1,1,nil)
+				if #dg>0 then
+					Duel.Destroy(dg,REASON_EFFECT)
+				end
+			end
+		end
+	end
+end
+
+
+function s.bouncefilter(c)
+	return c:IsAbleToHand()
+end
+
+function s.stzonefilter(c)
+	return c:IsLocation(LOCATION_SZONE)
+		and c:IsDestructable()
 end
