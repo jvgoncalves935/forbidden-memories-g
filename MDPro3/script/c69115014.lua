@@ -24,7 +24,7 @@ function s.initial_effect(c)
 	-- Efeito rápido
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
-	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
+	e2:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_FREE_CHAIN)
 	e2:SetRange(LOCATION_SZONE)
@@ -53,6 +53,8 @@ function s.eftg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
 		return Duel.IsExistingMatchingCard(s.ugfilter,tp,LOCATION_MZONE,0,1,nil)
 	end
+	-- Declara operação "add from Deck" para que Ash Blossom etc. possam responder
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 end
 
 function s.efop(e,tp,eg,ep,ev,re,r,rp)
