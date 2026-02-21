@@ -140,6 +140,8 @@ function s.xyztg(e,tp,eg,ep,ev,re,r,rp,chk)
 		if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return false end
 		return Duel.IsExistingMatchingCard(s.basefilter,tp,LOCATION_MZONE,0,1,nil,tp)
 	end
+	-- Declara Special Summon do Deck para Ash Blossom / Dominus Impulse
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
 end
 
 function s.xyzop(e,tp,eg,ep,ev,re,r,rp)

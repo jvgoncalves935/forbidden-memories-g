@@ -59,6 +59,8 @@ function s.fliptg(e,tp,eg,ep,ev,re,r,rp,chk)
 		return Duel.IsExistingMatchingCard(s.thfilter,tp,
 			LOCATION_GRAVE+LOCATION_REMOVED+LOCATION_EXTRA,0,1,nil)
 	end
+	-- Declara add from GY/Removed/Extra para Ghost Belle
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_GRAVE+LOCATION_REMOVED+LOCATION_EXTRA)
 end
 
 function s.flipop(e,tp,eg,ep,ev,re,r,rp)

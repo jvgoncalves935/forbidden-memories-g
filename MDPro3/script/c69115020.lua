@@ -111,12 +111,12 @@ function s.ritualcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Release(c,REASON_COST+REASON_MATERIAL+REASON_RITUAL)
 end
 
--- [Efeito 2] – Ritual da mão
+-- [Efeito 2] – Ritual da mão (Special Summon do GY)
 function s.ritualtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
 		return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 	end
-	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,tp,LOCATION_GRAVE)
 end
 
 function s.ritualop(e,tp,eg,ep,ev,re,r,rp)

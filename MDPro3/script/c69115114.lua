@@ -8,7 +8,7 @@ function s.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
 	e1:SetProperty(EFFECT_FLAG_DELAY)
-	e1:SetCountLimit(1,id+200)
+	e1:SetCountLimit(1,id)
 	e1:SetTarget(s.lvtg)
 	e1:SetOperation(s.lvop)
 	c:RegisterEffect(e1)
@@ -16,7 +16,7 @@ function s.initial_effect(c)
 	e1b:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e1b)
 
-	-- (2) Negar efeitos (Ash-like expandido): add hand, Special Summon do Deck, send to GY, set do Deck
+	-- (2) Negar: add hand, Invocação-Especial, send to GY, set/place do Deck, banir do GY
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_DISABLE)
@@ -51,33 +51,38 @@ function s.lvop(e,tp,eg,ep,ev,re,r,rp)
 	c:RegisterEffect(e1)
 end
 
--- (2) Condição: efeito inclui add hand / Special Summon do Deck / send to GY / set do Deck
+-- (2) Condição: efeito inclui add hand / Invocação-Especial / send to GY / set ou place do Deck / banir do GY
 function s.discon(e,tp,eg,ep,ev,re,r,rp)
 	if not Duel.IsChainDisablable(ev) then return false end
-	-- Precisa de pelo menos 3 Universo G na mão, campo e GY (exceto este card)
+	-- Precisa de pelo menos 2 Universo G na mão, campo e GY (exceto este card)
 	local c=e:GetHandler()
 	local g=Duel.GetMatchingGroup(s.unigfilter,tp,LOCATION_HAND+LOCATION_MZONE+LOCATION_GRAVE,0,c,c)
-	if #g<3 then return false end
+	if #g<2 then return false end
 
 	-- Tipos de efeito que podem ser negados:
-	-- Add to hand (DRAW, SEARCH, TOHAND from deck)
+	-- Add to hand (DRAW, SEARCH, TOHAND)
 	local ex4=re:IsHasCategory(CATEGORY_DRAW)
 	local ex5=re:IsHasCategory(CATEGORY_SEARCH)
 	local _,_,_,_,dv5=Duel.GetOperationInfo(ev,CATEGORY_TOHAND)
-	local add_from_deck=ex4 or ex5 or (dv5 and bit.band(dv5,LOCATION_DECK)~=0)
+	local add_to_hand=ex4 or ex5 or (dv5 and bit.band(dv5,LOCATION_DECK)~=0)
 
-	-- Special Summon from Deck
-	local ex2,_,_,_,dv2=Duel.GetOperationInfo(ev,CATEGORY_SPECIAL_SUMMON)
-	local ss_from_deck=ex2 and dv2 and bit.band(dv2,LOCATION_DECK)~=0
+	-- Special Summon (qualquer Invocação-Especial, não só do Deck)
+	local ex2=Duel.GetOperationInfo(ev,CATEGORY_SPECIAL_SUMMON)
+	local ss_effect=ex2
 
 	-- Send to GY from Deck
 	local ex3,_,_,_,dv3=Duel.GetOperationInfo(ev,CATEGORY_TOGRAVE)
 	local send_to_gy=ex3 and dv3 and bit.band(dv3,LOCATION_DECK)~=0
 
-	-- Set from Deck (DECKDES cobre efeitos que movem do Deck)
-	local ex6=re:IsHasCategory(CATEGORY_DECKDES)
+	-- Set do Deck
+	local ex6,_,_,_,dv6=Duel.GetOperationInfo(ev,CATEGORY_DECKDES)
+	local set_from_deck=ex6 and dv6 and bit.band(dv6,LOCATION_DECK)~=0
 
-	return add_from_deck or ss_from_deck or send_to_gy or ex6
+	-- Banir do Cemitério
+	local ex7,_,_,_,dv7=Duel.GetOperationInfo(ev,CATEGORY_REMOVE)
+	local banish_from_gy=ex7 and dv7 and bit.band(dv7,LOCATION_GRAVE)~=0
+
+	return add_to_hand or ss_effect or send_to_gy or set_from_deck or banish_from_gy
 end
 
 function s.discost(e,tp,eg,ep,ev,re,r,rp,chk)
@@ -92,5 +97,10 @@ function s.distg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 
 function s.disop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
 	Duel.NegateEffect(ev)
+	-- Bane este card de face para baixo (independente da negação ter sucesso)
+	if c:IsLocation(LOCATION_GRAVE) then
+		Duel.Remove(c,POS_FACEDOWN,REASON_EFFECT)
+	end
 end

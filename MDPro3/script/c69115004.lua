@@ -17,6 +17,7 @@ function s.initial_effect(c)
 	-- Set Universo G Spell/Trap if used as material
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
+	e2:SetCategory(CATEGORY_DECKDES)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e2:SetProperty(EFFECT_FLAG_DELAY)
 	e2:SetCode(EVENT_BE_MATERIAL)
@@ -148,6 +149,8 @@ function s.sttg(e,tp,eg,ep,ev,re,r,rp,chk)
 		return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
 			and Duel.IsExistingMatchingCard(s.stfilter,tp,LOCATION_DECK,0,1,nil)
 	end
+	-- Declara set do Deck para handtraps (ex.: Massacote Interruptions)
+	Duel.SetOperationInfo(0,CATEGORY_DECKDES,nil,1,tp,LOCATION_DECK)
 end
 
 function s.stop(e,tp,eg,ep,ev,re,r,rp)
