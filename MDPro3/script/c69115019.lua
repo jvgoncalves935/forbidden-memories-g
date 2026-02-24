@@ -128,74 +128,47 @@ function s.matfilter(c,lv)
 		and c:IsLevel(lv)
 end
 
-function s.xyzfilter(c,lv)
+function s.xyzfilter(c,e,tp,mg)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_XYZ)
-		and c:GetRank()==lv
 		and c:GetRank()<=6
+		and Duel.GetLocationCountFromEx(tp,tp,mg,c)>0
+		and c:IsXyzSummonable(nil,mg)
+end
+
+function s.exgfilter(c,mg,mc)
+	return mg:CheckSubGroup(s.exgselect,1,#mg,c,mc)
+end
+
+function s.exgselect(g,exc,mc)
+	return exc:IsXyzSummonable(g,#g,#g)
 end
 
 function s.xyztg(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
+
 	if chk==0 then
-		if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return false end
-		return Duel.IsExistingMatchingCard(s.basefilter,tp,LOCATION_MZONE,0,1,nil,tp)
+		return Duel.GetMatchingGroupCount(s.exgfilter,tp,LOCATION_EXTRA,0,nil,mg,c)>0
 	end
-	-- Declara Special Summon do Deck para Ash Blossom / Dominus Impulse
-	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
 end
 
 function s.xyzop(e,tp,eg,ep,ev,re,r,rp)
-	-- Seleciona o monstro base CORRETO
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
-	local base=Duel.SelectMatchingCard(tp,s.basefilter,tp,LOCATION_MZONE,0,1,1,nil,tp):GetFirst()
-	if not base then return end
-	local lv=base:GetLevel()
+	local c=e:GetHandler()
+	if c:IsControler(1-tp) or not c:IsRelateToEffect(e) or c:IsFacedown() then return end
 
-	-- Invoca do Deck
+	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
+
+	local exg=Duel.GetMatchingGroup(s.exgfilter,tp,LOCATION_EXTRA,0,nil,mg,c)
+	if #exg==0 then return end
+
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local g=Duel.SelectMatchingCard(tp,s.deckfilter,tp,LOCATION_DECK,0,1,1,nil,lv,e,tp)
-	local sc=g:GetFirst()
-	if not sc then return end
-	if Duel.SpecialSummon(sc,0,tp,tp,false,false,POS_FACEUP)==0 then return end
+	local sc=exg:Select(tp,1,1,nil):GetFirst()
 
-	-- Nega efeitos do monstro invocado
-	local e1=Effect.CreateEffect(e:GetHandler())
-	e1:SetType(EFFECT_TYPE_SINGLE)
-	e1:SetCode(EFFECT_DISABLE)
-	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
-	sc:RegisterEffect(e1)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
+	local mat=mg:SelectSubGroup(tp,s.exgselect,false,1,#mg,sc,c)
 
-	local e2=e1:Clone()
-	e2:SetCode(EFFECT_DISABLE_EFFECT)
-	sc:RegisterEffect(e2)
-
-	-- Grupo EXATO de matérias
-	local mg=Group.CreateGroup()
-	mg:AddCard(base)
-	mg:AddCard(sc)
-
-	-- Seleciona o Xyz válido
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local xyz=Duel.SelectMatchingCard(tp,s.xyzfilter,tp,LOCATION_EXTRA,0,1,1,nil,lv):GetFirst()
-	if not xyz then return end
-
-	-- Invocação-Xyz manual CORRETA
-	xyz:SetMaterial(mg)
-	Duel.Overlay(xyz,mg)
-
-	if Duel.SpecialSummon(xyz,SUMMON_TYPE_XYZ,tp,tp,false,false,POS_FACEUP)>0 then
-		xyz:CompleteProcedure()
-	end
-
-	-- Lock de Xyz
-	local e3=Effect.CreateEffect(e:GetHandler())
-	e3:SetType(EFFECT_TYPE_FIELD)
-	e3:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_OATH)
-	e3:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
-	e3:SetTargetRange(1,0)
-	e3:SetTarget(function(e,c)
-		return c:IsType(TYPE_XYZ)
-	end)
-	e3:SetReset(RESET_PHASE+PHASE_END)
-	Duel.RegisterEffect(e3,tp)
+	Duel.XyzSummon(tp,sc,mat,#mat,#mat)
 end

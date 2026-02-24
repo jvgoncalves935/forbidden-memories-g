@@ -74,6 +74,7 @@ end
 
 function s.damval(e,re,val,r,rp,rc)
 	if rp==1-e:GetHandlerPlayer() and (r&REASON_EFFECT)~=0 then
+		Duel.Hint(HINT_CARD,0,id)
 		return 0
 	end
 	return val

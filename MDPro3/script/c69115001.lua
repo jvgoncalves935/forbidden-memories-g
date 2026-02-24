@@ -11,7 +11,7 @@ function s.initial_effect(c)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
 	e1:SetProperty(EFFECT_FLAG_UNCOPYABLE)
 	e1:SetRange(LOCATION_HAND)
-	e1:SetCountLimit(1,id,EFFECT_COUNT_CODE_OATH) -- hard OPT
+	e1:SetCountLimit(1,id) -- hard OPT
 	e1:SetCondition(s.spcon_proc)
 	e1:SetTarget(s.sptg_proc)
 	c:RegisterEffect(e1)
@@ -25,7 +25,7 @@ function s.initial_effect(c)
 	e2:SetCode(EVENT_FREE_CHAIN)
 	e2:SetRange(LOCATION_HAND)
 	e2:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
-	e2:SetCountLimit(1,id,EFFECT_COUNT_CODE_OATH) -- compartilhar hard OPT com a procedure
+	e2:SetCountLimit(1,id) -- compartilhar hard OPT com a procedure
 	e2:SetCondition(s.spcon_quick)
 	e2:SetTarget(s.sptg_quick)
 	e2:SetOperation(s.spop_quick)
@@ -37,7 +37,7 @@ function s.initial_effect(c)
 	e3:SetCode(EFFECT_ONLY_ATTACK_MONSTER)
 	e3:SetRange(LOCATION_MZONE)
 	e3:SetTargetRange(0,LOCATION_MZONE)
-	e3:SetValue(c)
+	e3:SetValue(s.atlimit)
 	c:RegisterEffect(e3)
 
 	-- QUICK EFFECT: quando o oponente ativa um card/efeito (EVENT_CHAINING)
@@ -47,7 +47,7 @@ function s.initial_effect(c)
 	e4:SetType(EFFECT_TYPE_QUICK_O)
 	e4:SetCode(EVENT_CHAINING)
 	e4:SetRange(LOCATION_HAND)
-	e4:SetCountLimit(1,id,EFFECT_COUNT_CODE_OATH) -- mesmo hard OPT
+	e4:SetCountLimit(1,id) -- mesmo hard OPT
 	e4:SetCondition(s.spcon_chain)
 	e4:SetTarget(s.sptg_quick)
 	e4:SetOperation(s.spop_quick)
@@ -60,7 +60,7 @@ function s.initial_effect(c)
 	e5:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e5:SetProperty(EFFECT_FLAG_DELAY)
 	e5:SetCode(EVENT_TO_GRAVE)
-	e5:SetCountLimit(1,id+200,EFFECT_COUNT_CODE_OATH)
+	e5:SetCountLimit(1,id+200)
 	e5:SetCondition(s.pendcon_gy)
 	e5:SetTarget(s.pendtg)
 	e5:SetOperation(s.pendop)
@@ -98,8 +98,10 @@ function s.initial_effect(c)
 	e8:SetOperation(s.penop2)
 	c:RegisterEffect(e8)
 
+end
 
-
+function s.atlimit(e,c)
+	return c==e:GetHandler()
 end
 
 -- Procedure: permite invocation no próprio turno OU no turno do oponente

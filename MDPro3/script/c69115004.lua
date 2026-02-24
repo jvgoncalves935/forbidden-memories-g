@@ -58,12 +58,16 @@ function s.validscfilter(c,e,tp,handc)
 		return false
 	end
 
-	local needlv=c:GetLevel()-handc:GetLevel()
-	if needlv<=0 then return false end
+	-- existe parceiro válido no Deck ou campo?
+	local g=Duel.GetMatchingGroup(function(tc)
+		if not (tc:IsSetCard(0xc50) and tc:IsType(TYPE_MONSTER)) then
+			return false
+		end
+		local mat=Group.FromCards(handc,tc)
+		return c:IsSynchroSummonable(nil,mat)
+	end,tp,LOCATION_DECK+LOCATION_MZONE,0,nil)
 
-	return Duel.IsExistingMatchingCard(
-		s.matfilter,tp,LOCATION_DECK,0,1,nil,needlv
-	)
+	return #g>0
 end
 
 
@@ -71,12 +75,8 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then
 		if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return false end
-		local sg=Duel.GetMatchingGroup(s.validscfilter,tp,LOCATION_EXTRA,0,nil,e,tp,c)
-		return sg:IsExists(function(sc)
-			local needlv=sc:GetLevel()-c:GetLevel()
-			return needlv>0 and Duel.IsExistingMatchingCard(
-				s.matfilter,tp,LOCATION_DECK,0,1,nil,needlv)
-		end,1,nil)
+		return Duel.IsExistingMatchingCard(
+			s.validscfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,c)
 	end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
 end
@@ -87,44 +87,46 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 	if not c:IsRelateToEffect(e) then return end
 
-	-- escolhe o Sincro primeiro
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sc=Duel.SelectMatchingCard(tp,s.validscfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp,c):GetFirst()
+	local sc=Duel.SelectMatchingCard(
+		tp,s.validscfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp,c
+	):GetFirst()
 	if not sc then return end
 
-	local needlv=sc:GetLevel()-c:GetLevel()
-	if needlv<=0 then return end
-
-	-- escolhe o material correto do Deck
+	-- Seleciona parceiro válido (forçado a ser correto)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SMATERIAL)
-	local mg=Duel.SelectMatchingCard(tp,s.matfilter,tp,LOCATION_DECK+LOCATION_MZONE,0,1,1,nil,needlv)
-	local mc=mg:GetFirst()
+	local mc=Duel.SelectMatchingCard(
+		tp,
+		function(tc,sc,handc)
+			if not (tc:IsSetCard(0xc50) and tc:IsType(TYPE_MONSTER)) then
+				return false
+			end
+			local mat=Group.FromCards(handc,tc)
+			return sc:IsSynchroSummonable(nil,mat)
+		end,
+		tp,LOCATION_DECK+LOCATION_MZONE,0,1,1,nil,sc,c
+	):GetFirst()
 	if not mc then return end
 
-	-- envia materiais (ORDEM CORRETA)
 	local mat=Group.FromCards(c,mc)
-
-	-- registra as matérias antes do envio
 	sc:SetMaterial(mat)
-
-	-- agora envia corretamente como matéria Sincro
 	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_SYNCHRO)
 
-	-- invocação sincro manual
 	if Duel.SpecialSummon(sc,SUMMON_TYPE_SYNCHRO,tp,tp,false,false,POS_FACEUP)>0 then
 		sc:CompleteProcedure()
 	end
 
-	-- Synchro Summon lock for the rest of the turn (engine-safe)
+	-- Synchro lock
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_OATH)
 	e1:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
 	e1:SetTargetRange(1,0)
-	e1:SetTarget(s.synclimit)
+	e1:SetTarget(function(e,c,sumtp)
+		return (sumtp&SUMMON_TYPE_SYNCHRO)==SUMMON_TYPE_SYNCHRO
+	end)
 	e1:SetReset(RESET_PHASE+PHASE_END)
 	Duel.RegisterEffect(e1,tp)
-
 end
 
 function s.synclimit(e,c,tp,sumtp,sumpos)

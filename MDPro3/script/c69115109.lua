@@ -4,7 +4,12 @@ local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	-- Fusion Summon: 1 Universo G + 1 monstro no campo (pode ser do oponente)
-	aux.AddFusionProcFun2(c,aux.FilterBoolFunction(Card.IsSetCard,0xc50),aux.FilterBoolFunction(Card.IsType,TYPE_MONSTER),true)
+	aux.AddFusionProcFun2(
+		c,
+		aux.FilterBoolFunction(Card.IsSetCard,0xc50),
+		s.fieldmonfilter,
+		true
+	)
 
 	-- Passivo: imposto de 600 LP quando o oponente ativa efeito de card
 	local e1=Effect.CreateEffect(c)
@@ -37,6 +42,10 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 
+function s.fieldmonfilter(c)
+	return c:IsType(TYPE_MONSTER) and c:IsLocation(LOCATION_MZONE)
+end
+
 -- Efeito passivo de imposto (sempre que o oponente ativa um efeito de card)
 function s.imposto(e,tp,eg,ep,ev,re,r,rp)
 	if rp~=tp then
@@ -48,7 +57,7 @@ end
 
 -- Filtro para Magia/Armadilha do oponente (face-up ou face-down)
 function s.trfilter(c)
-	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsReleasableByEffect()
+	return c:IsFaceup() and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsDestructable()
 end
 
 -- Condição: invocado por Fusão e usou matéria do oponente
@@ -61,16 +70,16 @@ end
 function s.trtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.GetMatchingGroup(s.trfilter,tp,0,LOCATION_ONFIELD,nil)
 	if chk==0 then return #g>0 end
-	Duel.SetOperationInfo(0,CATEGORY_RELEASE,g,1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
 end
 
--- Operação: tributar o card escolhido
+-- Operação: destruir o card escolhido
 function s.trop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(s.trfilter,tp,0,LOCATION_ONFIELD,nil)
 	if #g>0 then
-		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RELEASE)
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 		local sg=g:Select(tp,1,1,nil)
-		Duel.Release(sg,REASON_EFFECT+REASON_RULE)
+		Duel.Destroy(sg,REASON_EFFECT)
 	end
 end
 
