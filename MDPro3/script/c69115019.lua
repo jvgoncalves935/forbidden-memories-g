@@ -25,15 +25,16 @@ function s.initial_effect(c)
 	e2:SetOperation(s.qspop)
 	c:RegisterEffect(e2)
 
-	-- If this card is Summoned: You can change its Level to 2
+	-- Se Invocado, Invoca do Deck
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,1))
+	e3:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetProperty(EFFECT_FLAG_DELAY)
 	e3:SetCode(EVENT_SUMMON_SUCCESS)
-	e3:SetRange(LOCATION_MZONE)
-	e3:SetCountLimit(1,id+200) -- hard OPT
-	e3:SetOperation(s.lvop)
+	e3:SetCountLimit(1,id+200)
+	e3:SetTarget(s.sptg2)
+	e3:SetOperation(s.spop2)
 	c:RegisterEffect(e3)
 
 	local e4=e3:Clone()
@@ -101,43 +102,49 @@ function s.lvop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
-function s.deckfilter_tg(c,lv)
-	return c:IsSetCard(0xc50)
-		and c:IsLevel(lv)
+function s.sptg2(e,tp,eg,ep,ev,re,r,rp,chk)
+	local mg=Duel.GetMatchingGroup(s.lvfieldfilter,tp,LOCATION_MZONE,0,nil)
+	if chk==0 then
+		if #mg==0 then return false end
+		for tc in aux.Next(mg) do
+			if Duel.IsExistingMatchingCard(s.deckfilter2,tp,LOCATION_DECK,0,1,nil,tc:GetLevel(),e,tp) then
+				return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+			end
+		end
+		return false
+	end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
 end
 
+function s.spop2(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	local mg=Duel.GetMatchingGroup(s.lvfieldfilter,tp,LOCATION_MZONE,0,nil)
+	if #mg==0 then return end
 
-function s.basefilter(c,tp)
-	local lv=c:GetLevel()
-	return c:IsFaceup()
-		and c:IsSetCard(0xc50)
-		and lv<=6
-		and Duel.IsExistingMatchingCard(s.deckfilter_tg,tp,LOCATION_DECK,0,1,nil,lv)
-		and Duel.IsExistingMatchingCard(s.xyzfilter,tp,LOCATION_EXTRA,0,1,nil,lv)
-end
+	local levels={}
+	for tc in aux.Next(mg) do
+		levels[tc:GetLevel()]=true
+	end
 
-function s.deckfilter(c,lv,e,tp)
-	return c:IsSetCard(0xc50)
-		and c:IsLevel(lv)
-		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
-end
+	local g=Duel.GetMatchingGroup(function(c)
+		return levels[c:GetLevel()]
+			and c:IsLevelBelow(6)
+			and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	end,tp,LOCATION_DECK,0,nil)
 
-function s.matfilter(c,lv)
-	return c:IsFaceup()
-		and c:IsSetCard(0xc50)
-		and c:IsLevel(lv)
-end
+	if #g==0 then return end
 
-function s.xyzfilter(c,e,tp,mg)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_XYZ)
-		and c:GetRank()<=6
-		and Duel.GetLocationCountFromEx(tp,tp,mg,c)>0
-		and c:IsXyzSummonable(nil,mg)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local sg=g:Select(tp,1,1,nil)
+	Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 end
 
 function s.exgfilter(c,mg,mc)
-	return mg:CheckSubGroup(s.exgselect,1,#mg,c,mc)
+	return c:IsSetCard(0xc50)
+		and c:IsType(TYPE_XYZ)
+		and c:GetRank()<=6
+		and Duel.GetLocationCountFromEx(mc:GetControler(),mc:GetControler(),mg,c)>0
+		and mg:CheckSubGroup(s.exgselect,1,#mg,c,mc)
 end
 
 function s.exgselect(g,exc,mc)

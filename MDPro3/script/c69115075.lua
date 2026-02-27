@@ -148,29 +148,16 @@ function s.linkfilter(c,e,tp,mg)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_LINK)
 		and c:GetLink()<=4
+		and Duel.GetLocationCountFromEx(tp,tp,mg,c)>0
 		and c:IsLinkSummonable(mg)
 end
 
 function s.lktg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		local ct=Duel.GetLocationCount(tp,LOCATION_MZONE)
-		if ct<=0 then return false end
-
-		local can_eff=Duel.IsExistingMatchingCard(
-			s.effilter,tp,LOCATION_DECK+LOCATION_HAND,0,1,nil,e,tp
-		)
-
-		local can_norm=Duel.IsExistingMatchingCard(
-			s.normfilter,tp,LOCATION_DECK+LOCATION_HAND,0,1,nil,e,tp
-		)
-
 		local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-		local can_link=Duel.IsExistingMatchingCard(
-			s.linkfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg
-		)
-
-		return can_eff or (can_norm and can_link)
+		return Duel.IsExistingMatchingCard(s.linkfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg)
 	end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
 end
 
 function s.lkop(e,tp,eg,ep,ev,re,r,rp)
@@ -230,24 +217,21 @@ function s.lkop(e,tp,eg,ep,ev,re,r,rp)
 	end
 
 	Duel.BreakEffect()
+	
+	local c=e:GetHandler()
+	if c:IsControler(1-tp) or not c:IsRelateToEffect(e) or c:IsFacedown() then return end
 
 	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
+	local exg=Duel.GetMatchingGroup(s.linkfilter,tp,LOCATION_EXTRA,0,nil,mg,c)
+	if #exg==0 then return end
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sc=Duel.SelectMatchingCard(
-		tp,s.linkfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp,mg
-	):GetFirst()
-	if not sc then return end
+	local sc=exg:Select(tp,1,1,nil):GetFirst()
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LINK)
-	local mat=mg:Select(tp,sc:GetLink(),sc:GetLink(),nil)
+	local mat=mg:SelectSubGroup(tp,s.linkmatfilter,false,1,sc:GetLink(),sc)
 
-	sc:SetMaterial(mat)
-	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_LINK)
-
-	if Duel.SpecialSummon(sc,SUMMON_TYPE_LINK,tp,tp,false,false,POS_FACEUP)>0 then
-		sc:CompleteProcedure()
-	end
+	Duel.LinkSummon(tp,sc,mat)
 
 	-- lock de Link
 	local e1=Effect.CreateEffect(e:GetHandler())
@@ -255,13 +239,15 @@ function s.lkop(e,tp,eg,ep,ev,re,r,rp)
 	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_OATH)
 	e1:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
 	e1:SetTargetRange(1,0)
-	e1:SetTarget(s.linklock)
+	e1:SetTarget(function(e,c)
+		return c:IsType(TYPE_LINK)
+	end)
 	e1:SetReset(RESET_PHASE+PHASE_END)
 	Duel.RegisterEffect(e1,tp)
 end
 
-function s.linklock(e,c,tp,sumtp,sumpos)
-	return sumtp&SUMMON_TYPE_LINK~=0
+function s.linkmatfilter(g,sc)
+	return sc:IsLinkSummonable(g)
 end
 
 function s.gycost(e,tp,eg,ep,ev,re,r,rp,chk)

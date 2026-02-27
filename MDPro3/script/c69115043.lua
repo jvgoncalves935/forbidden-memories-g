@@ -31,6 +31,14 @@ function s.initial_effect(c)
 	e3:SetTarget(s.thtg)
 	e3:SetOperation(s.thop)
 	c:RegisterEffect(e3)
+
+	local e4=e3:Clone()
+	e4:SetCode(EVENT_SUMMON_SUCCESS)
+	c:RegisterEffect(e4)
+
+	local e5=e3:Clone()
+	e5:SetCode(EVENT_FLIP_SUMMON_SUCCESS)
+	c:RegisterEffect(e5)
 end
 
 -- condição Ignition: oponente sem monstros

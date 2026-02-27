@@ -26,11 +26,18 @@ function s.initial_effect(c)
 	e3:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
-	e3:SetProperty(EFFECT_FLAG_DELAY)
 	e3:SetCountLimit(1,id+200)
 	e3:SetTarget(s.thtg)
 	e3:SetOperation(s.thop)
 	c:RegisterEffect(e3)
+
+	local e4=e3:Clone()
+	e4:SetCode(EVENT_SUMMON_SUCCESS)
+	c:RegisterEffect(e4)
+
+	local e5=e3:Clone()
+	e5:SetCode(EVENT_FLIP_SUMMON_SUCCESS)
+	c:RegisterEffect(e5)
 end
 
 -- condição Ignition: oponente sem monstros
@@ -76,12 +83,24 @@ end
 
 -- alvo de adicionar à mão
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end
-	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
+	if chk==0 then
+		return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil)
+	end
+
+	-- Assume que não vai resolver
+	e:SetLabel(0)
+
+	if Duel.SelectYesNo(tp,aux.Stringid(id,2)) then
+		e:SetLabel(1)
+		Duel.Hint(HINT_MESSAGE,tp,aux.Stringid(id,3))
+		Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
+	end
 end
 
 -- operação de adicionar à mão
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
+	if e:GetLabel()~=1 then return end
+
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 	local g=Duel.SelectMatchingCard(tp,s.thfilter,tp,LOCATION_DECK,0,1,1,nil)
 	if #g>0 then
