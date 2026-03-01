@@ -81,7 +81,7 @@
 69115081 1ª Edição - Bizarro de Família														TCG/OCG: 1				OK
 69115082 1ª Edição - Ricardo Milos															TCG/OCG: 1				OK
 69115083 1ª Edição - Saci de Duas Pernas													TCG/OCG: 1
-69115084 1ª Edição - Indiana Torres															TCG/OCG: 1
+69115084 1ª Edição - Indiana Torres															TCG/OCG: 1				OK
 69115085 1ª Edição - Papai Noel de Família													TCG/OCG: 1				OK
 69115086 1ª Edição - Zeh Está Bolado - Bolado de Família									TCG/OCG: 1
 69115087 1ª Edição - Entregador de Pizza G													TCG/OCG: 1				OK
