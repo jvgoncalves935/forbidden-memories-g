@@ -4,7 +4,7 @@ function s.initial_effect(c)
 	c:EnableReviveLimit()
 
 	-- Link Summon: 1 Link + 1 "Universo G" (exatamente 2)
-	aux.AddLinkProcedure(c,s.lmatfilter,2,2)
+	aux.AddLinkProcedure(c,nil,2,2,s.lcheck)
 
 	-- 1) Contínuo obrigatório: se o oponente comprar/adicionar no seu turno → você compra (HOPT)
 	local e1=Effect.CreateEffect(c)
@@ -43,8 +43,9 @@ function s.initial_effect(c)
 end
 
 -- Link Material
-function s.lmatfilter(c,lc,sumtype,tp)
-	return c:IsType(TYPE_LINK) or c:IsSetCard(0xc50)
+function s.lcheck(g,lc,sumtype,tp)
+	return g:IsExists(Card.IsType,1,nil,TYPE_LINK)
+		and g:IsExists(Card.IsSetCard,1,nil,0xc50)
 end
 
 -- 1) Compra contínua

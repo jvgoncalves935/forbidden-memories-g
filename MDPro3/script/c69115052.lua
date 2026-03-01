@@ -36,6 +36,7 @@ function s.initial_effect(c)
 	e3:SetCost(s.qcost)
 	e3:SetOperation(s.qop)
 	c:RegisterEffect(e3)
+
 end
 
 -- Filtro material
@@ -51,12 +52,18 @@ end
 
 function s.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	return Duel.GetFlagEffect(tp,id+600)==0
-		and Duel.GetLocationCountFromEx(tp,tp,nil,c)>0
-		and Duel.IsExistingMatchingCard(s.cfilter,tp,
-			LOCATION_MZONE+LOCATION_GRAVE+LOCATION_REMOVED,0,2,nil)
-end
+	if Duel.GetFlagEffect(tp,id+600)~=0 then return false end
 
+	local g=Duel.GetMatchingGroup(s.cfilter,tp,
+		LOCATION_MZONE+LOCATION_GRAVE+LOCATION_REMOVED,0,nil)
+
+	if #g<2 then return false end
+
+	-- apenas monstros no campo podem liberar zona
+	local fg=g:Filter(Card.IsLocation,nil,LOCATION_MZONE)
+
+	return Duel.GetLocationCountFromEx(tp,tp,fg,c)>0
+end
 
 function s.cttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end

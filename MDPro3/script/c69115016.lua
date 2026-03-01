@@ -5,7 +5,7 @@
 local s,id=GetID()
 function s.initial_effect(c)
 	-- Invocação-Sincro
-	-- 1 regulador Universo G + 1 nao-regulador
+	-- 1 regulador Universo G + 1+ nao-regulador
 	aux.AddSynchroProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0xc50),aux.NonTuner(nil),1)
 	c:EnableReviveLimit()
 

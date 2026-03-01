@@ -67,6 +67,7 @@ function s.initial_effect(c)
 end
 
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return false end
 	local banished=Duel.GetFieldGroupCount(tp,LOCATION_REMOVED,LOCATION_REMOVED)
 	local deckcount=Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)
 	return banished>=2 or deckcount>=2
@@ -131,7 +132,7 @@ end
 function s.effilter(c,e,tp)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_MONSTER)
-		and not c:IsType(TYPE_SYNCHRO)
+		and not c:IsType(TYPE_TUNER)
 		and c:IsLevelBelow(4)
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
@@ -144,20 +145,31 @@ function s.normfilter(c,e,tp)
 end
 
 -- Link Universo G até Link 4
-function s.linkfilter(c,e,tp,mg)
+function s.linkfilter(c,e,tp,g)
 	return c:IsSetCard(0xc50)
 		and c:IsType(TYPE_LINK)
 		and c:GetLink()<=4
-		and Duel.GetLocationCountFromEx(tp,tp,mg,c)>0
-		and c:IsLinkSummonable(mg)
+		and Duel.GetLocationCountFromEx(tp,tp,g,c)>0
+		and c:IsLinkSummonable(g,nil,#g,#g)
 end
 
 function s.lktg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-		return Duel.IsExistingMatchingCard(s.linkfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg)
+		local ct=Duel.GetLocationCount(tp,LOCATION_MZONE)
+		if ct<=0 then return false end
+
+		local can_eff=Duel.IsExistingMatchingCard(
+			s.effilter,tp,LOCATION_DECK+LOCATION_HAND,0,1,nil,e,tp
+		)
+
+		local can_norm=Duel.IsExistingMatchingCard(
+			s.normfilter,tp,LOCATION_DECK+LOCATION_HAND,0,1,nil,e,tp
+		)
+
+		return can_eff or can_norm
 	end
-	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
+
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK+LOCATION_HAND)
 end
 
 function s.lkop(e,tp,eg,ep,ev,re,r,rp)
@@ -183,6 +195,7 @@ function s.lkop(e,tp,eg,ep,ev,re,r,rp)
 
 	local summoned=Group.CreateGroup()
 
+	-- SPECIAL SUMMON STEP MODE
 	if opt==0 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 		local tc=Duel.SelectMatchingCard(
@@ -190,7 +203,7 @@ function s.lkop(e,tp,eg,ep,ev,re,r,rp)
 		):GetFirst()
 		if not tc then return end
 
-		if Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP)==0 then return end
+		Duel.SpecialSummonStep(tc,0,tp,tp,false,false,POS_FACEUP)
 		summoned:AddCard(tc)
 
 		-- nega efeitos
@@ -212,26 +225,61 @@ function s.lkop(e,tp,eg,ep,ev,re,r,rp)
 		)
 		if #g==0 then return end
 
-		Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEUP)
+		for tc in aux.Next(g) do
+			Duel.SpecialSummonStep(tc,0,tp,tp,false,false,POS_FACEUP)
+		end
 		summoned:Merge(g)
 	end
 
-	Duel.BreakEffect()
-	
-	local c=e:GetHandler()
-	if c:IsControler(1-tp) or not c:IsRelateToEffect(e) or c:IsFacedown() then return end
+	Duel.SpecialSummonComplete()
 
+	-- grupo realmente invocado
+	local og=Duel.GetOperatedGroup()
+
+	Duel.AdjustAll()
+
+	-- se algo não ficou no campo, cancela
+	if og:FilterCount(Card.IsLocation,nil,LOCATION_MZONE)~=og:GetCount() then
+		return
+	end
+
+	-- LINK SUMMON (manual)
+	-- todos os monstros face-up no seu campo podem ser considerados
 	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-	local exg=Duel.GetMatchingGroup(s.linkfilter,tp,LOCATION_EXTRA,0,nil,mg,c)
+
+	-- Links possíveis considerando o campo atual
+	local exg=Duel.GetMatchingGroup(function(c)
+		return c:IsSetCard(0xc50)
+			and c:IsType(TYPE_LINK)
+			and c:GetLink()<=4
+			and c:IsLinkSummonable(mg)
+	end,tp,LOCATION_EXTRA,0,nil)
+
 	if #exg==0 then return end
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local sc=exg:Select(tp,1,1,nil):GetFirst()
+	if not sc then return end
 
+	-- selecionar materiais válidos segundo a própria procedure do Link
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LINK)
-	local mat=mg:SelectSubGroup(tp,s.linkmatfilter,false,1,sc:GetLink(),sc)
+	local mat=mg:SelectSubGroup(tp,function(g)
+			return sc:IsLinkSummonable(g)
+		end,false,1,sc:GetLink())
 
-	Duel.LinkSummon(tp,sc,mat)
+	if not mat then return end
+
+	-- checagem de zona do Extra
+	if Duel.GetLocationCountFromEx(tp,tp,mat,sc)<=0 then return end
+
+	sc:SetMaterial(mat)
+
+	-- enviar matérias ao GY como material de Link
+	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_LINK)
+
+	-- invocar manualmente
+	Duel.SpecialSummon(sc,SUMMON_TYPE_LINK,tp,tp,false,false,POS_FACEUP)
+	sc:CompleteProcedure()
 
 	-- lock de Link
 	local e1=Effect.CreateEffect(e:GetHandler())
@@ -276,13 +324,14 @@ function s.gyop(e,tp,eg,ep,ev,re,r,rp)
 	if not g then return end
 	
 	local sg=g:Filter(Card.IsRelateToEffect,nil,e)
-	if #sg>0 then
+	local ct=#sg
+
+	if ct>0 then
 		Duel.SendtoDeck(sg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	end
 
-	-- O draw acontece independentemente de ter retornado algo
-	if Duel.GetFieldGroupCount(1-tp,LOCATION_DECK,0)>0 then
-		Duel.Draw(1-tp,1,REASON_EFFECT)
+	if ct>0 and Duel.GetFieldGroupCount(1-tp,LOCATION_DECK,0)>=ct then
+		Duel.Draw(1-tp,ct,REASON_EFFECT)
 	end
 end
 

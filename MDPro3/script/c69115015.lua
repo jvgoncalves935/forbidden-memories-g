@@ -68,25 +68,24 @@ function s.actop(e,tp,eg,ep,ev,re,r,rp)
 		Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	end
 
-	-- Parte 2: Bounce opcional (independente da parte 1)
-	if Duel.IsExistingMatchingCard(s.bouncefilter,tp,LOCATION_ONFIELD,0,1,nil)
-		and Duel.IsExistingMatchingCard(s.stzonefilter,tp,0,LOCATION_SZONE,1,nil) then
-
+	-- Parte 2: Bounce opcional
+	if Duel.IsExistingMatchingCard(s.bouncefilter,tp,LOCATION_ONFIELD,0,1,e:GetHandler()) then
 		if Duel.SelectYesNo(tp,aux.Stringid(id,1)) then
 			Duel.BreakEffect()
 
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
-			local rg=Duel.SelectMatchingCard(tp,s.bouncefilter,tp,LOCATION_ONFIELD,0,1,1,nil)
+			local rg=Duel.SelectMatchingCard(tp,s.bouncefilter,tp,LOCATION_ONFIELD,0,1,1,e:GetHandler())
 			local rc=rg:GetFirst()
 
 			if rc and Duel.SendtoHand(rc,nil,REASON_EFFECT)>0 then
-
 				Duel.BreakEffect()
 
-				Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
-				local dg=Duel.SelectMatchingCard(tp,s.stzonefilter,tp,0,LOCATION_SZONE,1,1,nil)
+				-- só tenta destruir se existir alvo
+				local dg=Duel.GetMatchingGroup(s.stzonefilter,tp,0,LOCATION_SZONE,nil)
 				if #dg>0 then
-					Duel.Destroy(dg,REASON_EFFECT)
+					Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+					local sg=dg:Select(tp,1,1,nil)
+					Duel.Destroy(sg,REASON_EFFECT)
 				end
 			end
 		end
