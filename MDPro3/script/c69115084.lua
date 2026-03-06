@@ -26,16 +26,6 @@ function s.initial_effect(c)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
 
-	-- Temporary Immunity during summon chain
-	local e2=Effect.CreateEffect(c)
-	e2:SetType(EFFECT_TYPE_SINGLE)
-	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
-	e2:SetRange(LOCATION_MZONE)
-	e2:SetCode(EFFECT_IMMUNE_EFFECT)
-	e2:SetValue(s.immval)
-	e2:SetCondition(s.immcon)
-	c:RegisterEffect(e2)
-
 	-- Change name to Yeah Man
 	aux.EnableChangeCode(c,69115018,LOCATION_MZONE+LOCATION_GRAVE)
 
@@ -130,7 +120,8 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp,c)
 end
 
 function s.immcon(e)
-	return e:GetHandler():IsSummonType(SUMMON_TYPE_SPECIAL)
+	local c=e:GetHandler()
+	return c:IsStatus(STATUS_SUMMONING) or c:IsStatus(STATUS_SPSUMMON_TURN)
 end
 
 function s.immval(e,re)
@@ -214,5 +205,17 @@ function s.regcon(e,tp,eg,ep,ev,re,r,rp)
 end
 
 function s.regop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+
 	Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
+
+	-- imunidade temporária
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_IMMUNE_EFFECT)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetValue(s.immval)
+	e1:SetReset(RESET_CHAIN)
+	c:RegisterEffect(e1)
 end
