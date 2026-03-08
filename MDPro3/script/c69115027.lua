@@ -52,7 +52,15 @@ function s.drcon1(e,tp,eg,ep,ev,re,r,rp)
 		and not Duel.IsChainSolving()
 end
 function s.drop1(e,tp,eg,ep,ev,re,r,rp)
-	Duel.Draw(tp,1,REASON_EFFECT)
+	local ct=eg:FilterCount(s.filter,nil,1-tp)
+	if ct<=0 then return end
+	for i=1,ct do
+		if Duel.SelectYesNo(tp,aux.Stringid(id,3)) then
+			Duel.Draw(tp,1,REASON_EFFECT)
+		else
+			break
+		end
+	end
 end
 function s.regcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.filter,1,nil,1-tp)
@@ -67,5 +75,11 @@ end
 function s.drop2(e,tp,eg,ep,ev,re,r,rp)
 	local n=Duel.GetFlagEffect(tp,id)
 	Duel.ResetFlagEffect(tp,id)
-	Duel.Draw(tp,n,REASON_EFFECT)
+	for i=1,n do
+		if Duel.SelectYesNo(tp,aux.Stringid(id,3)) then
+			Duel.Draw(tp,1,REASON_EFFECT)
+		else
+			break
+		end
+	end
 end
