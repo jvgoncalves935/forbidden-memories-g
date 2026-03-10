@@ -1,8 +1,10 @@
 --Jailson Mendes, O Pai de Família
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:EnableReviveLimit()
 	aux.EnablePendulumAttribute(c)
+
+	aux.AddXyzProcedureLevelFree(c,s.xyzfilter,s.xyzcheck,2,2)
+	c:EnableReviveLimit()
 	
 	local e0=Effect.CreateEffect(c)
 	e0:SetType(EFFECT_TYPE_FIELD)
@@ -104,11 +106,6 @@ function s.xyzfilter(c)
 		if c:GetRank()<6 then return false end
 	elseif t==TYPE_LINK then
 		if c:GetLink()<2 then return false end
-	end
-
-	-- Se estiver na Zona de Pêndulo, precisa poder virar Matéria-Xyz
-	if c:IsLocation(LOCATION_PZONE) then
-		return c:IsCanBeXyzMaterial()
 	end
 
 	return c:IsType(TYPE_MONSTER)

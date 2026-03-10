@@ -106,160 +106,94 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
-	local opt=Duel.SelectOption(tp,
-		aux.Stringid(id,3), -- Fusion
-		aux.Stringid(id,4), -- Synchro
-		aux.Stringid(id,5), -- Xyz
-		aux.Stringid(id,6)  -- Link
-	)
 
-	if opt==0 then
-		s.doFusion(e,tp)
-	elseif opt==1 then
-		s.doSynchro(e,tp)
-	elseif opt==2 then
-		s.doXyz(e,tp)
-	else
-		s.doLink(e,tp)
-	end
-end
+	local mg_field=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
+	local mg_fusion=Duel.GetMatchingGroup(Card.IsType,tp,LOCATION_HAND+LOCATION_MZONE,0,nil,TYPE_MONSTER)
 
-function s.fusionfilter(c,e,tp)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_FUSION)
-		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_FUSION,tp,false,false)
-end
-
-function s.doFusion(e,tp)
+	local exg=Duel.GetMatchingGroup(s.exfilter,tp,LOCATION_EXTRA,0,nil,mg_field,mg_fusion)
+	if #exg==0 then return end
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local fc=Duel.SelectMatchingCard(
-		tp,s.fusionfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp
-	):GetFirst()
-	if not fc then return end
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FMATERIAL)
-	local mg1=Duel.SelectMatchingCard(
-		tp,Card.IsType,tp,LOCATION_HAND+LOCATION_MZONE,0,1,1,nil,TYPE_MONSTER
-	):GetFirst()
-	if not mg1 then return end
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FMATERIAL)
-	local mg2=Duel.SelectMatchingCard(
-		tp,Card.IsType,tp,LOCATION_HAND+LOCATION_MZONE,0,1,1,nil,TYPE_MONSTER
-	):GetFirst()
-	if not mg2 then return end
-
-	local mat=Group.FromCards(mg1,mg2)
-
-	if not fc:CheckFusionMaterial(mat,nil,tp) then return end
-
-	fc:SetMaterial(mat)
-	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_FUSION)
-
-	Duel.SpecialSummon(fc,SUMMON_TYPE_FUSION,tp,tp,false,false,POS_FACEUP)
-	fc:CompleteProcedure()
-end
-
-function s.syncfilter(c,e,tp)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_SYNCHRO)
-end
-
-function s.doSynchro(e,tp)
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sc=Duel.SelectMatchingCard(
-		tp,s.syncfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp
-	):GetFirst()
+	local sc=exg:Select(tp,1,1,nil):GetFirst()
 	if not sc then return end
 
-	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
+	local mg=sc:IsType(TYPE_FUSION) and mg_fusion or mg_field
 
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SMATERIAL)
-	local mat=mg:SelectSubGroup(tp,function(g)
-		return sc:IsSynchroSummonable(nil,g)
-	end,false,2,2)
-
+	local mat=s.selectmaterials(tp,mg,sc)
 	if not mat then return end
 
-	sc:SetMaterial(mat)
-	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_SYNCHRO)
-
-	Duel.SpecialSummon(sc,SUMMON_TYPE_SYNCHRO,tp,tp,false,false,POS_FACEUP)
-	sc:CompleteProcedure()
+	s.specialfromextra(tp,sc,mat)
 end
 
-function s.exgselect(g,sc)
-	if not sc:IsXyzSummonable(g) then return false end
+function s.materialcheck(sc,g)
+	if sc:IsType(TYPE_FUSION) then
+		return sc:CheckFusionMaterial(g,nil,sc:GetControler())
+	elseif sc:IsType(TYPE_SYNCHRO) then
+		return sc:IsSynchroSummonable(nil,g)
+	elseif sc:IsType(TYPE_XYZ) then
+		return sc:IsXyzSummonable(g)
+	elseif sc:IsType(TYPE_LINK) then
+		return sc:IsLinkSummonable(g)
+	end
+	return false
+end
+
+function s.matfilter(g,sc)
+	if not s.materialcheck(sc,g) then return false end
+
+	-- garante que o grupo é mínimo (sem matérias extras)
 	return not g:IsExists(function(c,sg,sc)
 		local g2=sg:Clone()
 		g2:RemoveCard(c)
-		return sc:IsXyzSummonable(g2)
+		return s.materialcheck(sc,g2)
 	end,1,nil,g,sc)
 end
 
-function s.xyzfilter(c,mg)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_XYZ)
-		and mg:CheckSubGroup(s.exgselect,1,#mg,c)
+function s.exfilter(c,mg_field,mg_fusion)
+
+	if not c:IsSetCard(0xc50) then return false end
+
+	if c:IsType(TYPE_FUSION) then
+		return mg_fusion:CheckSubGroup(s.matfilter,1,#mg_fusion,c)
+	else
+		return mg_field:CheckSubGroup(s.matfilter,1,#mg_field,c)
+	end
 end
 
-function s.doXyz(e,tp)
+function s.selectmaterials(tp,mg,sc)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_MATERIAL)
+	return mg:SelectSubGroup(tp,s.matfilter,false,1,#mg,sc)
+end
 
-	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-
-	local exg=Duel.GetMatchingGroup(s.xyzfilter,tp,LOCATION_EXTRA,0,nil,mg)
-	if #exg==0 then return end
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sc=exg:Select(tp,1,1,nil):GetFirst()
-	if not sc then return end
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
-	local mat=mg:SelectSubGroup(tp,s.exgselect,false,1,#mg,sc)
-	if not mat then return end
+function s.specialfromextra(tp,sc,mat)
 
 	if Duel.GetLocationCountFromEx(tp,tp,mat,sc)<=0 then return end
 
 	sc:SetMaterial(mat)
 
-	Duel.Overlay(sc,mat)
+	local sumtype=SUMMON_TYPE_SPECIAL
+	local reason=REASON_MATERIAL
 
-	Duel.SpecialSummon(sc,SUMMON_TYPE_XYZ,tp,tp,false,false,POS_FACEUP)
+	if sc:IsType(TYPE_FUSION) then
+		sumtype=SUMMON_TYPE_FUSION
+		reason=reason+REASON_FUSION
+	elseif sc:IsType(TYPE_SYNCHRO) then
+		sumtype=SUMMON_TYPE_SYNCHRO
+		reason=reason+REASON_SYNCHRO
+	elseif sc:IsType(TYPE_XYZ) then
+		sumtype=SUMMON_TYPE_XYZ
+	elseif sc:IsType(TYPE_LINK) then
+		sumtype=SUMMON_TYPE_LINK
+		reason=reason+REASON_LINK
+	end
 
-	sc:CompleteProcedure()
-end
+	if sc:IsType(TYPE_XYZ) then
+		Duel.Overlay(sc,mat)
+	else
+		Duel.SendtoGrave(mat,reason)
+	end
 
-function s.linkfilter(c,mg)
-	return c:IsSetCard(0xc50)
-		and c:IsType(TYPE_LINK)
-		and c:IsLinkSummonable(mg)
-end
-
-function s.doLink(e,tp)
-
-	local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-
-	local exg=Duel.GetMatchingGroup(s.linkfilter,tp,LOCATION_EXTRA,0,nil,mg)
-	if #exg==0 then return end
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sc=exg:Select(tp,1,1,nil):GetFirst()
-
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LINK)
-	local mat=mg:SelectSubGroup(tp,function(g)
-		return sc:IsLinkSummonable(g)
-	end,false,1,sc:GetLink())
-
-	if not mat then return end
-
-	if Duel.GetLocationCountFromEx(tp,tp,mat,sc)<=0 then return end
-
-	sc:SetMaterial(mat)
-	Duel.SendtoGrave(mat,REASON_MATERIAL+REASON_LINK)
-
-	Duel.SpecialSummon(sc,SUMMON_TYPE_LINK,tp,tp,false,false,POS_FACEUP)
+	Duel.SpecialSummon(sc,sumtype,tp,tp,false,false,POS_FACEUP)
 	sc:CompleteProcedure()
 end
 

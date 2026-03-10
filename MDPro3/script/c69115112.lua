@@ -1,6 +1,10 @@
 --Poderoso Castiga
 local s,id,o=GetID()
 function s.initial_effect(c)
+	-- Xyz procedure padrão
+	aux.AddXyzProcedure(c,nil,12,2)
+	c:EnableReviveLimit()
+
 	-- Xyz Summon procedure (manual)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
@@ -64,7 +68,6 @@ function s.xyzcon(e,c)
 		return false
 	end
 
-	-- Precisa de 3 "Universo G" no campo (face-up ou face-down)
 	return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 		and Duel.IsExistingMatchingCard(
 			s.xyzfilter,tp,LOCATION_ONFIELD,0,1,nil
@@ -72,7 +75,7 @@ function s.xyzcon(e,c)
 end
 
 function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
-	-- Seleciona 3 matérias
+	-- Seleciona 1 matéria
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
 	local g=Duel.SelectMatchingCard(
 		tp,s.xyzfilter,tp,LOCATION_ONFIELD,0,1,1,nil
