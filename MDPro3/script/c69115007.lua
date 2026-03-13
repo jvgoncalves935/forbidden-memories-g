@@ -5,15 +5,13 @@ function s.initial_effect(c)
 
 	aux.AddXyzProcedureLevelFree(c,s.xyzfilter,s.xyzcheck,2,2)
 	c:EnableReviveLimit()
-	
+
+	-- Register flag when Xyz Summoned (limit 1 per turn)
 	local e0=Effect.CreateEffect(c)
-	e0:SetType(EFFECT_TYPE_FIELD)
-	e0:SetCode(EFFECT_SPSUMMON_PROC)
-	e0:SetProperty(EFFECT_FLAG_UNCOPYABLE)
-	e0:SetRange(LOCATION_EXTRA)
-	e0:SetCondition(s.xyzcon)
-	e0:SetOperation(s.xyzop)
-	e0:SetValue(SUMMON_TYPE_XYZ)
+	e0:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
+	e0:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e0:SetCondition(s.xyzflagcon)
+	e0:SetOperation(s.xyzflagop)
 	c:RegisterEffect(e0)
 	
 	local e1=Effect.CreateEffect(c)
@@ -67,20 +65,11 @@ function s.initial_effect(c)
 	c:RegisterEffect(e5)
 end
 
-function s.xyzcon(e,c)
-	if c==nil then return true end
-	local tp=c:GetControler()
-	local g=Duel.GetMatchingGroup(s.xyzfilter,tp,LOCATION_MZONE+LOCATION_PZONE,0,nil)
-	return g:CheckSubGroup(s.xyzcheck,2,2)
+function s.xyzflagcon(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():IsSummonType(SUMMON_TYPE_XYZ)
 end
 
-function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
-	local g=Duel.GetMatchingGroup(s.xyzfilter,tp,LOCATION_MZONE+LOCATION_PZONE,0,nil)
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
-	local sg=g:SelectSubGroup(tp,s.xyzcheck,false,2,2)
-	c:SetMaterial(sg)
-	Duel.Overlay(c,sg)
-
+function s.xyzflagop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
 end
 
