@@ -164,7 +164,7 @@ end
 
 function s.selectmaterials(tp,mg,sc)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_MATERIAL)
-	return mg:SelectSubGroup(tp,s.matfilter,false,1,#mg,sc)
+	return mg:SelectSubGroup(tp,s.matfilter,false,1,5,sc)
 end
 
 function s.specialfromextra(tp,sc,mat)

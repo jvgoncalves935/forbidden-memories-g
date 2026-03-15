@@ -8,7 +8,7 @@ function s.initial_effect(c)
 		c,
 		aux.FilterBoolFunction(Card.IsSetCard,0xc50),
 		s.fieldmonfilter,
-		true
+		false
 	)
 
 	-- Passivo: imposto de 600 LP quando o oponente ativa efeito de card

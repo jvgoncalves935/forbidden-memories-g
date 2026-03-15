@@ -4,12 +4,11 @@ function s.initial_effect(c)
 	c:EnableReviveLimit()
 	Duel.EnableGlobalFlag(GLOBALFLAG_SPSUMMON_COUNT)
 
-	aux.AddFusionProcMix(
+	aux.AddFusionProcFunRep(
 		c,
-		true,
-		true,
-		s.matfilter1,
-		s.matfilter2
+		s.matfilter,
+		2,
+		false
 	)
 
 	-- If Fusion Summoned using 2 opponent's monsters (OBRIGATÓRIO)
@@ -41,12 +40,8 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 
-function s.matfilter1(c)
-	return c:IsType(TYPE_MONSTER) and not c:IsRace(RACE_DRAGON)
-end
-
-function s.matfilter2(c)
-	return c:IsType(TYPE_MONSTER) and not c:IsSetCard(0xfb3)
+function s.matfilter(c)
+	return not c:IsSetCard(0xfb3)
 end
 
 function s.tgcon(e,tp,eg,ep,ev,re,r,rp)
