@@ -34,6 +34,16 @@ function s.handcon(e)
 		and Duel.GetFieldGroupCount(tp,LOCATION_SZONE,0)==0
 end
 
+function s.fusmatfilter(c,e)
+	return c:IsCanBeFusionMaterial()
+		and not c:IsImmuneToEffect(e)
+		and (
+			c:IsLocation(LOCATION_HAND)
+			or c:IsLocation(LOCATION_MZONE)
+			or c:IsLocation(LOCATION_GRAVE)
+		)
+end
+
 -- Tribute 1 card
 function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
@@ -51,7 +61,7 @@ function s.exfilter(c,e,tp)
 	if not c:IsSetCard(0xc50) then return false end
 
 	if c:IsType(TYPE_FUSION) then
-		local mg=Duel.GetFusionMaterial(tp)
+		local mg=Duel.GetMatchingGroup(s.fusmatfilter,tp,LOCATION_HAND+LOCATION_MZONE+LOCATION_GRAVE,0,nil,e)
 		return c:IsType(TYPE_FUSION)
 			and c:CheckFusionMaterial(mg,nil,tp)
 
@@ -65,7 +75,7 @@ function s.exfilter(c,e,tp)
 
 	elseif c:IsType(TYPE_LINK) then
 		local mg=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,nil)
-		return c:IsLinkSummonable(nil,mg)
+		return c:IsLinkSummonable(mg)
 
 	end
 
@@ -73,13 +83,11 @@ function s.exfilter(c,e,tp)
 end
 
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
-
 	if chk==0 then
 		return Duel.IsExistingMatchingCard(s.exfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp)
 	end
 
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
-
 end
 
 function s.exgfilter(c,mg,mc)
@@ -107,7 +115,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	-- FUSION
 	if sc:IsType(TYPE_FUSION) then
 
-		local mg=Duel.GetFusionMaterial(tp)
+		local mg=Duel.GetMatchingGroup(s.fusmatfilter,tp,LOCATION_HAND+LOCATION_MZONE+LOCATION_GRAVE,0,nil,e)
 		mat=Duel.SelectFusionMaterial(tp,sc,mg,nil,tp)
 
 		sc:SetMaterial(mat)
@@ -131,8 +139,8 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SMATERIAL)
 		mat=mg:SelectSubGroup(tp,function(g)
-			return sc:IsSynchroSummonable(nil,g)
-		end,false,1,sc:GetLevel()+1)
+			return sc:IsSynchroSummonable(nil,g,#g-1,#g-1)
+		end,false,2,#mg,tp,sc)
 
 		if not mat then return end
 

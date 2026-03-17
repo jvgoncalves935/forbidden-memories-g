@@ -3,12 +3,13 @@
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	-- Fusion Summon: 1 Universo G + 1 monstro no campo (pode ser do oponente)
-	aux.AddFusionProcFun2(
+	-- Fusion Summon: 1 Universo G + 1 monstro no campo
+	aux.AddFusionProcMix(
 		c,
-		aux.FilterBoolFunction(Card.IsSetCard,0xc50),
-		s.fieldmonfilter,
-		false
+		true,
+		false,
+		s.universogfilter,
+		s.fieldmonfilter
 	)
 
 	-- Passivo: imposto de 600 LP quando o oponente ativa efeito de card
@@ -40,6 +41,10 @@ function s.initial_effect(c)
 	e3:SetTarget(s.sptg)
 	e3:SetOperation(s.spop)
 	c:RegisterEffect(e3)
+end
+
+function s.universogfilter(c)
+	return c:IsType(TYPE_MONSTER) and c:IsSetCard(0xc50)
 end
 
 function s.fieldmonfilter(c)
