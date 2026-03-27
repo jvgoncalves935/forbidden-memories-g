@@ -28,17 +28,15 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	-- Se o alvo for do arquétipo Universo G, aplica proteção IMEDIATA durante esta corrente
 	local tc=g:GetFirst()
 	if tc and tc:IsSetCard(0xc50) then
-		local e2=Effect.CreateEffect(e:GetHandler())
-		e2:SetType(EFFECT_TYPE_SINGLE)
-		e2:SetCode(EFFECT_CANNOT_BE_EFFECT_TARGET)
-		e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
-		e2:SetRange(LOCATION_GRAVE)
-		e2:SetReset(RESET_CHAIN)
-		e2:SetValue(aux.tgoval)
-		tc:RegisterEffect(e2)
+		Duel.SetChainLimitTillChainEnd(s.chlimit)
 	end
 
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,g,1,0,0)
+end
+
+function s.chlimit(e,ep,tp)
+	-- bloqueia efeitos que dão alvo
+	return not (e:IsHasProperty(EFFECT_FLAG_CARD_TARGET))
 end
 
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
