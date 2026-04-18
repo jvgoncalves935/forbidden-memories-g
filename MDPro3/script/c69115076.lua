@@ -34,11 +34,24 @@ function s.initial_effect(c)
 	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e4:SetProperty(EFFECT_FLAG_DELAY)
 	e4:SetCode(EVENT_LEAVE_FIELD)
-	e4:SetCountLimit(1,id+100)
+	e4:SetCountLimit(1,id+200)
 	e4:SetCondition(s.leavecon)
 	e4:SetTarget(s.leavetg)
 	e4:SetOperation(s.leaveop)
 	c:RegisterEffect(e4)
+
+	-- Quick Effect: virar 1 monstro para cima
+	local e5=Effect.CreateEffect(c)
+	e5:SetDescription(aux.Stringid(id,2))
+	e5:SetType(EFFECT_TYPE_QUICK_O)
+	e5:SetCode(EVENT_FREE_CHAIN)
+	e5:SetRange(LOCATION_MZONE)
+	e5:SetHintTiming(0,TIMINGS_CHECK_MONSTER)
+	e5:SetCountLimit(1,id+400)
+	e5:SetCondition(s.qpcon)
+	e5:SetTarget(s.qptg)
+	e5:SetOperation(s.qpop)
+	c:RegisterEffect(e5)
 end
 
 function s.flipcon(e,tp,eg,ep,ev,re,r,rp)
@@ -72,6 +85,19 @@ function s.flipop(e,tp,eg,ep,ev,re,r,rp)
 
 	if Duel.SendtoHand(tc,nil,REASON_EFFECT)>0 then
 		Duel.ConfirmCards(1-tp,tc)
+
+		local c=e:GetHandler()
+		local g2=Duel.GetMatchingGroup(function(mc)
+			return mc:IsFaceup() and mc:IsLocation(LOCATION_MZONE) and mc~=c
+		end,tp,LOCATION_MZONE,0,nil)
+
+		if #g2>0 and Duel.SelectYesNo(tp,aux.Stringid(id,2)) then
+			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_POSCHANGE)
+			local sg=g2:Select(tp,1,1,nil)
+			if #sg>0 then
+				Duel.ChangePosition(sg,POS_FACEDOWN_DEFENSE)
+			end
+		end
 	end
 end
 
@@ -142,3 +168,39 @@ function s.leaveop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 
+function s.qpcon(e,tp,eg,ep,ev,re,r,rp)
+	local ph=Duel.GetCurrentPhase()
+	return ph==PHASE_MAIN1 or ph==PHASE_MAIN2
+end
+
+function s.qpfilter(c)
+	return c:IsFacedown() and c:IsAbleToHand()
+end
+
+function s.qptg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and s.qpfilter(chkc) end
+	if chk==0 then
+		return Duel.IsExistingTarget(s.qpfilter,tp,LOCATION_MZONE,0,1,nil)
+			and Duel.GetLocationCount(tp,LOCATION_MZONE)>-1
+	end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
+	Duel.SelectTarget(tp,s.qpfilter,tp,LOCATION_MZONE,0,1,1,nil)
+end
+
+function s.qpop(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if not tc or not tc:IsRelateToEffect(e) then return end
+
+	if Duel.SendtoHand(tc,nil,REASON_EFFECT)>0 then
+		Duel.ConfirmCards(1-tp,tc)
+
+		-- Verifica se ainda pode invocar
+		if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+		if not tc:IsSummonable(true,nil) then return end
+
+		-- Pergunta ao jogador
+		if Duel.SelectYesNo(tp,aux.Stringid(id,3)) then
+			Duel.Summon(tp,tc,true,nil)
+		end
+	end
+end

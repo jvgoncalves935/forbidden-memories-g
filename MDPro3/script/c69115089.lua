@@ -37,11 +37,11 @@ function s.initial_effect(c)
 	e2:SetOperation(s.spop_eq)
 	c:RegisterEffect(e2)
 
-	-- Equip da mão
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,3))
 	e3:SetType(EFFECT_TYPE_IGNITION)
 	e3:SetRange(LOCATION_HAND)
+	e3:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e3:SetTarget(s.eqtg_hand)
 	e3:SetOperation(s.eqop_hand)
 	c:RegisterEffect(e3)
@@ -75,15 +75,21 @@ function s.eqfilter_hand(c,tp)
 		and c:IsControler(tp)
 end
 
-function s.eqtg_hand(e,tp,eg,ep,ev,re,r,rp,chk)
+function s.eqtg_hand(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then
+		return chkc:IsLocation(LOCATION_MZONE)
+			and chkc:IsControler(tp)
+			and s.eqfilter_hand(chkc,tp)
+	end
+
 	if chk==0 then
 		return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
-			and Duel.IsExistingMatchingCard(s.eqfilter_hand,tp,LOCATION_MZONE,0,1,nil,tp)
+			and Duel.IsExistingTarget(s.eqfilter_hand,tp,LOCATION_MZONE,0,1,nil,tp)
 	end
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
-	local g=Duel.SelectMatchingCard(tp,s.eqfilter_hand,tp,LOCATION_MZONE,0,1,1,nil,tp)
-	Duel.SetTargetCard(g)
+	local g=Duel.SelectTarget(tp,s.eqfilter_hand,tp,LOCATION_MZONE,0,1,1,nil,tp)
+	Duel.SetOperationInfo(0,CATEGORY_EQUIP,g,1,0,0)
 end
 
 function s.eqop_hand(e,tp,eg,ep,ev,re,r,rp)

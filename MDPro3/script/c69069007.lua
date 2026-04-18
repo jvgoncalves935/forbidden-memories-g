@@ -1,4 +1,4 @@
---Petit Dragon
+--Petit Dragon fodase kkkkkkk
 local s,id,o=GetID()
 
 function s.initial_effect(c)
@@ -41,17 +41,10 @@ function s.unigfilter(c)
 	return c:IsSetCard(0xc50)
 end
 
--- Condição: 5 ou mais "Universo G" na mão, campo ou cemitério (excluindo este card)
+-- Condição: 6 ou mais "Universo G" no Deck Adicional
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	local c=e:GetHandler()
-	local g=Duel.GetMatchingGroup(
-		s.unigfilter,
-		tp,
-		LOCATION_HAND+LOCATION_MZONE+LOCATION_GRAVE,
-		0,
-		c
-	)
-	return #g>=5
+	local g=Duel.GetMatchingGroup(Card.IsSetCard,tp,LOCATION_EXTRA,0,nil,0xc50)
+	return #g>=6
 end
 
 -- Alvo: Dragões que você controla

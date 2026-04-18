@@ -17,6 +17,10 @@ function s.initial_effect(c)
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e2)
 
+	local e10=e1:Clone()
+	e10:SetCode(EVENT_FLIP_SUMMON_SUCCESS)
+	c:RegisterEffect(e10)
+
 	--special summon (grave effect: banish 4 as cost, etc.)
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,1))
