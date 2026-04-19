@@ -25,19 +25,25 @@ function s.initial_effect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE)
 	e2:SetCode(EFFECT_CANNOT_BE_FUSION_MATERIAL)
 	e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
-	e2:SetValue(1)
+	-- allow only if is Toon
+	e2:SetValue(function(e,c)
+		if not c then return false end
+		return not (c:IsType(TYPE_TOON))
+	end)
 	c:RegisterEffect(e2)
+
 	local e3=e2:Clone()
 	e3:SetCode(EFFECT_CANNOT_BE_SYNCHRO_MATERIAL)
 	c:RegisterEffect(e3)
+
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_SINGLE)
 	e4:SetCode(EFFECT_CANNOT_BE_XYZ_MATERIAL)
 	e4:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
-	-- allow Xyz only if the Xyz is Toon
+	-- allow only if is Toon
 	e4:SetValue(function(e,c)
 		if not c then return false end
-		return not (c:IsType(TYPE_XYZ) and c:IsType(TYPE_TOON))
+		return not (c:IsType(TYPE_TOON))
 	end)
 	c:RegisterEffect(e4)
 	local e5=e2:Clone()
