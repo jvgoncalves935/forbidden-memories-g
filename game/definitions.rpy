@@ -706,7 +706,8 @@ define deck_g_names = [
     "Stocking Anarchy",
     "Kika: De Onde Vem?",
     "Epurrely Noir",
-    "Petit Dragon fodase kkkkkkk"
+    "Petit Dragon fodase kkkkkkk",
+    "Pote da Ignorância"
 ]
 
 define endings_descriptions = {

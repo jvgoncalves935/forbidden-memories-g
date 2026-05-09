@@ -60,13 +60,6 @@ function s.initial_effect(c)
 	e7:SetCondition(s.dircon)
 	c:RegisterEffect(e7)
 
-	--Direct attack condition (Mundo Toon or Mundo da PUTARIA)
-	local e7=Effect.CreateEffect(c)
-	e7:SetType(EFFECT_TYPE_SINGLE)
-	e7:SetCode(EFFECT_DIRECT_ATTACK)
-	e7:SetCondition(s.dircon)
-	c:RegisterEffect(e7)
-
 	--Add 1 "Anarchy" monster to hand when Summoned
 	local e8=Effect.CreateEffect(c)
 	e8:SetDescription(aux.Stringid(id,1))
@@ -99,11 +92,11 @@ function s.initial_effect(c)
 
 	--Becomes "Universo G" while on hand and field
 	local e12=Effect.CreateEffect(c)
-	e4:SetType(EFFECT_TYPE_SINGLE)
-	e4:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
-	e4:SetCode(EFFECT_ADD_SETCODE)
-	e4:SetRange(LOCATION_HAND+LOCATION_MZONE)
-	e4:SetValue(0xc50)
+	e12:SetType(EFFECT_TYPE_SINGLE)
+	e12:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e12:SetCode(EFFECT_ADD_SETCODE)
+	e12:SetRange(LOCATION_HAND+LOCATION_MZONE)
+	e12:SetValue(0xc50)
 	c:RegisterEffect(e12)
 end
 

@@ -2390,7 +2390,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.12
+        yalign 0.07
         textbutton _("Carta 95"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2400,7 +2400,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.12
+        yalign 0.07
         textbutton _("Carta 96"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2410,7 +2410,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.12
+        yalign 0.07
         textbutton _("Carta 97"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2420,7 +2420,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.17
+        yalign 0.12
         textbutton _("Carta 98"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2430,7 +2430,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.17
+        yalign 0.12
         textbutton _("Carta 99"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2440,7 +2440,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.17
+        yalign 0.12
         textbutton _("Carta 100"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2450,7 +2450,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.22
+        yalign 0.17
         textbutton _("Carta 101"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2460,7 +2460,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.22
+        yalign 0.17
         textbutton _("Carta 102"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2470,7 +2470,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.22
+        yalign 0.17
         textbutton _("Carta 103"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2480,7 +2480,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.27
+        yalign 0.22
         textbutton _("Carta 104"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2490,7 +2490,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.27
+        yalign 0.22
         textbutton _("Carta 105"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2500,7 +2500,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.27
+        yalign 0.22
         textbutton _("Carta 106"):
             style "confirm_button_5"
             text_style "navigation_button_text_endings_2"
@@ -2510,7 +2510,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.32
+        yalign 0.27
         textbutton _("Carta 107"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2520,7 +2520,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.32
+        yalign 0.27
         textbutton _("Carta 108"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2530,7 +2530,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.32
+        yalign 0.27
         textbutton _("Carta 109"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2540,7 +2540,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.37
+        yalign 0.32
         textbutton _("Carta 110"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2550,7 +2550,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.37
+        yalign 0.32
         textbutton _("Carta 111"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2560,7 +2560,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.37
+        yalign 0.32
         textbutton _("Carta 112"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2570,7 +2570,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.42
+        yalign 0.37
         textbutton _("Carta 113"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2580,7 +2580,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.42
+        yalign 0.37
         textbutton _("Carta 114"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2590,7 +2590,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.42
+        yalign 0.37
         textbutton _("Carta 115"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2600,7 +2600,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.47
+        yalign 0.42
         textbutton _("Carta 116"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2610,7 +2610,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.47
+        yalign 0.42
         textbutton _("Carta 117"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2620,7 +2620,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.47
+        yalign 0.42
         textbutton _("Carta 118"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2630,7 +2630,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.52
+        yalign 0.47
         textbutton _("Carta 119"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2640,7 +2640,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.52
+        yalign 0.47
         textbutton _("Carta 120"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2650,7 +2650,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.52
+        yalign 0.47
         textbutton _("Carta 121"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2660,7 +2660,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.57
+        yalign 0.52
         textbutton _("Carta 122"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2670,7 +2670,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.57
+        yalign 0.52
         textbutton _("Carta 123"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2680,7 +2680,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.57
+        yalign 0.52
         textbutton _("Carta 124"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2690,7 +2690,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.62
+        yalign 0.57
         textbutton _("Token 01"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2700,7 +2700,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.62
+        yalign 0.57
         textbutton _("Token 02"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2710,7 +2710,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
-        yalign 0.62
+        yalign 0.57
         textbutton _("Token 03"):
             style "confirm_button_4"
             text_style "navigation_button_text_endings_2"
@@ -2719,7 +2719,7 @@ screen endings_pag_2():
             action [Function(ExtraContentStart,"mara_mara")]
     vbox:
         xalign 0.64
-        yalign 0.67
+        yalign 0.62
         textbutton _("Carta X01"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2728,7 +2728,7 @@ screen endings_pag_2():
             action [NullAction()]
     vbox:
         xalign 0.795
-        yalign 0.67
+        yalign 0.62
         textbutton _("Carta X02"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2738,7 +2738,7 @@ screen endings_pag_2():
     
     vbox:
         xalign 0.95
-        yalign 0.67
+        yalign 0.62
         textbutton _("Carta X03"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2748,7 +2748,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.64
-        yalign 0.72
+        yalign 0.67
         textbutton _("Carta X04"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2758,7 +2758,7 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.795
-        yalign 0.72
+        yalign 0.67
         textbutton _("Carta X05"):
             style "confirm_button_3"
             text_style "navigation_button_text_endings_2"
@@ -2768,6 +2768,16 @@ screen endings_pag_2():
 
     vbox:
         xalign 0.95
+        yalign 0.67
+        textbutton _("Carta X04"):
+            style "confirm_button_3"
+            text_style "navigation_button_text_endings_2"
+            hovered [ShowTransient("side_img_left", img="pote_da_ignorancia.png",card=133)]
+            unhovered [Hide("side_img_left")]
+            action [NullAction()]
+    
+    vbox:
+        xalign 0.64
         yalign 0.72
         textbutton _("vtnc kkkk"):
             style "confirm_button_3"
