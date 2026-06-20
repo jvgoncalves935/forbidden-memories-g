@@ -26,10 +26,7 @@ function s.initial_effect(c)
 	e2:SetCode(EFFECT_CANNOT_BE_FUSION_MATERIAL)
 	e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
 	-- allow only if is Toon
-	e2:SetValue(function(e,c)
-		if not c then return false end
-		return not (c:IsType(TYPE_TOON))
-	end)
+	e2:SetValue(s.matval)
 	c:RegisterEffect(e2)
 
 	local e3=e2:Clone()
@@ -41,10 +38,7 @@ function s.initial_effect(c)
 	e4:SetCode(EFFECT_CANNOT_BE_XYZ_MATERIAL)
 	e4:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
 	-- allow only if is Toon
-	e4:SetValue(function(e,c)
-		if not c then return false end
-		return not (c:IsType(TYPE_TOON))
-	end)
+	e4:SetValue(s.matval)
 	c:RegisterEffect(e4)
 	local e5=e2:Clone()
 	e5:SetCode(EFFECT_CANNOT_BE_LINK_MATERIAL)
@@ -144,9 +138,12 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp,c)
 end
 
 --Direct attack condition
+function s.dirfilter(c)
+	return c:IsFaceup() and (c:IsCode(15259703) or c:IsCode(69069069))
+end
 function s.dircon(e)
 	local tp=e:GetHandlerPlayer()
-	return Duel.IsExistingMatchingCard(function(cc) return cc:IsFaceup() and (cc:IsCode(15259703) or cc:IsCode(69069069)) end, tp, LOCATION_ONFIELD, 0, 1, nil)
+	return Duel.IsExistingMatchingCard(s.dirfilter,tp,LOCATION_ONFIELD,0,1,nil)
 end
 
 --Search Anarchy
@@ -217,6 +214,12 @@ function s.register_summon_ban(c,p)
 	e3:SetTargetRange(1,0)
 	e3:SetTarget(s.splimit_all)
 	Duel.RegisterEffect(e3,p)
+end
+
+-- material restriction value: block unless it is Toon
+function s.matval(e,c)
+	if not c then return false end
+	return not c:IsType(TYPE_TOON)
 end
 
 -- global splimit: blocks summons except Universo G (0xc50) or Toon
